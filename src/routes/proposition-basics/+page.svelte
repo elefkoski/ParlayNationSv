@@ -1,0 +1,119 @@
+<script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/clients/components/Content-h2.svelte';
+	import ContentImg from '$lib/clients/components/Content-img.svelte';
+	import Divider from '$lib/clients/components/Divider.svelte';
+	import Link from '$lib/clients/components/Link.svelte';
+
+	let title: string = 'Betting Proposition Bets in Craps';
+	let description: string =
+		'Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the craps table and some are combinations of multiple bets at once.';
+	let url: string = 'proposition-basics';
+
+	let phref: string = 'proposition-bets';
+	let prev: string = 'Proposition Bets';
+	let nhref: string = 'the-hardways';
+	let next: string = 'The Hardways';
+</script>
+
+<svelte:head>
+	<title>{title} | Parlay Nation - How to Play Craps</title>
+	<link rel="shortcut icon" href="src/images/assets/pn-favicon-32x32.png" />
+	<link rel="canonical" href={'http://parlaynation.com/' + url} />
+	<meta name="description" content={description} />
+	<meta name="author" content="Elvis Lefkoski" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="Parlay Nation" />
+	<meta property="og:url" content={url} />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={title + ' | Parlay Nation - How to Play Craps'} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={'src/images/' + url + '/' + url + '-header.jpg'} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content={'src/images/' + url + '/' + url + '-header.jpg'} />
+	<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org/",
+		  "@type": "Course",
+		  "name": "Learn Proposition Bets",
+		  "description": "Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the craps table and some are combinations of multiple bets at once.",
+		  "provider": {
+			"@type": "Organization",
+			"name": "Parlay Nation",
+			"url": "https://parlaynation.com",
+			"logo": "https://photos.app.goo.gl/W3PRcW9RskSdPw43A"
+		  }
+		}
+	</script>
+</svelte:head>
+
+<LearnLayout>
+	<PrevNext {phref} {prev} {nhref} {next} />
+	<main aria-label="Main content" class=" flex flex-col my-6">
+		<ContentHeaderOne sectionTitle="Proposition Bets" title="Proposition Bets on the Craps Table" />
+		<p class="pb-4">
+			What is a Proposition Bet on the Craps table? Some would say it's a one-roll bet. Others would
+			say they are any of the bets in the center of the table. For the most part, Proposition Bets
+			are one-roll bets in the middle of the table, although some last more than one roll, and I
+			consider the Field a Prop Bet, and that isn't in the middle of the table, so, who knows?
+		</p>
+		<p class="pb-4">
+			Regardless of the definition, betting Proposition Bets can be a lot of fun! Most of them have
+			a dollar minimum, so you won't have to bet a lot, and when they come two, three... four times
+			in a row... and you realize that a single cheque can net you hundreds and maybe even thousands
+			of dollars at the Craps table in only a couple minutes... you realize the allure.
+		</p>
+		<p class="pb-4">
+			The Craps table has a lot of Prop Bets, and the casino loves it. They pretty much suck the
+			money out of you because you always have to throw money out there to hit one. Craps is a game
+			where you want to use the money you win to make more bets, not constantly pull money out of
+			the rail.
+		</p>
+		<ContentImg
+			caption=""
+			smImg="src/images/{url}/proposition-bets_640x360.webp"
+			mdImg="src/images/{url}/proposition-bets_960x540.webp"
+			lgImg="src/images/{url}/proposition-bets_1280x720.webp"
+			title="Proposition Bets"
+			alt="Overhead view of the proposition area on the craps table."
+		/>
+		<Divider />
+		<ContentHeaderTwo title="What Is a One-Roll Bet in Craps?" />
+		<p class="pb-4">
+			A One-Roll bet is a bet that must win the next roll, or it loses. Most one-roll bets are found
+			in middle of the table, and have minimums ranging from $1 to $5. The Hardways are an exception
+			because, while they have $1 minimumum, and are in the middle of the table, they can last
+			longer than one roll. The Field is a one-roll bet but has the table min. and is on each side
+			of the table.
+		</p>
+		<Divider />
+		<ContentHeaderTwo title="How Do You Bet Proposition Bets at the Craps Table?" />
+		<p class="pb-4">
+			Almost all Proposition Bets are in the middle of the table, so you give the money to the
+			Stickperson, and they will set up the bet. Tell <Link
+				text="the Stickperson"
+				href="the-crew"
+			/> how much you are betting and which bet you want, then throw the money into the middle of the
+			table. You should really make eye contact with the Stickperson, so they know it is you betting.
+			Even if they hear your bet and see the money come in, they can't be 100% sure it came from you.
+			Your bets should also be repeated to you by at least one of the dealers. If <Link
+				text="the dice"
+				href="the-dice"
+			/> are out and the Stickpersons' back is turned to you, you must tell the <Link
+				text="Base Dealer"
+				href="the-crew"
+			/>. If your bet is not repeated to you, then it isn't a bet.
+		</p>
+		<ContentImg
+			caption=""
+			smImg="src/images/{url}/how-to-bet-prop-bets_640x360.webp"
+			mdImg="src/images/{url}/how-to-bet-prop-bets_960x540.webp"
+			lgImg="src/images/{url}/how-to-bet-prop-bets_1280x720.webp"
+			title="How to Bet Proposition Bets"
+			alt="First person view of a player throwing a cheque towards the middle of the table."
+		/>
+	</main>
+	<PrevNext {phref} {prev} {nhref} {next} />
+</LearnLayout>
