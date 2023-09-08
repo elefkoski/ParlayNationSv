@@ -7,7 +7,6 @@
 	onMount(() => {
 		enableEventTracking();
 		enableScrollTracking();
-		sessionStorage.setItem('last_url', window.location.pathname);
 	});
 </script>
 

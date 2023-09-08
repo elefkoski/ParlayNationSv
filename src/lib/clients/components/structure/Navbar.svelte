@@ -1,62 +1,32 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { user } from '$lib/utils/store';
-	import axios from 'axios';
-	import { onMount } from 'svelte';
+	import { user, type User } from '$lib/utils/store';
+	import { onAuthStateChanged, signOut } from 'firebase/auth';
+	import { auth } from '$lib/utils/firebase';
 
-	let current_user;
-	let storedUser;
+	let current_user: User | null;
 	let isAuthenticated = false;
 
-	function initializeStorage() {
-		console.log('Initializing storage on client side.');
-		if (localStorage.getItem('access_token')) {
-			isAuthenticated = true;
-		}
-		storedUser = window.sessionStorage.getItem('user');
-		if (storedUser) {
-			user.set(JSON.parse(storedUser));
-		}
-	}
-
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			console.log('Client side code running.');
-			initializeStorage();
-		}
+	onAuthStateChanged(auth, (firebaseUser) => {
+		isAuthenticated = firebaseUser ? true : false;
 	});
-
-	function navigateToLogin(event: any) {
-		event.preventDefault();
-		goto('/login');
-	}
 
 	user.subscribe((value) => {
 		current_user = value;
-		console.log('Logged in user:', current_user);
 	});
 
 	async function logout() {
 		try {
-			const token = localStorage.getItem('access_token');
-			console.log('Sending token: ', token); // Debugging line
-
-			const config = {
-				headers: {
-					Authorization: 'Bearer ' + token
-				}
-			};
-			const response = await axios.post('http://127.0.0.1:5000/logout', {}, config);
-			if (response.data.status === 'Logged out') {
-				user.set(null);
-				console.log('Logged out user:', user);
-				localStorage.removeItem('access_token');
-				sessionStorage.clear();
-				window.location.href = '/';
-			}
+			await signOut(auth);
+			goto('/');
 		} catch (error) {
 			console.error('There was an error logging out:', error);
 		}
+	}
+
+	function navigateToLogin(event: any) {
+		event.preventDefault();
+		goto('/login');
 	}
 </script>
 
@@ -119,7 +89,7 @@
 								</li>
 							{:else}
 								<!-- User is not logged in -->
-								<li><a href="login" on:click={navigateToLogin}>Log In</a></li>
+								<li><a href="login" on:click={navigateToLogin}>Sign In</a></li>
 							{/if}
 						</ul>
 					</div>

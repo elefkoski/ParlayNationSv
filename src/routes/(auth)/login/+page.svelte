@@ -1,43 +1,124 @@
 <script lang="ts">
-	import LoginLayout from '$lib/clients/components/layouts/LoginLayout.svelte';
-	import { auth } from './firebaseConfig'; // Assuming you have a firebaseConfig file
+	import EmptyLayout from '$lib/clients/components/layouts/EmptyLayout.svelte';
+	import {
+		googleSignIn,
+		facebookSignIn,
+		loginWithEmailPassword,
+		registerWithEmailPassword
+	} from '$lib/utils/firebase';
+	import {
+		getAuth,
+		setPersistence,
+		browserLocalPersistence,
+		browserSessionPersistence,
+		sendEmailVerification
+	} from 'firebase/auth';
 	import { writable } from 'svelte/store';
-	import { user } from '$lib/utils/store';
+	import { goto } from '$app/navigation';
+
+	const authInstance = getAuth();
 	const errorMessage = writable('');
 	let agreeToTerms = true;
 	let email = '';
 	let password = '';
-
-	async function loginUser(event: SubmitEvent) {
-		event.preventDefault();
-		try {
-			const userCredential = await auth.signInWithEmailAndPassword(email, password);
-			const firebaseUser = userCredential.user;
-			user.set(firebaseUser); // Store the user in your svelte store
-			// Navigate to another page or do other tasks here
-		} catch (error) {
-			errorMessage.set(error.message);
-		}
-	}
+	let showLogin = true;
+	let rememberMe = false;
+	let showPassword = false;
 
 	async function registerUser(event: SubmitEvent) {
 		event.preventDefault();
+
 		if (!agreeToTerms) {
 			errorMessage.set('You must agree to the Terms and Conditions.');
 			return;
 		}
+
 		try {
-			const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-			const firebaseUser = userCredential.user;
-			user.set(firebaseUser);
-			// Send email verification, navigate or do other tasks
+			const firebaseUser = await registerWithEmailPassword(email, password);
+
+			if (firebaseUser) {
+				await sendEmailVerification(firebaseUser);
+				errorMessage.set('Registration successful. Please verify your email before logging in.');
+			} else {
+				errorMessage.set('Error during registration. Please try again.');
+			}
 		} catch (error) {
-			errorMessage.set(error.message);
+			errorMessage.set('An unexpected error occurred during registration.');
+			console.error('Error during registration:', error);
 		}
+	}
+
+	async function loginUser(event: SubmitEvent) {
+		event.preventDefault();
+		try {
+			if (rememberMe) {
+				await setPersistence(authInstance, browserLocalPersistence);
+			} else {
+				await setPersistence(authInstance, browserSessionPersistence);
+			}
+			const firebaseUser = await loginWithEmailPassword(email, password);
+			if (firebaseUser) {
+				redirectAfterLogin();
+			}
+		} catch (error) {
+			if (error instanceof Error) {
+				errorMessage.set(error.message);
+			} else {
+				errorMessage.set('An unknown error occurred.');
+			}
+		}
+	}
+
+	async function handleGoogleSignIn() {
+		try {
+			if (rememberMe) {
+				await setPersistence(authInstance, browserLocalPersistence);
+			} else {
+				await setPersistence(authInstance, browserSessionPersistence);
+			}
+			const firebaseUser = await googleSignIn();
+			if (firebaseUser) {
+				redirectAfterLogin();
+			}
+		} catch (error) {
+			if (error instanceof Error) {
+				errorMessage.set(error.message);
+			} else {
+				errorMessage.set('An unknown error occurred during Google sign-in.');
+			}
+		}
+	}
+
+	async function handleFacebookSignIn() {
+		try {
+			if (rememberMe) {
+				await setPersistence(authInstance, browserLocalPersistence);
+			} else {
+				await setPersistence(authInstance, browserSessionPersistence);
+			}
+			const firebaseUser = await facebookSignIn();
+			if (firebaseUser) {
+				redirectAfterLogin();
+			}
+		} catch (error) {
+			if (error instanceof Error) {
+				errorMessage.set(error.message);
+			} else {
+				errorMessage.set('An unknown error occurred during Facebook sign-in.');
+			}
+		}
+	}
+
+	function redirectAfterLogin() {
+		goto('/profile');
+	}
+
+	function togglePasswordVisibility() {
+		showPassword = !showPassword;
 	}
 </script>
 
-<LoginLayout>
+<EmptyLayout>
 	{#if showLogin}
 		<div class="flex flex-col justify-center lg:px-8 min-h-full px-6 py-12">
 			<div class="sm:max-w-sm sm:mx-auto sm:w-full">
@@ -76,39 +157,62 @@
 					</div>
 
 					<div>
-						<div class="flex items-center justify-between">
-							<label
-								class="block dark:text-gray-300 font-medium leading-6 text-gray-900 text-sm"
-								for="password"
-							>
-								Password
-							</label>
-							<div class="text-sm">
-								<a
-									href="/"
-									class="dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 text-indigo-600"
-								>
-									Forgot password?
-								</a>
+						<label
+							class="block dark:text-gray-300 font-medium leading-6 text-gray-900 text-sm"
+							for="password"
+						>
+							Password
+						</label>
+						<div class="relative">
+							<div class="mt-2 relative">
+								{#if showPassword}
+									<input
+										autocomplete="current-password"
+										bind:value={password}
+										class="block border-0 dark:bg-gray-700 dark:focus:ring-indigo-400 dark:placeholder-gray-400 dark:ring-gray-600 dark:text-gray-100 focus:ring-2 focus:ring-indigo-600 focus:ring-inset pl-2 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full"
+										id="password"
+										name="password"
+										required
+										type="text"
+									/>
+								{:else}
+									<input
+										autocomplete="current-password"
+										bind:value={password}
+										class="block border-0 dark:bg-gray-700 dark:focus:ring-indigo-400 dark:placeholder-gray-400 dark:ring-gray-600 dark:text-gray-100 focus:ring-2 focus:ring-indigo-600 focus:ring-inset pl-2 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full"
+										id="password"
+										name="password"
+										required
+										type="password"
+									/>
+								{/if}
+							</div>
+							<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+								<button on:click={togglePasswordVisibility} type="button" class="...">
+									<img
+										src={showPassword
+											? 'src/images/icons/visibility_off_black.svg'
+											: 'src/images/icons/visibility_black.svg'}
+										alt="Toggle password visibility"
+										class="h-5 w-5"
+									/>
+								</button>
 							</div>
 						</div>
-						<div class="mt-2">
-							<input
-								autocomplete="current-password"
-								bind:value={password}
-								class="block border-0 dark:bg-gray-700 dark:focus:ring-indigo-400 dark:placeholder-gray-400 dark:ring-gray-600 dark:text-gray-100 focus:ring-2 focus:ring-indigo-600 focus:ring-inset pl-2 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full"
-								id="password"
-								name="password"
-								required
-								type="password"
-							/>
-						</div>
 					</div>
-					<div>
+					<div class="flex items-center justify-between">
 						<label class="inline-flex items-center">
 							<input bind:checked={rememberMe} class="form-checkbox" type="checkbox" />
 							<span class="ml-2">Remember me</span>
 						</label>
+						<div class="text-sm">
+							<a
+								href="forgot-password"
+								class="dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 text-indigo-600"
+							>
+								Forgot Password?
+							</a>
+						</div>
 					</div>
 					<div>
 						<button
@@ -118,6 +222,21 @@
 						>
 							Sign in
 						</button>
+						<div class="mt-4 flex gap-2">
+							<button
+								class="bg-blue-600 dark:bg-blue-700 flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:outline-offset-2 font-semibold hover:bg-blue-500 justify-center leading-6 px-3 py-1.5 rounded-md shadow-sm text-sm text-white w-full"
+								on:click={handleGoogleSignIn}
+							>
+								Sign in with Google
+							</button>
+
+							<button
+								class="bg-blue-800 dark:bg-blue-900 flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800 focus-visible:outline-offset-2 font-semibold hover:bg-blue-700 justify-center leading-6 px-3 py-1.5 rounded-md shadow-sm text-sm text-white w-full"
+								on:click={handleFacebookSignIn}
+							>
+								Sign in with Facebook
+							</button>
+						</div>
 					</div>
 				</form>
 
@@ -127,7 +246,7 @@
 					</div>
 				{/if}
 
-				<p class="dark:text-gray-400 mt-10 text-center text-gray-500 text-sm">
+				<p class="dark:text-gray-400 mt-8 text-center text-gray-500 text-sm">
 					Not a member?
 					<span
 						class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
@@ -224,8 +343,23 @@
 							data-track="sign_up"
 							type="submit"
 						>
-							Sign Up
+							Sign up
 						</button>
+						<div class="mt-4 flex gap-2">
+							<button
+								class="bg-blue-600 dark:bg-blue-700 flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:outline-offset-2 font-semibold hover:bg-blue-500 justify-center leading-6 px-3 py-1.5 rounded-md shadow-sm text-sm text-white w-full"
+								on:click={handleGoogleSignIn}
+							>
+								Sign up with Google
+							</button>
+
+							<button
+								class="bg-blue-800 dark:bg-blue-900 flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800 focus-visible:outline-offset-2 font-semibold hover:bg-blue-700 justify-center leading-6 px-3 py-1.5 rounded-md shadow-sm text-sm text-white w-full"
+								on:click={handleFacebookSignIn}
+							>
+								Sign up with Facebook
+							</button>
+						</div>
 					</div>
 				</form>
 
@@ -235,7 +369,7 @@
 					</div>
 				{/if}
 
-				<p class="dark:text-gray-400 mt-10 text-center text-gray-500 text-sm">
+				<p class="dark:text-gray-400 mt-8 text-center text-gray-500 text-sm">
 					Already a member?
 					<span
 						class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
@@ -251,4 +385,4 @@
 			</div>
 		</div>
 	{/if}
-</LoginLayout>
+</EmptyLayout>
