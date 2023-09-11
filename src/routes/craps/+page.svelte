@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
+	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 
 	let title: string = 'Learn How to Play Craps';
 	let description: string =

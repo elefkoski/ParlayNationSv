@@ -11,7 +11,7 @@
 	export let badges: string[] = ['Badge Here', 'Another Badge', 'Badge Three', 'Badgering Me'];
 </script>
 
-<section aria-label={aria} class="card bg-base-100 shadow-xl">
+<section aria-label={aria} class="card bg-gray-900 b shadow-xl">
 	<figure>
 		<img src={smImg} {alt} class="object-cover w-full block md:hidden lg:hidden" />
 		<img src={mdImg} {alt} class="object-cover w-full hidden md:block lg:hidden" />

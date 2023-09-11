@@ -1,8 +1,8 @@
 <script lang="ts">
 	import PracticeLayout from '$lib/clients/components/layouts/PracticeCrapsLayout.svelte';
-	import PracticeH1 from '$lib/clients/components/Practice-h1.svelte';
-	import PracticeDescription from '$lib/clients/components/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/clients/components/PracticeThumnailCarousel.svelte';
+	import PracticeH1 from '$lib/clients/components/practicePages/Practice-h1.svelte';
+	import PracticeDescription from '$lib/clients/components/practicePages/PracticeDescription.svelte';
+	import PracticeThumnailCarousel from '$lib/clients/components/practicePages/PracticeThumnailCarousel.svelte';
 
 	let title: string = '19mm Foldable Craps Dice';
 	let description: string =

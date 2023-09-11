@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
+import { getFirestore, doc, updateDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
 import {
 	getAuth,
 	GoogleAuthProvider,
@@ -28,6 +29,22 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+// Initialize Firestore
+export const db = getFirestore();
+
+export const savePage = async (userId: string, pageData: any) => {
+	try {
+		const userRef = doc(db, 'users', userId);
+		const uniqueId = Date.now().toString();
+		const bookmakrWithId = { ...pageData, id: uniqueId };
+		await updateDoc(userRef, {
+			bookmarks: arrayUnion(bookmakrWithId)
+		});
+	} catch (e) {
+		console.error('Error saving document: ', e);
+	}
+};
 
 let analytics;
 export const initializeFirebaseAnalytics = () => {

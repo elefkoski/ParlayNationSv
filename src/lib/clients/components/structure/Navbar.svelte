@@ -6,13 +6,34 @@
 
 	let current_user: User | null;
 	let isAuthenticated = false;
+	let profilePicture = 'https://picsum.photos/100/100';
 
 	onAuthStateChanged(auth, (firebaseUser) => {
+		console.log('Firebase User: ', firebaseUser);
 		isAuthenticated = firebaseUser ? true : false;
+		if (firebaseUser) {
+			profilePicture = firebaseUser.photoURL || 'https://picsum.photos/100/100';
+			const userId = firebaseUser.uid;
+			let displayName = firebaseUser.displayName;
+			const email = firebaseUser.email || 'N/A';
+
+			if (!displayName && email) {
+				const index = email.indexOf('@');
+				displayName = index !== -1 ? email.substring(0, index) : email;
+			}
+			user.set({
+				id: userId,
+				display_name: displayName || 'Anonymous',
+				email: email
+			});
+		} else {
+			user.set(null);
+		}
 	});
 
 	user.subscribe((value) => {
 		current_user = value;
+		console.log('Navbar current user:', current_user);
 	});
 
 	async function logout() {
@@ -73,7 +94,7 @@
 								<!-- User is logged in -->
 								<li>
 									<img
-										src="https://picsum.photos/100/100"
+										src={profilePicture}
 										alt="User Avatar"
 										class="user-avatar w-10 h-10 rounded-full object-cover p-0"
 									/>

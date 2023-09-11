@@ -1,9 +1,9 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/Content-h2.svelte';
-	import ContentImg from '$lib/clients/components/Content-img.svelte';
+	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
+	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '../../lib/clients/components/Link.svelte';
 	import Quote from '../../lib/clients/components/Quote.svelte';
@@ -17,6 +17,12 @@
 	let prev = 'Verbal Betting';
 	let nhref = '/the-pass-line';
 	let next = 'The Pass Line';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -53,7 +59,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Craps Basics" title="To Consider at the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Craps Basics"
+			title="To Consider at the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			There are more ways to bet in Craps besides picking bets. Some are good, and some are bad. You
 			may accidentally leave money from a winning bet on the table, or you may want to bet with the

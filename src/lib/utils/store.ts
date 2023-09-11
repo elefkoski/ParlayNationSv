@@ -6,3 +6,4 @@ export interface User {
 	email: string;
 }
 export const user = writable<User | null>(null);
+export const bookmarkedPages = writable<any[]>([]);

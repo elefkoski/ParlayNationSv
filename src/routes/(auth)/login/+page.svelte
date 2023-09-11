@@ -137,12 +137,27 @@
 			<div class="mt-10 sm:max-w-sm sm:mx-auto sm:w-full">
 				<form action="" class="space-y-6" method="POST" on:submit={loginUser}>
 					<div>
-						<label
-							class="block dark:text-gray-300 font-medium leading-6 text-gray-900 text-sm"
-							for="email"
-						>
-							Email
-						</label>
+						<div class="flex justify-between">
+							<label
+								class="dark:text-gray-300 font-medium leading-6 text-gray-900 text-sm"
+								for="email"
+							>
+								Email
+							</label>
+							<p class="dark:text-gray-400 text-center text-gray-500 text-sm">
+								Not a member?
+								<span
+									class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
+									data-track="toggle_to_sign_up_here"
+									on:click={() => (showLogin = false)}
+									on:keydown={() => (showLogin = false)}
+									tabindex="0"
+									role="button"
+								>
+									Sign up here
+								</span>
+							</p>
+						</div>
 						<div class="mt-2">
 							<input
 								autocomplete="email"
@@ -245,20 +260,6 @@
 						{$errorMessage}
 					</div>
 				{/if}
-
-				<p class="dark:text-gray-400 mt-8 text-center text-gray-500 text-sm">
-					Not a member?
-					<span
-						class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
-						data-track="toggle_to_sign_up_here"
-						on:click={() => (showLogin = false)}
-						on:keydown={() => (showLogin = false)}
-						tabindex="0"
-						role="button"
-					>
-						Sign up here
-					</span>
-				</p>
 			</div>
 		</div>
 	{:else}
@@ -279,12 +280,27 @@
 			<div class="mt-10 sm:max-w-sm sm:mx-auto sm:w-full">
 				<form action="" class="space-y-6" method="POST" on:submit={registerUser}>
 					<div>
-						<label
-							class="block dark:text-gray-300 font-medium leading-6 text-gray-900 text-sm"
-							for="email"
-						>
-							Email
-						</label>
+						<div class="flex justify-between">
+							<label
+								class="block dark:text-gray-300 font-medium leading-6 text-gray-900 text-sm"
+								for="email"
+							>
+								Email
+							</label>
+							<p class="dark:text-gray-400 text-center text-gray-500 text-sm">
+								Already a member?
+								<span
+									class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
+									data-track="toggle_to_sign_in"
+									on:click={() => (showLogin = true)}
+									on:keydown={() => (showLogin = true)}
+									role="button"
+									tabindex="0"
+								>
+									Sign In
+								</span>
+							</p>
+						</div>
 						<div class="mt-2">
 							<input
 								autocomplete="email"
@@ -368,20 +384,6 @@
 						{$errorMessage}
 					</div>
 				{/if}
-
-				<p class="dark:text-gray-400 mt-8 text-center text-gray-500 text-sm">
-					Already a member?
-					<span
-						class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
-						data-track="toggle_to_sign_in"
-						on:click={() => (showLogin = true)}
-						on:keydown={() => (showLogin = true)}
-						role="button"
-						tabindex="0"
-					>
-						Sign In
-					</span>
-				</p>
 			</div>
 		</div>
 	{/if}

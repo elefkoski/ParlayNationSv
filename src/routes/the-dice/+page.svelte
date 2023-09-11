@@ -1,10 +1,10 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/Content-h2.svelte';
-	import ContentImg from '$lib/clients/components/Content-img.svelte';
-	import ContentUlb from '../../lib/clients/components/Content-ul-b.svelte';
+	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
+	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
+	import ContentUlb from '../../lib/clients/components/contentPages/Content-ul-b.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '../../lib/clients/components/Link.svelte';
 	import Quote from '../../lib/clients/components/Quote.svelte';
@@ -53,6 +53,12 @@
 			]
 		}
 	];
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -89,7 +95,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Craps Basics" title="Shooting the Dice" />
+		<ContentHeaderOne sectionTitle="Craps Basics" title="Shooting the Dice" {pageData} />
 		<p class="pb-4">
 			Getting to throw the dice is one of the best parts of Craps. There's something special about
 			having the fate of the entire table at your fingertips. Time almost slows down while the dice

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/Content-h2.svelte';
-	import ContentImg from '$lib/clients/components/Content-img.svelte';
+	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
+	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '../../lib/clients/components/Link.svelte';
 	import Quote from '../../lib/clients/components/Quote.svelte';
@@ -17,6 +17,13 @@
 	let prev = 'The Dice';
 	let nhref = '/verbal-betting';
 	let next = 'Verbal Betting';
+
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -53,7 +60,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Craps Basics" title="The Stages of a Craps Game" />
+		<ContentHeaderOne sectionTitle="Craps Basics" title="The Stages of a Craps Game" {pageData} />
 		<p class="pb-4">
 			One of the biggest problems new Craps players understand is that the game is played in two
 			stages. Sometimes a seven will cause you to win while other time. Sometimes they take your

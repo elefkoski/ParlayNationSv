@@ -1,10 +1,10 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/Content-h2.svelte';
-	import ContentHeaderThree from '$lib/clients/components/Content-h3.svelte';
-	import ContentImg from '$lib/clients/components/Content-img.svelte';
+	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
+	import ContentHeaderThree from '$lib/clients/components/contentPages/Content-h3.svelte';
+	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '$lib/clients/components/Link.svelte';
 	import Quote from '$lib/clients/components/Quote.svelte';

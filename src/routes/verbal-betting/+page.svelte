@@ -1,10 +1,10 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import ContentHeaderOne from '$lib/clients/components/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/Content-h2.svelte';
-	import ContentImg from '$lib/clients/components/Content-img.svelte';
-	import ContentUl from '$lib/clients/components/Content-ul-a.svelte';
+	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
+	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
+	import ContentUl from '$lib/clients/components/contentPages/Content-ul-a.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '../../lib/clients/components/Link.svelte';
 	import Quote from '../../lib/clients/components/Quote.svelte';
@@ -29,6 +29,12 @@
 			]
 		}
 	];
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -65,7 +71,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Craps Basics" title="Making Verbal Bets at the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Craps Basics"
+			title="Making Verbal Bets at the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			<Quote text="Dice are moving!" />, <Quote text="We're goin!" />, <Quote
 				text="We're rollin!"
