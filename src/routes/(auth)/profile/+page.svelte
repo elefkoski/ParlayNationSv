@@ -1,18 +1,11 @@
 <script lang="ts">
 	import SingleColumnLayout from '$lib/clients/components/layouts/SingleColumnLayout.svelte';
 	import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
-	import { db } from '$lib/utils/firebase';
+	import { db, fetchBookmarks } from '$lib/utils/firebase';
 	import ProfileContentCard from '$lib/clients/components/profilePage/ProfileContentCard.svelte';
 	import { bookmarkedPages, user, type User } from '$lib/utils/store';
-	import { onMount } from 'svelte';
 
 	let current_user: User | null = null;
-
-	onMount(() => {
-		if (current_user && current_user.id) {
-			fetchBookmarks(current_user.id);
-		}
-	});
 
 	user.subscribe((value: any) => {
 		current_user = value;
@@ -21,22 +14,11 @@
 		}
 	});
 
-	async function fetchBookmarks(userId: string) {
-		const bookmarks: any[] = [];
-		const querySnapshot = await getDocs(collection(db, `users/${userId}/bookmarks `));
-
-		querySnapshot.forEach((doc) => {
-			bookmarks.push(doc.data());
-		});
-
-		console.log('Fetched bookmarks:', bookmarks);
-		bookmarkedPages.set(bookmarks);
-	}
-
 	async function handleDelete(bookmarkId: string) {
 		try {
 			// Step 1: Delete from Firestore
-			await deleteDoc(doc(db, `users/${current_user?.id}/bookmarks`, bookmarkId));
+			const bookmarkRef = doc(db, `users/${current_user?.id}/bookmarks`, bookmarkId);
+			await deleteDoc(bookmarkRef);
 
 			// Step 2: Update Svelte store
 			const updatedBookmarks = $bookmarkedPages.filter((b) => b.id !== bookmarkId);

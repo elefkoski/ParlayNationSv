@@ -63,10 +63,10 @@
 		<ContentHeaderOne sectionTitle="Craps Basics" title="The Stages of a Craps Game" {pageData} />
 		<p class="pb-4">
 			One of the biggest problems new Craps players understand is that the game is played in two
-			stages. Sometimes a seven will cause you to win while other time. Sometimes they take your
-			money when 2 rolls. Sometimes they don't. Other times you may think you won a bet... but you
-			didn't. It was the wrong stage of the game. Understanding the two stages of the game is key to
-			understanding Craps.
+			stages. Sometimes a seven will cause you to win while other times you'll lose. Sometimes they
+			take your money when 2 rolls. Sometimes they don't. Other times you may think you won a bet...
+			but you didn't. It was the wrong stage of the game. Understanding the two stages of the game
+			is key to understanding Craps.
 		</p>
 		<ContentImg
 			caption=""

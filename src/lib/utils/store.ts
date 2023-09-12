@@ -5,5 +5,9 @@ export interface User {
 	display_name: string;
 	email: string;
 }
+export interface Bookmark {
+	bookmarkId: string;
+}
+
 export const user = writable<User | null>(null);
-export const bookmarkedPages = writable<any[]>([]);
+export const bookmarkedPages = writable<Bookmark[]>([]);

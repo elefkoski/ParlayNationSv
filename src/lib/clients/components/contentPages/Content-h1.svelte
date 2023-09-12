@@ -1,6 +1,13 @@
 <script lang="ts">
-	import { savePage } from '$lib/utils/firebase';
-	import { user } from '$lib/utils/store';
+	import {
+		savePage,
+		removePage,
+		db,
+		fetchBookmarkId,
+		fetchAllBookmarks
+	} from '$lib/utils/firebase';
+	import { user, bookmarkedPages } from '$lib/utils/store';
+	import { doc, getDoc } from '@firebase/firestore';
 	import { onMount } from 'svelte';
 
 	export let sectionTitle: string = 'Section Title';
@@ -8,35 +15,122 @@
 	export let pageData: any = '';
 
 	let bookmarked = false;
-	let current_page_url: string;
-	let bookmarkedPages: any = [];
-
+	let current_bookmark_id: string | null = null; // Initialize it
+	let bookmarkedPagesValue: any[] = [];
 	let current_user: any = null;
 
-	onMount(() => {
-		current_page_url = window.location.pathname;
-		if (bookmarkedPages.includes(current_page_url)) {
-			bookmarked = true;
+	onMount(async () => {
+		if (current_user && current_user.id) {
+			const allBookmarks = await fetchAllBookmarks(current_user.id);
+			bookmarkedPages.set(allBookmarks);
 		}
 	});
-
-	user.subscribe((value) => {
-		console.log('Content page user:', value);
-		current_user = value;
-	});
-
-	async function bookmarkPage() {
-		console.log('Current user when bookmarking:', current_user);
-		bookmarked = true;
-		if (current_user && current_user.id) {
-			await savePage(current_user.id, pageData);
-		} else {
-			console.log('User must be logged in to bookmark a page.');
+	async function handleBookmarkIdFetch() {
+		if (current_user && current_user.id && pageData.pageUrl) {
+			const fetchedBookmarkId = await fetchBookmarkId(current_user.id, pageData.pageUrl);
+			if (fetchedBookmarkId) {
+				current_bookmark_id = fetchedBookmarkId;
+			} else {
+				current_bookmark_id = null;
+			}
 		}
 	}
 
+	user.subscribe(async (value) => {
+		current_user = value;
+		handleBookmarkIdFetch();
+		// Add this if block to populate bookmarkedPages
+		if (current_user && current_user.id) {
+			const allBookmarks = await fetchAllBookmarks(current_user.id);
+			bookmarkedPages.set(allBookmarks);
+		}
+	});
+
+	bookmarkedPages.subscribe((value) => {
+		console.log('Value:', value);
+		bookmarkedPagesValue = value;
+		console.log('Bokmarked Pages Value:', bookmarkedPagesValue);
+		bookmarked = bookmarkedPagesValue.some(
+			(bookmark) => bookmark.bookmarkId === current_bookmark_id
+		);
+		console.log('Bookmarked:', bookmarked);
+	});
+
+	$: if (current_user && current_bookmark_id) {
+		bookmarked = true;
+	}
+
+	async function bookmarkPage() {
+		console.log('Content-h1: Entering bookmarkPage function');
+		console.log('Content-h1: Current user inside bookmarkPage:', current_user);
+		if (current_user && current_user.id) {
+			//console.log('Debug Content-h1: User is authenticated. Proceeding to save the page.');
+
+			// Debug: Log pageData and current_bookmark_id before the save
+			//console.log('Debug Content-h1: Page data before save:', pageData);
+			//console.log('Debug Content-h1: current_bookmark_id before save:', current_bookmark_id);
+
+			// Save the page to Firestore
+			const bookmarkId = await savePage(current_user.id, pageData);
+			console.log('Content-h1: Re-enter bookmarkPage function');
+			current_bookmark_id = bookmarkId;
+			console.log('Content-h1: bookmarkId after save:', bookmarkId);
+
+			if (bookmarkId) {
+				console.log('Content-h1: Bookmark saved successfully.');
+
+				// Log the updated Firestore document
+				const userRef = doc(db, 'users', current_user.id);
+				//console.log('Debug Content-h1: User Ref:', userRef);
+				console.log('Content-h1: Leaving bookmarkPage function');
+				const userSnap = await getDoc(userRef);
+				console.log('Content-h1: Re-entering bookmarkPage function');
+				if (userSnap.exists()) {
+					console.log('Content-h1: User document exists. userSnap Data:', userSnap.data());
+				} else {
+					console.log('Content-h1: User document does not exist.');
+				}
+
+				// Update local state
+				bookmarkedPages.update((pages) => {
+					console.log('Content-h1: Current bookmarkedPages state:', pages);
+
+					pages.push({ bookmarkId });
+
+					console.log('Content-h1: Updated Application State Bookmarks: ', pages);
+					return pages;
+				});
+
+				const unsubscribe = bookmarkedPages.subscribe((value) => {
+					console.log('Updated bookmarkedPages:', value);
+				});
+				unsubscribe();
+
+				bookmarked = true;
+				console.log('Content-h1: Bookmarked flag set to true');
+			} else {
+				console.log('Content-h1: Failed to save bookmark.');
+			}
+		} else {
+			console.log('Content-h1: User must be logged in to bookmark a page.');
+		}
+		console.log('Content-h1: Leaving bookmarkPage function');
+	}
+
+	console.log(bookmarkedPagesValue);
+	console.log('Current Bookmark ID:', current_bookmark_id);
+
 	async function unBookmarkPage() {
-		bookmarked = false;
+		const bookmarkToRemove = bookmarkedPagesValue.find((b) => b.bookmarkId === current_bookmark_id);
+		console.log('Bookmark to remove:', bookmarkToRemove);
+		console.log('Current User:', current_user);
+		console.log('Current User ID::', current_user.id);
+		if (bookmarkToRemove && current_user && current_user.id) {
+			await removePage(current_user.id, bookmarkToRemove.bookmarkId);
+			bookmarked = false;
+		} else {
+			console.log('Content-h1: User must be logged in to remove a bookmark.');
+		}
 	}
 </script>
 

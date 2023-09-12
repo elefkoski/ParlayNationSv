@@ -12,10 +12,16 @@
 		"Don't walk up to the Craps Table clueless. Learn the different betting areas as well as all the equipment the dealers use on the game.";
 	let url: string = 'the-craps-table';
 
-	let phref = '/the-crew';
+	let phref = 'the-crew';
 	let prev = 'The Crew';
 	let nhref = 'the-dice';
 	let next = 'The Dice';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -52,7 +58,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Craps Basics" title="The Craps Table" />
+		<ContentHeaderOne sectionTitle="Craps Basics" title="The Craps Table" {pageData} />
 		<p class="pb-4">
 			Here is the Craps table. I know there's a lot on there but once you start to break it down
 			piece by piece, bet by bet you realize you don't need to be concerned with most of it. It's

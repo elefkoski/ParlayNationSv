@@ -8,6 +8,11 @@
 	let isAuthenticated = false;
 	let profilePicture = 'https://picsum.photos/100/100';
 
+	user.subscribe((value) => {
+		current_user = value;
+		//console.log('Navbar current user:', current_user);
+	});
+
 	onAuthStateChanged(auth, (firebaseUser) => {
 		console.log('Firebase User: ', firebaseUser);
 		isAuthenticated = firebaseUser ? true : false;
@@ -29,11 +34,6 @@
 		} else {
 			user.set(null);
 		}
-	});
-
-	user.subscribe((value) => {
-		current_user = value;
-		console.log('Navbar current user:', current_user);
 	});
 
 	async function logout() {

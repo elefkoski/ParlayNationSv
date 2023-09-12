@@ -1,7 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
+import type { Bookmark } from './store';
 import { getAnalytics } from 'firebase/analytics';
-import { getFirestore, doc, updateDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
+import {
+	getFirestore,
+	addDoc,
+	collection,
+	getDocs,
+	deleteDoc,
+	doc,
+	where,
+	query as firestoreQuery
+} from 'firebase/firestore';
 import {
 	getAuth,
 	GoogleAuthProvider,
@@ -11,11 +21,7 @@ import {
 	signInWithEmailAndPassword
 } from 'firebase/auth';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Add SDKs for Firebase products that you want to use
 const firebaseConfig = {
 	apiKey: 'AIzaSyBwNrd8KXJ1tpw6NucTSliKIyI7vHA389M',
 	authDomain: 'parlaynationsv.firebaseapp.com',
@@ -26,27 +32,12 @@ const firebaseConfig = {
 	measurementId: 'G-LNN949GCYB'
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
-// Initialize Firestore
 export const db = getFirestore();
 
-export const savePage = async (userId: string, pageData: any) => {
-	try {
-		const userRef = doc(db, 'users', userId);
-		const uniqueId = Date.now().toString();
-		const bookmakrWithId = { ...pageData, id: uniqueId };
-		await updateDoc(userRef, {
-			bookmarks: arrayUnion(bookmakrWithId)
-		});
-	} catch (e) {
-		console.error('Error saving document: ', e);
-	}
-};
-
 let analytics;
+
 export const initializeFirebaseAnalytics = () => {
 	// Dynamic import for Firebase Analytics
 	import('firebase/analytics').then((firebaseAnalytics) => {
@@ -110,3 +101,68 @@ export const facebookSignIn = async () => {
 };
 
 export const sendPasswordResetEmail = async () => {};
+
+export const savePage = async (userId: string, pageData: any) => {
+	console.log('Debut firebase.ts: Entered savePage function.');
+	let docRefId = null; // Initialize docRefId to null
+	try {
+		//console.log('Debug firebase.ts: User ID:', userId);
+		console.log('Debug firebase.ts: Page data:', pageData);
+		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
+		//console.log('Debug firebase.ts: Bookmarks Collection:', bookmarksCollection);
+		const docRef = await addDoc(bookmarksCollection, pageData);
+		docRefId = docRef.id; // Set docRefId to the id of the document
+		console.log('Debug firebase.ts: Doc Ref Id:', docRefId);
+	} catch (e) {
+		console.error('Error saving bookmark: ', e);
+	}
+	console.log('Debut firebase.ts: Leaving savePage function.');
+	return docRefId; // Return the id of the document or null if there was an error
+};
+
+export const removePage = async (userId: string, bookmarkId: string) => {
+	console.log('Debug firebase.ts: Entered removePage function');
+	console.log(`Debug firebase.ts: User ID: ${userId}`);
+	console.log(`Debug firebase.ts: BookmarkId: ${bookmarkId}`);
+
+	try {
+		const bookmarkRef = doc(db, `users/${userId}/bookmarks/${bookmarkId}`);
+		console.log('Debug firebase.ts: Bookmark Reference:', bookmarkRef);
+
+		await deleteDoc(bookmarkRef);
+		console.log(`Debug firebase.ts: Successfully removed bookmarkId ${bookmarkId}.`);
+	} catch (error) {
+		console.error('Error removing document:', error);
+	}
+};
+
+export const fetchBookmarkId = async (userId: string, pageUrl: string): Promise<string | null> => {
+	try {
+		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
+		const querySnapshot = await getDocs(
+			firestoreQuery(bookmarksCollection, where('pageUrl', '==', pageUrl))
+		);
+
+		if (!querySnapshot.empty) {
+			const doc = querySnapshot.docs[0];
+			return doc.id;
+		}
+	} catch (e) {
+		console.error('Error fetching bookmark: ', e);
+	}
+	return null;
+};
+
+export async function fetchAllBookmarks(userId: string): Promise<Array<Bookmark>> {
+	const bookmarks: Array<Bookmark> = [];
+	const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
+	const querySnapshot = await getDocs(bookmarksCollection);
+
+	querySnapshot.forEach((doc) => {
+		bookmarks.push({
+			bookmarkId: doc.id
+		});
+	});
+
+	return bookmarks;
+}
