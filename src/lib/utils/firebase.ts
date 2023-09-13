@@ -7,6 +7,7 @@ import {
 	addDoc,
 	collection,
 	getDocs,
+	getDoc,
 	deleteDoc,
 	doc,
 	where,
@@ -155,14 +156,22 @@ export const fetchBookmarkId = async (userId: string, pageUrl: string): Promise<
 
 export async function fetchAllBookmarks(userId: string): Promise<Array<Bookmark>> {
 	const bookmarks: Array<Bookmark> = [];
-	const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
-	const querySnapshot = await getDocs(bookmarksCollection);
 
-	querySnapshot.forEach((doc) => {
-		bookmarks.push({
-			bookmarkId: doc.id
-		});
-	});
+	try {
+		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
+		const bookmarkDocs = await getDocs(bookmarksCollection);
+
+		for (const doc of bookmarkDocs.docs) {
+			const bookmarkId = doc.id;
+			console.log('Bookmark ID:', bookmarkId);
+			const bookmarkData = doc.data();
+			console.log('Bookmark Data:', bookmarkData);
+			// Combine the bookmark ID and its details into one object
+			bookmarks.push({ bookmarkId, ...bookmarkData });
+		}
+	} catch (error) {
+		console.log('Error fetching all bookmarks:', error);
+	}
 
 	return bookmarks;
 }

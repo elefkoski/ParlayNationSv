@@ -1,6 +1,5 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 
 	let title: string = 'Learn How to Play Craps';
 	let description: string =
@@ -361,7 +360,11 @@
 		</a>
 	</div>
 	<main aria-label="Main content" class="my-6">
-		<ContentHeaderOne sectionTitle="Craps" title="Learn to Play Craps" />
+		<header>
+			<span class="text-lg uppercase font-semibold text-blue-600 dark:text-blue-400">Craps</span>
+			<h1 class="text-slate-400 text-3xl pb-2 font-bold">Learn to Play Craps</h1>
+		</header>
+
 		<div class="flex flex-col space-y-16">
 			<section aria-label="Craps basics">
 				{#each sections as section (title)}

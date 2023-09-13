@@ -10,11 +10,9 @@
 
 	user.subscribe((value) => {
 		current_user = value;
-		//console.log('Navbar current user:', current_user);
 	});
 
 	onAuthStateChanged(auth, (firebaseUser) => {
-		console.log('Firebase User: ', firebaseUser);
 		isAuthenticated = firebaseUser ? true : false;
 		if (firebaseUser) {
 			profilePicture = firebaseUser.photoURL || 'https://picsum.photos/100/100';

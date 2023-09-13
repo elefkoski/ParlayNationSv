@@ -1,27 +1,33 @@
 <script lang="ts">
 	import SingleColumnLayout from '$lib/clients/components/layouts/SingleColumnLayout.svelte';
-	import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
-	import { db, fetchBookmarks } from '$lib/utils/firebase';
+	import { deleteDoc, doc } from 'firebase/firestore';
+	import { db, fetchAllBookmarks } from '$lib/utils/firebase';
 	import ProfileContentCard from '$lib/clients/components/profilePage/ProfileContentCard.svelte';
 	import { bookmarkedPages, user, type User } from '$lib/utils/store';
 
 	let current_user: User | null = null;
+	let bookmarks: any[] = [];
 
-	user.subscribe((value: any) => {
+	user.subscribe(async (value: any) => {
 		current_user = value;
 		if (current_user && current_user.id) {
-			fetchBookmarks(current_user.id);
+			bookmarks = await fetchAllBookmarks(current_user.id);
+			console.log(bookmarks);
 		}
 	});
 
 	async function handleDelete(bookmarkId: string) {
+		console.log('Entered handleDelete');
 		try {
 			// Step 1: Delete from Firestore
 			const bookmarkRef = doc(db, `users/${current_user?.id}/bookmarks`, bookmarkId);
 			await deleteDoc(bookmarkRef);
 
-			// Step 2: Update Svelte store
-			const updatedBookmarks = $bookmarkedPages.filter((b) => b.id !== bookmarkId);
+			// Step 2: Update local state
+			bookmarks = bookmarks.filter((b) => b.bookmarkId !== bookmarkId);
+
+			// Step 3: Update Svelte store
+			const updatedBookmarks = bookmarks.filter((b) => b.bookmarkId !== bookmarkId);
 			bookmarkedPages.set(updatedBookmarks);
 		} catch (error) {
 			console.error('Error deleting bookmark:', error);
@@ -101,15 +107,14 @@
 						>
 							<h2 class="text-xl font-bold mb-4">Learn Craps</h2>
 							<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-								{#if $bookmarkedPages.length > 0}
-									{#each $bookmarkedPages as bookmark}
+								{#if bookmarks.length > 0}
+									{#each bookmarks as bookmark}
 										<ProfileContentCard
 											title={bookmark.title}
 											description={bookmark.description}
 											imageUrl={bookmark.imageUrl}
 											pageUrl={bookmark.pageUrl}
-											id={bookmark.id}
-											onDelete={handleDelete}
+											handleDelete={() => handleDelete(bookmark.bookmarkId)}
 										/>
 									{/each}
 								{:else}

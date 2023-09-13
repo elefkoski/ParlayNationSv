@@ -3,8 +3,7 @@
 	export let description: string = 'A description to my page';
 	export let imageUrl: string = 'https://picsum.photos/1280/720';
 	export let pageUrl: string = '/';
-	export let id: string;
-	export let onDelete: Function;
+	export let handleDelete: (event: MouseEvent) => void;
 </script>
 
 <div

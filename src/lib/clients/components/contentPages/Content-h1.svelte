@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Popup from '../Popup.svelte';
 	import {
 		savePage,
 		removePage,
@@ -7,7 +8,6 @@
 		fetchAllBookmarks
 	} from '$lib/utils/firebase';
 	import { user, bookmarkedPages } from '$lib/utils/store';
-	import { doc, getDoc } from '@firebase/firestore';
 	import { onMount } from 'svelte';
 
 	export let sectionTitle: string = 'Section Title';
@@ -15,9 +15,10 @@
 	export let pageData: any = '';
 
 	let bookmarked = false;
-	let current_bookmark_id: string | null = null; // Initialize it
+	let current_bookmark_id: string | null = null;
 	let bookmarkedPagesValue: any[] = [];
 	let current_user: any = null;
+	let showPopup: boolean = false;
 
 	onMount(async () => {
 		if (current_user && current_user.id) {
@@ -25,16 +26,6 @@
 			bookmarkedPages.set(allBookmarks);
 		}
 	});
-	async function handleBookmarkIdFetch() {
-		if (current_user && current_user.id && pageData.pageUrl) {
-			const fetchedBookmarkId = await fetchBookmarkId(current_user.id, pageData.pageUrl);
-			if (fetchedBookmarkId) {
-				current_bookmark_id = fetchedBookmarkId;
-			} else {
-				current_bookmark_id = null;
-			}
-		}
-	}
 
 	user.subscribe(async (value) => {
 		current_user = value;
@@ -47,78 +38,40 @@
 	});
 
 	bookmarkedPages.subscribe((value) => {
-		console.log('Value:', value);
 		bookmarkedPagesValue = value;
-		console.log('Bokmarked Pages Value:', bookmarkedPagesValue);
 		bookmarked = bookmarkedPagesValue.some(
 			(bookmark) => bookmark.bookmarkId === current_bookmark_id
 		);
-		console.log('Bookmarked:', bookmarked);
 	});
 
 	$: if (current_user && current_bookmark_id) {
 		bookmarked = true;
 	}
 
-	async function bookmarkPage() {
-		console.log('Content-h1: Entering bookmarkPage function');
-		console.log('Content-h1: Current user inside bookmarkPage:', current_user);
-		if (current_user && current_user.id) {
-			//console.log('Debug Content-h1: User is authenticated. Proceeding to save the page.');
-
-			// Debug: Log pageData and current_bookmark_id before the save
-			//console.log('Debug Content-h1: Page data before save:', pageData);
-			//console.log('Debug Content-h1: current_bookmark_id before save:', current_bookmark_id);
-
-			// Save the page to Firestore
-			const bookmarkId = await savePage(current_user.id, pageData);
-			console.log('Content-h1: Re-enter bookmarkPage function');
-			current_bookmark_id = bookmarkId;
-			console.log('Content-h1: bookmarkId after save:', bookmarkId);
-
-			if (bookmarkId) {
-				console.log('Content-h1: Bookmark saved successfully.');
-
-				// Log the updated Firestore document
-				const userRef = doc(db, 'users', current_user.id);
-				//console.log('Debug Content-h1: User Ref:', userRef);
-				console.log('Content-h1: Leaving bookmarkPage function');
-				const userSnap = await getDoc(userRef);
-				console.log('Content-h1: Re-entering bookmarkPage function');
-				if (userSnap.exists()) {
-					console.log('Content-h1: User document exists. userSnap Data:', userSnap.data());
-				} else {
-					console.log('Content-h1: User document does not exist.');
-				}
-
-				// Update local state
-				bookmarkedPages.update((pages) => {
-					console.log('Content-h1: Current bookmarkedPages state:', pages);
-
-					pages.push({ bookmarkId });
-
-					console.log('Content-h1: Updated Application State Bookmarks: ', pages);
-					return pages;
-				});
-
-				const unsubscribe = bookmarkedPages.subscribe((value) => {
-					console.log('Updated bookmarkedPages:', value);
-				});
-				unsubscribe();
-
-				bookmarked = true;
-				console.log('Content-h1: Bookmarked flag set to true');
+	async function handleBookmarkIdFetch() {
+		if (current_user && current_user.id && pageData.pageUrl) {
+			const fetchedBookmarkId = await fetchBookmarkId(current_user.id, pageData.pageUrl);
+			if (fetchedBookmarkId) {
+				current_bookmark_id = fetchedBookmarkId;
 			} else {
-				console.log('Content-h1: Failed to save bookmark.');
+				current_bookmark_id = null;
 			}
-		} else {
-			console.log('Content-h1: User must be logged in to bookmark a page.');
 		}
-		console.log('Content-h1: Leaving bookmarkPage function');
 	}
 
-	console.log(bookmarkedPagesValue);
-	console.log('Current Bookmark ID:', current_bookmark_id);
+	async function bookmarkPage() {
+		if (current_user && current_user.id) {
+			const bookmarkId = await savePage(current_user.id, pageData);
+			if (bookmarkId) {
+				current_bookmark_id = bookmarkId;
+				bookmarkedPages.update((pages) => [...pages, { bookmarkId }]);
+				bookmarked = true;
+			}
+		} else {
+			showPopup = true;
+			setTimeout(() => (showPopup = false), 3000);
+		}
+	}
 
 	async function unBookmarkPage() {
 		const bookmarkToRemove = bookmarkedPagesValue.find((b) => b.bookmarkId === current_bookmark_id);
@@ -128,8 +81,6 @@
 		if (bookmarkToRemove && current_user && current_user.id) {
 			await removePage(current_user.id, bookmarkToRemove.bookmarkId);
 			bookmarked = false;
-		} else {
-			console.log('Content-h1: User must be logged in to remove a bookmark.');
 		}
 	}
 </script>
@@ -154,6 +105,9 @@
 						/></svg
 					>
 				</button>
+				{#if showPopup}
+					<Popup message="You must be signed in to bookmark a page." />
+				{/if}
 			{:else}
 				<p class="text-sm dark:text-orange-400 pt-1 mr-1">Remove bookmark</p>
 				<button on:click={unBookmarkPage}>
