@@ -381,7 +381,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}
@@ -419,7 +419,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}
@@ -458,7 +458,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}
@@ -497,7 +497,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}
@@ -536,7 +536,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}
@@ -575,7 +575,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}
@@ -614,7 +614,7 @@
 							<ul class="space-y-2">
 								{#each section.pages as page}
 									<li
-										class="rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
+										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 									>
 										<a
 											href={page.href}

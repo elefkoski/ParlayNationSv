@@ -14,10 +14,10 @@
 	export let title: string = 'The title';
 	export let pageData: any = '';
 
-	let bookmarked = false;
+	let current_user: any = null;
+	let bookmarked: boolean = false;
 	let current_bookmark_id: string | null = null;
 	let bookmarkedPagesValue: any[] = [];
-	let current_user: any = null;
 	let showPopup: boolean = false;
 
 	onMount(async () => {

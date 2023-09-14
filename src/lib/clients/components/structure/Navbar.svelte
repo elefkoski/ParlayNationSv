@@ -6,10 +6,11 @@
 
 	let current_user: User | null;
 	let isAuthenticated = false;
-	let profilePicture = 'https://picsum.photos/100/100';
+	let profilePicture: string = '';
 
 	user.subscribe((value) => {
 		current_user = value;
+		current_user = { ...value, profilePicture };
 	});
 
 	onAuthStateChanged(auth, (firebaseUser) => {
@@ -27,7 +28,8 @@
 			user.set({
 				id: userId,
 				display_name: displayName || 'Anonymous',
-				email: email
+				email: email,
+				profilePicture: profilePicture
 			});
 		} else {
 			user.set(null);

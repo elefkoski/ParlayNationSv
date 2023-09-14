@@ -7,7 +7,6 @@ import {
 	addDoc,
 	collection,
 	getDocs,
-	getDoc,
 	deleteDoc,
 	doc,
 	where,
@@ -104,20 +103,21 @@ export const facebookSignIn = async () => {
 export const sendPasswordResetEmail = async () => {};
 
 export const savePage = async (userId: string, pageData: any) => {
-	console.log('Debut firebase.ts: Entered savePage function.');
+	//console.log('Debut firebase.ts: Entered savePage function.');
 	let docRefId = null; // Initialize docRefId to null
 	try {
 		//console.log('Debug firebase.ts: User ID:', userId);
-		console.log('Debug firebase.ts: Page data:', pageData);
+		//console.log('Debug firebase.ts: Page data:', pageData);
 		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
 		//console.log('Debug firebase.ts: Bookmarks Collection:', bookmarksCollection);
 		const docRef = await addDoc(bookmarksCollection, pageData);
 		docRefId = docRef.id; // Set docRefId to the id of the document
-		console.log('Debug firebase.ts: Doc Ref Id:', docRefId);
+		//console.log('Debug firebase.ts: Doc Ref:', docRef);
+		//console.log('Debug firebase.ts: Doc Ref Id:', docRefId);
 	} catch (e) {
 		console.error('Error saving bookmark: ', e);
 	}
-	console.log('Debut firebase.ts: Leaving savePage function.');
+	//console.log('Debut firebase.ts: Leaving savePage function.');
 	return docRefId; // Return the id of the document or null if there was an error
 };
 
@@ -163,9 +163,9 @@ export async function fetchAllBookmarks(userId: string): Promise<Array<Bookmark>
 
 		for (const doc of bookmarkDocs.docs) {
 			const bookmarkId = doc.id;
-			console.log('Bookmark ID:', bookmarkId);
+			//console.log('Bookmark ID:', bookmarkId);
 			const bookmarkData = doc.data();
-			console.log('Bookmark Data:', bookmarkData);
+			//console.log('Bookmark Data:', bookmarkData);
 			// Combine the bookmark ID and its details into one object
 			bookmarks.push({ bookmarkId, ...bookmarkData });
 		}

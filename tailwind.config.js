@@ -8,5 +8,22 @@ export default {
 			}
 		}
 	},
+	extend: {
+		utilities: {
+			'.col-count-1': {
+				columnCount: '1'
+			},
+			'.col-count-2': {
+				columnCount: '2'
+			},
+			'.col-count-3': {
+				columnCount: '3'
+			},
+			'.break-inside-avoid': {
+				breakInside: 'avoid'
+			}
+			// Add other utility-related extensions here if needed
+		}
+	},
 	plugins: [require('daisyui')]
 };

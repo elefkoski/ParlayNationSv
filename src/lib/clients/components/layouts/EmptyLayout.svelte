@@ -1,7 +1,6 @@
 <script>
 	import '../../../../app.css';
-	import { enableEventTracking } from '$lib/utils/eventTracking';
-	import { enableScrollTracking } from '$lib/utils/scrollTracking';
+	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -9,6 +8,18 @@
 		enableScrollTracking();
 	});
 </script>
+
+<svelte:head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6DDTMN7FM"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-N6DDTMN7FM');
+	</script>
+</svelte:head>
 
 <div id="parentElement" class="container dark:text-slate-300 mx-auto pt-20 min-h-screen">
 	<slot />

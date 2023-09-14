@@ -1,9 +1,10 @@
 import { writable } from 'svelte/store';
 
 export interface User {
-	id: string;
-	display_name: string;
-	email: string;
+	id?: string;
+	display_name?: string;
+	email?: string;
+	profilePicture?: string;
 }
 export interface Bookmark {
 	bookmarkId: string;
