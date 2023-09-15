@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-
+	import CrapsPageSection from '$lib/clients/components/contentPages/CrapsPageSection.svelte';
 	let title: string = 'Learn How to Play Craps';
 	let description: string =
 		"Want to play the most exciting game in the casino? Learn How to Play Craps so you'll never miss another exciting moment on the table.";
@@ -18,37 +18,49 @@
 					name: 'The Crew',
 					sentence:
 						'Uncover the secrets of a smoothly running craps game by understanding the roles and responsibilities of ',
-					href: 'the-crew'
+					href: 'the-crew',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1'
 				},
 				{
 					name: 'The Craps Table',
 					sentence:
 						'Place your bets wisely and enhance your gaming experience by comprehending the four main sections of ',
-					href: 'the-craps-table'
+					href: 'the-craps-table',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1'
 				},
 				{
 					name: 'The Dice',
 					sentence:
 						'Experience the thrill of holding the fate of the table at your fingertips, and understand the sacred role of ',
-					href: 'the-dice'
+					href: 'the-dice',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1'
 				},
 				{
 					name: 'The Stages',
 					sentence:
 						'Overcome the confusion new players often face in Craps by understanding the intricacies of ',
-					href: 'the-stages'
+					href: 'the-stages',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1'
 				},
 				{
 					name: 'Verbal Betting',
 					sentence:
 						'Stay in sync with the thrilling pace of Craps and comprehend the importance of ',
-					href: 'verbal-betting'
+					href: 'verbal-betting',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1'
 				},
 				{
 					name: 'To Consider',
 					sentence:
 						'Sharpening your Craps skills involves keeping in mind elements like the nuances of self-service bets and effective dealer interactions, all crucial aspects ',
-					href: 'to-consider'
+					href: 'to-consider',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1'
 				}
 			]
 		}
@@ -64,18 +76,24 @@
 				{
 					name: 'Pass Line Basics',
 					sentence: 'Realize the collective joy and pain of Craps betting by mastering the ',
-					href: 'pass-line-basics'
+					href: 'pass-line-basics',
+					src: 'src/images/icons/die-2.svg',
+					alt: 'Die 2'
 				},
 				{
 					name: 'Pass Line Odds',
 					sentence: 'Add another layer to your craps betting, understanding the varying limits of ',
-					href: 'pass-line-odds'
+					href: 'pass-line-odds',
+					src: 'src/images/icons/die-2.svg',
+					alt: 'Die 2'
 				},
 				{
 					name: 'Max Odds on the Pass Line',
 					sentence:
 						'Maximize your winnings with the Pass Line bet from different casinos, a journey described as ',
-					href: 'max-odds'
+					href: 'max-odds',
+					src: 'src/images/icons/die-2.svg',
+					alt: 'Die 2'
 				}
 			]
 		}
@@ -92,25 +110,33 @@
 					name: 'Place Bet Basics',
 					sentence:
 						'There are six different Place Bets. Learn how they can win or lose based on the roll of the dice, an exciting aspect of the game known as ',
-					href: 'place-bet-basics'
+					href: 'place-bet-basics',
+					src: 'src/images/icons/die-3.svg',
+					alt: 'Die 3'
 				},
 				{
 					name: 'Buying Place Bets',
 					sentence:
 						'Try the unique strategy of buying in craps, understanding how paying a commission can lead to True Odds, a concept embodied in ',
-					href: 'buying-place-bets'
+					href: 'buying-place-bets',
+					src: 'src/images/icons/die-3.svg',
+					alt: 'Die 3'
 				},
 				{
 					name: 'Your Money',
 					sentence:
 						"Don't forget the importance of keeping track of your bets, understanding the costs, and ensuring they're placed correctly, a crucial aspect of watching ",
-					href: 'your-money'
+					href: 'your-money',
+					src: 'src/images/icons/die-3.svg',
+					alt: 'Die 3'
 				},
 				{
 					name: 'Presses',
 					sentence:
 						'Navigate through the intricate world of craps where pressing your bets can lead to significant winnings, an exciting strategy encapsulated in  ',
-					href: 'presses'
+					href: 'presses',
+					src: 'src/images/icons/die-3.svg',
+					alt: 'Die 3'
 				}
 			]
 		}
@@ -127,31 +153,41 @@
 					name: 'Across',
 					sentence:
 						'Try your hand at placing all the Place Bets in the same amount, a technique known as betting ',
-					href: 'across'
+					href: 'across',
+					src: 'src/images/icons/die-4.svg',
+					alt: 'Die 4'
 				},
 				{
 					name: 'Inside',
 					sentence:
 						'Discover this easy-peasy way of betting on the numbers 5, 6, 8, and 9 in Craps, known as ',
-					href: 'inside'
+					href: 'inside',
+					src: 'src/images/icons/die-4.svg',
+					alt: 'Die 4'
 				},
 				{
 					name: 'Outside',
 					sentence:
 						'A common way of betting the highest paying Place Bets can be found by betting ',
-					href: 'outside'
+					href: 'outside',
+					src: 'src/images/icons/die-4.svg',
+					alt: 'Die 4'
 				},
 				{
 					name: 'Uptown/Downtown',
 					sentence:
 						'The Craps players utilize the opposite side of the board in their betting strategy, a method known as ',
-					href: 'uptown-downtown'
+					href: 'uptown-downtown',
+					src: 'src/images/icons/die-4.svg',
+					alt: 'Die 4'
 				},
 				{
 					name: 'Including the Point',
 					sentence:
 						'Learn about the unique betting strategy in Craps where players not on the Pass Line bet on all numbers, a method called ',
-					href: 'including-the-point'
+					href: 'including-the-point',
+					src: 'src/images/icons/die-4.svg',
+					alt: 'Die 4'
 				}
 			]
 		}
@@ -168,71 +204,95 @@
 					name: 'Proposition Basics',
 					sentence:
 						'From the center of the table to the field, explore the engaging and complex world of ',
-					href: 'proposition-basics'
+					href: 'proposition-basics',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'The Hardways',
 					sentence:
 						"By offering good returns and the ability to win with your Pass Line Bet, the game's charm lies in ",
-					href: 'the-hardways'
+					href: 'the-hardways',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Straight Up',
 					sentence:
 						'To rapidly increase your earnings, consider the high payouts and exciting dynamics of ',
-					href: 'straight-up'
+					href: 'straight-up',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'C & E',
 					sentence:
 						"If you're interested in a cost-effective alternative to the Horn, delve into the world of ",
-					href: 'c-and-e'
+					href: 'c-and-e',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Any Seven',
 					sentence:
 						"Venture into the strategic world of Don't players and their unique utilization of ",
-					href: 'any-seven'
+					href: 'any-seven',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Any Craps',
 					sentence: 'Explore the similarities and differences between Three Way Crap and the ',
-					href: 'any-craps'
+					href: 'any-craps',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'The Field',
 					sentence:
 						'Discover the excitement of one-roll bets on a broad range of numbers anytime you want in  ',
-					href: 'the-field'
+					href: 'the-field',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Multi-Bets',
 					sentence:
 						'Enhance your gaming experience by understanding the dynamics and strategies of  ',
-					href: 'multi-bets'
+					href: 'multi-bets',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Horn',
 					sentence:
 						'Experience the convenience of betting all four Straight Up bets simultaneously through the ',
-					href: 'horn'
+					href: 'horn',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Horn High',
 					sentence:
 						'Spread your money around a bunch of prop bets and pick a special number to root for with  ',
-					href: 'horn-high'
+					href: 'horn-high',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'World',
 					sentence:
 						'Mitigate the risk of losing to a roll of the 7 by embracing the unique strategy of the ',
-					href: 'world'
+					href: 'world',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				},
 				{
 					name: 'Hop Bets',
 					sentence: 'Betting strategies become more exciting when you engage with ',
-					href: 'hop-bets'
+					href: 'hop-bets',
+					src: 'src/images/icons/die-5.svg',
+					alt: 'Die 5'
 				}
 			]
 		}
@@ -249,19 +309,25 @@
 					name: 'Come Bet Basics',
 					sentence:
 						'Discover the intricacies of mini Pass Line bets and the potential of adding Odds in ',
-					href: 'come-bet-basics'
+					href: 'come-bet-basics',
+					src: 'src/images/icons/die-6.svg',
+					alt: 'Die 6'
 				},
 				{
 					name: 'Come Bet Odds',
 					sentence:
 						'Learn about the flexibility of betting less than the table minimum and non-contract nature of Odds in ',
-					href: 'come-bet-odds'
+					href: 'come-bet-odds',
+					src: 'src/images/icons/die-6.svg',
+					alt: 'Die 6'
 				},
 				{
 					name: 'Coming Down w/Odds',
 					sentence:
 						'Learn the setup and nuances of using your Place bet and its payment as Odds in ',
-					href: 'coming-down-with-odds'
+					href: 'coming-down-with-odds',
+					src: 'src/images/icons/die-6.svg',
+					alt: 'Die 6'
 				}
 			]
 		}
@@ -277,27 +343,42 @@
 				{
 					name: "Don't Pass",
 					sentence: 'To master the art of craps, familiarize yourself with the betting the ',
-					href: 'dont-pass'
+					href: 'dont-pass',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1 turned',
+					transform: 'transform rotate-45'
 				},
 				{
 					name: "Don't Pass Lay Odds",
 					sentence: 'Leverage your craps game with a deeper understanding of the ',
-					href: 'dont-pass-lay-odds'
+					href: 'dont-pass-lay-odds',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1 turned',
+					transform: 'transform rotate-45'
 				},
 				{
 					name: "Don't Come",
 					sentence: 'Enhance your craps strategy with a comprehensive understanding of the ',
-					href: 'dont-come'
+					href: 'dont-come',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1 turned',
+					transform: 'transform rotate-45'
 				},
 				{
 					name: "Don't Come Lay Odds",
 					sentence: 'Make your craps game more exciting and strategic by understanding ',
-					href: 'dont-come-lay-odds'
+					href: 'dont-come-lay-odds',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1 turned',
+					transform: 'transform rotate-45'
 				},
 				{
 					name: 'Overlays',
 					sentence: 'Stand a cut above the rest in craps by mastering the art of betting ',
-					href: 'overlays'
+					href: 'overlays',
+					src: 'src/images/icons/die-1.svg',
+					alt: 'Die 1 turned',
+					transform: 'transform rotate-45'
 				}
 			]
 		}
@@ -361,275 +442,38 @@
 
 		<div class="flex flex-col space-y-16">
 			<section aria-label="Craps basics">
-				{#each sections as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-1.svg"
-												alt="Die 1"
-												class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150"
-											/>
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 			<section aria-label="The Pass Line">
-				{#each sections2 as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-2.svg"
-												alt="die 2"
-												class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150"
-											/>
-
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections2 as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 			<section aria-label="Place Bets">
-				{#each sections3 as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-3.svg"
-												alt="die 3"
-												class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150"
-											/>
-
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections3 as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 			<section aria-label="Spread Bets">
-				{#each sections4 as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-4.svg"
-												alt="die 4"
-												class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150"
-											/>
-
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections4 as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 			<section aria-label="Proposition Bets">
-				{#each sections5 as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-5.svg"
-												alt="die 5"
-												class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150"
-											/>
-
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections5 as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 			<section aria-label="Come Bets">
-				{#each sections6 as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-6.svg"
-												alt="die 6"
-												class="w-6 h-6 filter mr-4 dark:invert dark:brightness-200 dark:saturate-150"
-											/>
-
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections6 as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 			<section aria-label="Dont Bets">
-				{#each sections7 as section (title)}
-					<div class="grid grid-cols-1 md:grid-cols-8 gap-8">
-						<div class="grid md:col-span-3 content-center">
-							<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-							<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-							<p class="pb-4 text-black dark:text-gray-300">
-								{section.description}
-							</p>
-							<a href={section.href} class="justify-self-end">READ MORE</a>
-						</div>
-						<div class="flex flex-col gap-2 md:col-span-5 justify-center">
-							<ul class="space-y-2">
-								{#each section.pages as page}
-									<li
-										class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-									>
-										<a
-											href={page.href}
-											class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
-										>
-											<img
-												src="src/images/icons/die-1.svg"
-												alt="die-1"
-												class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150 transform rotate-45"
-											/>
-
-											<span
-												>{page.sentence}
-												<span class="font-semibold text-orange-300">{page.name}</span>.</span
-											>
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+				{#each sections7 as section (section.title)}
+					<CrapsPageSection {section} />
 				{/each}
 			</section>
 		</div>
