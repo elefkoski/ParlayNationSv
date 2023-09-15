@@ -41,9 +41,11 @@ export function enableEventTracking() {
 			const trackType = target.getAttribute('data-track');
 
 			if (trackType) {
+				const currentPage = window.location.pathname;
 				gtag('event', 'click', {
 					event_category: 'Element',
-					event_label: trackType
+					event_label: trackType,
+					event_action: currentPage
 				});
 			}
 		});
