@@ -9,5 +9,7 @@
 	<LeftNavStructure>
 		<LeftNavPracticeMenu />
 	</LeftNavStructure>
-	<StructureRemaining />
+	<StructureRemaining>
+		<slot />
+	</StructureRemaining>
 </MasterLayout>

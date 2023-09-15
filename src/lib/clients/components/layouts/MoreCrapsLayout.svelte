@@ -9,5 +9,7 @@
 	<LeftNavStructure>
 		<LeftNavMoreMenu />
 	</LeftNavStructure>
-	<StructureRemaining />
+	<StructureRemaining>
+		<slot />
+	</StructureRemaining>
 </MasterLayout>
