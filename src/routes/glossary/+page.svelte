@@ -1876,7 +1876,7 @@
 	>
 		<h1 class="text-4xl font-bold mb-10 text-center dark:text-white">Craps Glossary</h1>
 		<div class="space-y-4">
-			{#each sets as set (set.word)}
+			{#each sets as set}
 				<p><strong class="text-lg dark:text-stone-400">{set.word}</strong> - {set.definition}</p>
 			{/each}
 		</div>

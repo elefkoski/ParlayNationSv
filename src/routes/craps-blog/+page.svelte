@@ -9,12 +9,12 @@
 		{
 			title: 'The First Headline Should Be Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some text at I will use to fill in the space in this box for this article.'
 		},
 		{
 			title: 'The Second Headline Should Be Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some text that I will use to fill in thspace in this box for this article.'
 		},
 		{
 			title: 'The Third Headline Should Be Important.',
@@ -24,61 +24,57 @@
 		{
 			title: 'The Fourth Headline Should Be Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is se text that I will use to fill in the space in this box for this article.'
 		},
 		{
 			title: 'The Fifth Headline Should Be Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some text thatI will use to fill in the spac in this box for this article.'
 		}
 	];
 	let sections2 = [
 		{
 			title: 'A Title',
 			href: '/',
-			description:
-				'This is going to be the not so very long description used to talk about the page.'
+			description: 'This is going t be the not so very long description usedto talk about the page.'
 		},
 		{
-			title: 'A Title',
+			title: 'A Title 2',
 			href: '/',
-			description:
-				'This is going to be the not so very long description used to talk about the page.'
+			description: 'This is goin to be the not so very long descriion used to talk about the page.'
 		},
 		{
-			title: 'A Title',
+			title: 'A Title 3',
 			href: '/',
-			description:
-				'This is going to be the not so very long description used to talk about the page.'
+			description: 'This is going to be e not so very long description use to talk about the page.'
 		},
 		{
-			title: 'A Title',
+			title: 'A Title 4',
 			href: '/',
-			description:
-				'This is going to be the not so very long description used to talk about the page.'
+			description: 'This is going to be the not sovery long descripton used to talk about the page.'
 		}
 	];
 	let sections3 = [
 		{
-			title: 'A Title',
+			title: 'A Title 5',
 			href: '/',
 			description:
 				'This is going to be the not so very long description used to talk about the page.'
 		},
 		{
-			title: 'A Title',
+			title: 'A Title 6',
 			href: '/',
 			description:
 				'This is going to be the not so very long description used to talk about the page.'
 		},
 		{
-			title: 'A Title',
+			title: 'A Title 7',
 			href: '/',
 			description:
 				'This is going to be the not so very long description used to talk about the page.'
 		},
 		{
-			title: 'A Title',
+			title: 'A Title 8',
 			href: '/',
 			description:
 				'This is going to be the not so very long description used to talk about the page.'
@@ -86,39 +82,39 @@
 	];
 	let sections4 = [
 		{
-			title: 'The First Headline Should Be Important.',
+			title: 'The First Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some text that I wil use to fill in the pace in this box forthis article.'
 		},
 		{
-			title: 'The Second Headline Should Be Important.',
+			title: 'The Second Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some tex that I will use t fill in the space in this box fr this article.'
 		},
 		{
-			title: 'The Third Headline Should Be Important.',
+			title: 'The Third Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some tex that I will use tofill in the space in thisbox for this article.'
 		},
 		{
-			title: 'The Fourth Headline Should Be Important.',
+			title: 'The Fourth Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Her is some tet that I wil use to fill in the space in tis box for this article.'
 		},
 		{
-			title: 'The Fifth Headline Should Be Important.',
+			title: 'The Fifth Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is sme text that I wil use to fill in the spacein this box fr this article.'
 		},
 		{
-			title: 'The Fifth Headline Should Be Important.',
+			title: 'The Sixth Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some text that I will use to fill in th spacein this bx for this article.'
 		},
 		{
-			title: 'The Fifth Headline Should Be Important.',
+			title: 'The Seventh Headline Should Be More Important.',
 			description:
-				'Here is some text that I will use to fill in the space in this box for this article.'
+				'Here is some text hat I will se to fill in th space in this box for this article.'
 		}
 	];
 </script>
@@ -169,7 +165,7 @@
 			</div>
 			<div class="pt-8 lg:pt-0 lg:col-span-3">
 				<h3 class="border-b-4 border-red-500 text-2xl font-bold pb-2 mb-4">Featured Posts</h3>
-				{#each sections as section (title)}
+				{#each sections as section (section.title)}
 					<div class="border-slate-11 border-b-2 pb-3 mb-4">
 						<h4 class="border-red-400 font-bold">{section.title}</h4>
 						<p>{section.description}</p>
@@ -212,7 +208,7 @@
 				<span class="border-b-2 border-indigo-400 flex-grow" />
 			</div>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-				{#each sections3 as section (title)}
+				{#each sections3 as section (section.title)}
 					<div class="card card-side bg-base-100 shadow-xl">
 						<figure>
 							<img src="https://picsum.photos/300/300" alt="Movie" />
@@ -257,7 +253,7 @@
 				<h3 class="border-b-4 border-green-500 text-2xl font-bold pb-2 mb-4">
 					Some Other Featured
 				</h3>
-				{#each sections4 as section (title)}
+				{#each sections4 as section (section.title)}
 					<div class="border-slate-11 border-b-2 pb-3 mb-4">
 						<h4 class="border-red-400 font-bold">{section.title}</h4>
 						<p>{section.description}</p>
