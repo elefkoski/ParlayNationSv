@@ -1,6 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
 	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
@@ -206,5 +207,5 @@
 			alt="An empty table with the stick laying flat and the bowl resting on top of the stick. Five dice sit in the bowl."
 		/>
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

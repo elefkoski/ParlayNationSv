@@ -9,6 +9,7 @@
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/clients/components/contentPages/Content-h3.svelte';
@@ -23,9 +24,9 @@
 		'Odds for the Pass Line pay differently depending on what the Point is. They get paid True Odds and have no advantage for the casino, which is why they have limits.';
 	let url: string = 'pass-line-odds';
 
-	let phref: string = '/pass-line-basics';
+	let phref: string = 'pass-line-basics';
 	let prev: string = 'Pass Line Basics';
-	let nhref: string = '/max-odds';
+	let nhref: string = 'max-odds';
 	let next: string = 'Max Odds';
 
 	let tblAria: string = 'Odds pay table';
@@ -220,5 +221,5 @@
 			alt="$10 on the pass line with $20 odds. Next to it is a $1 pass line bet with $2 odds."
 		/>
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

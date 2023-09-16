@@ -37,10 +37,15 @@ export function enableEventTracking() {
 				console.log('gtag is not defined');
 				return;
 			}
-			const target = event.target as HTMLElement;
-			const trackType = target.getAttribute('data-track');
+			let target: HTMLElement | null = event.target as HTMLElement;
 
-			if (trackType) {
+			// Traverse up to find the closest parent that has a 'data-track' attribute
+			while (target && !target.getAttribute('data-track')) {
+				target = target.parentElement;
+			}
+
+			if (target) {
+				const trackType = target.getAttribute('data-track');
 				const currentPage = window.location.pathname;
 				gtag('event', 'click', {
 					event_category: 'Element',

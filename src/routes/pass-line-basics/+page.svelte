@@ -12,15 +12,16 @@
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import Link from '$lib/clients/components/Link.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Learn the Pass Line';
 	let description: string =
 		"It's pretty much as easy as putting your money on the line then sitting back and waiting for your point to Roll.";
 	let url: string = 'pass-line-basics';
 
-	let phref: string = '/the-pass-line';
+	let phref: string = 'the-pass-line';
 	let prev: string = 'The Pass Line';
-	let nhref: string = '/pass-line-odds';
+	let nhref: string = 'pass-line-odds';
 	let next: string = 'Pass Line Odds';
 
 	let tblAria: string = 'Stages pay table';
@@ -100,7 +101,7 @@
 		<p class="pb-4">
 			If you want to bet the number the Pass Line represents, you can always <Link
 				text="Place it"
-				href="/place-bet-basics"
+				href="place-bet-basics"
 			/> instead.
 		</p>
 		<ContentImg
@@ -136,7 +137,7 @@
 			win. If they roll the 7 before the Point, you lose. No other rolls matter. If the shooter
 			makes their Point, the puck will be turned OFF, and a new Comeout Roll will begin. The same
 			shooter will establish another Point, and the game repeats. If the Shooter doesn't make their
-			Point, the puck will be turned OFF, and <Link text="the dice" href="/the-dice" /> will be passed
+			Point, the puck will be turned OFF, and <Link text="the dice" href="the-dice" /> will be passed
 			to the next shooter.
 		</p>
 		<p class="pb-4">
@@ -218,5 +219,5 @@
 			alt="A $20 bet on the pass line with a dollar sitting next to it."
 		/>
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

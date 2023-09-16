@@ -1,6 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
 	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
@@ -70,12 +71,12 @@
 			keep an eye on your own bets and not forget to pick up your winnings. If you forget whether a
 			bet is yours, don't be afraid to ask the player next to you. Normally they will tell the truth
 			out of fear of being called out by the dealers if they lie. The self-service bets are the Pass
-			Line and Odds, the <Link text="Don't Pass" href="/dont-pass" /> and its <Link
+			Line and Odds, the <Link text="Don't Pass" href="dont-pass" /> and its <Link
 				text="Lay Odds"
-				href="/dont-pass-lay-odds"
-			/>, the <Link text="Come Bet" href="/come-bet-basics" />, the <Link
+				href="dont-pass-lay-odds"
+			/>, the <Link text="Come Bet" href="come-bet-basics" />, the <Link
 				text="Don't Come"
-				href="/dont-come"
+				href="dont-come"
 			/>, and <Link text="the Field" href="the-field" />. All other bets on the table are taken care
 			of by the dealers.
 		</p>
@@ -112,7 +113,7 @@
 			sees you, they'll turn their head. String Betting is when you make one bet, then another, then
 			another… etc. It's making the dealer go back and forth repeatedly. Learn <Link
 				text="Spread Bets"
-				href="/spread-bets"
+				href="spread-bets"
 			/> so you can make multiple bets simultaneously or know what you want before you start handing
 			the dealer money and tell them all at once.
 		</p>
@@ -155,10 +156,10 @@
 			shooter because the dealer is the one servicing both people. E.g., if you throw $3 to <Link
 				text="the
 		stickperson"
-				href="/the-crew"
+				href="the-crew"
 			/>, you would say <Quote text="Three-Way Aces" />, meaning $1 on <Link
 				text="Aces"
-				href="/straight-up"
+				href="straight-up"
 			/> for each the shooter, the dealers, and yourself.
 		</p>
 		<ContentImg
@@ -173,9 +174,9 @@
 		<ContentHeaderTwo title="What Does it Mean to Hedge Your Bets at the Craps Table?" />
 		<p class="pb-4">
 			Hedging is insurance. It's making a bet that wins when another bet loses. A common hedge bet
-			is the <Link text="Any Craps" href="/any-craps" /> when you're betting the <Link
+			is the <Link text="Any Craps" href="any-craps" /> when you're betting the <Link
 				text="Pass Line"
-				href="/pass-line-basics"
+				href="pass-line-basics"
 			/>. The Pass Line loses during the Comeout Roll when a 2, 3, or 12 is rolled, and the Any
 			Craps wins when the 2, 3, or 12 rolls. To protect a $5 Pass Line bet, you would bet $1 on the
 			Any Craps. If a crap rolls, the $5 Pass Line would lose but, you would win $7 for your $1 Any
@@ -190,5 +191,5 @@
 			alt="Ten dollars on the pass line with two dollars on the any crap."
 		/>
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

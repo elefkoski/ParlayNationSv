@@ -28,12 +28,14 @@
 	</div>
 	<div class="mt-4 flex justify-between">
 		<a
+			data-track="view-pdf-{pageUrl}"
 			href={pageUrl}
 			class="px-3 py-2 bg-blue-600 text-white text-xs font-medium rounded hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-300"
 			>View</a
 		>
 
 		<a
+			data-track="dwnld-pdf-{pageUrl}"
 			href={pdfUrl}
 			target="_blank"
 			rel="noopener noreferrer"

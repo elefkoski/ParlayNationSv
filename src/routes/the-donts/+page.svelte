@@ -3,6 +3,7 @@
 	import HomeHeadings from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = "The Don'ts";
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/dont-pass-wide-header.webp',
 			alt: "The Don't Pass",
 			title: "The Don't Pass",
-			href: '/dont-pass',
+			href: 'dont-pass',
 			body: "The Don't Pass is the opposite of the Pass Line. Where one wins, the other loses.",
 			badges: ["Betting The Don'ts", "Don't Pass Stages", "Don't Pass Payment", "Dealer Don't Pass"]
 		},
@@ -35,7 +36,7 @@
 			lgImg: 'src/images/' + url + '/dont-pass-lay-odds-wide-header.webp',
 			alt: "Don't Pass Lay Odds",
 			title: "Don't Pass Lay Odds",
-			href: '/dont-pass-lay-odds',
+			href: 'dont-pass-lay-odds',
 			body: "Lay Odds are an extra bet you can add to your Don't Pass that gets paid True Odds.",
 			badges: ['Betting DP Lay Odds', 'DP Lay Odds Payment', 'Max Lay Odds', 'Dealer DP Lay Odds']
 		},
@@ -47,7 +48,7 @@
 			lgImg: 'src/images/' + url + '/dont-come-wide-header.webp',
 			alt: "Don't Come",
 			title: "Don't Come",
-			href: '/dont-come',
+			href: 'dont-come',
 			body: "Don't Comes are just like mini Don't Pass bets. It's always betting against the next Point number to roll.",
 			badges: [
 				"Betting Don't Come",
@@ -67,7 +68,7 @@
 			lgImg: 'src/images/' + url + '/dont-come-lay-odds-wide-header.webp',
 			alt: "Don't Come Lay Odds",
 			title: "Don't Come Lay Odds",
-			href: '/dont-come-lay-odds',
+			href: 'dont-come-lay-odds',
 			body: "Just like the Don't Pass, you can add Lay Odds to your Don't Come bet which gets paid True Odds.",
 			badges: [
 				'Betting DC Lay Odds',
@@ -85,7 +86,7 @@
 			lgImg: 'src/images/' + url + '/overlays-wide-header.webp',
 			alt: 'Overlays',
 			title: 'Overlays',
-			href: '/overlays',
+			href: 'overlays',
 			body: "If you can make a proper Overlay, vig and all, I'd say you've learned how to play Craps.",
 			badges: ['5% Commission', 'Betting Overlays', 'Overlay Placement', 'Overlay Payments']
 		}
@@ -182,11 +183,11 @@
 			."
 			pThree="Delve into the strategy of 'Overlay' betting, a nuanced technique that involves betting directly against a chosen Point."
 			button="Learn the don't pass"
-			href="/dont-pass"
+			href="dont-pass"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

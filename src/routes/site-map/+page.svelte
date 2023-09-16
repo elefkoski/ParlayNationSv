@@ -248,7 +248,11 @@
 					<ul>
 						{#each section.links as link, index (link)}
 							<li class="ml-4 list-disc">
-								<a href={section.href[index]} class="underline">{link}</a>
+								<a
+									data-track="site-map-{section.href[index]}"
+									href={section.href[index]}
+									class="underline">{link}</a
+								>
 							</li>
 						{/each}
 					</ul>
@@ -261,7 +265,11 @@
 						<ul>
 							{#each section.links as link, index (link)}
 								<li class="ml-4 list-disc">
-									<a href={section.href[index]} class="underline">{link}</a>
+									<a
+										data-track="site-map-{section.href[index]}"
+										href={section.href[index]}
+										class="underline">{link}</a
+									>
 								</li>
 							{/each}
 						</ul>
@@ -273,7 +281,11 @@
 						<ul>
 							{#each section.links as link, index (link)}
 								<li class="ml-4 list-disc">
-									<a href={section.href[index]} class="underline">{link}</a>
+									<a
+										data-track="site-map-{section.href[index]}"
+										href={section.href[index]}
+										class="underline">{link}</a
+									>
 								</li>
 							{/each}
 						</ul>

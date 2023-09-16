@@ -21,7 +21,15 @@ export default {
 			},
 			'.break-inside-avoid': {
 				breakInside: 'avoid'
+			},
+			'.bottom-background': {
+				height: '100px',
+				'background-color': 'white',
+				'@screen dark': {
+					'background-color': 'black'
+				}
 			}
+
 			// Add other utility-related extensions here if needed
 		}
 	},

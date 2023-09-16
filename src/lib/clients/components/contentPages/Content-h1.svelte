@@ -93,7 +93,7 @@
 		<div class="flex">
 			{#if !bookmarked}
 				<p class="text-sm dark:text-orange-400 pt-1 mr-1">Bookmark this page</p>
-				<button on:click={bookmarkPage}>
+				<button data-track="bookmark" on:click={bookmarkPage}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
@@ -110,7 +110,7 @@
 				{/if}
 			{:else}
 				<p class="text-sm dark:text-orange-400 pt-1 mr-1">Remove bookmark</p>
-				<button on:click={unBookmarkPage}>
+				<button data-track="unbookmark" on:click={unBookmarkPage}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"

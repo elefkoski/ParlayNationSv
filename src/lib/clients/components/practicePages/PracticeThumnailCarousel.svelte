@@ -122,6 +122,7 @@
 	<div class="flex overflow-x-auto mt-4 space-x-2 scrollbar-hide" bind:this={scrollContainer}>
 		{#each options as { url, href, title }, i}
 			<a
+				data-track="carousel-{href}"
 				{href}
 				rel="noopener noreferrer"
 				class="focus:outline-none flex-shrink-0 inline-block w-36"

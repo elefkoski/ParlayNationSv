@@ -3,6 +3,7 @@
 	import HomeHeader from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Learn the Craps Basics';
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/the-crew-wide-header.webp',
 			alt: 'The Crew',
 			title: 'The Crew',
-			href: '/the-crew',
+			href: 'the-crew',
 			body: 'What are the jobs of the dealer, the box, and the floor? Each play a different role on the Craps table.',
 			badges: ['The Box', 'The Base Dealers', 'The Stickperson', 'The Supervisor']
 		},
@@ -35,7 +36,7 @@
 			lgImg: 'src/images/' + url + '/the-craps-table-wide-header.webp',
 			alt: 'The Craps Table',
 			title: 'The Craps Table',
-			href: '/the-craps-table',
+			href: 'the-craps-table',
 			body: 'Know all the parts of the Craps table. Learn what the puck does, what the bank is, and what the betting areas are.',
 			badges: [
 				'The Rail',
@@ -56,7 +57,7 @@
 			lgImg: 'src/images/' + url + '/the-dice-wide-header.webp',
 			alt: 'The Dice',
 			title: 'The Dice',
-			href: '/the-dice',
+			href: 'the-dice',
 			body: 'The Dice play the most important role on a Craps table. Learn how to deal with the shooter and what not to do with the dice.',
 			badges: ['Shooting the Dice', 'Watching the Dice', 'Craps Courtesies', 'Being Hit']
 		},
@@ -68,7 +69,7 @@
 			lgImg: 'src/images/' + url + '/the-stages-wide-header.webp',
 			alt: 'The Stages',
 			title: 'The Stages',
-			href: '/the-stages',
+			href: 'the-stages',
 			body: 'Make sure you know what stage of the game the players are in in order to keep from getting yelled at.',
 			badges: ['Comeout Roll', 'Intermediate Roll', 'Buying In', 'Coloring Up', 'The Number 7']
 		},
@@ -80,7 +81,7 @@
 			lgImg: 'src/images/' + url + '/verbal-betting-wide-header.webp',
 			alt: 'Verbal Betting',
 			title: 'Verbal Betting',
-			href: '/verbal-betting',
+			href: 'verbal-betting',
 			body: 'Communication is key in Craps. All the bets can be made while the dice are out and without a single cheque hitting the layout.',
 			badges: [
 				'Verbal Declarations',
@@ -99,7 +100,7 @@
 			lgImg: 'src/images/' + url + '/to-consider-wide-header.webp',
 			alt: 'To Consider',
 			title: 'To Consider',
-			href: '/to-consider',
+			href: 'to-consider',
 			body: 'A few other Craps considerations to keep in mind while at the table.',
 			badges: ['Self Service', 'Lays It Plays', 'String Betting', 'Two Way', 'Three Way', 'Hedging']
 		}
@@ -207,11 +208,11 @@
 			pTwo="Dive deep into the phases of a craps game: the Comeout Roll and the Intermediate Roll, and how they shape the dynamics of the game."
 			pThree="Delve into the nuances of craps etiquette and betting strategies, including self-service bets, two-way bets, and hedging your bets."
 			button="Learn the crew"
-			href="/the-crew"
+			href="the-crew"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

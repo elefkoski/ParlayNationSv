@@ -3,6 +3,7 @@
 	import HomeHeadings from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Place Bets';
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/place-bet-basics-wide-header.webp',
 			alt: 'Place Bet Basics',
 			title: 'Place Bet Basics',
-			href: '/place-bet-basics',
+			href: 'place-bet-basics',
 			body: 'Learn what Place Bets are, where your bets are, and how to properly bet Place Bets.',
 			badges: [
 				'Betting a Place Bet',
@@ -42,7 +43,7 @@
 			lgImg: 'src/images/' + url + '/buying-place-bets-wide-header.webp',
 			alt: 'Buying Place Bets',
 			title: 'Buying Place Bets',
-			href: '/buying-' + url + '',
+			href: 'buying-' + url + '',
 			body: "Once you get to a large enough Place Bet you want to take advantage of the option to 'Buy' the Place Bet and get paid true odds.",
 			badges: ['5% Commission', 'Betting a Buy Bet', 'Buy Bet Placement', 'Buy Bet Payment']
 		},
@@ -54,7 +55,7 @@
 			lgImg: 'src/images/' + url + '/your-money-wide-header.webp',
 			alt: 'Your Money',
 			title: 'Your Money',
-			href: '/your-money',
+			href: 'your-money',
 			body: "You should understand what's happening to the money you have on the layout. Learn what to watch for to make sure your money is being handled properly.",
 			badges: ['Right Change', 'Right Spot', 'Right Number']
 		},
@@ -66,7 +67,7 @@
 			lgImg: 'src/images/' + url + '/presses-wide-header.webp',
 			alt: 'Presses',
 			title: 'Presses',
-			href: '/presses',
+			href: 'presses',
 			body: 'There are systems designed to add money to one or multiple Place Bets at the same time. Using presses makes the game run smoother for everyone involved.',
 			badges: ['A Unit', 'Standard Presses', 'Odd/PowerPresses', 'Multiple Unit Presses']
 		},
@@ -78,7 +79,7 @@
 			lgImg: 'src/images/' + url + '/spread-bets-wide-header.webp',
 			alt: 'Spread Bets',
 			title: 'Spread Bets',
-			href: '/spread-bets',
+			href: 'spread-bets',
 			body: 'Spread Bets are betting multiple Place Bets at the same time. Use these to avoid string betting all your bets individually.',
 			badges: ['Across', 'Inside', 'Outside', 'Uptown/Downtown', 'Including the Point']
 		}
@@ -162,11 +163,11 @@
 			pTwo="Learn how to bet correctly in a craps game, including where to place your money and how to ensure your bets are in the correct spot."
 			pThree="Master the art of pressing your bets, a key strategy to increase winnings in the game of craps."
 			button="Learn Place Bet Basics"
-			href="/place-bet-basics"
+			href="place-bet-basics"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

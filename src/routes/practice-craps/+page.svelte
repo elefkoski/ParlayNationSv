@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PracticeLayout from '$lib/clients/components/layouts/PracticeCrapsLayout.svelte';
-	import DownloadabeSection from '$lib/clients/components/DownloadabeSection.svelte';
+	import DownloadabeSection from '$lib/clients/components/practicePages/DownloadabeSection.svelte';
 
 	let title: string = 'Practice Craps';
 	let description: string =

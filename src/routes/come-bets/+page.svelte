@@ -3,6 +3,7 @@
 	import HomeHeader from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Come Bets';
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/come-bet-basics-wide-header.webp',
 			alt: 'Come Bet Basics',
 			title: 'Come Bet Basics',
-			href: '/come-bet-basics',
+			href: 'come-bet-basics',
 			body: 'There are two stages to a Come Bet. Learn how to bet them and how they win.',
 			badges: [
 				'Betting Come Bets',
@@ -43,7 +44,7 @@
 			lgImg: 'src/images/' + url + '/come-bet-odds-wide-header.webp',
 			alt: 'Come Bet Odds',
 			title: 'Come Bet Odds',
-			href: '/come-bet-odds',
+			href: 'come-bet-odds',
 			body: 'Like the Pass Line, you can add Odds to your Come bet which have no advantage for the casino.',
 			badges: [
 				'Betting Come Odds',
@@ -62,7 +63,7 @@
 			lgImg: 'src/images/' + url + '/coming-down-with-odds-wide-header.webp',
 			alt: 'Coming Down w/Odds',
 			title: 'Coming Down w/Odds',
-			href: '/coming-down-with-odds',
+			href: 'coming-down-with-odds',
 			body: 'When you play a Come and Place Bet at the same time you should take the Place Bet down and add Odds to your Come Bet.',
 			badges: ['The Setup', 'Come Bet Moves', 'Handed Off']
 		}
@@ -134,11 +135,11 @@
 			pTwo="Analyze the payout structure and betting odds associated with Come Bets, a crucial aspect of strategic gameplay."
 			pThree="Explore the strategy of 'Coming Down with Odds', a nuanced technique that involves leveraging Place Bets as odds for the Come Bet."
 			button="Learn come bets"
-			href="/come-bet-basics"
+			href="come-bet-basics"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

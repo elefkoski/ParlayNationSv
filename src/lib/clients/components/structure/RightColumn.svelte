@@ -2,7 +2,7 @@
 	Get more knowledge sent straight to your inbox. Sign up for new updates, announcements and more.
 </p>
 <input type="text" placeholder="Type here" class="input input-bordered w-full" />
-<button class="btn btn-neutral">Subscribe</button>
+<button data-track="subscribe" class="btn btn-neutral">Subscribe</button>
 <section
 	aria-label="How to play craps pdf download"
 	class="flex flex-col items-center text-center space-y-6"
@@ -13,7 +13,7 @@
 		<div class="absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20" />
 	</figure>
 	<p>Want something quick? Download the free guide on How to Play Craps in 15 Minutes.</p>
-	<button class="btn"
+	<button class="btn" data-track="download-htpc"
 		>Download<svg
 			class="fill-current w-4 h-4 mr-2"
 			xmlns="http://www.w3.org/2000/svg"

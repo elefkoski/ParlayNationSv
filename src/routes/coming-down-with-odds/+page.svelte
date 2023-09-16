@@ -1,6 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
 	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
@@ -104,5 +105,5 @@
 			alt="Three way split image. Left shows $12 place bet and $14 payment. Top shows $10 come bet with $20 odds. Bottom shows $6 handed off to player."
 		/>
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

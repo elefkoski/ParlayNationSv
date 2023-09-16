@@ -30,6 +30,6 @@
 </svelte:head>
 
 <Navbar />
-<div id="parentElement" class=" container mx-auto flex flex-wrap pt-20 dark:text-slate-300">
+<div id="parentElement" class=" container mx-auto flex flex-wrap pt-20 dark:text-slate-300 z-10">
 	<slot />
 </div>

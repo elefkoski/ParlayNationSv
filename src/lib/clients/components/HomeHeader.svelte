@@ -17,6 +17,7 @@
 	<p class="text-gray-700 dark:text-gray-300 mb-4">{pTwo}</p>
 	<p class="text-gray-700 dark:text-gray-300 mb-4">{pThree}</p>
 	<a
+		data-track="home-header-{href}"
 		{href}
 		class="btn bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800"
 	>

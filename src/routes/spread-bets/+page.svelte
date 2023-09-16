@@ -3,6 +3,7 @@
 	import HomeHeadings from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Spread Bets';
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/across-wide-header.webp',
 			alt: 'Across',
 			title: 'Across',
-			href: '/across',
+			href: 'across',
 			body: 'When your betting the Pass Line and you still want to bet all the numbers.',
 			badges: ['Across w/o Commission', 'Across w/Commission']
 		},
@@ -35,7 +36,7 @@
 			lgImg: 'src/images/' + url + '/inside-wide-header.webp',
 			alt: 'Inside',
 			title: 'Inside',
-			href: '/inside',
+			href: 'inside',
 			body: 'These would be the most commonly rolled numbers and for those who would like a little safer action.',
 			badges: ['Inside w/o Commission']
 		},
@@ -47,7 +48,7 @@
 			lgImg: 'src/images/' + url + '/outside-wide-header.webp',
 			alt: 'Outside',
 			title: 'Outside',
-			href: '/outside',
+			href: 'outside',
 			body: 'Outside numbers are harder to hit but they pay better than the inside. These bettors enjoy a little more bang for their buck.',
 			badges: ['Outside w/o Commission', 'Outside w/Commission']
 		},
@@ -59,7 +60,7 @@
 			lgImg: 'src/images/' + url + '/uptown-downtown-wide-header.webp',
 			alt: 'Uptown/Downtown',
 			title: 'Uptown/Downtown',
-			href: '/uptown-downtown',
+			href: 'uptown-downtown',
 			body: 'Betting the opposite side of the point, Up and Downtown get a variety of bets without too much exposure.',
 			badges: ['Uptown/Downtown w/o Commission', 'Uptown/Downtown w/Commission']
 		},
@@ -71,7 +72,7 @@
 			lgImg: 'src/images/' + url + '/including-the-point-wide-header.webp',
 			alt: 'Including the Point',
 			title: 'Including the Point',
-			href: '/including-the-point',
+			href: 'including-the-point',
 			body: "Don't have a Pass Line but still want a vested interest in the Point? Include it in your spread bet.",
 			badges: ['Including the Point']
 		}
@@ -167,11 +168,11 @@
 			pTwo="Examine the cost implications of different types of Spread Bets and the factors that influence these costs."
 			pThree="Explore the strategy of Including the Point in your Spread Bet, a tactic often employed by players not on the Pass Line."
 			button="Learn across"
-			href="/across"
+			href="across"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

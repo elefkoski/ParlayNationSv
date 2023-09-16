@@ -51,43 +51,59 @@
 	}
 </script>
 
-<div class="drawer">
+<div class="drawer z-20">
 	<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content flex flex-col">
 		<!-- Navbar -->
-		<nav class="w-full navbar bg-base-300 dark:bg-gray-950 py-4 fixed top-0 z-20">
-			<div class="flex-none lg:hidden">
+		<nav class="w-full navbar bg-base-300 dark:bg-gray-950 py-4 fixed top-0">
+			<div
+				class="absolute left-4 top-1/2 transform -translate-y-1/2 md:relative md:left-0 md:top-7 lg:hidden z-50"
+			>
 				<label for="my-drawer-3" class="btn btn-square btn-ghost">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
 						class="inline-block w-6 h-6 stroke-current"
-						><path
+					>
+						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
 							stroke-width="2"
 							d="M4 6h16M4 12h16M4 18h16"
-						/></svg
-					>
+						/>
+					</svg>
 				</label>
 			</div>
-			<div class="container flex justify-between mx-auto">
-				<div class="btn btn-ghost dark:text-white normal-case text-xl">
-					<a href="/">ParlayNation</a>
+			<!-- Container for logo -->
+			<div class="container mx-auto flex justify-center md:justify-between lg:mx-16">
+				<!-- Logo -->
+				<div>
+					<a data-track="parlay-nation-logo" href="/">
+						<img
+							class="w-auto h-12"
+							src="src/images/assets/parlay-nation-logo-dm_1048x298.webp"
+							alt="Parlay Nation Green Logo"
+						/>
+					</a>
 				</div>
+			</div>
+			<!-- Other elements -->
+			<div class="absolute right-4 top-1/2 transform -translate-y-1/2 hidden md:block">
 				<div class="flex-none hidden md:block">
-					<div class="join">
+					<div class="join flex items-center">
 						<div>
 							<div>
 								<input
-									class="input input-bordered join-item dark:bg-gray-700 dark:text-gray-300"
+									class="input input-bordered join-item dark:bg-gray-700 dark:text-gray-300 h-10"
 									placeholder="Search..."
 								/>
 							</div>
 						</div>
-						<div class="indicator mr-2">
-							<button class="btn join-item dark:bg-gray-700 dark:text-gray-300">Search</button>
+						<div class="indicator mr-2 h-10">
+							<button class="btn join-item dark:bg-gray-700 dark:text-gray-300 min-h-0 h-10"
+								>Search</button
+							>
 						</div>
 						<ul class="menu menu-horizontal px-1 dark:text-gray-200">
 							{#if isAuthenticated}
@@ -118,19 +134,12 @@
 			</div>
 		</nav>
 	</div>
-	<div class="drawer-side">
+	<div class="drawer-side z-30">
 		<label for="my-drawer-3" class="drawer-overlay" />
-		<ul class="menu p-4 w-80 h-full bg-base-200">
+		<ul class="menu p-4 w-80 min-h-full bg-base-200">
 			<!-- Sidebar content here -->
 			<li><a href="/">Sidebar Item 1</a></li>
 			<li><a href="/">Sidebar Item 2</a></li>
-		</ul>
-		<ul class="menu menu-horizontal px-1 md:flex hidden dark:text-gray-200">
-			<li><a href="craps">Learn</a></li>
-			<li><a href="practice">Practice</a></li>
-			<li><a href="craps-simulator">Simulator</a></li>
-			<li><a href="craps-calculators">Calculators</a></li>
-			<li><a href="craps-blog">Blog</a></li>
 		</ul>
 	</div>
 </div>

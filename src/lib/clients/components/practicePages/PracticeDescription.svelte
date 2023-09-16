@@ -20,6 +20,7 @@
 		</div>
 	{/if}
 	<a
+		data-track="dwnld-{downloadUrl}"
 		href={downloadUrl}
 		target="_blank"
 		rel="noopener noreferrer"

@@ -3,6 +3,7 @@
 	import HomeHeadings from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Proposition Bets';
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/proposition-basics-wide-header.webp',
 			alt: 'Proposition Basics',
 			title: 'Proposition Basics',
-			href: '/proposition-basics',
+			href: 'proposition-basics',
 			body: 'Learn the basics of what a Proposition Bet is along with how to make your bets with the dealers.',
 			badges: ['One Roll Bets', 'Betting a Proposition Bet']
 		},
@@ -35,7 +36,7 @@
 			lgImg: 'src/images/' + url + '/the-hardways-wide-header.webp',
 			alt: 'The Hardways',
 			title: 'The Hardways',
-			href: '/the-hardways',
+			href: 'the-hardways',
 			body: 'You could bet that some of the Points are going to land as a pair and when they do they are considered to be a Hardway.',
 			badges: ['Buffalo', 'Hardway Placement', 'Hardway Payment', 'Dealer Hardway']
 		},
@@ -47,7 +48,7 @@
 			lgImg: 'src/images/' + url + '/straight-up-wide-header.webp',
 			alt: 'Straight Up',
 			title: 'Straight Up',
-			href: '/straight-up',
+			href: 'straight-up',
 			body: "High, Low, Ace-Deuce, and a Yo. Even a dollar win on one of those and you're back in the game.",
 			badges: [
 				'Betting Straight Up',
@@ -64,7 +65,7 @@
 			lgImg: 'src/images/' + url + '/c-and-e-wide-header.webp',
 			alt: 'C & E',
 			title: 'C & E',
-			href: '/c-and-e',
+			href: 'c-and-e',
 			body: 'The C & E is another way to bet the Any Craps and the Yo. Bet them individually or as a pair.',
 			badges: ['C & E Placement', 'C & E Payment']
 		},
@@ -76,7 +77,7 @@
 			lgImg: 'src/images/' + url + '/any-seven-wide-header.webp',
 			alt: 'Any Seven',
 			title: 'Any Seven',
-			href: '/any-seven',
+			href: 'any-seven',
 			body: "Normally only bet by don't players, the Any Seven is one way to hedge your Don't Bets.",
 			badges: ['Any Seven Placement', 'Any Seven Payment']
 		},
@@ -88,7 +89,7 @@
 			lgImg: 'src/images/' + url + '/any-craps-wide-header.webp',
 			alt: 'Any Craps',
 			title: 'Any Craps',
-			href: '/any-craps',
+			href: 'any-craps',
 			body: 'Otherwise known as the "C" in C & E, the Any Craps is sometimes used to hedge the Pass Line.',
 			badges: ['Any Craps Placement', 'Any Craps Payment']
 		},
@@ -100,7 +101,7 @@
 			lgImg: 'src/images/' + url + '/the-field-wide-header.webp',
 			alt: 'The Field',
 			title: 'The Field',
-			href: '/the-field',
+			href: 'the-field',
 			body: 'It might look very enticing but the Field is not one of the better bets on the Craps Table.',
 			badges: ['Field Betting', 'Field Placement', 'Field Payment', 'Dealer Field Bet']
 		},
@@ -112,7 +113,7 @@
 			lgImg: 'src/images/' + url + '/multi-bets-wide-header.webp',
 			alt: 'Multi Bets',
 			title: 'Multi Bets',
-			href: '/multi-bets',
+			href: 'multi-bets',
 			body: "Here you'll learn some of the most common ways to bet two or three Straight Up bets in different combinations.",
 			badges: ['Each vs Split', 'Two Number', 'Three Number']
 		},
@@ -124,7 +125,7 @@
 			lgImg: 'src/images/' + url + '/horn-wide-header.webp',
 			alt: 'Horn',
 			title: 'Horn',
-			href: '/horn',
+			href: 'horn',
 			body: 'Instead of betting all four straight up individually, you can bet them as a group called a Horn.',
 			badges: ['$4 Horn', 'Horn Placement', 'Horn Payment', 'Dealer Horn']
 		},
@@ -136,7 +137,7 @@
 			lgImg: 'src/images/' + url + '/horn-high-wide-header.webp',
 			alt: 'Horn High',
 			title: 'Horn High',
-			href: '/horn-high',
+			href: 'horn-high',
 			body: "Why not bet a Horn, add one more dollar on the, let's say, Yo and call it a Horn High Yo.",
 			badges: ['Four Horn Highs', 'Horn High Placement', 'Horn High Payment']
 		},
@@ -148,7 +149,7 @@
 			lgImg: 'src/images/' + url + '/world-wide-header.webp',
 			alt: 'World',
 			title: 'World',
-			href: '/world',
+			href: 'world',
 			body: 'Most commonly bet during the Comeout Roll, the World is one of the most popular bets in Craps.',
 			badges: ['$5 World', 'World Placement', 'World Payment', 'Dealer World']
 		},
@@ -160,7 +161,7 @@
 			lgImg: 'src/images/' + url + '/hop-bets-wide-header.webp',
 			alt: 'Hop Bets',
 			title: 'Hop Bets',
-			href: '/hop-bets',
+			href: 'hop-bets',
 			body: "The other propositions aren't enough? OK. Here's every other combination the dice could land on.",
 			badges: [
 				'Hop Bet Placement',
@@ -346,11 +347,11 @@
 			pTwo="Learn about the payout structure and betting procedures for each type of Proposition Bet, enhancing your game strategy."
 			pThree="Gain insight into the risk-reward balance of Proposition Bets, understanding how high payouts often come with a higher house edge."
 			button="Learn proposition bets"
-			href="/proposition-basics"
+			href="proposition-basics"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

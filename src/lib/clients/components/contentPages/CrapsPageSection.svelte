@@ -25,7 +25,9 @@
 		<p class="pb-4 text-black dark:text-gray-300">
 			{section.description}
 		</p>
-		<a href={section.href} class="justify-self-end">READ MORE</a>
+		<a data-track="craps-home-section-{section.href}" href={section.href} class="justify-self-end"
+			>READ MORE</a
+		>
 	</div>
 	<div class="flex flex-col gap-2 md:col-span-5 justify-center">
 		<ul class="space-y-2">
@@ -34,6 +36,7 @@
 					class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
 				>
 					<a
+						data-track="craps-home-page-{page.href}"
 						href={page.href}
 						class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
 					>

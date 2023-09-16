@@ -18,7 +18,9 @@
 		<img src={lgImg} {alt} class="object-cover w-full hidden sm:hidden md:hidden lg:block" />
 	</figure>
 	<div class="card-body">
-		<a {href} class="hover:text-gray-50"><h2 class="card-title">{title}</h2></a>
+		<a data-track="home-section-{href}" {href} class="hover:text-gray-50"
+			><h2 class="card-title">{title}</h2></a
+		>
 		<p class="pb-4">{body}</p>
 		<div class="card-actions justify-end">
 			{#each badges as badge (badge)}

@@ -80,7 +80,7 @@
 			<p class="p-6 max-w-xs m-auto">
 				Practice craps payouts with downloadable PDF's. Print the Craps Table layout, dice and more.
 			</p>
-			<a href="practice" class="btn btn-primary capitalize w-1/2 m-auto">PRACTICE NOW</a>
+			<a href="practice-craps" class="btn btn-primary capitalize w-1/2 m-auto">PRACTICE NOW</a>
 		</div>
 	</section>
 	<section

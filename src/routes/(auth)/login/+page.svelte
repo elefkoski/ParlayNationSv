@@ -347,8 +347,8 @@
 						<label class="inline-flex items-center">
 							<input bind:checked={agreeToTerms} class="form-checkbox" type="checkbox" />
 							<span class="ml-2 text-xs"
-								>I agree to the <a href="/privacy">Privacy Policy</a> and
-								<a href="/terms">Terms of Service</a>. &lpar;required&rpar;</span
+								>I agree to the <a href="privacy">Privacy Policy</a> and
+								<a href="terms">Terms of Service</a>. &lpar;required&rpar;</span
 							>
 						</label>
 					</div>

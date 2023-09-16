@@ -3,6 +3,7 @@
 	import HomeHeader from '../../lib/clients/components/HomeHeader.svelte';
 	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'The Pass Line';
 	let description: string =
@@ -23,7 +24,7 @@
 			lgImg: 'src/images/' + url + '/pass-line-basics-wide-header.webp',
 			alt: 'Pass Line Basics',
 			title: 'Pass Line Basics',
-			href: '/pass-line-basics',
+			href: 'pass-line-basics',
 			body: "Here you'll learn about how the Pass Line wins and loses as well as the two stages of the Pass Line: the Comeout Roll and the Intermediate Roll.",
 			badges: [
 				'Betting the Pass Line',
@@ -41,7 +42,7 @@
 			lgImg: 'src/images/' + url + '/pass-line-odds-wide-header.webp',
 			alt: 'Pass Line Odds',
 			title: 'Pass Line Odds',
-			href: '/pass-line-odds',
+			href: 'pass-line-odds',
 			body: 'The Pass Line offers one of the best bets in the casino, Odds. These have no advantage for the casino and should be taken advantage of every chance you get.',
 			badges: ['Betting Pass Line Odds', 'Odds Payment', 'Dealer Odds']
 		},
@@ -53,7 +54,7 @@
 			lgImg: 'src/images/' + url + '/max-odds-wide-header.webp',
 			alt: 'Max Odds on the Pass Line',
 			title: 'Max Odds on the Pass Line',
-			href: '/max-odds',
+			href: 'max-odds',
 			body: 'The Odds bet is so good that the casinos put a maximum amount allowed based on thow much money you put on the Pass Line.',
 			badges: ['Single Odds', 'Double Odds', '3x 4x 5x Odds', '5x Odds', '10x Odds', '100x Odds']
 		}
@@ -125,11 +126,11 @@
 			pTwo="Explore the intricacies of the Comeout Roll and the Intermediate Roll, key stages of the Pass Line in a Craps game."
 			pThree="Did you know there's a bet with zero house advantage? Dive in and learn all about the Odds bet on the Pass Line."
 			button="Learn the pass line"
-			href="/pass-line-basics"
+			href="pass-line-basics"
 		/>
 		{#each sections as section (section.title)}
 			<HomeSections {...section} />
 		{/each}
 	</main>
-	<PrevNext {phref} {prev} {nhref} {next} />
+	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

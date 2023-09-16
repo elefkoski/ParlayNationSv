@@ -32,7 +32,9 @@
 		name={id}
 		{step}
 	/>
-	<button class="bg-blue-500 text-white p-2 rounded mt-2" type="submit"> Check </button>
+	<button data-track="calc-{id}" class="bg-blue-500 text-white p-2 rounded mt-2" type="submit">
+		Check
+	</button>
 
 	<p id={pId} class="" />
 </form>
