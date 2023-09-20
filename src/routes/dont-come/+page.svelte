@@ -24,6 +24,12 @@
 	let prev: string = "Don't Pass Lay Odds";
 	let nhref: string = 'dont-come-lay-odds';
 	let next: string = "Don't Come Lay Odds";
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = "Don't come intermediate roll payment table";
 	let tblHeaders: string[] = ['Intermediate Roll', 'Pays', 'Wins', 'Loses'];
@@ -67,7 +73,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting a Don't Come Bet in Craps" />
+		<ContentHeaderOne
+			sectionTitle="The Don't Side"
+			title="Betting a Don't Come Bet in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			You can think of the Don't Come as mini <Link text="Don't Pass" href="dont-pass" /> bets because
 			they work the same way. They win and lose on the same numbers, and just like the Don't Pass, after

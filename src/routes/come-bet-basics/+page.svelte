@@ -23,6 +23,12 @@
 	let prev: string = 'Come Bets';
 	let nhref: string = 'come-bet-odds';
 	let next: string = 'Come Bet Odds';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Come bets Intermediate Roll pay table';
 	let tblHeaders: string[] = ['Intermediate Roll', 'Pays', 'Wins', 'Loses'];
@@ -69,7 +75,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Come Bets" title="Betting a Come Bet in Craps" />
+		<ContentHeaderOne sectionTitle="Come Bets" title="Betting a Come Bet in Craps" {pageData} />
 		<p class="pb-4">
 			You can think of Come Bets as mini Pass Line bets or even traveling Pass Line bets. Win 7-11,
 			lose 2-3-12; otherwise, a Point is rolled, it goes into that Point, and just like the <Link

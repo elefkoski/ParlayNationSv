@@ -20,6 +20,12 @@
 	let prev: string = 'Spread Bets';
 	let nhref: string = 'inside';
 	let next: string = 'Inside';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Across betting options table';
 	let tblHeaders: string[] = ['The Spread', 'Total bet'];
@@ -63,7 +69,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Spread Bets" title="Betting Across at the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Spread Bets"
+			title="Betting Across at the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			When you bet Across, you are betting all the <Link
 				text="Place Bets"

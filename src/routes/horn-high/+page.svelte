@@ -30,6 +30,12 @@
 	let prev: string = 'Horn';
 	let nhref: string = 'world';
 	let next: string = 'World';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Horn High Payment Table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -117,7 +123,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Horn High in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the Horn High in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			There are four different Horn High's that all bet the same numbers as the Horn. They are the
 			Horn High Yo, Horn High Ace Deuce, Horn High Aces, and the Horn High Twelve.

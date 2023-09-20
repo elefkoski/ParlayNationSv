@@ -19,6 +19,12 @@
 	let prev: string = 'Uptown/Downtown';
 	let nhref: string = 'proposition-bets';
 	let next: string = 'Proposition Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Including the point betting options table';
 	let tblHeaders: string[] = ['The Spread', 'Total bet'];
@@ -65,6 +71,7 @@
 		<ContentHeaderOne
 			sectionTitle="Spread Bets"
 			title="Betting Including the Point at the Craps Table"
+			{pageData}
 		/>
 		<p class="pb-4">
 			When players bet Including the Point they are usually not on the <Link

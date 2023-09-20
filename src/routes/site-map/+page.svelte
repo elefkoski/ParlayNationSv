@@ -116,8 +116,8 @@
 	let sections2 = [
 		{
 			title: 'Practice Downloads',
-			links: ['Practice Home'],
-			href: ['practice']
+			links: ['Practice Craps'],
+			href: ['practice-craps']
 		},
 		{
 			title: 'Practice Pass Line Odds',
@@ -171,21 +171,27 @@
 		{
 			title: 'More Info',
 			links: [
+				'Craps Corner',
 				'Craps Simulator',
 				'Craps Calculators',
 				'Glossary',
 				'FAQ',
 				'Contact',
 				'About',
+				'Privacy Policy',
+				'Terms of Service',
 				'Site Map'
 			],
 			href: [
+				'craps-corner',
 				'craps-simulator',
 				'craps-calculator',
 				'glossary',
 				'faq',
 				'contact',
 				'about',
+				'privacy-policy',
+				'terms-of-service',
 				'site-map'
 			]
 		}

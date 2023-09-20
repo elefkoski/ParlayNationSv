@@ -24,6 +24,12 @@
 	let prev: string = 'The Hardways';
 	let nhref: string = 'c-and-e';
 	let next: string = 'C & E';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Straight up payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -64,7 +70,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting Straight Up in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting Straight Up in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			If you're looking for a quick way to turn a dollar into hundreds or thousands of dollars, then
 			betting Straight Up on the Craps table might be your best bet. There are four Straight Up bets

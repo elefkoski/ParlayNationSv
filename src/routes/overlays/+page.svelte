@@ -26,8 +26,14 @@
 
 	let phref: string = 'dont-come-lay-odds';
 	let prev: string = "Don't Come Lay Odds";
-	let nhref: string = 'practice';
+	let nhref: string = 'practice-craps';
 	let next: string = 'Practice Craps';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Overlay payment table';
 	let tblHeaders: string[] = ['Overlay', 'Pays', 'Wins', 'Loses'];
@@ -71,7 +77,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting Overlays in Craps" />
+		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting Overlays in Craps" {pageData} />
 		<p class="pb-4">
 			An Overlay is when you bet directly against a Point. Unlike the <Link
 				text="Don't Pass"

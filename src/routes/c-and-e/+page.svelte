@@ -24,6 +24,12 @@
 	let prev: string = 'Straight Up';
 	let nhref: string = 'any-seven';
 	let next: string = 'Any Seven';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'C & E bet seperately pay table';
 	let tblHeaders: string[] = ['Seperately', 'Pays', 'Wins', 'Loses'];
@@ -69,7 +75,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the C & E in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the C & E in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			The C & E is a combination of two bets. The 'C' is the <Link
 				text="Any Craps"

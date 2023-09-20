@@ -23,6 +23,12 @@
 	let prev: string = 'The Pass Line';
 	let nhref: string = 'pass-line-odds';
 	let next: string = 'Pass Line Odds';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Stages pay table';
 	let tblHeaders: string[] = ['Stage', 'Pays', 'Wins', 'Loses'];
@@ -64,7 +70,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The pass line" title="Betting the Pass Line in Craps" />
+		<ContentHeaderOne
+			sectionTitle="The pass line"
+			title="Betting the Pass Line in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			If you want to know how to play Craps, you're gonna have to learn the Pass Line. Lucky for you
 			it's not hard to understand.

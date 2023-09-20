@@ -19,6 +19,12 @@
 	let prev: string = 'Your Money';
 	let nhref: string = 'spread-bets';
 	let next: string = 'Spread Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -49,7 +55,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Place Bets" title="Pressing Place Bets in Craps" />
+		<ContentHeaderOne sectionTitle="Place Bets" title="Pressing Place Bets in Craps" {pageData} />
 		<p class="pb-4">
 			If you're serious about making money playing Craps, then you're going to have to press your
 			bets. Pressing means you are adding money to an existing <Link

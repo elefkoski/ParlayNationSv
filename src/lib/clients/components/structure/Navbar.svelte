@@ -1,4 +1,5 @@
 <script lang="ts">
+	import NavbarDrawer from './NavbarDrawer.svelte';
 	import { goto } from '$app/navigation';
 	import { user, type User } from '$lib/utils/store';
 	import { onAuthStateChanged, signOut } from 'firebase/auth';
@@ -51,34 +52,15 @@
 	}
 </script>
 
-<div class="drawer z-20">
+<div class="relative z-20">
 	<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content flex flex-col">
-		<!-- Navbar -->
-		<nav class="w-full navbar bg-base-300 dark:bg-gray-950 py-4 fixed top-0">
-			<div
-				class="absolute left-4 top-1/2 transform -translate-y-1/2 md:relative md:left-0 md:top-7 lg:hidden z-50"
-			>
-				<label for="my-drawer-3" class="btn btn-square btn-ghost">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						class="inline-block w-6 h-6 stroke-current"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4 6h16M4 12h16M4 18h16"
-						/>
-					</svg>
-				</label>
-			</div>
-			<!-- Container for logo -->
-			<div class="container mx-auto flex justify-center md:justify-between lg:mx-16">
-				<!-- Logo -->
-				<div>
+		<nav class="w-full navbar bg-base-300 dark:bg-gray-950 py-4 fixed top-0 h-20">
+			<div class="container flex justify-center md:ml-8 md:mr-0 md:justify-start lg:mx-16">
+				<div class="absolute left-16 md:relative lg:hidden">
+					<NavbarDrawer />
+				</div>
+				<div class="ml-8 md:absolute md:left-32 lg:ml-0">
 					<a data-track="parlay-nation-logo" href="/">
 						<img
 							class="w-auto h-12"
@@ -88,7 +70,7 @@
 					</a>
 				</div>
 			</div>
-			<!-- Other elements -->
+			<!-- Right elements -->
 			<div class="absolute right-4 top-1/2 transform -translate-y-1/2 hidden md:block">
 				<div class="flex-none hidden md:block">
 					<div class="join flex items-center">
@@ -133,13 +115,5 @@
 				</div>
 			</div>
 		</nav>
-	</div>
-	<div class="drawer-side z-30">
-		<label for="my-drawer-3" class="drawer-overlay" />
-		<ul class="menu p-4 w-80 min-h-full bg-base-200">
-			<!-- Sidebar content here -->
-			<li><a href="/">Sidebar Item 1</a></li>
-			<li><a href="/">Sidebar Item 2</a></li>
-		</ul>
 	</div>
 </div>

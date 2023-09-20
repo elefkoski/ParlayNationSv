@@ -17,6 +17,12 @@
 	let prev: string = 'Come Bet Odds';
 	let nhref: string = 'the-donts';
 	let next: string = "The Don'ts";
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -47,7 +53,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Come Bets" title="Coming Down w/Odds In Craps" />
+		<ContentHeaderOne sectionTitle="Come Bets" title="Coming Down w/Odds In Craps" {pageData} />
 		<p class="pb-4">
 			If you're playing both Come bets and Place bets, you will have times when the Come bet will
 			move into the number that your Place bet is on. Since betting both would be redundant and Odds

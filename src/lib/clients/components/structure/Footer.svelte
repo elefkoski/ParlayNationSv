@@ -37,9 +37,11 @@
 	</div>
 	<div>
 		<span class="footer-title">Legal</span>
-		<a data-track="footer-terms-of-use" href="terms-of-use" class="link link-hover">Terms of use</a>
+		<a data-track="footer-terms-of-service" href="terms-of-service" class="link link-hover"
+			>Terms of Service</a
+		>
 		<a data-track="footer-privacy-policy" href="privacy-policy" class="link link-hover"
-			>Privacy policy</a
+			>Privacy Policy</a
 		>
 	</div>
 </footer>

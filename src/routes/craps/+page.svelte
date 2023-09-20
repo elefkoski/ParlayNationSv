@@ -197,7 +197,7 @@
 			title: 'PROPOSITION BETS',
 			subtitle: 'The Fastest Way to Turn a Little Into A Lot',
 			description:
-				"Have you ever wondered about the bets in the center of the Craps table? Let's dive into the fascinating world of.",
+				"Let's dive into the world of high-risk moves that make Craps one of the most dynamic and unpredictable games in the casino.",
 			href: 'proposition-bets',
 			pages: [
 				{

@@ -22,6 +22,12 @@
 	let prev: string = 'Any Seven';
 	let nhref: string = 'the-field';
 	let next: string = 'The Field';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Any Craps payout table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -57,7 +63,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Any Craps in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the Any Craps in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			The Any Craps is a one-roll bet and mainly used to hedge bets. You can use it to hedge the <Link
 				text="Pass

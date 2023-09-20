@@ -24,6 +24,12 @@
 	let prev: string = 'Multi-Bets';
 	let nhref: string = 'horn-high';
 	let next: string = 'Horn High';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Horn Payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -62,7 +68,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Horn in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the Horn in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			Craps has a bet that easily lets you bet all four <Link
 				text="Straight Up"

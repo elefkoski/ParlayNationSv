@@ -24,6 +24,12 @@
 	let prev: string = 'Place Bet Basics';
 	let nhref: string = 'your-money';
 	let next: string = 'Your Money';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Buy Place Payment Table';
 	let tblHeaders: string[] = ['Point', 'Pays', 'Wins', 'Loses', 'Vig'];
@@ -68,7 +74,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Place Bets" title="Buying Place Bets in Craps" />
+		<ContentHeaderOne sectionTitle="Place Bets" title="Buying Place Bets in Craps" {pageData} />
 		<p class="pb-4">
 			Countless players ask about the BUY lammer. The ON and OFF lammers are self-explanatory on
 			bets, but what is the BUY? Buy Bets are Place Bets that pay True Odds because you paid a

@@ -18,6 +18,12 @@
 	let prev: string = 'Across';
 	let nhref: string = 'outside';
 	let next: string = 'Outside';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Inside betting options table';
 	let tblHeaders: string[] = ['Spread', 'Total Bet'];
@@ -61,7 +67,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Spread Bets" title="Betting Inside at the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Spread Bets"
+			title="Betting Inside at the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			5, 6, 8, and 9 are the Inside Points. When you bet Inside you are betting all the Inside
 			Points, in the same unit amount, not including the Point. For example, if the Point was 6, 32

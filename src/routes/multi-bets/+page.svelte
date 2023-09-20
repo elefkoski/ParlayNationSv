@@ -31,6 +31,12 @@
 	let prev: string = 'The Field';
 	let nhref: string = 'horn';
 	let next: string = 'Horn';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -64,6 +70,7 @@
 		<ContentHeaderOne
 			sectionTitle="Proposition Bets"
 			title="Betting Multi-Bets at the Craps Table"
+			{pageData}
 		/>
 		<p class="pb-4">
 			Multi-Bets are betting the same amount on 2 or 3 different straight up bets. This page goes

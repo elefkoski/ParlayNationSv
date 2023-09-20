@@ -18,6 +18,12 @@
 	let prev: string = 'Inside';
 	let nhref: string = 'uptown-downtown';
 	let next: string = 'Uptown/Downtown';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Across betting options table';
 	let tblHeaders: string[] = ['The Spread', 'Total bet'];
@@ -61,7 +67,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Spread Bets" title="Betting Outside at the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Spread Bets"
+			title="Betting Outside at the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			The four Outside Points are 4, 5, 9, and you bet them in the same unit amount, not including
 			the Point. If thnavoint was 8 and you wanted to bet $10 on each of the numbers, you would have

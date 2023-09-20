@@ -28,6 +28,12 @@
 	let prev: string = 'Come Bet Basics';
 	let nhref: string = 'coming-down-with-odds';
 	let next: string = 'Coming Down w/Odds';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Come Bet Odds Payment Table';
 	let tblHeaders: string[] = ['Point', 'Pays', 'Wins', 'Loses'];
@@ -71,7 +77,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Come Bets" title="Betting Odds for a Come Bet" />
+		<ContentHeaderOne sectionTitle="Come Bets" title="Betting Odds for a Come Bet" {pageData} />
 		<p class="pb-4">
 			Odds for a Come bet work the same way as the <Link
 				text="Odds for a Pass Line"

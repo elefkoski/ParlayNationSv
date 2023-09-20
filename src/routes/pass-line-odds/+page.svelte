@@ -28,6 +28,12 @@
 	let prev: string = 'Pass Line Basics';
 	let nhref: string = 'max-odds';
 	let next: string = 'Max Odds';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Odds pay table';
 	let tblHeaders: string[] = ['Point', 'Pays', 'Wins', 'Loses'];
@@ -71,7 +77,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The pass line" title="Odds on the Pass Line" />
+		<ContentHeaderOne sectionTitle="The pass line" title="Odds on the Pass Line" {pageData} />
 		<p class="pb-4">
 			During the Intermediate Roll, you can add an extra bet called Odds directly behind your Pass
 			Line bet. They are paid True Odds and are also betting that the Point will be rolled before

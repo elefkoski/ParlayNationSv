@@ -22,6 +22,12 @@
 	let prev: string = 'Pass Line Odds';
 	let nhref: string = 'place-bets';
 	let next: string = 'Place Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -52,7 +58,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The pass line" title="Max Odds on the Pass Line" />
+		<ContentHeaderOne sectionTitle="The pass line" title="Max Odds on the Pass Line" {pageData} />
 		<p class="pb-4">
 			Odds on the Pass Line have no house advantage. For this reason, casinos put a limit on the
 			amount you can add as odds. The limit changes from casino to casino but is based on the amount

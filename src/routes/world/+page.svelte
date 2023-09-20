@@ -23,6 +23,12 @@
 	let prev: string = 'Horn High';
 	let nhref: string = 'hop-bets';
 	let next: string = 'Hop Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'World payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -61,7 +67,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting The World in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting The World in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			People love to bet the <Link text="Horn" href="horn" /> and the <Link
 				text="Horn Highs"

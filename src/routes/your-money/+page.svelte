@@ -13,6 +13,12 @@
 	let description: string =
 		'You must pay attention to your money at the Craps Table. Know how much your bets cost, placement of those bets, your presses, and your payments.';
 	let url: string = 'your-money';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let phref: string = 'buying-place-bets';
 	let prev: string = 'Buying Place Bets';
@@ -48,7 +54,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Place Bets" title="Watching Your Money at the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Place Bets"
+			title="Watching Your Money at the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			Pay attention to your money! Craps seems to be the only game where even seasoned players don't
 			know where their money is. When a craps game is blowing up, it's moving fast, and many players

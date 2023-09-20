@@ -23,6 +23,12 @@
 	let prev: string = 'Any Craps';
 	let nhref: string = 'multi-bets';
 	let next: string = 'Multi-Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'The field betting options table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -61,7 +67,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Field in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the Field in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			The Field is a one-roll bet on 2, 3, 4, 9, 10, 11, or 12. It has such an allure to it. It's
 			big. It has a ton onavumbers, you can play it any time you want, and sometimes it will win

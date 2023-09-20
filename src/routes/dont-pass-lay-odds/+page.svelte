@@ -29,6 +29,12 @@
 	let prev: string = "Don't Pass";
 	let nhref: string = 'dont-come';
 	let next: string = "Don't Come";
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Dont pass lay odds payment table';
 	let tblHeaders: string[] = ['Point', 'Pays', 'Wins', 'Loses'];
@@ -72,7 +78,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting Don't Pass Lay Odds in Craps" />
+		<ContentHeaderOne
+			sectionTitle="The Don't Side"
+			title="Betting Don't Pass Lay Odds in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			Just like the Pass Line, after the Point has been established, you are allowed to make an Odds
 			bet but there is a big difference between the two. On the Pass Line you <Quote

@@ -17,6 +17,12 @@
 	let prev: string = 'Proposition Bets';
 	let nhref: string = 'the-hardways';
 	let next: string = 'The Hardways';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 </script>
 
 <svelte:head>
@@ -47,7 +53,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Proposition Bets on the Craps Table" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Proposition Bets on the Craps Table"
+			{pageData}
+		/>
 		<p class="pb-4">
 			What is a Proposition Bet on the Craps table? Some would say it's a one-roll bet. Others would
 			say they are any of the bets in the center of the table. For the most part, Proposition Bets

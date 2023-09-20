@@ -23,6 +23,12 @@
 	let prev: string = "The Don'ts";
 	let nhref: string = 'dont-pass-lay-odds';
 	let next: string = "Don't Pass Lay Odds";
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = "Don't pass payment table";
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -64,7 +70,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting the Don't Pass in Craps" />
+		<ContentHeaderOne
+			sectionTitle="The Don't Side"
+			title="Betting the Don't Pass in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			For the most part, the Don't Pass is the complete opposite of the <Link
 				text="Pass Line"

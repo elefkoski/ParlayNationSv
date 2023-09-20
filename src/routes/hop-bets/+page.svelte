@@ -36,6 +36,12 @@
 	let prev: string = 'World';
 	let nhref: string = 'come-bets';
 	let next: string = 'Come Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Hop Bets payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -74,7 +80,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting Hop Bets in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting Hop Bets in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			Hop Bets have every combination of the dice not including the Aces, Ace Deuce, Yo, and the
 			Twelve. There are 1navifferent possible Hop bets as shown which are the possible combinations

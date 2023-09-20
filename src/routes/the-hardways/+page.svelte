@@ -24,6 +24,12 @@
 	let prev: string = 'Proposition Bets';
 	let nhref: string = 'straight-up';
 	let next: string = 'Straight Up';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'The hardways payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -68,7 +74,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Hardways in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the Hardways in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			Many players love the Hardways because they are one of the Proposition Bets that aren't a
 			one-roll bet, yet they offer a pretty good return. Another good thing about the Hardways is

@@ -29,6 +29,12 @@
 	let prev: string = "Don't Come";
 	let nhref: string = 'overlays';
 	let next: string = 'Overlays';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = "Don't come lay odds payment table";
 	let tblHeaders: string[] = ['Point', 'Pays', 'Wins', 'Loses'];
@@ -72,7 +78,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting Don't Come Lay Odds in Craps" />
+		<ContentHeaderOne
+			sectionTitle="The Don't Side"
+			title="Betting Don't Come Lay Odds in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			Lay Odds for a Don't Come work the same way as <Link
 				text="Lay Odds"

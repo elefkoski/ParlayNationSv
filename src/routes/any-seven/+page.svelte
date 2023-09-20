@@ -22,6 +22,12 @@
 	let prev: string = 'C & E';
 	let nhref: string = 'any-craps';
 	let next: string = 'Any Craps';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'The Any Seven payout table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
@@ -57,7 +63,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Any Seven in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Proposition Bets"
+			title="Betting the Any Seven in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			The Any 7 is a one-roll bet and could be used any number of ways. Many of the Don't players
 			use it to hedge or tnavnvoke the seven. You can add it to the <Link text="Horn" href="horn" />

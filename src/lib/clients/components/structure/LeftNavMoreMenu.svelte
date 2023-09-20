@@ -18,6 +18,14 @@
 			href: 'about'
 		},
 		{
+			title: 'Privacy Policy',
+			href: 'privacy-policy'
+		},
+		{
+			title: 'Terms of Service',
+			href: 'terms-of-service'
+		},
+		{
 			title: 'Site Map',
 			href: 'site-map'
 		}

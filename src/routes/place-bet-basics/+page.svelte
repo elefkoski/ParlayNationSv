@@ -29,6 +29,12 @@
 	let prev: string = 'Place Bets';
 	let nhref: string = 'buying-place-bets';
 	let next: string = 'Buying Place Bets';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Place Bet Payment Table';
 	let tblHeaders: string[] = ['Point', 'Pays', 'Wins', 'Loses'];
@@ -90,7 +96,7 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Place Bets" title="Betting Place Bets in Craps" />
+		<ContentHeaderOne sectionTitle="Place Bets" title="Betting Place Bets in Craps" {pageData} />
 		<p class="pb-4">
 			Place Bets take a minute to learn but a lifetime to master. They're straightforward. You bet
 			them when the Puck is ON, and you get paid every time that number rolls.

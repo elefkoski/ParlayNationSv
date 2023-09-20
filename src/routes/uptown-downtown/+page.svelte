@@ -17,6 +17,12 @@
 	let prev: string = 'Outside';
 	let nhref: string = 'including-the-point';
 	let next: string = 'Including the Point';
+	let pageData: any = {
+		title: title,
+		description: description,
+		pageUrl: url,
+		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+	};
 
 	let tblAria: string = 'Uptown/Downtown betting options table';
 	let tblHeaders: string[] = ['The Spread', 'Total bet'];
@@ -92,7 +98,11 @@
 <LearnLayout>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Spread Bets" title="Betting Uptown and Downtown in Craps" />
+		<ContentHeaderOne
+			sectionTitle="Spread Bets"
+			title="Betting Uptown and Downtown in Craps"
+			{pageData}
+		/>
 		<p class="pb-4">
 			After the Point has been established players like to bet the opposite side of the board and
 			it's called bettin Uptown or Downtown. When the Point is 4, 5, or 6 the players will bet the
