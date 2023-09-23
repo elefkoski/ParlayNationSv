@@ -1,13 +1,15 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
 	import {
 		calculateSixEightOverlay,
 		calculateFiveNineOverlay,
 		calculateFourTenOverlay
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -28,6 +30,40 @@
 	let prev: string = "Don't Come Lay Odds";
 	let nhref: string = 'practice-craps';
 	let next: string = 'Practice Craps';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: '5% Commission',
+			href: '#fiveCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Betting Overlays',
+			href: '#bettingOverlays',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Overlay Placement',
+			href: '#overlayPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Overlay Payment',
+			href: '#overlayPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Overlay Calculators',
+			href: '#overlayCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -74,7 +110,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="The Don't Side" title="Betting Overlays in Craps" {pageData} />
@@ -97,8 +133,17 @@
 			title="Overlays"
 			alt="$60 Overlay behind the point nine."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="5% Commission on the Winnings of an Overlay Bet in Craps" />
+		<ContentHeaderTwo
+			id="fiveCommission"
+			title="5% Commission on the Winnings of an Overlay Bet in Craps"
+		/>
 		<p class="pb-4">
 			Overlays get paid True Odds, which have no advantage for a casino, so they charge a 5%
 			Commission on how much your bet wins. This is different from the 'buy' which charges a 5%
@@ -106,7 +151,7 @@
 			you pay $1 for commission.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet an Overlay in Craps?" />
+		<ContentHeaderTwo id="bettingOverlays" title="How Do You Bet an Overlay in Craps?" />
 		<p class="pb-4">
 			When you want to make an Overlay you say it using the term <Quote text="No ___(Point)___" /> and
 			you add the cost of commission in with the bet. E.g. If you want to Overlay the 10 for $40 + $1
@@ -123,7 +168,7 @@
 			alt="Overlay bets are set up behind each of the six points."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Are Your Overlays on the Craps Table?" />
+		<ContentHeaderTwo id="overlayPlacement" title="Where Are Your Overlays on the Craps Table?" />
 		<p class="pb-4">
 			Like most other bets on <Link text="the Dont's" href="the-donts" />, Overlays are put behind
 			the Point they are betting against. To distinguish an Overlay from a Don't Come bet, the
@@ -142,7 +187,7 @@
 			alt="Up close overhead view of the boxes behind the place bets and the craps table rail. There are 16 colored spots that correspond with each other."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does an Overlay Pay at the Craps Table?" />
+		<ContentHeaderTwo id="overlayPayment" title="What Does an Overlay Pay at the Craps Table?" />
 		<p class="pb-4">
 			An Overlay pays True Odds but you need to pay a commission in order to make the bet. Because
 			they are True Odds you need to bet them in correct increments and while making the bet include
@@ -246,7 +291,7 @@
 			alt="$41 behind the point four paid $20. Two purple dice show 2-5."
 		/>
 		<Divider />
-		<CalcContainer aria="Overlay payment calculators"
+		<CalcContainer aria="Overlay payment calculators" id="overlayCalcs"
 			><CalcBox
 				description="Check the payment for Overlays against any Point."
 				title="Overlay Payment Calculators"

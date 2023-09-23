@@ -1,4 +1,7 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import {
 		calculatePlaceSixEight,
 		calculatePlaceFiveNine,
@@ -7,7 +10,6 @@
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -29,6 +31,46 @@
 	let prev: string = 'Place Bets';
 	let nhref: string = 'buying-place-bets';
 	let next: string = 'Buying Place Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting a Place Bet',
+			href: '#bettingPlaceBets',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Wrong Place Bet Betting',
+			href: '#badPlaceBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Place Bet Payment',
+			href: '#placePayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Place Bet Calculators',
+			href: '#placePaymentCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Place Bet Terms',
+			href: '#placeBetTerms',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Dealer Place Bets',
+			href: '#dealerPlaceBets',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -93,7 +135,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Place Bets" title="Betting Place Bets in Craps" {pageData} />
@@ -120,8 +162,14 @@
 			title="Place Bets"
 			alt="Overhead view of the right side of the craps table layout. There are no cheques on the table. You can see all six place bets boxes."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Place Bets in a Craps Game?" />
+		<ContentHeaderTwo id="bettingPlaceBets" title="How Do You Bet Place Bets in a Craps Game?" />
 		<p class="pb-4">
 			After the Point is established, it's time to make some Place bets. Put your money in the COME,
 			then tell the dealers which bets you'd like to make. Make sure the dealer repeats your bet. If
@@ -137,7 +185,7 @@
 			alt="Multiple sets of bets sitting in the come. The puck is on the point nine."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Not to Put Your Money on a Craps Table" />
+		<ContentHeaderTwo id="badPlaceBetting" title="Where Not to Put Your Money on a Craps Table" />
 		<p class="pb-4">
 			Some people think it's easier to throw cheques at the dealer than to place them in the COME.
 		</p>
@@ -151,7 +199,7 @@
 			alt="A bunch of splashed cheques behind the boxes with a red 'do not' circle around them and a red x. There is another pile of cheques in the COME with a green cirlce around them and a green checkmark."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Are Your Place Bets on the Craps Table?" />
+		<ContentHeaderTwo id="placePlacement" title="Where Are Your Place Bets on the Craps Table?" />
 		<p class="pb-4">
 			Understanding where your Bets are on the table will help you enjoy Craps a lot more. It's like
 			a large horseshoe on each side of the table. A spot in the rail corresponds with a spot on the
@@ -168,7 +216,7 @@
 			alt="Overhead view of craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does a Place Bet Pay in Craps?" />
+		<ContentHeaderTwo id="placePayment" title="What Does a Place Bet Pay in Craps?" />
 		<p class="pb-4">
 			Like many other bets on the table, you must bet Place bets in certain increments, and they pay
 			differently depending on which number you're betting.
@@ -209,7 +257,7 @@
 			alt="$5 place bet on the five with a $7 payment sitting in the COME."
 		/>
 		<Divider />
-		<CalcContainer aria="Place bet payment calculators"
+		<CalcContainer aria="Place bet payment calculators" id="placePaymentCalcs"
 			><CalcBox
 				description="Check the payment for the six different Place bets."
 				title="Place Bet Payment Calculators"
@@ -241,7 +289,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Are Proper Terms for Betting Place Bets?" />
+		<ContentHeaderTwo id="placeBetTerms" title="What Are Proper Terms for Betting Place Bets?" />
 		<p class="pb-4">
 			<Quote text="Place" /> - When you bet a Place Bet, you tell the base dealer to <Quote
 				text="place"
@@ -279,7 +327,10 @@
 			Spread Bets.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet a Place Bet for the Dealers in a Craps Game?" />
+		<ContentHeaderTwo
+			id="dealerPlaceBets"
+			title="How Do You Bet a Place Bet for the Dealers in a Craps Game?"
+		/>
 		<p class="pb-4">
 			Dealer Place Bets encouraged! The dealer will put that bet in the middle of the number
 			representing that it is a bet for the dealer. The amount that gets paid differs from point to

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -14,10 +16,43 @@
 		"There are two stages to Craps: the Comeout Roll and the Intermediate Roll. Some bets work during the Comeout Roll while some don't. Certain bets can only be made during certain stages of the game.";
 	let url: string = 'the-stages';
 
-	let phref = '/the-dice';
+	let phref = 'the-dice';
 	let prev = 'The Dice';
-	let nhref = '/verbal-betting';
+	let nhref = 'verbal-betting';
 	let next = 'Verbal Betting';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'The Comeout Roll',
+			href: '#comeoutRoll',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Intermediate Roll',
+			href: '#intermediateRoll',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Buying In',
+			href: '#buyingIn',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Coring Up',
+			href: '#colorUp',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Number Seven',
+			href: '#numberSeven',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
 
 	let pageData: any = {
 		title: title,
@@ -52,7 +87,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Craps Basics" title="The Stages of a Craps Game" {pageData} />
@@ -71,8 +106,17 @@
 			title="The Stages of a Craps Game"
 			alt="Overhead view of the Craps table with one Puck ON and another Puck OFF representing the two stages of a Craps game."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="The Comeout Roll Is the First Stage of a Craps Game" />
+		<ContentHeaderTwo
+			id="comeoutRoll"
+			title="The Comeout Roll Is the First Stage of a Craps Game"
+		/>
 		<p class="pb-4">
 			The Comeout Roll, when <Link text="the puck" href="the-craps-table" /> is OFF, is the beginning
 			of the Craps game, when the shooter is trying to determine a Point for the rest of the table. Before
@@ -123,7 +167,10 @@
 			alt="The Puck in the Don't Come in the Off position with bets on the Pass Line and the Don't Pass."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="The Intermediate Roll Is the Second Stage of a Craps Game" />
+		<ContentHeaderTwo
+			id="intermediateRoll"
+			title="The Intermediate Roll Is the Second Stage of a Craps Game"
+		/>
 		<p class="pb-4">
 			The Intermediate Roll is when the Puck turns ON, and a Point has been established. This is
 			when the shooter tries to make their Point so everyone at the Craps table can win. You start
@@ -160,7 +207,7 @@
 			alt="A Craps table with the Puck in the ON position sitting on the Six. There are a lot of bets on the layout."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Buy In at the Craps Table?" />
+		<ContentHeaderTwo id="buyingIn" title="How Do You Buy In at the Craps Table?" />
 		<p class="pb-4">
 			It's suggested to wait until the Comeout Roll to buy cheques because some players feel that if
 			you buy cheques in the middle of a roll it messes with the flow of the game, although it is
@@ -180,7 +227,7 @@
 			alt="Three one-hundred dollar bills layed out on the Craps table in front of the box."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Is it to 'Color Up' at the Craps Table?" />
+		<ContentHeaderTwo id="colorUp" title="What Is it to 'Color Up' at the Craps Table?" />
 		<p class="pb-4">
 			When it's time to go, please don't walk away with the cheques unless you have a handful or
 			less. It would be best to wait until the current roll has ended and it's a new Comeout Roll.
@@ -218,7 +265,7 @@
 			alt="Your cheques counted out in front of the box and your colored money sitting in the come waiting to be handed off."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What's With the Number 7 in a Craps Game?" />
+		<ContentHeaderTwo id="numberSeven" title="What's With the Number 7 in a Craps Game?" />
 		<p class="pb-4">
 			The number 7 is a double-edged sword. During the Comeout Roll, the players usually win. During
 			the Intermediate Roll, it's usually how all the players lose, so they don't want to hear

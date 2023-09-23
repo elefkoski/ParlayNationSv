@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { calculatePassLine } from '$lib/utils/calculations';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
@@ -23,6 +25,46 @@
 	let prev: string = 'The Pass Line';
 	let nhref: string = 'pass-line-odds';
 	let next: string = 'Pass Line Odds';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting the Pass Line',
+			href: '#passLineBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Stages of the Pass Line',
+			href: '#passLineStages',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Pass Line Payments',
+			href: '#passLinePayments',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Pass Line Payment Calculator',
+			href: '#passLinePymntCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'After the Comeout Roll',
+			href: '#postComeout',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Dealer Pass Line',
+			href: '#dealerPassLine',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -67,7 +109,8 @@
 		}
 	</script>
 </svelte:head>
-<LearnLayout>
+
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -96,8 +139,14 @@
 			lgImg="src/images/{url}/the-pass-line_1280x720.webp"
 			alt="Overhead view of the pass line. There are no bets on the table."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet the Pass Line in Craps?" />
+		<ContentHeaderTwo id="passLineBetting" title="How Do You Bet the Pass Line in Craps?" />
 		<p class="pb-4">
 			When you bet the Pass Line, put your money on the bar marked Pass Line in front of where you
 			are standing. If the puck is ON when you are ready to buy in, then a Point is established, and
@@ -122,7 +171,10 @@
 			alt="Four bets on the pass line. Each bet pointing to a spot in the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What are the Stages of the Pass Line in a Craps Game?" />
+		<ContentHeaderTwo
+			id="passLineStages"
+			title="What are the Stages of the Pass Line in a Craps Game?"
+		/>
 		<ContentHeaderThree title="Stage 1 - The Comeout Roll" />
 		<p class="pb-4">
 			There are two stages to the Pass Line. The first is when <Link
@@ -162,7 +214,7 @@
 			alt="Up close image of $10 on the pass line. It's near the puck which is on the four and in the on position."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Pass Line Pay in Craps?" />
+		<ContentHeaderTwo id="passLinePayments" title="What Does the Pass Line Pay in Craps?" />
 		<p class="pb-4">
 			The Pass Line always wins even money. You bet $10; you win $10. Even though the Pass Line pays
 			even money, it allows you to bet the Odds bet, which has no advantage for the casino.
@@ -182,7 +234,7 @@
 			alt="$10 on the pass line with a $10 payment right next to it. The puck is on and on the point four. A pair of dice are in the corner and are showing the hard four."
 		/>
 		<Divider />
-		<CalcContainer aria="Pass Line Calculator">
+		<CalcContainer aria="Pass Line Calculator" id="passLinePymntCalc">
 			<CalcBox
 				description="Check the payment for a Pass Line Bet."
 				title="Pass Line Payment Calculator"
@@ -198,7 +250,10 @@
 			</CalcBox>
 		</CalcContainer>
 		<Divider />
-		<ContentHeaderTwo title="Should You Bet the Pass Line After the Comeout Roll?" />
+		<ContentHeaderTwo
+			id="postComeout"
+			title="Should You Bet the Pass Line After the Comeout Roll?"
+		/>
 		<p class="pb-4">
 			No. In some casinos, you can only bet the Pass Line during the Comeout Roll. In others, you
 			can make or add to it at any time. The only reason you'd want to add to the Pass Line during
@@ -215,7 +270,7 @@
 			alt="A chip is moving from the rail of the craps table to the pass line bet on the layout. The puck is on and on the point nine."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet the Pass Line for the Dealers?" />
+		<ContentHeaderTwo id="dealerPassLine" title="How Can You Bet the Pass Line for the Dealers?" />
 		<p class="pb-4">
 			Putting the dealers on the Pass Line is common. The players and dealers win and lose together.
 			Just like a player's bet, a dealer's Pass Line bet is a contract bet, so once a Point is

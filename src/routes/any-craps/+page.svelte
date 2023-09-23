@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateAnyCraps } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateAnyCraps } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -22,6 +24,28 @@
 	let prev: string = 'Any Seven';
 	let nhref: string = 'the-field';
 	let next: string = 'The Field';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Any Craps Placement ',
+			href: '#anyCrapsPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Any Craps Payment',
+			href: '#anyCrapsPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Any Craps Payment Calculator',
+			href: '#anyCrapsCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -60,7 +84,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -93,8 +117,14 @@
 			title="The Any Craps"
 			alt="Overhead up close view of the any craps area on the craps layout."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your Any Craps on the Craps Table?" />
+		<ContentHeaderTwo id="anyCrapsPlacement" title="Where Is Your Any Craps on the Craps Table?" />
 		<p class="pb-4">
 			Just like the placement of the <Link text="Any 7" href="any-seven" />, The Any Craps is a bar
 			in the middle of the table. The center of the bar is the middle of the table and the edges of
@@ -110,7 +140,7 @@
 			alt="Up close view of the any craps bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Any Craps Pay in a Craps Game?" />
+		<ContentHeaderTwo id="anyCrapsPayment" title="What Does the Any Craps Pay in a Craps Game?" />
 		<p class="pb-4">The Any Craps pay 7:1 or $7 for every $1.</p>
 		<ContentImg
 			caption=""
@@ -121,7 +151,7 @@
 			alt="$3 on the any craps with two green dice that read 1-3. There is a bubble that reads $21 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Any craps payment calculator"
+		<CalcContainer aria="Any craps payment calculator" id="anyCrapsCalc"
 			><CalcBox
 				description="Check the payment for an Any Craps bet."
 				title="Any Craps Payment Calculator"

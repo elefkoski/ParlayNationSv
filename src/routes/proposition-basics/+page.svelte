@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -17,6 +19,22 @@
 	let prev: string = 'Proposition Bets';
 	let nhref: string = 'the-hardways';
 	let next: string = 'The Hardways';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'One Roll Bets',
+			href: '#oneRoll',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Betting Proposition Bets',
+			href: '#bettingProp',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -50,7 +68,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -84,8 +102,14 @@
 			title="Proposition Bets"
 			alt="Overhead view of the proposition area on the craps table."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Is a One-Roll Bet in Craps?" />
+		<ContentHeaderTwo id="oneRoll" title="What Is a One-Roll Bet in Craps?" />
 		<p class="pb-4">
 			A One-Roll bet is a bet that must win the next roll, or it loses. Most one-roll bets are found
 			in middle of the table, and have minimums ranging from $1 to $5. The Hardways are an exception
@@ -94,7 +118,10 @@
 			of the table.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Proposition Bets at the Craps Table?" />
+		<ContentHeaderTwo
+			id="bettingProp"
+			title="How Do You Bet Proposition Bets at the Craps Table?"
+		/>
 		<p class="pb-4">
 			Almost all Proposition Bets are in the middle of the table, so you give the money to the
 			Stickperson, and they will set up the bet. Tell <Link

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -20,6 +22,22 @@
 	let prev: string = 'Spread Bets';
 	let nhref: string = 'inside';
 	let next: string = 'Inside';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Across w/o Commission',
+			href: '#acrossWoCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Betting Across w/Commission',
+			href: '#acrossWCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -66,7 +84,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -94,7 +112,7 @@
 			alt="Puck is on point six and points 4, 5, 8, 9, and 10 are highlighted."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Across on the Craps Table?" />
+		<ContentHeaderTwo id="acrossWoCommission" title="How Do You Bet Across on the Craps Table?" />
 		<p class="pb-4">
 			When you bet Across at lower limits there are going to be two different options you can take:
 			when the Point is 6 or 8 and when the Point is 4, 5, 9, or 10. Because all the numbers aren't
@@ -130,7 +148,10 @@
 			alt="$54 across with the point on five."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Across with a Commission in a Craps Game?" />
+		<ContentHeaderTwo
+			id="acrossWCommission"
+			title="How Do You Bet Across with a Commission in a Craps Game?"
+		/>
 		<p class="pb-4">
 			Whenever you bet Across large enough that you are going to have to buy the 4 and/or 10, the
 			cost of the bet goes up again because you need to include the commission needed to be paid on

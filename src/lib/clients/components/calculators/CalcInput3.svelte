@@ -50,7 +50,7 @@
 		/>
 	</div>
 	<div>
-		<label for={idTwo} class="block font-medium">{titleTwo}</label>
+		<label for={idTwo} class="block font-medium mt-2">{titleTwo}</label>
 		<input
 			bind:value={inputValueTwo}
 			type="number"
@@ -64,7 +64,7 @@
 		/>
 	</div>
 	<div>
-		<p class="dark:text-gray-400 font-medium text-gray-900">Pick what rolled:</p>
+		<p class="dark:text-gray-400 font-medium text-gray-900 mt-2">Pick what rolled:</p>
 		<CalcRoll {rollInfo} on:rollSelected={handleRollSelected} />
 		<p class="mb-2" id={pId} />
 		<button class="bg-blue-500 text-white p-2 rounded" type="submit"> Check </button>

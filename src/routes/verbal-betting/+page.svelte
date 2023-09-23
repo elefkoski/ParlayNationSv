@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -19,6 +21,45 @@
 	let prev = 'The Stages';
 	let nhref = '/to-consider';
 	let next = 'To Consider';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Verbal Declaration of a Bet',
+			href: '#verbalDeclaration',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Dealers Repeating Bets',
+			href: '#repeatingBets',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'No Call Bets',
+			href: '#noCall',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Getting No Bet',
+			href: '#noBet',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Turning Bets On',
+			href: '#imOn',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Turning Bets Off',
+			href: '#imOff',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
 
 	let liAs = [
 		{
@@ -63,7 +104,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -93,8 +134,17 @@
 				href="the-dice"
 			/> have landed, you can drop your money on the table, and the dealer will set up your bet.
 		</p>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Is Verbal Declaration of a Bet in Craps?" />
+		<ContentHeaderTwo
+			id="verbalDeclaration"
+			title="What Is Verbal Declaration of a Bet in Craps?"
+		/>
 		<p class="pb-4">
 			Many times the dice are out, and you want to make a bet. As long as the dealers can see you
 			have the money for the bet, you can make it verbally, and the dealers will book it. E.g., if
@@ -112,7 +162,10 @@
 			alt="An outline of a person with a red though bubble next to another outlined person with a blue talking bubble and a cheque in their hand."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Are the Dealers Repeating Your Bets on the Craps Game?" />
+		<ContentHeaderTwo
+			id="repeatingBets"
+			title="Are the Dealers Repeating Your Bets on the Craps Game?"
+		/>
 		<p class="pb-4">
 			Having a dealer repeat your bet is one of the most important things that need to happen in
 			Craps. Any bet you ask for that is not repeated back to you can be considered a <Quote
@@ -128,14 +181,14 @@
 			instead of repeating your action, then you're still good to go.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Is a No Call Bet in Craps?" />
+		<ContentHeaderTwo id="noCall" title="What Is a No Call Bet in Craps?" />
 		<p class="pb-4">
 			Tables labeled with 'No Call Bets' mean you cannot walk up to a Craps table and verbally ask
 			for a bet without showing that you have the money for the bet. If the dealers can't see money,
 			then it will be a <Quote text="No bet" />.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Does &ldquo;No Bet&rdquo; Mean in Craps?" />
+		<ContentHeaderTwo id="noBet" title="What Does &ldquo;No Bet&rdquo; Mean in Craps?" />
 		<p class="pb-4">
 			<Quote text="No bet" /> is a phrase used when the dealer doesn't accept your bet. There can be
 			many reasons a dealer doesn't accept a bet, such as making a bet too late, not understanding what
@@ -145,7 +198,10 @@
 			so you don't repeat the same mistake twice.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Does &ldquo;My Bets are ON&rdquo; Mean at the Craps Table?" />
+		<ContentHeaderTwo
+			id="imOn"
+			title="What Does &ldquo;My Bets are ON&rdquo; Mean at the Craps Table?"
+		/>
 		<p class="pb-4">
 			Place Bets, Come Bet Odds, and Hardways are all 'Off' during the <Link
 				text="Comeout Roll"
@@ -164,7 +220,10 @@
 			alt="The puck is off and in the Don't Come. There is a $10 place bet on the Point Ten with an 'On' button on top."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does &ldquo;My Bets Are OFF&rdquo; Mean in a Craps Game?" />
+		<ContentHeaderTwo
+			id="imOff"
+			title="What Does &ldquo;My Bets Are OFF&rdquo; Mean in a Craps Game?"
+		/>
 		<p class="pb-4">
 			During the Intermediate Roll, all your bets are already turned On. You can tell the dealer
 			that you want all your bets or specific bets turned Off. When you say, <Quote

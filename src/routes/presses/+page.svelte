@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -19,6 +21,34 @@
 	let prev: string = 'Your Money';
 	let nhref: string = 'spread-bets';
 	let next: string = 'Spread Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting with Units',
+			href: '#unitBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Standard Presses',
+			href: '#standardPresses',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Odd & Power Presses',
+			href: '#oddPowerPresses',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Multiple Unit Presses',
+			href: '#multipleUnitPresses',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -52,7 +82,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Place Bets" title="Pressing Place Bets in Craps" {pageData} />
@@ -77,8 +107,14 @@
 			title="Craps Presses"
 			alt="$12 place bet on the eight."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Is a Unit in Craps" />
+		<ContentHeaderTwo id="unitBetting" title="What Is a Unit in Craps" />
 		<p class="pb-4">
 			In Craps, a unit is a certain amount of money. Generally speaking, a unit is $5 or $6. On the
 			6 and 8 a unit is $6. On the 4, 5, 9 and 10 a unit is $5. For higher limit players, one unit
@@ -93,7 +129,10 @@
 			alt="A $6, $12, $18, and $24 place bet on the eight."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are Some Standard Presses on the Craps Table" />
+		<ContentHeaderTwo
+			id="standardPresses"
+			title="What Are Some Standard Presses on the Craps Table"
+		/>
 		<p class="pb-4">
 			Standard Presses are the ones you see most often. When you make a standard press, you tell the
 			dealer one of these three phrases, and the dealer will know what to do automatically. After
@@ -156,7 +195,7 @@
 			alt="$36 eight full pressed to $78 eight."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What is an Odd Press or Power Press in Craps" />
+		<ContentHeaderTwo id="oddPowerPresses" title="What is an Odd Press or Power Press in Craps" />
 		<p class="pb-4">
 			Presses other than standard presses require you know more about what you're doing. These are
 			more like systems. People know how much they're starting with and know how much they are going
@@ -196,7 +235,7 @@
 			alt="$10 five pressed with $1 to $25 five."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are Multiple Number Presses in Craps" />
+		<ContentHeaderTwo id="multipleUnitPresses" title="What Are Multiple Number Presses in Craps" />
 		<p class="pb-4">
 			When you start to press multiple numbers, you have a pretty good idea of what you're doing.
 			you're tracking your bets, knowing what they pay, how much you're going to add to each number,

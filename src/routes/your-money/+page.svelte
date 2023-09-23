@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -13,17 +15,39 @@
 	let description: string =
 		'You must pay attention to your money at the Craps Table. Know how much your bets cost, placement of those bets, your presses, and your payments.';
 	let url: string = 'your-money';
+
+	let phref: string = 'buying-place-bets';
+	let prev: string = 'Buying Place Bets';
+	let nhref: string = 'presses';
+	let next: string = 'Presses';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Getting the Right Change',
+			href: '#rightChange',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Double Checking Your Bet Placement',
+			href: '#rightSpot',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Checking Proper Numbers',
+			href: '#rightNumber',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
 		pageUrl: url,
 		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
 	};
-
-	let phref: string = 'buying-place-bets';
-	let prev: string = 'Buying Place Bets';
-	let nhref: string = 'presses';
-	let next: string = 'Presses';
 </script>
 
 <svelte:head>
@@ -51,7 +75,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -67,8 +91,17 @@
 			nonchalant about it that they don't pay attention at all. Learn what to watch for as the game
 			moves along.
 		</p>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="Are You Getting the Right Change for Your Craps Bets?" />
+		<ContentHeaderTwo
+			id="rightChange"
+			title="Are You Getting the Right Change for Your Craps Bets?"
+		/>
 		<p class="pb-4">
 			To begin with, know how much your bets cost. If you don't know how much your bets cost, you
 			can never know how much change you're supposed to receive. Dealers will make mistakes, and if
@@ -88,7 +121,7 @@
 			alt="$52 across with $55 dollars in the COME and $3 change near the apron."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Are Your Craps Bets in the Correct Spot?" />
+		<ContentHeaderTwo id="rightSpot" title="Are Your Craps Bets in the Correct Spot?" />
 		<p class="pb-4">
 			Make sure your bets are being put in the correct spot on the layout. If the dealer puts your
 			bet in someone else's spot when it's time to get paid, they'll pay the wrong person. You will
@@ -106,7 +139,7 @@
 			alt="A $15 place bet with a transparent $15 place bet next to it signifying the wrong spot."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Are Your Craps Bets on the Right Number?" />
+		<ContentHeaderTwo id="rightNumber" title="Are Your Craps Bets on the Right Number?" />
 		<p class="pb-4">
 			You should make sure the dealer is putting your bets on the correct number. Even if the dealer
 			heard what your bet was and repeated it back to you, they could very easily put that bet on a

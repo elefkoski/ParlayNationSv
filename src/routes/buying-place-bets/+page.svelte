@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateBuyFourTen } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateBuyFourTen } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -24,6 +26,40 @@
 	let prev: string = 'Place Bet Basics';
 	let nhref: string = 'your-money';
 	let next: string = 'Your Money';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: '5% Commission',
+			href: '#buyCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Betting a Buy Bet',
+			href: '#buyBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Buy Bet Placement',
+			href: '#buyPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Buy Bet Payment',
+			href: '#buyPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Buy 4 & 10 Calculator',
+			href: '#buyFourTenCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -71,7 +107,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Place Bets" title="Buying Place Bets in Craps" {pageData} />
@@ -94,8 +130,14 @@
 			title="Buying Place Bets"
 			alt="$20 bet on the inside of the ten with a buy lammer on top."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Is the 5% Commission on Buy Bets in Craps?" />
+		<ContentHeaderTwo id="buyCommission" title="What Is the 5% Commission on Buy Bets in Craps?" />
 		<p class="pb-4">
 			The commission is money you pay to get paid True Odds on your Place Bets. True Odds are what a
 			bet is supposed to get paid, a bet with no advantage for the casino. You must pay a 5%
@@ -104,7 +146,7 @@
 			would cost $2.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet the Buy Bet in a Craps Game?" />
+		<ContentHeaderTwo id="buyBetting" title="How Do You Bet the Buy Bet in a Craps Game?" />
 		<p class="pb-4">
 			Normally, when your bet gets to an amount that requires you to BUY it, the dealer will tell
 			you to drop the required commission amount. You don't need to worry about doing the math. The
@@ -130,7 +172,7 @@
 			alt="$21 sitting in the COME area"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where is Your Buy Bet on the Craps Table?" />
+		<ContentHeaderTwo id="buyPlacement" title="Where is Your Buy Bet on the Craps Table?" />
 		<p class="pb-4">
 			Buy Bets are relative to your spot in the rail and get put on the inside of the box to
 			differentiate it from a Place bet. The Basedealer will also put a BUY lammer on it to signify
@@ -146,7 +188,7 @@
 			alt="A $20 buy bet on the inside of the four. The inside of the four is outlined in orange"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does a Buy Bet Pay in Craps?" />
+		<ContentHeaderTwo id="buyPayment" title="What Does a Buy Bet Pay in Craps?" />
 		<p class="pb-4">
 			Like many other bets on the table, you must bet Place Bets in certain increments, and they pay
 			differently depending on which number you're betting. Once a Buy bet wins, you must pay the
@@ -210,7 +252,7 @@
 			alt="$75 buy on both the 4 and 10 total $150 for a $7 commission."
 		/>
 		<Divider />
-		<CalcContainer aria="Buy 4 or 10 payment calculator"
+		<CalcContainer aria="Buy 4 or 10 payment calculator" id="buyFourTenCalc"
 			><CalcBox
 				description="Check the payment for a Buying a 4 or 10."
 				title="Buy 4 or 10 Payment Calculator"

@@ -6,7 +6,19 @@
 	onMount(() => {
 		enableEventTracking();
 		enableScrollTracking();
-		sessionStorage.setItem('last_url', window.location.pathname);
+
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				const targetElement = document.querySelector(this.getAttribute('href'));
+				if (targetElement) {
+					window.scrollTo({
+						top: targetElement.offsetTop - 85, // 80 is the height of your navbar
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
 	});
 </script>
 

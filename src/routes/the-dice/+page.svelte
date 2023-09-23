@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -19,6 +21,33 @@
 	let prev = 'The Craps Table';
 	let nhref = '/the-stages';
 	let next = 'The Stages';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Shooting the Dice',
+			href: '#newShooter',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Watching the Dice',
+			href: '#watchingTheDice',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Craps Courtesies',
+			href: '#showCourtesies',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Being Hit w/the Dice',
+			href: '#beingHit',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
 
 	let liBs = [
 		{
@@ -87,7 +116,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Craps Basics" title="Shooting the Dice" {pageData} />
@@ -110,8 +139,14 @@
 			title="The Craps Dice"
 			alt="Five maroon colored craps dice sitting on green felt."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="New to Shooting Craps?" />
+		<ContentHeaderTwo id="newShooter" title="New to Shooting Craps?" />
 		<p class="pb-4">
 			Everyone at the table has a chance to roll the dice but must follow certain rules. You cannot
 			just pick up the dice and do what you want with them. The stickperson will send you five dice;
@@ -119,7 +154,7 @@
 		</p>
 		<ContentUlb {liBs} />
 		<Divider />
-		<ContentHeaderTwo title="Are You Watching the Dice at the Craps Table?" />
+		<ContentHeaderTwo id="watchingTheDice" title="Are You Watching the Dice at the Craps Table?" />
 		<p class="pb-4">
 			You must watch the dice at all times! The best time to make bets is when the dice are in the
 			middle of the table. As soon as the dice leave the middle of the table, it would be best if
@@ -139,7 +174,10 @@
 			alt="A player with tunnel vision staring at dice at the opposite end of a craps table."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Do You Show Courtesies to the Shooter During the Craps Game?" />
+		<ContentHeaderTwo
+			id="showCourtesies"
+			title="Do You Show Courtesies to the Shooter During the Craps Game?"
+		/>
 		<p class="pb-4">
 			The person shooting the dice bears the burden of whether or not the table wins or loses money.
 			For most shooters, there is no skill in shooting the dice nor can they do anything to make the
@@ -148,7 +186,7 @@
 		</p>
 		<ContentUlb liBs={liBs2} />
 		<Divider />
-		<ContentHeaderTwo title="Have You Been Hit with the Dice at the Craps Table?" />
+		<ContentHeaderTwo id="beingHit" title="Have You Been Hit with the Dice at the Craps Table?" />
 		<p class="pb-4">
 			How a player reacts to being hit by the dice determines whether a roll will be considered
 			valid. Be a statue. If you see the dice are going to hit you and you don't move and the dice

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -19,6 +21,16 @@
 	let prev: string = 'Uptown/Downtown';
 	let nhref: string = 'proposition-bets';
 	let next: string = 'Proposition Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Across Including the Point',
+			href: '#bettingAcrossIncluding',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -65,7 +77,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -83,8 +95,17 @@
 			/> but add <Quote text="… including the point." /> to the end of their Spread Bet.
 		</p>
 		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Across Including the Point in Craps?" />
+		<ContentHeaderTwo
+			id="bettingAcross"
+			title="How Do You Bet Across Including the Point in Craps?"
+		/>
 		<p class="pb-4">
 			Across Including the Point is betting all the Place bet numbers including the Point. E.g. $64
 			Across would be $10 on the 4, $10 on the 5, $12 on the 6, $12 on the 8, $10 on the 9, and $10

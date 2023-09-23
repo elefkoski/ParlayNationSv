@@ -1,14 +1,16 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
 	import {
 		calculateSixEightDcLayOdds,
 		calculateFiveNineDcLayOdds,
 		calculateFourTenDcLayOdds,
 		calculateMaxDcLay
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -29,6 +31,52 @@
 	let prev: string = "Don't Come";
 	let nhref: string = 'overlays';
 	let next: string = 'Overlays';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: "Betting Don't Come Lay Odds",
+			href: '#bettingDCLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Lay Odds Placement",
+			href: '#dcLayOddsPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Lay Odds Payment",
+			href: '#dcLayOddsPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Lay Odds Calculators",
+			href: '#dcLayOddsCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: "Max Don't Come Lay Odds",
+			href: '#maxDCLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Check Max Don't Come Lay Odds",
+			href: '#maxDCLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: "Dealer Don't Come Lay Odds",
+			href: '#dealerDCLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -75,7 +123,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -101,8 +149,14 @@
 			title="Don't Come Lay Odds"
 			alt="$10 with $18 Lay odds behind the point eight."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Don't Come Lay Odds in Craps?" />
+		<ContentHeaderTwo id="bettingDCLayOdds" title="How Do You Bet Don't Come Lay Odds in Craps?" />
 		<p class="pb-4">
 			When you bet Don't Come Lay Odds you put your money in the COME and tell the dealer what <Link
 				text="Don't
@@ -119,7 +173,10 @@
 			alt="$10 behind the point five and $15 sitting in the COME."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Are Your Don't Come Lay Odds at the Craps Table?" />
+		<ContentHeaderTwo
+			id="dcLayOddsPlacement"
+			title="Where Are Your Don't Come Lay Odds at the Craps Table?"
+		/>
 		<p class="pb-4">
 			Place your money in the COME and tell the dealer you want to <Quote text="Lay Odds" /> on whichever
 			Point you're behind. The dealer will take the money and heel it next to your Don't Come bet.
@@ -133,7 +190,10 @@
 			alt="$50 with $90 Lay Odds behind the point six"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do the Lay Odds Pay for a Don't Come Bet in Craps?" />
+		<ContentHeaderTwo
+			id="dcLayOddsPayment"
+			title="What Do the Lay Odds Pay for a Don't Come Bet in Craps?"
+		/>
 		<p class="pb-4">
 			Lay Odds for a Don't Come Bet work the same way as Lay Odds for the Don't Pass. They pay
 			differently depending on the Point and you must make them in certain increments. When your
@@ -185,7 +245,7 @@
 			alt="$15 paid even money behind the point four. There are $60 Lay Odds next to it paid $30."
 		/>
 		<Divider />
-		<CalcContainer aria="Don't come lay odds payment calculators"
+		<CalcContainer aria="Don't come lay odds payment calculators" id="dcLayOddsCalcs"
 			><CalcBox
 				description="Check the payment for Lay Odds on the Don't Come."
 				title="Don't Come Lay Odds Payment Calculators"
@@ -217,7 +277,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Are the Max Lay Odds for a Don't Come Bet?" />
+		<ContentHeaderTwo id="maxDCLayOdds" title="What Are the Max Lay Odds for a Don't Come Bet?" />
 		<p class="pb-4">
 			Since the casino has no advantage on this bet they put a limit on it. The maximum Lay Odds you
 			can add to a Don't Come bet are the same as for the Don't Pass. No matter the number, the
@@ -232,7 +292,7 @@
 			alt="$25 with $125 Lay Odds behind the point eight."
 		/>
 		<Divider />
-		<CalcContainer aria="Check max don't come lay odds"
+		<CalcContainer aria="Check max don't come lay odds" id="maxDCLayOdds"
 			><CalcBox
 				description="Check the Max Lay Odds for your bet on the Don't Come."
 				title="Check Max Don't Come Lay Odds"
@@ -248,7 +308,10 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Don't Come Lay Odds for the Dealers?" />
+		<ContentHeaderTwo
+			id="dealerDCLayOdds"
+			title="How Do You Bet Don't Come Lay Odds for the Dealers?"
+		/>
 		<p class="pb-4">
 			If you make a Don't Come bet for the dealers and their bet gets put behind a Point, you can
 			add Lay Odds to it. Max for the dealers is still six times.

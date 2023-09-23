@@ -1,4 +1,11 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
+	import CalcInput5 from '$lib/clients/components/calculators/CalcInput5.svelte';
 	import {
 		calculateHopLowSide,
 		calculateHopHighSide,
@@ -11,11 +18,6 @@
 		calculateHopEights,
 		calculateHopHardways
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import CalcInput5 from '$lib/clients/components/calculators/CalcInput5.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -36,6 +38,64 @@
 	let prev: string = 'World';
 	let nhref: string = 'come-bets';
 	let next: string = 'Come Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Hop Bet Placement',
+			href: '#hopBetPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Hop Bet Payment',
+			href: '#hopBetPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Hop Bet Payment Calculator',
+			href: '#hopBetPymntCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Hop Bet Terms',
+			href: '#hopBetTerms',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Multi-Bet Hop Bets',
+			href: '#multiBetHops',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Two Number Hop Bet Calculator',
+			href: '#twoNumHopCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Three Number Hop Bet Calculator',
+			href: '#threeNumHopCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Four Number Hop Bet Calculator',
+			href: '#fourNumHopCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer Hop Bets',
+			href: '#dealerHops',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -77,7 +137,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -99,8 +159,14 @@
 			title="Hop Bets"
 			alt="Up close image of the hop bets."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="Where Are Your Hop Bets on the Craps Table?" />
+		<ContentHeaderTwo id="hopBetPlacement" title="Where Are Your Hop Bets on the Craps Table?" />
 		<p class="pb-4">
 			When you want to make a Hop bet, throw the bet to <Link
 				text="the Stickperson"
@@ -120,7 +186,7 @@
 			alt="Up close view of four hop bets and the rail of the craps table. There are four colored spots that correspend with each other."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do Hop Bets Pay on a Craps Game?" />
+		<ContentHeaderTwo id="hopBetPayment" title="What Do Hop Bets Pay on a Craps Game?" />
 		<p class="pb-4">
 			When you bet a Hop bet there are always two possible payouts. 30:1 and 15:1. The Hops that are
 			pairs pay 30:1 which are: 2-2 (Hard Four), 3-3 (Hard Six), 4-4 (Hard Eight), and 5-5 (Hard
@@ -145,7 +211,7 @@
 			alt="$2 on the hop 4-4. Two green dice show 4-4. Bubble reads $60 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Hop payment calculators"
+		<CalcContainer aria="Hop payment calculators" id="hopBetPymntCalc"
 			><CalcBox
 				description="Check the payment for a bet made straight up on any of the Hop bets."
 				title="Hop Bet Payment Calculator"
@@ -169,7 +235,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Kind of Hop Bet Terminology Is Used in Craps?" />
+		<ContentHeaderTwo id="hopBetTerms" title="What Kind of Hop Bet Terminology Is Used in Craps?" />
 		<p>There are several phrases you can use to tell a dealer you want to make a Hop bet.</p>
 		<ul class="pl-4 pb-4 list-disc">
 			<li>
@@ -207,7 +273,10 @@
 			will come NOT as a pair. E.g. <Quote text="I would like to hop the easy 10 for $1." />
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Are Some Common Multi-Bets for Hops in Craps?" />
+		<ContentHeaderTwo
+			id="multiBetHops"
+			title="What Are Some Common Multi-Bets for Hops in Craps?"
+		/>
 		<p class="pb-4">
 			Since there are 17 different Hop Bets you can bet there are a lot of ways to bet them together
 			but for the most part players stick to these most common ones.
@@ -228,7 +297,7 @@
 			alt="An outlined view of the hopping 4's, hopping 5's, hopping 9's, and hopping 10's."
 		/>
 		<Divider />
-		<CalcContainer aria="Two number hop payment calculators"
+		<CalcContainer aria="Two number hop payment calculators" id="twoNumHopCalc"
 			><CalcBox
 				description="Check the payment for a bet made on the Hopping 4's, 5's, 9's, or 10's."
 				title="Two Number Hop Bet Payment Calculators"
@@ -296,7 +365,7 @@
 			alt="An outlined view of the hopping 7's, hopping 6's, and hopping 8's."
 		/>
 		<Divider />
-		<CalcContainer aria="Three number hop payment calculators"
+		<CalcContainer aria="Three number hop payment calculators" id="threeNumHopCalc"
 			><CalcBox
 				description="Check the payment for a bet made on the Hopping 6's, 7's, or 8's."
 				title="Three Number Hop Bet Payment Calculators"
@@ -352,7 +421,7 @@
 			alt="An outlined view of the four hopping hardways."
 		/>
 		<Divider />
-		<CalcContainer aria="Four number hop calculator"
+		<CalcContainer aria="Four number hop calculator" id="fourNumHopCalc"
 			><CalcBox
 				description="Check the payment for a bet made on the Hopping Hardways."
 				title="Hopping Hardways Payment Calculator"
@@ -368,7 +437,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderThree title="How Do You Bet the Hops for the Dealers in Craps?" />
+		<ContentHeaderTwo id="dealerHops" title="How Do You Bet the Hops for the Dealers in Craps?" />
 		<p class="pb-4">
 			You can always bet the Hops for the dealers by throwing the money to the Stickperson and
 			telling them which number(s) you would like to Hop for the dealers.

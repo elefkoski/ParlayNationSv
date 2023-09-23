@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -24,6 +26,44 @@
 		pageUrl: url,
 		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
 	};
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Self Service Bets',
+			href: '#selfService',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'If It Lays It Plays',
+			href: '#laysItPlays',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'String Betting',
+			href: '#stringBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Two Way Bets',
+			href: '#twoWay',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Three Way Bets',
+			href: '#threeWay',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Hedging Your Bets',
+			href: '#hedgingBets',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
 </script>
 
 <svelte:head>
@@ -51,7 +91,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -64,8 +104,14 @@
 			may accidentally leave money from a winning bet on the table, or you may want to bet with the
 			dealers or the shooter. Here are some other Craps nuances you'll want to consider.
 		</p>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Craps Bets Are Self Service?" />
+		<ContentHeaderTwo id="selfService" title="What Craps Bets Are Self Service?" />
 		<p class="pb-4">
 			A self-service bet is a bet that is taken care of by the player, not the dealers. You gotta
 			keep an eye on your own bets and not forget to pick up your winnings. If you forget whether a
@@ -89,7 +135,10 @@
 			alt="Arrows pointing to the pass line, pass line odd, field, don't come, don't come odds, come, and don't come areas."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does &ldquo;If it Lays it Plays&rdquo; Mean in Craps?" />
+		<ContentHeaderTwo
+			id="laysItPlays"
+			title="What Does &ldquo;If it Lays it Plays&rdquo; Mean in Craps?"
+		/>
 		<p class="pb-4">
 			When you hear a dealer say, <Quote text="If it lays, it plays." /> they are telling someone that
 			they have won a self-service bet but haven't picked up their winnings. If a roll goes by without
@@ -105,7 +154,7 @@
 			alt="A winning $75 bet sitting in the field."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What is String Betting at a Craps Table?" />
+		<ContentHeaderTwo id="stringBetting" title="What is String Betting at a Craps Table?" />
 		<p class="pb-4">
 			Imagine going to the bar and ordering a drink, and when they come back with your drink, you
 			order another drink, and when they come back with that one, you order a third, and yes, when
@@ -118,7 +167,7 @@
 			the dealer money and tell them all at once.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Is a Two Way Bet in Craps?" />
+		<ContentHeaderTwo id="twoWay" title="What Is a Two Way Bet in Craps?" />
 		<p class="pb-4">
 			Since most players don't bet for the dealers without making a bet themselves, we have a phrase
 			<Quote text="Two way." /> When you make a Two Way bet, you are: betting for yourself and the dealer
@@ -148,7 +197,7 @@
 			alt="A $5 bet on the hard 10 in spot three with $5 in the middle of the hard 10 for the dealers."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Is a Three Way Bet in Craps?" />
+		<ContentHeaderTwo id="threeWay" title="What Is a Three Way Bet in Craps?" />
 		<p class="pb-4">
 			Sometimes a player would like to thank the shooter for having a good roll or possibly invoking
 			them to roll a certain number. This is where the Three-Way bet comes into play. It is a bet
@@ -171,7 +220,10 @@
 			alt="Three dollars on the aces. One in spot four, one in spot ten, and one in the middle."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does it Mean to Hedge Your Bets at the Craps Table?" />
+		<ContentHeaderTwo
+			id="hedgingBets"
+			title="What Does it Mean to Hedge Your Bets at the Craps Table?"
+		/>
 		<p class="pb-4">
 			Hedging is insurance. It's making a bet that wins when another bet loses. A common hedge bet
 			is the <Link text="Any Craps" href="any-craps" /> when you're betting the <Link

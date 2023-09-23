@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { calculateCAndESplit, calculateCAndE } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput2 from '$lib/clients/components/calculators/CalcInput2.svelte';
 	import CalcInput3 from '$lib/clients/components/calculators/CalcInput3.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
+	import { calculateCAndESplit, calculateCAndE } from '$lib/utils/calculations';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/clients/components/contentPages/Content-h3.svelte';
@@ -14,6 +14,8 @@
 	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '$lib/clients/components/Link.svelte';
+	import PrevNext from '$lib/clients/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 
 	let title: string = 'Betting the C & E';
 	let description: string =
@@ -24,6 +26,34 @@
 	let prev: string = 'Straight Up';
 	let nhref: string = 'any-seven';
 	let next: string = 'Any Seven';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Placement of a C & E',
+			href: '#cAndEPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Payments of a C & E',
+			href: '#cAndEPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'C & E Split Calculator',
+			href: '#cAndESplitCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'C & E Calculator',
+			href: '#cAndECalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -72,7 +102,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -107,8 +137,14 @@
 			title="The C & E"
 			alt="Overhead up close view of the c &amp; e betting area."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your C & E on the Craps Table?" />
+		<ContentHeaderTwo id="cAndEPlacement" title="Where Is Your C & E on the Craps Table?" />
 		<p class="pb-4">
 			There are usually enough spots of the C & E for every player on the table. They are also not
 			confined to a box so there's plenty of space to place the bets. Placements of the C & E's are
@@ -123,7 +159,7 @@
 			alt="Overhead view up C &amp; E area with arrows pointing to their respective spots in the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the C & E Pay in a Craps Game?" />
+		<ContentHeaderTwo id="cAndEPayment" title="What Does the C & E Pay in a Craps Game?" />
 		<p class="pb-4">
 			Splitting - There are two payouts possible when splitting the C & E. If any of the Craps roll
 			(2, 3, or 12) the payout will be 3x the bet. E.g. a $5 C & E will pay 3 x 5 or $15. If the Yo
@@ -139,7 +175,7 @@
 			alt="$5 C &amp; E split with two bubbles. One reads $15 payout. The second reads $35 payout."
 		/>
 		<Divider />
-		<CalcContainer aria="C & E split calculator"
+		<CalcContainer aria="C & E split calculator" id="cAndESplitCalc"
 			><CalcBox
 				description="Check the payment for a bet made on the C & E split."
 				title="C & E Split Payment Calculator"
@@ -167,7 +203,7 @@
 			alt="$4 on the any crap and $1 on the yo. Two bubbles: one read $27 payment and the other $11 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="C & E separated calculators"
+		<CalcContainer aria="C & E separated calculators" id="cAndECalc"
 			><CalcBox
 				description="Check the payment for the C & E when you only bet the C, when you only bet the E, or you bet them together."
 				title="C & E Payment Calculator"

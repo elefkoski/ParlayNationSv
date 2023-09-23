@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateWorld } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput2 from '$lib/clients/components/calculators/CalcInput2.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateWorld } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -23,6 +25,40 @@
 	let prev: string = 'Horn High';
 	let nhref: string = 'hop-bets';
 	let next: string = 'Hop Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: '$5 World Bet',
+			href: '#fiveWorld',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'World Placement',
+			href: '#worldPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'World Payment',
+			href: '#worldPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'World Calculator',
+			href: '#worldCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer World',
+			href: '#dealerWorld',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -64,7 +100,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -92,8 +128,14 @@
 			title="The World"
 			alt="Up close overhead view of the world on the craps layout."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Is a $5 World in Craps?" />
+		<ContentHeaderTwo id="fiveWorld" title="What Is a $5 World in Craps?" />
 		<p class="pb-4">
 			A $5 World is a $1 on each the Aces, Ace Deuce, Yo, Twelve, and the Any 7. The minimum is
 			five-dollars because you must put at least $1 on those five bets so the World needs to be bet
@@ -108,7 +150,7 @@
 			alt="Split image. On top is $5 on the world. On bottom is $1 each on the aces, ace deuce, yo, twelve, and the any seven"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your World on the Craps Table?" />
+		<ContentHeaderTwo id="worldPlacement" title="Where Is Your World on the Craps Table?" />
 		<p class="pb-4">
 			I would say that the majority of Craps tables don't have a picture of the World on them. The
 			World is more of a bet that dealer and players know by heart. Example 2 shows one of the other
@@ -132,7 +174,7 @@
 			alt="Overhead view of the center bar above the any seven on the craps table and the craps table rail. There are eight colored spots on each the bar and the rail that correspond with each other."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does a $5 World Pay on the Craps Table?" />
+		<ContentHeaderTwo id="worldPayment" title="What Does a $5 World Pay on the Craps Table?" />
 		<p class="pb-4">
 			Like all other <Link text="Multi-Bets" href="multi-bets" />, the World pays differently
 			depending on what rolls. There are three options: the 7 rolls, the high side rolls (2, 12), or
@@ -199,7 +241,7 @@
 			alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 6-6. A bubble reads $26 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="World payment calculator"
+		<CalcContainer aria="World payment calculator" id="worldCalc"
 			><CalcBox
 				description="Check the payment for a bet made on the World."
 				title="World Payment Calculator"
@@ -217,7 +259,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet the World for the Dealers?" />
+		<ContentHeaderTwo id="dealerWorld" title="How Do You Bet the World for the Dealers?" />
 		<p class="pb-4">
 			Ideally, multiples of $5 would be best for the dealers. Anything less would be an improper bet
 			than requires some odd math for the dealers and usually ends up getting rounded down.

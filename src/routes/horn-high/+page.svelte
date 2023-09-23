@@ -1,14 +1,16 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput4 from '$lib/clients/components/calculators/CalcInput4.svelte';
 	import {
 		calculateHornHighAces,
 		calculateHornHighAceDeuce,
 		calculateHornHighYo,
 		calculateHornHighTwelve
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput4 from '$lib/clients/components/calculators/CalcInput4.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -30,6 +32,34 @@
 	let prev: string = 'Horn';
 	let nhref: string = 'world';
 	let next: string = 'World';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: "The Four Horn High's",
+			href: '#fourHornHighs',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Horn High Placement',
+			href: '#hornHighPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Horn High Payment',
+			href: '#hornHighPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Horn High Calculators',
+			href: '#hornHighCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -120,7 +150,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -151,8 +181,17 @@
 			title="Horn High"
 			alt="Up close overhead view of the horn highs on the craps layout."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Are the Four Different Horn High's in Craps?" />
+		<ContentHeaderTwo
+			id="fourHornHighs"
+			title="What Are the Four Different Horn High's in Craps?"
+		/>
 		<p class="pb-4">
 			If you bet a four-dollar <Link text="Horn" href="horn" /> then took another dollar and added it
 			to the Yo then you would be betting a Horn High Yo. If instead you took that extra dollar and put
@@ -197,7 +236,10 @@
 			alt="Split image. On top is $5 on the Horn High Twelve. On bottom is $1 each on the aces, ace deuce, and yo. There are two dollars on the twelve."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your Horn High Bet on the Craps Table?" />
+		<ContentHeaderTwo
+			id="hornHighPlacement"
+			title="Where Is Your Horn High Bet on the Craps Table?"
+		/>
 		<p class="pb-4">
 			For the most part, all of the Horn Highs are separated into two sections: the left side of the
 			table and the right side of the table. If two players from the same side of the table bet the
@@ -215,7 +257,7 @@
 			alt="Overhead up close view of the Horn High bets and the craps table rail. There are eight color coded spots on the bets referencing eight colored spots on the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Horn High Pay on a Craps Game?" />
+		<ContentHeaderTwo id="hornHighPayment" title="What Does the Horn High Pay on a Craps Game?" />
 		<p class="pb-4">
 			The Horn High's are some of the most confusing bets to pay on a Craps table. There are only
 			four payments you need to know in order to pay all the bets but it's knowing when to apply
@@ -342,7 +384,7 @@
 			alt="$1 each on the aces, twelve, and ace deuce. There are two dollars on the yo. Two green dice show 6-6. A bubble reads $26 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Horn high payment calculators"
+		<CalcContainer aria="Horn high payment calculators" id="hornHighCalcs"
 			><CalcBox
 				description="Check the payment for a bet made on the four Horn High bets."
 				title="Horn High Payment Calculators"

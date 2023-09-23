@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -18,6 +20,16 @@
 	let prev: string = 'Across';
 	let nhref: string = 'outside';
 	let next: string = 'Outside';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Inside',
+			href: '#bettingInside',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -64,7 +76,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -86,8 +98,14 @@
 			title="Inside Place Bets"
 			alt="Puck is on point four and points 5, 6, 8, and 9 are highlighted."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Inside on the Craps Table?" />
+		<ContentHeaderTwo id="bettingInside" title="How Do You Bet Inside on the Craps Table?" />
 		<p class="pb-4">
 			When you make an Inside bet you don't include the 4 or 10. Since those numbers are not
 			included you don't have to worry about paying a commission. Regardless of whether or not you

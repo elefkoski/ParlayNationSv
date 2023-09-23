@@ -1,13 +1,15 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
 	import {
 		calculateSixEightComeOdds,
 		calculateFiveNineComeOdds,
 		calculateFourTenComeOdds
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -28,6 +30,52 @@
 	let prev: string = 'Come Bet Basics';
 	let nhref: string = 'coming-down-with-odds';
 	let next: string = 'Coming Down w/Odds';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Come Bet Odds',
+			href: '#bettingComeBetOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bet Odds Placement',
+			href: '#comeBetOddsPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Odds Off During Comeout Roll',
+			href: '#comeBetOddsOff',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Payment for Come Bet Odds',
+			href: '#comeBetOddsPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bet Odds Calculators',
+			href: '#comeBetOddsCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Max Come Bet Odds',
+			href: '#maxComeBetOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Dealer Come Bet Odds',
+			href: '#dealerComeBetOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -74,7 +122,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Come Bets" title="Betting Odds for a Come Bet" {pageData} />
@@ -95,8 +143,17 @@
 			title="Come Bet Odds"
 			alt="$10 with $10 odds on the point eight."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Odds for a Come Bet in Craps?" />
+		<ContentHeaderTwo
+			id="bettingComeBetOdds"
+			title="How Do You Bet Odds for a Come Bet in Craps?"
+		/>
 		<p class="pb-4">
 			When you want to to add Odds to your <Link text="Come Bet" href="come-bet-basics" /> put your money
 			in the COME and tell the dealer those are Odds for your Come bet.
@@ -110,7 +167,7 @@
 			alt="$10 in the Come and $10 on the point six."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Do the Odds Go for Your Come Bet?" />
+		<ContentHeaderTwo id="comeBetOddsPlacement" title="Where Do the Odds Go for Your Come Bet?" />
 		<p class="pb-4">
 			The Odds for a Come bet are placed on top of the Come bet but are offset. They are offset so
 			you could distinguish the Come bet from the Odds.
@@ -124,7 +181,7 @@
 			alt="Up close view of $15 offset and sitting on top of another $10 sitting inside the point eight."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Odds Are OFF During the Comeout Roll" />
+		<ContentHeaderTwo id="comeBetOddsOff" title="Odds Are OFF During the Comeout Roll" />
 		<p class="pb-4">
 			During the <Link text="Comeout Roll" href="the-stages" /> the Odds on all Come Bets do not work,
 			although the Come bet itself is always working. If a seven is rolled during the Comeout Roll you
@@ -146,7 +203,10 @@
 			alt="Puck is off and in the don't come. There are two come bets with highlighted odds on the the points four and five."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do Your Odds Pay on a Come Bet in Craps?" />
+		<ContentHeaderTwo
+			id="comeBetOddsPayment"
+			title="What Do Your Odds Pay on a Come Bet in Craps?"
+		/>
 		<p class="pb-4">
 			Odds on a Come bet work the same way as <Link text="Odds" href="pass-line-odds" /> on the <Link
 				text="Pass Line"
@@ -239,7 +299,7 @@
 			alt="Split image. Left $10 with $15 odds. Right has $10 w/$15 odds in the come and a $40 payment. Two orange dice show 2-2."
 		/>
 		<Divider />
-		<CalcContainer aria="Come bet odds payment calculator"
+		<CalcContainer aria="Come bet odds payment calculator" id="comeBetOddsCalcs"
 			><CalcBox
 				description="Check the payment for Odds on a Come bet."
 				title="Come Bet Odds Payment Calculators"
@@ -271,7 +331,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Are 3x 4x 5x Odds on a Come Bet in Craps?" />
+		<ContentHeaderTwo id="maxComeBetOdds" title="What Are 3x 4x 5x Odds on a Come Bet in Craps?" />
 		<p class="pb-4">
 			Odds on a Come bet have no house advantage so there is a limit on the amount you can add. 3x
 			4x 5x Odds means the maximm Odds you can add to a Come bet is 3x the Come bet on the 4 or 10,
@@ -323,7 +383,10 @@
 			alt="$10 come bet with $50 odds on the point 8"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet a Come Bet with Odds for the Dealers?" />
+		<ContentHeaderTwo
+			id="dealerComeBetOdds"
+			title="How Can You Bet a Come Bet with Odds for the Dealers?"
+		/>
 		<p class="pb-4">
 			If you make a Come bet for the dealers you can also add Odds to it. Just like a players Come
 			bet, there is a maximum amount of Odds you can add to a dealers Come bet that is determined by

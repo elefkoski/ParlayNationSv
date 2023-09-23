@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -18,6 +20,22 @@
 	let prev: string = 'Inside';
 	let nhref: string = 'uptown-downtown';
 	let next: string = 'Uptown/Downtown';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Outside w/o Commission',
+			href: '#bettingOutsideWoCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Betting Outside w/Commission',
+			href: '#bettingOutsideWCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -64,7 +82,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -87,8 +105,17 @@
 			title="Outside Place Bets"
 			alt="Puck is on point eight and points 4, 5, 9, and 10 are highlighted."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Outside on the Craps Table?" />
+		<ContentHeaderTwo
+			id="bettingOutsideWoCommission"
+			title="How Do You Bet Outside on the Craps Table?"
+		/>
 		<p class="pb-4">
 			When you bet Outside at lower limits you don't have to worry about commission because you're
 			not betting large enough that a vig needs to be charged. The bets on each number are also the
@@ -124,7 +151,10 @@
 			alt="$45 outside with point on five"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Outside with a Commission in a Craps Game?" />
+		<ContentHeaderTwo
+			id="bettingOutsideWCommission"
+			title="How Do You Bet Outside with a Commission in a Craps Game?"
+		/>
 		<p class="pb-4">
 			When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is
 			going to be the most.

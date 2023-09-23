@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -17,6 +19,22 @@
 	let prev: string = 'Outside';
 	let nhref: string = 'including-the-point';
 	let next: string = 'Including the Point';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Uptown/Downtown w/o Commission',
+			href: '#upDownWoCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Up/Downtown w/Commission',
+			href: '#upDownWCommission',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -35,38 +53,6 @@
 	];
 	let tblPnts: string[] = [
 		'One Unit can be $5 or $25 on the 4, 5, 9, and 10. One Unit can be $6 or $30 on the 6 or 8.'
-	];
-
-	let liAs = [
-		{
-			title: ':',
-			items: ['', '', '', '', '']
-		},
-		{
-			title: ':',
-			items: ['', '', '', '']
-		},
-		{
-			title: ':',
-			items: ['', '', '']
-		}
-	];
-	let liBs = [
-		{
-			title: '',
-			subTitle: [''],
-			items: ['', '', '', '', '']
-		},
-		{
-			title: '',
-			subTitle: [''],
-			items: ['', '', '', '', '']
-		},
-		{
-			title: '',
-			subTitle: [''],
-			items: ['', '', '', '', '']
-		}
 	];
 </script>
 
@@ -95,7 +81,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -127,8 +113,17 @@
 			title="Downtown Place Bets"
 			alt="Puck is on point eight and points 4, 5, and 6 are highlighted."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Uptown or Downtown on the Craps Table?" />
+		<ContentHeaderTwo
+			id="upDownWoCommission"
+			title="How Do You Bet Uptown or Downtown on the Craps Table?"
+		/>
 		<p class="pb-4">
 			When you bet Downtown or Uptown at lower limits you will not have to pay a commission on the 4
 			or 10. If you bet the same number of units Uptown or Downtown the cost will be the same.
@@ -151,7 +146,10 @@
 			alt="Betting $16 downtown with the point on nine."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Uptown or Downtown with a Commission?" />
+		<ContentHeaderTwo
+			id="upDownWCommission"
+			title="How Do You Bet Uptown or Downtown with a Commission?"
+		/>
 		<p class="pb-4">
 			When you bet Downtown or Uptown at higher limits you will have to include the commission
 			charged on either the 4 or 10. If you bet the same number of units Uptown or Downtown the cost

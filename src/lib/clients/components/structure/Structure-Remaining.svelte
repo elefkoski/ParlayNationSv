@@ -1,6 +1,8 @@
 <script lang="ts">
 	import RightColumn from '$lib/clients/components/structure/RightColumn.svelte';
 	import Footer from '$lib/clients/components/structure/Footer.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	export let pageLinks: PageMenu[] = [];
 </script>
 
 <div class="w-full lg:w-3/4 flex flex-col">
@@ -9,7 +11,7 @@
 			<slot />
 		</div>
 		<div class="w-full lg:w-1/3 p-6 flex flex-col space-y-4">
-			<RightColumn />
+			<RightColumn {pageLinks} />
 		</div>
 	</div>
 	<Footer />

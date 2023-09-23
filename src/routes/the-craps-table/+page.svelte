@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -17,6 +19,58 @@
 	let prev = 'The Crew';
 	let nhref = 'the-dice';
 	let next = 'The Dice';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'The Rail',
+			href: '#railArea',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Proposition Bets',
+			href: '#propArea',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Betting Areas',
+			href: '#betArea',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Craps Bank',
+			href: '#bankArea',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Checking Table Limits',
+			href: '#tableLimits',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Puck',
+			href: '#thePuck',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Stick',
+			href: '#theStick',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Bowl',
+			href: '#theBowl',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -50,7 +104,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Craps Basics" title="The Craps Table" {pageData} />
@@ -67,8 +121,14 @@
 			title="The Craps Table"
 			alt="Overhead view of Craps table with highlighted areas of the bank, betting areas, proposition bets, and the rail."
 		/>
-		<div class="pb-4" />
-		<ContentHeaderTwo title="The Rail on a Craps Table" />
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
+		<Divider />
+		<ContentHeaderTwo id="railArea" title="The Rail on a Craps Table" />
 		<p class="pb-4">
 			The rail is where you place your cheques. It's divided into sections, and each section is for
 			a player. After you buy in, you put your cheques in the rail sideways, and you're ready to
@@ -77,7 +137,7 @@
 			on it, players spill their drinks on it, and I would be afraid of players pickpocketing a
 			purse or anything similar. Just be careful down there.
 		</p>
-		<ContentHeaderTwo title="Proposition Bets on the Craps Table" />
+		<ContentHeaderTwo id="propArea" title="Proposition Bets on the Craps Table" />
 		<p class="pb-4">
 			This whole middle area of the Craps table is reserved for <Link
 				text="Proposition Bets"
@@ -86,7 +146,7 @@
 			bet on this area simultaneously. And believe me, when they do, all you see is a skyline of
 			cheques covering everything. It gets crazy.
 		</p>
-		<ContentHeaderTwo title="Craps Table Betting Areas" />
+		<ContentHeaderTwo id="betArea" title="Craps Table Betting Areas" />
 		<p class="pb-4">
 			You play the majority of the game in these two areas. The left side can serve up to eight
 			players, and the right side another eight. You are playing the same game at the same time but
@@ -98,7 +158,7 @@
 				href="place-bets"
 			/>, <Link text="Come Bets" href="come-bets" />.
 		</p>
-		<ContentHeaderTwo title="The Craps Table Bank" />
+		<ContentHeaderTwo id="bankArea" title="The Craps Table Bank" />
 		<p class="pb-4">
 			The money the casino uses to run the game is called The Bank. players' <Link
 				text="buy-ins"
@@ -107,7 +167,7 @@
 			their money to deal the game. The Craps Bank in this picture has a total of $260,800.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="Are You Watching the Craps Table Limits?" />
+		<ContentHeaderTwo id="tableLimits" title="Are You Watching the Craps Table Limits?" />
 		<p class="pb-4">
 			The first thing is first: find the table with the lowest minimum bet. You'll find tables at
 			their lowest limits during the day or middle of the week and at their highest on the weekends.
@@ -123,7 +183,7 @@
 			alt="Craps table limit sign with $10 minimum bet and $50 maximum bet."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Is the Puck for on a Craps Game?" />
+		<ContentHeaderTwo id="thePuck" title="What Is the Puck for on a Craps Game?" />
 		<p class="pb-4">
 			The Puck is double-sided and tells you which of the two stages the Craps game is in. One side
 			is black and reads OFF. The other is white and reads ON.
@@ -171,7 +231,7 @@
 			Boxperson immediately because that's a HUGE mistake that needs to be fixed.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Is the Stick for on a Craps Table?" />
+		<ContentHeaderTwo id="theStick" title="What Is the Stick for on a Craps Table?" />
 		<p class="pb-4">
 			The Stick is used to send dice to the players and collect them after the roll since some
 			tables can be as long as 16ft. It is usually made of rattan, the material used in wicker, and
@@ -189,7 +249,7 @@
 			alt="Two dice near spot twelve on the layout. The dice are being pulled back by a black stick and it's being reflected in the mirror."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Why Is There a Bowl on the Craps Table?" />
+		<ContentHeaderTwo id="theBowl" title="Why Is There a Bowl on the Craps Table?" />
 		<p class="pb-4">
 			The Bowl is used to hold the extra dice not being used by <Link
 				text="the shooter"

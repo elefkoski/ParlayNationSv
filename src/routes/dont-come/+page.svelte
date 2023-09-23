@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateDontCome } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateDontCome } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -24,6 +26,58 @@
 	let prev: string = "Don't Pass Lay Odds";
 	let nhref: string = 'dont-come-lay-odds';
 	let next: string = "Don't Come Lay Odds";
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: "Betting Don't Come",
+			href: '#bettingDontCome',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Stages",
+			href: '#dontComeStages',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'No Action',
+			href: '#noAction',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Placement",
+			href: '#dontComePlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Payment",
+			href: '#dontComePayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Come Payment Calculator",
+			href: '#dontComeCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Always Working',
+			href: '#alwaysWorking',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Dealer Don't Come",
+			href: '#dealerDontCome',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -70,7 +124,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -105,8 +159,14 @@
 			title="Don't Come"
 			alt="Up close overhead view of the Don't Come betting area."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet a Don't Come Bet in Craps?" />
+		<ContentHeaderTwo id="bettingDontCome" title="How Do You Bet a Don't Come Bet in Craps?" />
 		<p class="pb-4">
 			Don't Come bets are self-service so if the bet wins while in the DC, it is your responsibility
 			to pick up your winnings. You do not need to tell the Dealer you are making the bet but would
@@ -121,7 +181,10 @@
 			alt="Multiple bets sitting in the Don't Come area."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are the Two Stages of a Don't Come Bet in Craps?" />
+		<ContentHeaderTwo
+			id="dontComeStages"
+			title="What Are the Two Stages of a Don't Come Bet in Craps?"
+		/>
 		<ContentHeaderThree title="Stage One - In the Don't Come (DC)" />
 		<p class="pb-4">
 			The first stage of a Don't Come bet is the initial bet. This is when you place your bet in the
@@ -158,7 +221,7 @@
 			alt="$10 sitting behind the point five. The puck is on a point you cannot see."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does 'No Action' Mean at the Craps Table?" />
+		<ContentHeaderTwo id="noAction" title="What Does 'No Action' Mean at the Craps Table?" />
 		<p class="pb-4">
 			Some players don't like their Don't Come bets to move behind certain Points, like the 6 or the
 			8, because they are the most commonly rolled Points and players think they're likely to lose
@@ -172,7 +235,10 @@
 			Come bet behind the Point and then moving it back to the DC when a player doesn't want it there.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your Don't Come Bet on the Craps Table?" />
+		<ContentHeaderTwo
+			id="dontComePlacement"
+			title="Where Is Your Don't Come Bet on the Craps Table?"
+		/>
 		<p class="pb-4">
 			The boxes behind Points aren't big enough to hold bets for eight players. Most of the time you
 			wouldn't have more than three or four Don't players at any given time so it's usually not a
@@ -187,7 +253,7 @@
 			alt="Up close view of the boxes behind the points and of the craps table rail. There are 16 bubbles corresponding with each other on betting area and the craps table rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Don't Come Bet Pay in Craps?" />
+		<ContentHeaderTwo id="dontComePayment" title="What Does the Don't Come Bet Pay in Craps?" />
 		<p class="pb-4">
 			Regardless of weather or not a Don't Come bet is in the DC or behind a Point, it's going to
 			win even money.
@@ -210,7 +276,7 @@
 			alt="$10 paid $10 behind the point ten. Two purple dice show 2-5."
 		/>
 		<Divider />
-		<CalcContainer aria="Don't come payment calculator"
+		<CalcContainer aria="Don't come payment calculator" id="dontComeCalc"
 			><CalcBox
 				description="Check the payment for a Don't Come bet."
 				title="Don't Come Payment Calculator"
@@ -226,7 +292,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="Don't Come Bets Are Always Working" />
+		<ContentHeaderTwo id="alwaysWorking" title="Don't Come Bets Are Always Working" />
 		<p class="pb-4">
 			Once behind a Point, the Don't Come is always betting against that Point. You cannot turn it
 			“Off”. Even if a new Comeout Roll begins the Don't Come still wants a 7 to roll before the
@@ -242,7 +308,10 @@
 			alt="$25 sitting behind the point four. The puck is off and in the Don't Come."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet a Don't Come Bet for the Dealers?" />
+		<ContentHeaderTwo
+			id="dealerDontCome"
+			title="How Can You Bet a Don't Come Bet for the Dealers?"
+		/>
 		<p class="pb-4">
 			You can make a Don't Come bet for the dealers just like the any of the other bets. You only
 			need to place it in the DC and let the dealer know you are making a Don't Come bet for them.

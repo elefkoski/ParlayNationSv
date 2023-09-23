@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateAnySeven } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateAnySeven } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -22,6 +24,28 @@
 	let prev: string = 'C & E';
 	let nhref: string = 'any-craps';
 	let next: string = 'Any Craps';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Any Seven Placement',
+			href: '#anySevenPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Any Seven Payment',
+			href: '#anySevenPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Any Seven Payment Calculator',
+			href: '#anySevenCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -60,7 +84,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -88,8 +112,14 @@
 			title="The Any Seven"
 			alt="Overhead up close view of the any seven area on the craps layout."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your Any Seven on the Craps Table?" />
+		<ContentHeaderTwo id="anySevenPlacement" title="Where Is Your Any Seven on the Craps Table?" />
 		<p class="pb-4">
 			The Any 7 is a bar across the middle of the table. The bar is split into a left and right side
 			of the table with the center of the bar is the middle of the table and the edges of the bar
@@ -104,7 +134,7 @@
 			alt="Up close view of the any seven bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Any Seven Pay in a Craps Game?" />
+		<ContentHeaderTwo id="anySevenPayment" title="What Does the Any Seven Pay in a Craps Game?" />
 		<p class="pb-4">The Any 7 pays 4:1 or $4 for every $1.</p>
 		<ContentImg
 			caption=""
@@ -115,7 +145,7 @@
 			alt="$4 on the any seven with two green dice that read 1-6. There is a bubble that reads $16 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Any seven payment calculator"
+		<CalcContainer aria="Any seven payment calculator" id="anySevenCalc"
 			><CalcBox
 				description="Check the payment for an Any Seven bet."
 				title="Any Seven Payment Calculator"

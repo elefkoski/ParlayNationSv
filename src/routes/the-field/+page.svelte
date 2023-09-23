@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateSingleField, calculateDoubleField } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateSingleField, calculateDoubleField } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -23,6 +25,40 @@
 	let prev: string = 'Any Craps';
 	let nhref: string = 'multi-bets';
 	let next: string = 'Multi-Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting the Field',
+			href: '#fieldBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Placement in the Field',
+			href: '#fieldPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Field Bet Payment',
+			href: '#fieldPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Field Bet Calculators',
+			href: '#fieldBetCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer Field Bet',
+			href: '#dealerFieldBet',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -64,7 +100,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -96,8 +132,14 @@
 			title="The Field"
 			alt="Overhead up close view of the field area on the craps layout."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Make a Field Bet in Craps?" />
+		<ContentHeaderTwo id="fieldBetting" title="How Do You Make a Field Bet in Craps?" />
 		<p class="pb-4">
 			The Field is a self-service bet meaning that you must take care of it yourself. When you make
 			a Field bet, you don't need to tell the dealer, just put the money in the Field, and the
@@ -119,7 +161,7 @@
 			or take the $10 you wanted to bet.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="Which Field Bet Is Yours on the Craps Table?" />
+		<ContentHeaderTwo id="fieldPlacement" title="Which Field Bet Is Yours on the Craps Table?" />
 		<p class="pb-4">
 			Since the Field is self-service, you need to pay attention to your money. Many cheques get put
 			in there, and if a game is going fast, it's not hard to get some bets mixed up. If you place a
@@ -136,7 +178,7 @@
 			alt="Up close view of multiple bets in the field."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Field Pay on a Craps Game?" />
+		<ContentHeaderTwo id="fieldPayment" title="What Does the Field Pay on a Craps Game?" />
 		<p class="pb-4">
 			The Field Pays even money if the 3, 4, 9, 10, or 11 are rolled. If the 2 or 12 rolls, it
 			usually pays double. In some casinos either the 2 or 12 will pay triple but never both.
@@ -159,7 +201,7 @@
 			alt="Two bets in the field paid double. Two green dice read 1-1. Two bubbles read wins double."
 		/>
 		<Divider />
-		<CalcContainer aria="The Field Payment Calculator">
+		<CalcContainer aria="The Field Payment Calculator" id="fieldBetCalcs">
 			<CalcBox description="Check the payment for the Field." title="The Field Payment Calculator">
 				<CalcInput
 					calculate={calculateSingleField}
@@ -180,7 +222,7 @@
 			</CalcBox>
 		</CalcContainer>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet in the Field for the Dealers?" />
+		<ContentHeaderTwo id="dealerFieldBet" title="How Can You Bet in the Field for the Dealers?" />
 		<p class="pb-4">
 			If you want to make a bet for the dealers, it's as easy as pie. Throw some money in there and
 			say, <Quote text="For the dealers!" />. The dealers always love a Field bet. Not many players

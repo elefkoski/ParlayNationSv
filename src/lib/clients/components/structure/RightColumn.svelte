@@ -1,3 +1,13 @@
+<script lang="ts">
+	import ContentMenuBox from '../ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	export let pageLinks: PageMenu[] = [];
+</script>
+
+<div class="hidden lg:block">
+	<ContentMenuBox {pageLinks} />
+</div>
+
 <p>
 	Get more knowledge sent straight to your inbox. Sign up for new updates, announcements and more.
 </p>

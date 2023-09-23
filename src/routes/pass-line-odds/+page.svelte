@@ -1,4 +1,7 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import {
 		calculateSixEightOdds,
 		calculateFiveNineOdds,
@@ -7,7 +10,6 @@
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -28,6 +30,34 @@
 	let prev: string = 'Pass Line Basics';
 	let nhref: string = 'max-odds';
 	let next: string = 'Max Odds';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Pass Line Odds',
+			href: '#oddsBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Pass Line Odds Payment',
+			href: '#oddsPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Pass Line Odds Calculators',
+			href: '#passLineOddsCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer Pass Line Odds',
+			href: '#dealerOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -74,7 +104,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="The pass line" title="Odds on the Pass Line" {pageData} />
@@ -92,8 +122,14 @@
 			lgImg="src/images/{url}/pass-line-odds_1280x720.webp"
 			alt="$5 on the pass line with $20 odds."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Pass Line Odds in Craps?" />
+		<ContentHeaderTwo id="oddsBetting" title="How Do You Bet Pass Line Odds in Craps?" />
 		<p class="pb-4">
 			Odds for the Pass Line are put directly behind the Pass Line bet. Try not to put the Odds bet
 			directly behind the <Link text="Pass Line" href="pass-line-basics" /> because you need some space
@@ -108,7 +144,7 @@
 			alt="Four bets on the pass line. Each bet pointing to a spot in the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do Pass Line Odds Pay on a Craps Game?" />
+		<ContentHeaderTwo id="oddsPayment" title="What Do Pass Line Odds Pay on a Craps Game?" />
 		<p class="pb-4">
 			Odds for the Pass Line pay differently depending on what the Point is. They pay what is called
 			True Odds. True Odds are different for each Point, which is why you must bet Odds differently
@@ -181,7 +217,7 @@
 			alt=""
 		/>
 		<Divider />
-		<CalcContainer aria="Pass Line Odds Calculators">
+		<CalcContainer aria="Pass Line Odds Calculators" id="passLineOddsCalc">
 			<CalcBox
 				description="Check the payment for Odds on a Pass Line Bet."
 				title="Pass Line Odds Payment Calculators"
@@ -213,7 +249,10 @@
 			</CalcBox>
 		</CalcContainer>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet the Pass Line w/Odds for the Dealers?" />
+		<ContentHeaderTwo
+			id="dealerOdds"
+			title="How Can You Bet the Pass Line w/Odds for the Dealers?"
+		/>
 		<p class="pb-4">
 			If you make a Pass Line bet for the dealers, you can also add Odds to it. Like a players' Pass
 			Line bet, there is a maximum amount of Odds you can add to a dealers' Pass Line bet. The Pass

@@ -1,4 +1,11 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
+	import CalcInput2 from '$lib/clients/components/calculators/CalcInput2.svelte';
 	import {
 		calculateHighLow,
 		calculateElevenTwelve,
@@ -7,11 +14,6 @@
 		calculateHighLowYo,
 		calculateThreeWay
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import CalcInput2 from '$lib/clients/components/calculators/CalcInput2.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -31,6 +33,64 @@
 	let prev: string = 'The Field';
 	let nhref: string = 'horn';
 	let next: string = 'Horn';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Each vs Split',
+			href: '#eachVsSplit',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Two Number Bets',
+			href: '#twoNumber',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'High - Low Calculator',
+			href: '#highLowCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Eleven - Twelve Calculator',
+			href: '#elevenTwelveCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Aces - Ace Deuce Calculator',
+			href: '#acesAceDeuceCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Seven - Eleven Calculator',
+			href: '#sevenElevenCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Three Number Multi-Bets',
+			href: '#threeNumber',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'High - Low - Yo Calculator',
+			href: '#highLowYoCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Three Way Crap Calculator',
+			href: '#threeWayCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -64,7 +124,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -85,8 +145,14 @@
 			title="Multi-Bets"
 			alt="Multiple bets in the proposition area: $2 split on the eleven twelve, a high low yo, and a $5 c and e split."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="Each vs Split in Craps" />
+		<ContentHeaderTwo id="eachVsSplit" title="Each vs Split in Craps" />
 		<ContentHeaderThree title="Betting Each" />
 		<p class="pb-4">
 			When you use the phrase <Quote text="Each" /> you're betting the same amount of money on two different
@@ -100,7 +166,7 @@
 			odd amounted splits ($5) because they're improper ($2.50 on each).
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="What Are Some Common Two Number Multi-Bets in Craps?" />
+		<ContentHeaderTwo id="twoNumber" title="What Are Some Common Two Number Multi-Bets in Craps?" />
 		<ContentHeaderThree title="High - Low" />
 		<p class="pb-4">
 			It's the <Link text="Aces" href="straight-up" /> and the Twelve but when you bet them together
@@ -117,7 +183,7 @@
 			alt="$1 each on the two and the twelve."
 		/>
 		<Divider />
-		<CalcContainer aria="High low payment calculator"
+		<CalcContainer aria="High low payment calculator" id="highLowCalc"
 			><CalcBox
 				description="Check the payment for when you bet the same amount on each the High (12) and the Low (2)."
 				title="High - Low Payment Calculator"
@@ -152,7 +218,7 @@
 			alt="$1 each on the eleven and the twelve."
 		/>
 		<Divider />
-		<CalcContainer aria="Eleven twelve payment calculator"
+		<CalcContainer aria="Eleven twelve payment calculator" id="elevenTwelveCalc"
 			><CalcBox
 				description="Check the payment for when you bet the same amount on each the Eleven - Twelve, often called ET."
 				title="Eleven - Twelve Payment Calculator"
@@ -185,7 +251,7 @@
 			alt="$1 each on the aces and the ace deuce"
 		/>
 		<Divider />
-		<CalcContainer aria="Aces ace deuce payment calculator"
+		<CalcContainer aria="Aces ace deuce payment calculator" id="acesAceDeuceCalc"
 			><CalcBox
 				description="Check the payment for when you bet the same amount on each the Aces - Ace Deuce."
 				title="Aces - Ace Deuce Payment Calculator"
@@ -217,7 +283,7 @@
 			alt="$1 each on the seven and the eleven"
 		/>
 		<Divider />
-		<CalcContainer aria="Seven eleven payment calculator"
+		<CalcContainer aria="Seven eleven payment calculator" id="sevenElevenCalc"
 			><CalcBox
 				description="Check the payment for when you bet the same amount on each the Seven - Eleven."
 				title="Seven - Eleven Payment Calculator"
@@ -235,7 +301,10 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Are Some Common Three Number Multi-Bets in Craps?" />
+		<ContentHeaderTwo
+			id="threeNumber"
+			title="What Are Some Common Three Number Multi-Bets in Craps?"
+		/>
 		<p class="pb-4">
 			There are a couple popular bets that include three numbers and they must be bet in multiples
 			of three.
@@ -254,7 +323,7 @@
 			alt="$1 each on the aces, ace deuce, and the yo."
 		/>
 		<Divider />
-		<CalcContainer aria="High low yo payment calculator"
+		<CalcContainer aria="High low yo payment calculator" id="highLowYoCalc"
 			><CalcBox
 				description="Check the payment for when you bet the same amount on each the High - Low - Yo."
 				title="High - Low - Yo Payment Calculator"
@@ -294,7 +363,7 @@
 			alt="$1 each on the aces, ace deuce, and the twelve."
 		/>
 		<Divider />
-		<CalcContainer aria="Three way craps payment calculator"
+		<CalcContainer aria="Three way craps payment calculator" id="threeWayCalc"
 			><CalcBox
 				description="Check the payment for for when you bet the same amount on each the Three Way Crap."
 				title="Three Way Crap Payment Calculator"

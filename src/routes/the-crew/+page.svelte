@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -17,6 +19,34 @@
 	let prev = 'Craps Basics';
 	let nhref = 'the-craps-table';
 	let next = 'The Craps Table';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'The Boxperson',
+			href: '#theBox',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Base Dealer',
+			href: '#theBaseDealers',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'The Stickperson',
+			href: '#theStickperson',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Floor Supervisor',
+			href: '#theFloor',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let liAs = [
 		{
 			title: 'When they watch the dealers they are looking for:',
@@ -112,7 +142,7 @@
 		}
 	</script>
 </svelte:head>
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Craps Basics" title="The Craps Crew" {pageData} />
@@ -130,28 +160,37 @@
 			title="The Craps Crew"
 			alt="Overhead view of Craps table with the base dealers, the box, the stickperson, the box person, and the floor."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Boxperson (Box) Do at the Craps Table?" />
+		<ContentHeaderTwo id="theBox" title="What Does the Boxperson (Box) Do at the Craps Table?" />
 		<p class="pb-4">
 			The Box is the person sitting down between two other dealers. Their job is to watch the
 			dealers, players, handle money, and make sure the game moves along smoothly.
 		</p>
 		<ContentUl {liAs} />
 		<Divider />
-		<ContentHeaderTwo title="What Do the Base Dealers Do in Craps?" />
+		<ContentHeaderTwo id="theBaseDealers" title="What Do the Base Dealers Do in Craps?" />
 		<p class="pb-4">
 			The Base Dealers job is to take care of the players on their side of the table.
 		</p>
 		<ContentUl liAs={liAs2} />
 		<Divider />
-		<ContentHeaderTwo title="What Does the Stickperson Do on a Craps Game?" />
+		<ContentHeaderTwo id="theStickperson" title="What Does the Stickperson Do on a Craps Game?" />
 		<p class="pb-4">
 			The Stickperson controls the pace of the game using the stick and dice, and takes care of the
 			bets in the middle of the table.
 		</p>
 		<ContentUl liAs={liAs3} />
 		<Divider />
-		<ContentHeaderTwo title="What Does the Supervisor (Floor) Do at the Craps Table?" />
+		<ContentHeaderTwo
+			id="theFloor"
+			title="What Does the Supervisor (Floor) Do at the Craps Table?"
+		/>
 		<p class="pb-4">The Floor's job is to keep an eye on the game as a whole.</p>
 		<ContentUl liAs={liAs4} />
 	</main>

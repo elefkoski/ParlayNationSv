@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateMaxOdds } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateMaxOdds } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -22,6 +24,52 @@
 	let prev: string = 'Pass Line Odds';
 	let nhref: string = 'place-bets';
 	let next: string = 'Place Bets';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Single Odds',
+			href: '#singleOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Double Odds',
+			href: '#doubleOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: '3x 4x 5x Odds',
+			href: '#threeFourFive',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: '3x4x5x Max Odds Calculator',
+			href: '#maxOddsCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Five Times Odds',
+			href: '#fiveTimes',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Ten Times Odds',
+			href: '#tenTimes',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: '100 times Odds',
+			href: '#oneHundredTimes',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -55,7 +103,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="The pass line" title="Max Odds on the Pass Line" {pageData} />
@@ -71,8 +119,14 @@
 			lgImg="src/images/{url}/max-odds-on-the-pass-line_1280x720.webp"
 			alt="$5 on the pass line with $25 odds in the back as odds."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Are Single (1x) Odds in Craps?" />
+		<ContentHeaderTwo id="singleOdds" title="What Are Single (1x) Odds in Craps?" />
 		<p class="pb-4">
 			Single Odds is when you can bet the same amount in Odds as you have on the Pass Line. This is
 			the bottom of the barrel in terms of what a casino will allow you to bet but it is still a
@@ -86,7 +140,7 @@
 			alt="$10 on the Pass Line with $10 Pass Line Odds."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are Double (2x) Odds in Craps?" />
+		<ContentHeaderTwo id="doubleOdds" title="What Are Double (2x) Odds in Craps?" />
 		<p class="pb-4">
 			Double Odds are when you can bet twice your Pass Line bet. While not the best, I've seen a lot
 			of players go all night without ever having bet more than double their Pass Line bet. If you
@@ -100,7 +154,7 @@
 			alt="$10 on the Pass Line with $20 as Pass Line Odds."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are 3x 4x 5x Odds in Craps?" />
+		<ContentHeaderTwo id="threeFourFive" title="What Are 3x 4x 5x Odds in Craps?" />
 		<p class="pb-4">
 			3-4-5 is standard in many casinos. This means the max odds that you can bet on the <Link
 				text="Pass Line"
@@ -173,7 +227,7 @@
 			</CalcBox>
 		</CalcContainer>
 		<Divider />
-		<ContentHeaderTwo title="What Are 5x Odds in Craps?" />
+		<ContentHeaderTwo id="fiveTimes" title="What Are 5x Odds in Craps?" />
 		<p class="pb-4">
 			5x Odds are when you can bet five times your Pass Line bet as Odds. This is also another
 			common maximum amount for Odds at casinos. Maxing 5x Odds is still expensive so don't be
@@ -188,7 +242,7 @@
 			alt="$50 on the Pass Line with $250 Pass Line Odds."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are 10x Odds in Craps?" />
+		<ContentHeaderTwo id="tenTimes" title="What Are 10x Odds in Craps?" />
 		<p class="pb-4">
 			10x Odds are when you can bet 10x your Pass Line bet as Odds. This is amazing but expensive.
 			On a $5 game it's sustainable but when you start 10x maxing Odds on $15 or $25 games, you can
@@ -202,7 +256,7 @@
 			alt="$10 on the Pass Line with $100 Pass Line Odds"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are 100x Odds in Craps?" />
+		<ContentHeaderTwo id="oneHundredTimes" title="What Are 100x Odds in Craps?" />
 		<p class="pb-4">
 			100x Odds in Craps is when you can bet 100 times your Pass Line bet as Odds. This is crazy and
 			I don't even know where you would find these games. Vegas? You're gonna need a serious

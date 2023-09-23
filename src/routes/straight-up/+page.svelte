@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateAceDeuceYo, calculateAcesTwelve } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateAceDeuceYo, calculateAcesTwelve } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -24,6 +26,40 @@
 	let prev: string = 'The Hardways';
 	let nhref: string = 'c-and-e';
 	let next: string = 'C & E';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Straight Up',
+			href: '#straightUpBetting',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Straight Up Placement',
+			href: '#straightUpPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Straight Up Payment',
+			href: '#straightUpPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Straight Up Payment Calculators',
+			href: '#straightUpCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer Straight Up',
+			href: '#dealerStraightUp',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -67,7 +103,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -100,8 +136,17 @@
 			title="Straight Up Bets"
 			alt="Up close overhead view of the straight up area on the craps table. The aces, ace deuce, yo, and twelve are highlighted."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Straight Up on the Craps Table?" />
+		<ContentHeaderTwo
+			id="straightUpBetting"
+			title="How Do You Bet Straight Up on the Craps Table?"
+		/>
 		<p class="pb-4">
 			When you want to make a Straight Up bet, you throw your money to the Stickperson, say a dollar
 			amount, then say which bet you want. For example, toss the cheques in, say <Quote
@@ -127,7 +172,10 @@
 			time.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="Where Are Your Straight Up Bets on the Craps Table?" />
+		<ContentHeaderTwo
+			id="straightUpPlacement"
+			title="Where Are Your Straight Up Bets on the Craps Table?"
+		/>
 		<p class="pb-4">
 			Bets in the Straight Up boxes are placed a little looser. Each section is broken into the left
 			and right sides of the table then each side can be broken into four or more spots on the
@@ -147,7 +195,10 @@
 			alt="Up close overhead view of the stright up bets and the craps table rail. There are eight on the layout that correspond with the rail"
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do Your Straight Up Bets Pay in a Craps Game?" />
+		<ContentHeaderTwo
+			id="straightUpPayment"
+			title="What Do Your Straight Up Bets Pay in a Craps Game?"
+		/>
 		<p class="pb-4">
 			When you bet Straight Up, there are two possible payouts. 30:1 and 15:1. The Aces (1-1) and
 			the Twelve (6-6) pay 30:1 or $30 for every $1. The Ace Deuce (1-2, 2-1) and the Yo (5-6, 6-5)
@@ -180,7 +231,7 @@
 			alt="Up close view of $4 on the yo. Two green dice read 6-5 in the corner. A bubble reads $60 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Straight up payment calculators"
+		<CalcContainer aria="Straight up payment calculators" id="straightUpCalcs"
 			><CalcBox
 				description="Check the payment for a bet made straight up on the Aces, Ace Deuce, Yo or Twelve."
 				title="Straight Up Payment Calculators"
@@ -204,7 +255,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Straight Up for the Dealers?" />
+		<ContentHeaderTwo id="dealerStraightUp" title="How Do You Bet Straight Up for the Dealers?" />
 		<p class="pb-4">
 			The dealers aren't going to get more bang from a buck than with these bets. Straight Up bets
 			are cheap and easy two-way bets when you only need to throw two dollars to the stickperson and

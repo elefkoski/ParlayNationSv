@@ -1,5 +1,7 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -17,6 +19,28 @@
 	let prev: string = 'Come Bet Odds';
 	let nhref: string = 'the-donts';
 	let next: string = "The Don'ts";
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Part 1: The Setup',
+			href: '#partOne',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Part 2: Come Bet Moves',
+			href: '#partTwo',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Part 3: Handed Off',
+			href: '#partThree',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -39,7 +63,7 @@
 		  "@context": "http://schema.org/",
 		  "@type": "Course",
 		  "name": "Learn to Come Down w/Odds",
-		  "description": "When you are playing Place bets and Come bets at the same time you don’t need both on a Point. Coming Down w/Odds uses the Place bet for Odds on the Come bet.",
+		  "description": "When you are playing Place bets and Come bets at the same time you don't need both on a Point. Coming Down w/Odds uses the Place bet for Odds on the Come bet.",
 		  "provider": {
 			"@type": "Organization",
 			"name": "Parlay Nation",
@@ -50,7 +74,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Come Bets" title="Coming Down w/Odds In Craps" {pageData} />
@@ -62,7 +86,13 @@
 			'Coming Down with Odds'.
 		</p>
 		<Divider />
-		<ContentHeaderTwo title="Part 1: The Setup" />
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
+		<ContentHeaderTwo id="partOne" title="Part 1: The Setup" />
 		<p class="pb-4">
 			It takes both a <Link text="Place Bet" href="place-bet-basics" /> and a <Link
 				text="Come Bet"
@@ -80,7 +110,7 @@
 			alt="$10 in the come and a $12 place bet on the point eight."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Part 2: Come Bet Moves and Place Bet Paid" />
+		<ContentHeaderTwo id="partTwo" title="Part 2: Come Bet Moves and Place Bet Paid" />
 		<p class="pb-4">
 			If a Point rolls that doesn't have a Place bet on it then nothing matters. The process starts
 			when the Point that the Place bet is on rolls. The Come bet moves behind the Place bet then
@@ -95,7 +125,10 @@
 			alt="$14 cut out in come. $10 moved behind the $12 place bet. Two orange dice show 5-3."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Part 3: Odds Are Added to the Come Bet and the Rest Is Handed Off" />
+		<ContentHeaderTwo
+			id="partThree"
+			title="Part 3: Odds Are Added to the Come Bet and the Rest Is Handed Off"
+		/>
 		<p class="pb-4">
 			The dealer keeps as much money as they need for Odds and hands off the remainder. Tell the
 			dealer how many Odds you would like. If you don't tell the dealer anything they might give you

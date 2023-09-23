@@ -1,9 +1,11 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import { calculateHardSixEight, calculateHardFourTen } from '$lib/utils/calculations';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -24,6 +26,40 @@
 	let prev: string = 'Proposition Bets';
 	let nhref: string = 'straight-up';
 	let next: string = 'Straight Up';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting a Buffalo',
+			href: '#buffaloBet',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Hardway Placement',
+			href: '#hardwayPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Hardway Payment',
+			href: '#hardwayPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Hardway Payment Calculator',
+			href: '#hardwayPymntCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer Hardways',
+			href: '#dealerHardways',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -71,7 +107,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -101,8 +137,14 @@
 			title="The Hardways"
 			alt="Up close view of the Hardway Section on the craps table. There are no cheques on the table."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What is a Buffalo Bet in Craps?" />
+		<ContentHeaderTwo id="buffaloBet" title="What is a Buffalo Bet in Craps?" />
 		<p class="pb-4">
 			The Buffalo is for the players that love their Hardways. A player will bet an equal amount on
 			each Hardway, working on the <Link text="Comeout Roll" href="the-stages" />, and hedges them
@@ -132,7 +174,7 @@
 			alt="Overhead view of $1 each the hardways with a dollar on the any seven. There is an on lammer on top of one of the cheques. The puck reads off in the corner."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Are Your Hardways on the Craps Table?" />
+		<ContentHeaderTwo id="hardwayPlacement" title="Where Are Your Hardways on the Craps Table?" />
 		<p class="pb-4">
 			Hardways are very popular bets, and there will be many times where almost everyone on the
 			table is betting them; when that happens, the potential for mistakes increases. A dealer may
@@ -157,7 +199,7 @@
 			alt="Up close view of the Hardways section and the craps rail with 18 colored spots."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do the Hardways Pay in Craps?" />
+		<ContentHeaderTwo id="hardwayPayment" title="What Do the Hardways Pay in Craps?" />
 		<p class="pb-4">
 			The Hard 6 and 8 pay more than the 4 and 10 because there are more ways for them to lose.
 			There are 10 ways for the 6 or 8 to lose (any 7 or any 'easy' way) and 8 ways for the 4 or 10
@@ -185,7 +227,7 @@
 			alt="$30 on the hard ten with two green dice that read 5-5. A bubble reads $270 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Hardway Payment Calculators"
+		<CalcContainer aria="Hardway Payment Calculators" id="hardwayPymntCalc"
 			><CalcBox
 				description="Check the payment for a Hardway bet."
 				title="Hardway Payment Calculators"
@@ -209,7 +251,10 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet the Hardways for the Dealers on a Craps Game?" />
+		<ContentHeaderTwo
+			id="dealerHardways"
+			title="How Do You Bet the Hardways for the Dealers on a Craps Game?"
+		/>
 		<p class="pb-4">
 			Dealers love Hardways as much as players do. The odds aren't horrible to hit one and they pay
 			off well enough when they come. Throw a dollar or two to the stickperson and tell em the <Quote

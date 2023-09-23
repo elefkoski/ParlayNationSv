@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateHorn } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput2 from '$lib/clients/components/calculators/CalcInput2.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateHorn } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -24,6 +26,40 @@
 	let prev: string = 'Multi-Bets';
 	let nhref: string = 'horn-high';
 	let next: string = 'Horn High';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'A $4 Horn',
+			href: '#fourHorn',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Horn Placement',
+			href: '#hornPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Horn Payment',
+			href: '#hornPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Horn Calculator',
+			href: '#hornCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Dealer Horn',
+			href: '#dealerHorn',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -65,7 +101,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -95,8 +131,14 @@
 			title="The Horn"
 			alt="Up close overhead view of the horn bet on the craps layout."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="What Is a $4 Horn in Craps?" />
+		<ContentHeaderTwo id="fourHorn" title="What Is a $4 Horn in Craps?" />
 		<p class="pb-4">
 			A $4 Horn is the minimum bet for a Horn. It's $1 on each of the four <Link
 				text="Straight Up"
@@ -115,7 +157,7 @@
 			alt="An image split with $4 on the Horn on one side, and $1 each on the aces, ace deuce, yo, twelve on the other."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your Horn on the Craps Table?" />
+		<ContentHeaderTwo id="hornPlacement" title="Where Is Your Horn on the Craps Table?" />
 		<p class="pb-4">
 			Like most other bets on the Craps table, the Horn bet is divided into two sides: the left and
 			right sides of the table. There isn't enough space for 16 players in the box, and you normally
@@ -131,7 +173,7 @@
 			alt="Up close image of the horn bet and the craps rail. There are eight colored spots corresponding the horn and the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Horn Pay in a Craps Game?" />
+		<ContentHeaderTwo id="hornPayment" title="What Does the Horn Pay in a Craps Game?" />
 		<p class="pb-4">
 			A Horn pays differently based on what rolls, a high number, which would be the Aces and the
 			Twelve, or a low number, which would be the Ace Deuce and the Yo.
@@ -211,7 +253,7 @@
 			alt="$24 on the Horn. A bubble reads $162 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Horn payment calculator"
+		<CalcContainer aria="Horn payment calculator" id="hornCalc"
 			><CalcBox
 				description="Check the payment for a bet made on the Horn."
 				title="Horn Payment Calculator"
@@ -229,7 +271,10 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet the Horn for the Dealers on the Craps Table?" />
+		<ContentHeaderTwo
+			id="dealerHorn"
+			title="How Can You Bet the Horn for the Dealers on the Craps Table?"
+		/>
 		<p class="pb-4">
 			When a bet on the Horn comes in for the dealers it is placed in the middle of the Horn area.
 			While a proper $4 would be best, any amount put on the Horn for the dealers is appreciated. A

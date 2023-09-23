@@ -1,14 +1,16 @@
 <script lang="ts">
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
+	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
 	import {
 		calculateSixEightLayOdds,
 		calculateFiveNineLayOdds,
 		calculateFourTenLayOdds,
 		calculateMaxLay
 	} from '$lib/utils/calculations';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -29,6 +31,46 @@
 	let prev: string = "Don't Pass";
 	let nhref: string = 'dont-come';
 	let next: string = "Don't Come";
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: "Betting Don't Pass Lay Odds",
+			href: '#bettingLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Payment for Don't Pass Lay Odds",
+			href: '#layOddsPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Pass Lay Odds Calculators",
+			href: '#dontPassLayOddsCalcs',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: "Max Don't Pass Lay Odds",
+			href: '#maxLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Check Max Don't Pass Lay Odds",
+			href: '#maxDontPassLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: "Dealer Don't Pass Lay Odds",
+			href: '#dealerLayOdds',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -75,7 +117,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -99,8 +141,14 @@
 			title="Don't Pass Lay Odds"
 			alt="$10 on the Don't Pass with $24 Lay Odds."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Don't Pass Lay Odds in Craps?" />
+		<ContentHeaderTwo id="bettingLayOdds" title="How Do You Bet Don't Pass Lay Odds in Craps?" />
 		<p class="pb-4">
 			Lay Odds on the Don't Pass go right next to your <Link text="Don't Pass" href="dont-pass" /> bet
 			on the side that's closest to the <Link text="base dealer" href="the-crew" />. They aren't
@@ -117,7 +165,7 @@
 			alt="Several Don't Pass Bets with Lay Odds Heeled in the direction of the base dealer."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Do Lay Odds on the Don't Pass Pay?" />
+		<ContentHeaderTwo id="layOddsPayment" title="What Do Lay Odds on the Don't Pass Pay?" />
 		<p class="pb-4">
 			Lay Odds on the Don't Pass pay differently depending on what the Point is. The Point also
 			determines the dollar amount you should be Laying for that Point. You Lay the 6 and 8 in
@@ -198,7 +246,7 @@
 			alt="$20 on the Don't Pass with a $20 payment. Next to it are $80 Lay odds with $40 payment."
 		/>
 		<Divider />
-		<CalcContainer aria="Don't pass lay odds payment calculators"
+		<CalcContainer aria="Don't pass lay odds payment calculators" id="dontPassLayOddsCalcs"
 			><CalcBox
 				description="Check the payment for Lay Odds on the Don't Pass."
 				title="Don't Pass Lay Odds Payment Calculators"
@@ -230,7 +278,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Are Max Lay Odds on the Don't Pass?" />
+		<ContentHeaderTwo id="maxLayOdds" title="What Are Max Lay Odds on the Don't Pass?" />
 		<p class="pb-4">
 			No matter what Point you are Laying Odds on, the maximum allowed is always going to be 6 times
 			the Don't Pass bet. The casino has no advantage with this bet so there must be a limit and
@@ -245,7 +293,7 @@
 			alt="$10 on the Don't Pass with $60 Lay Odds."
 		/>
 		<Divider />
-		<CalcContainer aria="Don't pass lay odds payment calculator"
+		<CalcContainer aria="Don't pass lay odds payment calculator" id="maxDontPassLayOdds"
 			><CalcBox
 				description="Check the Max Lay Odds for your bet on the Don't Pass."
 				title="Check Max Don't Pass Lay Odds"
@@ -261,7 +309,10 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet Don't Pass Lay Odds for the Dealers?" />
+		<ContentHeaderTwo
+			id="dealerLayOdds"
+			title="How Do You Bet Don't Pass Lay Odds for the Dealers?"
+		/>
 		<p class="pb-4">
 			You can add Lay Odds to a dealers Don't Pass bet in the same way you add Lay Odds to your own
 			Don't Pass bet.

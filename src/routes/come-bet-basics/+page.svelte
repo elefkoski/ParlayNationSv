@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateComeBet } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateComeBet } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -23,6 +25,58 @@
 	let prev: string = 'Come Bets';
 	let nhref: string = 'come-bet-odds';
 	let next: string = 'Come Bet Odds';
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: 'Betting Come Bets',
+			href: '#bettingComeBets',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bets Are Always Working',
+			href: '#alwaysWork',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bet Stages',
+			href: '#comeBetStages',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bet Placement',
+			href: '#comeBetPlacement',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bet Payment',
+			href: '#comeBetPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Come Bet Calculator',
+			href: '#comeBetCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: 'Come Bet Terms',
+			href: '#comeBetTerms',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'Dealer Come Bets',
+			href: '#dealerComeBets',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -72,7 +126,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Come Bets" title="Betting a Come Bet in Craps" {pageData} />
@@ -115,8 +169,14 @@
 			title="Come Bet"
 			alt="Overhead view of the come bet area."
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet a Come Bet in Craps?" />
+		<ContentHeaderTwo id="bettingComeBets" title="How Do You Bet a Come Bet in Craps?" />
 		<p class="pb-4">
 			Come bets are self service so if you want to make a Come bet then you must place it in the
 			COME yourself. Watch your bet. If other players are making Come bets then you need to be able
@@ -131,7 +191,7 @@
 			alt="Up close view of multiple bets in the COME area."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Come Bets Work During the Comeout Roll" />
+		<ContentHeaderTwo id="alwaysWork" title="Come Bets Work During the Comeout Roll" />
 		<p class="pb-4">
 			Come bets are always working. After a Come bet is inside a Point it is always betting that the
 			Point it's inside will roll before the 7. You can't turn it off or take it back so no matter
@@ -147,7 +207,7 @@
 			alt="A come bet on the point eight and the puck is off."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are the Two Stages of a Come Bet in Craps?" />
+		<ContentHeaderTwo id="comeBetStages" title="What Are the Two Stages of a Come Bet in Craps?" />
 		<p class="pb-4">
 			There are two stages to a Come bet. The first is the original bet, which you place in the
 			COME. While in the COME the Come bet wins when 7 or 11 is rolled and loses when 2, 3, or 12
@@ -183,7 +243,7 @@
 			alt="$10 come bet on the point eight."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="Where Is Your Come Bet on the Craps Table?" />
+		<ContentHeaderTwo id="comeBetPlacement" title="Where Is Your Come Bet on the Craps Table?" />
 		<p class="pb-4">
 			Come bets are placed in the same spot as your <Link
 				text="Place Bets"
@@ -205,7 +265,7 @@
 			alt="Up close view of two place bets and the craps rail. There are eight colored spots that correspond with each other."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Come Bet Pay in Craps?" />
+		<ContentHeaderTwo id="comeBetPayment" title="What Does the Come Bet Pay in Craps?" />
 		<p class="pb-4">
 			A Come bet can win during the Comeout Roll or the Intermediate Roll. No matter what stage of
 			the game you're in, a Come bet will always win even money.
@@ -228,7 +288,7 @@
 			alt="$25 paid $25 in the come area with an arrow coming out of the point nine. Two orange dice read 5-4."
 		/>
 		<Divider />
-		<CalcContainer aria="Come bet payment calculator"
+		<CalcContainer aria="Come bet payment calculator" id="comeBetCalc"
 			><CalcBox description="Check the payment for a Come Bet." title="Come Bet Payment Calculator">
 				<CalcInput
 					calculate={calculateComeBet}
@@ -241,7 +301,10 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="What Are Some Come Bet Terms Used at the Craps Table?" />
+		<ContentHeaderTwo
+			id="comeBetTerms"
+			title="What Are Some Come Bet Terms Used at the Craps Table?"
+		/>
 		<p class="pb-4">
 			There are certain terms used when setting up, taking down, and paying your Come bets. Know
 			what the dealers are doing and saying while servicing your Come bets.
@@ -332,7 +395,7 @@
 			alt="Split image. Left side show $5 on point eight and $15 in come. Right side shows $15 on point eight and $5 paid $5 in the come. Two orange dice show 5-3."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="How Can You Bet a Come Bet for the Dealers?" />
+		<ContentHeaderTwo id="dealerComeBets" title="How Can You Bet a Come Bet for the Dealers?" />
 		<p class="pb-4">
 			Come bets for dealers don't have to be in any specific denomination because you can't bet an
 			improper amount in the Come. Just like a players' bet, a Come bet for the dealers goes right

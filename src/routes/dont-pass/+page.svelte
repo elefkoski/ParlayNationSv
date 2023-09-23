@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { calculateDontPass } from '$lib/utils/calculations';
+	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
+	import { calculateDontPass } from '$lib/utils/calculations';
 	import PrevNext from '$lib/clients/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
@@ -23,6 +25,40 @@
 	let prev: string = "The Don'ts";
 	let nhref: string = 'dont-pass-lay-odds';
 	let next: string = "Don't Pass Lay Odds";
+
+	let pageLinks: PageMenu[] = [
+		{
+			title: "Betting the Don't Pass",
+			href: '#bettingDontPass',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Pass Stages",
+			href: '#dontStages',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Pass Payment",
+			href: '#dontPayment',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: "Don't Pass Calculator",
+			href: '#dontPassCalc',
+			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
+			iconFills: ['none', '#38BDF8']
+		},
+		{
+			title: "Dealer Don't Pass",
+			href: '#dealerDontPass',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		}
+	];
+
 	let pageData: any = {
 		title: title,
 		description: description,
@@ -67,7 +103,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne
@@ -92,8 +128,14 @@
 			title=""
 			alt=""
 		/>
+		<div class="lg:hidden">
+			<Divider />
+			<div class="m-auto md:max-w-md">
+				<ContentMenuBox {pageLinks} />
+			</div>
+		</div>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet the Don't Pass in Craps?" />
+		<ContentHeaderTwo id="bettingDontPass" title="How Do You Bet the Don't Pass in Craps?" />
 		<p class="pb-4">
 			When you bet the Don't Pass all you have to do is put the money right in front of you relative
 			to your spot in the rail.
@@ -107,7 +149,10 @@
 			alt="Up close view of the Don't Pass bar with bets and the craps table rail. The Don't Pass bets have lines pointing to spots in the rail."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Are the Two Stages of the Don't Pass in a Craps Game?" />
+		<ContentHeaderTwo
+			id="dontStages"
+			title="What Are the Two Stages of the Don't Pass in a Craps Game?"
+		/>
 		<ContentHeaderThree title="Stage 1 - The Comeout Roll" />
 		<p class="pb-4">
 			Stage one is the Comeout Roll, before the Point is established. During the Comeout Roll the
@@ -141,7 +186,7 @@
 			alt="$25 on the Don't Pass. The Puck in On the ten."
 		/>
 		<Divider />
-		<ContentHeaderTwo title="What Does the Don't Pass Pay in Craps?" />
+		<ContentHeaderTwo id="dontPayment" title="What Does the Don't Pass Pay in Craps?" />
 		<p class="pb-4">
 			Regardless of where you are in the game, the Don't Pass will always win even money.
 		</p>
@@ -163,7 +208,7 @@
 			alt="$25 with $25 payment on the Don't Pass. The Puck is on point ten. Two purple dice show 2-5."
 		/>
 		<Divider />
-		<CalcContainer aria="Don't pass payment calculator"
+		<CalcContainer aria="Don't pass payment calculator" id="dontPassCalc"
 			><CalcBox
 				description="Check the payment for a Don't Pass bet."
 				title="Don't Pass Payment Calculator"
@@ -179,7 +224,7 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo title="How Do You Bet the Don't Pass for the Dealers?" />
+		<ContentHeaderTwo id="dealerDontPass" title="How Do You Bet the Don't Pass for the Dealers?" />
 		<p class="pb-4">
 			You can make a Don't Pass bet for the dealers in any amount. Like players, it must be done
 			during the Comeout Roll and you can put it right next to your bet.
