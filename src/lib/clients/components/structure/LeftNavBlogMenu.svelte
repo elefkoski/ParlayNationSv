@@ -1,7 +1,8 @@
 <script lang="ts">
-	import LeftNavMainUl from '$lib/clients/components/structure/LeftNav-main-ul.svelte';
+	import LeftNavMainUl from '$lib/clients/components/structure/LeftNavMainMenu.svelte';
 	import LeftNavUl2 from '$lib/clients/components/structure/LeftNav-ul2.svelte';
-	export let subMenus: {
+
+	let subMenus: {
 		title: string;
 		items: string[];
 		href: string[];

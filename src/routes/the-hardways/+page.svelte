@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	import { calculateHardSixEight, calculateHardFourTen } from '$lib/utils/calculations';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';

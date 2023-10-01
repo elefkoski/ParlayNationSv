@@ -149,7 +149,7 @@
 					<p>If a dog chews shoes whose shoes does he choose?</p>
 					<div class="card-actions justify-end">
 						<a
-							href="/"
+							href="better-craps-shooter"
 							class="px-3 py-2 bg-blue-600 text-white text-xs font-medium rounded hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-300"
 						>
 							Read Now

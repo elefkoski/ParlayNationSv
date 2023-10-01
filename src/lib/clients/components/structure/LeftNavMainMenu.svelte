@@ -13,18 +13,6 @@
 			title: 'Practice Craps'
 		},
 		{
-			href: 'craps-calculators',
-			src: 'src/images/icons/calculator.svg',
-			alt: 'Calculator',
-			title: 'Craps Calculators'
-		},
-		{
-			href: 'craps-simulator',
-			src: 'src/images/icons/controller.svg',
-			alt: 'Controller',
-			title: 'Craps Simulator'
-		},
-		{
 			href: 'craps-blog',
 			src: 'src/images/icons/feed.svg',
 			alt: 'Piece of paper',
@@ -35,6 +23,18 @@
 			src: 'src/images/icons/more.svg',
 			alt: 'Icon',
 			title: 'Craps Corner'
+		},
+		{
+			href: 'craps-calculators',
+			src: 'src/images/icons/calculator.svg',
+			alt: 'Calculator',
+			title: 'Craps Calculators'
+		},
+		{
+			href: 'craps-simulator',
+			src: 'src/images/icons/controller.svg',
+			alt: 'Controller',
+			title: 'Craps Simulator'
 		}
 	];
 </script>

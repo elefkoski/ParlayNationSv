@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { calculatePassLine } from '$lib/utils/calculations';
-	import ContentMenuBox from '$lib/clients/components/ContentMenuBox.svelte';
+	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';

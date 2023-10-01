@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LeftNavMainUl from '$lib/clients/components/structure/LeftNav-main-ul.svelte';
+	import LeftNavMainUl from '$lib/clients/components/structure/LeftNavMainMenu.svelte';
 	let submenus = [
 		{
 			title: 'Glossary',

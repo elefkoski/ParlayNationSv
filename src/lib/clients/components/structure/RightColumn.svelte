@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ContentMenuBox from '../ContentMenuBox.svelte';
+	import ContentMenuBox from '../PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	export let pageLinks: PageMenu[] = [];
 </script>
