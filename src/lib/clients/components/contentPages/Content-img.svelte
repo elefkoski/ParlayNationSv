@@ -1,8 +1,8 @@
 <script lang="ts">
 	export let caption: string = 'Caption';
-	export let smImg: string = 'https://picsum.photos/640/360';
-	export let mdImg: string = 'https://picsum.photos/960/540';
-	export let lgImg: string = 'https://picsum.photos/1280/720';
+	export let smImg: string = '';
+	export let mdImg: string = '';
+	export let lgImg: string = '';
 	export let title: string = '';
 	export let alt: string = 'Alt img text';
 </script>

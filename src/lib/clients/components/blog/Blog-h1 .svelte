@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 
 	export let sectionTitle: string = 'Section Title';
+	export let paras: any[] = [''];
 	export let title: string = 'The title';
 	export let pageData: any = '';
 
@@ -80,7 +81,7 @@
 </script>
 
 <header>
-	<h1 class="text-slate-400 text-3xl md:text-4xl lg:text-6xl pb-2 font-bold">{title}</h1>
+	<h1 class="text-slate-400 text-3xl md:text-5xl lg:text-6xl pb-2 font-bold">{title}</h1>
 	<div class="flex justify-between">
 		<span class="text-lg uppercase font-semibold text-blue-600 dark:text-blue-400"
 			>{sectionTitle}</span
@@ -121,3 +122,10 @@
 		</div>
 	</div>
 </header>
+<section aria-label="Main paragraph">
+	{#each paras as para}
+		<p class="pb-4">
+			{para}
+		</p>
+	{/each}
+</section>
