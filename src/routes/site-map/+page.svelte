@@ -147,6 +147,15 @@
 			]
 		},
 		{
+			title: "Practice Don't Side Lay Odds' Payments",
+			links: ['Lay Odds Payments 6 & 8', 'Lay Odds Payments 5 & 9', 'Lay Odds Payments 4 & 10'],
+			href: [
+				'practice-lay-odds-payments-6-8',
+				'practice-lay-odds-payments-5-9',
+				'practice-lay-odds-payments-4-10'
+			]
+		},
+		{
 			title: 'Craps Cards',
 			links: ['Craps Cards - Black', 'Craps Cards - Grey'],
 			href: ['practice-craps-cards-black', 'practice-craps-cards-grey']

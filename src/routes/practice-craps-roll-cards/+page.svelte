@@ -11,9 +11,9 @@
 	let url: string = 'practice-craps-roll-cards';
 
 	let slides: string[] = [
-		'src/images/practice-craps-roll-cards/craps-roll-cards-page-1_1200x630.webp',
-		'src/images/practice-craps-roll-cards/craps-roll-cards-page-2_1200x630.webp',
-		'src/images/practice-craps-roll-cards/craps-roll-cards-page-3_1200x630.webp'
+		'src/images/practice-craps-roll-cards/craps-roll-cards-page-1_960x1242.webp',
+		'src/images/practice-craps-roll-cards/craps-roll-cards-page-2_960x1242.webp',
+		'src/images/practice-craps-roll-cards/craps-roll-cards-page-3_960x1242.webp'
 	];
 </script>
 

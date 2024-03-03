@@ -409,6 +409,23 @@
 			]
 		},
 		{
+			title: 'Lay Odds Payments',
+			subs: [
+				{
+					title: 'Lay Odds Payments 6 & 8',
+					href: 'practice-lay-odds-payments-6-8'
+				},
+				{
+					title: 'Lay Odds Payments 5 & 9',
+					href: 'practice-lay-odds-payments-5-9'
+				},
+				{
+					title: 'Lay Odds Payments 4 & 10',
+					href: 'practice-lay-odds-payments-4-10'
+				}
+			]
+		},
+		{
 			title: 'Craps Cards',
 			subs: [
 				{

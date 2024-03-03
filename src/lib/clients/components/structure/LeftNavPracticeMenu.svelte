@@ -34,6 +34,15 @@
 			]
 		},
 		{
+			title: 'Lay Odds Payments',
+			items: ['Lay Odds 6 & 8', 'Lay Odds 5 & 9', 'Lay Odds 4 & 10'],
+			href: [
+				'practice-lay-odds-payments-6-8',
+				'practice-lay-odds-payments-5-9',
+				'practice-lay-odds-payments-4-10'
+			]
+		},
+		{
 			title: 'Craps Cards',
 			items: ['Craps Cards - Black', 'Craps Cards- Grey'],
 			href: ['practice-craps-cards-black', 'practice-craps-cards-grey']

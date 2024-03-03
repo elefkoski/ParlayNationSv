@@ -41,7 +41,7 @@
 				<div class="relative">
 					<img
 						class="w-full h-auto"
-						src="src/images/practice-40mm-craps-dice/40mm-foldable-craps-dice_1200x630.webp"
+						src="src/images/practice-40mm-craps-dice/40mm-foldable-craps-dice_960x1242.webp"
 						alt="40mm Foldable Craps Dice"
 					/>
 					<div class="absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20" />

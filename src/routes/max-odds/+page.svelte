@@ -211,7 +211,7 @@
 		/>
 
 		<Divider />
-		<CalcContainer aria="Max odds payment calculator">
+		<CalcContainer aria="Max odds payment calculator" id="maxOddsCalc">
 			<CalcBox
 				description="Check the total payment for a Pass Line with Max Odds when the table has 3x4x5x Odds."
 				title="Max Odds Payment Calculator for 3x4x5x Odds"

@@ -11,11 +11,11 @@
 	let url: string = 'practice-pass-line-odds-payments-4-10';
 
 	let slides: string[] = [
-		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-1_1200x630.webp',
-		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-2_1200x630.webp',
-		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-3_1200x630.webp',
-		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-4_1200x630.webp',
-		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-5_1200x630.webp'
+		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-1_960x1242.webp',
+		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-2_960x1242.webp',
+		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-3_960x1242.webp',
+		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-4_960x1242.webp',
+		'src/images/practice-pass-line-odds-4-10/pass-line-odds-payments-4-10-page-5_960x1242.webp'
 	];
 </script>
 

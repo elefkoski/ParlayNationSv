@@ -46,6 +46,21 @@
 			title: 'Come Bet w/Odds 4/10'
 		},
 		{
+			url: 'src/images/practice/pdf-cover-lay-odds-6-8_640x828.webp',
+			href: 'practice-lay-odds-payments-6-8',
+			title: "Don't Side Lay Odds 6/8"
+		},
+		{
+			url: 'src/images/practice/pdf-cover-lay-odds-5-9_640x828.webp',
+			href: 'practice-lay-odds-payments-5-9',
+			title: "Don't Side Lay Odds 5/9"
+		},
+		{
+			url: 'src/images/practice/pdf-cover-lay-odds-4-10_640x828.webp',
+			href: 'practice-lay-odds-payments-4-10',
+			title: "Don't Side Lay Odds 4/10"
+		},
+		{
 			url: 'src/images/practice/pdf-cover-black-dice-combinations_640x828.webp',
 			href: 'practice-craps-cards-black',
 			title: 'Craps Dice - Black'
@@ -71,12 +86,12 @@
 			title: '19mm Foldable Dice'
 		},
 		{
-			url: 'src/images/practice/pdf-cover-craps-layout_640x828.webp',
+			url: 'src/images/practice/pdf-cover-craps-table-layout_640x828.webp',
 			href: 'practice-full-craps-table-layout',
 			title: 'Full Craps Table Layout'
 		},
 		{
-			url: 'src/images/practice/pdf-cover-half-craps-layout_640x828.webp',
+			url: 'src/images/practice/pdf-cover-half-craps-table-layout_640x828.webp',
 			href: 'practice-half-craps-table-layout',
 			title: 'Half Craps Table Layout'
 		},

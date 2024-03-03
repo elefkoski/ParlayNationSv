@@ -11,13 +11,13 @@
 	let url: string = 'practice-place-bet-payments-6-8';
 
 	let slides: string[] = [
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-1_1200x630.webp',
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-2_1200x630.webp',
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-3_1200x630.webp',
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-4_1200x630.webp',
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-5_1200x630.webp',
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-6_1200x630.webp',
-		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-7_1200x630.webp'
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-1_960x1242.webp',
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-2_960x1242.webp',
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-3_960x1242.webp',
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-4_960x1242.webp',
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-5_960x1242.webp',
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-6_960x1242.webp',
+		'src/images/practice-place-bet-payments-6-8/place-bet-payments-6-8-page-7_960x1242.webp'
 	];
 </script>
 
@@ -39,7 +39,7 @@
 			  "name": "Elvis Lefkoski"
 			  },
 			"description": "Practice Place Bet Payments on the 6 &amp; 8. Downloadable PDF to practice Craps.",
-			"url": "https://parlaynation.com/practice-pass-line-odds-payments-5-9.html"
+			"url": "https://parlaynation.com/practice-place-bet-payments-6-8.html"
 		}
 	</script>
 </svelte:head>

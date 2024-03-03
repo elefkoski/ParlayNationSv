@@ -11,8 +11,8 @@
 	let url: string = 'practice-full-craps-table-layout';
 
 	let slides: string[] = [
-		'src/images/practice-full-craps-table-layout/full-craps-table-layout_1200x630.webp',
-		'src/images/practice-full-craps-table-layout/full-craps-table-layout-empty_1200x630.webp'
+		'src/images/practice-full-craps-table-layout/full-craps-table-layout_1200x923.webp',
+		'src/images/practice-full-craps-table-layout/full-craps-table-layout-empty_1200x923.webp'
 	];
 </script>
 

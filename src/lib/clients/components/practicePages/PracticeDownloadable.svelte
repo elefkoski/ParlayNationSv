@@ -2,7 +2,6 @@
 	export let title: string;
 	export let description: string;
 	export let imageUrlSm: string;
-	export let imageUrlMd: string;
 	export let imageUrlLg: string;
 	export let pageUrl: string;
 	export let pdfUrl: string;
@@ -11,8 +10,7 @@
 <div class="flex flex-col bg-white dark:bg-gray-700 shadow-lg rounded-lg p-4">
 	<div class="flex-shrink-0 relative">
 		<picture>
-			<source media="(min-width: 1024px)" srcset={imageUrlLg} />
-			<source media="(min-width: 768px)" srcset={imageUrlMd} />
+			<source media="(min-width: 768px)" srcset={imageUrlLg} />
 			<img class="h-100 w-full object-cover" src={imageUrlSm} alt={title} />
 		</picture>
 		<div class="absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20" />

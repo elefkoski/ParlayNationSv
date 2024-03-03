@@ -11,13 +11,13 @@
 	let url: string = 'practice-come-bet-w-odds-payments-5-9';
 
 	let slides: string[] = [
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-1_1200x630.webp',
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-2_1200x630.webp',
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-3_1200x630.webp',
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-4_1200x630.webp',
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-5_1200x630.webp',
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-6_1200x630.webp',
-		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-7_1200x630.webp'
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-1_960x1242.webp',
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-2_960x1242.webp',
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-3_960x1242.webp',
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-4_960x1242.webp',
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-5_960x1242.webp',
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-6_960x1242.webp',
+		'src/images/practice-come-bet-odds-payments-5-9/come-bet-w-odds-payments-5-9-page-7_960x1242.webp'
 	];
 </script>
 
