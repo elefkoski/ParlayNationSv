@@ -2,6 +2,6 @@
 	export let title: string = 'The title';
 </script>
 
-<section aria-describedby={title}>
-	<h2 class="text-slate-400 text-xl pb-1">{title}</h2>
+<section aria-label={title}>
+	<h3 class="text-slate-400 text-xl pb-1">{title}</h3>
 </section>

@@ -8,51 +8,66 @@
 		href: string[];
 	}[] = [
 		{
-			title: 'Pass Line Odds',
-			items: ['Odds Payments 6 & 8', 'Odds Payment 5 & 9', 'Odds Payments 4 & 10'],
+			title: 'Craps Info',
+			items: ['First Time Craps Player', 'Rank of Craps Bets', 'Craps Myths', 'Craps Supersitions'],
+			href: ['first-time-craps-player', 'rank-of-craps-bets', 'craps-myths', 'craps-superstitions']
+		},
+		{
+			title: 'Better Player',
+			items: [
+				'Better Craps Shooter',
+				'Advantage of a Great Roll',
+				'Dealing with New Players',
+				'What Not To Do'
+			],
 			href: [
-				'practice-pass-line-odds-payments-6-8',
-				'practice-pass-line-odds-payments-5-9',
-				'practice-pass-line-odds-payments-4-10'
+				'better-craps-shooter',
+				'a-great-craps-roll',
+				'dealing-with-new-craps-players',
+				'not-to-do-at-craps-table'
 			]
 		},
 		{
-			title: 'Place Bet Payments',
-			items: ['Place Bet Payment 6 & 8', 'Place Bet Payment 5 & 9', 'Place Bet Payment 4 & 10'],
+			title: 'Improve Your Game',
+			items: ['Be an Efficient Player', 'Art of Verbal Betting', 'A Perfect Craps Bet'],
+			href: ['be-an-efficient-craps-player', 'art-of-verbal-betting', 'a-perfect-craps-bet']
+		},
+		{
+			title: 'Dealing with Dealers',
+			items: ['Tipping the Dealers', 'Win a Dispute', 'Dealer Pet Peeves'],
+			href: ['tipping-craps-dealers', 'win-a-craps-dispute', 'craps-dealer-pet-peeves']
+		},
+		{
+			title: 'Money Management',
+			items: [
+				'Money Techniques',
+				'Managing Your Bankroll',
+				'Protecting Your Money',
+				'Choosing the Right Table',
+				'When to Leave the Table'
+			],
 			href: [
-				'practice-place-bet-payments-6-8',
-				'practice-place-bet-payments-5-9',
-				'practice-place-bet-payments-4-10'
+				'craps-money-techniques',
+				'managing-craps-bankroll',
+				'protecting-your-money',
+				'right-craps-table',
+				'leaving-the-craps-table'
 			]
 		},
 		{
-			title: 'Come Bet w/Odds',
-			items: ['Come Bet w/Odds 6 & 8', 'Come Bet w/Odds 5 & 9', 'Come Bet w/Odds 4 & 10'],
+			title: 'Craps Betting',
+			items: [
+				"Playing the Don'ts",
+				'Come VS Place Bets',
+				'Lure of Proposition Bets',
+				'Order of Operation'
+			],
 			href: [
-				'practice-come-bet-w-odds-payments-6-8',
-				'practice-come-bet-w-odds-payments-5-9',
-				'practice-come-bet-w-odds-payments-4-10'
+				'playing-the-donts',
+				'come-vs-place-bets',
+				'lure-of-craps-proposition-bets',
+				'craps-order-of-operation'
 			]
-		},
-		{
-			title: 'Craps Cards',
-			items: ['Craps Cards - Black', 'Craps Cards- Grey'],
-			href: ['practice-craps-cards-black', 'practice-craps-cards-grey']
-		},
-		{
-			title: 'Foldable Dice',
-			items: ['60mm Craps Dice', '40mm Craps Dice', '19mm Craps Dice'],
-			href: ['practice-60mm-craps-dice', 'practice-40mm-craps-dice', 'practice-19mm-craps-dice']
-		},
-		{
-			title: 'Craps Table Layouts',
-			items: ['Full Craps Table', 'Half Craps Table'],
-			href: ['practice-full-craps-table-layout', 'practice-half-craps-table-layout']
-		},
-		{
-			title: 'Other Printouts',
-			items: ['Horn High Generator', 'Craps Roll Cards'],
-			href: ['practice-horn-high-generator', 'practice-craps-roll-cards']
 		}
 	];
 </script>

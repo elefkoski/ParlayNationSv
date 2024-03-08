@@ -4,8 +4,9 @@
 	import { user, bookmarkedPages } from '$lib/utils/store';
 	import { onMount } from 'svelte';
 
+	export blogHeading
+
 	export let sectionTitle: string = 'Section Title';
-	export let paras: any[] = [''];
 	export let title: string = 'The title';
 	export let pageData: any = '';
 
@@ -122,10 +123,3 @@
 		</div>
 	</div>
 </header>
-<section aria-label="Main paragraph">
-	{#each paras as para}
-		<p class="pb-4">
-			{para}
-		</p>
-	{/each}
-</section>

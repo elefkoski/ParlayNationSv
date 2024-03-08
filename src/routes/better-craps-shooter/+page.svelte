@@ -2,22 +2,17 @@
 	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1 .svelte';
-	import BlogHeaderTwo from '$lib/clients/components/blog/Blog-h2-w-ol.svelte';
-	import BlogClosingPara from '$lib/clients/components/blog/BlogClosingPara.svelte';
+	import BlogIntroParas from '$lib/clients/components/blog/BlogIntroParas.svelte';
+	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
+	import BlogHeaderH2WOl from '$lib/clients/components/blog/Blog-h2-w-ol.svelte';
+	import BlogClosingParas from '$lib/clients/components/blog/BlogClosingParas.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 
-	let title: string = 'How to Be A Better Craps Shooter, A Comprehensive Guide';
+	let title: string = 'Be a Better Craps Shooter';
 	let description: string =
 		'Step up your Craps game with our detailed guide. Learn how to be a better shooter and keep the table on your side.';
 	let url: string = 'better-craps-shooter';
-	let paras = [
-		"No single player is more important at the Craps table than the shooter. The fate of the table rests in their hands. Their roll determines if everyone wins or loses, if they are the savior or the annihilator, if mama's gonna buy a new pair of shoes or if it's gonna be a long quiet ride home.",
-		"You are responsible for the rest of the table when you are the shooter. You need to pay attention. Stay aware of what's happening. Watch the dice in the middle and know when they are about to come to you. Don't make the table wait because you're talking to your friends. Don't wait to get the dice, and then start thinking about which bets you want to make.",
-		"Even if you're aware, Craps still has a myriad of rules for shooting and if you don't know how to shoot correctly, you'll be getting yelled at by both the dealers and the players. You are trying to preserve the flow of the game. Novice mistakes while shooting end up changing the flow of the game. All too often, if the players lose in that moment, you will be the reason to blame. Don't be that person.",
-		"If you want to be the best Craps shooter you can be, you need to know the rules. Some can't be broken, while others are pliable. You also need to know your rights. As a shooter, you have the right to make some requests. Know the rules and your rights, and you only have to worry about beating the game."
-	];
 
 	let pageLinks: PageMenu[] = [
 		{
@@ -27,7 +22,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Need to Be Followed',
+			title: 'Need to be Followed',
 			href: '#needToFollow',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -39,8 +34,8 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Not Really Rules',
-			href: '#notReallyRules',
+			title: 'Recommended Courtesies',
+			href: '#recommendedCourtesies',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		},
@@ -59,93 +54,242 @@
 		imageUrl: 'src/images/' + url + '/' + url + '-header.webp'
 	};
 
-	let blogSections = [
+	let blogOpening = [
+		{
+			textParts: [
+				{
+					text: 'At the Craps table, the shooter holds a crucial role, as the fate of the game rests in their hands. Whether they become the hero or the villain, their roll determines the outcome for everyone. To be a successful shooter, you must take responsibility for the table and follow certain guidelines. Here are some suggestions to improve your skills and avoid common mistakes:'
+				}
+			]
+		},
+		{
+			textParts: [
+				{
+					text: "Stay focused and attentive: As the shooter, it's essential to pay attention to the game and be aware of what's happening. Keep an "
+				},
+				{ text: 'eye on the dice ', url: 'the-dice#beingHit' },
+				{
+					text: "in the middle, and be ready when it's your turn to roll. Avoid getting distracted by conversations with friends and don't wait until you have the dice in hand to think about your betting strategy."
+				}
+			]
+		},
+		{
+			textParts: [
+				{
+					text: "Understand the shooting rules: Craps has specific rules for shooting, and knowing them will help you maintain the game's flow and prevent mistakes. Novice errors while shooting can disrupt the game and make you the target of blame. Familiarize yourself with the shooting rules to avoid unnecessary complications."
+				}
+			]
+		},
+		{
+			textParts: [
+				{
+					text: 'Know your rights and requests: As the shooter, you have certain rights and can make requests within the rules. Understanding these rights will give you confidence and control over the game. Focus on learning the rules and your privileges, which will enable you to concentrate on beating the game.'
+				}
+			]
+		}
+	];
+
+	let sectionBroken = [
 		{
 			id: 'cantBeBroken',
-			title: "The Rules That Can't Be Broken",
-			para: "Short and sweet these two are the only definite rules. Without both of these, you can't be the shooter.",
-			subTitles: ['You need to make a bet:', 'Pick two dice:'],
+			title: 'Non-negotiable Rules for Shooting the Dice',
+			para: [
+				{
+					text: 'These are the only prerequisites for shooting the dice.'
+				}
+			],
+			subTitles: ['Place a Bet -', 'Pick two dice -'],
 			subParas: [
-				"You must bet either the Pass Line or the Don't Pass to throw the dice. This is non-negotiable. My suggestion is to put the table minimum on the Pass Line and if you want to bet more, add Odds once you get a Point.",
-				"You get five dice to choose from and Craps is only played with two. I know this sounds like a given, but many players ask how many dice they need. I've seen someone throw all five as a joke (Not funny), but I don't think I've ever seen someone sincerely try to throw more than two. I'm sure it happened though."
+				[
+					{
+						text: 'To become the shooter, you must place a bet on either '
+					},
+					{ text: 'the Pass Line ', url: 'pass-line-basics' },
+					{ text: 'or the ' },
+					{ text: "Don't Pass", url: 'dont-pass' },
+					{
+						text: ". This requirement is mandatory. It's recommended to start with the table minimum on the Pass Line and consider adding Odds once a Point is established."
+					}
+				],
+				[
+					{
+						text: 'While you have five dice to choose from, remember that Craps is played with only two dice. Although it may seem obvious, some players ask about the number of dice needed. Avoid throwing more than two dice, as it disrupts the game.'
+					}
+				]
 			]
 		}
 	];
-	let blogSections2 = [
+
+	let sectionFollow = [
 		{
 			id: 'needToFollow',
-			title: 'The Rules That Need to Be Followed',
-			para: "These rules you need to adhere to. You can still play Craps if you break these rules, but you will be quickly reminded of what you're doing wrong the moment you break one. Break these rules over and over, and don't be surprised if they don't let you shoot anymore.",
+			title: 'Rules that Must be Followed',
+			para: [
+				{
+					text: "You'll be warned a few times, sometimes less, by the dealer or box when you break these rules, then they may pass the dice on you."
+				}
+			],
 			subTitles: [
-				"Don't go hand-to-hand with the dice:",
-				'Keep the dice over the table:',
-				'Hit the back wall with both dice:',
-				'Keep the dice eye level with the stickperson:',
-				"Don't pick up anything with the hand you have the dice in:"
+				'Avoid hand-to-hand dice transfer -',
+				'Keep the dice over the table -',
+				'Hit the back wall with both dice -',
+				'Keep the dice at eye level with the Stickperson -',
+				"Don't use the hand with dice for other tasks - "
 			],
 			subParas: [
-				"That's moving the dice from your left to your right hand and vice versa. If you want to switch hands, you need to put the dice down on the table and then pick them up with the other hand. This includes cupping the dice with both hands—this rule is meant to prevent you from cheating; by switching the dice with a different pair.",
-				"Make sure you keep the dice over the felt. Over the cheques in the rail has some leeway but past that, you're getting yelled at. The leading factors to getting yelled at here are pulling your arm back to shoot or trying to get one of your friends to blow on the dice. Don't take the dice while getting your drink from the server, either.",
-				"Talk about a rule that needs to be followed that no one ever follows. Do you HAVE TO hit the back wall? You have to try at least, and the dealers know if you're trying. Some people can't aim. Some people need to hit cheques, so the dice don't even make it there. Some people think they can beat the game by not hitting the wall. It may take a few tries to get it right but everyone can hit the back wall.",
-				"Few people will break this rule because it requires you to throw the dice obnoxiously high. The stickperson needs to see the table while you're throwing the dice across it. They can't scan the table if they're looking in the sky at your dice. Even if the stickperson is short, you don't need to go that high.",
-				"Many players pick up the dice and realize they want to make a bet, so they grab some cheques from the rail with the same hand. Please don't do that. We don't know what kind of trickery is going on in the palm of your hand."
+				[
+					{
+						text: 'Switching the dice from your left to right hand or vice versa directly is prohibited. If you want to switch hands, you must first place the dice on the table and then pick them up with the other hand. This rule prevents cheating by substituting the dice with a different pair.'
+					}
+				],
+				[
+					{
+						text: 'Ensure that you keep the dice over the felt during your roll. While there is some leeway to have them over the cheques in the rail, going beyond that will result in reprimands. Pulling your arm back or attempting to get someone to blow on the dice is not allowed. Also, avoid picking up the dice while getting a drink from the server.'
+					}
+				],
+				[
+					{
+						text: "This is a rule that often goes ignored, but it's crucial to follow it. While some players struggle with aim and hitting the back wall, it's important to make a genuine attempt. Dealers can tell if you're trying, and hitting the wall helps maintain fairness. Practice until you can consistently hit the back wall."
+					}
+				],
+				[
+					{
+						text: 'Maintain the dice at an appropriate height during your throw to ensure visibility for '
+					},
+					{ text: 'the stickperson', url: 'the-crew' },
+					{
+						text: '. They need to see the table while you throw the dice across it. Avoid throwing the dice too high, but make sure they are visible to the stickperson.'
+					}
+				],
+				[
+					{
+						text: 'Once you have the dice in hand, refrain from using that hand to pick up anything else, such as cheques from the rail. This rule prevents any potential trickery or manipulation during the game.'
+					}
+				]
 			]
 		}
 	];
-	let blogSections3 = [
+
+	let sectionTosses = [
 		{
 			id: 'questionableTosses',
-			title: 'Tosses The Dealers Could Only Put Up With for So Long',
-			para: "It will not take much of these tosses before the dealers say something. While you can argue you're trying or it's how you throw, we'll need you to make some adjustments.",
+			title: "Tosses that Dealers Won't Tolerate for Long",
+			para: [
+				{
+					text: "Certain tossing techniques may draw attention from the dealers due to their undesirable outcomes. While you may argue that you're trying your best or it's your preferred style, it's important to make adjustments to these tosses."
+				}
+			],
 			subTitles: [
-				'Do not throw the dice in the boxes:',
-				'Throw to the wall, not through the wall:'
+				'Avoid throwing the dice into the boxes -',
+				'Throw to the wall, not through it -'
 			],
 			subParas: [
-				"These are the boxes where the Point is marked and where the Place bets go. Suppose you mix up a bunch of bets because you smashed the cheques with the dice; the game has to stop. It's very frustrating to the dealer.",
-				"Please don't throw the dice so hard that they bounce off the wall at 90 mph. The dice can take an eye out. I've bled from being hit by the dice, and it hurts!"
+				[
+					{
+						text: 'The boxes on the table where the Point is marked and where Place bets are placed should not be the target for your dice. Throwing the dice into these boxes can lead to confusion and disrupt the flow of the game, frustrating the dealer.'
+					}
+				],
+				[
+					{
+						text: 'When throwing the dice, avoid using excessive force that causes them to bounce off the back wall at a high speed. This can be dangerous and potentially injure others. Keep your throws controlled and within a reasonable range.'
+					}
+				]
 			]
 		}
 	];
-	let blogSections4 = [
+
+	let sectionCourtesies = [
 		{
-			id: 'notReallyRules',
-			title: 'Not Really Rules We Would Like You To Follow',
-			para: 'Do you have to follow these rules? Yes and no. They are more or less courtesies to the rest of the table and are greatly appreciated.',
+			id: 'recommendedCourtesies',
+			title: 'Recommended Courtesies',
+			para: [
+				{
+					text: 'While not strict rules, these courtesies contribute to a smoother game and are appreciated by fellow players.'
+				}
+			],
 			subTitles: [
-				"Don't rush the Stickperson:",
-				"Don't take an obnoxious amount of time to throw the dice:",
-				'Have patience:'
+				"Don't rush the dealer -",
+				'Avoid excessive time-consuming rituals -',
+				'Practice patience -'
 			],
 			subParas: [
-				"The stickperson knows you want the dice but is responsible for watching the whole table. They have to make sure everything is kosher before giving you the dice. If they aren't paying attention, then maybe mention it to the base dealer or the box. They should be able to get the game moving.",
-				"We know you want to set up your dice. Turn em' three times. Roll each of em' over four times. Stack em' up, shake em' up, toss em' against the wall, take a quick breather and step back, wipe the condensation off your fingers, carefully line them up, pick them up, swing your arms a few times, check the breeze, see your spot at the end of the table, eye it up, breathe, focus, breath, focus, eye up, focus, breathe, eye up, eye up, put the dice down, take a step back, pick them up, eye up, focus, breathe, toss em against the wall again, line em' up, roll em' over, twist them twice, stack em' up, pick em' up, then toss the dice. Yea, this shit happens.",
-				"Craps can be complicated for many players; sometimes, the game can come to a slow crawl. Don't let it discourage you. Let them finish, then do your thing. You can still keep a flow going if you patiently wait for the dice to be sent to you. Don't try and force the flow of the game. Let it happen."
+				[
+					{
+						text: 'The stickperson, who handles the dice, has multiple responsibilities and needs to oversee the entire table. Avoid pressuring them to hand you the dice immediately. If you notice a delay, politely inform the base dealer or the box for assistance. Maintain patience to ensure a fair and organized game.'
+					}
+				],
+				[
+					{
+						text: "While it's understandable that you may have your own routine before throwing the dice, try not to prolong the process excessively. Taking an excessive amount of time can slow down the game and "
+					},
+					{ text: 'irritate other players', url: 'not-to-do-at-craps' },
+					{ text: '. Find a balance between your preferred setup and maintaining a steady flow.' }
+				],
+				[
+					{
+						text: "Craps can be complex for some players, leading to slower gameplay. Don't let this discourage you. Wait for the dice to be passed to you before starting your roll, and don't rush the game. Allow it to unfold naturally and focus on maintaining a steady pace."
+					}
+				]
 			]
 		}
 	];
-	let blogSections5 = [
+
+	let sectionRights = [
 		{
 			id: 'knowYourRights',
-			title: 'Know Your Rights as a Shooter',
-			para: 'You can ask for some things that the dealers will quickly appease. Try to avoid taking advantage by using them excessively.',
+			title: 'Know Your Shooter Rights',
+			para: [
+				{
+					text: 'As the shooter, you have certain rights that can be exercised within reason. Use these privileges wisely and avoid exploiting them excessively.'
+				}
+			],
 			subTitles: [
-				'You can ask for new dice:',
-				'You can ask to dump the bowl:',
-				'You can ask for the same dice:',
-				'You can practice rolling backward:',
-				'You can pass the dice in the middle of your roll:',
-				'Two people can shoot off one bankroll:',
-				"If you made a bet, you're allowed to shoot:"
+				'Request new dice -',
+				'Ask to dump the bowl -',
+				'Request the same dice -',
+				'Practice rolling backward -',
+				'Two-person shooting -'
 			],
 			subParas: [
-				"If you're not feeling the roll or not rolling anything you need, ask the stickperson if you can have two new dice. They'll take your two back and offer you the other three.",
-				'The stickperson will take your dice back and dump the bowl to mix all five. You can now choose another two from the pile of five.',
-				'You can ask for the same die if the dice bounce off the table. Make sure you ask immediately after the dice go off the table because the stickperson will dump the bowl as soon as he brings the other one back to the middle.',
-				"You can roll the dice in the opposite direction of the wall you're aiming at. You can roll off the wall closest to you but not off the mirror. If you practice rolling forward, it's a slight chance, but it can be called a roll.",
-				"While it doesn't happen often, people pass the dice when they don't like what they are rolling. Most of those people pass the dice before even starting the roll, but sometimes they try and then lose faith.",
-				'Once your roll is over, if you want to sponsor your friend to shoot, you are allowed to. Place a bet on the Pass Line and let the stickperson know you would like to have your friend shoot.',
-				"There is a thing such as cutting in line at the Craps table. If you place yourself to the left of the shooter thinking “When he seven outs, I'll place my Pass Line bet and shoot.”, you are wrong. You must have a vested interest in the game in order to shoot. If you didn't make a bet when the current shooter seven outs, the dice will pass you and be offered to the next person in line as long as they had previous action. If you make a bet prior to the shooter's seven out, you're entitled to shoot."
+				[
+					{
+						text: 'If you feel unsatisfied with your roll or find it difficult to achieve desired results, you can ask the stickperson for two new dice. They will exchange your current dice for three different ones, giving you another chance to improve your roll.'
+					}
+				],
+				[
+					{
+						text: 'If you wish to mix up the dice, you can request the stickperson to dump the bowl. They will take your current dice and mix them with the remaining ones. You can then select two new dice from the mixed pile.'
+					}
+				],
+				[
+					{
+						text: 'In case the dice bounce off the table, you can ask for the same die you were using. Ensure you make this request immediately after the dice leave the table, as the stickperson will dump the bowl once they bring back the replacement die.'
+					}
+				],
+				[
+					{
+						text: "You can practice rolling the dice in the opposite direction of the wall you're aiming for. You can roll off the wall closest to you but not off the mirror. It's a technique that some shooters find effective, but it's important to note that it's only a slight chance of altering the outcome."
+					}
+				],
+				[
+					{
+						text: 'Once your turn as a shooter is over, you can sponsor a friend to shoot after you. To do this, place a bet on the Pass Line and inform the stickperson that you would like your friend to throw the dice as well.'
+					}
+				]
+			]
+		}
+	];
+
+	let blogClosing = [
+		{
+			textParts: [
+				{
+					text: 'Remember, shooting in Craps is an art form that requires practice and finding your own rhythm. By following the rules, maintaining focus, and '
+				},
+				{ text: 'understanding the game', url: 'art-of-verbal-betting' },
+				{
+					text: ", you can improve your skills as a shooter. Don't be discouraged by occasional losses, as everyone eventually sevens out. Place another Pass Line bet and continue enjoying the game."
+				}
 			]
 		}
 	];
@@ -155,187 +299,218 @@
 	<title>{title} | Parlay Nation - How to Play Craps</title>
 	<link rel="canonical" href={'http://parlaynation.com/' + url} />
 	<meta name="description" content={description} />
-	<meta property="og:url" content={url} />
+	<meta property="og:url" content={'http://parlaynation.com/' + url} />
 	<meta property="og:title" content={title + ' | Parlay Nation - How to Play Craps'} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content={'src/images/' + url + '/' + url + '-header.webp'} />
-	<meta name="twitter:image" content={'src/images/' + url + '/' + url + '-header.webp'} />
+	<meta property="og:image" content={'images/' + url + '/' + url + '-header.webp'} />
+	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.webp'} />
 	<script type="application/ld+json">
 		{
-			"@context": "https://schema.org",
-			"@type": "ItemList",
-			"name": "{{{Page Title}}}",
-			"description": "{{{Page Description}}}",
-			"url": "http://parlaynation.com/{{{url}}}",
-			"numberOfItems": 5,
-			"itemListElement": [
-				{
-					"@type": "ItemList",
-					"name": "The Rules That Can't Be Broken",
-					"numberOfItems": 2,
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "You need to make a bet",
-							"description": "You must bet either the Pass Line or the Don't Pass to throw the dice. This is non-negotiable."
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": "Pick two dice",
-							"description": "You get five dice to choose from and Craps is only played with two."
-						}
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "The Rules That Need to Be Followed",
-					"numberOfItems": 6,
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "Don't go hand-to-hand with the dice",
-							"description": "That's moving the dice from your left to your right hand and vice versa. If you want to switch hands, you need to put the dice down on the table and then pick them up with the other hand."
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": "Keep the dice over the table",
-							"description": "Make sure you keep the dice over the felt. Over the cheques in the rail has some leeway but past that, you're getting yelled at."
-						},
-						{
-							"@type": "ListItem",
-							"position": 3,
-							"name": "Hit the back wall with both dice",
-							"description": "You have to try at least, and the dealers know if you're trying."
-						},
-						{
-							"@type": "ListItem",
-							"position": 4,
-							"name": "Keep the dice eye level with the stickperson",
-							"description": "The stickperson needs to see the table while you're throwing the dice across it."
-						},
-						{
-							"@type": "ListItem",
-							"position": 5,
-							"name": "Don't pick up anything with the hand you have the dice in",
-							"description": "Many players pick up the dice and realize they want to make a bet, so they grab some cheques from the rail with the same hand. Please don't do that."
-						}
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "Tosses We Could Only Put Up With for So Long",
-					"numberOfItems": 2,
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "Do not throw the dice in the boxes",
-							"description": "These are the boxes where the Point is marked and where the Place bets go. Suppose you mix up a bunch of bets because you smashed the cheques with the dice; the game has to stop."
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": "Throw to the wall, not through the wall",
-							"description": "Please don't throw the dice so hard that they bounce off the wall at 90 mph."
-						}
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "Not Really Rules We Would Like You To Follow",
-					"numberOfItems": 3,
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "Don't rush the Stickperson",
-							"description": "The stickperson knows you want the dice but is responsible for watching the whole table."
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": "Don't take an obnoxious amount of time to throw the dice",
-							"description": "Be mindful of the time you take to set up and throw the dice."
-						},
-						{
-							"@type": "ListItem",
-							"position": 3,
-							"name": "Have patience",
-							"description": "Craps can be complicated for many players; sometimes, the game can come to a slow crawl."
-						}
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "Know Your Rights as a Shooter",
-					"numberOfItems": 7,
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "You can ask for new dice",
-							"description": "If you're not feeling the roll or not rolling anything you need, ask the stickperson if you can have two new dice."
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": "You can ask to dump the bowl",
-							"description": "The stickperson will take your dice back and dump the bowl to mix all five."
-						},
-						{
-							"@type": "ListItem",
-							"position": 3,
-							"name": "You can ask for the same dice",
-							"description": "You can ask for the same die if the dice bounce off the table."
-						},
-						{
-							"@type": "ListItem",
-							"position": 4,
-							"name": "You can practice rolling backward",
-							"description": "You can roll the dice in the opposite direction of the wall you're aiming at."
-						},
-						{
-							"@type": "ListItem",
-							"position": 5,
-							"name": "You can pass the dice in the middle of your roll",
-							"description": "While it doesn't happen often, people pass the dice when they don't like what they are rolling."
-						},
-						{
-							"@type": "ListItem",
-							"position": 6,
-							"name": "Two people can shoot off one bankroll",
-							"description": "Once your roll is over, if you want to sponsor your friend to shoot, you are allowed to."
-						},
-						{
-							"@type": "ListItem",
-							"position": 7,
-							"name": "If you made a bet, you're allowed to shoot",
-							"description": "As long as you have placed a bet, you are allowed to be the shooter."
-						}
-					]
-				}
-			]
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tips for Becoming a Better Craps Shooter",
+  "description": "A detailed guide on improving your skills as a Craps shooter, including focusing, understanding rules, knowing your rights, and adhering to certain etiquettes.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-05",
+  "url": "http://parlaynation.com/better-craps-shooter",
+  "image": "http://parlaynation.com/images/better-craps-shooter/better-craps-shooter-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/better-craps-shooter"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Guidelines for Craps Shooters",
+      "description": "Suggestions to improve shooting skills at the Craps table.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Stay focused and attentive",
+          "description": "Pay attention to the game and be ready to roll."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Understand the shooting rules",
+          "description": "Know the specific rules for shooting to maintain game flow."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Know your rights and requests",
+          "description": "Learn about your rights as the shooter and how to make requests within the rules."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Non-negotiable Rules for Shooting the Dice",
+      "description": "Essential requirements for shooting the dice in Craps.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Place a bet",
+          "description": "You must place a bet on either the Pass Line or the Don't Pass Line to shoot."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pick two dice",
+          "description": "Select two dice from the available five to play."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Rules that Must be Followed",
+      "description": "Key rules for maintaining integrity and flow of the game.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Avoid hand-to-hand dice transfer",
+          "description": "Switching the dice directly between hands is prohibited."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Keep the dice over the table",
+          "description": "Ensure dice are rolled over the felt to prevent foul play."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hit the back wall with both dice",
+          "description": "Make a genuine attempt to hit the back wall with both dice."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Keep the dice at eye level with the stickperson",
+          "description": "Maintain dice visibility for the stickperson during throws."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Don't use the hand with the dice for other tasks",
+          "description": "Avoid using the dice hand to pick up other items."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Tosses that Dealers Won't Tolerate for Long",
+      "description": "Tossing techniques that may draw attention for correction.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Avoid throwing the dice into the boxes",
+          "description": "Dice should not be thrown into the betting boxes to avoid confusion."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Throw to the wall, not through it",
+          "description": "Control your throws to prevent dice from bouncing off the back wall dangerously."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Recommended Courtesies",
+      "description": "Etiquette for a smoother and more enjoyable game.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Don't rush the dealer",
+          "description": "Respect the stickperson's pacing and responsibilities."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Avoid excessive time-consuming rituals",
+          "description": "Balance personal routines with the game's flow."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Practice patience",
+          "description": "Allow the game to unfold naturally without rushing."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Know Your Shooter Rights",
+      "description": "Rights that can be exercised by shooters within reason.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Request new dice",
+          "description": "Ask for new dice if unsatisfied with the current roll."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ask to dump the bowl",
+          "description": "Request to mix up the dice for a fresh selection."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Request the same dice",
+          "description": "Ask for the same die back if it bounces off the table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Practice rolling backward",
+          "description": "You may practice rolling the dice in the opposite direction."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Two-person shooting",
+          "description": "Sponsor a friend to shoot after your turn is over."
+        }
+      ]
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 <BlogLayout {pageLinks}>
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<BlogHeaderOne
 			sectionTitle="Being a Better Player"
-			title="How To Be a Better Craps Shooter, a Comprehensive Guide"
+			title="Tips for Becoming a Better Shooter at the Craps Table"
 			{pageData}
-			{paras}
 		/>
+		<BlogIntroParas {blogOpening} />
 		<BlogImg
 			caption=""
 			{url}
-			img="dice-purple-five"
-			title="Five Purple Craps Dice"
-			alt="Five purple dice sitting on the craps table felt."
+			img="five-purple-dice"
+			title="Up Close View of Five Purple Dice on a Craps Layout"
+			alt="Up close view of five purple dice on a craps layout"
 		/>
 		<div class="lg:hidden">
 			<Divider />
@@ -344,34 +519,32 @@
 			</div>
 		</div>
 		<Divider />
-		<BlogHeaderTwo {blogSections} />
+		<BlogHeaderH2WOl blogSectionOl={sectionBroken} />
 		<Divider />
-		<BlogHeaderTwo blogSections={blogSections2} />
+		<BlogHeaderH2WOl blogSectionOl={sectionFollow} />
+		<Divider />
+		<BlogImg
+			caption=""
+			{url}
+			img="come-bet-in-the-come"
+			title="Third Base Viewing the Craps Layout"
+			alt="Third base viewing the craps layout"
+		/>
+		<Divider />
+		<BlogHeaderH2WOl blogSectionOl={sectionTosses} />
+		<Divider />
+		<BlogHeaderH2WOl blogSectionOl={sectionCourtesies} />
 		<Divider />
 		<BlogImg
 			caption=""
 			{url}
 			img="pass-line-overhead"
-			title="Overhead View of Pass Line with Odds"
-			alt="A close-up overhead view of $5 on the Pass Line with $5 behind the bet used as Odds."
+			title="Pass Line with Odds"
+			alt="Up close overhead view of the pass line with odds"
 		/>
 		<Divider />
-		<BlogHeaderTwo blogSections={blogSections3} />
+		<BlogHeaderH2WOl blogSectionOl={sectionRights} />
 		<Divider />
-		<BlogHeaderTwo blogSections={blogSections4} />
-		<Divider />
-		<BlogImg
-			caption=""
-			{url}
-			img="come-bet-2"
-			title="Come Bets Sitting in the Come"
-			alt="A view the third base hook looking at several Come Bets sitting in the COME area of the Craps Table."
-		/>
-		<Divider />
-		<BlogHeaderTwo blogSections={blogSections5} />
-		<Divider />
-		<BlogClosingPara
-			para="Shooting is an art form. It may take some time to find your throw and rhythm. Follow the rules to stay in your flow, and don't be afraid of losing. Everyone will eventually seven out. Don't be sorry when it happens to you. Put down another Pass Line bet and let's keep going."
-		/>
-	</main></BlogLayout
->
+		<BlogClosingParas {blogClosing} />
+	</main>
+</BlogLayout>

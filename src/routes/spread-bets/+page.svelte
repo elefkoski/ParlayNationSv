@@ -151,11 +151,11 @@
 	<title>{title} | Parlay Nation - How to Play Craps</title>
 	<link rel="canonical" href={'http://parlaynation.com/' + url} />
 	<meta name="description" content={description} />
-	<meta property="og:url" content={url} />
+	<meta property="og:url" content={'http://parlaynation.com/' + url} />
 	<meta property="og:title" content={title + ' | Parlay Nation - How to Play Craps'} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content={'src/images/' + url + '/' + url + '-header.jpg'} />
-	<meta name="twitter:image" content={'src/images/' + url + '/' + url + '-header.jpg'} />
+	<meta property="og:image" content={'images/' + url + '/' + url + '-header.jpg'} />
+	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 </svelte:head>
 
 <LearnLayout>
@@ -164,7 +164,7 @@
 		<HomeHeadings
 			aria="Spread Bets header"
 			title="Spread Bets"
-			pOne="Acquire in-depth knowledge about the various types of Spread Bets in craps, including Betting Across, Inside, Outside, Uptown/Downtown, and Including the Point."
+			pOne="Learn how to bet multiple Place bets at once, including Betting Across, Inside, Outside, Uptown/Downtown, and Including the Point."
 			pTwo="Examine the cost implications of different types of Spread Bets and the factors that influence these costs."
 			pThree="Explore the strategy of Including the Point in your Spread Bet, a tactic often employed by players not on the Pass Line."
 			button="Learn across"

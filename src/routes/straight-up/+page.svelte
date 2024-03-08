@@ -82,11 +82,11 @@
 	<title>{title} | Parlay Nation - How to Play Craps</title>
 	<link rel="canonical" href={'http://parlaynation.com/' + url} />
 	<meta name="description" content={description} />
-	<meta property="og:url" content={url} />
+	<meta property="og:url" content={'http://parlaynation.com/' + url} />
 	<meta property="og:title" content={title + ' | Parlay Nation - How to Play Craps'} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content={'src/images/' + url + '/' + url + '-header.jpg'} />
-	<meta name="twitter:image" content={'src/images/' + url + '/' + url + '-header.jpg'} />
+	<meta property="og:image" content={'images/' + url + '/' + url + '-header.jpg'} />
+	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
 		  "@context": "http://schema.org/",
@@ -97,7 +97,7 @@
 			"@type": "Organization",
 			"name": "Parlay Nation",
 			"url": "https://parlaynation.com",
-			"logo": "https://photos.app.goo.gl/W3PRcW9RskSdPw43A"
+			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
 		  }
 		}
 	</script>

@@ -1,10 +1,36 @@
 <script lang="ts">
-	export let title: string = 'The Title';
-	export let id: string = 'the-id';
-	export let para: string = 'The paragraph.';
+	import TextWLinks from './text-w-links.svelte';
+
+	interface TextPart {
+		text: string;
+		url?: string; // url is optional
+	}
+
+	interface BlogSection {
+		id: string;
+		title: string;
+		paras: TextPart[][]; // An array of arrays of TextPart
+	}
+
+	export let blogSection: BlogSection[] = [
+		{
+			id: 'theId',
+			title: 'The Title',
+			paras: [
+				[{ text: "a's", url: '/' }],
+				[{ text: "a's", url: '/' }],
+				[{ text: "a's", url: '/' }],
+				[{ text: "a's", url: '/' }]
+			]
+		}
+	];
 </script>
 
-<section aria-describedby={title}>
-	<h2 {id} class="text-slate-400 text-2xl pb-1">{title}</h2>
-	<p class="pb-4">{para}</p>
-</section>
+{#each blogSection as section}
+	<section aria-label={section.title}>
+		<h2 id={section.id} class="text-slate-400 font-semibold text-2xl pb-1">{section.title}</h2>
+		{#each section.paras as para}
+			<p class="pb-4"><TextWLinks textParts={para} /></p>
+		{/each}
+	</section>
+{/each}
