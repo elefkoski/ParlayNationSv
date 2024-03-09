@@ -1,0 +1,7 @@
+{
+	"Wrap with Link component": {
+		"prefix": "linkme",
+		"body": ["<Link text=\"${TM_SELECTED_TEXT}\" ahref=\"${1:target_url}\" />"],
+		"description": "Wrap with Link component"
+	}
+}

@@ -3,5 +3,6 @@
 </script>
 
 <section aria-label={title}>
-	<h3 class="text-slate-400 text-xl pb-1">{title}</h3>
+	<h3 class="text-slate-400 font-bold text-xl">{title}</h3>
+	<slot />
 </section>

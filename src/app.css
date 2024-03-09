@@ -7,3 +7,25 @@
 		@apply antialiased;
 	}
 }
+.blog ol li {
+	list-style-type: decimal;
+	list-style-position: inside;
+	margin-left: 1em;
+	margin-bottom: 0.25em;
+}
+.blog ul li {
+	list-style-type: disc;
+}
+.blog span {
+	color: orange;
+	font-weight: bolder;
+}
+
+@media (prefers-color-scheme: dark) {
+	.blog span {
+		color: #60a5fa;
+	}
+	li::marker {
+		color: #60a5fa;
+	}
+}

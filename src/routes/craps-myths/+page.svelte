@@ -2,12 +2,11 @@
 	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
+	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
 	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
-	import BlogHeaderTwo from '$lib/clients/components/blog/Blog-h2.svelte';
-	import BlogIntroParas from '$lib/clients/components/blog/BlogIntroParas.svelte';
-	import BlogClosingParas from '$lib/clients/components/blog/BlogClosingParas.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
+	import Link from '$lib/clients/components/Link.svelte';
 
 	let title: string = 'Craps Myths';
 	let description: string =
@@ -69,180 +68,6 @@
 			href: '#sevenOuts',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
-		}
-	];
-
-	let blogOpening = [
-		{
-			textParts: [
-				{
-					text: "From the gambler's fallacy to the belief that the game is inherently rigged, Craps myths have been around at the tables for the longest time. Our goal here is to break down those myths, separating fact from fiction."
-				}
-			]
-		},
-		{
-			textParts: [
-				{
-					text: 'By talking about the truths behind each myth, we offer a better understanding of Craps, allowing you to approach the game with '
-				},
-				{
-					text: 'extra knowledge ',
-					url: 'craps-blog'
-				},
-				{
-					text: "and confidence. This article is not just about debunking myths, it's also about building resistance from the stories you'll hear at the tables."
-				}
-			]
-		}
-	];
-
-	let sectionFallacy = [
-		{
-			id: 'gamblersFallacy',
-			title: 'The Gamblers Fallacy',
-			paras: [
-				[
-					{
-						text: "The gambler's fallacy is that previous outcomes in a game of chance influence future results. In Craps, it's when players believe that previous rolls of dice influence the likelihood of future rolls. This isn't true because each roll of the dice is independent, and the dice have no memory of past rolls. The odds of rolling any specific number are always the same on each roll, regardless of what numbers have or haven't appeared recently."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionRigged = [
-		{
-			id: 'riggedGame',
-			title: 'The Game is Rigged',
-			paras: [
-				[
-					{
-						text: "Since all of the games in the casino are designed to have an edge over the player, the casino doesn't need to fix anything to make money. All they need to do is offer the option to play; over time, the casino will make more money than they ever lose. Therefore, the casino's profitability is inherently built into the games, making sure they win in the long run."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionRight = [
-		{
-			id: 'dealersRight',
-			title: 'The Dealer Always Know What They Are Doing',
-			paras: [
-				[
-					{
-						text: "I have to be honest when I say that not all dealers know what they are doing. Like most people who start a profession, you can't expect everyone to be good at the job. There will always be a core set of "
-					},
-					{
-						text: 'dealers ',
-						url: 'tipping-craps-dealers'
-					},
-					{
-						text: 'at the casino who will hold the fort down.'
-					}
-				]
-			]
-		}
-	];
-
-	let sectionWins = [
-		{
-			id: 'houseWins',
-			title: 'The House Always Wins',
-			paras: [
-				[
-					{
-						text: 'The house does not always win. Over the long run, the casino should win more money than the players, but in the short run, which could be considered a single night, month, or year, the players can easily win more than the casino. It helps to know the proper strategies and stick to bets with a lower house edge, but even '
-					},
-					{
-						text: 'those who have no clue ',
-						url: 'dealing-with-new-craps-players'
-					},
-					{
-						text: "what they're doing can win out of sheer luck."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionLose = [
-		{
-			id: 'wantToLose',
-			title: 'The Dealers Want the House to Win',
-			paras: [
-				[
-					{
-						text: "The dealers are rooting for the players to win. Dealing at a table where everyone is losing is no fun for anyone. I can crack jokes and make people smile but constantly taking your money… it's disheartening. When you bring the house down not only does it provide riches for everyone including the dealers, but comes with loads of fun as well."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionOxygen = [
-		{
-			id: 'pumpsOxygen',
-			title: 'The Casino Pumps in Oxygen',
-			paras: [
-				[
-					{
-						text: 'The widespread myth that casinos pump oxygen to keep players alert and gambling longer has been around for decades. In reality, there are probably some legal and safety concerns there, and the casino employs other methods to keep you at the tables such as surrounding you with bright lights and sounds, removing clocks, and giving free drinks.'
-					}
-				]
-			]
-		}
-	];
-
-	let sectionGreat = [
-		{
-			id: 'greatRolls',
-			title: 'There Are Never Good Rolls After a Great Roll',
-			paras: [
-				[
-					{
-						text: 'Many seasoned players recognize that a strong roll is a rare occurrence, so extending that streak feels almost unreal. And while a large portion of the table will '
-					},
-					{
-						text: 'color up ',
-						url: 'the-stages'
-					},
-					{
-						text: "and leave immediately after it's over, a select few will stay to see what else the table has to offer, and many times those returns are only piled upon."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionSeven = [
-		{
-			id: 'sevenOuts',
-			title: 'The Superstitions Cause 7 Outs',
-			paras: [
-				[
-					{
-						text: "There will be countless instances where a 7-out coincides with various superstitions, such as stick change, the dice bouncing off the table, or someone mentioning 'seven.' This happens simply because both these instances happen all the time so they end up happening at the same time. As they say, correlation does not imply causation.'; superstitions themselves have no bearing on the outcome of "
-					},
-					{
-						text: 'the dice',
-						url: 'the-dice'
-					},
-					{
-						text: '.'
-					}
-				]
-			]
-		}
-	];
-
-	let blogClosing = [
-		{
-			textParts: [
-				{
-					text: "Knowing you don't have to worry about these myths lets you play the game with a little more peace of mind. Forget about rigged games or superstitions and focus on having a good time. Even though the casino has a built-in edge, it doesn't win every time, so at any moment you can walk away with a pocket full of cash."
-				}
-			]
 		}
 	];
 </script>
@@ -349,7 +174,19 @@
 			title="Craps Myths You'll Hear At the Craps Table"
 			{pageData}
 		/>
-		<BlogIntroParas {blogOpening} />
+		<section aria-label="Opening paragraphs">
+			<p class="pb-4">
+				From the gambler's fallacy to the belief that the game is inherently rigged, Craps myths
+				have been around at the tables for the longest time. Our goal here is to break down those
+				myths, separating fact from fiction.
+			</p>
+			<p class="pb-4">
+				By talking about the truths behind each myth, we offer a better understanding of Craps,
+				allowing you to approach the game with extra knowledge and confidence. This article is not
+				just about debunking myths, it’s also about building resistance from the stories you’ll hear
+				at the tables.
+			</p>
+		</section>
 		<BlogImg
 			caption=""
 			{url}
@@ -364,10 +201,28 @@
 			</div>
 		</div>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionFallacy} />
+		<BlogH2 id="gamblersFallacy" title="The Gamblers Fallacy">
+			<p class="pb-4">
+				The gambler's fallacy is that previous outcomes in a game of chance influence future
+				results. In Craps, it’s when players believe that previous rolls of dice influence the
+				likelihood of future rolls. This isn’t true because each roll of the dice is independent,
+				and <Link text="the dice" href="the-dice" /> have no memory of past rolls. The odds of rolling
+				any specific number are always the same on each roll, regardless of what numbers have or haven't
+				appeared recently.
+			</p>
+		</BlogH2>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionRigged} />
-		<Divider />
+		<BlogH2 id="riggedGame" title="The Game is Rigged">
+			<p class="pb-4">
+				Since all of the games in the casino are designed to have <Link
+					text="an edge"
+					href="rank-of-craps-bets"
+				/> over the player, the casino doesn’t need to fix anything to make money. All they need to do
+				is offer the option to play; over time, the casino will make more money than they ever lose.
+				Therefore, the casino's profitability is inherently built into the games, making sure they win
+				in the long run.
+			</p>
+		</BlogH2>
 		<BlogImg
 			caption=""
 			{url}
@@ -376,14 +231,42 @@
 			alt="A buy on the point ten."
 		/>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionRight} />
+		<BlogH2 id="dealersRight" title="The Dealers Always Know What They Are Doing">
+			<p class="pb-4">
+				I have to be honest when I say that not all dealers know what they are doing. Like most
+				people who start a profession, you can’t expect everyone to be good at the job. There will
+				always be a core set of <Link text="dealers" href="tipping-the-dealers" /> at the casino who
+				will hold the fort down.
+			</p>
+		</BlogH2>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionWins} />
+		<BlogH2 id="houseWins" title="The House Always Wins">
+			<p class="pb-4">
+				The house does not always win. Over the long run, the casino should win more money than the
+				players, but in the short run, which could be considered a single night, month, or year, the
+				players can easily win more than the casino. It helps to know the proper strategies and
+				stick to bets with a lower house edge, but even those who have no clue what they’re doing
+				can win out of sheer luck.
+			</p>
+		</BlogH2>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionLose} />
+		<BlogH2 id="wantToLose" title="The Dealers Want the House to Win">
+			<p class="pb-4">
+				The dealers are rooting for the players to win. Dealing at a table where everyone is losing
+				is no fun for anyone. I can crack jokes and make people smile but constantly taking your
+				money… it’s disheartening. When you bring the house down not only does it provide riches for
+				everyone including the dealers, but comes with loads of fun as well.
+			</p>
+		</BlogH2>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionOxygen} />
-		<Divider />
+		<BlogH2 id="pumpsOxygen" title="The Casino Pumps in Oxygen">
+			<p class="pb-4">
+				The widespread myth that casinos pump oxygen to keep players alert and gambling longer has
+				been around for decades. In reality, there are probably some legal and safety concerns
+				there, and the casino employs other methods to keep you at the tables such as surrounding
+				you with bright lights and sounds, removing clocks, and giving free drinks.
+			</p>
+		</BlogH2>
 		<BlogImg
 			caption=""
 			{url}
@@ -392,10 +275,34 @@
 			alt="An overlay on the point of six."
 		/>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionGreat} />
+		<BlogH2 id="greatRolls" title="There Are Never Good Rolls After a Great Roll">
+			<p class="pb-4">
+				Many seasoned players recognize that a <Link text="strong roll" href="a-great-craps-roll" />
+				is a rare occurrence, so extending that streak feels almost unreal. And while a large portion
+				of the table will color up and leave immediately after it’s over, a select few will stay to see
+				what else the table has to offer, and many times those returns are only piled upon.
+			</p>
+		</BlogH2>
 		<Divider />
-		<BlogHeaderTwo blogSection={sectionSeven} />
+		<BlogH2 id="sevenOuts" title="The Superstitions Cause 7-Outs">
+			<p class="pb-4">
+				There will be countless instances where a 7-out coincides with various superstitions, such
+				as <Link text="stick change" href="the-crew" />, the dice bouncing off the table, or someone
+				mentioning 'seven.' This happens simply because both these instances happen all the time so
+				they end up happening at the same time. As they say, ‘correlation does not imply
+				causation.’; superstitions themselves have no bearing on the outcome of the dice.
+			</p>
+		</BlogH2>
 		<Divider />
-		<BlogClosingParas {blogClosing} />
+		<section aria-label="Closing paragraphs">
+			<p>
+				Knowing you don’t have to worry about these myths lets you play the game with a little more
+				peace of mind. Forget about rigged games or <Link
+					text="superstitions"
+					href="craps-superstitions"
+				/> and focus on having a good time. Even though the casino has a built-in edge, it doesn’t win
+				every time, so at any moment you can walk away with a pocket full of cash.
+			</p>
+		</section>
 	</main>
 </BlogLayout>
