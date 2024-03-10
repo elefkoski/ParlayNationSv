@@ -7,6 +7,7 @@
 	import BlogH3 from '$lib/clients/components/blog/BlogH3.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
+	import Link from '$lib/clients/components/Link.svelte';
 
 	let title: string = 'Make the Perfect Craps Bet';
 	let description: string =
@@ -28,7 +29,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Placing Self-service Bets',
+			title: 'Placing Self-Service Bets',
 			href: '#selfService',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -204,13 +205,22 @@
 				when to place it, how to execute it, and with whom to place it.
 			</p>
 			<p class="pb-4">
-				From understanding the anatomy of a good bet to learning how to toss bets to the
-				Stickperson, we've got it all covered. We'll also go over the bets you can take back and
-				those set in stone, making sure you stay flexible in your betting strategy.
+				From understanding the anatomy of a good bet to learning how to toss bets to <Link
+					text="the
+				Stickperson"
+					href="the-crew"
+				/>, we've got it all covered. We'll also go over the bets you can take back and those set in
+				stone, making sure you stay flexible in your betting strategy.
 			</p>
 		</section>
 		<Divider />
-		<BlogImg caption="" {url} img="here-is-an-image" title="ImageTitle" alt="ImageAlt" />
+		<BlogImg
+			caption=""
+			{url}
+			img="across-including"
+			title="Across Including the Point"
+			alt="Across including the point."
+		/>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -228,15 +238,16 @@
 					<span>Proof of Money - </span>There are no Call Bets in Craps, meaning you must show the
 					dealer you have enough money for the bet. If chips are sitting in the rail, then you are
 					fine. If you just walked up or are in the middle of a rebuy, hold the chips or cash in the
-					air or put it in the rail. Don’t tell me, “I’m good for it. It’s in my wallet.” then go
-					fishing around while the shooter has the dice. Be ready before you ask for anything.
+					air or put it in <Link text="the rail" href="the-craps-table" />. Don’t tell me, “I’m good
+					for it. It’s in my wallet.” then go fishing around while the shooter has the dice. Be
+					ready before you ask for anything.
 				</li>
 				<li>
 					<span>Bet Amount - </span>Know the amount you want to bet. If you leave it ambiguous, such
 					as dropping a quarter and asking to place the 6, we won’t know how much you want. It can
-					be $12, $18, or $24, or you may mean to bet five units which is $30. You need to be
-					specific. When betting the same amount on multiple numbers, use “each”: ”$2 each
-					three-way-crap”, “$15 each 5 and 9”, or “Nickel each Hardways.”
+					be $12, $18, or $24, or you may mean to bet <Link text="five units" href="presses" /> which
+					is $30. You need to be specific. When betting the same amount on multiple numbers, use “each”:
+					”$2 each three-way-crap”, “$15 each 5 and 9”, or “Nickel each Hardways.”
 				</li>
 				<li>
 					<span>Bet Type - </span>Be sure about what it is you want. You see other people betting on
@@ -255,6 +266,14 @@
 			</ol>
 		</BlogH2>
 		<Divider />
+		<BlogImg
+			caption=""
+			{url}
+			img="place-bet-on-point-six"
+			title="Place Bet on Point Six"
+			alt="Place bet on point six"
+		/>
+		<Divider />
 		<BlogH2 id="selfService" title="Placing Self-Service Bets">
 			<p class="pb-4">
 				While many bets will be given to the dealer, self-service bets are a group of bets you’re
@@ -270,14 +289,17 @@
 					<span>Pass Line - </span>You must place your bet on the Pass Line in front of where you’re
 					standing. Some casinos may let you come down on the Pass Line during the Intermediate
 					Roll, after the point is established, but it’s not in your best interest, Your’e more
-					likely to win on the Pass Line during the Comeout Roll than the Intermediate Roll. You
-					should always wait until the next Comeout Roll to make your bet on the Pass Line.
+					likely to win on the Pass Line during the <Link text="Comeout Roll" href="the-stages" /> than
+					the Intermediate Roll. You should always wait until the next Comeout Roll to make your bet
+					on the Pass Line.
 				</li>
 				<li>
 					<span>Don't Pass - </span>The Don’t Pass bet is also put in front of where you are
 					standing but under no circumstances can you ever add to your Don’t Pass bet after a Point
-					is established. You may take your bet down but, once taken off the Don’t Pass, you can’t
-					come back until the next Comeout Roll.
+					is established. You may take your bet down but, once taken off <Link
+						text="the Don’t Pass"
+						href="dont-pass"
+					/>, you can’t come back until the next Comeout Roll.
 				</li>
 			</ol>
 			<p class="pt-4">Self-service bets only made during the Intermediate Roll:</p>
@@ -299,11 +321,11 @@
 				</li>
 				<li>
 					<span>Don't Come Bets - </span>The Don’t Come is near the corner of the table next to the
-					base dealer. Not too many players bet the Don’t Come so you shouldn’t have a problem
-					getting your bet mixed with anyone else.
+					base dealer. Not too many players bet the <Link text="Don’t Come" href="dont-come" /> so you
+					shouldn’t have a problem getting your bet mixed with anyone else.
 				</li>
 			</ol>
-			<p class="pt-4">This self-service is the only bet you can make at any time:</p>
+			<p class="pt-4">This is the only self-service bet you can make at any time:</p>
 			<ol>
 				<li>
 					<span>The Field - </span>The Field can be bet at any time, but you must be vigilant in
@@ -362,8 +384,8 @@
 					</li>
 					<li>
 						<span>Don't Come Lay Odds - </span>Lay Odds for a Don’t come bet are also placed in the
-						COME. Lay Odds are always working unless you ask them to be taken down. You can not turn
-						them off.
+						COME. <Link text="Lay Odds" href="dont-come-lay-odds" /> are always working unless you ask
+						them to be taken down. You can not turn them off.
 					</li>
 					<li>
 						<span>Overlays - </span>An Overlay is when you bet directly against a number. They are
@@ -381,10 +403,12 @@
 				</p>
 				<p class="pb-4">
 					It's important to note that immediately after the Comeout Roll, the Stickperson will stop
-					the game and ask both sides of the table which Proposition bets they want. This is handled
-					on a first-come, first-serve basis, and the Stickperson has to manage both sides of the
-					table, so be quick to make your bet when you see them collecting Propositions on your
-					side.
+					the game and ask both sides of the table which <Link
+						text="Proposition bets"
+						href="proposition-basics"
+					/> they want. This is handled on a first-come, first-serve basis, and the Stickperson has to
+					manage both sides of the table, so be quick to make your bet when you see them collecting Propositions
+					on your side.
 				</p>
 			</BlogH3>
 			<BlogH3 title="Throwing Bets to the Stickperson">
@@ -412,6 +436,13 @@
 				</ol>
 			</BlogH3>
 		</BlogH2>
+		<BlogImg
+			caption=""
+			{url}
+			img="straight-up-twelve"
+			title="Straight Up Bet on the Twelve"
+			alt="Straight up bet on the twelve."
+		/>
 		<Divider />
 		<BlogH2 id="betsBack" title="Taking Your Bets Back">
 			<p class="pb-4">
@@ -419,10 +450,13 @@
 				Here is the list of bets you can and cannot take back.
 			</p>
 			<p>Can Not Be Taken Back</p>
-			<ol>
+			<ol class="pb-4">
 				<li>
 					<span>Pass Line - </span>The Pass Line can not be taken back during the intermediate Roll.
-					During the Comeout Roll, you can take back, add to, or subtract from your Pass Line bet.
+					During the Comeout Roll, you can take back, add to, or subtract from your <Link
+						text="Pass Line bet"
+						href="pass-line-basics"
+					/>.
 				</li>
 				<li>
 					<span>Come Bets - </span>Only after a Come bet has moved into a Point can it not be taken

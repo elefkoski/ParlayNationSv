@@ -2,13 +2,11 @@
 	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import BlogIntroParas from '$lib/clients/components/blog/BlogIntroParas.svelte';
+	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
 	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
-	import BlogHeaderH2WOl from '$lib/clients/components/blog/Blog-h2-w-ol.svelte';
-	import BlogHeaderTwoMulti from '$lib/clients/components/blog/Blog-h2-multi.svelte';
-	import BlogClosingParas from '$lib/clients/components/blog/BlogClosingParas.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
+	import Link from '$lib/clients/components/Link.svelte';
 
 	let title: string = 'Be an Efficient Craps Player';
 	let description: string =
@@ -40,239 +38,6 @@
 			href: '#withDealer',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
-		}
-	];
-
-	let blogOpening = [
-		{
-			textParts: [
-				{
-					text: "Efficiency is key when it comes to maintaining a smooth flow at the Craps table. Whether you're a dealer or a player, cultivating a seamless experience requires simplicity and a focus on the essential aspects of the game. In this guide, we'll explore strategies to help you bet efficiently and optimize the overall gameplay."
-				}
-			]
-		}
-	];
-	//2
-	let sectionPrepared = [
-		{
-			id: 'bePrepared',
-			title: 'Be Prepared for the Event',
-			para: [
-				{
-					text: "When it's time to make your bet, you must be ready, as you're always racing against the next dice toss. Anticipate your next move and plan ahead to ensure a smooth process."
-				}
-			],
-			subTitles: ['Puck Off -', 'Puck On -', 'Intermediate Rolls -'],
-			subParas: [
-				[
-					{
-						text: 'As soon as '
-					},
-					{ text: 'the puck ', url: 'the-craps-table' },
-					{
-						text: "is turned off, promptly place your Pass Line or Don't Pass bets. If you win, collect your winnings. If you're a Prop Comeout Roll bettor, have that bet ready. Consider hedging and prepare the necessary amount in your mind."
-					}
-				],
-				[
-					{
-						text: 'Once a Point is established, you may have multiple bets to make. Mentally line them up in your head. Start with placing Odds, followed by making Place or Come bets, betting on Hardways, and then proceeding to the rest of your Proposition bets.'
-					}
-				],
-				[
-					{
-						text: 'During intermediate rolls, focus on coming back on repeatedly losing bets, such as '
-					},
-					{ text: 'Hardways', url: 'the-hardways' },
-					{
-						text: ", Come & Don't Come, and potentially the Field. Determine the appropriate amount for Odds and Lay Odds for Come and Don't Come bets before the dice reach their respective numbers."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionService = [
-		{
-			id: 'selfService',
-			title: 'Make Self-Service Bets',
-			para: [
-				{
-					text: 'Efficient betting involves being able to place your bets without relying on the dealer to fix them for you. By getting it right the first time, you allow the dealers to concentrate on maintaining the flow of the game.'
-				}
-			],
-			subTitles: [
-				'Largest Denomination Cheques on Bottom-',
-				'Chunking Cheques -',
-				'Proper Odds -',
-				'Provide Adequate Space -'
-			],
-			subParas: [
-				[
-					{
-						text: 'Arrange your cheques in descending order, with the largest denomination at the bottom. For example, if your bet totals $36, place the quarter ($25) at the bottom, followed by two nickels ($5 each) in the middle, and the dollar ($1) on top. Cheques not in the correct order will need to be rearranged by the dealer.'
-					}
-				],
-				[
-					{ text: 'This is when you’re putting a tower in ' },
-					{ text: 'the Field', url: 'the-field' },
-					{
-						text: '. Sometimes it will be full of all different denominations causing the dealer to have to break down your bet and pay you in larger denominations. This is a good time to start betting in higher denominations, as it provides clarity about your bet amount and reduces the time spent by the dealer in breaking it down.'
-					}
-				],
-				[
-					{
-						text: "Ensure you bet the correct amount of Odds for your Pass Line bets. Multiples of $5 are suitable for the 6 and 8, any even amount for the 5 and 9, and any amount for the 4 and 10. If you bet improper Odds, the dealer will correct it or explain why it's incorrect so you can adjust it accordingly. Avoid wasting time due to incorrect bets."
-					}
-				],
-				[
-					{ text: 'Leave enough space between your ' },
-					{ text: 'Odds', url: 'pass-line-odds' },
-					{
-						text: " and Pass Line bet for the dice to land. Inadequate spacing often leads to time-consuming separations of bets. Creating sufficient space helps maintain the game's flow."
-					}
-				]
-			]
-		}
-	];
-
-	let sectionDealer = [
-		{
-			id: 'withDealer',
-			title: 'Making Bets with the Dealer',
-			paras: [
-				{
-					textBlocks: [
-						{
-							text: "Placing bets with the dealer can be more complex. Let's focus on efficient strategies for making change and placing multiple bets."
-						}
-					],
-					listTitle: [
-						'Know Proper Bet Amounts -',
-						'Overbet and Get Change -',
-						'Betting Multiple Numbers Seperately -',
-						'Use "High on the..." -',
-						'Use Spread Bets -',
-						'Be Specific when Splitting Amounts -'
-					],
-					listItem: [
-						{
-							content: [
-								{
-									text: 'Save time by providing the exact amount of money needed for a bet. Instead of giving extra money and expecting change, give the exact amount required. For example, if you want to bet $32 '
-								},
-								{
-									text: 'Inside',
-									url: 'inside'
-								},
-								{ text: ', provide $32 rather than giving more and expecting change back.' }
-							]
-						},
-						{
-							content: [
-								{
-									text: "You don't need to break down large-denomination cheques into smaller ones. Instead, communicate your desired bet amount and the dealer will give you the appropriate change. For instance, if you give the dealer a quarter and ask for $12 on the 6, the dealer will provide $13 in change. This approach reduces unnecessary actions and speeds up the game."
-								}
-							]
-						},
-						{
-							content: [
-								{
-									text: 'Rather than asking for one bet at a time, use the term "each" to '
-								},
-								{
-									text: 'efficiently place multiple bets ',
-									url: 'a-perfect-craps-bet'
-								},
-								{ text: 'with the same amount. For example' }
-							],
-							nestedList: [
-								{
-									content: [
-										{
-											text: '"$12 each on the 6 & 8"'
-										},
-										{
-											text: '"$1 each on the Hard 6 & 8"'
-										},
-										{
-											text: '"$3 each on C & E"'
-										},
-										{
-											text: '"$50 each on the 4 & 10"'
-										},
-										{
-											text: '"$2 each on a three-way craps"'
-										},
-										{
-											text: '"$5 each on High Low"'
-										}
-									]
-								}
-							]
-						},
-						{
-							content: [
-								{
-									text: 'This phrase is useful for splitting uneven bet amounts, particularly for proposition bets. For example:'
-								}
-							],
-							nestedList: [
-								{
-									content: [
-										{
-											text: '"$25 on all the hardways, high on the 4" (placing $10 on the 4)'
-										},
-										{
-											text: '"$10 on a three-way craps, high on the twelve" (placing $4 on the 12)'
-										},
-										{
-											text: '"$5 on High Low, high on the Low" (placing $3 on the Aces)'
-										}
-									]
-								}
-							]
-						},
-						{
-							content: [
-								{
-									text: 'When betting on more than two Place bets for the same unit amount, employ '
-								},
-								{
-									text: 'Spread bets',
-									url: 'spread-bets'
-								},
-								{
-									text: '. Options include Across, Inside, Outside, Uptown, Downtown, and Including the Point. These bets streamline the process of betting on multiple numbers simultaneously.'
-								}
-							]
-						},
-						{
-							content: [
-								{
-									text: 'Avoid confusion and unnecessary conversation by being specific when splitting bets. For example, instead of saying, "Gimme the hard six and eight" while throwing a nickel, specify "Three dollars on the hard six and two dollars on the hard eight." Clear instructions facilitate a smoother betting experience.'
-								}
-							]
-						}
-					]
-				}
-			]
-		}
-	];
-
-	let blogClosing = [
-		{
-			textParts: [
-				{
-					text: 'Remember, minimizing time spent on individual requests and actions contributes to an uninterrupted game flow. By implementing efficient betting strategies, you can enhance the overall experience for yourself and fellow players.'
-				}
-			]
-		},
-		{
-			textParts: [
-				{
-					text: 'While dealers may occasionally make the process more complicated, strive for simplicity and focus on the efficient execution of bets. Enjoy the game and make the most of your Craps experience!'
-				}
-			]
 		}
 	];
 </script>
@@ -416,7 +181,14 @@
 			title="How to Bet Efficiently at the Craps Table"
 			{pageData}
 		/>
-		<BlogIntroParas {blogOpening} />
+		<section aria-label="Opening paragraphs">
+			<p class="pb-4">
+				Efficiency is key when it comes to maintaining a smooth flow at the Craps table. Whether
+				you're a dealer or a player, cultivating a seamless experience requires simplicity and a
+				focus on the essential aspects of the game. In this guide, we'll explore strategies to help
+				you bet efficiently and optimize the overall gameplay.
+			</p>
+		</section>
 		<BlogImg
 			caption=""
 			{url}
@@ -431,7 +203,34 @@
 			</div>
 		</div>
 		<Divider />
-		<BlogHeaderH2WOl blogSectionOl={sectionPrepared} />
+		<BlogH2 id="bePrepared" title="Be Prepared for the Event">
+			<p class="pb-4">
+				When it's time to make your bet, you must be ready, as you're always racing against the next
+				dice toss. Anticipate your next move and plan ahead to ensure a smooth process.
+			</p>
+			<ol>
+				<li>
+					<span>Puck Off - </span>As soon as <Link text="the puck" href="the-craps-table" /> is turned
+					off, promptly place your Pass Line or Don't Pass bets. If you win, collect your winnings. If
+					you're a Prop Comeout Roll bettor, have that bet ready. Consider hedging and prepare the necessary
+					amount in your mind.
+				</li>
+				<li>
+					<span>Puck On - </span>Once a Point is established, you may have multiple bets to make.
+					Mentally line them up in your head. Start with placing Odds, followed by making Place or
+					Come bets, betting on <Link text="Hardways" href="the-hardways" />, and then proceeding to
+					the rest of your Proposition bets.
+				</li>
+				<li>
+					<span>Intermediate Rolls - </span>During intermediate rolls, focus on coming back on
+					repeatedly losing bets, such as Hardways, Come & Don't Come, and potentially <Link
+						text="the Field"
+						href="the-field"
+					/>. Determine the appropriate amount for Odds and Lay Odds for Come and Don't Come bets
+					before the dice reach their respective numbers.
+				</li>
+			</ol>
+		</BlogH2>
 		<Divider />
 
 		<BlogImg
@@ -441,11 +240,106 @@
 			title="Craps Layout from Second Base Hook"
 			alt="View of the craps layout from second base hook."
 		/>
-
 		<Divider />
-		<BlogHeaderH2WOl blogSectionOl={sectionService} />
+		<BlogH2 id="selfService" title="Make Self-Service Bets">
+			<p class="pb-4">
+				Efficient betting involves being able to place your bets without relying on the dealer to
+				fix them for you. By getting it right the first time, you allow the dealers to concentrate
+				on maintaining the flow of the game.
+			</p>
+			<ol>
+				<li>
+					<span>Largest Denomination Cheques on Bottom - </span>Arrange your cheques in descending
+					order, with the largest denomination at the bottom. For example, if your bet totals $36,
+					place the quarter ($25) at the bottom, followed by two nickels ($5 each) in the middle,
+					and the dollar ($1) on top. Cheques not in the correct order will need to be rearranged by
+					the dealer.
+				</li>
+				<li>
+					<span>Chunking Cheques - </span>This is when you’re putting a tower in the field.
+					Sometimes it will be full of all different denominations causing the dealer to have to
+					break down your bet and pay you in larger denominations. This is a good time to start
+					betting in higher denominations, as it provides clarity about your bet amount and reduces
+					the time spent by the dealer in breaking it down.
+				</li>
+				<li>
+					<span>Proper Odds - </span>Ensure you bet the correct amount of Odds for your Pass Line
+					bets. Multiples of $5 are suitable for the 6 and 8, any even amount for the 5 and 9, and
+					any amount for the 4 and 10. If you bet improper Odds, the dealer will correct it or
+					explain why it's incorrect so you can adjust it accordingly. Avoid wasting time due to
+					incorrect bets.
+				</li>
+				<li>
+					<span>Provide Adequate Space - </span>Leave enough space between <Link
+						text="your Odds"
+						href="pass-line-odds"
+					/> and Pass Line bet for the dice to land. Inadequate spacing often leads to time-consuming
+					separations of bets. Creating sufficient space helps maintain the game's flow.
+				</li>
+			</ol>
+		</BlogH2>
 		<Divider />
-		<BlogHeaderTwoMulti blogSectionMulti={sectionDealer} />
+		<BlogH2 id="withDealer" title="Making Bets with the Dealer">
+			<p class="pb-4">
+				Placing bets with the dealer can be more complex. Let's focus on efficient strategies for
+				making change and placing multiple bets.
+			</p>
+			<ol>
+				<li>
+					<span>Know Proper Bet Amounts - </span>Save time by providing the exact amount of money
+					needed for a bet. Instead of giving extra money and expecting change, give the exact
+					amount required. For example, if you want to bet <Link text="$32 Inside" href="inside" />,
+					provide $32 rather than giving more and expecting change back.
+				</li>
+				<li>
+					<span>Overbet and Get Change - </span>You don't need to break down large-denomination
+					cheques into smaller ones. Instead, communicate your desired bet amount and the dealer
+					will give you the appropriate change. For instance, if you give the dealer a quarter and
+					ask for $12 on the 6, the dealer will provide $13 in change. This approach reduces
+					unnecessary actions and speeds up the game.
+				</li>
+				<li>
+					<span>Betting Multiple Numbers Separately - </span>Rather than asking for one bet at a
+					time, use the term "each" to efficiently place multiple bets with the same amount. For
+					example:
+					<ul>
+						<li>"$12 each on the 6 & 8"</li>
+						<li>"$1 each on the Hard 6 & 8"</li>
+						<li>"$3 each on <Link text="C & E" href="c-and-e" />"</li>
+						<li>"$50 each on the 4 & 10"</li>
+						<li>"$2 each on a <Link text="three-way craps" href="multi-bets" />"</li>
+						<li>"$5 each on High Low"</li>
+					</ul>
+				</li>
+				<li>
+					<span>Use "High on the..." - </span>This phrase is useful for splitting uneven bet
+					amounts, particularly for proposition bets. For example:
+					<ul>
+						<li>"$25 on all the hardways, high on the 4" (placing $10 on the 4)</li>
+						<li>"$10 on a three-way craps, high on the twelve" (placing $4 on the 12)</li>
+						<li>"$5 on High Low, high on the Low" (placing $3 on the Aces)</li>
+					</ul>
+				</li>
+				<li>
+					<span>Use Spread Bets - </span>When betting on more than two Place bets for the same unit
+					amount, employ Spread bets. Options include <Link text="Across" href="across" />, <Link
+						text="Inside"
+						href="inside"
+					/>, <Link text="Outside" href="outside" />, <Link text="Uptown" href="uptown-downtown" />,
+					<Link text="Downtown" href="uptown-downtown" />, and <Link
+						text="Including the Point"
+						href="including-the-point"
+					/>. These bets streamline the process of betting on multiple numbers simultaneously.
+				</li>
+				<li>
+					<span>Be Specific when Splitting Amounts - </span>Avoid confusion and unnecessary
+					conversation by being specific when splitting bets. For example, instead of saying, "Gimme
+					the hard six and eight" while throwing a nickel, specify "Three dollars on the hard six
+					and two dollars on the hard eight." Clear instructions facilitate a smoother betting
+					experience.
+				</li>
+			</ol>
+		</BlogH2>
 		<Divider />
 		<BlogImg
 			caption=""
@@ -455,6 +349,17 @@
 			alt="Multiple bets on and around the point 9."
 		/>
 		<Divider />
-		<BlogClosingParas {blogClosing} />
+		<section aria-label="Closing paragraphs">
+			<p class="pb-4">
+				Remember, minimizing time spent on individual requests and actions contributes to an
+				uninterrupted game flow. By implementing efficient betting strategies, you can enhance the
+				overall experience for yourself and fellow players.
+			</p>
+			<p>
+				While dealers may occasionally make the process more complicated, strive for simplicity and
+				focus on the efficient execution of bets. Enjoy the game and make the most of your Craps
+				experience!
+			</p>
+		</section>
 	</main>
 </BlogLayout>
