@@ -2,7 +2,7 @@
 	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
+	import BlogHeaderOne from '$lib/clients/components/blog/BlogH1.svelte';
 	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
 	import BlogH3 from '$lib/clients/components/blog/BlogH3.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';

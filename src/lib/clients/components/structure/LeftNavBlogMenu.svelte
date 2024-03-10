@@ -35,7 +35,7 @@
 		{
 			title: 'Dealing with Dealers',
 			items: ['Tipping the Dealers', 'Win a Dispute', 'Dealer Pet Peeves'],
-			href: ['tipping-craps-dealers', 'win-a-craps-dispute', 'craps-dealer-pet-peeves']
+			href: ['tipping-the-dealers', 'win-a-craps-dispute', 'craps-dealer-pet-peeves']
 		},
 		{
 			title: 'Money Management',

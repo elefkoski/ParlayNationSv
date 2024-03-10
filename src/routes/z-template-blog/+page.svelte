@@ -2,7 +2,7 @@
 	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
+	import BlogHeaderOne from '$lib/clients/components/blog/BlogH1.svelte';
 	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
 	import BlogH3 from '$lib/clients/components/blog/BlogH3.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
@@ -22,32 +22,38 @@
 
 	let pageLinks: PageMenu[] = [
 		{
-			title: "___'___",
-			href: '#_____',
+			title: 'LinkTitle1',
+			href: '#linkRef1',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: "___'___",
-			href: '#_____',
+			title: 'LinkTitle2',
+			href: '#linkRef2',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: "___'___",
-			href: '#_____',
+			title: 'LinkTitle3',
+			href: '#linkRef3',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: "___'___",
-			href: '#_____',
+			title: 'LinkTitle4',
+			href: '#linkRef4',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: "___'___",
-			href: '#_____',
+			title: 'LinkTitle5',
+			href: '#linkRef5',
+			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
+			iconFills: ['none', 'orange']
+		},
+		{
+			title: 'LinkTitle6',
+			href: '#linkRef6',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		}
@@ -74,10 +80,11 @@
 			<p class="pb-4">OpenOne</p>
 			<p class="pb-4">OpenTwo</p>
 		</section>
+		<BlogImg caption="" {url} img="image" title="ImageTitle" alt="ImageAlt" />
 		<Divider />
-		<BlogImg caption="" {url} img="here-is-an-image" title="ImageTitle" alt="ImageAlt" />
-		<BlogImg caption="" {url} img="here-is-an-image" title="ImageTitle" alt="ImageAlt" />
-		<BlogImg caption="" {url} img="here-is-an-image" title="ImageTitle" alt="ImageAlt" />
+		<BlogImg caption="" {url} img="image" title="ImageTitle" alt="ImageAlt" />
+		<Divider />
+		<BlogImg caption="" {url} img="image" title="ImageTitle" alt="ImageAlt" />
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -85,7 +92,7 @@
 			</div>
 		</div>
 		<Divider />
-		<BlogH2 id="sectionOl" title="TitleOfSection">
+		<BlogH2 id="LinkRef1" title="LinkTitle1">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
@@ -96,52 +103,59 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="sectionMulti" title="TitleOfSection">
+		<BlogH2 id="LinkRef2" title="LinkTitle2">
 			<p class="pb-4">para1</p>
-			<p>para2</p>
 			<ol>
 				<li><span>W</span>Para</li>
 				<li><span>W</span>Para</li>
 				<li><span>W</span>Para</li>
 				<li><span>W</span>Para</li>
-			</ol>
-			<p class="pt-4">para3</p>
-			<ol>
 				<li><span>W</span>Para</li>
-				<li><span>W</span>Para</li>
-				<li><span>W</span>Para</li>
-				<li><span>W</span>Para</li>
-			</ol>
-			<p class="pt-4">para4</p>
-			<ol>
-				<li><span>W</span>Para</li>
-				<li><span>W</span>Para</li>
-				<li><span>W</span>Para <Link text="with Link" href="/" /></li>
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="sectionH3s" title="TitleOfSection">
+		<BlogH2 id="LinkRef3" title="LinkTitle3">
 			<p class="pb-4">para1</p>
-			<BlogH3 title="Bets Made With the Stickperson">
-				<p class="pb-4">para</p>
-				<p class="pb-4">para</p>
-			</BlogH3>
-			<BlogH3 title="Bets With the Base Dealer">
-				<p class="pb-4">para2</p>
-				<p class="pb-4">para3</p>
-				<ol class="pb-4">
-					<li>
-						<span>W</span>Para
-						<ul>
-							<li><span>W</span>Para</li>
-							<li><span>W<span>Para</span></span></li>
-							<li><span>W<span>Para</span></span></li>
-						</ul>
-					</li>
-					<li><span>W</span>Para</li>
-					<li><span>W</span>Para</li>
-				</ol>
-			</BlogH3>
+			<ol>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+			</ol>
+		</BlogH2>
+		<Divider />
+		<BlogH2 id="LinkRef4" title="LinkTitle4">
+			<p class="pb-4">para1</p>
+			<ol>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+			</ol>
+		</BlogH2>
+		<Divider />
+		<BlogH2 id="LinkRef5" title="LinkTitle5">
+			<p class="pb-4">para1</p>
+			<ol>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+			</ol>
+		</BlogH2>
+		<Divider />
+		<BlogH2 id="LinkRef6" title="LinkTitle6">
+			<p class="pb-4">para1</p>
+			<ol>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+				<li><span>W</span>Para</li>
+			</ol>
 		</BlogH2>
 		<Divider />
 		<section aria-label="Closing paragraphs">

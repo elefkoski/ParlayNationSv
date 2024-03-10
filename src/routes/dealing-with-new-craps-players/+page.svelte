@@ -3,7 +3,7 @@
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
-	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
+	import BlogHeaderOne from '$lib/clients/components/blog/BlogH1.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '$lib/clients/components/Link.svelte';

@@ -2,8 +2,8 @@
 	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
 	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
+	import BlogHeaderOne from '$lib/clients/components/blog/BlogH1.svelte';
 	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
-	import BlogHeaderOne from '$lib/clients/components/blog/Blog-h1.svelte';
 	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
 	import Divider from '$lib/clients/components/Divider.svelte';
 	import Link from '$lib/clients/components/Link.svelte';
@@ -258,7 +258,7 @@
 		<section aria-label="Opening paragraphs">
 			<p class="pb-4">
 				Let’s face it: Craps is a fast-paced game, where not just luck, but also etiquette plays a
-				significant role. This comprehensive guide aims to educate you on the dos and don'ts at the
+				significant role. This comprehensive guide aims to educate you on the do's and don'ts at the
 				craps table, covering everything from shooting rules to dealing with other players.
 			</p>
 			<p class="pb-4">
@@ -474,7 +474,7 @@
 					I win, then you win.” – win and lose together. Many dealers agree with that sentiment, but
 					I vote for the toke box. You’re playing a game while I’m worried about <Link
 						text="making a living"
-						href="tipping-craps-dealers"
+						href="tipping-the-dealers"
 					/>. Extend a token of appreciation when you win big, see us putting in effort, or benefit
 					from our exceptional service.
 				</li>
