@@ -5,4 +5,5 @@
 
 <section aria-label={title}>
 	<h2 {id} class="text-slate-400 text-2xl pb-1">{title}</h2>
+	<slot />
 </section>

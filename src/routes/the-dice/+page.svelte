@@ -119,26 +119,27 @@
 <LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Craps Basics" title="Shooting the Dice" {pageData} />
-		<p class="pb-4">
-			Getting to throw the dice is one of the best parts of Craps. There's something special about
-			having the fate of the entire table at your fingertips. Time almost slows down while the dice
-			are in the air, and when you win, it's a feeling hard to match.
-		</p>
-		<p class="pb-4">
-			Every Craps table has five dice that are considered sacred. It's the dealers' responsibility
-			to know where all of them are, so you want to make sure to listen to the rules the dealers
-			tell you to follow and don't' do anything crazy. Treat the dice like they're gonna buy you a
-			new pair of shoes.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/the-craps-dice_640x360.webp"
-			mdImg="src/images/{url}/the-craps-dice_960x540.webp"
-			lgImg="src/images/{url}/the-craps-dice_1280x720.webp"
-			title="The Craps Dice"
-			alt="Five maroon colored craps dice sitting on green felt."
-		/>
+		<ContentHeaderOne sectionTitle="Craps Basics" title="Shooting the Dice" {pageData}>
+			<p class="pb-4">
+				Getting to throw the dice is one of the best parts of Craps. There's something special about
+				having the fate of the entire table at your fingertips. Time almost slows down while the
+				dice are in the air, and when you win, it's a feeling hard to match.
+			</p>
+			<p class="pb-4">
+				Every Craps table has five dice that are considered sacred. It's the dealers' responsibility
+				to know where all of them are, so you want to make sure to listen to the rules the dealers
+				tell you to follow and don't' do anything crazy. Treat the dice like they're gonna buy you a
+				new pair of shoes.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/the-craps-dice_640x360.webp"
+				mdImg="src/images/{url}/the-craps-dice_960x540.webp"
+				lgImg="src/images/{url}/the-craps-dice_1280x720.webp"
+				title="The Craps Dice"
+				alt="Five maroon colored craps dice sitting on green felt."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -146,66 +147,71 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="newShooter" title="New to Shooting Craps?" />
-		<p class="pb-4">
-			Everyone at the table has a chance to roll the dice but must follow certain rules. You cannot
-			just pick up the dice and do what you want with them. The stickperson will send you five dice;
-			you pick two, the dealer takes back the rest then it's time to shoot.
-		</p>
-		<ContentUlb {liBs} />
+		<ContentHeaderTwo id="newShooter" title="New to Shooting Craps?">
+			<p class="pb-4">
+				Everyone at the table has a chance to roll the dice but must follow certain rules. You
+				cannot just pick up the dice and do what you want with them. The stickperson will send you
+				five dice; you pick two, the dealer takes back the rest then it's time to shoot.
+			</p>
+			<ContentUlb {liBs} />
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="watchingTheDice" title="Are You Watching the Dice at the Craps Table?" />
-		<p class="pb-4">
-			You must watch the dice at all times! The best time to make bets is when the dice are in the
-			middle of the table. As soon as the dice leave the middle of the table, it would be best if
-			you were done. If you don't watch the dice and the shooter throws them down the table and hits
-			you, you'll very likely be blamed if everybody loses. Don't be that person. If you would like
-			to make a bet while the dice are out, you can make a <Link
-				text="verbal bet"
-				href="verbal-betting"
-			/>.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/watching-the-dice_640x360.webp"
-			mdImg="src/images/{url}/watching-the-dice_960x540.webp"
-			lgImg="src/images/{url}/watching-the-dice_1280x720.webp"
-			title="Watching the Dice"
-			alt="A player with tunnel vision staring at dice at the opposite end of a craps table."
-		/>
+		<ContentHeaderTwo id="watchingTheDice" title="Are You Watching the Dice at the Craps Table?">
+			<p class="pb-4">
+				You must watch the dice at all times! The best time to make bets is when the dice are in the
+				middle of the table. As soon as the dice leave the middle of the table, it would be best if
+				you were done. If you don't watch the dice and the shooter throws them down the table and
+				hits you, you'll very likely be blamed if everybody loses. Don't be that person. If you
+				would like to make a bet while the dice are out, you can make a <Link
+					text="verbal bet"
+					href="verbal-betting"
+				/>.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/watching-the-dice_640x360.webp"
+				mdImg="src/images/{url}/watching-the-dice_960x540.webp"
+				lgImg="src/images/{url}/watching-the-dice_1280x720.webp"
+				title="Watching the Dice"
+				alt="A player with tunnel vision staring at dice at the opposite end of a craps table."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="showCourtesies"
 			title="Do You Show Courtesies to the Shooter During the Craps Game?"
-		/>
-		<p class="pb-4">
-			The person shooting the dice bears the burden of whether or not the table wins or loses money.
-			For most shooters, there is no skill in shooting the dice nor can they do anything to make the
-			dice land on a certain number. Even though they can't control the game's outcome, other
-			players still need to have etiquette towards the shooter.
-		</p>
-		<ContentUlb liBs={liBs2} />
+		>
+			<p class="pb-4">
+				The person shooting the dice bears the burden of whether or not the table wins or loses
+				money. For most shooters, there is no skill in shooting the dice nor can they do anything to
+				make the dice land on a certain number. Even though they can't control the game's outcome,
+				other players still need to have etiquette towards the shooter.
+			</p>
+			<ContentUlb liBs={liBs2} />
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="beingHit" title="Have You Been Hit with the Dice at the Craps Table?" />
-		<p class="pb-4">
-			How a player reacts to being hit by the dice determines whether a roll will be considered
-			valid. Be a statue. If you see the dice are going to hit you and you don't move and the dice
-			land back on the table, it will be considered a roll. As a very general rule of thumb, if a
-			player makes a forward motion with any part of their body that keeps the dice on the table, it
-			will be considered a 'No-Roll' It is at the discretion of the Stickperson and/or Boxperson to
-			determine whether a player made a motion that they considered being 'forward' and should say <Quote
-				text="That's a
-		roll"
-			/> or <Quote text="No-roll" /> before the dice come to a complete stop.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/getting-hit-with-the-dice_640x360.webp"
-			mdImg="src/images/{url}/getting-hit-with-the-dice_960x540.webp"
-			lgImg="src/images/{url}/getting-hit-with-the-dice_1280x720.webp"
-			title="Getting Hit with the Dice"
-			alt="A statue of Ceasar with his hand raised and a pointed finger."
-		/>
+		<ContentHeaderTwo id="beingHit" title="Have You Been Hit with the Dice at the Craps Table?">
+			<p class="pb-4">
+				How a player reacts to being hit by the dice determines whether a roll will be considered
+				valid. Be a statue. If you see the dice are going to hit you and you don't move and the dice
+				land back on the table, it will be considered a roll. As a very general rule of thumb, if a
+				player makes a forward motion with any part of their body that keeps the dice on the table,
+				it will be considered a 'No-Roll' It is at the discretion of the Stickperson and/or
+				Boxperson to determine whether a player made a motion that they considered being 'forward'
+				and should say <Quote
+					text="That's a
+			roll"
+				/> or <Quote text="No-roll" /> before the dice come to a complete stop.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/getting-hit-with-the-dice_640x360.webp"
+				mdImg="src/images/{url}/getting-hit-with-the-dice_960x540.webp"
+				lgImg="src/images/{url}/getting-hit-with-the-dice_1280x720.webp"
+				title="Getting Hit with the Dice"
+				alt="A statue of Ceasar with his hand raised and a pointed finger."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

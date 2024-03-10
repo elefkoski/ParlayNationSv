@@ -127,3 +127,6 @@
 	</div>
 	<h1 class="text-slate-400 text-3xl pb-2 font-bold">{title}</h1>
 </header>
+<section aria-label="Intro Section">
+	<slot />
+</section>

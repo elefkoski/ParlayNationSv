@@ -82,15 +82,16 @@
 			sectionTitle="Place Bets"
 			title="Watching Your Money at the Craps Table"
 			{pageData}
-		/>
-		<p class="pb-4">
-			Pay attention to your money! Craps seems to be the only game where even seasoned players don't
-			know where their money is. When a craps game is blowing up, it's moving fast, and many players
-			are making multiple bets, it's easy to understand that a dealer might make a mistake. At the
-			same time, when a table only has two or three players on it, some dealers will become so
-			nonchalant about it that they don't pay attention at all. Learn what to watch for as the game
-			moves along.
-		</p>
+		>
+			<p class="pb-4">
+				Pay attention to your money! Craps seems to be the only game where even seasoned players
+				don't know where their money is. When a craps game is blowing up, it's moving fast, and many
+				players are making multiple bets, it's easy to understand that a dealer might make a
+				mistake. At the same time, when a table only has two or three players on it, some dealers
+				will become so nonchalant about it that they don't pay attention at all. Learn what to watch
+				for as the game moves along.
+			</p>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -101,59 +102,62 @@
 		<ContentHeaderTwo
 			id="rightChange"
 			title="Are You Getting the Right Change for Your Craps Bets?"
-		/>
-		<p class="pb-4">
-			To begin with, know how much your bets cost. If you don't know how much your bets cost, you
-			can never know how much change you're supposed to receive. Dealers will make mistakes, and if
-			you're not paying attention, you may get back the wrong amount of money. It could be too much…
-			it could be not enough… You should give back money if you know they gave you extra. It's
-			technically stealing. If they didn't give you enough back, then you're being robbed. The best
-			way to win an argument with a dealer and/or
-			<Link text="boxperson" href="the-crew" /> is to know how much the bet cost, how much money you
-			gave the dealer, and how much change you received.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/bet-cost-and-change_640x360.webp"
-			mdImg="src/images/{url}/bet-cost-and-change_960x540.webp"
-			lgImg="src/images/{url}/bet-cost-and-change_1280x720.webp"
-			title="Bet Cost and Change"
-			alt="$52 across with $55 dollars in the COME and $3 change near the apron."
-		/>
-		<Divider />
-		<ContentHeaderTwo id="rightSpot" title="Are Your Craps Bets in the Correct Spot?" />
-		<p class="pb-4">
-			Make sure your bets are being put in the correct spot on the layout. If the dealer puts your
-			bet in someone else's spot when it's time to get paid, they'll pay the wrong person. You will
-			even have players try to take advantage of these mistakes by claiming those bets belonged to
-			them and then shrug while saying, <Quote
-				text="That's my $15 ten. I don't know what happened to yours..."
+		>
+			<p class="pb-4">
+				To begin with, know how much your bets cost. If you don't know how much your bets cost, you
+				can never know how much change you're supposed to receive. Dealers will make mistakes, and
+				if you're not paying attention, you may get back the wrong amount of money. It could be too
+				much… it could be not enough… You should give back money if you know they gave you extra.
+				It's technically stealing. If they didn't give you enough back, then you're being robbed.
+				The best way to win an argument with a dealer and/or
+				<Link text="boxperson" href="the-crew" /> is to know how much the bet cost, how much money you
+				gave the dealer, and how much change you received.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/bet-cost-and-change_640x360.webp"
+				mdImg="src/images/{url}/bet-cost-and-change_960x540.webp"
+				lgImg="src/images/{url}/bet-cost-and-change_1280x720.webp"
+				title="Bet Cost and Change"
+				alt="$52 across with $55 dollars in the COME and $3 change near the apron."
 			/>
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/correct-spot_640x360.webp"
-			mdImg="src/images/{url}/correct-spot_960x540.webp"
-			lgImg="src/images/{url}/correct-spot_1280x720.webp"
-			title="Are Your Bets in the Right Spot"
-			alt="A $15 place bet with a transparent $15 place bet next to it signifying the wrong spot."
-		/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="rightNumber" title="Are Your Craps Bets on the Right Number?" />
-		<p class="pb-4">
-			You should make sure the dealer is putting your bets on the correct number. Even if the dealer
-			heard what your bet was and repeated it back to you, they could very easily put that bet on a
-			wrong Place bet number. Watch the dealer as they set up your bets to ensure there aren’t
-			problems in the future.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/correct-number_640x360.webp"
-			mdImg="src/images/{url}/correct-number_960x540.webp"
-			lgImg="src/images/{url}/correct-number_1280x720.webp"
-			title="Are Your Bets on the Right Number"
-			alt="$12 place bet on the eight with a transparent $12 place bet on the six signifying the wrong number."
-		/>
+		<ContentHeaderTwo id="rightSpot" title="Are Your Craps Bets in the Correct Spot?">
+			<p class="pb-4">
+				Make sure your bets are being put in the correct spot on the layout. If the dealer puts your
+				bet in someone else's spot when it's time to get paid, they'll pay the wrong person. You
+				will even have players try to take advantage of these mistakes by claiming those bets
+				belonged to them and then shrug while saying, <Quote
+					text="That's my $15 ten. I don't know what happened to yours..."
+				/>
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/correct-spot_640x360.webp"
+				mdImg="src/images/{url}/correct-spot_960x540.webp"
+				lgImg="src/images/{url}/correct-spot_1280x720.webp"
+				title="Are Your Bets in the Right Spot"
+				alt="A $15 place bet with a transparent $15 place bet next to it signifying the wrong spot."
+			/>
+		</ContentHeaderTwo>
+		<Divider />
+		<ContentHeaderTwo id="rightNumber" title="Are Your Craps Bets on the Right Number?">
+			<p class="pb-4">
+				You should make sure the dealer is putting your bets on the correct number. Even if the
+				dealer heard what your bet was and repeated it back to you, they could very easily put that
+				bet on a wrong Place bet number. Watch the dealer as they set up your bets to ensure there
+				aren’t problems in the future.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/correct-number_640x360.webp"
+				mdImg="src/images/{url}/correct-number_960x540.webp"
+				lgImg="src/images/{url}/correct-number_1280x720.webp"
+				title="Are Your Bets on the Right Number"
+				alt="$12 place bet on the eight with a transparent $12 place bet on the six signifying the wrong number."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>
