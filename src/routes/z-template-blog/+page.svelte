@@ -92,7 +92,7 @@
 			</div>
 		</div>
 		<Divider />
-		<BlogH2 id="LinkRef1" title="LinkTitle1">
+		<BlogH2 id="linkRef1" title="LinkTitle1">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
@@ -103,7 +103,7 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="LinkRef2" title="LinkTitle2">
+		<BlogH2 id="linkRef2" title="LinkTitle2">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
@@ -114,7 +114,7 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="LinkRef3" title="LinkTitle3">
+		<BlogH2 id="linkRef3" title="LinkTitle3">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
@@ -125,7 +125,7 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="LinkRef4" title="LinkTitle4">
+		<BlogH2 id="linkRef4" title="LinkTitle4">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
@@ -136,7 +136,7 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="LinkRef5" title="LinkTitle5">
+		<BlogH2 id="linkRef5" title="LinkTitle5">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
@@ -147,7 +147,7 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="LinkRef6" title="LinkTitle6">
+		<BlogH2 id="linkRef6" title="LinkTitle6">
 			<p class="pb-4">para1</p>
 			<ol>
 				<li><span>W</span>Para</li>
