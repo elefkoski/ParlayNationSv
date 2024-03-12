@@ -91,32 +91,33 @@
 			sectionTitle="Proposition Bets"
 			title="Betting the Any Craps in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			The Any Craps is a one-roll bet and mainly used to hedge bets. You can use it to hedge the <Link
-				text="Pass
+		>
+			<p class="pb-4">
+				The Any Craps is a one-roll bet and mainly used to hedge bets. You can use it to hedge the <Link
+					text="Pass
 		Line"
-				href="pass-line-basics"
-			/> during the <Link text="Comeout Roll" href="the-stages" /> or while making a <Link
-				text="Come Bet"
-				href="come-bet-basics"
-			/>. It's similar to a <Link text="Three Way Crap" href="multi-bets" /> because they both bet the
-			Aces, Ace Deuce, and Twelve.
-		</p>
-		<p class="pb-4">
-			The difference in the Any Craps and Three Way Crap is they pay differently based on what
-			rolls. The Three Way pays different based on which number rolls.The Any Craps pays the same
-			regardless of which rolls.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/any-craps_640x360.webp"
-			mdImg="src/images/{url}/any-craps_960x540.webp"
-			lgImg="src/images/{url}/any-craps_1280x720.webp"
-			title="The Any Craps"
-			alt="Overhead up close view of the any craps area on the craps layout."
-		/>
+					href="pass-line-basics"
+				/> during the <Link text="Comeout Roll" href="the-stages" /> or while making a <Link
+					text="Come Bet"
+					href="come-bet-basics"
+				/>. It's similar to a <Link text="Three Way Crap" href="multi-bets" /> because they both bet
+				the Aces, Ace Deuce, and Twelve.
+			</p>
+			<p class="pb-4">
+				The difference in the Any Craps and Three Way Crap is they pay differently based on what
+				rolls. The Three Way pays different based on which number rolls.The Any Craps pays the same
+				regardless of which rolls.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/any-craps_640x360.webp"
+				mdImg="src/images/{url}/any-craps_960x540.webp"
+				lgImg="src/images/{url}/any-craps_1280x720.webp"
+				title="The Any Craps"
+				alt="Overhead up close view of the any craps area on the craps layout."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -124,32 +125,34 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="anyCrapsPlacement" title="Where Is Your Any Craps on the Craps Table?" />
-		<p class="pb-4">
-			Just like the placement of the <Link text="Any 7" href="any-seven" />, The Any Craps is a bar
-			in the middle of the table. The center of the bar is the middle of the table and the edges of
-			the bar are the two bases. Everything in between the center and the edge is a different spot
-			on the table.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/placement-of-the-any-craps_640x360.webp"
-			mdImg="src/images/{url}/placement-of-the-any-craps_960x540.webp"
-			lgImg="src/images/{url}/placement-of-the-any-craps_1280x720.webp"
-			title="Placement of the Any Craps"
-			alt="Up close view of the any craps bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
-		/>
+		<ContentHeaderTwo id="anyCrapsPlacement" title="Where Is Your Any Craps on the Craps Table?">
+			<p class="pb-4">
+				Just like the placement of the <Link text="Any 7" href="any-seven" />, The Any Craps is a
+				bar in the middle of the table. The center of the bar is the middle of the table and the
+				edges of the bar are the two bases. Everything in between the center and the edge is a
+				different spot on the table.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/placement-of-the-any-craps_640x360.webp"
+				mdImg="src/images/{url}/placement-of-the-any-craps_960x540.webp"
+				lgImg="src/images/{url}/placement-of-the-any-craps_1280x720.webp"
+				title="Placement of the Any Craps"
+				alt="Up close view of the any craps bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="anyCrapsPayment" title="What Does the Any Craps Pay in a Craps Game?" />
-		<p class="pb-4">The Any Craps pay 7:1 or $7 for every $1.</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/what-does-the-any-craps-pay_640x360.webp"
-			mdImg="src/images/{url}/what-does-the-any-craps-pay_960x540.webp"
-			lgImg="src/images/{url}/what-does-the-any-craps-pay_1280x720.webp"
-			title="Any Craps Payment"
-			alt="$3 on the any craps with two green dice that read 1-3. There is a bubble that reads $21 payment."
-		/>
+		<ContentHeaderTwo id="anyCrapsPayment" title="What Does the Any Craps Pay in a Craps Game?">
+			<p class="pb-4">The Any Craps pay 7:1 or $7 for every $1.</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/what-does-the-any-craps-pay_640x360.webp"
+				mdImg="src/images/{url}/what-does-the-any-craps-pay_960x540.webp"
+				lgImg="src/images/{url}/what-does-the-any-craps-pay_1280x720.webp"
+				title="Any Craps Payment"
+				alt="$3 on the any craps with two green dice that read 1-3. There is a bubble that reads $21 payment."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Any craps payment calculator" id="anyCrapsCalc"
 			><CalcBox

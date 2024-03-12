@@ -103,31 +103,28 @@
 <LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne
-			sectionTitle="Proposition Bets"
-			title="Betting The World in Craps"
-			{pageData}
-		/>
-		<p class="pb-4">
-			People love to bet the <Link text="Horn" href="horn" /> and the <Link
-				text="Horn Highs"
-				href="horn-high"
-			/> during the <Link text="Comeout Roll" href="the-stages" />. It's a one-roll bet and the
-			payoffs can be pretty good but, like most other bets, it falls prey to a roll of the 7. This
-			is where the World, aka Whirl, comes into play. The World is a combination of a Horn and an <Link
-				text="Any 7"
-				href="any-seven"
-			/>.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/world_640x360.webp"
-			mdImg="src/images/{url}/world_960x540.webp"
-			lgImg="src/images/{url}/world_1280x720.webp"
-			title="The World"
-			alt="Up close overhead view of the world on the craps layout."
-		/>
+		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting The World in Craps" {pageData}>
+			<p class="pb-4">
+				People love to bet the <Link text="Horn" href="horn" /> and the <Link
+					text="Horn Highs"
+					href="horn-high"
+				/> during the <Link text="Comeout Roll" href="the-stages" />. It's a one-roll bet and the
+				payoffs can be pretty good but, like most other bets, it falls prey to a roll of the 7. This
+				is where the World, aka Whirl, comes into play. The World is a combination of a Horn and an <Link
+					text="Any 7"
+					href="any-seven"
+				/>.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/world_640x360.webp"
+				mdImg="src/images/{url}/world_960x540.webp"
+				lgImg="src/images/{url}/world_1280x720.webp"
+				title="The World"
+				alt="Up close overhead view of the world on the craps layout."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -135,111 +132,118 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="fiveWorld" title="What Is a $5 World in Craps?" />
-		<p class="pb-4">
-			A $5 World is a $1 on each the Aces, Ace Deuce, Yo, Twelve, and the Any 7. The minimum is
-			five-dollars because you must put at least $1 on those five bets so the World needs to be bet
-			in increments of five. You can also consider a $5 World to be a $4 Horn with $1 on the Any 7.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/5-world_640x360.webp"
-			mdImg="src/images/{url}/5-world_960x540.webp"
-			lgImg="src/images/{url}/5-world_1280x720.webp"
-			title="$5 World"
-			alt="Split image. On top is $5 on the world. On bottom is $1 each on the aces, ace deuce, yo, twelve, and the any seven"
-		/>
+		<ContentHeaderTwo id="fiveWorld" title="What Is a $5 World in Craps?">
+			<p class="pb-4">
+				A $5 World is a $1 on each the Aces, Ace Deuce, Yo, Twelve, and the Any 7. The minimum is
+				five-dollars because you must put at least $1 on those five bets so the World needs to be
+				bet in increments of five. You can also consider a $5 World to be a $4 Horn with $1 on the
+				Any 7.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/5-world_640x360.webp"
+				mdImg="src/images/{url}/5-world_960x540.webp"
+				lgImg="src/images/{url}/5-world_1280x720.webp"
+				title="$5 World"
+				alt="Split image. On top is $5 on the world. On bottom is $1 each on the aces, ace deuce, yo, twelve, and the any seven"
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="worldPlacement" title="Where Is Your World on the Craps Table?" />
-		<p class="pb-4">
-			I would say that the majority of Craps tables don't have a picture of the World on them. The
-			World is more of a bet that dealer and players know by heart. Example 2 shows one of the other
-			ways I've seen a world set up on a table without the globe image.
-		</p>
-		<ContentImg
-			caption="Placement of World Around Globe"
-			smImg="src/images/{url}/placement-of-world-a_640x360.webp"
-			mdImg="src/images/{url}/placement-of-world-a_960x540.webp"
-			lgImg="src/images/{url}/placement-of-world-a_1280x720.webp"
-			title="Placement of World on Globe"
-			alt="Overhead view of a blown up picture of a world and the craps table rail. There are eight colored spots on each the world and the rail that correspond with each other."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="Placement of World on Bar"
-			smImg="src/images/{url}/placement-of-a-world-b_640x360.webp"
-			mdImg="src/images/{url}/placement-of-a-world-b_960x540.webp"
-			lgImg="src/images/{url}/placement-of-a-world-b_1280x720.webp"
-			title="Placement of World on Bar"
-			alt="Overhead view of the center bar above the any seven on the craps table and the craps table rail. There are eight colored spots on each the bar and the rail that correspond with each other."
-		/>
+		<ContentHeaderTwo id="worldPlacement" title="Where Is Your World on the Craps Table?">
+			<p class="pb-4">
+				I would say that the majority of Craps tables don't have a picture of the World on them. The
+				World is more of a bet that dealer and players know by heart. Example 2 shows one of the
+				other ways I've seen a world set up on a table without the globe image.
+			</p>
+			<ContentImg
+				caption="Placement of World Around Globe"
+				smImg="src/images/{url}/placement-of-world-a_640x360.webp"
+				mdImg="src/images/{url}/placement-of-world-a_960x540.webp"
+				lgImg="src/images/{url}/placement-of-world-a_1280x720.webp"
+				title="Placement of World on Globe"
+				alt="Overhead view of a blown up picture of a world and the craps table rail. There are eight colored spots on each the world and the rail that correspond with each other."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption="Placement of World on Bar"
+				smImg="src/images/{url}/placement-of-a-world-b_640x360.webp"
+				mdImg="src/images/{url}/placement-of-a-world-b_960x540.webp"
+				lgImg="src/images/{url}/placement-of-a-world-b_1280x720.webp"
+				title="Placement of World on Bar"
+				alt="Overhead view of the center bar above the any seven on the craps table and the craps table rail. There are eight colored spots on each the bar and the rail that correspond with each other."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="worldPayment" title="What Does a $5 World Pay on the Craps Table?" />
-		<p class="pb-4">
-			Like all other <Link text="Multi-Bets" href="multi-bets" />, the World pays differently
-			depending on what rolls. There are three options: the 7 rolls, the high side rolls (2, 12), or
-			the low side rolls (3, 11).
-		</p>
-		<ContentHeaderThree title="Seven Rolls - Push" />
-		<p class="pb-4">
-			When the 7 rolls the World is a push; it does not win or lose. It's a push because the dollar
-			bet on the Any Seven wins four dollars, and that four dollars pays for the rest of the losing
-			bets in the World: the Aces, Ace Deuce, Yo and Twelve.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/5-world-7-rolls_640x360.webp"
-			mdImg="src/images/{url}/5-world-7-rolls_960x540.webp"
-			lgImg="src/images/{url}/5-world-7-rolls_1280x720.webp"
-			title="$5 World Payment - Seven Rolls"
-			alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-6. A bubble reads push."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Low Side - $11" />
-		<p class="pb-4">
-			The Low Side is considered the Ace Deuce or the Yo. When they hit for a dollar they pay $15
-			minus $4 (the rest of the other four losing bets) for a payment of $11.
-		</p>
-		<ContentImg
-			caption="$5 World - Ace Deuce Rolls"
-			smImg="src/images/{url}/5-world-ace-deuce-hits_640x360.webp"
-			mdImg="src/images/{url}/5-world-ace-deuce-hits_960x540.webp"
-			lgImg="src/images/{url}/5-world-ace-deuce-hits_1280x720.webp"
-			title="$5 World - Ace Deuce Rolls"
-			alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-2. A bubble reads $11 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 World - Yo Rolls"
-			smImg="src/images/{url}/5-world-yo-hits_640x360.webp"
-			mdImg="src/images/{url}/5-world-yo-hits_960x540.webp"
-			lgImg="src/images/{url}/5-world-yo-hits_1280x720.webp"
-			title="$5 World - Yo Rolls"
-			alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 5-6. A bubble reads $11 payment."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="High Side - $26" />
-		<p class="pb-4">
-			The two High Side numbers are the Aces and Twelve. When either of these numbers roll they pay
-			$30 minus $4 (the rest of the other four losing bets) for a payment of $26.
-		</p>
-		<ContentImg
-			caption="$5 World - Aces Roll"
-			smImg="src/images/{url}/5-world-aces-hit_640x360.webp"
-			mdImg="src/images/{url}/5-world-aces-hit_960x540.webp"
-			lgImg="src/images/{url}/5-world-aces-hit_1280x720.webp"
-			title="$5 World - Aces Roll"
-			alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-1. A bubble reads $26 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 World - Twelve Rolls"
-			smImg="src/images/{url}/5-world-twelve-hits_640x360.webp"
-			mdImg="src/images/{url}/5-world-twelve-hits_960x540.webp"
-			lgImg="src/images/{url}/5-world-twelve-hits_1280x720.webp"
-			title="$5 World - Twelve Rolls"
-			alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 6-6. A bubble reads $26 payment."
-		/>
+		<ContentHeaderTwo id="worldPayment" title="What Does a $5 World Pay on the Craps Table?">
+			<p class="pb-4">
+				Like all other <Link text="Multi-Bets" href="multi-bets" />, the World pays differently
+				depending on what rolls. There are three options: the 7 rolls, the high side rolls (2, 12),
+				or the low side rolls (3, 11).
+			</p>
+			<ContentHeaderThree title="Seven Rolls - Push">
+				<p class="pb-4">
+					When the 7 rolls the World is a push; it does not win or lose. It's a push because the
+					dollar bet on the Any Seven wins four dollars, and that four dollars pays for the rest of
+					the losing bets in the World: the Aces, Ace Deuce, Yo and Twelve.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/5-world-7-rolls_640x360.webp"
+					mdImg="src/images/{url}/5-world-7-rolls_960x540.webp"
+					lgImg="src/images/{url}/5-world-7-rolls_1280x720.webp"
+					title="$5 World Payment - Seven Rolls"
+					alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-6. A bubble reads push."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Low Side - $11">
+				<p class="pb-4">
+					The Low Side is considered the Ace Deuce or the Yo. When they hit for a dollar they pay
+					$15 minus $4 (the rest of the other four losing bets) for a payment of $11.
+				</p>
+				<ContentImg
+					caption="$5 World - Ace Deuce Rolls"
+					smImg="src/images/{url}/5-world-ace-deuce-hits_640x360.webp"
+					mdImg="src/images/{url}/5-world-ace-deuce-hits_960x540.webp"
+					lgImg="src/images/{url}/5-world-ace-deuce-hits_1280x720.webp"
+					title="$5 World - Ace Deuce Rolls"
+					alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-2. A bubble reads $11 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$5 World - Yo Rolls"
+					smImg="src/images/{url}/5-world-yo-hits_640x360.webp"
+					mdImg="src/images/{url}/5-world-yo-hits_960x540.webp"
+					lgImg="src/images/{url}/5-world-yo-hits_1280x720.webp"
+					title="$5 World - Yo Rolls"
+					alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 5-6. A bubble reads $11 payment."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="High Side - $26">
+				<p class="pb-4">
+					The two High Side numbers are the Aces and Twelve. When either of these numbers roll they
+					pay $30 minus $4 (the rest of the other four losing bets) for a payment of $26.
+				</p>
+				<ContentImg
+					caption="$5 World - Aces Roll"
+					smImg="src/images/{url}/5-world-aces-hit_640x360.webp"
+					mdImg="src/images/{url}/5-world-aces-hit_960x540.webp"
+					lgImg="src/images/{url}/5-world-aces-hit_1280x720.webp"
+					title="$5 World - Aces Roll"
+					alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-1. A bubble reads $26 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$5 World - Twelve Rolls"
+					smImg="src/images/{url}/5-world-twelve-hits_640x360.webp"
+					mdImg="src/images/{url}/5-world-twelve-hits_960x540.webp"
+					lgImg="src/images/{url}/5-world-twelve-hits_1280x720.webp"
+					title="$5 World - Twelve Rolls"
+					alt="$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 6-6. A bubble reads $26 payment."
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="World payment calculator" id="worldCalc"
 			><CalcBox
@@ -259,19 +263,20 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo id="dealerWorld" title="How Do You Bet the World for the Dealers?" />
-		<p class="pb-4">
-			Ideally, multiples of $5 would be best for the dealers. Anything less would be an improper bet
-			than requires some odd math for the dealers and usually ends up getting rounded down.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dealer-world_640x360.webp"
-			mdImg="src/images/{url}/dealer-world_960x540.webp"
-			lgImg="src/images/{url}/dealer-world_1280x720.webp"
-			title="Dealer World"
-			alt="Split image. On left is $1 in the middle of the proposition bar. On bottom is $1 in the middle of the world."
-		/>
+		<ContentHeaderTwo id="dealerWorld" title="How Do You Bet the World for the Dealers?">
+			<p class="pb-4">
+				Ideally, multiples of $5 would be best for the dealers. Anything less would be an improper
+				bet than requires some odd math for the dealers and usually ends up getting rounded down.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/dealer-world_640x360.webp"
+				mdImg="src/images/{url}/dealer-world_960x540.webp"
+				lgImg="src/images/{url}/dealer-world_1280x720.webp"
+				title="Dealer World"
+				alt="Split image. On left is $1 in the middle of the proposition bar. On bottom is $1 in the middle of the world."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

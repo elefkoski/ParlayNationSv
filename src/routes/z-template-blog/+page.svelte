@@ -154,8 +154,9 @@
 				<li><span>W</span>Para</li>
 				<li><span>W</span>Para</li>
 				<li><span>W</span>Para</li>
-				<li><span>W</span>Para</li>
+				<li><span>W</span><Link text="Para" href="/" /></li>
 			</ol>
+			<BlogH3 />
 		</BlogH2>
 		<Divider />
 		<section aria-label="Closing paragraphs">

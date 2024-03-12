@@ -114,29 +114,30 @@
 			sectionTitle="Proposition Bets"
 			title="Betting the Hardways in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			Many players love the Hardways because they are one of the Proposition Bets that aren't a
-			one-roll bet, yet they offer a pretty good return. Another good thing about the Hardways is
-			their ability to win simultaneously with your Pass Line Bet. It's always fun to win the Point
-			then pick up a decent payout on your Hardway.
-		</p>
-		<p class="pb-4">
-			There are four even Points: the 4, 6, 8, and 10. When one of those rolls as a pair, it is
-			considered to have rolled <Quote text="hard" />. When they don't land as a pair, it is
-			considered <Quote text="easy" />. A Hardway is betting that the dice will land <Quote
-				text="hard"
-			/> before they land <Quote text="easy" /> or before a 7 is rolled.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/hardways_640x360.webp"
-			mdImg="src/images/{url}/hardways_960x540.webp"
-			lgImg="src/images/{url}/hardways_1280x720.webp"
-			title="The Hardways"
-			alt="Up close view of the Hardway Section on the craps table. There are no cheques on the table."
-		/>
+		>
+			<p class="pb-4">
+				Many players love the Hardways because they are one of the Proposition Bets that aren't a
+				one-roll bet, yet they offer a pretty good return. Another good thing about the Hardways is
+				their ability to win simultaneously with your Pass Line Bet. It's always fun to win the
+				Point then pick up a decent payout on your Hardway.
+			</p>
+			<p class="pb-4">
+				There are four even Points: the 4, 6, 8, and 10. When one of those rolls as a pair, it is
+				considered to have rolled <Quote text="hard" />. When they don't land as a pair, it is
+				considered <Quote text="easy" />. A Hardway is betting that the dice will land <Quote
+					text="hard"
+				/> before they land <Quote text="easy" /> or before a 7 is rolled.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/hardways_640x360.webp"
+				mdImg="src/images/{url}/hardways_960x540.webp"
+				lgImg="src/images/{url}/hardways_1280x720.webp"
+				title="The Hardways"
+				alt="Up close view of the Hardway Section on the craps table. There are no cheques on the table."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -144,88 +145,94 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="buffaloBet" title="What is a Buffalo Bet in Craps?" />
-		<p class="pb-4">
-			The Buffalo is for the players that love their Hardways. A player will bet an equal amount on
-			each Hardway, working on the <Link text="Comeout Roll" href="the-stages" />, and hedges them
-			by betting the same amount on the <Link text="Any 7" href="any-seven" />. These players don't
-			want to wait for a Point to be established to bet the Hardways, and they also don't want to
-			lose those bets if 7 rolls. If the 7 rolls, the Any 7 will pay four times and cover the four
-			Hardways that just lost. It's a push. They are all up to win again.
-		</p>
-		<p class="pb-4">
-			One thing to remember is if any other natural is rolled during the Comeout Roll, the player
-			must bet the Any 7 again to continue hedging their Hardways. If either the 4, 6, 8, or 10 are
-			rolled “easy,” then that Hardway will lose, and you have to bet it again if you still want it.
-		</p>
-		<p class="pb-4">
-			Many casinos won't acknowledge the phrase <Quote text="Buffalo" />. They understand what it
-			means, but instead of booking your bet as a <Quote text="Buffalo" />, they will book it as <Quote
-				text="A dollar all the
-		Hardways working and a dollar any 7."
-			/> Either way, make sure the dealer books your bet.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/buffalo_640x360.webp"
-			mdImg="src/images/{url}/buffalo_960x540.webp"
-			lgImg="src/images/{url}/buffalo_1280x720.webp"
-			title="Buffalo Bet"
-			alt="Overhead view of $1 each the hardways with a dollar on the any seven. There is an on lammer on top of one of the cheques. The puck reads off in the corner."
-		/>
+		<ContentHeaderTwo id="buffaloBet" title="What is a Buffalo Bet in Craps?">
+			<p class="pb-4">
+				The Buffalo is for the players that love their Hardways. A player will bet an equal amount
+				on each Hardway, working on the <Link text="Comeout Roll" href="the-stages" />, and hedges
+				them by betting the same amount on the <Link text="Any 7" href="any-seven" />. These players
+				don't want to wait for a Point to be established to bet the Hardways, and they also don't
+				want to lose those bets if 7 rolls. If the 7 rolls, the Any 7 will pay four times and cover
+				the four Hardways that just lost. It's a push. They are all up to win again.
+			</p>
+			<p class="pb-4">
+				One thing to remember is if any other natural is rolled during the Comeout Roll, the player
+				must bet the Any 7 again to continue hedging their Hardways. If either the 4, 6, 8, or 10
+				are rolled “easy,” then that Hardway will lose, and you have to bet it again if you still
+				want it.
+			</p>
+			<p class="pb-4">
+				Many casinos won't acknowledge the phrase <Quote text="Buffalo" />. They understand what it
+				means, but instead of booking your bet as a <Quote text="Buffalo" />, they will book it as <Quote
+					text="A dollar all the
+			Hardways working and a dollar any 7."
+				/> Either way, make sure the dealer books your bet.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/buffalo_640x360.webp"
+				mdImg="src/images/{url}/buffalo_960x540.webp"
+				lgImg="src/images/{url}/buffalo_1280x720.webp"
+				title="Buffalo Bet"
+				alt="Overhead view of $1 each the hardways with a dollar on the any seven. There is an on lammer on top of one of the cheques. The puck reads off in the corner."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="hardwayPlacement" title="Where Are Your Hardways on the Craps Table?" />
-		<p class="pb-4">
-			Hardways are very popular bets, and there will be many times where almost everyone on the
-			table is betting them; when that happens, the potential for mistakes increases. A dealer may
-			put your bet in the wrong spot or may press the wrong Hardway. The only way to know for sure
-			if a dealer may be making a mistake with your money is to know where your bets are. Watch
-			where the dealer places your bets and make sure it's consistent among all your Hardways.
-		</p>
-		<p class="pb-4">
-			Each Hardway section on the Craps layout is divided into four quadrants, with each quadrant
-			optimally holding four players. Sometimes the dealers can't fit all the cheques in those
-			sections, so they improvise the position, or the dealer will place them in an area you may not
-			relate to as your spot in the rail. You don't need to be married to your spot on the Craps
-			layout. As long as the dealer is consistent with where they put your bets in each Hardway
-			section, you can learn where they have your bet assigned on the layout.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/placement-of-the-hardways_640x360.webp"
-			mdImg="src/images/{url}/placement-of-the-hardways_960x540.webp"
-			lgImg="src/images/{url}/placement-of-the-hardways_1280x720.webp"
-			title="Placement of a Hardway"
-			alt="Up close view of the Hardways section and the craps rail with 18 colored spots."
-		/>
+		<ContentHeaderTwo id="hardwayPlacement" title="Where Are Your Hardways on the Craps Table?">
+			<p class="pb-4">
+				Hardways are very popular bets, and there will be many times where almost everyone on the
+				table is betting them; when that happens, the potential for mistakes increases. A dealer may
+				put your bet in the wrong spot or may press the wrong Hardway. The only way to know for sure
+				if a dealer may be making a mistake with your money is to know where your bets are. Watch
+				where the dealer places your bets and make sure it's consistent among all your Hardways.
+			</p>
+			<p class="pb-4">
+				Each Hardway section on the Craps layout is divided into four quadrants, with each quadrant
+				optimally holding four players. Sometimes the dealers can't fit all the cheques in those
+				sections, so they improvise the position, or the dealer will place them in an area you may
+				not relate to as your spot in the rail. You don't need to be married to your spot on the
+				Craps layout. As long as the dealer is consistent with where they put your bets in each
+				Hardway section, you can learn where they have your bet assigned on the layout.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/placement-of-the-hardways_640x360.webp"
+				mdImg="src/images/{url}/placement-of-the-hardways_960x540.webp"
+				lgImg="src/images/{url}/placement-of-the-hardways_1280x720.webp"
+				title="Placement of a Hardway"
+				alt="Up close view of the Hardways section and the craps rail with 18 colored spots."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="hardwayPayment" title="What Do the Hardways Pay in Craps?" />
-		<p class="pb-4">
-			The Hard 6 and 8 pay more than the 4 and 10 because there are more ways for them to lose.
-			There are 10 ways for the 6 or 8 to lose (any 7 or any 'easy' way) and 8 ways for the 4 or 10
-			to lose (any 7 or 'easy' way).
-		</p>
-		<ContentHeaderThree title="Pays 9:1 on the 6 and 8" />
-		<p class="pb-4">The Hard 6 and 8 each pay 9:1 or $9 for every $1 you bet.</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/hardways-pay-6-8_640x360.webp"
-			mdImg="src/images/{url}/hardways-pay-6-8_960x540.webp"
-			lgImg="src/images/{url}/hardways-pay-6-8_1280x720.webp"
-			title="Hard 6 and 8 Pay 9:1"
-			alt="$3 on the hard six with two green dice that read 3-3. A bubble reads $27 payment."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Pays 7:1 on the 4 and 10" />
-		<p class="pb-4">The Hard 4 and 10 each pay 7:1 or $7 for every $1 you bet.</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/hardways-pay-4-10_640x360.webp"
-			mdImg="src/images/{url}/hardways-pay-4-10_960x540.webp"
-			lgImg="src/images/{url}/hardways-pay-4-10_1280x720.webp"
-			title="Hard 4 and 10 Pay 7:1"
-			alt="$30 on the hard ten with two green dice that read 5-5. A bubble reads $270 payment."
-		/>
+		<ContentHeaderTwo id="hardwayPayment" title="What Do the Hardways Pay in Craps?">
+			<p class="pb-4">
+				The Hard 6 and 8 pay more than the 4 and 10 because there are more ways for them to lose.
+				There are 10 ways for the 6 or 8 to lose (any 7 or any 'easy' way) and 8 ways for the 4 or
+				10 to lose (any 7 or 'easy' way).
+			</p>
+			<ContentHeaderThree title="Pays 9:1 on the 6 and 8">
+				<p class="pb-4">The Hard 6 and 8 each pay 9:1 or $9 for every $1 you bet.</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/hardways-pay-6-8_640x360.webp"
+					mdImg="src/images/{url}/hardways-pay-6-8_960x540.webp"
+					lgImg="src/images/{url}/hardways-pay-6-8_1280x720.webp"
+					title="Hard 6 and 8 Pay 9:1"
+					alt="$3 on the hard six with two green dice that read 3-3. A bubble reads $27 payment."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Pays 7:1 on the 4 and 10">
+				<p class="pb-4">The Hard 4 and 10 each pay 7:1 or $7 for every $1 you bet.</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/hardways-pay-4-10_640x360.webp"
+					mdImg="src/images/{url}/hardways-pay-4-10_960x540.webp"
+					lgImg="src/images/{url}/hardways-pay-4-10_1280x720.webp"
+					title="Hard 4 and 10 Pay 7:1"
+					alt="$30 on the hard ten with two green dice that read 5-5. A bubble reads $270 payment."
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Hardway Payment Calculators" id="hardwayPymntCalc"
 			><CalcBox
@@ -248,28 +255,29 @@
 					step={1}
 					title="Enter Hard 4 or 10 amount:"
 				/>
-			</CalcBox></CalcContainer
-		>
+			</CalcBox>
+		</CalcContainer>
 		<Divider />
 		<ContentHeaderTwo
 			id="dealerHardways"
 			title="How Do You Bet the Hardways for the Dealers on a Craps Game?"
-		/>
-		<p class="pb-4">
-			Dealers love Hardways as much as players do. The odds aren't horrible to hit one and they pay
-			off well enough when they come. Throw a dollar or two to the stickperson and tell em the <Quote
-				text="Dealer
+		>
+			<p class="pb-4">
+				Dealers love Hardways as much as players do. The odds aren't horrible to hit one and they
+				pay off well enough when they come. Throw a dollar or two to the stickperson and tell em the <Quote
+					text="Dealer
 		hard six and eight!"
-			/> or <Quote text="Two way hard four!" />
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dealer-hardways_640x360.webp"
-			mdImg="src/images/{url}/dealer-hardways_960x540.webp"
-			lgImg="src/images/{url}/dealer-hardways_1280x720.webp"
-			title="Dealer Hardways"
-			alt="$1 in the middle of the hard six."
-		/>
+				/> or <Quote text="Two way hard four!" />
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/dealer-hardways_640x360.webp"
+				mdImg="src/images/{url}/dealer-hardways_960x540.webp"
+				lgImg="src/images/{url}/dealer-hardways_1280x720.webp"
+				title="Dealer Hardways"
+				alt="$1 in the middle of the hard six."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

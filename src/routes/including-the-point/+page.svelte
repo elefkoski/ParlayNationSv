@@ -84,17 +84,18 @@
 			sectionTitle="Spread Bets"
 			title="Betting Including the Point at the Craps Table"
 			{pageData}
-		/>
-		<p class="pb-4">
-			When players bet Including the Point they are usually not on the <Link
-				text="Pass Line"
-				href="pass-line-basics"
-			/> which is why they include the Point. You bet them like you would bet any other <Link
-				text="Spread Bet"
-				href="spread-bets"
-			/> but add <Quote text="… including the point." /> to the end of their Spread Bet.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+		>
+			<p class="pb-4">
+				When players bet Including the Point they are usually not on the <Link
+					text="Pass Line"
+					href="pass-line-basics"
+				/> which is why they include the Point. You bet them like you would bet any other <Link
+					text="Spread Bet"
+					href="spread-bets"
+				/> but add <Quote text="… including the point." /> to the end of their Spread Bet.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -105,29 +106,30 @@
 		<ContentHeaderTwo
 			id="bettingAcross"
 			title="How Do You Bet Across Including the Point in Craps?"
-		/>
-		<p class="pb-4">
-			Across Including the Point is betting all the Place bet numbers including the Point. E.g. $64
-			Across would be $10 on the 4, $10 on the 5, $12 on the 6, $12 on the 8, $10 on the 9, and $10
-			on the 10 — $10 + $10 + $12 + $12 + $10 + $10 = $64.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/32-across-including-the-point_640x360.webp"
-			mdImg="src/images/{url}/32-across-including-the-point_960x540.webp"
-			lgImg="src/images/{url}/32-across-including-the-point_1280x720.webp"
-			title="Betting $32 Across"
-			alt="Betting $32 Across Including the Point"
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/162-across-including-the-point_640x360.webp"
-			mdImg="src/images/{url}/162-across-including-the-point_960x540.webp"
-			lgImg="src/images/{url}/162-across-including-the-point_1280x720.webp"
-			title="Betting 162 Across Including the Point"
-			alt="Betting $162 Across Including the Point"
-		/>
+		>
+			<p class="pb-4">
+				Across Including the Point is betting all the Place bet numbers including the Point. E.g.
+				$64 Across would be $10 on the 4, $10 on the 5, $12 on the 6, $12 on the 8, $10 on the 9,
+				and $10 on the 10 — $10 + $10 + $12 + $12 + $10 + $10 = $64.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/32-across-including-the-point_640x360.webp"
+				mdImg="src/images/{url}/32-across-including-the-point_960x540.webp"
+				lgImg="src/images/{url}/32-across-including-the-point_1280x720.webp"
+				title="Betting $32 Across"
+				alt="Betting $32 Across Including the Point"
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/162-across-including-the-point_640x360.webp"
+				mdImg="src/images/{url}/162-across-including-the-point_960x540.webp"
+				lgImg="src/images/{url}/162-across-including-the-point_1280x720.webp"
+				title="Betting 162 Across Including the Point"
+				alt="Betting $162 Across Including the Point"
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

@@ -157,30 +157,31 @@
 			sectionTitle="Proposition Bets"
 			title="Betting the Horn High in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			There are four different Horn High's that all bet the same numbers as the Horn. They are the
-			Horn High Yo, Horn High Ace Deuce, Horn High Aces, and the Horn High Twelve.
-		</p>
-		<p class="pb-4">
-			The difference in each is you are adding an extra unit to one of those bets; the Aces, Aces
-			Deuce, Twelve, or the Yo in order to determine which Horn High you're betting.
-		</p>
-		<p class="pb-4">
-			Horn High's are great if you want to throw a nickel in, spread your money around a bunch of
-			prop bets, and pick a special number you want to roll, like.. the Yo. <Quote
-				text="Nickel Horn High Yo!"
+		>
+			<p class="pb-4">
+				There are four different Horn High's that all bet the same numbers as the Horn. They are the
+				Horn High Yo, Horn High Ace Deuce, Horn High Aces, and the Horn High Twelve.
+			</p>
+			<p class="pb-4">
+				The difference in each is you are adding an extra unit to one of those bets; the Aces, Aces
+				Deuce, Twelve, or the Yo in order to determine which Horn High you're betting.
+			</p>
+			<p class="pb-4">
+				Horn High's are great if you want to throw a nickel in, spread your money around a bunch of
+				prop bets, and pick a special number you want to roll, like.. the Yo. <Quote
+					text="Nickel Horn High Yo!"
+				/>
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/horn-high_640x360.webp"
+				mdImg="src/images/{url}/horn-high_960x540.webp"
+				lgImg="src/images/{url}/horn-high_1280x720.webp"
+				title="Horn High"
+				alt="Up close overhead view of the horn highs on the craps layout."
 			/>
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/horn-high_640x360.webp"
-			mdImg="src/images/{url}/horn-high_960x540.webp"
-			lgImg="src/images/{url}/horn-high_1280x720.webp"
-			title="Horn High"
-			alt="Up close overhead view of the horn highs on the craps layout."
-		/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -188,201 +189,206 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo
-			id="fourHornHighs"
-			title="What Are the Four Different Horn High's in Craps?"
-		/>
-		<p class="pb-4">
-			If you bet a four-dollar <Link text="Horn" href="horn" /> then took another dollar and added it
-			to the Yo then you would be betting a Horn High Yo. If instead you took that extra dollar and put
-			it on the Twelve you would be betting a Horn High Twelve. I presume the Horn High was created in
-			order to make betting simpler. Betting four dollars requires either splashing four (4) dollar cheques
-			or betting a five-dollar cheque then having <Link text="the Stickperson" href="the-crew" /> tell
-			the base dealer to give a dollar change. Either way, it's easier to make a five-dollar bet.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Yo"
-			smImg="src/images/{url}/5-horn-high-yo-1_640x360.webp"
-			mdImg="src/images/{url}/5-horn-high-yo-1_960x540.webp"
-			lgImg="src/images/{url}/5-horn-high-yo-1_1280x720.webp"
-			title="$5 Horn High Yo"
-			alt="Split image. On top is $5 on the Horn High Yo. On bottom is $1 each on the aces, twelve, and ace deuce. There are two dollars on the yo."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 Horn High Ace Deuce"
-			smImg="src/images/{url}/5-horn-high-ace-deuce-1_640x360.webp"
-			mdImg="src/images/{url}/5-horn-high-ace-deuce-1_960x540.webp"
-			lgImg="src/images/{url}/5-horn-high-ace-deuce-1_1280x720.webp"
-			title="$5 Horn High Ace Deuce"
-			alt="Split image. On top is $5 on the Horn High Ace Deuce. On bottom is $1 each on the aces, twelve, and yo. There are two dollars on the ace deuce."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 Horn High Aces"
-			smImg="src/images/{url}/5-horn-high-aces-1_640x360.webp"
-			mdImg="src/images/{url}/5-horn-high-aces-1_960x540.webp"
-			lgImg="src/images/{url}/5-horn-high-aces-1_1280x720.webp"
-			title="$5 Horn High Aces"
-			alt="Split image. On top is $5 on the Horn High Aces. On bottom is $1 each on the ace deuce, twelve, and yo. There are two dollars on the aces."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 Horn High Twelve"
-			smImg="src/images/{url}/5-horn-high-twelve-1_640x360.webp"
-			mdImg="src/images/{url}/5-horn-high-twelve-1_960x540.webp"
-			lgImg="src/images/{url}/5-horn-high-twelve-1_1280x720.webp"
-			title="$5 Horn High Twelve"
-			alt="Split image. On top is $5 on the Horn High Twelve. On bottom is $1 each on the aces, ace deuce, and yo. There are two dollars on the twelve."
-		/>
+		<ContentHeaderTwo id="fourHornHighs" title="What Are the Four Different Horn High's in Craps?">
+			<p class="pb-4">
+				If you bet a four-dollar <Link text="Horn" href="horn" /> then took another dollar and added
+				it to the Yo then you would be betting a Horn High Yo. If instead you took that extra dollar
+				and put it on the Twelve you would be betting a Horn High Twelve. I presume the Horn High was
+				created in order to make betting simpler. Betting four dollars requires either splashing four
+				(4) dollar cheques or betting a five-dollar cheque then having <Link
+					text="the Stickperson"
+					href="the-crew"
+				/> tell the base dealer to give a dollar change. Either way, it's easier to make a five-dollar
+				bet.
+			</p>
+			<ContentImg
+				caption="$5 Horn High Yo"
+				smImg="src/images/{url}/5-horn-high-yo-1_640x360.webp"
+				mdImg="src/images/{url}/5-horn-high-yo-1_960x540.webp"
+				lgImg="src/images/{url}/5-horn-high-yo-1_1280x720.webp"
+				title="$5 Horn High Yo"
+				alt="Split image. On top is $5 on the Horn High Yo. On bottom is $1 each on the aces, twelve, and ace deuce. There are two dollars on the yo."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption="$5 Horn High Ace Deuce"
+				smImg="src/images/{url}/5-horn-high-ace-deuce-1_640x360.webp"
+				mdImg="src/images/{url}/5-horn-high-ace-deuce-1_960x540.webp"
+				lgImg="src/images/{url}/5-horn-high-ace-deuce-1_1280x720.webp"
+				title="$5 Horn High Ace Deuce"
+				alt="Split image. On top is $5 on the Horn High Ace Deuce. On bottom is $1 each on the aces, twelve, and yo. There are two dollars on the ace deuce."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption="$5 Horn High Aces"
+				smImg="src/images/{url}/5-horn-high-aces-1_640x360.webp"
+				mdImg="src/images/{url}/5-horn-high-aces-1_960x540.webp"
+				lgImg="src/images/{url}/5-horn-high-aces-1_1280x720.webp"
+				title="$5 Horn High Aces"
+				alt="Split image. On top is $5 on the Horn High Aces. On bottom is $1 each on the ace deuce, twelve, and yo. There are two dollars on the aces."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption="$5 Horn High Twelve"
+				smImg="src/images/{url}/5-horn-high-twelve-1_640x360.webp"
+				mdImg="src/images/{url}/5-horn-high-twelve-1_960x540.webp"
+				lgImg="src/images/{url}/5-horn-high-twelve-1_1280x720.webp"
+				title="$5 Horn High Twelve"
+				alt="Split image. On top is $5 on the Horn High Twelve. On bottom is $1 each on the aces, ace deuce, and yo. There are two dollars on the twelve."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="hornHighPlacement"
 			title="Where Is Your Horn High Bet on the Craps Table?"
-		/>
-		<p class="pb-4">
-			For the most part, all of the Horn Highs are separated into two sections: the left side of the
-			table and the right side of the table. If two players from the same side of the table bet the
-			same Horn High we wouldn't even be able to fit both cheques in the box. There isn't enough
-			room for them both so we would have to go over the edges or put the edge of one cheque on top
-			of the other. Whatever we need to do in order to get an understanding of where the bets should
-			be.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/placement-of-a-horn-high_640x360.webp"
-			mdImg="src/images/{url}/placement-of-a-horn-high_960x540.webp"
-			lgImg="src/images/{url}/placement-of-a-horn-high_1280x720.webp"
-			title="Placement of a Horn High"
-			alt="Overhead up close view of the Horn High bets and the craps table rail. There are eight color coded spots on the bets referencing eight colored spots on the rail."
-		/>
+		>
+			<p class="pb-4">
+				For the most part, all of the Horn Highs are separated into two sections: the left side of
+				the table and the right side of the table. If two players from the same side of the table
+				bet the same Horn High we wouldn't even be able to fit both cheques in the box. There isn't
+				enough room for them both so we would have to go over the edges or put the edge of one
+				cheque on top of the other. Whatever we need to do in order to get an understanding of where
+				the bets should be.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/placement-of-a-horn-high_640x360.webp"
+				mdImg="src/images/{url}/placement-of-a-horn-high_960x540.webp"
+				lgImg="src/images/{url}/placement-of-a-horn-high_1280x720.webp"
+				title="Placement of a Horn High"
+				alt="Overhead up close view of the Horn High bets and the craps table rail. There are eight color coded spots on the bets referencing eight colored spots on the rail."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="hornHighPayment" title="What Does the Horn High Pay on a Craps Game?" />
-		<p class="pb-4">
-			The Horn High's are some of the most confusing bets to pay on a Craps table. There are only
-			four payments you need to know in order to pay all the bets but it's knowing when to apply
-			each of those four numbers that makes paying them so difficult. You need to understand a few
-			things before you'll be able to figure out the payments of the Horn Highs right off the bat.
-		</p>
-		<ContentUl2 {liBs} />
-		<div class="pb-4" />
-		<ContentHeaderThree title="$5 Horn High Aces and Horn High Twelve" />
-		<p class="pb-4">
-			There are three possible outcomes/payments when you have to pay both the Horn High Aces and
-			the Horn High Twelve:
-		</p>
-		<ContentUl2 liBs={liBs2} />
-		<div class="pb-4" />
-		<p class="pb-4">
-			A $5 Horn High Aces has $2 on the Aces and $1 on the other three numbers. If the Aces rolled
-			it would win $60 ($2 x 30) minus $3 (the other losing bets - $1 on each the Twelve, Ace Deuce,
-			and Yo) for a payment of $57.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Twelve Direct Hit Payment"
-			smImg="src/images/{url}/5-hh-twelve-direct_640x360.webp"
-			mdImg="src/images/{url}/5-hh-twelve-direct_960x540.webp"
-			lgImg="src/images/{url}/5-hh-twelve-direct_1280x720.webp"
-			title="$5 Horn High Twelve Direct Hit Payment"
-			alt="$1 each on the aces, ace deuce, and yo. There are two dollars on the twelve. Two green dice show 6-6. A bubble reads $57 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 Horn High Aces Direct Hit Payment"
-			smImg="src/images/{url}/5-hh-aces-direct_640x360.webp"
-			mdImg="src/images/{url}/5-hh-aces-direct_960x540.webp"
-			lgImg="src/images/{url}/5-hh-aces-direct_1280x720.webp"
-			title="$5 Horn High Aces Direct Hit Payment"
-			alt="$1 each on the twelve, ace deuce, and yo. There are two dollars on the aces. Two green dice show 1-1. A bubble reads $57 payment."
-		/>
-		<div class="pb-4" />
-		<p class="pb-4">
-			A $5 Horn High Twelve has $2 on the Twelve and $1 on the other three numbers. If the opposite
-			high side rolled, the Aces, it would win $30 ($1 x 30) minus $4 (the other losing bets - $2 on
-			the Twelve and $1 on each the Aces Deuce and Yo) for a payment of $26.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Twelve Opposite High Side Payment"
-			smImg="src/images/{url}/5-hh-twelve-opp-high_640x360.webp"
-			mdImg="src/images/{url}/5-hh-twelve-opp-high_960x540.webp"
-			lgImg="src/images/{url}/5-hh-twelve-opp-high_1280x720.webp"
-			title="$5 Horn High Twelve Opposite High Side Payment"
-			alt="A $5 Horn High Twelve has $2 on the Twelve and $1 on the other three numbers. If the opposite high side rolled, the Aces, it would win $30 ($1 x 30) minus $4 (the other losing bets - $2 on the Twelve and $1 on each the Aces Deuce and Yo) for a payment of $26."
-		/>
-		<div class="pb-4" />
-		<p class="pb-4">
-			A $5 Horn High Aces has $2 on the Aces and $1 on the other three numbers. If an Ace Deuce
-			rolled it would win $15 ($1 x 15) minus $4 (the other losing bets - $2 on the Twelve and $1
-			each on the Aces and Yo) for a payment of $11. Since the Yo pays the same as the Ace Deuce, if
-			their places were switched, the end payment ($11) would still be the same.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Aces Low Side Hits"
-			smImg="src/images/{url}/5-hh-aces-low-side_640x360.webp"
-			mdImg="src/images/{url}/5-hh-aces-low-side_960x540.webp"
-			lgImg="src/images/{url}/5-hh-aces-low-side_1280x720.webp"
-			title="$5 Horn High Aces Low Side Hits"
-			alt="$1 each on the twelve, ace deuce, and the yo, There are two dollars on the Aces. Two green dice show 1-2. A bubble reads $11 payment."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="$5 Horn High Ace Deuce and Horn High Yo" />
-		<p class="pb-4">
-			There are three possible outcomes/payments possible when you pay both the Horn High Ace Deuce
-			and the Horn High Yo.
-		</p>
-		<ContentUl2 liBs={liBs3} />
-		<div class="pb-4" />
-		<p class="pb-4">
-			A $5 Horn High Yo has $2 on the Yo and $1 on the other three numbers. If the Yo rolled it
-			would win $30 ($2 x 15) minus $3 (the other losing bets - $1 on each the Ace Deuce, Aces, and
-			Twelve) for a payment of $27.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Yo Direct Hit Payment"
-			smImg="src/images/{url}/5-hh-yo-direct_640x360.webp"
-			mdImg="src/images/{url}/5-hh-yo-direct_960x540.webp"
-			lgImg="src/images/{url}/5-hh-yo-direct_1280x720.webp"
-			title="$5 Horn High Yo Direct Hit Payment"
-			alt="$1 each on the aces, ace deuce, and twelve. There are two dollars on the yo. Two green dice show 5-6. A bubble reads $27 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$5 Horn High Ace Deuce Direct Hit Payment"
-			smImg="src/images/{url}/5-hh-ace-deuce-direct_640x360.webp"
-			mdImg="src/images/{url}/5-hh-ace-deuce-direct_960x540.webp"
-			lgImg="src/images/{url}/5-hh-ace-deuce-direct_1280x720.webp"
-			title="$5 Horn High Ace Deuce Direct Hit Payment"
-			alt="$1 each on the aces, yo, and twelve. There are two dollars on the ace deuce. Two green dice show 1-3. A bubble reads $27 payment."
-		/>
-		<div class="pb-4" />
-		<p class="pb-4">
-			A $5 Horn High Ace Deuce has $2 on the Ace Deuce and $1 on the other three numbers. If the
-			opposite low side rolled, the Yo, it would win $15 ($1 x 15) minus $4 (the other losing bets -
-			$2 on the Ace Deuce and $1 on each the Aces and Twelve) for a payment of $11.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Ace Deuce Opposite Low Side Payment."
-			smImg="src/images/{url}/5-hh-ace-deuce-opp-low_640x360.webp"
-			mdImg="src/images/{url}/5-hh-ace-deuce-opp-low_960x540.webp"
-			lgImg="src/images/{url}/5-hh-ace-deuce-opp-low_1280x720.webp"
-			title="$5 Horn High Ace Deuce Opposite Low Side Payment."
-			alt="$1 each on the aces, twelve, and yo. There are two dollars on the ace deuce. Two green dice show 5-6. A bubble reads $11 payment."
-		/>
-		<div class="pb-4" />
-		<p class="pb-4">
-			A $5 Horn High Yo has $2 on the Yo and $1 on the other three numbers. If a Twelve rolled it
-			would win $30 ($1 x 30) minus $4 (the other losing bets - $2 on the Yo and $1 each on the Ace
-			Deuce and Aces) for a payment of $26. Since the Twelve pays the same as the Aces, if their
-			places were switched, the end payment ($26) would still be the same.
-		</p>
-		<ContentImg
-			caption="$5 Horn High Yo High Side Payment"
-			smImg="src/images/{url}/5-hh-yo-high-side_640x360.webp"
-			mdImg="src/images/{url}/5-hh-yo-high-side_960x540.webp"
-			lgImg="src/images/{url}/5-hh-yo-high-side_1280x720.webp"
-			title="$5 Horn High Yo High Side Payment"
-			alt="$1 each on the aces, twelve, and ace deuce. There are two dollars on the yo. Two green dice show 6-6. A bubble reads $26 payment."
-		/>
+		<ContentHeaderTwo id="hornHighPayment" title="What Does the Horn High Pay on a Craps Game?">
+			<p class="pb-4">
+				The Horn High's are some of the most confusing bets to pay on a Craps table. There are only
+				four payments you need to know in order to pay all the bets but it's knowing when to apply
+				each of those four numbers that makes paying them so difficult. You need to understand a few
+				things before you'll be able to figure out the payments of the Horn Highs right off the bat.
+			</p>
+			<ContentUl2 {liBs} />
+			<div class="pb-4" />
+			<ContentHeaderThree title="$5 Horn High Aces and Horn High Twelve">
+				<p class="pb-4">
+					There are three possible outcomes/payments when you have to pay both the Horn High Aces
+					and the Horn High Twelve:
+				</p>
+				<ContentUl2 liBs={liBs2} />
+				<div class="pb-4" />
+				<p class="pb-4">
+					A $5 Horn High Aces has $2 on the Aces and $1 on the other three numbers. If the Aces
+					rolled it would win $60 ($2 x 30) minus $3 (the other losing bets - $1 on each the Twelve,
+					Ace Deuce, and Yo) for a payment of $57.
+				</p>
+				<ContentImg
+					caption="$5 Horn High Twelve Direct Hit Payment"
+					smImg="src/images/{url}/5-hh-twelve-direct_640x360.webp"
+					mdImg="src/images/{url}/5-hh-twelve-direct_960x540.webp"
+					lgImg="src/images/{url}/5-hh-twelve-direct_1280x720.webp"
+					title="$5 Horn High Twelve Direct Hit Payment"
+					alt="$1 each on the aces, ace deuce, and yo. There are two dollars on the twelve. Two green dice show 6-6. A bubble reads $57 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$5 Horn High Aces Direct Hit Payment"
+					smImg="src/images/{url}/5-hh-aces-direct_640x360.webp"
+					mdImg="src/images/{url}/5-hh-aces-direct_960x540.webp"
+					lgImg="src/images/{url}/5-hh-aces-direct_1280x720.webp"
+					title="$5 Horn High Aces Direct Hit Payment"
+					alt="$1 each on the twelve, ace deuce, and yo. There are two dollars on the aces. Two green dice show 1-1. A bubble reads $57 payment."
+				/>
+				<div class="pb-4" />
+				<p class="pb-4">
+					A $5 Horn High Twelve has $2 on the Twelve and $1 on the other three numbers. If the
+					opposite high side rolled, the Aces, it would win $30 ($1 x 30) minus $4 (the other losing
+					bets - $2 on the Twelve and $1 on each the Aces Deuce and Yo) for a payment of $26.
+				</p>
+				<ContentImg
+					caption="$5 Horn High Twelve Opposite High Side Payment"
+					smImg="src/images/{url}/5-hh-twelve-opp-high_640x360.webp"
+					mdImg="src/images/{url}/5-hh-twelve-opp-high_960x540.webp"
+					lgImg="src/images/{url}/5-hh-twelve-opp-high_1280x720.webp"
+					title="$5 Horn High Twelve Opposite High Side Payment"
+					alt="A $5 Horn High Twelve has $2 on the Twelve and $1 on the other three numbers. If the opposite high side rolled, the Aces, it would win $30 ($1 x 30) minus $4 (the other losing bets - $2 on the Twelve and $1 on each the Aces Deuce and Yo) for a payment of $26."
+				/>
+				<div class="pb-4" />
+				<p class="pb-4">
+					A $5 Horn High Aces has $2 on the Aces and $1 on the other three numbers. If an Ace Deuce
+					rolled it would win $15 ($1 x 15) minus $4 (the other losing bets - $2 on the Twelve and
+					$1 each on the Aces and Yo) for a payment of $11. Since the Yo pays the same as the Ace
+					Deuce, if their places were switched, the end payment ($11) would still be the same.
+				</p>
+				<ContentImg
+					caption="$5 Horn High Aces Low Side Hits"
+					smImg="src/images/{url}/5-hh-aces-low-side_640x360.webp"
+					mdImg="src/images/{url}/5-hh-aces-low-side_960x540.webp"
+					lgImg="src/images/{url}/5-hh-aces-low-side_1280x720.webp"
+					title="$5 Horn High Aces Low Side Hits"
+					alt="$1 each on the twelve, ace deuce, and the yo, There are two dollars on the Aces. Two green dice show 1-2. A bubble reads $11 payment."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="$5 Horn High Ace Deuce and Horn High Yo">
+				<p class="pb-4">
+					There are three possible outcomes/payments possible when you pay both the Horn High Ace
+					Deuce and the Horn High Yo.
+				</p>
+				<ContentUl2 liBs={liBs3} />
+				<div class="pb-4" />
+				<p class="pb-4">
+					A $5 Horn High Yo has $2 on the Yo and $1 on the other three numbers. If the Yo rolled it
+					would win $30 ($2 x 15) minus $3 (the other losing bets - $1 on each the Ace Deuce, Aces,
+					and Twelve) for a payment of $27.
+				</p>
+				<ContentImg
+					caption="$5 Horn High Yo Direct Hit Payment"
+					smImg="src/images/{url}/5-hh-yo-direct_640x360.webp"
+					mdImg="src/images/{url}/5-hh-yo-direct_960x540.webp"
+					lgImg="src/images/{url}/5-hh-yo-direct_1280x720.webp"
+					title="$5 Horn High Yo Direct Hit Payment"
+					alt="$1 each on the aces, ace deuce, and twelve. There are two dollars on the yo. Two green dice show 5-6. A bubble reads $27 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$5 Horn High Ace Deuce Direct Hit Payment"
+					smImg="src/images/{url}/5-hh-ace-deuce-direct_640x360.webp"
+					mdImg="src/images/{url}/5-hh-ace-deuce-direct_960x540.webp"
+					lgImg="src/images/{url}/5-hh-ace-deuce-direct_1280x720.webp"
+					title="$5 Horn High Ace Deuce Direct Hit Payment"
+					alt="$1 each on the aces, yo, and twelve. There are two dollars on the ace deuce. Two green dice show 1-3. A bubble reads $27 payment."
+				/>
+				<div class="pb-4" />
+				<p class="pb-4">
+					A $5 Horn High Ace Deuce has $2 on the Ace Deuce and $1 on the other three numbers. If the
+					opposite low side rolled, the Yo, it would win $15 ($1 x 15) minus $4 (the other losing
+					bets - $2 on the Ace Deuce and $1 on each the Aces and Twelve) for a payment of $11.
+				</p>
+				<ContentImg
+					caption="$5 Horn High Ace Deuce Opposite Low Side Payment."
+					smImg="src/images/{url}/5-hh-ace-deuce-opp-low_640x360.webp"
+					mdImg="src/images/{url}/5-hh-ace-deuce-opp-low_960x540.webp"
+					lgImg="src/images/{url}/5-hh-ace-deuce-opp-low_1280x720.webp"
+					title="$5 Horn High Ace Deuce Opposite Low Side Payment."
+					alt="$1 each on the aces, twelve, and yo. There are two dollars on the ace deuce. Two green dice show 5-6. A bubble reads $11 payment."
+				/>
+				<div class="pb-4" />
+				<p class="pb-4">
+					A $5 Horn High Yo has $2 on the Yo and $1 on the other three numbers. If a Twelve rolled
+					it would win $30 ($1 x 30) minus $4 (the other losing bets - $2 on the Yo and $1 each on
+					the Ace Deuce and Aces) for a payment of $26. Since the Twelve pays the same as the Aces,
+					if their places were switched, the end payment ($26) would still be the same.
+				</p>
+				<ContentImg
+					caption="$5 Horn High Yo High Side Payment"
+					smImg="src/images/{url}/5-hh-yo-high-side_640x360.webp"
+					mdImg="src/images/{url}/5-hh-yo-high-side_960x540.webp"
+					lgImg="src/images/{url}/5-hh-yo-high-side_1280x720.webp"
+					title="$5 Horn High Yo High Side Payment"
+					alt="$1 each on the aces, twelve, and ace deuce. There are two dollars on the yo. Two green dice show 6-6. A bubble reads $26 payment."
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Horn high payment calculators" id="hornHighCalcs"
 			><CalcBox

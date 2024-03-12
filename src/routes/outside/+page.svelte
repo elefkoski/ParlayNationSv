@@ -89,22 +89,23 @@
 			sectionTitle="Spread Bets"
 			title="Betting Outside at the Craps Table"
 			{pageData}
-		/>
-		<p class="pb-4">
-			The four Outside Points are 4, 5, 9, and you bet them in the same unit amount, not including
-			the Point. If thnavoint was 8 and you wanted to bet $10 on each of the numbers, you would have
-			to bet the following: $10 on the 4, $10 on the 5, $10 on tsection9, and $10 on the 10 — $10 +
-			$10 + $10 + $10 = $40. This bet would be 40 Outside.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/outside_640x360.webp"
-			mdImg="src/images/{url}/outside_960x540.webp"
-			lgImg="src/images/{url}/outside_1280x720.webp"
-			title="Outside Place Bets"
-			alt="Puck is on point eight and points 4, 5, 9, and 10 are highlighted."
-		/>
+		>
+			<p class="pb-4">
+				The four Outside Points are 4, 5, 9, and you bet them in the same unit amount, not including
+				the Point. If thnavoint was 8 and you wanted to bet $10 on each of the numbers, you would
+				have to bet the following: $10 on the 4, $10 on the 5, $10 on tsection9, and $10 on the 10 —
+				$10 + $10 + $10 + $10 = $40. This bet would be 40 Outside.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/outside_640x360.webp"
+				mdImg="src/images/{url}/outside_960x540.webp"
+				lgImg="src/images/{url}/outside_1280x720.webp"
+				title="Outside Place Bets"
+				alt="Puck is on point eight and points 4, 5, 9, and 10 are highlighted."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -115,92 +116,99 @@
 		<ContentHeaderTwo
 			id="bettingOutsideWoCommission"
 			title="How Do You Bet Outside on the Craps Table?"
-		/>
-		<p class="pb-4">
-			When you bet Outside at lower limits you don't have to worry about commission because you're
-			not betting large enough that a vig needs to be charged. The bets on each number are also the
-			same since you are not betting the 6 or 8. The only difference is if you're betting three or
-			four numbers.
-		</p>
-		<ContentHeaderThree title="Point 6 or 8" />
-		<p class="pb-4">
-			When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is
-			going to be the most.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/60-outside_640x360.webp"
-			mdImg="src/images/{url}/60-outside_960x540.webp"
-			lgImg="src/images/{url}/60-outside_1280x720.webp"
-			title="Betting $60 Outside"
-			alt="When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is going to be the most.		"
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Point 4, 5, 9, 10" />
-		<p class="pb-4">
-			When the Point is anything other than the 6 or 8, the cost of the bet will be larger. 6s and
-			8's cost more and because they are not the Point and you will be including them in your bet,
-			the total cost of the bet will be larger.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/45-outside_640x360.webp"
-			mdImg="src/images/{url}/45-outside_960x540.webp"
-			lgImg="src/images/{url}/45-outside_1280x720.webp"
-			title="Betting $45 Outside"
-			alt="$45 outside with point on five"
-		/>
+		>
+			<p class="pb-4">
+				When you bet Outside at lower limits you don't have to worry about commission because you're
+				not betting large enough that a vig needs to be charged. The bets on each number are also
+				the same since you are not betting the 6 or 8. The only difference is if you're betting
+				three or four numbers.
+			</p>
+			<ContentHeaderThree title="Point 6 or 8">
+				<p class="pb-4">
+					When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost
+					is going to be the most.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/60-outside_640x360.webp"
+					mdImg="src/images/{url}/60-outside_960x540.webp"
+					lgImg="src/images/{url}/60-outside_1280x720.webp"
+					title="Betting $60 Outside"
+					alt="When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is going to be the most.		"
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Point 4, 5, 9, 10">
+				<p class="pb-4">
+					When the Point is anything other than the 6 or 8, the cost of the bet will be larger. 6s
+					and 8's cost more and because they are not the Point and you will be including them in
+					your bet, the total cost of the bet will be larger.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/45-outside_640x360.webp"
+					mdImg="src/images/{url}/45-outside_960x540.webp"
+					lgImg="src/images/{url}/45-outside_1280x720.webp"
+					title="Betting $45 Outside"
+					alt="$45 outside with point on five"
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="bettingOutsideWCommission"
 			title="How Do You Bet Outside with a Commission in a Craps Game?"
-		/>
-		<p class="pb-4">
-			When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is
-			going to be the most.
-		</p>
-		<ContentHeaderThree title="Point 6 or 8" />
-		<p class="pb-4">
-			Outside bets are most expensive when the Point is 6 or 8 because you have to bet all four
-			Outside bets. You need to pay commission for both the 4 and 10.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/102-outside_640x360.webp"
-			mdImg="src/images/{url}/102-outside_960x540.webp"
-			lgImg="src/images/{url}/102-outside_1280x720.webp"
-			title="Betting $102 Outside"
-			alt="$102 outside with the point on eight."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Point 5 or 9" />
-		<p class="pb-4">
-			When the Point is 5 or 9 you only need to bet three out of the four Outside bets and pay
-			commission for both the 4 and 10. These are your second most expensive Outside bets.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/77-outside_640x360.webp"
-			mdImg="src/images/{url}/77-outside_960x540.webp"
-			lgImg="src/images/{url}/77-outside_1280x720.webp"
-			title="Betting $77 Outside"
-			alt="$77 outside with the point on five."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Point 4 or 10" />
-		<p class="pb-4">
-			The least expensive Outside bet is when the Point is 4 or 10. You only need to bet three out
-			of the four Outside bets and you only need to pay commission for either the 4 or the 10, not
-			both.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/76-outside_640x360.webp"
-			mdImg="src/images/{url}/76-outside_960x540.webp"
-			lgImg="src/images/{url}/76-outside_1280x720.webp"
-			title="Betting $76 Outside"
-			alt="$76 outside with the point on four"
-		/>
+		>
+			<p class="pb-4">
+				When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is
+				going to be the most.
+			</p>
+			<ContentHeaderThree title="Point 6 or 8">
+				<p class="pb-4">
+					Outside bets are most expensive when the Point is 6 or 8 because you have to bet all four
+					Outside bets. You need to pay commission for both the 4 and 10.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/102-outside_640x360.webp"
+					mdImg="src/images/{url}/102-outside_960x540.webp"
+					lgImg="src/images/{url}/102-outside_1280x720.webp"
+					title="Betting $102 Outside"
+					alt="$102 outside with the point on eight."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Point 5 or 9">
+				<p class="pb-4">
+					When the Point is 5 or 9 you only need to bet three out of the four Outside bets and pay
+					commission for both the 4 and 10. These are your second most expensive Outside bets.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/77-outside_640x360.webp"
+					mdImg="src/images/{url}/77-outside_960x540.webp"
+					lgImg="src/images/{url}/77-outside_1280x720.webp"
+					title="Betting $77 Outside"
+					alt="$77 outside with the point on five."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Point 4 or 10">
+				<p class="pb-4">
+					The least expensive Outside bet is when the Point is 4 or 10. You only need to bet three
+					out of the four Outside bets and you only need to pay commission for either the 4 or the
+					10, not both.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/76-outside_640x360.webp"
+					mdImg="src/images/{url}/76-outside_960x540.webp"
+					lgImg="src/images/{url}/76-outside_1280x720.webp"
+					title="Betting $76 Outside"
+					alt="$76 outside with the point on four"
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

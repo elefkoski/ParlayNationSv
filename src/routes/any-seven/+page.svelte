@@ -91,27 +91,31 @@
 			sectionTitle="Proposition Bets"
 			title="Betting the Any Seven in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			The Any 7 is a one-roll bet and could be used any number of ways. Many of the Don't players
-			use it to hedge or tnavnvoke the seven. You can add it to the <Link text="Horn" href="horn" />
-			to make a <Link text="World" href="the-world" /> or many players bet it during the <Link
-				text="Comeout Roll"
-				href="the-stages"
-			/> so they could win twice if they are on the <Link
-				text="Pass Line"
-				href="pass-line-basics"
-			/>.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/any-seven_640x360.webp"
-			mdImg="src/images/{url}/any-seven_960x540.webp"
-			lgImg="src/images/{url}/any-seven_1280x720.webp"
-			title="The Any Seven"
-			alt="Overhead up close view of the any seven area on the craps layout."
-		/>
+		>
+			<p class="pb-4">
+				The Any 7 is a one-roll bet and could be used any number of ways. Many of the Don't players
+				use it to hedge or tnavnvoke the seven. You can add it to the <Link
+					text="Horn"
+					href="horn"
+				/>
+				to make a <Link text="World" href="the-world" /> or many players bet it during the <Link
+					text="Comeout Roll"
+					href="the-stages"
+				/> so they could win twice if they are on the <Link
+					text="Pass Line"
+					href="pass-line-basics"
+				/>.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/any-seven_640x360.webp"
+				mdImg="src/images/{url}/any-seven_960x540.webp"
+				lgImg="src/images/{url}/any-seven_1280x720.webp"
+				title="The Any Seven"
+				alt="Overhead up close view of the any seven area on the craps layout."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -119,31 +123,33 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="anySevenPlacement" title="Where Is Your Any Seven on the Craps Table?" />
-		<p class="pb-4">
-			The Any 7 is a bar across the middle of the table. The bar is split into a left and right side
-			of the table with the center of the bar is the middle of the table and the edges of the bar
-			are the two bases.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/placement-of-the-any-seven_640x360.webp"
-			mdImg="src/images/{url}/placement-of-the-any-seven_960x540.webp"
-			lgImg="src/images/{url}/placement-of-the-any-seven_1280x720.webp"
-			title="Placement of the Any Seven"
-			alt="Up close view of the any seven bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
-		/>
+		<ContentHeaderTwo id="anySevenPlacement" title="Where Is Your Any Seven on the Craps Table?">
+			<p class="pb-4">
+				The Any 7 is a bar across the middle of the table. The bar is split into a left and right
+				side of the table with the center of the bar is the middle of the table and the edges of the
+				bar are the two bases.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/placement-of-the-any-seven_640x360.webp"
+				mdImg="src/images/{url}/placement-of-the-any-seven_960x540.webp"
+				lgImg="src/images/{url}/placement-of-the-any-seven_1280x720.webp"
+				title="Placement of the Any Seven"
+				alt="Up close view of the any seven bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="anySevenPayment" title="What Does the Any Seven Pay in a Craps Game?" />
-		<p class="pb-4">The Any 7 pays 4:1 or $4 for every $1.</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/what-does-the-any-seven-pay_640x360.webp"
-			mdImg="src/images/{url}/what-does-the-any-seven-pay_960x540.webp"
-			lgImg="src/images/{url}/what-does-the-any-seven-pay_1280x720.webp"
-			title="What Does the Any Seven Pay"
-			alt="$4 on the any seven with two green dice that read 1-6. There is a bubble that reads $16 payment."
-		/>
+		<ContentHeaderTwo id="anySevenPayment" title="What Does the Any Seven Pay in a Craps Game?">
+			<p class="pb-4">The Any 7 pays 4:1 or $4 for every $1.</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/what-does-the-any-seven-pay_640x360.webp"
+				mdImg="src/images/{url}/what-does-the-any-seven-pay_960x540.webp"
+				lgImg="src/images/{url}/what-does-the-any-seven-pay_1280x720.webp"
+				title="What Does the Any Seven Pay"
+				alt="$4 on the any seven with two green dice that read 1-6. There is a bubble that reads $16 payment."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Any seven payment calculator" id="anySevenCalc"
 			><CalcBox

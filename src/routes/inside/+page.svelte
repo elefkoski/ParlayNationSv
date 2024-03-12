@@ -83,21 +83,22 @@
 			sectionTitle="Spread Bets"
 			title="Betting Inside at the Craps Table"
 			{pageData}
-		/>
-		<p class="pb-4">
-			5, 6, 8, and 9 are the Inside Points. When you bet Inside you are betting all the Inside
-			Points, in the same unit amount, not including the Point. For example, if the Point was 6, 32
-			inside would be: $10 on 5, $12 on the 8, and $10 on the 9 — $10 + $12 + $10 = $32 Inside.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/inside_640x360.webp"
-			mdImg="src/images/{url}/inside_960x540.webp"
-			lgImg="src/images/{url}/inside_1280x720.webp"
-			title="Inside Place Bets"
-			alt="Puck is on point four and points 5, 6, 8, and 9 are highlighted."
-		/>
+		>
+			<p class="pb-4">
+				5, 6, 8, and 9 are the Inside Points. When you bet Inside you are betting all the Inside
+				Points, in the same unit amount, not including the Point. For example, if the Point was 6,
+				32 inside would be: $10 on 5, $12 on the 8, and $10 on the 9 — $10 + $12 + $10 = $32 Inside.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/inside_640x360.webp"
+				mdImg="src/images/{url}/inside_960x540.webp"
+				lgImg="src/images/{url}/inside_1280x720.webp"
+				title="Inside Place Bets"
+				alt="Puck is on point four and points 5, 6, 8, and 9 are highlighted."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -105,54 +106,59 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="bettingInside" title="How Do You Bet Inside on the Craps Table?" />
-		<p class="pb-4">
-			When you make an Inside bet you don't include the 4 or 10. Since those numbers are not
-			included you don't have to worry about paying a commission. Regardless of whether or not you
-			have to pay a commission, there are still three different possibilities for Inside bets.
-		</p>
-		<ContentHeaderThree title="Point 6 or 8" />
-		<p class="pb-4">
-			When the Point is 6 or 8 the amount of your bet across is going to be less. This is because it
-			costs more to bet on the 6 or 8 and the fact that it is the Point and you are not betting it,
-			the total cost of the bet is going to be less.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/32-inside_640x360.webp"
-			mdImg="src/images/{url}/32-inside_960x540.webp"
-			lgImg="src/images/{url}/32-inside_1280x720.webp"
-			title="Betting $32 Inside"
-			alt="$32 inside with the point on eight."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Point 5 or 9" />
-		<p class="pb-4">
-			When the Point is 5 or 9 you must still bet three other numbers. You have to bet both the 6
-			and 8, which cost more than the rest so it's more expensive than when the Point is 6 or 8.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/34-inside_640x360.webp"
-			mdImg="src/images/{url}/34-inside_960x540.webp"
-			lgImg="src/images/{url}/34-inside_1280x720.webp"
-			title="Betting $34 Inside"
-			alt="$34 inside with the point on five"
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Point 4 or 10" />
-		<p class="pb-4">
-			Betting Inside is most expensive when the Point is 4 and 10 because you must bet all four of
-			the Inside numbers.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/44-inside_640x360.webp"
-			mdImg="src/images/{url}/44-inside_960x540.webp"
-			lgImg="src/images/{url}/44-inside_1280x720.webp"
-			title="Betting $44 Inside"
-			alt="$44 inside with the point on ten."
-		/>
+		<ContentHeaderTwo id="bettingInside" title="How Do You Bet Inside on the Craps Table?">
+			<p class="pb-4">
+				When you make an Inside bet you don't include the 4 or 10. Since those numbers are not
+				included you don't have to worry about paying a commission. Regardless of whether or not you
+				have to pay a commission, there are still three different possibilities for Inside bets.
+			</p>
+			<ContentHeaderThree title="Point 6 or 8">
+				<p class="pb-4">
+					When the Point is 6 or 8 the amount of your bet across is going to be less. This is
+					because it costs more to bet on the 6 or 8 and the fact that it is the Point and you are
+					not betting it, the total cost of the bet is going to be less.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/32-inside_640x360.webp"
+					mdImg="src/images/{url}/32-inside_960x540.webp"
+					lgImg="src/images/{url}/32-inside_1280x720.webp"
+					title="Betting $32 Inside"
+					alt="$32 inside with the point on eight."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Point 5 or 9">
+				<p class="pb-4">
+					When the Point is 5 or 9 you must still bet three other numbers. You have to bet both the
+					6 and 8, which cost more than the rest so it's more expensive than when the Point is 6 or
+					8.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/34-inside_640x360.webp"
+					mdImg="src/images/{url}/34-inside_960x540.webp"
+					lgImg="src/images/{url}/34-inside_1280x720.webp"
+					title="Betting $34 Inside"
+					alt="$34 inside with the point on five"
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Point 4 or 10">
+				<p class="pb-4">
+					Betting Inside is most expensive when the Point is 4 and 10 because you must bet all four
+					of the Inside numbers.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/44-inside_640x360.webp"
+					mdImg="src/images/{url}/44-inside_960x540.webp"
+					lgImg="src/images/{url}/44-inside_1280x720.webp"
+					title="Betting $44 Inside"
+					alt="$44 inside with the point on ten."
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

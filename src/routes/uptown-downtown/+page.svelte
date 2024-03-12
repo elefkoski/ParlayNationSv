@@ -88,31 +88,32 @@
 			sectionTitle="Spread Bets"
 			title="Betting Uptown and Downtown in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			After the Point has been established players like to bet the opposite side of the board and
-			it's called bettin Uptown or Downtown. When the Point is 4, 5, or 6 the players will bet the
-			8, 9, and 10, or Uptown. When the Point is 8, 9, or 10 the players will bet the 4, 5, and 6,
-			or Downtown. They are always betting three numbers.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/uptown_640x360.webp"
-			mdImg="src/images/{url}/uptown_960x540.webp"
-			lgImg="src/images/{url}/uptown_1280x720.webp"
-			title="Uptown Place Bets"
-			alt="Puck is on point six and points 8, 9, and 10 are highlighted."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/downtown_640x360.webp"
-			mdImg="src/images/{url}/downtown_960x540.webp"
-			lgImg="src/images/{url}/downtown_1280x720.webp"
-			title="Downtown Place Bets"
-			alt="Puck is on point eight and points 4, 5, and 6 are highlighted."
-		/>
+		>
+			<p class="pb-4">
+				After the Point has been established players like to bet the opposite side of the board and
+				it's called bettin Uptown or Downtown. When the Point is 4, 5, or 6 the players will bet the
+				8, 9, and 10, or Uptown. When the Point is 8, 9, or 10 the players will bet the 4, 5, and 6,
+				or Downtown. They are always betting three numbers.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/uptown_640x360.webp"
+				mdImg="src/images/{url}/uptown_960x540.webp"
+				lgImg="src/images/{url}/uptown_1280x720.webp"
+				title="Uptown Place Bets"
+				alt="Puck is on point six and points 8, 9, and 10 are highlighted."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/downtown_640x360.webp"
+				mdImg="src/images/{url}/downtown_960x540.webp"
+				lgImg="src/images/{url}/downtown_1280x720.webp"
+				title="Downtown Place Bets"
+				alt="Puck is on point eight and points 4, 5, and 6 are highlighted."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -123,55 +124,57 @@
 		<ContentHeaderTwo
 			id="upDownWoCommission"
 			title="How Do You Bet Uptown or Downtown on the Craps Table?"
-		/>
-		<p class="pb-4">
-			When you bet Downtown or Uptown at lower limits you will not have to pay a commission on the 4
-			or 10. If you bet the same number of units Uptown or Downtown the cost will be the same.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/16-uptown_640x360.webp"
-			mdImg="src/images/{url}/16-uptown_960x540.webp"
-			lgImg="src/images/{url}/16-uptown_1280x720.webp"
-			title="Betting $16 Uptown"
-			alt="Betting $16 Uptown with the point on five."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/16-downtown_640x360.webp"
-			mdImg="src/images/{url}/16-downtown_960x540.webp"
-			lgImg="src/images/{url}/16-downtown_1280x720.webp"
-			title="Betting $16 Downtown"
-			alt="Betting $16 downtown with the point on nine."
-		/>
+		>
+			<p class="pb-4">
+				When you bet Downtown or Uptown at lower limits you will not have to pay a commission on the
+				4 or 10. If you bet the same number of units Uptown or Downtown the cost will be the same.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/16-uptown_640x360.webp"
+				mdImg="src/images/{url}/16-uptown_960x540.webp"
+				lgImg="src/images/{url}/16-uptown_1280x720.webp"
+				title="Betting $16 Uptown"
+				alt="Betting $16 Uptown with the point on five."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/16-downtown_640x360.webp"
+				mdImg="src/images/{url}/16-downtown_960x540.webp"
+				lgImg="src/images/{url}/16-downtown_1280x720.webp"
+				title="Betting $16 Downtown"
+				alt="Betting $16 downtown with the point on nine."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="upDownWCommission"
 			title="How Do You Bet Uptown or Downtown with a Commission?"
-		/>
-		<p class="pb-4">
-			When you bet Downtown or Uptown at higher limits you will have to include the commission
-			charged on either the 4 or 10. If you bet the same number of units Uptown or Downtown the cost
-			of the bets will always be the same.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/65-uptown_640x360.webp"
-			mdImg="src/images/{url}/65-uptown_960x540.webp"
-			lgImg="src/images/{url}/65-uptown_1280x720.webp"
-			title="Betting $65 Uptown"
-			alt="$65 uptown with the point on four."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/65-downtown_640x360.webp"
-			mdImg="src/images/{url}/65-downtown_960x540.webp"
-			lgImg="src/images/{url}/65-downtown_1280x720.webp"
-			title="Betting $65 Downtown"
-			alt="$65 downtown with the point on ten."
-		/>
+		>
+			<p class="pb-4">
+				When you bet Downtown or Uptown at higher limits you will have to include the commission
+				charged on either the 4 or 10. If you bet the same number of units Uptown or Downtown the
+				cost of the bets will always be the same.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/65-uptown_640x360.webp"
+				mdImg="src/images/{url}/65-uptown_960x540.webp"
+				lgImg="src/images/{url}/65-uptown_1280x720.webp"
+				title="Betting $65 Uptown"
+				alt="$65 uptown with the point on four."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/65-downtown_640x360.webp"
+				mdImg="src/images/{url}/65-downtown_960x540.webp"
+				lgImg="src/images/{url}/65-downtown_1280x720.webp"
+				title="Betting $65 Downtown"
+				alt="$65 downtown with the point on ten."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>
