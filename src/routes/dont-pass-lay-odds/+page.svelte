@@ -124,23 +124,24 @@
 			sectionTitle="The Don't Side"
 			title="Betting Don't Pass Lay Odds in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			Just like the Pass Line, after the Point has been established, you are allowed to make an Odds
-			bet but there is a big difference between the two. On the Pass Line you <Quote
-				text="Take Odds"
-			/>, where they win more. On the Don't Pass you <Quote text="Lay Odds" /> and bet more to win less
-			because you're more likely to win.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dont-pass-lay-odds_640x360.webp"
-			mdImg="src/images/{url}/dont-pass-lay-odds_960x540.webp"
-			lgImg="src/images/{url}/dont-pass-lay-odds_1280x720.webp"
-			title="Don't Pass Lay Odds"
-			alt="$10 on the Don't Pass with $24 Lay Odds."
-		/>
+		>
+			<p class="pb-4">
+				Just like the Pass Line, after the Point has been established, you are allowed to make an
+				Odds bet but there is a big difference between the two. On the Pass Line you <Quote
+					text="Take Odds"
+				/>, where they win more. On the Don't Pass you <Quote text="Lay Odds" /> and bet more to win
+				less because you're more likely to win.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/dont-pass-lay-odds_640x360.webp"
+				mdImg="src/images/{url}/dont-pass-lay-odds_960x540.webp"
+				lgImg="src/images/{url}/dont-pass-lay-odds_1280x720.webp"
+				title="Don't Pass Lay Odds"
+				alt="$10 on the Don't Pass with $24 Lay Odds."
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -148,103 +149,109 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="bettingLayOdds" title="How Do You Bet Don't Pass Lay Odds in Craps?" />
-		<p class="pb-4">
-			Lay Odds on the Don't Pass go right next to your <Link text="Don't Pass" href="dont-pass" /> bet
-			on the side that's closest to the <Link text="base dealer" href="the-crew" />. They aren't
-			stacked straight up like <Link text="Odds on the Pass line" href="pass-line-odds" />. They are
-			heeled off which make it look like they are at an angle and you should heel them off in the
-			direction towards the base dealer.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_640x360.webp"
-			mdImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_960x540.webp"
-			lgImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_1280x720.webp"
-			title="How to Bet Don't Pass Lay Odds"
-			alt="Several Don't Pass Bets with Lay Odds Heeled in the direction of the base dealer."
-		/>
+		<ContentHeaderTwo id="bettingLayOdds" title="How Do You Bet Don't Pass Lay Odds in Craps?">
+			<p class="pb-4">
+				Lay Odds on the Don't Pass go right next to your <Link text="Don't Pass" href="dont-pass" />
+				bet on the side that's closest to the <Link text="base dealer" href="the-crew" />. They
+				aren't stacked straight up like <Link text="Odds on the Pass line" href="pass-line-odds" />.
+				They are heeled off which make it look like they are at an angle and you should heel them
+				off in the direction towards the base dealer.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_640x360.webp"
+				mdImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_960x540.webp"
+				lgImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_1280x720.webp"
+				title="How to Bet Don't Pass Lay Odds"
+				alt="Several Don't Pass Bets with Lay Odds Heeled in the direction of the base dealer."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="layOddsPayment" title="What Do Lay Odds on the Don't Pass Pay?" />
-		<p class="pb-4">
-			Lay Odds on the Don't Pass pay differently depending on what the Point is. The Point also
-			determines the dollar amount you should be Laying for that Point. You Lay the 6 and 8 in
-			multiples of 6, the 5 and 9 in multiples of 3, and the 4 and 10 in multiples of 2. These
-			multiples were created based on the number of ways the bet can lose compared to the number of
-			way they can win.
-		</p>
-		<ContentHeaderThree title="Pays 5:6 on the 6 and 8" />
-		<p class="pb-4">
-			There are 5 ways to lose and 6 ways to win when the Point is 6 or 8. It's written 5:6 and read
-			<Quote text="5 to 6" /> or you win <Quote text="$5 for every $6" />. This means that you can
-			only make the Lay Odds bet in multiples of six.
-		</p>
-		<ContentImg
-			caption="$6 Lay Odds"
-			smImg="src/images/{url}/lay-odds-6-8-a_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-6-8-a_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-6-8-a_1280x720.webp"
-			title="$6 Don't Pass Lay Odds Payment 6 & 8"
-			alt="$5 Don't Pass with a $5 payment. Next to it are $6 Lay Odds with $5 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$18 Lay Odds"
-			smImg="src/images/{url}/lay-odds-6-8-b_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-6-8-b_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-6-8-b_1280x720.webp"
-			title="$18 Don't Pass Lay Odds Payment 6 & 8"
-			alt="$10 Don't Pass with a $10 payment. Next to it are $18 Lay Odds with $15 payment."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Pays 2:3 on the 5 and 9" />
-		<p class="pb-4">
-			There are 4 ways to win and 6 ways to lose on the 5 and 9 which is written 4:6 and then
-			reduced to 2:3. You read it as <Quote text="2 to 3" /> or you win <Quote
-				text="$2 for every $3"
-			/>. Lay Odds on the 5 and 9 must be made in multiples of 3.
-		</p>
-		<ContentImg
-			caption="$3 Lay Odds"
-			smImg="src/images/{url}/lay-odds-5-9-a_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-5-9-a_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-5-9-a_1280x720.webp"
-			title="$3 Don't Pass Lay Odds Payment 5 & 9"
-			alt="$5 on the Don't Pass with a $5 payment. Next to it are $3 Lay Odds with $2 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$90 Lay Odds"
-			smImg="src/images/{url}/lay-odds-5-9-b_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-5-9-b_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-5-9-b_1280x720.webp"
-			title="$90 Don't Pass Lay Odds Payment 5 & 9"
-			alt="$25 on the Don't Pass with a $25 payment. Next to it are $90 Lay Odds with $75 payment."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Pays 1:2 on the 4 and 10" />
-		<p class="pb-4">
-			There are 3 ways to lose and 6 ways to win on the 4 and 10 which is written 3:6 then reduced
-			to 1:2. It's spoken as <Quote text="1 to 2" /> and when you think about getting paid for your Lay
-			Odds, its <Quote text="$1 for every $2" />.
-		</p>
-		<ContentImg
-			caption="$2 Lay Odds"
-			smImg="src/images/{url}/lay-odds-4-10-a_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-4-10-a_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-4-10-a_1280x720.webp"
-			title="$2 Don't Pass Lay Odds Payment 4 & 10"
-			alt="$5 on the Don't Pass with a $5 payment. Next to it are $2 Lay Odds with $1 payment."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="$80 Lay Odds"
-			smImg="src/images/{url}/lay-odds-4-10-b_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-4-10-b_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-4-10-b_1280x720.webp"
-			title="$80 Don't Pass Lay Odds Payment 4 & 10"
-			alt="$20 on the Don't Pass with a $20 payment. Next to it are $80 Lay odds with $40 payment."
-		/>
+		<ContentHeaderTwo id="layOddsPayment" title="What Do Lay Odds on the Don't Pass Pay?">
+			<p class="pb-4">
+				Lay Odds on the Don't Pass pay differently depending on what the Point is. The Point also
+				determines the dollar amount you should be Laying for that Point. You Lay the 6 and 8 in
+				multiples of 6, the 5 and 9 in multiples of 3, and the 4 and 10 in multiples of 2. These
+				multiples were created based on the number of ways the bet can lose compared to the number
+				of way they can win.
+			</p>
+			<ContentHeaderThree title="Pays 5:6 on the 6 and 8">
+				<p class="pb-4">
+					There are 5 ways to lose and 6 ways to win when the Point is 6 or 8. It's written 5:6 and
+					read
+					<Quote text="5 to 6" /> or you win <Quote text="$5 for every $6" />. This means that you
+					can only make the Lay Odds bet in multiples of six.
+				</p>
+				<ContentImg
+					caption="$6 Lay Odds"
+					smImg="src/images/{url}/lay-odds-6-8-a_640x360.webp"
+					mdImg="src/images/{url}/lay-odds-6-8-a_960x540.webp"
+					lgImg="src/images/{url}/lay-odds-6-8-a_1280x720.webp"
+					title="$6 Don't Pass Lay Odds Payment 6 & 8"
+					alt="$5 Don't Pass with a $5 payment. Next to it are $6 Lay Odds with $5 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$18 Lay Odds"
+					smImg="src/images/{url}/lay-odds-6-8-b_640x360.webp"
+					mdImg="src/images/{url}/lay-odds-6-8-b_960x540.webp"
+					lgImg="src/images/{url}/lay-odds-6-8-b_1280x720.webp"
+					title="$18 Don't Pass Lay Odds Payment 6 & 8"
+					alt="$10 Don't Pass with a $10 payment. Next to it are $18 Lay Odds with $15 payment."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Pays 2:3 on the 5 and 9">
+				<p class="pb-4">
+					There are 4 ways to win and 6 ways to lose on the 5 and 9 which is written 4:6 and then
+					reduced to 2:3. You read it as <Quote text="2 to 3" /> or you win <Quote
+						text="$2 for every $3"
+					/>. Lay Odds on the 5 and 9 must be made in multiples of 3.
+				</p>
+				<ContentImg
+					caption="$3 Lay Odds"
+					smImg="src/images/{url}/lay-odds-5-9-a_640x360.webp"
+					mdImg="src/images/{url}/lay-odds-5-9-a_960x540.webp"
+					lgImg="src/images/{url}/lay-odds-5-9-a_1280x720.webp"
+					title="$3 Don't Pass Lay Odds Payment 5 & 9"
+					alt="$5 on the Don't Pass with a $5 payment. Next to it are $3 Lay Odds with $2 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$90 Lay Odds"
+					smImg="src/images/{url}/lay-odds-5-9-b_640x360.webp"
+					mdImg="src/images/{url}/lay-odds-5-9-b_960x540.webp"
+					lgImg="src/images/{url}/lay-odds-5-9-b_1280x720.webp"
+					title="$90 Don't Pass Lay Odds Payment 5 & 9"
+					alt="$25 on the Don't Pass with a $25 payment. Next to it are $90 Lay Odds with $75 payment."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Pays 1:2 on the 4 and 10">
+				<p class="pb-4">
+					There are 3 ways to lose and 6 ways to win on the 4 and 10 which is written 3:6 then
+					reduced to 1:2. It's spoken as <Quote text="1 to 2" /> and when you think about getting paid
+					for your Lay Odds, its <Quote text="$1 for every $2" />.
+				</p>
+				<ContentImg
+					caption="$2 Lay Odds"
+					smImg="src/images/{url}/lay-odds-4-10-a_640x360.webp"
+					mdImg="src/images/{url}/lay-odds-4-10-a_960x540.webp"
+					lgImg="src/images/{url}/lay-odds-4-10-a_1280x720.webp"
+					title="$2 Don't Pass Lay Odds Payment 4 & 10"
+					alt="$5 on the Don't Pass with a $5 payment. Next to it are $2 Lay Odds with $1 payment."
+				/>
+				<div class="pb-4" />
+				<ContentImg
+					caption="$80 Lay Odds"
+					smImg="src/images/{url}/lay-odds-4-10-b_640x360.webp"
+					mdImg="src/images/{url}/lay-odds-4-10-b_960x540.webp"
+					lgImg="src/images/{url}/lay-odds-4-10-b_1280x720.webp"
+					title="$80 Don't Pass Lay Odds Payment 4 & 10"
+					alt="$20 on the Don't Pass with a $20 payment. Next to it are $80 Lay odds with $40 payment."
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Don't pass lay odds payment calculators" id="dontPassLayOddsCalcs"
 			><CalcBox
@@ -278,20 +285,21 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo id="maxLayOdds" title="What Are Max Lay Odds on the Don't Pass?" />
-		<p class="pb-4">
-			No matter what Point you are Laying Odds on, the maximum allowed is always going to be 6 times
-			the Don't Pass bet. The casino has no advantage with this bet so there must be a limit and
-			it's a flat rate across all the numbers.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/max-lay-odds-on-the-dont-pass_640x360.webp"
-			mdImg="src/images/{url}/max-lay-odds-on-the-dont-pass_960x540.webp"
-			lgImg="src/images/{url}/max-lay-odds-on-the-dont-pass_1280x720.webp"
-			title="Max Lay odds on the Don't Pass"
-			alt="$10 on the Don't Pass with $60 Lay Odds."
-		/>
+		<ContentHeaderTwo id="maxLayOdds" title="What Are Max Lay Odds on the Don't Pass?">
+			<p class="pb-4">
+				No matter what Point you are Laying Odds on, the maximum allowed is always going to be 6
+				times the Don't Pass bet. The casino has no advantage with this bet so there must be a limit
+				and it's a flat rate across all the numbers.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/max-lay-odds-on-the-dont-pass_640x360.webp"
+				mdImg="src/images/{url}/max-lay-odds-on-the-dont-pass_960x540.webp"
+				lgImg="src/images/{url}/max-lay-odds-on-the-dont-pass_1280x720.webp"
+				title="Max Lay odds on the Don't Pass"
+				alt="$10 on the Don't Pass with $60 Lay Odds."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Don't pass lay odds payment calculator" id="maxDontPassLayOdds"
 			><CalcBox
@@ -312,19 +320,20 @@
 		<ContentHeaderTwo
 			id="dealerLayOdds"
 			title="How Do You Bet Don't Pass Lay Odds for the Dealers?"
-		/>
-		<p class="pb-4">
-			You can add Lay Odds to a dealers Don't Pass bet in the same way you add Lay Odds to your own
-			Don't Pass bet.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/lay-odds-for-the-dealers_640x360.webp"
-			mdImg="src/images/{url}/lay-odds-for-the-dealers_960x540.webp"
-			lgImg="src/images/{url}/lay-odds-for-the-dealers_1280x720.webp"
-			title="Dealer Lay Odds"
-			alt="$1 with $6 Lay Odds on the Don't Pass"
-		/>
+		>
+			<p class="pb-4">
+				You can add Lay Odds to a dealers Don't Pass bet in the same way you add Lay Odds to your
+				own Don't Pass bet.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/lay-odds-for-the-dealers_640x360.webp"
+				mdImg="src/images/{url}/lay-odds-for-the-dealers_960x540.webp"
+				lgImg="src/images/{url}/lay-odds-for-the-dealers_1280x720.webp"
+				title="Dealer Lay Odds"
+				alt="$1 with $6 Lay Odds on the Don't Pass"
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

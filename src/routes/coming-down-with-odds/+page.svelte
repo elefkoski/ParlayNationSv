@@ -77,14 +77,15 @@
 <LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Come Bets" title="Coming Down w/Odds In Craps" {pageData} />
-		<p class="pb-4">
-			If you're playing both Come bets and Place bets, you will have times when the Come bet will
-			move into the number that your Place bet is on. Since betting both would be redundant and Odds
-			pay better than Place bets, you're going to want to take down the Place bet and use it as Odds
-			for the Come bet. The act of using your Place bet and/or its' payment as Odds is called
-			'Coming Down with Odds'.
-		</p>
+		<ContentHeaderOne sectionTitle="Come Bets" title="Coming Down w/Odds In Craps" {pageData}>
+			<p class="pb-4">
+				If you're playing both Come bets and Place bets, you will have times when the Come bet will
+				move into the number that your Place bet is on. Since betting both would be redundant and
+				Odds pay better than Place bets, you're going to want to take down the Place bet and use it
+				as Odds for the Come bet. The act of using your Place bet and/or its' payment as Odds is
+				called 'Coming Down with Odds'.
+			</p>
+		</ContentHeaderOne>
 		<Divider />
 		<div class="lg:hidden">
 			<Divider />
@@ -92,57 +93,60 @@
 				<ContentMenuBox {pageLinks} />
 			</div>
 		</div>
-		<ContentHeaderTwo id="partOne" title="Part 1: The Setup" />
-		<p class="pb-4">
-			It takes both a <Link text="Place Bet" href="place-bet-basics" /> and a <Link
-				text="Come Bet"
-				href="come-bet-basics"
-			/> in order to Come Down w/Odds. If you're playing both Come bets and Place bets then you should
-			expect to be Coming Down w/Odds and you should be thinking about how many Odds you'll be coming
-			down with.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/the-setup_640x360.webp"
-			mdImg="src/images/{url}/the-setup_960x540.webp"
-			lgImg="src/images/{url}/the-setup_1280x720.webp"
-			title="Coming Down w/Odds - The Setup"
-			alt="$10 in the come and a $12 place bet on the point eight."
-		/>
+		<ContentHeaderTwo id="partOne" title="Part 1: The Setup">
+			<p class="pb-4">
+				It takes both a <Link text="Place Bet" href="place-bet-basics" /> and a <Link
+					text="Come Bet"
+					href="come-bet-basics"
+				/> in order to Come Down w/Odds. If you're playing both Come bets and Place bets then you should
+				expect to be Coming Down w/Odds and you should be thinking about how many Odds you'll be coming
+				down with.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/the-setup_640x360.webp"
+				mdImg="src/images/{url}/the-setup_960x540.webp"
+				lgImg="src/images/{url}/the-setup_1280x720.webp"
+				title="Coming Down w/Odds - The Setup"
+				alt="$10 in the come and a $12 place bet on the point eight."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="partTwo" title="Part 2: Come Bet Moves and Place Bet Paid" />
-		<p class="pb-4">
-			If a Point rolls that doesn't have a Place bet on it then nothing matters. The process starts
-			when the Point that the Place bet is on rolls. The Come bet moves behind the Place bet then
-			the dealer pays the Place bet.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/point-rolled-place-paid_640x360.webp"
-			mdImg="src/images/{url}/point-rolled-place-paid_960x540.webp"
-			lgImg="src/images/{url}/point-rolled-place-paid_1280x720.webp"
-			title="Coming Down w/Odds - Point Rolled and Place Paid"
-			alt="$14 cut out in come. $10 moved behind the $12 place bet. Two orange dice show 5-3."
-		/>
+		<ContentHeaderTwo id="partTwo" title="Part 2: Come Bet Moves and Place Bet Paid">
+			<p class="pb-4">
+				If a Point rolls that doesn't have a Place bet on it then nothing matters. The process
+				starts when the Point that the Place bet is on rolls. The Come bet moves behind the Place
+				bet then the dealer pays the Place bet.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/point-rolled-place-paid_640x360.webp"
+				mdImg="src/images/{url}/point-rolled-place-paid_960x540.webp"
+				lgImg="src/images/{url}/point-rolled-place-paid_1280x720.webp"
+				title="Coming Down w/Odds - Point Rolled and Place Paid"
+				alt="$14 cut out in come. $10 moved behind the $12 place bet. Two orange dice show 5-3."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="partThree"
 			title="Part 3: Odds Are Added to the Come Bet and the Rest Is Handed Off"
-		/>
-		<p class="pb-4">
-			The dealer keeps as much money as they need for Odds and hands off the remainder. Tell the
-			dealer how many Odds you would like. If you don't tell the dealer anything they might give you
-			a Come bet with no Odds and leave your Place bet where it is when you should of taken you're
-			Place bet down and added Odds because they have no house advantage.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/odds-added-rest-handed-off_640x360.webp"
-			mdImg="src/images/{url}/odds-added-rest-handed-off_960x540.webp"
-			lgImg="src/images/{url}/odds-added-rest-handed-off_1280x720.webp"
-			title="Coming Down w/Odds - Odds Added and Rest Handed Off"
-			alt="Three way split image. Left shows $12 place bet and $14 payment. Top shows $10 come bet with $20 odds. Bottom shows $6 handed off to player."
-		/>
+		>
+			<p class="pb-4">
+				The dealer keeps as much money as they need for Odds and hands off the remainder. Tell the
+				dealer how many Odds you would like. If you don't tell the dealer anything they might give
+				you a Come bet with no Odds and leave your Place bet where it is when you should of taken
+				you're Place bet down and added Odds because they have no house advantage.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/odds-added-rest-handed-off_640x360.webp"
+				mdImg="src/images/{url}/odds-added-rest-handed-off_960x540.webp"
+				lgImg="src/images/{url}/odds-added-rest-handed-off_1280x720.webp"
+				title="Coming Down w/Odds - Odds Added and Rest Handed Off"
+				alt="Three way split image. Left shows $12 place bet and $14 payment. Top shows $10 come bet with $20 odds. Bottom shows $6 handed off to player."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>

@@ -110,24 +110,27 @@
 			sectionTitle="The Don't Side"
 			title="Betting the Don't Pass in Craps"
 			{pageData}
-		/>
-		<p class="pb-4">
-			For the most part, the Don't Pass is the complete opposite of the <Link
-				text="Pass Line"
-				href="pass-line-basics"
-			/>. Where the Pass Line wins, the Don't Pass loses and vice versa. You can only bet the Don't
-			Pass during the Comeout Roll because after the <Link text="Comeout Roll" href="the-stages" /> the
-			Don't Pass is most likely to win and the casinos would never give you that advantage.
-		</p>
-		<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dont-pass_640x360.webp"
-			mdImg="src/images/{url}/dont-pass_960x540.webp"
-			lgImg="src/images/{url}/dont-pass_1280x720.webp"
-			title=""
-			alt=""
-		/>
+		>
+			<p class="pb-4">
+				For the most part, the Don't Pass is the complete opposite of the <Link
+					text="Pass Line"
+					href="pass-line-basics"
+				/>. Where the Pass Line wins, the Don't Pass loses and vice versa. You can only bet the
+				Don't Pass during the Comeout Roll because after the <Link
+					text="Comeout Roll"
+					href="the-stages"
+				/> the Don't Pass is most likely to win and the casinos would never give you that advantage.
+			</p>
+			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/dont-pass_640x360.webp"
+				mdImg="src/images/{url}/dont-pass_960x540.webp"
+				lgImg="src/images/{url}/dont-pass_1280x720.webp"
+				title=""
+				alt=""
+			/>
+		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
 			<div class="m-auto md:max-w-md">
@@ -135,78 +138,83 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="bettingDontPass" title="How Do You Bet the Don't Pass in Craps?" />
-		<p class="pb-4">
-			When you bet the Don't Pass all you have to do is put the money right in front of you relative
-			to your spot in the rail.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/how-to-bet-the-dont-pass_640x360.webp"
-			mdImg="src/images/{url}/how-to-bet-the-dont-pass_960x540.webp"
-			lgImg="src/images/{url}/how-to-bet-the-dont-pass_1280x720.webp"
-			title="How to Bet the Don't Pass"
-			alt="Up close view of the Don't Pass bar with bets and the craps table rail. The Don't Pass bets have lines pointing to spots in the rail."
-		/>
+		<ContentHeaderTwo id="bettingDontPass" title="How Do You Bet the Don't Pass in Craps?">
+			<p class="pb-4">
+				When you bet the Don't Pass all you have to do is put the money right in front of you
+				relative to your spot in the rail.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/how-to-bet-the-dont-pass_640x360.webp"
+				mdImg="src/images/{url}/how-to-bet-the-dont-pass_960x540.webp"
+				lgImg="src/images/{url}/how-to-bet-the-dont-pass_1280x720.webp"
+				title="How to Bet the Don't Pass"
+				alt="Up close view of the Don't Pass bar with bets and the craps table rail. The Don't Pass bets have lines pointing to spots in the rail."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="dontStages"
 			title="What Are the Two Stages of the Don't Pass in a Craps Game?"
-		/>
-		<ContentHeaderThree title="Stage 1 - The Comeout Roll" />
-		<p class="pb-4">
-			Stage one is the Comeout Roll, before the Point is established. During the Comeout Roll the
-			Don't Pass Line wins when 2 or 3 are rolled. It loses if a 7 or Eleven are rolled, and if the
-			12 rolls it's a push, it doesn't win or lose. The Comeout Roll is where the casino makes its
-			money on the Don't Pass because once a Point is established the Don't Pass has advantage over
-			the house.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dont-pass-stage-one_640x360.webp"
-			mdImg="src/images/{url}/dont-pass-stage-one_960x540.webp"
-			lgImg="src/images/{url}/dont-pass-stage-one_1280x720.webp"
-			title="Don't Pass - Stage One"
-			alt="$25 on the Don't Pass. The Puck is OFF."
-		/>
-		<div class="pb-4" />
-		<ContentHeaderThree title="Stage 2 - Intermediate Roll" />
-		<p class="pb-4">
-			The second stage is the <Link text="Intermediate Roll" href="the-stages" />, after the Point
-			is established. During the Intermediate Roll the Don't Pass is betting that the 7 will roll
-			before the Point is rolled. If the 7 rolls before the Point the Don't Pass wins. If the Point
-			rolls before the 7 the Don't Pass loses.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dont-pass-stage-two_640x360.webp"
-			mdImg="src/images/{url}/dont-pass-stage-two_960x540.webp"
-			lgImg="src/images/{url}/dont-pass-stage-two_1280x720.webp"
-			title="Don't Pass - Stage Two"
-			alt="$25 on the Don't Pass. The Puck in On the ten."
-		/>
+		>
+			<ContentHeaderThree title="Stage 1 - The Comeout Roll">
+				<p class="pb-4">
+					Stage one is the Comeout Roll, before the Point is established. During the Comeout Roll
+					the Don't Pass Line wins when 2 or 3 are rolled. It loses if a 7 or Eleven are rolled, and
+					if the 12 rolls it's a push, it doesn't win or lose. The Comeout Roll is where the casino
+					makes its money on the Don't Pass because once a Point is established the Don't Pass has
+					advantage over the house.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/dont-pass-stage-one_640x360.webp"
+					mdImg="src/images/{url}/dont-pass-stage-one_960x540.webp"
+					lgImg="src/images/{url}/dont-pass-stage-one_1280x720.webp"
+					title="Don't Pass - Stage One"
+					alt="$25 on the Don't Pass. The Puck is OFF."
+				/>
+			</ContentHeaderThree>
+			<div class="pb-4" />
+			<ContentHeaderThree title="Stage 2 - Intermediate Roll">
+				<p class="pb-4">
+					The second stage is the <Link text="Intermediate Roll" href="the-stages" />, after the
+					Point is established. During the Intermediate Roll the Don't Pass is betting that the 7
+					will roll before the Point is rolled. If the 7 rolls before the Point the Don't Pass wins.
+					If the Point rolls before the 7 the Don't Pass loses.
+				</p>
+				<ContentImg
+					caption=""
+					smImg="src/images/{url}/dont-pass-stage-two_640x360.webp"
+					mdImg="src/images/{url}/dont-pass-stage-two_960x540.webp"
+					lgImg="src/images/{url}/dont-pass-stage-two_1280x720.webp"
+					title="Don't Pass - Stage Two"
+					alt="$25 on the Don't Pass. The Puck in On the ten."
+				/>
+			</ContentHeaderThree>
+		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="dontPayment" title="What Does the Don't Pass Pay in Craps?" />
-		<p class="pb-4">
-			Regardless of where you are in the game, the Don't Pass will always win even money.
-		</p>
-		<ContentImg
-			caption="Comeout Roll"
-			smImg="src/images/{url}/dont-pass-wins-even-money-b_640x360.webp"
-			mdImg="src/images/{url}/dont-pass-wins-even-money-b_960x540.webp"
-			lgImg="src/images/{url}/dont-pass-wins-even-money-b_1280x720.webp"
-			title="Don't Pass Wins Even Money During Comeout Roll"
-			alt="$20 with $20 payment on the Don't Pass. The Puck is Off. Two purple dice show 1-1 and another pair show 1-2."
-		/>
-		<div class="pb-4" />
-		<ContentImg
-			caption="Seven Out"
-			smImg="src/images/{url}/dont-pass-wins-even-money-a_640x360.webp"
-			mdImg="src/images/{url}/dont-pass-wins-even-money-a_960x540.webp"
-			lgImg="src/images/{url}/dont-pass-wins-even-money-a_1280x720.webp"
-			title="Dont' Pass Wins Even Money On Seven Out"
-			alt="$25 with $25 payment on the Don't Pass. The Puck is on point ten. Two purple dice show 2-5."
-		/>
+		<ContentHeaderTwo id="dontPayment" title="What Does the Don't Pass Pay in Craps?">
+			<p class="pb-4">
+				Regardless of where you are in the game, the Don't Pass will always win even money.
+			</p>
+			<ContentImg
+				caption="Comeout Roll"
+				smImg="src/images/{url}/dont-pass-wins-even-money-b_640x360.webp"
+				mdImg="src/images/{url}/dont-pass-wins-even-money-b_960x540.webp"
+				lgImg="src/images/{url}/dont-pass-wins-even-money-b_1280x720.webp"
+				title="Don't Pass Wins Even Money During Comeout Roll"
+				alt="$20 with $20 payment on the Don't Pass. The Puck is Off. Two purple dice show 1-1 and another pair show 1-2."
+			/>
+			<div class="pb-4" />
+			<ContentImg
+				caption="Seven Out"
+				smImg="src/images/{url}/dont-pass-wins-even-money-a_640x360.webp"
+				mdImg="src/images/{url}/dont-pass-wins-even-money-a_960x540.webp"
+				lgImg="src/images/{url}/dont-pass-wins-even-money-a_1280x720.webp"
+				title="Dont' Pass Wins Even Money On Seven Out"
+				alt="$25 with $25 payment on the Don't Pass. The Puck is on point ten. Two purple dice show 2-5."
+			/>
+		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Don't pass payment calculator" id="dontPassCalc"
 			><CalcBox
@@ -224,19 +232,20 @@
 			</CalcBox></CalcContainer
 		>
 		<Divider />
-		<ContentHeaderTwo id="dealerDontPass" title="How Do You Bet the Don't Pass for the Dealers?" />
-		<p class="pb-4">
-			You can make a Don't Pass bet for the dealers in any amount. Like players, it must be done
-			during the Comeout Roll and you can put it right next to your bet.
-		</p>
-		<ContentImg
-			caption=""
-			smImg="src/images/{url}/dealer-dont-pass_640x360.webp"
-			mdImg="src/images/{url}/dealer-dont-pass_960x540.webp"
-			lgImg="src/images/{url}/dealer-dont-pass_1280x720.webp"
-			title="Dealer Don't Pass"
-			alt="$1 next to $5 on the Don't Pass."
-		/>
+		<ContentHeaderTwo id="dealerDontPass" title="How Do You Bet the Don't Pass for the Dealers?">
+			<p class="pb-4">
+				You can make a Don't Pass bet for the dealers in any amount. Like players, it must be done
+				during the Comeout Roll and you can put it right next to your bet.
+			</p>
+			<ContentImg
+				caption=""
+				smImg="src/images/{url}/dealer-dont-pass_640x360.webp"
+				mdImg="src/images/{url}/dealer-dont-pass_960x540.webp"
+				lgImg="src/images/{url}/dealer-dont-pass_1280x720.webp"
+				title="Dealer Don't Pass"
+				alt="$1 next to $5 on the Don't Pass."
+			/>
+		</ContentHeaderTwo>
 	</main>
 	<PrevNext2 {phref} {prev} {nhref} {next} />
 </LearnLayout>
