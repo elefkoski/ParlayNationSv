@@ -86,17 +86,116 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the World",
-		  "description": "The World is a Horn with extra on the Any 7. You must make this bet in increments of five and is a one-roll bet. When 7 rolls the bet is a push.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting The World in Craps",
+  "description": "An exploration of the World bet in craps, including how to make the bet, its placement on the table, payout details, and tips for betting the World for dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-12",
+  "url": "http://parlaynation.com/world",
+  "image": "http://parlaynation.com/images/world/world-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/world"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Proposition Bets",
+      "description": "Details on the World bet in craps, a combination of a Horn and Any 7 bet, its strategic placement, and its unique payout structure.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Is a $5 World in Craps?",
+          "description": "Describes the composition of a $5 World bet and its requirement to be bet in increments of five."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Where Is Your World on the Craps Table?",
+          "description": "Explains the typical absence of a World image on craps tables and how the bet is recognized by dealers and players."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Does a $5 World Pay on the Craps Table?",
+          "description": "Outlines the various payouts for the World bet based on the rolled number, including scenarios for when the 7, high side, or low side rolls."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "How Do You Bet the World for the Dealers?",
+          "description": "Advises on the preferred multiples of $5 when placing World bets for the dealers to avoid complications."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/world_640x360.webp",
+      "caption": "Up close overhead view of the world on the craps layout."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/5-world_640x360.webp",
+      "caption": "Split image showing $5 on the world and $1 each on the aces, ace deuce, yo, twelve, and the any seven."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/placement-of-world-a_640x360.webp",
+      "caption": "Overhead view of a blown up picture of a world and the craps table rail with eight colored spots on each that correspond with each other."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/placement-of-a-world-b_640x360.webp",
+      "caption": "Overhead view of the center bar above the any seven on the craps table and the craps table rail with eight colored spots on each that correspond."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/5-world-7-rolls_640x360.webp",
+      "caption": "$1 on each the aces, ace deuce, yo, twelve, and the any seven with two green dice showing 1-6 and a bubble reading push."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/5-world-ace-deuce-hits_640x360.webp",
+      "caption": "$1 on each the aces, ace deuce, yo, twelve, and the any seven with two green dice showing 1-2 and a bubble reading $11 payment."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/5-world-yo-hits_640x360.webp",
+      "caption": "$1 on each the aces, ace deuce, yo, twelve, and the any seven with two green dice showing 5-6 and a bubble reading $11 payment."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/5-world-aces-hit_640x360.webp",
+      "caption": "$1 on each the aces, ace deuce, yo, twelve, and the any seven with two green dice showing 1-1 and a bubble reading $26 payment."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/5-world-twelve-hits_640x360.webp",
+      "caption": "$1 on each the aces, ace deuce, yo, twelve, and the any seven with two green dice showing 6-6 and a bubble reading $26 payment."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/world/dealer-world_640x360.webp",
+      "caption": "Split image showing $1 in the middle of the proposition bar and $1 in the middle of the world for the dealer."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

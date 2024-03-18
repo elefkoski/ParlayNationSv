@@ -439,7 +439,7 @@
 					excessively. Taking an excessive amount of time can slow down the game and <Link
 						text="irritate other
 					players"
-						href="not-to-do-at-craps"
+						href="not-to-do-at-craps-table"
 					/>. Find a balance between your preferred setup and maintaining a steady flow.
 				</li>
 				<li>

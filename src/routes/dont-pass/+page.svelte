@@ -89,17 +89,91 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Don't Pass",
-		  "description": "The Don't Pass is the opposite of the Pass Line. When the Don't Pass wins the Pass Line loses and vice versa.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Don't Pass in Craps",
+  "description": "Exploration of the Don't Pass bet in craps, detailing its comparison to the Pass Line, the process of placing a bet, the two stages of betting, payout information, and dealer bets.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/dont-pass",
+  "image": "http://parlaynation.com/images/dont-pass/dont-pass-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/dont-pass"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Don't Pass Bet Insights",
+      "description": "Comprehensive guidance on the Don't Pass bet, including how to place the bet, the stages of betting, the payouts, and tips for betting on behalf of the dealers.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Placing the Don't Pass Bet",
+          "description": "Instructions on how to place a Don't Pass bet on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Stages of the Don't Pass Bet",
+          "description": "Explanation of the Comeout Roll and Intermediate Roll stages of the Don't Pass bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Don't Pass Bet Payouts",
+          "description": "Information on the payout structure of the Don't Pass bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Betting the Don't Pass for Dealers",
+          "description": "How to place a Don't Pass bet for the table's dealers."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass/dont-pass_640x360.webp",
+      "caption": "Overview of the Don't Pass betting area on a craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass/how-to-bet-the-dont-pass_640x360.webp",
+      "caption": "Guide on placing Don't Pass bets."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass/dont-pass-stage-one_640x360.webp",
+      "caption": "Don't Pass bet during the Comeout Roll stage."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass/dont-pass-stage-two_640x360.webp",
+      "caption": "Don't Pass bet during the Intermediate Roll stage."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass/dealer-dont-pass_640x360.webp",
+      "caption": "Don't Pass bet placed for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

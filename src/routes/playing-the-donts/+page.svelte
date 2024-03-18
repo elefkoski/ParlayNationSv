@@ -290,8 +290,8 @@
 			</p>
 			<p>
 				Oddly enough, going wild with celebrations and staying quiet can elicit the same response –
-				<Link text="sneers and heckles" href="not-to-do-at-craps" /> from the table. Therefore, most
-				Don’t players stay modest in their celebrations or are happy on the inside while also rooting
+				<Link text="sneers and heckles" href="not-to-do-at-craps-table" /> from the table. Therefore,
+				most Don’t players stay modest in their celebrations or are happy on the inside while also rooting
 				for the other players when they decide to sit out a roll; garnering some goodwill.
 			</p>
 		</BlogH2>

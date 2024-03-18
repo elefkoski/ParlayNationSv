@@ -1,7 +1,11 @@
-<script>
-	// @ts-nocheck
+<script lang="ts">
+	interface ListItem {
+		title?: string;
+		subTitle?: string[];
+		items?: string[];
+	}
 
-	export let liBs = [
+	export let liBs: ListItem[] = [
 		{
 			title: 'This is the intro to list 1',
 			subTitle: ['there is a title'],
@@ -21,19 +25,26 @@
 </script>
 
 <ul class="ml-4 flex flex-col space-y-2">
-	{#each liBs as section (section.title)}
+	{#each liBs as section, sectionIndex (section.title)}
 		<li class="rounded shadow-lg dark:shadow-none">
-			<h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">
-				{section.title}
-			</h4>
-			<ul class="list-disc list-inside space-y-1">
-				{#each section.items as item, index}
-					<li class="text-gray-700 dark:text-gray-300 ml-1">
-						<span class="font-bold uppercase">{section.subTitle[index]}</span>
-						{item}
-					</li>
-				{/each}
-			</ul>
+			{#if section.title}
+				<h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">
+					{section.title}
+				</h4>
+			{/if}
+			{#if section.items}
+				<ul class="list-disc list-inside space-y-1">
+					{#each section.items as item, index}
+						<li class="text-gray-700 dark:text-gray-300 ml-1">
+							<!-- Only display subtitle if it exists and the index is within range -->
+							{#if section.subTitle && section.subTitle.length > index}
+								<span class="font-bold uppercase">{section.subTitle[index]}</span>
+							{/if}
+							{item}
+						</li>
+					{/each}
+				</ul>
+			{/if}
 		</li>
 	{/each}
 </ul>

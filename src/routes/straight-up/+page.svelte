@@ -89,17 +89,87 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Straight Up Bets",
-		  "description": "There are four proposition bets you can bet Straight Up. Aces, Ace Deuce, Twelve, and Yo. They are one-roll bets but pay the most because they’re hard to hit.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Straight Up in Craps",
+  "description": "Dive into the world of Straight Up bets in craps, from how to place them, to their placement on the table, their lucrative payouts, and how to include the dealers in your betting strategy.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/straight-up",
+  "image": "http://parlaynation.com/images/straight-up/straight-up-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/straight-up"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Proposition Bets",
+      "description": "Exploring the high stakes of Straight Up betting in craps, including strategic betting for dealers and payout calculations.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet Straight Up on the Craps Table?",
+          "description": "Guidelines for placing Straight Up bets, utilizing the specific lingo associated with each bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Where Are Your Straight Up Bets on the Craps Table?",
+          "description": "Insight into the placement of Straight Up bets on the craps layout to ensure proper tracking during the game."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Do Your Straight Up Bets Pay in a Craps Game?",
+          "description": "Details on the payout rates for Straight Up bets, highlighting the high rewards of these wagers."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Straight Up Payment Calculators",
+          "description": "Introduction to tools designed to calculate the potential winnings from Straight Up bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "How Do You Bet Straight Up for the Dealers?",
+          "description": "Tips for including the dealers in your Straight Up betting strategy, enhancing the game's camaraderie."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/straight-up/straight-up-bets_640x360.webp",
+      "caption": "Up close overhead view of the straight up area on the craps table. The aces, ace deuce, yo, and twelve are highlighted."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/straight-up/placement-of-straight-up_640x360.webp",
+      "caption": "Up close overhead view of the straight up bets and the craps table rail. There are eight on the layout that correspond with the rail."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/straight-up/dealer-straight-up_640x360.webp",
+      "caption": "Up close overhead view of $1 in the middle of the yo."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

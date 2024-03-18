@@ -28,8 +28,8 @@
 
 	let phref: string = 'dont-come-lay-odds';
 	let prev: string = "Don't Come Lay Odds";
-	let nhref: string = 'practice-craps';
-	let next: string = 'Practice Craps';
+	let nhref: string = 'bridging-lay-odds';
+	let next: string = 'Bridging Lay Odds';
 
 	let pageLinks: PageMenu[] = [
 		{
@@ -96,17 +96,81 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Overlays",
-		  "description": "An Overlay is the opposite of a Buy bet. You bet the 7 will be rolled before a Point and pay a commission based on how much it wins.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Overlays in Craps",
+  "description": "An in-depth guide on Overlay bets in Craps, a direct bet against a Point, including details on making the bet, commission costs, and payout information.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/overlays",
+  "image": "http://parlaynation.com/images/overlays/overlays-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/overlays"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Overlays in Craps",
+      "description": "Comprehensive coverage on the mechanics of Overlay bets in Craps, including the concept, betting process, and the calculation of payouts.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "5% Commission on Overlay Winnings",
+          "description": "Explains the commission structure for Overlay bets, emphasizing the charge on winnings rather than the bet amount itself."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How to Bet an Overlay in Craps",
+          "description": "Detailed instructions on placing Overlay bets, including terms and the inclusion of commission fees."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Overlay Placement on the Craps Table",
+          "description": "Describes how and where Overlay bets are placed on the table relative to the chosen Point."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Overlay Payment Structure",
+          "description": "Breaks down the True Odds payment system for Overlays, including minimum win requirements and examples for the 6, 8, 5, 9, 4, and 10."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/overlays/overlays_640x360.webp",
+      "caption": "$60 Overlay behind the point nine."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/overlays/how-to-bet-an-overlay_640x360.webp",
+      "caption": "Overlay bets are set up behind each of the six points."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/overlays/placement-of-an-overlay_640x360.webp",
+      "caption": "Up close overhead view of the boxes behind the place bets and the craps table rail. There are 16 colored spots that correspond with each other."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

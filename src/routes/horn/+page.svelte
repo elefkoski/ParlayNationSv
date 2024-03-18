@@ -87,17 +87,86 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Horn",
-		  "description": "A Horn is an equal amount bet on each the Aces, Ace Deuce, Yo, and Twelve. You must bet it in increments of four dollars and is a one-roll bet.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Horn in Craps",
+  "description": "An in-depth guide to understanding the Horn bet in craps, a convenient proposition bet that covers four specific numbers. Learn how to place this bet, its payout structure, and tips for betting the Horn for the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/horn",
+  "image": "http://parlaynation.com/images/horn/horn-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/horn"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding the Horn Bet",
+      "description": "A comprehensive guide to the Horn bet in craps, including the basics of placing the bet, payout details, and how to bet the Horn for the dealers.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "$4 Horn Explanation",
+          "description": "Detailed explanation of a $4 Horn bet and its comparison to the C & E bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Horn Bet Placement",
+          "description": "Information on where Horn bets are placed on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Horn Bet Payouts",
+          "description": "A breakdown of Horn bet payouts for high and low side hits."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Betting the Horn for Dealers",
+          "description": "How to place a Horn bet for the table's dealers."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn/horn_640x360.webp",
+      "caption": "Up close overhead view of the horn bet on the craps layout."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn/4-horn_640x360.webp",
+      "caption": "An image split with $4 on the Horn on one side, and $1 each on the aces, ace deuce, yo, twelve on the other."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn/placement-of-a-horn_640x360.webp",
+      "caption": "Up close image of the horn bet and the craps rail. There are eight colored spots corresponding the horn and the rail."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn/betting-a-horn-for-the-dealers_640x360.webp",
+      "caption": "$4 sitting in the middle of the horn for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

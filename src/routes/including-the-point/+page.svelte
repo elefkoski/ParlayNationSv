@@ -63,17 +63,58 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Spread Bets - Betting Including the Point",
-		  "description": "When you bet Including the Point you are betting a spread bet that included the point. You can bet Across, Inside, Outside, Uptown, or Downtown Including the Point.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Including the Point at the Craps Table",
+  "description": "Learn how to include the point in your spread bets at the craps table, enhancing your betting strategy and understanding of how to bet across including the point.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/including-the-point",
+  "image": "http://parlaynation.com/images/including-the-point/including-the-point-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/including-the-point"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Betting Strategies Including the Point",
+      "description": "An in-depth look at how betting including the point can impact your craps strategy, with examples of betting across including the point.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Betting Across Including the Point",
+          "description": "Detailed explanation on how to bet across including the point in craps, with examples for different betting amounts."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/including-the-point/32-across-including-the-point_640x360.webp",
+      "caption": "Betting $32 Across Including the Point."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/including-the-point/162-across-including-the-point_640x360.webp",
+      "caption": "Betting $162 Across Including the Point."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

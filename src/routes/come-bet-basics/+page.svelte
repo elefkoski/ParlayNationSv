@@ -112,17 +112,109 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Come Bets",
-		  "description": "Come Bets are mini Pass Line Bets except you play them during the Intermediate Roll. After moving into a Point you can add Odds to the Come bet.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting a Come Bet in Craps",
+  "description": "An in-depth look at how to place and win with Come Bets in craps, including the stages of a Come Bet and how it compares to Place Bets and Odds.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/come-bet-basics",
+  "image": "http://parlaynation.com/images/come-bet-basics/come-bet-basics-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/come-bet-basics"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Come Bets in Craps",
+      "description": "Explains the concept of Come Bets in craps, how they function similarly to Pass Line bets, and the strategy behind placing them.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet a Come Bet in Craps?",
+          "description": "Guidelines for placing Come Bets in the COME area and ensuring they are distinguished from other bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Come Bets Work During the Comeout Roll",
+          "description": "Details how Come Bets remain active during the Comeout Roll, highlighting their constant working state."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Two Stages of a Come Bet in Craps",
+          "description": "Explains the two stages of a Come Bet: initially in the COME area, and then moving to a specific point on the table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Placement of a Come Bet on the Craps Table",
+          "description": "Describes the placement of Come Bets relative to Place Bets and Buy Bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Come Bet Payment",
+          "description": "Clarifies the even-money payout of Come Bets regardless of game stage."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Come Bet Terms",
+          "description": "Introduction to specific terms and phrases associated with Come Bets, including 'On For', 'Off For', and 'Off and On For'."
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Betting a Come Bet for the Dealers",
+          "description": "How to place Come Bets for the benefit of the table's dealers, including placement and payout details."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-basics/come-bet_640x360.webp",
+      "caption": "Visual guide to Come Bets in craps."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-basics/how-to-bet-a-come-bet_640x360.webp",
+      "caption": "Instructions for placing a Come Bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-basics/come-bets-always-work_640x360.webp",
+      "caption": "Come Bets are always in play."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-basics/placement-of-a-come-bet-inside-point_640x360.webp",
+      "caption": "Detailed placement of Come Bets within the points."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-basics/dealer-come-bet_640x360.webp",
+      "caption": "How to bet a Come Bet for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

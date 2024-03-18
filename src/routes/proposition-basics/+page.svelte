@@ -54,17 +54,64 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Proposition Bets",
-		  "description": "Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the craps table and some are combinations of multiple bets at once.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Proposition Bets on the Craps Table",
+  "description": "An in-depth look at Proposition Bets in craps, covering one-roll bets, how to place these bets, and the thrilling potential payouts.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/proposition-basics",
+  "image": "http://parlaynation.com/images/proposition-basics/proposition-basics-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/proposition-basics"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Proposition Bets",
+      "description": "Exploration of Proposition Bets on the craps table, including insights into one-roll bets and strategies for placing these high-stake bets.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Is a One-Roll Bet in Craps?",
+          "description": "Details the dynamics of One-Roll bets, their placement on the table, and their duration."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How Do You Bet Proposition Bets at the Craps Table?",
+          "description": "Guides on the correct method to place Proposition Bets through interaction with the Stickperson and ensuring bets are acknowledged."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/proposition-basics/proposition-bets_640x360.webp",
+      "caption": "Overhead view of the proposition area on the craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/proposition-basics/how-to-bet-prop-bets_640x360.webp",
+      "caption": "First person view of a player throwing a cheque towards the middle of the table."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

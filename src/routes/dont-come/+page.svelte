@@ -110,17 +110,103 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Don't Come Bets",
-		  "description": "The Don't Come bet is like a mini Don't Pass bet. They both win and lose the same way and there are two stages to a Don't Come bet. ",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting a Don't Come Bet in Craps",
+  "description": "An exhaustive guide on Don't Come bets in craps, detailing how they parallel Don't Pass bets, bet placement, the significance of the bet's stages, and how to bet for the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/dont-come",
+  "image": "http://parlaynation.com/images/dont-come/dont-come-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/dont-come"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Don't Come Bets",
+      "description": "Deep dive into the mechanics of Don't Come bets in craps, including how to place the bet, its stages, and dealer betting.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Placing a Don't Come Bet",
+          "description": "Instructions on making Don't Come bets in craps."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Stages of a Don't Come Bet",
+          "description": "Explanation of the two main stages of Don't Come bets and their implications."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "'No Action' in Don't Come Bets",
+          "description": "Clarification on the 'No Action' call for Don't Come bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Don't Come Bet Placement",
+          "description": "Details on where Don't Come bets are placed on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Don't Come Bet Payouts",
+          "description": "Information on the payouts for Don't Come bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Don't Come Bets for Dealers",
+          "description": "How to place Don't Come bets for the game's dealers."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come/dont-come_640x360.webp",
+      "caption": "Overview of the Don't Come betting area."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come/how-to-bet-a-dont-come_640x360.webp",
+      "caption": "Guidance on placing a Don't Come bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come/stage-one-of-a-dont-come_640x360.webp",
+      "caption": "Stage one of a Don't Come bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come/stage-two-of-a-dont-come_640x360.webp",
+      "caption": "Stage two of a Don't Come bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come/betting-a-dont-come-for-the-dealers_640x360.webp",
+      "caption": "How to bet a Don't Come for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

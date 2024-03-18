@@ -62,17 +62,80 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Spread Bets - Betting Inside",
-		  "description": "Betting Inside is a Spread Bet on either 3 or 4 of the Inside Points: Five, Six, Eight, and Nine. When betting Inside, you are betting all the Inside Points in the same unit amount, not including the Point.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Inside at the Craps Table",
+  "description": "A guide on how to place Inside bets on the Craps table, covering the strategy for betting on the inside points (5, 6, 8, and 9), excluding the point, and the implications of different points on the cost of bets.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/inside",
+  "image": "http://parlaynation.com/images/inside/inside-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/inside"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Inside Betting Strategies",
+      "description": "Insights on Inside betting at a Craps table, highlighting strategies based on the point and the costs associated with Inside bets.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Point 6 or 8",
+          "description": "Discussion on Inside betting when the Point is 6 or 8, including cost considerations."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Point 5 or 9",
+          "description": "Overview of Inside betting costs and strategies when the Point is 5 or 9."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Point 4 or 10",
+          "description": "Explanation of why Inside betting is most expensive when the Point is 4 or 10."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/inside/inside_640x360.webp",
+      "caption": "Puck is on point four and points 5, 6, 8, and 9 are highlighted."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/inside/32-inside_640x360.webp",
+      "caption": "$32 inside with the point on eight."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/inside/34-inside_640x360.webp",
+      "caption": "$34 inside with the point on five."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/inside/44-inside_640x360.webp",
+      "caption": "$44 inside with the point on ten."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

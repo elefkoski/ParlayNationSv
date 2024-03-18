@@ -108,17 +108,97 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Come Bet Odds",
-		  "description": "Odds for a Come bet get Paid True Odds so there is a maximum amount of money you can add to them. Odds pay different depending on the Point they are on.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Odds for a Come Bet",
+  "description": "A detailed guide on how to bet odds for a Come Bet in craps, including the similarities to Pass Line odds, the placement of odds, and potential payouts.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/come-bet-odds",
+  "image": "http://parlaynation.com/images/come-bet-odds/come-bet-odds-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/come-bet-odds"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Come Bet Odds",
+      "description": "Outlines how Come Bet odds work, including the process of betting, placement, and how they're paid.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet Odds for a Come Bet in Craps?",
+          "description": "Instructions for adding odds to your Come Bet by placing money in the COME area and informing the dealer."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Where Do the Odds Go for Your Come Bet?",
+          "description": "Details on the placement of odds on top of the Come Bet, offset for clarity."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Odds Are OFF During the Comeout Roll",
+          "description": "Explanation of the Odds status during the Comeout Roll and how players can choose to keep them on."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Do Your Odds Pay on a Come Bet in Craps?",
+          "description": "A breakdown of the payouts for Odds on a Come Bet, depending on the point numbers."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "3x 4x 5x Odds on a Come Bet in Craps",
+          "description": "Explanation of the maximum odds allowed on a Come Bet based on the casino's rules."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-odds/come-bet-odds_640x360.webp",
+      "caption": "Illustration of a Come Bet with odds placed on the craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-odds/how-to-bet-come-bet-odds_640x360.webp",
+      "caption": "A close-up on how to place Come Bet odds next to an existing Come Bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-odds/placement-of-come-bet-odds_640x360.webp",
+      "caption": "Demonstration of the correct placement for Come Bet odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-odds/odds-are-off-during-the-comeout-roll_640x360.webp",
+      "caption": "Visual explanation showing that Odds are off during the Comeout Roll."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/come-bet-odds/6-8-come-bet-odds_640x360.webp",
+      "caption": "Example of Come Bet odds on the 6 & 8 points."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

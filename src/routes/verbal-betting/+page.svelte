@@ -90,17 +90,93 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Verbal Betting at the Craps Table",
-		  "description": "Craps is a verbal game. All bets in Craps can be made verbally as long as the dealer has called it a bet. You shouldn't get caught with your hands on the table when the dice are out!",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Making Verbal Bets at the Craps Table",
+  "description": "Learn about making verbal bets at the craps table, including how and when to do it, the importance of dealer confirmation, and the meanings behind 'no call' and 'no bet' statuses.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/verbal-betting",
+  "image": "http://parlaynation.com/images/verbal-betting/verbal-betting-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/verbal-betting"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Craps Basics",
+      "description": "Understanding the basics of making verbal bets at the craps table, including dealer interactions and bet status.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Is Verbal Declaration of a Bet in Craps?",
+          "description": "Explains the process of making a verbal bet at the craps table and the dealer's role in confirming these bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Are the Dealers Repeating Your Bets on the Craps Game?",
+          "description": "Highlights the importance of dealers repeating your bets for clarity and confirmation."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Is a No Call Bet in Craps?",
+          "description": "Defines what 'no call bets' are and how they affect the gameplay at the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Does 'No Bet' Mean in Craps?",
+          "description": "Explains the term 'no bet' and situations that might lead to a dealer declaring a bet as such."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "What Does 'My Bets are ON' Mean at the Craps Table?",
+          "description": "Describes the meaning and implications of having your bets 'On' during specific stages of the game."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "What Does 'My Bets Are OFF' Mean in a Craps Game?",
+          "description": "Explores the meaning and strategy behind declaring your bets as 'Off' during certain times in the game."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/verbal-betting/verbal-declaration_640x360.webp",
+      "caption": "An outline of a person with a red thought bubble next to another outlined person with a blue talking bubble and a cheque in their hand."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/verbal-betting/my-bets-are-on_640x360.webp",
+      "caption": "The puck is off and in the Don't Come. There is a $10 place bet on the Point Ten with an 'On' button on top."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/verbal-betting/my-bets-are-off_640x360.webp",
+      "caption": "The puck is on and sitting in the point six. There is a $50 place bet on the point five with an off button on top."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

@@ -136,17 +136,85 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Horn High",
-		  "description": "There are four Horn Highs in Craps; the Horn High Aces, the Horn High Ace Deuce, the Horn High Yo, and the Horn High Twelve. ",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Horn High in Craps",
+  "description": "Explore the Horn High bets in craps, including Horn High Yo, Horn High Ace Deuce, Horn High Aces, and Horn High Twelve, and learn how these bets are placed and paid.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/horn-high",
+  "image": "http://parlaynation.com/images/horn-high/horn-high-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/horn-high"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Horn High Bets",
+      "description": "A detailed guide to understanding Horn High bets in craps, including the strategies behind Horn High Yo, Horn High Ace Deuce, Horn High Aces, and Horn High Twelve, as well as instructions on how these bets are placed and their payouts.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Four Different Horn High's",
+          "description": "Explains the difference between the four types of Horn High bets and how to bet them."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Horn High Placement",
+          "description": "Describes where to place Horn High bets on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Horn High Payout",
+          "description": "Details the payout process for Horn High bets."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn-high/horn-high_640x360.webp",
+      "caption": "Up close overhead view of the horn highs on the craps layout."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn-high/5-horn-high-yo-1_640x360.webp",
+      "caption": "$5 Horn High Yo."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn-high/5-horn-high-ace-deuce-1_640x360.webp",
+      "caption": "$5 Horn High Ace Deuce."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn-high/5-horn-high-aces-1_640x360.webp",
+      "caption": "$5 Horn High Aces."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/horn-high/5-horn-high-twelve-1_640x360.webp",
+      "caption": "$5 Horn High Twelve."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

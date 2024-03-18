@@ -121,17 +121,98 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Place Bets",
-		  "description": "Place Bets are bet during the Intermediate Roll. They get paid differently depending on which Point you Place. There are certain terms used when betting Place bets.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Place Bets in Craps",
+  "description": "A comprehensive guide on Place Bets in craps, detailing the process of placing bets, identifying common mistakes, understanding payout ratios, using proper betting terms, and including dealers in the game.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/place-bet-basics",
+  "image": "http://parlaynation.com/images/place-bet-basics/place-bet-basics-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/place-bet-basics"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Place Bets",
+      "description": "Deep dive into Place Bets in craps, from betting strategies and pitfalls to payout nuances and etiquette for betting on behalf of the dealers.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet Place Bets in a Craps Game?",
+          "description": "Instructions on how to properly place Place Bets after the Point is established, ensuring bets are recognized and not mistaken for Come Bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Where Not to Put Your Money on a Craps Table",
+          "description": "Advice on improper betting locations and practices that could lead to confusion or loss of bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Where Are Your Place Bets on the Craps Table?",
+          "description": "Clarification on the specific locations for Place Bets on the craps table to ensure clarity and ownership of each bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Does a Place Bet Pay in Craps?",
+          "description": "Detailed explanation of the payout ratios for Place Bets on different numbers, highlighting the importance of betting in proper increments."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "What Are Proper Terms for Betting Place Bets?",
+          "description": "An overview of the correct terminology to use when placing Place Bets, facilitating clear communication with dealers."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "How Do You Bet a Place Bet for the Dealers in a Craps Game?",
+          "description": "Guidance on placing Place Bets for the dealers, including how these bets are identified and paid out."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/place-bet-basics/place-bets_640x360.webp",
+      "caption": "Overhead view of the right side of the craps table layout. You can see all six place bets boxes."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/place-bet-basics/how-to-bet-place-bets_640x360.webp",
+      "caption": "Multiple sets of bets sitting in the come. The puck is on the point nine."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/place-bet-basics/not-behind-boxes_640x360.webp",
+      "caption": "A bunch of splashed cheques behind the boxes with a red 'do not' circle around them and a red x. There is another pile of cheques in the COME with a green circle around them and a green checkmark."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/place-bet-basics/placement-of-a-place-bet_640x360.webp",
+      "caption": "Overhead view of craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

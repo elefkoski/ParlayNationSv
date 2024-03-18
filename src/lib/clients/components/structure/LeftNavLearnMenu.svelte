@@ -85,9 +85,23 @@
 		},
 		{
 			title: "The Don't Side",
-			items: ["Don't Pass", "Don't Pass Lay Odds", "Don't Come", "Don't Come Lay Odds", 'Overlays'],
+			items: [
+				"Don't Pass",
+				"Don't Pass Lay Odds",
+				"Don't Come",
+				"Don't Come Lay Odds",
+				'Overlays',
+				'Bridging Lay Odds'
+			],
 			mainHref: 'the-donts',
-			href: ['dont-pass', 'dont-pass-lay-odds', 'dont-come', 'dont-come-lay-odds', 'overlays']
+			href: [
+				'dont-pass',
+				'dont-pass-lay-odds',
+				'dont-come',
+				'dont-come-lay-odds',
+				'overlays',
+				'bridging-lay-odds'
+			]
 		}
 	];
 </script>

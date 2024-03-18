@@ -88,17 +88,74 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn C &amp; E Bets",
-		  "description": "The C &amp; E is a combination of two bets. The “C” stands for the Any Crap, which is the Aces, Ace Deuce, and the 12. The “E” stands for the Eleven, or “Yo”. The C &amp; E has a two-dollar minimum.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://www.parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the C & E in Craps",
+  "description": "A guide to understanding and placing the C & E bets in craps, covering the basics, payment structures, and strategic considerations.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/c-and-e",
+  "image": "http://parlaynation.com/images/c-and-e/c-and-e-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/c-and-e"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding the C & E in Craps",
+      "description": "Explains the combination of two bets: the 'C' (Any Craps) and the 'E' (Eleven), including betting strategies and minimum requirements.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Where Is Your C & E on the Craps Table?",
+          "description": "Describes the placement of the C & E bets on the craps table, emphasizing their relative positions to the player's spot."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What Does the C & E Pay in a Craps Game?",
+          "description": "Details the payout structure for the C & E bet, covering split bets and separate amounts on the C and E."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/c-and-e/c-and-e_640x360.webp",
+      "caption": "Overview of the C & E betting area."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/c-and-e/placement-of-c-and-e_640x360.webp",
+      "caption": "Visual guide to placing C & E bets on the table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/c-and-e/5-c-and-e-split_640x360.webp",
+      "caption": "Example of a $5 C & E split bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/c-and-e/4-c-1-e_640x360.webp",
+      "caption": "Illustration of separate amounts on the C and E."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

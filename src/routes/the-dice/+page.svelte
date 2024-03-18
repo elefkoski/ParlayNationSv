@@ -102,17 +102,81 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Shooting Dice at the Craps Table",
-		  "description": "Want to shoot the dice on a craps game? There is a lot of responsibility involved with correctly handling the dice and courtesies to the shooter you should follow.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Shooting the Dice",
+  "description": "Delve into the thrill of shooting the dice in craps, the etiquette involved, and the courtesies extended towards the shooter.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/the-dice",
+  "image": "http://parlaynation.com/images/the-dice/the-dice-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/the-dice"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Craps Basics",
+      "description": "A comprehensive overview on the excitement of shooting the dice, including how to do it properly, the importance of attention, and etiquette towards the shooter.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "New to Shooting Craps?",
+          "description": "Guidelines for new shooters on how to select and shoot the dice, along with the etiquettes to follow."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Are You Watching the Dice at the Craps Table?",
+          "description": "The significance of keeping an eye on the dice to maintain game flow and avoid disrupting other players."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Do You Show Courtesies to the Shooter During the Craps Game?",
+          "description": "The importance of observing proper etiquettes towards the shooter, recognizing the role's pressure."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Have You Been Hit with the Dice at the Craps Table?",
+          "description": "Advice on how to react if hit by the dice, and how such instances are adjudicated by the stickperson or boxperson."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-dice/the-craps-dice_640x360.webp",
+      "caption": "Five maroon colored craps dice sitting on green felt."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-dice/watching-the-dice_640x360.webp",
+      "caption": "A player with tunnel vision staring at dice at the opposite end of a craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-dice/getting-hit-with-the-dice_640x360.webp",
+      "caption": "A statue of Caesar with his hand raised and a pointed finger."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

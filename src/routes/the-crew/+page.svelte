@@ -129,17 +129,71 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "The Craps Table Crew",
-		  "description": "Most casino table games have one dealer per table. The Craps table rotates four dealers, has a Boxperson, and a Floor to watch over the table.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Craps Crew",
+  "description": "An overview of the roles and responsibilities of the craps table crew, including the Boxperson, Base Dealers, Stickperson, and the Floor Supervisor.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/the-crew",
+  "image": "http://parlaynation.com/images/the-crew/the-crew-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/the-crew"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Craps Basics",
+      "description": "Detailing the essential roles within the craps crew that facilitate the game, ensuring smooth operations and assisting players.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Does the Boxperson (Box) Do at the Craps Table?",
+          "description": "Explains the Boxperson's role in overseeing the game's flow, handling finances, and ensuring smooth operations."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What Do the Base Dealers Do in Craps?",
+          "description": "Details the responsibilities of Base Dealers in managing bets, payouts, and player interactions on their side of the table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Does the Stickperson Do on a Craps Game?",
+          "description": "Describes the Stickperson's duties, including controlling the game's pace and managing center table bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Does the Supervisor (Floor) Do at the Craps Table?",
+          "description": "Outlines the Floor Supervisor's role in overall game supervision and maintaining the integrity of the game."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-crew/the-craps-dice_640x360.webp",
+      "caption": "Five maroon colored craps dice sitting on green felt."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 <LearnLayout {pageLinks}>

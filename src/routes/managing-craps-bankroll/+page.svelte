@@ -200,8 +200,8 @@
 				<li>
 					<span>Play with money you can afford to lose - </span>If you can’t afford to lose it, then
 					you shouldn’t be playing. You will get emotional, make mistakes you usually wouldn’t make,
-					or <Link text="act in a manner" href="not-to-do-at-craps" /> that is unlike you. Knowing You
-					can stay calm, cool, and collected knowing it’s not a big deal if you lose the money.
+					or <Link text="act in a manner" href="not-to-do-at-craps-table" /> that is unlike you. Knowing
+					You can stay calm, cool, and collected knowing it’s not a big deal if you lose the money.
 				</li>
 				<li>
 					<span>Create limits - </span>I’ve seen players hit the ATM 3, 4, 5+ times in a night,

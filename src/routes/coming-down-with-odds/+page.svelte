@@ -60,17 +60,75 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn to Come Down w/Odds",
-		  "description": "When you are playing Place bets and Come bets at the same time you don't need both on a Point. Coming Down w/Odds uses the Place bet for Odds on the Come bet.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Coming Down w/Odds In Craps",
+  "description": "A strategic guide to optimizing bets in craps by coming down with odds, combining Place and Come bets for a potential higher payout.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/coming-down-with-odds",
+  "image": "http://parlaynation.com/images/coming-down-with-odds/coming-down-with-odds-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/coming-down-with-odds"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Coming Down with Odds Process",
+      "description": "Explains the process of optimizing craps bets by utilizing Place and Come bets efficiently to come down with odds.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "The Setup",
+          "description": "Describes the initial conditions required for coming down with odds, involving both Place and Come bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Come Bet Moves and Place Bet Paid",
+          "description": "Details the event when a Point rolls that has a Place bet on it, leading to the movement of the Come bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Odds Are Added to the Come Bet",
+          "description": "Explains the final step of adding odds to the Come bet and the significance of communicating with the dealer."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/coming-down-with-odds/the-setup_640x360.webp",
+      "caption": "Initial setup for coming down with odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/coming-down-with-odds/point-rolled-place-paid_640x360.webp",
+      "caption": "Moment when the Point rolls that has a Place bet, initiating the next steps."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/coming-down-with-odds/odds-added-rest-handed-off_640x360.webp",
+      "caption": "Conclusion of adding odds to the Come bet and handling the remainder of the stake."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

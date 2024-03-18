@@ -77,17 +77,103 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Considerations on the Craps Table",
-		  "description": "What happens if you accidentally leave your winning bet on the Craps layout and the dice roll again? This page will offer you a guide on things to consider while playing Craps.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "To Consider at the Craps Table",
+  "description": "Insights into various betting strategies and etiquettes at the craps table, including self-service bets, string betting, two-way and three-way bets, and hedging bets.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/to-consider",
+  "image": "http://parlaynation.com/images/to-consider/to-consider-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/to-consider"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Craps Basics",
+      "description": "Exploring various nuances and strategies to consider at the craps table.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Craps Bets Are Self Service?",
+          "description": "Discusses bets that players manage themselves, including the Pass Line and Odds, Don't Pass and Lay Odds, Come Bet, Don't Come, and the Field."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What Does 'If it Lays it Plays' Mean in Craps?",
+          "description": "Explains the meaning behind the dealer's phrase indicating that unclaimed winnings will be added to the original bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What is String Betting at a Craps Table?",
+          "description": "Covers the concept of string betting and encourages learning spread bets to place multiple bets simultaneously."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Is a Two Way Bet in Craps?",
+          "description": "Defines a two-way bet as one made for both the player and the dealers, often used for Proposition Bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "What Is a Three Way Bet in Craps?",
+          "description": "Describes a three-way bet made for the player, the dealers, and the shooter, typically to show appreciation."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "What Does it Mean to Hedge Your Bets at the Craps Table?",
+          "description": "Explains hedging as a strategy to offset potential losses, with examples of common hedge bets."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/to-consider/self-service_640x360.webp",
+      "caption": "Arrows pointing to the pass line, pass line odds, field, don't come, don't come odds, come, and don't come areas."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/to-consider/lays-it-plays_640x360.webp",
+      "caption": "A winning $75 bet sitting in the field."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/to-consider/two-way-bet_640x360.webp",
+      "caption": "A $5 bet on the hard 10 in spot three with $5 in the middle of the hard 10 for the dealers."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/to-consider/three-way-bet_640x360.webp",
+      "caption": "Three dollars on the aces. One in spot four, one in spot ten, and one in the middle."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/to-consider/hedging_640x360.webp",
+      "caption": "Ten dollars on the pass line with two dollars on the any craps."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

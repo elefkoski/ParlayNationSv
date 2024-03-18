@@ -68,17 +68,84 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Spread Bets - Betting Outside",
-		  "description": "Betting Outside is a Spread Bet on either 3 or 4 of the Outside Points: Four, Five, Nine, and Ten. When betting Outside, you are betting all the Outside Points in the same unit amount, not including the Point.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Outside at the Craps Table",
+  "description": "A comprehensive guide to understanding and placing 'Outside' bets in Craps, covering the strategies for betting without and with commission based on the game's Point.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/outside",
+  "image": "http://parlaynation.com/images/outside/outside-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/outside"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Betting Outside Strategies",
+      "description": "Exploration of betting strategies for Outside bets in Craps, including betting without commission and with commission.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Betting Outside without Commission",
+          "description": "Details on how to place Outside bets when no commission is required, focusing on the scenarios when the Point is 6 or 8 and the cost implications."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Betting Outside with Commission",
+          "description": "Explanation on placing Outside bets that require commission, including the cost variations depending on whether the Point is 6, 8, 5, 9, 4, or 10."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/outside/outside_640x360.webp",
+      "caption": "Puck is on point eight and points 4, 5, 9, and 10 are highlighted."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/outside/60-outside_640x360.webp",
+      "caption": "Betting $60 Outside when the Point is 6 or 8."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/outside/45-outside_640x360.webp",
+      "caption": "Betting $45 Outside with the point on five."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/outside/102-outside_640x360.webp",
+      "caption": "$102 outside with the point on eight."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/outside/77-outside_640x360.webp",
+      "caption": "$77 outside with the point on five."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/outside/76-outside_640x360.webp",
+      "caption": "$76 outside with the point on four."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

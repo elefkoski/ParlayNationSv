@@ -109,17 +109,86 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Don't Come Lay Odds",
-		  "description": "Don't Come Lay Odds get paid True Odds so the casinos have no advantage. You want to take advantage of this bet.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Don't Come Lay Odds in Craps",
+  "description": "A guide on Don't Come Lay Odds in craps, including how to place them, their placement on the table, payout rates, and how to bet for the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/dont-come-lay-odds",
+  "image": "http://parlaynation.com/images/dont-come-lay-odds/dont-come-lay-odds-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/dont-come-lay-odds"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Don't Come Lay Odds Insights",
+      "description": "Insights into Don't Come Lay Odds in craps, including bet placement, table placement, payouts, and dealer bets.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Placing Don't Come Lay Odds",
+          "description": "How to place Don't Come Lay Odds on a craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Don't Come Lay Odds Placement",
+          "description": "Where to place Don't Come Lay Odds on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Don't Come Lay Odds Payouts",
+          "description": "The payout rates for Don't Come Lay Odds depending on the point."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Betting Don't Come Lay Odds for Dealers",
+          "description": "How to place Don't Come Lay Odds bets for the table's dealers."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come-lay-odds/dont-come-lay-odds_640x360.webp",
+      "caption": "Don't Come Lay Odds on a craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come-lay-odds/how-to-bet-dont-come-lay-odds_640x360.webp",
+      "caption": "Guide on placing Don't Come Lay Odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come-lay-odds/placement-of-dont-come-lay-odds_640x360.webp",
+      "caption": "The placement of Don't Come Lay Odds on the table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-come-lay-odds/dont-come-lay-odds-for-the-dealers_640x360.webp",
+      "caption": "Don't Come Lay Odds placed for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

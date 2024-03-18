@@ -123,17 +123,97 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Hop Bets",
-		  "description": "Hop bets are are all the possible combinations of the six Points and the combinations of the 7. They are one roll bet and pay either 15:1 or 30:1.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Hop Bets in Craps",
+  "description": "Learn about Hop bets in craps, including how to place these bets, their payouts, betting terminology, and tips for making multi-bets and betting for the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/hop-bets",
+  "image": "http://parlaynation.com/images/hop-bets/hop-bets-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/hop-bets"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Exploring Hop Bets",
+      "description": "An exploration of Hop bets in craps, covering bet placement, payout details, terminology, common multi-bets, and how to place bets for the dealers.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hop Bet Placement",
+          "description": "Guidance on how to place Hop bets on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hop Bet Payouts",
+          "description": "Explanation of the payout structure for Hop bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hop Bet Terminology",
+          "description": "Overview of the terminology used when placing Hop bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Common Multi-Bets for Hops",
+          "description": "Examples of common multi-bets for Hop bets in craps."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Betting Hops for the Dealers",
+          "description": "How to place Hop bets for the table's dealers."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/hop-bets/hop-bets_640x360.webp",
+      "caption": "Up close image of the hop bets."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/hop-bets/placement-of-hops_640x360.webp",
+      "caption": "Up close view of four hop bets and the rail of the craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/hop-bets/low-side-hop-payment_640x360.webp",
+      "caption": "Low Side Hop Payment Pays 15:1"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/hop-bets/high-side-hop-payment_640x360.webp",
+      "caption": "High Side Hop Payment Pays 30:1"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/hop-bets/dealer-hop-bet_640x360.webp",
+      "caption": "$1 in the middle of the hopping 4-2 for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

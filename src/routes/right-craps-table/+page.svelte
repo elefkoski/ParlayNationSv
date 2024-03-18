@@ -275,7 +275,7 @@
 				isn’t. Watch out for the really drunk ones as well. They can be fun, but more often than
 				not, they are just annoying and cause <Link
 					text="more problems"
-					href="not-to-do-at-craps"
+					href="not-to-do-at-craps-table"
 				/> than needed.
 			</p>
 		</BlogH2>

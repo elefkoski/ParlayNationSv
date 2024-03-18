@@ -90,17 +90,75 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Pass Line Odds",
-		  "description": "Odds for the Pass Line pay differently depending on what the Point is. They get paid True Odds and have no advantage for the casino, which is why they have limits.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Odds on the Pass Line",
+  "description": "An in-depth exploration of betting Odds on the Pass Line in Craps, illustrating how to place these bets, their payout structure based on the point, and how to extend these bets to the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/pass-line-odds",
+  "image": "http://parlaynation.com/images/pass-line-odds/pass-line-odds-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/pass-line-odds"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Pass Line Odds",
+      "description": "Comprehensive guide on placing Odds bets behind the Pass Line in Craps, their True Odds payouts, and including dealers in these advantageous bets.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet Pass Line Odds in Craps?",
+          "description": "Steps to place Odds bets properly behind the Pass Line, ensuring clarity and optimal positioning for successful gameplay."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What Do Pass Line Odds Pay on a Craps Game?",
+          "description": "Detailed breakdown of True Odds payments for different points on the Pass Line, emphasizing the zero house edge on these bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Can You Bet the Pass Line w/Odds for the Dealers?",
+          "description": "Instructions on placing Pass Line bets with Odds on behalf of the dealers, highlighting the potential rewards for the casino staff."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/pass-line-odds/pass-line-odds_640x360.webp",
+      "caption": "$5 on the pass line with $20 odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/pass-line-odds/how-to-bet-the-pass-line-with-odds_640x360.webp",
+      "caption": "Four bets on the pass line. Each bet pointing to a spot in the rail."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/pass-line-odds/dealer-pass-line-with-odds_640x360.webp",
+      "caption": "$10 on the pass line with $20 odds. Next to it is a $1 pass line bet with $2 odds."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

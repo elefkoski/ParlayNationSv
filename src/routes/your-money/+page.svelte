@@ -61,17 +61,75 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Watching Your Money",
-		  "description": "You must pay attention to your money at the Craps Table. Know how much your bets cost, placement of those bets, your presses, and your payments.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Watching Your Money at the Craps Table",
+  "description": "A guide to vigilance with your money at the craps table, including ensuring correct change, bet placement, and bet numbers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-12",
+  "url": "http://parlaynation.com/your-money",
+  "image": "http://parlaynation.com/images/your-money/your-money-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/your-money"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Place Bets",
+      "description": "Key considerations for players at the craps table to ensure they are vigilant about their money, including tips on making sure you're getting the right change, your bets are in the correct spot, and on the right number.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Are You Getting the Right Change for Your Craps Bets?",
+          "description": "Advice on knowing the cost of your bets to ensure you receive the correct change, highlighting the importance of being vigilant to avoid mistakes by dealers."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Are Your Craps Bets in the Correct Spot?",
+          "description": "Tips on ensuring your bets are placed in the correct location on the table to avoid payment errors."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Are Your Craps Bets on the Right Number?",
+          "description": "Guidance on making sure your bets are placed on the intended numbers to prevent misplacement."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/your-money/bet-cost-and-change_640x360.webp",
+      "caption": "$52 across with $55 dollars in the COME and $3 change near the apron."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/your-money/correct-spot_640x360.webp",
+      "caption": "A $15 place bet with a transparent $15 place bet next to it signifying the wrong spot."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/your-money/correct-number_640x360.webp",
+      "caption": "$12 place bet on the eight with a transparent $12 place bet on the six signifying the wrong number."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

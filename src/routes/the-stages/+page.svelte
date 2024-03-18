@@ -73,17 +73,97 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "The Stages of a Craps Game",
-		  "description": "There are two stages to Craps: the Comeout Roll and the Intermediate Roll. Some bets work during the Comeout Roll while some don't. Certain bets can only be made during certain stages of the game.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Stages of a Craps Game",
+  "description": "An in-depth look at the two main stages of a craps game, strategies for buying in and cashing out, and the significance of the number 7.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/the-stages",
+  "image": "http://parlaynation.com/images/the-stages/the-stages-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/the-stages"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Craps Basics",
+      "description": "Exploring the fundamental stages and procedures of playing craps, including the unique aspects of the number 7.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "The Comeout Roll Is the First Stage of a Craps Game",
+          "description": "Introduces the Comeout Roll as the initial phase of craps, outlining the bets placed during this stage and their working status."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Intermediate Roll Is the Second Stage of a Craps Game",
+          "description": "Describes the Intermediate Roll, where the game intensifies with established points, and all bets are active."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Do You Buy In at the Craps Table?",
+          "description": "Offers guidelines for buying in during the Comeout Roll to avoid disrupting the game's flow."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Is it to 'Color Up' at the Craps Table?",
+          "description": "Explains the process of cashing out or 'coloring up' cheques for larger denominations at the appropriate game stage."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "What's With the Number 7 in a Craps Game?",
+          "description": "Examines the superstitions surrounding the number 7 and its impact on betting strategies during different stages of the game."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-stages/the-comeout-roll_640x360.webp",
+      "caption": "The Puck in the Don't Come in the Off position with bets on the Pass Line and the Don't Pass."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-stages/the-intermediate-roll_640x360.webp",
+      "caption": "A Craps table with the Puck in the ON position sitting on the Six. There are a lot of bets on the layout."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-stages/buying-in_640x360.webp",
+      "caption": "Three one-hundred dollar bills laid out on the Craps table in front of the box."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-stages/cashing-out-a_640x360.webp",
+      "caption": "Four stacks of cheques on the layout next to the mirror representing a player coloring up."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-stages/the-number-7_640x360.webp",
+      "caption": "Two blue dice on green felt. First has the six up and the second a one."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

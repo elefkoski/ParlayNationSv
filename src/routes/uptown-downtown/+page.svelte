@@ -67,17 +67,84 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Spread Bets - Betting Uptown/Downtown",
-		  "description": "Betting Uptown or Downtown is a Spread Bet on the three points on either side of the 7. The Uptown Points are the Eight, Nine, and 10. The Downtown Points are Four, Five, and Six. You bet Uptown and Downtown in the same unit amount.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Uptown and Downtown in Craps",
+  "description": "A guide to understanding and placing Uptown and Downtown bets in craps, covering how to bet with and without commission.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/uptown-downtown",
+  "image": "http://parlaynation.com/images/uptown-downtown/uptown-downtown-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/uptown-downtown"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Spread Bets",
+      "description": "Details on 'Betting Uptown and Downtown' in Craps, strategies for placing these bets based on the point, and examples of betting amounts.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet Uptown or Downtown on the Craps Table?",
+          "description": "Explanation of Uptown and Downtown betting strategies without commission, including equal cost implications."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How Do You Bet Uptown or Downtown with a Commission?",
+          "description": "Guidance on Uptown and Downtown betting strategies with commission, emphasizing the equal cost of bets."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/uptown-downtown/uptown_640x360.webp",
+      "caption": "Puck is on point six and points 8, 9, and 10 are highlighted."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/uptown-downtown/downtown_640x360.webp",
+      "caption": "Puck is on point eight and points 4, 5, and 6 are highlighted."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/uptown-downtown/16-uptown_640x360.webp",
+      "caption": "Betting $16 Uptown with the point on five."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/uptown-downtown/16-downtown_640x360.webp",
+      "caption": "Betting $16 downtown with the point on nine."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/uptown-downtown/65-uptown_640x360.webp",
+      "caption": "$65 uptown with the point on four."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/uptown-downtown/65-downtown_640x360.webp",
+      "caption": "$65 downtown with the point on ten."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

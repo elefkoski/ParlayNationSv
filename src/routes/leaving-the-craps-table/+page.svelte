@@ -308,7 +308,7 @@
 				Casinos are often filled with a variety of players, some of whom can be obnoxious, loud,
 				drunk, and outright rude. The list goes on. These <Link
 					text="horrible players"
-					href="not-to-do-at-craps"
+					href="not-to-do-at-craps-table"
 				/> can appear without warning and, unfortunately, can stick around indefinitely. While most of
 				their antics might be tolerated as long as they aren't breaking any rules, the dealers are often
 				left helpless. They can try to handle the disruptions, but they can't fully control those players

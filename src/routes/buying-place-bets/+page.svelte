@@ -93,17 +93,96 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Buying Place Bets",
-		  "description": "When you Buy a Place Bet in Craps you pay a commission to get paid True Odds for that bet. You normally pay that commission upfront and again after your bet wins.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Buying Place Bets in Craps",
+  "description": "An informative guide on how Buy Bets work in craps, including details on commission, betting strategies, and payouts.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/buying-place-bets",
+  "image": "http://parlaynation.com/images/buying-place-bets/buying-place-bets-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/buying-place-bets"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Buy Bets in Craps",
+      "description": "Covers what Buy Bets are, the role of commissions, and how these bets differ from Place Bets.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Is the 5% Commission on Buy Bets in Craps?",
+          "description": "Explains the commission associated with Buy Bets and how it affects payouts."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How Do You Bet the Buy Bet in a Craps Game?",
+          "description": "Describes the process of making a Buy Bet, including where to place your bet and how to include commission."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Where is Your Buy Bet on the Craps Table?",
+          "description": "Details the placement of Buy Bets on the craps table and how they are marked to distinguish them from Place Bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Does a Buy Bet Pay in Craps?",
+          "description": "Outlines the payout structure for Buy Bets, focusing especially on buying the 4 and 10."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/buying-place-bets/buying-place-bets_640x360.webp",
+      "caption": "Example of a $20 bet on the inside of the ten with a buy lammer on top."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/buying-place-bets/how-to-bet-a-buy-bet_640x360.webp",
+      "caption": "Visual guide on how to place a Buy Bet in craps."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/buying-place-bets/placement-of-a-buy-bet_640x360.webp",
+      "caption": "Detailing the positioning of a Buy Bet on the craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/buying-place-bets/buy-place-ex-1_640x360.webp",
+      "caption": "Example of a Buy Bet on the 4 or 10 for $35 with expected payouts."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/buying-place-bets/buy-place-ex-2_640x360.webp",
+      "caption": "Illustration of a $75 Buy Bet on the 10 and the commission costs."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/buying-place-bets/buy-place-ex-3_640x360.webp",
+      "caption": "Example of buying the 4 and 10 for $75 each and the total commission."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

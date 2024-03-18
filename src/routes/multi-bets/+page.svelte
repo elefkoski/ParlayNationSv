@@ -110,17 +110,95 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Multi-Bets",
-		  "description": "Multi-Bets are combinations of several different proposition bets at once. The C&E, Horn, Horn High, and World are the most common but there are plenty more.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Multi-Bets at the Craps Table",
+  "description": "An in-depth look at Multi-Bets in Craps, including strategies for two and three number combinations and the proper terminology for placing these bets.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/multi-bets",
+  "image": "http://parlaynation.com/images/multi-bets/multi-bets-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/multi-bets"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Multi-Bet Strategies",
+      "description": "Strategies and terminology for placing Multi-Bets in Craps, focusing on combinations of two and three straight up bets.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Each vs Split",
+          "description": "Explains the difference between betting 'each' for betting the same amount on two different numbers and 'split' for dividing a bet amount over two numbers."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Common Two Number Multi-Bets",
+          "description": "Details on common two-number combinations, including High-Low, Eleven-Twelve (ET), Aces-Ace Deuce, and Seven-Eleven."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Common Three Number Multi-Bets",
+          "description": "Overview of popular three-number bet combinations like High-Low-Yo and Three Way Craps."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/multi-bets_640x360.webp",
+      "caption": "Multiple bets in the proposition area: $2 split on the eleven twelve, a high low yo, and a $5 c and e split."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/high-low_640x360.webp",
+      "caption": "$1 each on the two and the twelve."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/eleven-twelve_640x360.webp",
+      "caption": "$1 each on the eleven and the twelve."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/aces-ace-deuce_640x360.webp",
+      "caption": "$1 each on the aces and the ace deuce."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/seven-eleven_640x360.webp",
+      "caption": "$1 each on the seven and the eleven."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/high-low-yo_640x360.webp",
+      "caption": "$1 each on the aces, ace deuce, and the yo."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/multi-bets/three-way-craps_640x360.webp",
+      "caption": "$1 each on the aces, ace deuce, and the twelve."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

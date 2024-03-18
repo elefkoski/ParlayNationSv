@@ -86,17 +86,97 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn The Field",
-		  "description": "One of the most popular bets in the game is the Field. It's popular because it has one of the largest betting areas in the game. You can't miss is and there are a lot of numbers written in there that you can win with. ",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Field in Craps",
+  "description": "An overview of Field bets in craps, including how to place these bets, understanding their payouts, and the strategy behind betting for the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/the-field",
+  "image": "http://parlaynation.com/images/the-field/the-field-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/the-field"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Proposition Bets",
+      "description": "Guidance on Field bets in craps, from placing the bet to understanding its payouts and how to bet for the dealers.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Make a Field Bet in Craps?",
+          "description": "Details on how to place a Field bet, including strategies for letting it ride or adjusting the bet amount mid-play."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Which Field Bet Is Yours on the Craps Table?",
+          "description": "Advice on keeping track of your Field bet among many, to avoid disputes and ensure your winnings are claimed."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Does the Field Pay on a Craps Game?",
+          "description": "Explanation of Field bet payouts, including conditions where 2 or 12 can pay double or triple."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "The Field Payment Calculator",
+          "description": "Introduction to a tool for calculating payouts on Field bets, aiding players in their betting strategy."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "How Can You Bet in the Field for the Dealers?",
+          "description": "How to place Field bets for the dealers, a gesture of appreciation that dealers always welcome."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-field/the-field_640x360.webp",
+      "caption": "Overhead up close view of the field area on the craps layout."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-field/placement-of-the-field_640x360.webp",
+      "caption": "Up close view of multiple bets in the field."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-field/what-does-the-field-pay-a_640x360.webp",
+      "caption": "3, 4, 9, 10, 11 Pay Even Money"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-field/what-does-the-field-pay-b_640x360.webp",
+      "caption": "2 or 12 Pay Double"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-field/field-bet-for-the-dealers_640x360.webp",
+      "caption": "$3 in the field for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

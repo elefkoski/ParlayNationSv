@@ -70,17 +70,68 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Any Seven",
-		  "description": "The Any Seven is mostly used by Don't players or as part of a World. Sometimes Come Bet players will use it to hedge their flat bets during the Comeout Roll",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Any Seven in Craps",
+  "description": "An overview of the Any Seven bet in craps, including strategies for hedging, incorporation into other bets, and its placement and payout on the craps table.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/any-seven",
+  "image": "http://parlaynation.com/images/any-seven/any-seven-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/any-seven"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding the Any Seven Bet",
+      "description": "Details the Any Seven bet in craps, its strategic uses, and how it's integrated with other bets like the Horn and the World.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Where Is Your Any Seven on the Craps Table?",
+          "description": "Explains the placement of the Any Seven bet on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What Does the Any Seven Pay in a Craps Game?",
+          "description": "Details the payout for the Any Seven bet, which is 4:1."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/any-seven/any-seven_640x360.webp",
+      "caption": "Visual representation of the Any Seven bet area on the craps table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/any-seven/placement-of-the-any-seven_640x360.webp",
+      "caption": "Detailed view of the Any Seven bet placement relative to player positions."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/any-seven/what-does-the-any-seven-pay_640x360.webp",
+      "caption": "Example of a $4 Any Seven bet and its $16 payout."
+    }
+  ]
+}
 	</script>
 </svelte:head>
 

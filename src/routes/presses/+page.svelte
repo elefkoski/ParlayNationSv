@@ -68,17 +68,91 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Pressing Craps Bets",
-		  "description": "When you Press you are adding money to an existing bet. You could Press One Unit, Double it (Press It), Full Press, Odd Press, Power Press, or Multiple Unit Presses.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pressing Place Bets in Craps",
+  "description": "Explore the strategy of pressing place bets in craps to maximize potential winnings, including unit understanding, standard, odd, power, and multiple number presses.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/presses",
+  "image": "http://parlaynation.com/images/presses/presses-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/presses"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Place Bets",
+      "description": "A guide on the various pressing strategies for Place Bets in craps, including how to effectively increase your bets for bigger wins.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What Is a Unit in Craps",
+          "description": "Defines a 'unit' in craps betting and its significance in pressing bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What Are Some Standard Presses on the Craps Table",
+          "description": "Explains the most common pressing phrases and their meanings, such as 'Go Up One Unit,' 'Press it,' and 'Full Press.'"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What is an Odd Press or Power Press in Craps",
+          "description": "Delves into more advanced pressing techniques, including Odd Presses and Power Pressing, for experienced players."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Are Multiple Number Presses in Craps",
+          "description": "Expands on strategies for pressing across multiple numbers simultaneously for spread betting and maximizing returns."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/presses/presses_640x360.webp",
+      "caption": "$12 place bet on the eight."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/presses/one-unit-press_640x360.webp",
+      "caption": "$12 eight pressed one unit to an $18 eight."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/presses/press-it_640x360.webp",
+      "caption": "$15 nine pressed to $30 nine."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/presses/full-press_640x360.webp",
+      "caption": "$36 eight full pressed to $78 eight."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/presses/power-press_640x360.webp",
+      "caption": "$10 five pressed with $1 to $25 five."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

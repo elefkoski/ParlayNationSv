@@ -602,7 +602,7 @@
 					a superstition that invites bad luck. This belief is rooted in the notion that focusing on
 					one’s winnings can jinx the roll's outcome. Some players also view it as <Link
 						text="poor etiquette"
-						href="not-to-do-at-craps"
+						href="not-to-do-at-craps-table"
 					/>, potentially distracting or boastful to other players.
 				</li>
 				<li>

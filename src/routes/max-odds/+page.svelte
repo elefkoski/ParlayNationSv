@@ -89,17 +89,123 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Max Odds on the Pass Line",
-		  "description": "Odds on the Pass Line have no house advantage. For this reason, casinos put a limit on the amount you can add as odds. The limit changes from casino to casino but is based on the amount of your Pass Line bet.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Max Odds on the Pass Line",
+  "description": "An exploration of the limits on Odds bets in Craps, highlighting how casinos cap the maximum Odds bet based on the Pass Line bet and the advantages of betting max odds.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/max-odds",
+  "image": "http://parlaynation.com/images/max-odds/max-odds-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/max-odds"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Max Odds in Craps",
+      "description": "Details on various levels of max odds allowed on the Pass Line in Craps, from single to 100x, and their implications for players.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Single (1x) Odds",
+          "description": "Explanation of Single Odds, allowing equal amounts to the Pass Line bet as odds."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Double (2x) Odds",
+          "description": "Overview of Double Odds, permitting bets up to twice the amount of the Pass Line bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "3x 4x 5x Odds",
+          "description": "Details on the 3x 4x 5x Odds structure, a common casino standard for maximum Odds bets based on the point number."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "5x Odds",
+          "description": "Insights into 5x Odds, allowing bets up to five times the Pass Line bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "10x Odds",
+          "description": "Explanation of 10x Odds, where players can bet ten times their Pass Line bet."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "100x Odds",
+          "description": "A look at the rare and high-risk 100x Odds bets, requiring significant bankrolls."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/max-odds-on-the-pass-line_640x360.webp",
+      "caption": "$5 on the pass line with $25 odds in the back as odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/single-odds_640x360.webp",
+      "caption": "$10 on the Pass Line with $10 Pass Line Odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/double-odds_640x360.webp",
+      "caption": "$10 on the Pass Line with $20 as Pass Line Odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/3x-on-4-10_640x360.webp",
+      "caption": "3x Odds on Points 4 and 10."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/4x-on-5-9_640x360.webp",
+      "caption": "4x Odds on Points 5 and 9."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/5x-on-6-8_640x360.webp",
+      "caption": "5x Odds on Points 6 or 8."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/five-times-max-odds_640x360.webp",
+      "caption": "$50 on the Pass Line with $250 Pass Line Odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/ten-times-max-odds_640x360.webp",
+      "caption": "$10 on the Pass Line with $100 Pass Line Odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/max-odds/one-hundred-times-max-odds_640x360.webp",
+      "caption": "$5 on the Pass Line with $500 Pass Line Odds."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

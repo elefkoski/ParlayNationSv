@@ -70,17 +70,75 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Any Craps",
-		  "description": "The Any Craps is also more of a hedge bet also. You can use it to hedge the Pass Line during the Comeout Roll or while making a Come bet. It's similar to a Three Way Crap because they both bet the Aces, Ace Deuce, and Twelve.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Any Craps in Craps",
+  "description": "A comprehensive guide on betting the Any Craps in a craps game, explaining its usage, differences from Three Way Crap, and its placement and payment on the craps table.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-12",
+  "url": "http://parlaynation.com/any-craps",
+  "image": "http://parlaynation.com/images/any-craps/any-craps-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/any-craps"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Proposition Bets",
+      "description": "Information on the Any Craps bet in craps games, including how it's used to hedge bets, its similarities and differences from Three Way Crap, and its payout structure.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Betting the Any Craps",
+          "description": "An overview of the Any Craps bet, a one-roll bet used to hedge other bets in craps games."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Where Is Your Any Craps on the Craps Table?",
+          "description": "Details the placement of the Any Craps bet on the craps table, highlighting its location in the middle of the table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Does the Any Craps Pay in a Craps Game?",
+          "description": "Explains the payout for the Any Craps bet, which pays 7:1."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/any-craps/any-craps_640x360.webp",
+      "caption": "Overhead up close view of the any craps area on the craps layout."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/any-craps/placement-of-the-any-craps_640x360.webp",
+      "caption": "Up close view of the any craps bar and the craps rail, showing color-coordinated spots on the bet and rail."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/any-craps/what-does-the-any-craps-pay_640x360.webp",
+      "caption": "$3 on the any craps with two green dice reading 1-3 and a bubble indicating a $21 payment."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

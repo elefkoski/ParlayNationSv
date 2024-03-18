@@ -90,17 +90,115 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "The Craps Table",
-		  "description": "Don't walk up to the Craps Table clueless. Learn the different betting areas as well as all the equipment the dealers use on the game.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Craps Table",
+  "description": "An overview of the craps table layout, including the Rail, Betting Areas, Proposition Betting Area, Bank, and the essential tools like the Puck, Stick, and the Bowl.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/the-craps-table",
+  "image": "http://parlaynation.com/images/the-craps-table/the-craps-table-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/the-craps-table"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Craps Basics",
+      "description": "Detailed explanation of the craps table layout and components, including the Rail, Betting Areas, Bank, and the roles of the Puck, Stick, and the Bowl in the game.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "The Rail on a Craps Table",
+          "description": "Describes the Rail's function for holding player's cheques and personal items."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Proposition Bets on the Craps Table",
+          "description": "Explores the area dedicated to Proposition Bets and its accessibility to all players."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Craps Table Betting Areas",
+          "description": "Outlines the main areas where players place the majority of their bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "The Craps Table Bank",
+          "description": "Explains the Bank's role in managing the game's finances."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Are You Watching the Craps Table Limits?",
+          "description": "Advises on selecting tables based on their minimum and maximum betting limits."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "What Is the Puck for on a Craps Game?",
+          "description": "Details the Puck's purpose in indicating the game's current stage."
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "What Is the Stick for on a Craps Table?",
+          "description": "Describes the Stick's use in managing the dice and facilitating the game."
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Why Is There a Bowl on the Craps Table?",
+          "description": "Explains the Bowl's function in holding the extra dice."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-craps-table/the-table_640x360.webp",
+      "caption": "Overhead view of Craps table with highlighted areas of the bank, betting areas, proposition bets, and the rail."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-craps-table/craps-table-limits_640x360.webp",
+      "caption": "Craps table limit sign with $10 minimum bet and $50 maximum bet."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-craps-table/puck-off_640x360.webp",
+      "caption": "The Puck sitting in the OFF position in the Don't Come."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-craps-table/the-stick_640x360.webp",
+      "caption": "Two dice near spot twelve on the layout. The dice are being pulled back by a black stick and it's being reflected in the mirror."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-craps-table/the-craps-bowl_640x360.webp",
+      "caption": "An empty table with the stick laying flat and the bowl resting on top of the stick. Five dice sit in the bowl."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

@@ -93,17 +93,102 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Hardways",
-		  "description": "A Hardway is when one of the even Points: 4, 6, 8, or 10, land as a pair. A 6 that lands as a 3-3 is a Hard 6. Any other combination of a Hardway that does not come as a pair such as 4-2 is considered Easy.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Hardways in Craps",
+  "description": "Explore the dynamics of betting the Hardways in craps, including strategy, placement, and payout details, as well as unique bets like the Buffalo.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/the-hardways",
+  "image": "http://parlaynation.com/images/the-hardways/the-hardways-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/the-hardways"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Proposition Bets",
+      "description": "An in-depth guide on making Hardway bets in craps, understanding Buffalo bets, the precise placement of Hardways, their payouts, and how to bet for the dealers.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What is a Buffalo Bet in Craps?",
+          "description": "Explains the Buffalo bet, a strategy combining Hardway bets with a hedge against rolling a 7."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Where Are Your Hardways on the Craps Table?",
+          "description": "Details on the specific locations for Hardway bets on the craps table and tips for tracking your bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Do the Hardways Pay in Craps?",
+          "description": "Outlines the payout rates for Hardway bets, distinguishing between the 6 and 8 versus the 4 and 10."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Hardway Payment Calculators",
+          "description": "Introduces calculators for determining payouts on Hardway bets for a clearer betting strategy."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "How Do You Bet the Hardways for the Dealers on a Craps Game?",
+          "description": "Guidance on placing Hardway bets for the game's dealers, showcasing the practice of tipping and engaging with the table's staff."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-hardways/hardways_640x360.webp",
+      "caption": "Up close view of the Hardway Section on the craps table. There are no cheques on the table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-hardways/buffalo_640x360.webp",
+      "caption": "Overhead view of $1 each the hardways with a dollar on the any seven. There is an on lammer on top of one of the cheques. The puck reads off in the corner."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-hardways/placement-of-the-hardways_640x360.webp",
+      "caption": "Up close view of the Hardways section and the craps rail with 18 colored spots."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-hardways/hardways-pay-6-8_640x360.webp",
+      "caption": "$3 on the hard six with two green dice that read 3-3. A bubble reads $27 payment."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-hardways/hardways-pay-4-10_640x360.webp",
+      "caption": "$30 on the hard ten with two green dice that read 5-5. A bubble reads $270 payment."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/the-hardways/dealer-hardways_640x360.webp",
+      "caption": "$1 in the middle of the hard six."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

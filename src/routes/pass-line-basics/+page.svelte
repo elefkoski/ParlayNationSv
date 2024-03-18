@@ -96,17 +96,87 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn the Pass Line",
-		  "description": "It's pretty much as easy as putting your money on the line then sitting back and waiting for your point to Roll.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting the Pass Line in Craps",
+  "description": "A fundamental guide to understanding and placing bets on the Pass Line in Craps, including game stages, betting procedures, and the camaraderie it builds among players.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/pass-line-basics",
+  "image": "http://parlaynation.com/images/pass-line-basics/pass-line-basics-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/pass-line-basics"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Pass Line Betting in Craps",
+      "description": "Exploring the significance of the Pass Line bet in Craps, how to place these bets, the stages of the game they influence, and their impact on the gameplay experience.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "How Do You Bet the Pass Line in Craps?",
+          "description": "Guidance on placing Pass Line bets, emphasizing timing relative to the puck's status for optimal betting."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What are the Stages of the Pass Line in a Craps Game?",
+          "description": "An overview of the two crucial stages of Pass Line betting: the Comeout Roll and the Intermediate Roll, including the actions and outcomes associated with each."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Does the Pass Line Pay in Craps?",
+          "description": "Details on the even money payout structure of the Pass Line bet, alongside the advantageous Odds bet it facilitates."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Should You Bet the Pass Line After the Comeout Roll?",
+          "description": "Analysis of the strategic considerations for Pass Line betting post-Comeout Roll, recommending alternative betting strategies for increased profit."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "How Can You Bet the Pass Line for the Dealers?",
+          "description": "Instructions for placing Pass Line bets on behalf of the dealers, fostering a shared experience of wins and losses at the table."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/pass-line-basics/the-pass-line_640x360.webp",
+      "caption": "Overhead view of the pass line. There are no bets on the table."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/pass-line-basics/how-to-bet-the-pass-line_640x360.webp",
+      "caption": "Four bets on the pass line. Each bet pointing to a spot in the rail."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/pass-line-basics/pass-line-for-the-dealers_640x360.webp",
+      "caption": "A $20 bet on the pass line with a dollar sitting next to it."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

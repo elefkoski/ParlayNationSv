@@ -103,17 +103,81 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
 		{
-		  "@context": "http://schema.org/",
-		  "@type": "Course",
-		  "name": "Learn Don't Pass Lay Odds",
-		  "description": "Lay Odds get paid True Odds and have no advantage to a casino so there is a limit on the amount you can add.",
-		  "provider": {
-			"@type": "Organization",
-			"name": "Parlay Nation",
-			"url": "https://parlaynation.com",
-			"logo": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
-		  }
-		}
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Betting Don't Pass Lay Odds in Craps",
+  "description": "A detailed guide on betting Don't Pass Lay Odds in craps, including placement, payouts, maximum Lay Odds, and how to bet Lay Odds for the dealers.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-04",
+  "url": "http://parlaynation.com/dont-pass-lay-odds",
+  "image": "http://parlaynation.com/images/dont-pass-lay-odds/dont-pass-lay-odds-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/dont-pass-lay-odds"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Understanding Don't Pass Lay Odds",
+      "description": "Insights on Don't Pass Lay Odds bets in craps, covering how to place these bets, their payouts based on the point, and how to maximize Lay Odds.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Placing Don't Pass Lay Odds",
+          "description": "Instructions on how to place Lay Odds bets next to the Don't Pass bet on the craps table."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Don't Pass Lay Odds Payments",
+          "description": "Details on the payout ratios for Lay Odds depending on the point number."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Maximum Lay Odds",
+          "description": "Explanation of the maximum Lay Odds allowed for Don't Pass bets."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Lay Odds for Dealers",
+          "description": "Guidance on placing Lay Odds bets for the table's dealers."
+        }
+      ]
+    }
+  ],
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass-lay-odds/dont-pass-lay-odds_640x360.webp",
+      "caption": "$10 on the Don't Pass with $24 Lay Odds."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass-lay-odds/how-to-bet-dont-pass-lay-odds_640x360.webp",
+      "caption": "Several Don't Pass Bets with Lay Odds Heeled in the direction of the base dealer."
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/dont-pass-lay-odds/lay-odds-for-the-dealers_640x360.webp",
+      "caption": "$1 with $6 Lay Odds on the Don't Pass for the dealers."
+    }
+  ]
+}
+
 	</script>
 </svelte:head>
 

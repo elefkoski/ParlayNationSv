@@ -276,7 +276,7 @@
 					<span>Share the unwritten rules - </span>Craps has its fair share of unwritten rules. For
 					example, it's considered taboo to <Link
 						text="reach into the table"
-						href="not-to-do-at-craps"
+						href="not-to-do-at-craps-table"
 					/> when the shooter has the dice or to say the word “Seven” during the Intermediate Roll. Share
 					these unwritten rules with the new player so they can avoid awkward situations and blend in
 					with the regulars.
