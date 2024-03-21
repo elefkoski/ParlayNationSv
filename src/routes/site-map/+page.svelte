@@ -51,9 +51,18 @@
 				'Inside',
 				'Outside',
 				'Uptown/Downtown',
+				'Even Numbers',
 				'Including the Point'
 			],
-			href: ['spread-bets', 'across', 'inside', 'outside', 'uptown-downtown', 'including-the-point']
+			href: [
+				'spread-bets',
+				'across',
+				'inside',
+				'outside',
+				'uptown-downtown',
+				'even-numbers',
+				'including-the-point'
+			]
 		},
 		{
 			title: 'Proposition Bets',
@@ -101,7 +110,8 @@
 				"Don't Pass Lay Odds",
 				"Don't Come",
 				"Don't Come Lay Odds",
-				'Overlays'
+				'Overlays',
+				'Bridging Lay Odds'
 			],
 			href: [
 				'the-donts',
@@ -109,7 +119,8 @@
 				'dont-pass-lay-odds',
 				'dont-come',
 				'dont-come-lay-odds',
-				'overlays'
+				'overlays',
+				'bridging=lay-odds'
 			]
 		}
 	];

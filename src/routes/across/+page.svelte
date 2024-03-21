@@ -167,9 +167,9 @@
 				When you bet Across, you are betting all the <Link
 					text="Place Bets"
 					href="place-bet-basics"
-				/>, in the same amount, not including the Point. E.g., $54 Across would be $10 on the 5, $12
-				on 6, $12 on the 8, $10 on the 9, and $10 on the 10. $10 + section + $12 + $10 + $10 = $54.
-				After the Point has been established, tell the dealer, <Quote
+				/>, in the same amount, not including the Point. E.g. Suppose the Point was 4 and you wanted
+				$54 Across. It would be $10 on the 5, $12 on 6, $12 on the 8, $10 on the 9, and $10 on the
+				10. $10 + 12 + $12 + $10 + $10 = $54. After the Point has been established, tell the dealer, <Quote
 					text="I would like 54 across."
 				/> and they'll repeat <Quote text="54 across." />
 			</p>

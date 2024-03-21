@@ -17,8 +17,8 @@
 		'When you bet Including the Point you are betting a spread bet that included the point. You can bet Across, Inside, Outside, Uptown, or Downtown Including the Point.';
 	let url: string = 'including-the-point';
 
-	let phref: string = 'uptown-downtown';
-	let prev: string = 'Uptown/Downtown';
+	let phref: string = 'even-numbers';
+	let prev: string = 'Even Numbers';
 	let nhref: string = 'proposition-bets';
 	let next: string = 'Proposition Bets';
 

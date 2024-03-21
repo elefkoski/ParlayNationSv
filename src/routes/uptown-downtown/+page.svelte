@@ -17,8 +17,8 @@
 
 	let phref: string = 'outside';
 	let prev: string = 'Outside';
-	let nhref: string = 'including-the-point';
-	let next: string = 'Including the Point';
+	let nhref: string = 'even-numbers';
+	let next: string = 'Even Numbers';
 
 	let pageLinks: PageMenu[] = [
 		{

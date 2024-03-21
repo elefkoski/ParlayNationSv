@@ -41,9 +41,23 @@
 		},
 		{
 			title: 'Spread Bets',
-			items: ['Across', 'Inside', 'Outside', 'Uptown/Downtown', 'Including the Point'],
+			items: [
+				'Across',
+				'Inside',
+				'Outside',
+				'Uptown/Downtown',
+				'Even Numbers',
+				'Including the Point'
+			],
 			mainHref: 'spread-bets',
-			href: ['across', 'inside', 'outside', 'uptown-downtown', 'including-the-point']
+			href: [
+				'across',
+				'inside',
+				'outside',
+				'uptown-downtown',
+				'even-numbers',
+				'including-the-point'
+			]
 		},
 		{
 			title: 'Proposition Bets',

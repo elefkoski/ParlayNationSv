@@ -43,14 +43,14 @@
 		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
 	};
 
-	let tblAria: string = 'Across betting options table';
+	let tblAria: string = 'Outside betting options table';
 	let tblHeaders: string[] = ['The Spread', 'Total bet'];
 	let tblRows: (string | number)[][] = [
-		['*One Unit: $5/number', '$15/20 Across'],
-		['Two Units: $10/number', '$30/40 Across'],
-		['Three Units: $15/number', '$45/60 Across'],
-		['*One Unit: $25/number', '$76/77/102 Across'],
-		['Two Units: $50/number', '$152/155/205 Across']
+		['*One Unit: $5/number', '$15/20 Outside'],
+		['Two Units: $10/number', '$30/40 Outside'],
+		['Three Units: $15/number', '$45/60 Outside'],
+		['*One Unit: $25/number', '$76/77/102 Outside'],
+		['Two Units: $50/number', '$152/155/205 Outside']
 	];
 	let tblPnts: string[] = [
 		'One Unit can be $5 or $25 on the 4, 5, 9, and 10. One Unit can be $6 or $30 on the 6 or 8.'
@@ -158,10 +158,10 @@
 			{pageData}
 		>
 			<p class="pb-4">
-				The four Outside Points are 4, 5, 9, and you bet them in the same unit amount, not including
-				the Point. If thnavoint was 8 and you wanted to bet $10 on each of the numbers, you would
-				have to bet the following: $10 on the 4, $10 on the 5, $10 on tsection9, and $10 on the 10 —
-				$10 + $10 + $10 + $10 = $40. This bet would be 40 Outside.
+				The four Outside Points are 4, 5, 9, and 10 — and you bet them in the same unit amount, not
+				including the Point. If the point was 8 and you wanted to bet $10 on each of the numbers,
+				you would have to bet the following: $10 on the 4, $10 on the 5, $10 on the 9, and $10 on
+				the 10 — $10 + $10 + $10 + $10 = $40. This bet would be 40 Outside.
 			</p>
 			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
