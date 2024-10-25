@@ -67,10 +67,9 @@
 		calculateFourTenOverlay
 	} from '$lib/utils/calculations';
 
-	let title: string = 'Craps Simulator';
+	let title: string = 'Craps Calculators';
 	let description: string = 'Craps bet calculators for all the bets on the Craps table.';
-	("Downloadable PDF's for Craps. Practice Math Printouts, Dice and Table Printouts, and more.");
-	let url: string = 'craps-simulator';
+	let url: string = 'craps-calculators';
 </script>
 
 <svelte:head>
@@ -99,7 +98,7 @@
 		</p>
 	</header>
 	<main
-		aria-label="Main sections with downloadables"
+		aria-label="Main sections with calculators"
 		class="bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg mt-6 flex-col space-y-6"
 	>
 		<CalcBox
