@@ -4,14 +4,30 @@
 	import { user, type User } from '$lib/utils/store';
 	import { onAuthStateChanged, signOut } from 'firebase/auth';
 	import { auth } from '$lib/utils/firebase';
+	import { theme, toggleTheme } from '$lib/stores/theme';
+	import { onMount } from 'svelte';
 
 	let current_user: User | null;
 	let isAuthenticated = false;
 	let profilePicture: string = '';
+	let currentTheme: string;
 
 	user.subscribe((value) => {
 		current_user = value;
 		current_user = { ...value, profilePicture };
+	});
+
+	theme.subscribe((value) => {
+		currentTheme = value;
+		if (typeof document !== 'undefined') {
+			document.documentElement.setAttribute('data-theme', currentTheme);
+		}
+	});
+	// Apply the initial theme on mount
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.documentElement.setAttribute('data-theme', currentTheme);
+		}
 	});
 
 	onAuthStateChanged(auth, (firebaseUser) => {
@@ -50,6 +66,10 @@
 		event.preventDefault();
 		goto('/login');
 	}
+
+	function handleThemeToggle() {
+		toggleTheme();
+	}
 </script>
 
 <div class="relative z-20">
@@ -74,43 +94,74 @@
 			<div class="absolute right-4 top-1/2 transform -translate-y-1/2 hidden md:block">
 				<div class="flex-none hidden md:block">
 					<div class="join flex items-center">
-						<div>
-							<div>
-								<input
-									class="input input-bordered join-item dark:bg-gray-700 dark:text-gray-300 h-10"
-									placeholder="Search..."
-								/>
-							</div>
-						</div>
 						<div class="indicator mr-2 h-10">
-							<button class="btn join-item dark:bg-gray-700 dark:text-gray-300 min-h-0 h-10"
-								>Search</button
+							<button
+								class="btn join-item dark:bg-gray-700 dark:text-gray-300 min-h-0 h-10"
+								data-track="theme-toggle"
+								on:click={handleThemeToggle}
 							>
-						</div>
-						<ul class="menu menu-horizontal px-1 dark:text-gray-200">
-							{#if isAuthenticated}
-								<!-- User is logged in -->
-								<li>
+								{#if currentTheme === 'dark'}
 									<img
-										src={profilePicture}
-										alt="User Avatar"
-										class="user-avatar w-10 h-10 rounded-full object-cover p-0"
+										src="src/images/assets/sun-white-icon.png"
+										alt="Sun Icon 1"
+										class="w-6 h-6"
 									/>
-								</li>
-								<li>
-									<details>
-										<summary> More </summary>
-										<ul class="p-2 bg-base-100 dark:bg-gray-700">
-											<li><a href="profile">Profile</a></li>
-											<li><a href="/" on:click={logout}>Sign Out</a></li>
-										</ul>
-									</details>
-								</li>
-							{:else}
-								<!-- User is not logged in -->
-								<li><a href="login" on:click={navigateToLogin}>Sign In</a></li>
-							{/if}
-						</ul>
+									<img
+										src="src/images/assets/sun-black-icon.png"
+										alt="Sun Icon 2"
+										class="w-6 h-6 hidden"
+									/>
+								{:else}
+									<img
+										src="src/images/assets/moon-white-icon.png"
+										alt="Moon Icon 1"
+										class="w-6 h-6"
+									/>
+									<img
+										src="src/images/assets/moon-black-icon.png"
+										alt="Moon Icon 2"
+										class="w-6 h-6 hidden"
+									/>
+								{/if}
+							</button>
+							<div>
+								<div>
+									<input
+										class="input input-bordered join-item dark:bg-gray-700 dark:text-gray-300 h-10"
+										placeholder="Search..."
+									/>
+								</div>
+							</div>
+							<div class="indicator mr-2 h-10">
+								<button class="btn join-item dark:bg-gray-700 dark:text-gray-300 min-h-0 h-10"
+									>Search</button
+								>
+							</div>
+							<ul class="menu menu-horizontal px-1 dark:text-gray-200">
+								{#if isAuthenticated}
+									<!-- User is logged in -->
+									<li>
+										<img
+											src={profilePicture}
+											alt="User Avatar"
+											class="user-avatar w-10 h-10 rounded-full object-cover p-0"
+										/>
+									</li>
+									<li>
+										<details>
+											<summary> More </summary>
+											<ul class="p-2 bg-base-100 dark:bg-gray-700">
+												<li><a href="profile">Profile</a></li>
+												<li><a href="/" on:click={logout}>Sign Out</a></li>
+											</ul>
+										</details>
+									</li>
+								{:else}
+									<!-- User is not logged in -->
+									<li><a href="login" on:click={navigateToLogin}>Sign In</a></li>
+								{/if}
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

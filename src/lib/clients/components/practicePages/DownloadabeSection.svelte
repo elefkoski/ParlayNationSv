@@ -4,7 +4,6 @@
 		title: string;
 		description: string;
 		imageUrlSm: string;
-		imageUrlMd: string;
 		imageUrlLg: string;
 		pageUrl: string;
 		pdfUrl: string;
@@ -17,7 +16,6 @@
 			title={item.title}
 			description={item.description}
 			imageUrlSm={item.imageUrlSm}
-			imageUrlMd={item.imageUrlMd}
 			imageUrlLg={item.imageUrlLg}
 			pageUrl={item.pageUrl}
 			pdfUrl={item.pdfUrl}

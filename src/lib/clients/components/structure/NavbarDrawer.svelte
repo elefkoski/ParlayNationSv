@@ -1,5 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import ThemeSlider from '../ThemeSlider.svelte';
+
+	let isOpen = false;
+
+	onMount(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
 
 	type Menu = {
 		title: string;
@@ -483,11 +490,6 @@
 		}
 	];
 
-	onMount(() => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	});
-
-	let isOpen = false;
 	function toggleDrawer() {
 		isOpen = !isOpen;
 	}
@@ -596,7 +598,7 @@
 						<h1 class="ml-4 text-lg text-[#60A5FA]">{menu.title}</h1>
 					</a>
 				{/each}
-
+				<ThemeSlider />
 				{#each menus2 as menu (menu.title)}
 					<a
 						class="flex py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -653,3 +655,50 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 34px;
+		height: 20px;
+	}
+
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		transition: 0.4s;
+		border-radius: 34px;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: '';
+		height: 14px;
+		width: 14px;
+		left: 3px;
+		bottom: 3px;
+		background-color: white;
+		transition: 0.4s;
+		border-radius: 50%;
+	}
+
+	input:checked + .slider {
+		background-color: #2196f3;
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(14px);
+	}
+</style>
