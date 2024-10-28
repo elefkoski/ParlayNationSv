@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MoreCrapsLayout from '$lib/clients/components/layouts/MoreCrapsLayout.svelte';
+	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
 		calculatePassLine,
 		calculateSixEightOdds,

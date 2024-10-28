@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MoreLayout from '$lib/clients/components/layouts/MoreCrapsLayout.svelte';
+	import MoreLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 
 	let title: string = 'Site Map';
 	let description: string =

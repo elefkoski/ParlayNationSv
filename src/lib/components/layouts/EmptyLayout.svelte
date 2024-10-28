@@ -21,6 +21,6 @@
 	</script>
 </svelte:head>
 
-<div id="parentElement" class="container dark:text-slate-300 mx-auto pt-20 min-h-screen">
+<div id="parentElement" class="container mx-auto pt-20 min-h-screen">
 	<slot />
 </div>

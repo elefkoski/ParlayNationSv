@@ -1,6 +1,7 @@
 <script>
-	import '../../../../app.css';
-	import Navbar from '$lib/clients/components/structure/Navbar.svelte';
+	import '../../../app.css';
+	import '../../../colors.css';
+	import Navbar from '$lib/components/structure/Navbar.svelte';
 	import { onMount } from 'svelte';
 	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
 	onMount(() => {
@@ -42,6 +43,6 @@
 </svelte:head>
 
 <Navbar />
-<div id="parentElement" class=" container mx-auto flex flex-wrap pt-20 dark:text-slate-300 z-10">
+<div id="parentElement" class=" container mx-auto flex flex-wrap pt-20 z-10">
 	<slot />
 </div>

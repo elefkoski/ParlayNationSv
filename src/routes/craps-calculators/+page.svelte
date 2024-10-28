@@ -1,11 +1,11 @@
 <script lang="ts">
-	import MoreCrapsLayout from '$lib/clients/components/layouts/MoreCrapsLayout.svelte';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import CalcInput2 from '$lib/clients/components/calculators/CalcInput2.svelte';
-	import CalcInput3 from '$lib/clients/components/calculators/CalcInput3.svelte';
-	import CalcInput4 from '$lib/clients/components/calculators/CalcInput4.svelte';
-	import CalcInput5 from '$lib/clients/components/calculators/CalcInput5.svelte';
+	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
+	import CalcBox from '$lib/components/calculators/CalcBox.svelte';
+	import CalcInput from '$lib/components/calculators/CalcInput.svelte';
+	import CalcInput2 from '$lib/components/calculators/CalcInput2.svelte';
+	import CalcInput3 from '$lib/components/calculators/CalcInput3.svelte';
+	import CalcInput4 from '$lib/components/calculators/CalcInput4.svelte';
+	import CalcInput5 from '$lib/components/calculators/CalcInput5.svelte';
 	import {
 		calculatePassLine,
 		calculateSixEightOdds,

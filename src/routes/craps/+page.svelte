@@ -1,6 +1,6 @@
 <script lang="ts">
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import CrapsPageSection from '$lib/clients/components/contentPages/CrapsPageSection.svelte';
+	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
+	import CrapsPageSection from '$lib/components/contentPages/CrapsPageSection.svelte';
 	let title: string = 'Learn How to Play Craps';
 	let description: string =
 		"Want to play the most exciting game in the casino? Learn How to Play Craps so you'll never miss another exciting moment on the table.";

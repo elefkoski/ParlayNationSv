@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EmptyLayout from '$lib/clients/components/layouts/EmptyLayout.svelte';
+	import EmptyLayout from '$lib/components/layouts/EmptyLayout.svelte';
 	import { sendPasswordResetEmail, getAuth } from 'firebase/auth';
 	import { writable } from 'svelte/store';
 

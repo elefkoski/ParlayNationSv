@@ -1,9 +1,9 @@
 <script lang="ts">
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import HomeHeadings from '../../lib/clients/components/HomeHeader.svelte';
-	import HomeSections from '../../lib/clients/components/HomeSections.svelte';
-	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
+	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
+	import HomeHeadings from '../../lib/components/HomeHeader.svelte';
+	import HomeSections from '../../lib/components/HomeSections.svelte';
+	import PrevNext from '$lib/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 
 	let title: string = 'Spread Bets';
 	let description: string =

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import LeftNavUl from '$lib/clients/components/structure/LeftNav-ul.svelte';
-	import LeftNavMainUl from '$lib/clients/components/structure/LeftNavMainMenu.svelte';
+	import LeftNavUl from '$lib/components/structure/LeftNav-ul.svelte';
+	import LeftNavMainUl from '$lib/components/structure/LeftNavMainMenu.svelte';
 	let subMenus: {
 		title: string;
 		items: string[];
@@ -120,7 +120,7 @@
 	];
 </script>
 
-<div class="h-screen fixed overflow-y-auto pb-40 bg-gray-900 px-10 pt-6">
+<div class="h-screen fixed overflow-y-auto pb-40 left-nav-bg px-10 pt-6">
 	<nav id="nav" class="lg:leading-6">
 		<ul class="flex-grow overscroll-contain">
 			<LeftNavMainUl />

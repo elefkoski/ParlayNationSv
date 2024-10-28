@@ -4,7 +4,7 @@
 	import { user, type User } from '$lib/utils/store';
 	import { onAuthStateChanged, signOut } from 'firebase/auth';
 	import { auth } from '$lib/utils/firebase';
-	import { theme, toggleTheme } from '$lib/stores/theme';
+	import { theme, toggleTheme, setTheme } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
 
 	let current_user: User | null;
@@ -23,10 +23,22 @@
 			document.documentElement.setAttribute('data-theme', currentTheme);
 		}
 	});
+
+	// Function to detect system theme
+	function detectSystemTheme() {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark';
+		}
+		return 'light';
+	}
+
 	// Apply the initial theme on mount
 	onMount(() => {
 		if (typeof document !== 'undefined') {
+			const systemTheme = detectSystemTheme();
+			setTheme(systemTheme); // Set the initial theme based on system preference
 			document.documentElement.setAttribute('data-theme', currentTheme);
+			window.scrollTo({ top: 0, behavior: 'smooth' });
 		}
 	});
 
@@ -75,7 +87,7 @@
 <div class="relative z-20">
 	<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content flex flex-col">
-		<nav class="w-full navbar bg-base-300 dark:bg-gray-950 py-4 fixed top-0 h-20">
+		<nav class="w-full navbar top-nav-bg py-4 fixed top-0 h-20">
 			<div class="container flex justify-center md:ml-8 md:mr-0 md:justify-start lg:mx-16">
 				<div class="absolute left-16 md:relative lg:hidden">
 					<NavbarDrawer />
@@ -96,7 +108,7 @@
 					<div class="join flex items-center">
 						<div class="indicator mr-2 h-10">
 							<button
-								class="btn join-item dark:bg-gray-700 dark:text-gray-300 min-h-0 h-10"
+								class="btn join-item search min-h-0 h-10"
 								data-track="theme-toggle"
 								on:click={handleThemeToggle}
 							>
@@ -127,17 +139,15 @@
 							<div>
 								<div>
 									<input
-										class="input input-bordered join-item dark:bg-gray-700 dark:text-gray-300 h-10"
+										class="input input-bordered join-item search h-10 placeholder"
 										placeholder="Search..."
 									/>
 								</div>
 							</div>
 							<div class="indicator mr-2 h-10">
-								<button class="btn join-item dark:bg-gray-700 dark:text-gray-300 min-h-0 h-10"
-									>Search</button
-								>
+								<button class="btn join-item search min-h-0 h-10">Search</button>
 							</div>
-							<ul class="menu menu-horizontal px-1 dark:text-gray-200">
+							<ul class="menu menu-horizontal px-1 sign-in">
 								{#if isAuthenticated}
 									<!-- User is logged in -->
 									<li>
@@ -150,7 +160,7 @@
 									<li>
 										<details>
 											<summary> More </summary>
-											<ul class="p-2 bg-base-100 dark:bg-gray-700">
+											<ul class="p-2 profile-menu">
 												<li><a href="profile">Profile</a></li>
 												<li><a href="/" on:click={logout}>Sign Out</a></li>
 											</ul>

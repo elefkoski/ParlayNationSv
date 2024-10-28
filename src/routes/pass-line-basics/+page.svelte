@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { calculatePassLine } from '$lib/utils/calculations';
-	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
+	import ContentMenuBox from '$lib/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import CalcBox from '$lib/clients/components/calculators/CalcBox.svelte';
-	import CalcContainer from '$lib/clients/components/calculators/CalcContainer.svelte';
-	import CalcInput from '$lib/clients/components/calculators/CalcInput.svelte';
-	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
-	import ContentHeaderThree from '$lib/clients/components/contentPages/Content-h3.svelte';
-	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
-	import ContentTble from '$lib/clients/components/contentPages/ContentTable.svelte';
-	import Divider from '$lib/clients/components/Divider.svelte';
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import Link from '$lib/clients/components/Link.svelte';
-	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
+	import CalcBox from '$lib/components/calculators/CalcBox.svelte';
+	import CalcContainer from '$lib/components/calculators/CalcContainer.svelte';
+	import CalcInput from '$lib/components/calculators/CalcInput.svelte';
+	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
+	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
+	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
+	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import Divider from '$lib/components/Divider.svelte';
+	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
+	import Link from '$lib/components/Link.svelte';
+	import PrevNext from '$lib/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 
 	let title: string = 'Learn the Pass Line';
 	let description: string =

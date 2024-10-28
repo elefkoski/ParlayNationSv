@@ -1,15 +1,15 @@
 <script lang="ts">
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
+	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
-	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
-	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
-	import Divider from '$lib/clients/components/Divider.svelte';
-	import Link from '../../lib/clients/components/Link.svelte';
-	import Quote from '../../lib/clients/components/Quote.svelte';
+	import PrevNext from '$lib/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/components/PrevNext2.svelte';
+	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
+	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
+	import Divider from '$lib/components/Divider.svelte';
+	import Link from '../../lib/components/Link.svelte';
+	import Quote from '../../lib/components/Quote.svelte';
 
 	let title: string = 'The Stages of a Craps Game';
 	let description: string =

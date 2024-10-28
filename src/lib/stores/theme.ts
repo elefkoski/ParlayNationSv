@@ -19,6 +19,11 @@ if (typeof window !== 'undefined' && window.matchMedia) {
 	});
 }
 
+//Function to set the theme
+export function setTheme(value: 'light' | 'dark') {
+	theme.set(value);
+}
+
 // Function to toggle the theme
 export function toggleTheme() {
 	theme.update((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));

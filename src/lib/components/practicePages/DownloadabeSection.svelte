@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Downloadable from '$lib/clients/components/practicePages/PracticeDownloadable.svelte';
+	import Downloadable from '$lib/components/practicePages/PracticeDownloadable.svelte';
 	export let items: {
 		title: string;
 		description: string;

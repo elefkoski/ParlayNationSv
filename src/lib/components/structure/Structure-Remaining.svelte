@@ -1,6 +1,6 @@
 <script lang="ts">
-	import RightColumn from '$lib/clients/components/structure/RightColumn.svelte';
-	import Footer from '$lib/clients/components/structure/Footer.svelte';
+	import RightColumn from '$lib/components/structure/RightColumn.svelte';
+	import Footer from '$lib/components/structure/Footer.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	export let pageLinks: PageMenu[] = [];
 </script>

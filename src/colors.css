@@ -1,0 +1,117 @@
+:root {
+	/* DEFAULT COLORS */
+	--text-color: #000;
+	--bg-color: #fff;
+	/* Nav */
+	--top-nav-bg-color: #e2e8f0; /* base-300 */
+	--top-nav-profile-menu-bg-color: hsl(var(--b1) / 1);
+	--left-nav-bg-color: #f3f4f6; /* base-200 */
+	/* Search */
+	--search-bg-color: #374151; /* gray-700 */
+	--search-text-color: #d1d5db; /* gray-300 */
+	--placeholder-color: #6b7280; /* gray-500 */
+
+	/* DARK MODE COLORS */
+	--dm-bg-color: #333;
+	--dm-text-color: #fff;
+	/* Nav */
+	--dm-top-nav-bg-color: #030712; /* gray-950 */
+	--dm-top-nav-profile-menu-bg-color: #374151; /* gray-700 */
+	--dm-left-nav-bg-color: #111827; /* gray-900 */
+
+	/* THEME SLIDER */
+	--slider-bg-color: #ccc;
+	--theme-slider-thumb-color: white;
+}
+
+/* Nav Styles */
+.top-nav-bg {
+	background-color: var(--top-nav-bg-color);
+}
+.left-nav-bg {
+	background-color: var(--left-nav-bg-color);
+}
+
+/* Search Styles */
+.search {
+	background-color: var(--search-bg-color);
+	color: var(--search-text-color);
+}
+.search::placeholder {
+	color: var(--placeholder-color);
+}
+.sign-in {
+	color: var(--text-color);
+}
+.profile-menu {
+	background-color: var(--top-nav-profile-menu-bg-color);
+}
+
+/* Theme Slider Attributes*/
+.theme-slider {
+	display: flex;
+	align-items: center;
+}
+
+.theme-slider__input {
+	display: none;
+}
+
+.theme-slider__label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.theme-slider__text {
+	margin-right: 10px;
+	font-size: 0.875rem;
+	color: var(--text-color);
+}
+
+.theme-slider__slider {
+	width: 40px;
+	height: 20px;
+	background-color: var(--slider-bg-color);
+	border-radius: 20px;
+	position: relative;
+	transition: background-color 0.3s;
+}
+
+.theme-slider__slider::before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background-color: var(--theme-slider-thumb-color);
+	border-radius: 50%;
+	top: 1px;
+	transition: transform 0.3s;
+}
+
+.theme-slider__input:checked + .theme-slider__label .theme-slider__slider {
+	background-color: var(--slider-bg-color);
+}
+
+.theme-slider__input:checked + .theme-slider__label .theme-slider__slider::before {
+	transform: translateX(20px);
+}
+
+/* Dark mode styles */
+[data-theme='dark'] {
+	/* Default colors */
+	--text-color: var(--dm-text-color);
+	--bg-color: var(--dm-bg-color);
+	--top-nav-bg-color: var(--dm-top-nav-bg-color);
+	--top-nav-profile-menu-bg-color: var(--dm-top-nav-profile-menu-bg-color);
+	--left-nav-bg-color: var(--dm-left-nav-bg-color);
+
+	/* Theme Slider */
+	--slider-bg-color: #666;
+	--theme-slider-thumb-color: #fff;
+
+	/* Dark mode for sign-in */
+	.sign-in {
+		color: var(--dm-text-color);
+	}
+}

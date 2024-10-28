@@ -1,8 +1,8 @@
 <script lang="ts">
-	import SingleColumnLayout from '$lib/clients/components/layouts/SingleColumnLayout.svelte';
+	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
 	import { deleteDoc, doc } from 'firebase/firestore';
 	import { db, fetchAllBookmarks } from '$lib/utils/firebase';
-	import ProfileContentCard from '$lib/clients/components/profilePage/ProfileContentCard.svelte';
+	import ProfileContentCard from '$lib/components/profilePage/ProfileContentCard.svelte';
 	import { bookmarkedPages, user, type User } from '$lib/utils/store';
 
 	let current_user: User | null = null;

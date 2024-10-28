@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SingleColumnLayout from '$lib/clients/components/layouts/SingleColumnLayout.svelte';
+	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
 
 	let title: string = '';
 	let description: string = '';

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import PracticeLayout from '$lib/clients/components/layouts/PracticeCrapsLayout.svelte';
-	import PracticeCarousel from '$lib/clients/components/practicePages/PracticeCarousel.svelte';
-	import PracticeH1 from '$lib/clients/components/practicePages/Practice-h1.svelte';
-	import PracticeDescription from '$lib/clients/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/clients/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeLayout from '$lib/components/layouts/PracticeCrapsLayout.svelte';
+	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
+	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
+	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
+	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
 
 	let title: string = 'Practice Pass Line Odds Payments 4 & 10';
 	let description: string =

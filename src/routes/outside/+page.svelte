@@ -1,15 +1,15 @@
 <script lang="ts">
-	import LearnLayout from '$lib/clients/components/layouts/LearnCrapsLayout.svelte';
-	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
+	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import PrevNext from '$lib/clients/components/PrevNext.svelte';
-	import PrevNext2 from '$lib/clients/components/PrevNext2.svelte';
-	import ContentHeaderOne from '$lib/clients/components/contentPages/Content-h1.svelte';
-	import ContentHeaderTwo from '$lib/clients/components/contentPages/Content-h2.svelte';
-	import ContentHeaderThree from '$lib/clients/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/clients/components/contentPages/ContentTable.svelte';
-	import ContentImg from '$lib/clients/components/contentPages/Content-img.svelte';
-	import Divider from '$lib/clients/components/Divider.svelte';
+	import PrevNext from '$lib/components/PrevNext.svelte';
+	import PrevNext2 from '$lib/components/PrevNext2.svelte';
+	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
+	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
+	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
+	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
+	import Divider from '$lib/components/Divider.svelte';
 
 	let title: string = 'Betting Outside at the Craps Table';
 	let description: string =

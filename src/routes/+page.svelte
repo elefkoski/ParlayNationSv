@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import Navbar from '$lib/clients/components/structure/Navbar.svelte';
-	import Footer from '$lib/clients/components/structure/Footer.svelte';
+	import Navbar from '$lib/components/structure/Navbar.svelte';
+	import Footer from '$lib/components/structure/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
 	onMount(() => {

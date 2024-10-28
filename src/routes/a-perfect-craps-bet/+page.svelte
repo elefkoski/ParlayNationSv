@@ -1,13 +1,13 @@
 <script lang="ts">
-	import BlogLayout from '$lib/clients/components/layouts/BlogCrapsLayout.svelte';
-	import ContentMenuBox from '$lib/clients/components/PageMenuBox.svelte';
+	import BlogLayout from '$lib/components/layouts/BlogCrapsLayout.svelte';
+	import ContentMenuBox from '$lib/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
-	import BlogHeaderOne from '$lib/clients/components/blog/BlogH1.svelte';
-	import BlogH2 from '$lib/clients/components/blog/BlogH2.svelte';
-	import BlogH3 from '$lib/clients/components/blog/BlogH3.svelte';
-	import BlogImg from '$lib/clients/components/blog/Blog-img.svelte';
-	import Divider from '$lib/clients/components/Divider.svelte';
-	import Link from '$lib/clients/components/Link.svelte';
+	import BlogHeaderOne from '$lib/components/blog/BlogH1.svelte';
+	import BlogH2 from '$lib/components/blog/BlogH2.svelte';
+	import BlogH3 from '$lib/components/blog/BlogH3.svelte';
+	import BlogImg from '$lib/components/blog/Blog-img.svelte';
+	import Divider from '$lib/components/Divider.svelte';
+	import Link from '$lib/components/Link.svelte';
 
 	let title: string = 'Make the Perfect Craps Bet';
 	let description: string =
