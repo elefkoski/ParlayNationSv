@@ -1,12 +1,51 @@
-<footer class="footer w-full p-10 text-base-content dark:text-slate-300">
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { theme } from '$lib/stores/theme';
+
+	let currentTheme: string;
+
+	theme.subscribe((value) => {
+		currentTheme = value;
+		if (typeof document !== 'undefined') {
+			document.documentElement.setAttribute('data-theme', currentTheme);
+		}
+	});
+
+	// Function to detect system theme
+	function detectSystemTheme() {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark';
+		}
+		return 'light';
+	}
+
+	// Apply the initial theme on mount
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			const systemTheme = detectSystemTheme();
+			theme.set(systemTheme); // Set the initial theme based on system preference
+			document.documentElement.setAttribute('data-theme', currentTheme);
+		}
+	});
+</script>
+
+<footer class="footer w-full p-10">
 	<div>
 		<figure>
 			<a data-track="footer-logo" href="/">
-				<img
-					src="src/images/assets/white-logo_950x257.webp"
-					alt="white parlay nation logo"
-					class="w-48"
-				/>
+				{#if currentTheme === 'dark'}
+					<img
+						src="src/images/assets/white-logo_950x257.webp"
+						alt="white parlay nation logo"
+						class="w-48"
+					/>
+				{:else}
+					<img
+						src="src/images/assets/parlay-nation-logo_524x149.webp"
+						alt="parlay nation logo"
+						class="w-48"
+					/>
+				{/if}
 			</a>
 		</figure>
 		<p>Parlay Nation<br />I'm here to teach you about casino craps.</p>

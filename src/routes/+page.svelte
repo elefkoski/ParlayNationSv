@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '../colors.css';
 	import Navbar from '$lib/components/structure/Navbar.svelte';
 	import Footer from '$lib/components/structure/Footer.svelte';
 	import { onMount } from 'svelte';
@@ -12,7 +13,7 @@
 </script>
 
 <Navbar />
-<main id="parentElement" class="dark:text-slate-400">
+<main id="parentElement" class="home-page-text">
 	<section
 		aria-label="Main Hero"
 		class="mx-auto py-12 mt-20 bg-cover bg-center"
@@ -32,20 +33,20 @@
 					</div>
 				</div>
 			</section>
-			<div class="absolute inset-0 bg-black opacity-80 rounded-lg lg:max-w-3xl m-auto" />
+			<div class="absolute inset-0 hero-bg opacity-80 rounded-lg lg:max-w-3xl m-auto" />
 		</div>
 	</section>
 	<section
 		aria-label="Learn Craps"
 		class="grid grid-cols-1 lg:grid-cols-12 lg:max-w-4xl lg:m-auto lg:mt-12"
 	>
-		<div class="text-center bg-grey-600 dark:bg-black grid content-center col-span-4 py-16 lg:py-0">
+		<div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-0">
 			<h1 class="text-2xl font-bold">LEARN CRAPS</h1>
 			<p class="p-6 max-w-xs m-auto">
 				New to the game? Looking for a refresher? A journey into the world of Craps begins right
 				here.
 			</p>
-			<a data-track="home-learn-craps" href="craps" class="btn btn-primary w-1/2 m-auto"
+			<a data-track="home-learn-craps" href="craps" class="btn home-section-btn w-1/2 m-auto"
 				>LEARN NOW</a
 			>
 		</div>
@@ -83,7 +84,7 @@
 			/>
 		</div>
 		<div
-			class="text-center py-16 lg:py-0 bg-grey-600 dark:bg-black grid content-center col-span-4 order-1 lg:oder-2"
+			class="text-center py-16 lg:py-0 home-section-bg grid content-center col-span-4 order-1 lg:oder-2"
 		>
 			<h1 class="text-2xl font-bold">PRACTICE CRAPS</h1>
 			<p class="p-6 max-w-xs m-auto">
@@ -92,7 +93,7 @@
 			<a
 				data-track="home-practice-craps"
 				href="practice-craps"
-				class="btn btn-primary capitalize w-1/2 m-auto">PRACTICE NOW</a
+				class="btn home-section-btn capitalize w-1/2 m-auto">PRACTICE NOW</a
 			>
 		</div>
 	</section>
@@ -100,7 +101,7 @@
 		aria-label="Play Craps"
 		class="grid grid-cols-1 lg:grid-cols-12 lg:max-w-4xl lg:m-auto lg:mt-12"
 	>
-		<div class="text-center bg-grey-600 dark:bg-black grid content-center col-span-4 py-16 lg:py-0">
+		<div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-0">
 			<h1 class="text-2xl font-bold">PLAY CRAPS</h1>
 			<p class="p-6 max-w-xs m-auto">
 				Play Craps using the Craps Simulator. Bet the Pass Line, Place Bets, and more.
@@ -108,7 +109,7 @@
 			<a
 				data-track="home-craps-simulator"
 				href="craps-simulator"
-				class="btn btn-primary capitalize w-1/2 m-auto">PLAY NOW</a
+				class="btn home-section-btn capitalize w-1/2 m-auto">PLAY NOW</a
 			>
 		</div>
 		<div class="col-span-8 h-auto">
@@ -145,7 +146,7 @@
 			/>
 		</div>
 		<div
-			class="text-center py-16 lg:py-0 bg-grey-600 dark:bg-black grid content-center col-span-4 order-1 lg:oder-2"
+			class="text-center py-16 lg:py-0 home-section-bg grid content-center col-span-4 order-1 lg:oder-2"
 		>
 			<h1 class="text-2xl font-bold">CRAPS CALCULATORS</h1>
 			<p class="p-6 max-w-xs m-auto">
@@ -155,7 +156,7 @@
 			<a
 				data-track="home-craps-caclulators"
 				href="craps-calculators"
-				class="btn btn-primary capitalize w-1/2 m-auto">CHECK NOW</a
+				class="btn home-section-btn capitalize w-1/2 m-auto">CHECK NOW</a
 			>
 		</div>
 	</section>
@@ -163,7 +164,7 @@
 		aria-label="Craps Blog"
 		class="grid grid-cols-1 lg:grid-cols-12 lg:max-w-4xl lg:m-auto lg:mt-12"
 	>
-		<div class="text-center bg-grey-600 dark:bg-black grid content-center col-span-4 py-16 lg:py-0">
+		<div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-0">
 			<h1 class="text-2xl font-bold">CRAPS BLOG</h1>
 			<p class="p-6 max-w-xs m-auto">
 				This is going to be something about a craps blog and some more things to write about here.
@@ -171,7 +172,7 @@
 			<a
 				data-track="home-craps-blog"
 				href="craps-blog"
-				class="btn btn-primary capitalize w-1/2 m-auto">READ MORE</a
+				class="btn home-section-btn capitalize w-1/2 m-auto">READ MORE</a
 			>
 		</div>
 		<div class="col-span-8 h-auto">

@@ -1,5 +1,5 @@
 <script>
-	import '../../../../app.css';
+	import '/src/app.css';
 	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
 	import { onMount } from 'svelte';
 

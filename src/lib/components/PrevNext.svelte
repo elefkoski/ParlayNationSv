@@ -10,7 +10,7 @@
 	<a
 		data-track="prvs-top-{phref}"
 		href={phref}
-		class="flex items-center justify-right px-4 h-10 mr-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+		class="flex items-center justify-right px-4 h-10 mr-3 text-base font-medium border rounded-lg prev-next-btn"
 	>
 		<svg
 			class="w-3.5 h-3.5 mr-2"
@@ -32,7 +32,7 @@
 	<a
 		data-track="nxt-top-{nhref}"
 		href={nhref}
-		class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+		class="flex items-center justify-center px-4 h-10 text-base font-medium border rounded-lg prev-next-btn"
 	>
 		{next}
 		<svg

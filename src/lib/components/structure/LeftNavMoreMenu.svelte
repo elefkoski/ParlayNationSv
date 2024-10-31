@@ -37,7 +37,7 @@
 		<div class="flex-grow overscroll-contain">
 			<LeftNavMainUl />
 			<div class="mt-8">
-				<ul class="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
+				<ul class="space-y-6 lg:space-y-2 border-l left-nav-vert-bars">
 					{#each submenus as submenu (submenu.title)}
 						<li>
 							<a

@@ -94,11 +94,33 @@
 				</div>
 				<div class="ml-8 md:absolute md:left-32 lg:ml-0">
 					<a data-track="parlay-nation-logo" href="/">
-						<img
-							class="w-auto h-12"
-							src="src/images/assets/parlay-nation-logo-dm_1048x298.webp"
-							alt="Parlay Nation Green Logo"
-						/>
+						{#if currentTheme === 'dark'}
+							{#if typeof window !== 'undefined' && window.innerWidth >= 768}
+								<img
+									class="w-auto h-12"
+									src="src/images/assets/parlay-nation-logo-dm_1048x298.webp"
+									alt="Parlay Nation Dark Mode Large Screen Logo"
+								/>
+							{:else}
+								<img
+									class="w-auto h-12"
+									src="src/images/assets/parlay-nation-logo-dm_524x149.webp"
+									alt="Parlay Nation Dark Mode Small Screen Logo"
+								/>
+							{/if}
+						{:else if typeof window !== 'undefined' && window.innerWidth >= 768}
+							<img
+								class="w-auto h-12"
+								src="src/images/assets/parlay-nation-logo_1048x298.webp"
+								alt="Parlay Nation Light Mode Large Screen Logo"
+							/>
+						{:else}
+							<img
+								class="w-auto h-12"
+								src="src/images/assets/parlay-nation-logo_524x149.webp"
+								alt="Parlay Nation Light Mode Small Screen Logo"
+							/>
+						{/if}
 					</a>
 				</div>
 			</div>
@@ -118,21 +140,11 @@
 										alt="Sun Icon 1"
 										class="w-6 h-6"
 									/>
-									<img
-										src="src/images/assets/sun-black-icon.png"
-										alt="Sun Icon 2"
-										class="w-6 h-6 hidden"
-									/>
 								{:else}
-									<img
-										src="src/images/assets/moon-white-icon.png"
-										alt="Moon Icon 1"
-										class="w-6 h-6"
-									/>
 									<img
 										src="src/images/assets/moon-black-icon.png"
 										alt="Moon Icon 2"
-										class="w-6 h-6 hidden"
+										class="w-6 h-6"
 									/>
 								{/if}
 							</button>
