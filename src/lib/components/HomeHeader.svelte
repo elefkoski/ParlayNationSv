@@ -11,16 +11,12 @@
 	export let href = '/';
 </script>
 
-<header aria-label={aria} class="p-6 bg-gray-100 dark:bg-gray-900">
-	<h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">{title}</h1>
-	<p class="text-gray-700 dark:text-gray-300 mb-4">{pOne}</p>
-	<p class="text-gray-700 dark:text-gray-300 mb-4">{pTwo}</p>
-	<p class="text-gray-700 dark:text-gray-300 mb-4">{pThree}</p>
-	<a
-		data-track="home-header-{href}"
-		{href}
-		class="btn bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-900 dark:hover:bg-blue-800"
-	>
+<header aria-label={aria} class="p-6 learn-home-page-header shadow-lg rounded-lg">
+	<h1 class="text-2xl font-bold mb-2">{title}</h1>
+	<p class="mb-4">{pOne}</p>
+	<p class="mb-4">{pTwo}</p>
+	<p class="mb-4">{pThree}</p>
+	<a data-track="home-header-btn-{href}" {href} class="btn learn-home-page-header-btn">
 		{button}
 	</a>
 </header>

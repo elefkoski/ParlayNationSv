@@ -20,25 +20,25 @@
 
 <div class="grid grid-cols-1 md:grid-cols-8 gap-8">
 	<div class="grid md:col-span-3 content-center">
-		<h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">{section.title}</h2>
-		<h3 class="text-base text-blue-500 dark:text-blue-300">{section.subtitle}</h3>
-		<p class="pb-4 text-black dark:text-gray-300">
+		<h2 class="text-3xl font-bold craps-home-page-section-title">{section.title}</h2>
+		<h3 class="text-base craps-home-page-section-tag">{section.subtitle}</h3>
+		<p class="pb-4">
 			{section.description}
 		</p>
-		<a data-track="craps-home-section-{section.href}" href={section.href} class="justify-self-end"
-			>READ MORE</a
+		<a
+			data-track="craps-home-section-{section.href}"
+			href={section.href}
+			class="justify-self-end craps-home-page-section-link">READ MORE</a
 		>
 	</div>
 	<div class="flex flex-col gap-2 md:col-span-5 justify-center">
 		<ul class="space-y-2">
 			{#each section.pages as page}
-				<li
-					class="pl-2 rounded-lg transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 bg-white dark:bg-gray-800"
-				>
+				<li class="pl-2 rounded-lg transition-colors duration-200 craps-home-page-sub-section">
 					<a
 						data-track="craps-home-page-{page.href}"
 						href={page.href}
-						class="flex items-center space-x-2 text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
+						class="flex items-center space-x-2 craps-home-page-sub-section-text"
 					>
 						<img
 							src={page.src}
@@ -46,7 +46,9 @@
 							class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150 {page.transform}"
 						/>
 						<span
-							>{page.sentence}<span class="font-semibold text-orange-300">{page.name}</span>.</span
+							>{page.sentence}<span class="font-semibold craps-home-page-sub-section-link"
+								>{page.name}</span
+							>.</span
 						>
 					</a>
 				</li>

@@ -1,8 +1,8 @@
 :root {
 	/* ---- DEFAULT COLORS ---- */
+	/* Base Colors */
 	--text-color: #000;
 	--bg-color: #fff;
-
 	/* Home Page */
 	--home-page-text: #111827; /* gray-900 */
 	--hero-bg: #f9fafb; /* base-50 */
@@ -10,10 +10,10 @@
 	--home-section-btn-bg: #60a5fa; /* blue-400 */
 	--home-section-btn-hover-bg: #1d4ed8; /* blue-700 */
 	--home-section-btn-text: #000000; /* black */
-	/* Nav */
+	/* Navigation */
 	--top-nav-bg: #e2e8f0; /* base-300 - e0e0e0? */
 	--top-nav-profile-menu-bg: hsl(var(--b1) / 1);
-	--left-nav-bg-color: #f3f4f6; /* base-200 - CDDBFE? */
+	--left-nav-bg-color: #f3f4f6; /* base-200 */
 	--left-nav-main-menu-text: #111827; /* gray-900 */
 	--left-nav-main-menu-text-hover: #2563eb; /* blue-600 */
 	--left-nav-header-text: #0f172a; /* slate-900 */
@@ -23,23 +23,59 @@
 	--left-nav-menu-text-hover: #1e293b; /* slate-900 */
 	--left-nav-menu-vertical-bars: transparent; /* transparent */
 	--left-nav-menu-vertical-bars-hover: #1e293b; /* slate-800 */
-	/* Search */
-	--search-bg: transparent; /* gray-200 */
-	--search-text: #1f2937; /* gray-800 */
-	--search-placeholder: #9ca3af; /* gray-400 */
-	--search-border-color: #d6d3d1; /* stone-300 */
-	/* Layout */
+	/* Theme Slider */
+	--slider-bg-color: #ccc;
+	--theme-slider-thumb-color: white;
+	/* Prev/Next */
 	--prev-next-bg: #ffffff; /* white */
 	--prev-next-bg-hover: #f3f4f6; /* gray-100 */
 	--prev-next-border: #d1d5db; /* gray-300 */
 	--prev-next-border-hover: #f3f4f6; /* gray-100 */
 	--prev-next-text: #6b7280; /* gray-500 */
 	--prev-next-text-hover: #374151; /* gray-700 */
+	/* Search */
+	--search-bg: transparent; /* gray-200 */
+	--search-text: #1f2937; /* gray-800 */
+	--search-placeholder: #9ca3af; /* gray-400 */
+	--search-border-color: #d6d3d1; /* stone-300 */
+	/* Learn Section Home Pages */
+	--learn-home-page-header-bg: #f3f4f6; /* base-200 */
+	--learn-home-page-header-btn-bg: #60a5fa; /* blue-400 */
+	--learn-home-page-header-btn-hover-bg: #3b82f6; /* blue-500 */
+	--learn-home-page-header-btn-text: #ffffff; /* white */
+	--learn-home-page-header-btn-text-hover: #ffffff; /* white */
+	--learn-home-page-section-bg: #f3f4f6; /* base-200 */
+	--learn-home-page-section-title: #111827; /* gray-900 */
+	--learn-home-page-section-title-hover: #2563eb; /* blue-600 */
+	/* Page Menu Boxes */
+	--page-menu-box-bg: #f3f4f6; /* base-200 */
+	--page-menu-link-bg-hover: #d1d5db; /* gray-300 */
+	/* Subscribe Section */
+	--sub-input-border: #94a3b8; /* slate-400 */
+	--subscribe-btn-bg: #60a5fa; /* blue-400 */
+	--subscribe-btn-hover-bg: #3b82f6; /* blue-500 */
+	--subscribe-btn-outline: transparent; /* transparent */
+	--subscribe-btn-outline-hover: #60a5fa; /* blue-400 */
+	--subscribe-btn-text: #ffffff; /* white */
+	--subscribe-btn-text-hover: #ffffff; /* white */
+	/* LHTPC Section */
+	--image-cover: transparent; /* transparent */
+	/* Craps Home Page */
+	--craps-home-page-title: #2563eb; /* blue-600 */
+	--craps-home-page-title-two: #475569; /* slate-600 */
+	--craps-home-page-section-title: #475569; /* slate-600 */
+	--craps-home-page-section-tag: #475569; /* slate-600 */
+	--craps-home-page-section-link: #2563eb; /* blue-600 */
+	--craps-home-page-section-link-hover: #1d4ed8; /* blue-700 */
+	--craps-home-page-sub-section-bg: transparent; /* transparent */
+	--craps-home-page-sub-section-bg-hover: #e5e7eb; /* base-300 */
+	--craps-home-page-sub-section-text: #475569; /* slate-600 */
+	--craps-home-page-sub-section-link: #2563eb; /* blue-600 */
 
 	/* ---- DARK MODE COLORS ---- */
+	/* Base Colors */
 	--dm-bg-color: #1f2937; /* gray-800 */
-	--dm-text-color: #fff;
-
+	--dm-text-color: #d1d5db; /* gray-300 */
 	/* Home Page */
 	--dm-home-page-text: #94a3b8; /* slate-400 */
 	--dm-hero-bg: #000000; /* black */
@@ -47,7 +83,7 @@
 	--dm-home-section-btn-bg: #6d28d9; /* violet-700 */
 	--dm-home-section-btn-hover-bg: #4c1d95; /* violet-950 */
 	--dm-home-section-btn-text: #fff; /* white */
-	/* Nav */
+	/* Navigation */
 	--dm-top-nav-bg: #030712; /* gray-950 */
 	--dm-top-nav-profile-menu-bg: #374151; /* gray-700 */
 	--dm-left-nav-bg-color: #111827; /* gray-900 */
@@ -59,22 +95,50 @@
 	--dm-left-nav-menu-text: #94a3b8; /* slate-400 */
 	--dm-left-nav-menu-text-hover: #cbd5e1; /* slate-300 */
 	--dm-left-nav-menu-vertical-bars-hover: #64748b; /* slate-500 */
-	/* Search */
-	--dm-search-bg-color: #374151; /* gray-700 */
-	--dm-search-text-color: #d1d5db; /* gray-300 */
-	--dm-search-placeholder: #6b7280; /* gray-500 */
-	--dm-search-border-color: #334155; /* slate-700 */
-	/* Layout */
+	/* Prev/Next */
 	--dm-prev-next-bg: #1f2937; /* gray-800 */
 	--dm-prev-next-bg-hover: #374151; /* gray-700 */
 	--dm-prev-next-border: #374151; /* gray-700 */
 	--dm-prev-next-border-hover: #1e293b; /* slate-800 */
 	--dm-prev-next-text: #9ca3af; /* gray-400 */
 	--dm-prev-next-text-hover: #ffffff; /* white */
-
-	/* THEME SLIDER */
-	--slider-bg-color: #ccc;
-	--theme-slider-thumb-color: white;
+	/* Search */
+	--dm-search-bg-color: #374151; /* gray-700 */
+	--dm-search-text-color: #d1d5db; /* gray-300 */
+	--dm-search-placeholder: #6b7280; /* gray-500 */
+	--dm-search-border-color: #334155; /* slate-700 */
+	/* Learn Craps Home Pages */
+	--dm-learn-home-page-header-bg: #111827; /* gray-900 */
+	--dm-learn-home-page-header-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-learn-home-page-header-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-learn-home-page-header-btn-text: #d1d5db; /* gray-300 */
+	--dm-learn-home-page-header-btn-text-hover: #ffffff; /* white */
+	--dm-learn-home-page-section-bg: #111827; /* gray-900 */
+	--dm-learn-home-page-section-title: #f3f4f6; /* gray-100 */
+	--dm-learn-home-page-section-title-hover: #60a5fa; /* blue-400 */
+	/* Page Menu Boxes */
+	--dm-page-menu-box-bg: #111827; /* gray-900 */
+	--dm-page-menu-link-bg-hover: #374151; /* gray-700 */
+	/* Subscribe Section */
+	--dm-sub-input-border: #94a3b8; /* slate-400 */
+	--dm-subscribe-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-subscribe-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-subscribe-btn-outline: #1e3a8a; /* blue-900 */
+	--dm-subscribe-btn-outline-hover: #2563eb; /* blue-600 */
+	--dm-subscribe-btn-text: #d1d5db; /* gray-300 */
+	--dm-subscribe-btn-text-hover: #ffffff; /* white */
+	/* LHTPC Section */
+	--dm-image-cover: #000000; /* black */
+	/* Craps Home Page */
+	--dm-craps-home-page-title: #60a5fa; /* blue-400 */
+	--dm-craps-home-page-title-two: #94a3b8; /* slate-400 */
+	--dm-craps-home-page-section-title: #60a5fa; /* blue-400 */
+	--dm-craps-home-page-section-tag: #93c5fd; /* blue-300 */
+	--dm-craps-home-page-section-link: #60a5fa; /* blue-400 */
+	--dm-craps-home-page-section-link-hover: #1e3a8a; /* blue-900 */
+	--dm-craps-home-page-sub-section-bg-hover: #1f2937; /* gray-800 */
+	--dm-craps-home-page-sub-section-text: #60a5fa; /* blue-400 */
+	--dm-craps-home-page-sub-section-link: #fdba74; /* orange-300 */
 }
 
 /* Main Styles */
@@ -82,7 +146,6 @@
 	background-color: var(--bg-color);
 	color: var(--text-color);
 }
-
 /* Home Page Styles */
 .home-page-text {
 	color: var(--home-page-text);
@@ -113,7 +176,6 @@
 .left-nav-main-menu-text:hover {
 	color: var(--left-nav-main-menu-text-hover);
 }
-
 .left-nav-header-text {
 	color: var(--left-nav-header-text);
 }
@@ -134,7 +196,30 @@
 	color: var(--left-nav-menu-text-hover);
 	border-color: var(--left-nav-menu-vertical-bars-hover);
 }
-
+/* Prev/Next Styles */
+.prev-next-btn {
+	background-color: var(--prev-next-bg);
+	color: var(--prev-next-text);
+	border-color: var(--prev-next-border);
+}
+.prev-next-btn:hover {
+	background-color: var(--prev-next-bg-hover);
+	border-color: var(--prev-next-border-hover);
+	color: var(--prev-next-text-hover);
+}
+/* Theme Slider Styles */
+.theme-slider__text {
+	color: var(--text-color);
+}
+.theme-slider__slider {
+	background-color: var(--slider-bg-color);
+}
+.theme-slider__slider::before {
+	background-color: var(--theme-slider-thumb-color);
+}
+.theme-slider__input:checked + .theme-slider__label .theme-slider__slider {
+	background-color: var(--slider-bg-color);
+}
 /* Search Styles */
 .search {
 	background-color: var(--search-bg);
@@ -150,73 +235,88 @@
 .profile-menu {
 	background-color: var(--top-nav-profile-menu-bg);
 }
-
 /* Footer Styles */
 .footer {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 }
-
-/* Layout Styles */
-.prev-next-btn {
-	background-color: var(--prev-next-bg);
-	color: var(--prev-next-text);
-	border-color: var(--prev-next-border);
-}
-.prev-next-btn:hover {
-	background-color: var(--prev-next-bg-hover);
-	border-color: var(--prev-next-border-hover);
-	color: var(--prev-next-text-hover);
-}
-
-/* Theme Slider Styles */
-.theme-slider {
-	display: flex;
-	align-items: center;
-}
-
-.theme-slider__input {
-	display: none;
-}
-
-.theme-slider__label {
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-}
-
-.theme-slider__text {
-	margin-right: 10px;
-	font-size: 0.875rem;
+/* Learn Craps Home Page Styles */
+.learn-home-page-header {
+	background-color: var(--learn-home-page-header-bg);
 	color: var(--text-color);
 }
-
-.theme-slider__slider {
-	width: 40px;
-	height: 20px;
-	background-color: var(--slider-bg-color);
-	border-radius: 20px;
-	position: relative;
-	transition: background-color 0.3s;
+.learn-home-page-header-btn {
+	background-color: var(--learn-home-page-header-btn-bg);
+	color: var(--learn-home-page-header-btn-text);
 }
-
-.theme-slider__slider::before {
-	content: '';
-	position: absolute;
-	width: 18px;
-	height: 18px;
-	background-color: var(--theme-slider-thumb-color);
-	border-radius: 50%;
-	top: 1px;
-	transition: transform 0.3s;
+.learn-home-page-header-btn:hover {
+	background-color: var(--learn-home-page-header-btn-hover-bg);
+	color: var(--learn-home-page-header-btn-text-hover);
 }
-
-.theme-slider__input:checked + .theme-slider__label .theme-slider__slider {
-	background-color: var(--slider-bg-color);
+.learn-home-page-section {
+	background-color: var(--learn-home-page-section-bg);
+	color: var(--text-color);
 }
-
-.theme-slider__input:checked + .theme-slider__label .theme-slider__slider::before {
-	transform: translateX(20px);
+.learn-home-page--section-title {
+	color: var(--learn-home-page-section-title);
+}
+.learn-home-page-section-title:hover {
+	color: var(--learn-home-page-section-title-hover);
+}
+/* Page Menu Boxes */
+.page-menu-box {
+	background-color: var(--page-menu-box-bg);
+}
+.page-menu-link:hover {
+	background-color: var(--page-menu-link-bg-hover);
+}
+/* Subscribe Section */
+.sub-input {
+	border-color: var(--sub-input-border);
+}
+.subscribe-btn {
+	background-color: var(--subscribe-btn-bg);
+	color: var(--subscribe-btn-text);
+	border-color: var(--subscribe-btn-outline);
+}
+.subscribe-btn:hover {
+	background-color: var(--subscribe-btn-hover-bg);
+	color: var(--subscribe-btn-text-hover);
+	border-color: var(--subscribe-btn-outline-hover);
+}
+.image-cover {
+	background-color: var(--image-cover);
+}
+/* Craps Home Page Styles*/
+.craps-home-page-title {
+	color: var(--craps-home-page-title);
+}
+.craps-home-page-title-two {
+	color: var(--craps-home-page-title-two);
+}
+.craps-home-page-section-title {
+	color: var(--craps-home-page-section-title);
+}
+.craps-home-page-section-tag {
+	color: var(--craps-home-page-section-tag);
+}
+.craps-home-page-section-link {
+	color: var(--craps-home-page-section-link);
+}
+.craps-home-page-section-link:hover {
+	color: var(--craps-home-page-section-link-hover);
+}
+.craps-home-page-sub-section {
+	background-color: var(--craps-home-page-sub-section-bg);
+}
+.craps-home-page-sub-section:hover {
+	background-color: var(--craps-home-page-sub-section-bg-hover);
+}
+.craps-home-page-sub-section-text {
+	color: var(--craps-home-page-sub-section-text);
+}
+.craps-home-page-sub-section-link {
+	color: var(--craps-home-page-sub-section-link);
 }
 
 /* Dark mode styles */
@@ -224,12 +324,14 @@
 	/* Default colors */
 	--text-color: var(--dm-text-color);
 	--bg-color: var(--dm-bg-color);
+	/* Home Page */
 	--home-page-text: var(--dm-home-page-text);
 	--hero-bg: var(--dm-hero-bg);
 	--home-section-bg: var(--dm-home-section-bg);
 	--home-section-btn-bg: var(--dm-home-section-btn-bg);
 	--home-section-btn-hover-bg: var(--dm-home-section-btn-hover-bg);
 	--home-section-btn-text: var(--dm-home-section-btn-text);
+	/* Navigation */
 	--top-nav-bg: var(--dm-top-nav-bg);
 	--top-nav-profile-menu-bg: var(--dm-top-nav-profile-menu-bg);
 	--left-nav-bg-color: var(--dm-left-nav-bg-color);
@@ -241,20 +343,54 @@
 	--left-nav-menu-text: var(--dm-left-nav-menu-text);
 	--left-nav-menu-text-hover: var(--dm-left-nav-menu-text-hover);
 	--left-nav-menu-vertical-bars-hover: var(--dm-left-nav-menu-vertical-bars-hover);
-	--search-bg: var(--dm-search-bg);
-	--search-text: var(--dm-search-text);
-	--search-placeholder: var(--dm-search-placeholder);
-	--search-border-color: var(--dm-search-border-color);
+	/* Theme Slider */
+	--slider-bg-color: #666;
+	--theme-slider-thumb-color: #fff;
+	/* Prev/Next */
 	--prev-next-bg: var(--dm-prev-next-bg);
 	--prev-next-bg-hover: var(--dm-prev-next-bg-hover);
 	--prev-next-border: var(--dm-prev-next-border);
 	--prev-next-border-hover: var(--dm-prev-next-border-hover);
 	--prev-next-text: var(--dm-prev-next-text);
 	--prev-next-text-hover: var(--dm-prev-next-text-hover);
-
-	/* Theme Slider */
-	--slider-bg-color: #666;
-	--theme-slider-thumb-color: #fff;
+	/* Search */
+	--search-bg: var(--dm-search-bg);
+	--search-text: var(--dm-search-text);
+	--search-placeholder: var(--dm-search-placeholder);
+	--search-border-color: var(--dm-search-border-color);
+	/* Learn Craps Home Pages */
+	--learn-home-page-header-bg: var(--dm-learn-home-page-header-bg);
+	--learn-home-page-header-btn-bg: var(--dm-learn-home-page-header-btn-bg);
+	--learn-home-page-header-btn-hover-bg: var(--dm-learn-home-page-header-btn-hover-bg);
+	--learn-home-page-header-btn-text: var(--dm-learn-home-page-header-btn-text);
+	--learn-home-page-header-btn-text-hover: var(--dm-learn-home-page-header-btn-text-hover);
+	--learn-home-page-section-bg: var(--dm-learn-home-page-section-bg);
+	--learn-home-page-section-title: var(--dm-learn-home-page-section-title);
+	--learn-home-page-section-title-hover: var(--dm-learn-home-page-section-title-hover);
+	/* Page Menu Boxes */
+	--page-menu-box-bg: var(--dm-page-menu-box-bg);
+	--page-menu-link-bg-hover: var(--dm-page-menu-link-bg-hover);
+	/* Subscribe Section */
+	--sub-input-border: var(--dm-sub-input-border);
+	--subscribe-btn-bg: var(--dm-subscribe-btn-bg);
+	--subscribe-btn-hover-bg: var(--dm-subscribe-btn-hover-bg);
+	--subscribe-btn-outline: var(--dm-subscribe-btn-outline);
+	--subscribe-btn-outline-hover: var(--dm-subscribe-btn-outline-hover);
+	--subscribe-btn-text: var(--dm-subscribe-btn-text);
+	--subscribe-btn-text-hover: var(--dm-subscribe-btn-text-hover);
+	/* LHTPC Section */
+	--image-cover: var(--dm-image-cover);
+	/* Craps Home Page */
+	--craps-home-page-title: var(--dm-craps-home-page-title);
+	--craps-home-page-title-two: var(--dm-craps-home-page-title-two);
+	--craps-home-page-section-title: var(--dm-craps-home-page-section-title);
+	--craps-home-page-section-tag: var(--dm-craps-home-page-section-tag);
+	--craps-home-page-section-link: var(--dm-craps-home-page-section-link);
+	--craps-home-page-section-link-hover: var(--dm-craps-home-page-section-link-hover);
+	--craps-home-page-sub-section-bg: var(--dm-craps-home-page-sub-section-bg);
+	--craps-home-page-sub-section-bg-hover: var(--dm-craps-home-page-sub-section-bg-hover);
+	--craps-home-page-sub-section-text: var(--dm-craps-home-page-sub-section-text);
+	--craps-home-page-sub-section-link: var(--dm-craps-home-page-sub-section-link);
 
 	/* Dark mode for sign-in */
 	.sign-in {

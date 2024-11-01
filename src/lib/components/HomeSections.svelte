@@ -11,14 +11,14 @@
 	export let badges: string[] = ['Badge Here', 'Another Badge', 'Badge Three', 'Badgering Me'];
 </script>
 
-<section aria-label={aria} class="card bg-gray-900 b shadow-xl">
+<section aria-label={aria} class="card learn-home-page-section b shadow-xl">
 	<figure>
 		<img src={smImg} {alt} class="object-cover w-full block md:hidden lg:hidden" />
 		<img src={mdImg} {alt} class="object-cover w-full hidden md:block lg:hidden" />
 		<img src={lgImg} {alt} class="object-cover w-full hidden sm:hidden md:hidden lg:block" />
 	</figure>
 	<div class="card-body">
-		<a data-track="home-section-{href}" {href} class="hover:text-gray-50"
+		<a data-track="home-section-{href}" {href} class="learn-home-page-section-title"
 			><h2 class="card-title">{title}</h2></a
 		>
 		<p class="pb-4">{body}</p>

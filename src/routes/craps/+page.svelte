@@ -415,7 +415,7 @@
 		<a
 			data-track="nxt-1-craps-basics"
 			href="craps-basics"
-			class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+			class="flex items-center justify-center px-4 h-10 text-base font-medium border rounded-lg prev-next-btn"
 		>
 			Craps Basics
 			<svg
@@ -437,8 +437,8 @@
 	</div>
 	<main aria-label="Main content" class="my-6">
 		<header>
-			<span class="text-lg uppercase font-semibold text-blue-600 dark:text-blue-400">Craps</span>
-			<h1 class="text-slate-400 text-3xl pb-2 font-bold">Learn to Play Craps</h1>
+			<span class="text-lg uppercase font-semibold craps-home-page-title">Craps</span>
+			<h1 class="text-3xl pb-2 font-bold craps-home-page-title-two">Learn to Play Craps</h1>
 		</header>
 
 		<div class="flex flex-col space-y-16">
@@ -483,7 +483,7 @@
 		<a
 			data-track="nxt-2-craps-basics"
 			href="craps-basics"
-			class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+			class="flex items-center justify-center px-4 h-10 text-base font-medium border rounded-lg prev-next-btn"
 		>
 			Craps Basics
 			<svg

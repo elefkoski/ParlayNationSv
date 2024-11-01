@@ -29,7 +29,41 @@
 	color: orange;
 	font-weight: bolder;
 }
-
+.theme-slider {
+	display: flex;
+	align-items: center;
+}
+.theme-slider__input {
+	display: none;
+}
+.theme-slider__label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.theme-slider__text {
+	margin-right: 10px;
+	font-size: 0.875rem;
+}
+.theme-slider__slider {
+	width: 40px;
+	height: 20px;
+	border-radius: 20px;
+	position: relative;
+	transition: background-color 0.3s;
+}
+.theme-slider__slider::before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	top: 1px;
+	transition: transform 0.3s;
+}
+.theme-slider__input:checked + .theme-slider__label .theme-slider__slider::before {
+	transform: translateX(20px);
+}
 @media (prefers-color-scheme: dark) {
 	.blog span {
 		color: #60a5fa;

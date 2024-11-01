@@ -10,7 +10,7 @@
 	<a
 		data-track="prvs-top-{phref}"
 		href={phref}
-		class="flex items-center justify-right px-4 h-10 mr-3 text-base font-medium border rounded-lg prev-next-btn"
+		class="flex items-center justify-right px-4 h-10 mr-3 text-base font-medium border rounded-lg prev-next-btn shadow-lg"
 	>
 		<svg
 			class="w-3.5 h-3.5 mr-2"
@@ -29,10 +29,11 @@
 		</svg>
 		{prev}
 	</a>
+	<!-- Next Button -->
 	<a
 		data-track="nxt-top-{nhref}"
 		href={nhref}
-		class="flex items-center justify-center px-4 h-10 text-base font-medium border rounded-lg prev-next-btn"
+		class="flex items-center justify-center px-4 h-10 text-base font-medium border rounded-lg prev-next-btn shadow-lg"
 	>
 		{next}
 		<svg
