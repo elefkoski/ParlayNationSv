@@ -517,120 +517,92 @@
 </svelte:head>
 
 <PracticeLayout>
-	<header aria-label="Practice Craps" class="p-6 bg-gray-100 dark:bg-gray-900">
-		<h1 class="text-3xl font-bold text-gray-900 dark:text-gray-200 mb-4">Practice Craps</h1>
-		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
+	<header aria-label="Practice Craps" class="p-6 home-page-heading">
+		<h1 class="text-3xl font-bold mb-4">Practice Craps</h1>
+		<p class="mb-4 leading-7">
 			Practice Craps payments for the Pass Line, Place Bets, and Come Bets.
 		</p>
-		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
-			Print the Craps table layout with or without text.
-		</p>
-		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
-			Three sizes of printable dice and more!
-		</p>
+		<p class="mb-4 leading-7">Print the Craps table layout with or without text.</p>
+		<p class="mb-4 leading-7">Three sizes of printable dice and more!</p>
 	</header>
 	<main
 		aria-label="Main sections with downloadables"
-		class="bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg mt-6"
+		class="home-page-body-bg-1 p-6 rounded-lg shadow-lg mt-6"
 	>
 		<section
 			aria-label="Practice Math Printouts"
-			class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg"
 		>
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-2">
-				Practice Math Printouts
-			</h2>
-			<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
+			<h2 class="text-2xl font-bold mb-2">Practice Math Printouts</h2>
+			<p class="mb-4 leading-7">
 				Each practice math printout has 20 easy, 20 medium, and 20 hard cut-outs.
 			</p>
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Pass Line Odds
-			</h3>
+			<h3 class="text-2xl text-center font-semibold mb-2">Pass Line Odds</h3>
 			{#each sections as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Place Bet Payments
-			</h3>
+			<h3 class="text-2xl text-center font-semibold mb-2">Place Bet Payments</h3>
 			{#each sections2 as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Come Bet w/Odds Payments
-			</h3>
+			<h3 class="text-2xl text-center font-semibold mb-2">Come Bet w/Odds Payments</h3>
 			{#each sections3 as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Lay Odds Payments
-			</h3>
+			<h3 class="text-2xl text-center font-semibold mb-2">Lay Odds Payments</h3>
 			{#each sections31 as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 		</section>
 		<section
 			aria-label="Craps Cards Printouts"
-			class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg mt-8"
+			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg mt-8"
 		>
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-2">Craps Cards</h2>
-			<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
+			<h2 class="text-2xl font-bold mb-2">Craps Cards</h2>
+			<p class="mb-4 leading-7">
 				Black Craps Cards are meant to be printed on heavy stock paper so as not to show through the
 				back side. Light grey Craps Cards are meant to be printed on normal stock paper and
 				shouldn't show through the back.
 			</p>
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Craps Cards
-			</h3>
+			<h3 class="text-2xl text-center font-semibold mb-2">Craps Cards</h3>
 			{#each sections4 as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 		</section>
 		<section
 			aria-label="Craps Cards Printouts"
-			class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg mt-8"
+			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg mt-8"
 		>
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-2">Craps Dice</h2>
-			<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
+			<h2 class="text-2xl font-bold mb-2">Craps Dice</h2>
+			<p class="mb-4 leading-7">
 				Print then cut out and fold these dice to practice playing Craps.
 			</p>
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Foldable Craps Dice
-			</h3>
+			<h3 class="text-2xl text-center font-semibold mb-2">Foldable Craps Dice</h3>
 			{#each sections5 as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 		</section>
 		<section
 			aria-label="Table Layout Printouts"
-			class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg mt-8"
+			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg mt-8"
 		>
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-2">
-				Table Layout Printouts
-			</h2>
-			<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
-				Both craps table printouts have pages with and without text.
-			</p>
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Craps Table Layouts
-			</h3>
+			<h2 class="text-2xl font-bold mb-2">Table Layout Printouts</h2>
+			<p class="mb-4 leading-7">Both craps table printouts have pages with and without text.</p>
+			<h3 class="text-2xl text-center font-semibold mb-2">Craps Table Layouts</h3>
 			{#each sections6 as section, i (i)}
 				<DownloadabeSection items={section.items} />
 			{/each}
 		</section>
 		<section
 			aria-label="Other Craps Practice Printouts"
-			class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg mt-8"
+			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg mt-8"
 		>
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-2">
-				Other Craps Practice Printouts
-			</h2>
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Random Horn High Generator
-			</h3>
-			<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
+			<h2 class="text-2xl font-bold mb-2">Other Craps Practice Printouts</h2>
+			<h3 class="text-2xl text-center font-semibold mb-2">Random Horn High Generator</h3>
+			<p class="mb-4 leading-7">
 				Random horn high generator has includes instructions with payout table, a bet page, an
 				amount page, and a roll page.
 			</p>
@@ -638,10 +610,8 @@
 				<DownloadabeSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
-			<h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-gray-200 mb-2">
-				Craps Roll Cards
-			</h3>
-			<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
+			<h3 class="text-2xl text-center font-semibold mb-2">Craps Roll Cards</h3>
+			<p class="mb-4 leading-7">
 				Craps Roll Cards are meant to practice what may or may not be a roll.
 			</p>
 			{#each sections8 as section, i (i)}

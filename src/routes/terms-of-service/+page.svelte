@@ -44,34 +44,30 @@
 
 <MoreLayout>
 	<main aria-label="Main content" class="container mx-auto p-6">
-		<div class="dark:text-white text-black transition duration-300 ease-in-out">
+		<div class="transition duration-300 ease-in-out">
 			<div class="container mx-auto p-6">
-				<h1 class="text-4xl font-bold mb-10 text-center dark:text-white">Terms of Service</h1>
+				<h1 class="text-4xl font-bold mb-10 text-center">Terms of Service</h1>
 
-				<h2 class="text-2xl font-semibold mb-4 dark:text-white">Introduction</h2>
-				<p class="mb-4 dark:text-gray-300">
+				<h2 class="text-2xl font-semibold mb-4">Introduction</h2>
+				<p class="mb-4">
 					We will refer to Parlay Nation as "Website," while the terms "our," "us," and "we"
 					represent Parlay Nation. The term "you" refers to any individual registered or visiting
 					this Website.
 				</p>
 
-				<h2 class="text-2xl font-semibold mb-4 dark:text-white">Newsletter Subscription</h2>
-				<p class="mb-2 dark:text-gray-300">
-					Upon newsletter subscription, you agree to the following:
-				</p>
-				<ul class="list-disc list-inside mb-4 dark:text-gray-300">
+				<h2 class="text-2xl font-semibold mb-4">Newsletter Subscription</h2>
+				<p class="mb-2">Upon newsletter subscription, you agree to the following:</p>
+				<ul class="list-disc list-inside mb-4">
 					<li>You are 18 years of age or older.</li>
 					<li>
 						You accept our <a
 							data-track="tos-privacy-policy-link"
 							href="privacy-policy"
-							class="underline text-blue-300">Privacy Policy.</a
+							class="underline hyperlink">Privacy Policy.</a
 						>
 					</li>
 				</ul>
-				<p class="mb-4 dark:text-gray-300">
-					Note: We will email you weekly with promotions and news.
-				</p>
+				<p class="mb-4">Note: We may email you weekly with promotions and news.</p>
 			</div>
 		</div>
 	</main></MoreLayout

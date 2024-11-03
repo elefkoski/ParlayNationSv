@@ -28,14 +28,14 @@
 	{#each liBs as section, sectionIndex (section.title)}
 		<li class="rounded shadow-lg dark:shadow-none">
 			{#if section.title}
-				<h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">
+				<h4 class="text-lg font-semibold ul-h4">
 					{section.title}
 				</h4>
 			{/if}
 			{#if section.items}
 				<ul class="list-disc list-inside space-y-1">
 					{#each section.items as item, index}
-						<li class="text-gray-700 dark:text-gray-300 ml-1">
+						<li class="ul-li ml-1">
 							<!-- Only display subtitle if it exists and the index is within range -->
 							{#if section.subTitle && section.subTitle.length > index}
 								<span class="font-bold uppercase">{section.subTitle[index]}</span>

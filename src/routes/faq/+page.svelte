@@ -159,25 +159,20 @@
 </svelte:head>
 
 <MoreLayout>
-	<main
-		aria-label="Main content"
-		class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white p-6"
-	>
+	<main aria-label="Main content" class="p-6">
 		<h1 class="text-4xl font-bold mb-10 text-center">Craps FAQ</h1>
 		{#each sets as set (set.question)}
 			<div
-				class="mb-8 bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-shadow duration-200 rounded-lg overflow-hidden"
+				class="mb-8 home-page-body-bg-1 shadow-md hover:shadow-lg transition-shadow duration-200 rounded-lg overflow-hidden"
 			>
 				<div class="px-6 py-4">
-					<h2 class="font-bold text-xl mb-2 text-gray-800 dark:text-gray-300">{set.question}</h2>
-					<p class="text-gray-700 dark:text-gray-400 text-base">{set.answer}</p>
+					<h2 class="font-bold text-xl mb-2">{set.question}</h2>
+					<p class="text-base">{set.answer}</p>
 				</div>
 				<div class="px-6 pt-4 pb-2">
 					<ul>
 						{#each set.hashTags as hashTag}
-							<li
-								class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 dark:bg-gray-800 dark:text-gray-300"
-							>
+							<li class="inline-block px-1 text-sm font-semibold mr-2 mb-2">
 								#{hashTag}
 							</li>
 						{/each}

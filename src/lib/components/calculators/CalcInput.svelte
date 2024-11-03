@@ -14,17 +14,12 @@
 	}
 </script>
 
-<form
-	autocomplete="off"
-	novalidate
-	on:submit={handleSubmit}
-	class="text-gray-900 dark:text-gray-400"
->
-	<label for={id} class="block font-medium">{title}</label>
+<form autocomplete="off" novalidate on:submit={handleSubmit}>
+	<label for={id} class="block font-medium calc-input-label">{title}</label>
 	<input
 		bind:value={inputValue}
 		type="number"
-		class="p-2 mr-2 rounded border bg-white dark:bg-slate-900 text-black dark:text-white"
+		class="p-2 mr-2 rounded border focus:outline-none focus:ring calculator-input"
 		{id}
 		inputmode="numeric"
 		pattern="[0-9]*"
@@ -32,7 +27,7 @@
 		name={id}
 		{step}
 	/>
-	<button data-track="calc-{id}" class="bg-blue-500 text-white p-2 rounded mt-2" type="submit">
+	<button data-track="calc-{id}" class="calculator-btn p-2 rounded mt-2" type="submit">
 		Check
 	</button>
 

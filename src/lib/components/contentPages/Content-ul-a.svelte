@@ -18,12 +18,12 @@
 <ul class="ml-4 flex flex-col space-y-2">
 	{#each liAs as list (list.title)}
 		<li class="rounded shadow-lg dark:shadow-none">
-			<h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">
+			<h4 class="text-lg font-semibold ul-h4">
 				{list.title}
 			</h4>
 			<ul class="list-disc list-inside space-y-1">
 				{#each list.items as item (item)}
-					<li class="text-gray-700 dark:text-gray-300 ml-1">{item}</li>
+					<li class="ul-li ml-1">{item}</li>
 				{/each}
 			</ul>
 		</li>

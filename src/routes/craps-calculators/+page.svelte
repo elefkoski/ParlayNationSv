@@ -85,21 +85,15 @@
 </svelte:head>
 
 <MoreCrapsLayout>
-	<header aria-label="Craps Calculators" class="p-6 bg-gray-100 dark:bg-gray-900">
-		<h1 class="text-3xl font-bold text-gray-900 dark:text-gray-200 mb-4">Craps Calculators</h1>
-		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
-			Check the payment for all the bets on the Craps table.
-		</p>
-		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
-			Learn to make the bets in proper increments.
-		</p>
-		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">
-			Check the outcome of payouts by choosing what number rolls.
-		</p>
+	<header aria-label="Craps Calculators" class="p-6 shadow-lg home-page-heading">
+		<h1 class="text-3xl font-bold mb-4">Craps Calculators</h1>
+		<p class="mb-4 leading-7">Check the payment for all the bets on the Craps table.</p>
+		<p class="mb-4 leading-7">Learn to make the bets in proper increments.</p>
+		<p class="mb-4 leading-7">Check the outcome of payouts by choosing what number rolls.</p>
 	</header>
 	<main
 		aria-label="Main sections with calculators"
-		class="bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg mt-6 flex-col space-y-6"
+		class="home-page-body-bg-1 p-6 rounded-lg shadow-lg mt-6 flex-col space-y-6"
 	>
 		<CalcBox
 			description="Check the payment for a Pass Line Bet."

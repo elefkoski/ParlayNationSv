@@ -3,6 +3,10 @@
 	/* Base Colors */
 	--text-color: #000;
 	--bg-color: #fff;
+	/* Elements */
+	--hyperlink: #2563eb; /* blue-600 */
+	--hyperlink-hover: #1e40af; /* blue-800 */
+	--quote: #f97316; /* orange-500 */
 	/* Home Page */
 	--home-page-text: #111827; /* gray-900 */
 	--hero-bg: #f9fafb; /* base-50 */
@@ -11,7 +15,7 @@
 	--home-section-btn-hover-bg: #1d4ed8; /* blue-700 */
 	--home-section-btn-text: #000000; /* black */
 	/* Navigation */
-	--top-nav-bg: #e2e8f0; /* base-300 - e0e0e0? */
+	--top-nav-bg: #e2e8f0; /* base-300 */
 	--top-nav-profile-menu-bg: hsl(var(--b1) / 1);
 	--left-nav-bg-color: #f3f4f6; /* base-200 */
 	--left-nav-main-menu-text: #111827; /* gray-900 */
@@ -47,9 +51,10 @@
 	--learn-home-page-section-bg: #f3f4f6; /* base-200 */
 	--learn-home-page-section-title: #111827; /* gray-900 */
 	--learn-home-page-section-title-hover: #2563eb; /* blue-600 */
-	/* Page Menu Boxes */
+	/* Content Page Menu Boxes */
 	--page-menu-box-bg: #f3f4f6; /* base-200 */
 	--page-menu-link-bg-hover: #d1d5db; /* gray-300 */
+	--page-menu-icons:
 	/* Subscribe Section */
 	--sub-input-border: #94a3b8; /* slate-400 */
 	--subscribe-btn-bg: #60a5fa; /* blue-400 */
@@ -63,7 +68,7 @@
 	/* Craps Home Page */
 	--craps-home-page-title: #2563eb; /* blue-600 */
 	--craps-home-page-title-two: #475569; /* slate-600 */
-	--craps-home-page-section-title: #475569; /* slate-600 */
+	--craps-home-page-section-title: #3b82f6; /* blue-500 */
 	--craps-home-page-section-tag: #475569; /* slate-600 */
 	--craps-home-page-section-link: #2563eb; /* blue-600 */
 	--craps-home-page-section-link-hover: #1d4ed8; /* blue-700 */
@@ -71,11 +76,78 @@
 	--craps-home-page-sub-section-bg-hover: #e5e7eb; /* base-300 */
 	--craps-home-page-sub-section-text: #475569; /* slate-600 */
 	--craps-home-page-sub-section-link: #2563eb; /* blue-600 */
+	/* Content Pages */
+	--content-page-section-title: #2563eb; /* blue-600 */
+	--bookmark: #2563eb; /* blue-600 */
+	--bookmark-popup-bg: #ffffff; /* white */
+	--bookmark-popup-border: #dc2626; /* red-600 */
+	--bookmark-popup-text: #dc2626; /* red-600 */
+	--content-page-h1: #475569; /* slate-600 */
+	--content-page-h2: #475569; /* slate-600 */
+	--content-page-h3: #475569; /* slate-600 */
+	--ul-h4: #2563eb; /* blue-600 */
+	--ul-li: #374151; /* gray-700 */
+	--content-table-bg: #f3f4f6; /* base-200 */
+	--content-table-border: #d1d5db; /* gray-300 */
+	--content-table-text: #475569; /* slate-600 */
+	/* Calculator Styles */
+	--calculator-title: #374151; /* gray-700 */
+	--calc-input-label: #475569; /* slate-600 */
+	--calc-input-bg: #ffffff; /* white */
+	--calc-input-hover-bg: #f3f4f6; /* gray-100 */
+	--calc-input-text: #000000; /* black */
+	--calc-input-border: #d1d5db; /* gray-300 */
+	--calc-input-placeholder: #9ca3af; /* gray-400 */
+	--calc-input-focus-border: #2563eb; /* blue-600 */
+	--calculator-btn-bg: #60a5fa; /* blue-400 */
+	--calculator-btn-hover-bg: #3b82f6; /* blue-500 */
+	--calculator-btn-text: #000000; /* black */
+	--calculator-btn-text-hover: #000000; /* black */
+	--calculator-error-text: #B91C1C; /* red-700 */
+	--calculator-success-text: #15803D; /* green-700 */
+	/* Site Home Pages Heading Styles */
+	--home-page-heading-bg: #e2e8f0; /* base-300 */
+	--home-page-heading-text: #111827; /* gray-900 */
+	--home-page-body-bg-1: #E5E7EB; /* gray-200 */
+	--home-page-body-bg-2: #f3f4f6; /* gray-100 */
+	--home-page-body-bg-3: #d1d5db; /* gray-300 */
+	/* Practice Home Page */
+	--practice-view-btn-bg: #60a5fa; /* blue-400 */
+	--practice-view-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--practice-view-btn-text: #ffffff; /* white */
+	--practice-view-btn-text-hover: #ffffff; /* white */
+	--practice-view-btn-border: #60a5fa; /* blue-400 */
+	--practice-view-btn-border-hover: #3b82f6; /* blue-500 */
+	--practice-dwnld-btn-bg: #60a5fa; /* blue-400 */
+	--practice-dwnld-btn-hover-bg: #3b82f6; /* blue-500 */
+	--practice-dwnld-btn-text: #ffffff; /* white */
+	--practice-dwnld-btn-text-hover: #ffffff; /* white */
+	--practice-dwnld-btn-border: #60a5fa; /* blue-400 */
+	--practice-dwnld-btn-border-hover: #3b82f6; /* blue-500 */
+	/*Other Page Styles */
+	--glossary-word: #2563eb; /* blue-600 */
+	--site-map-heading: #2563eb; /* blue-600 */
+	--contact-input-bg: #ffffff; /* white */
+	--contact-input-hover-bg: #f3f4f6; /* gray-100 */
+	--contact-input-border: #d1d5db; /* gray-300 */
+	--contact-input-text: #000000; /* black */
+	--contact-input-placeholder: #9ca3af; /* gray-400 */
+	--contact-input-focus-border: #2563eb; /* blue-600 */
+	--contact-btn-bg: #60a5fa; /* blue-400 */
+	--contact-btn-hover-bg: #3b82f6; /* blue-500 */
+	--contact-btn-text: #ffffff; /* white */
+	--contact-btn-text-hover: #ffffff; /* white */
+	--contact-btn-border: transparent; /* transparent */
+	--contact-btn-border-hover: transparent; /* transparent */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
 	--dm-bg-color: #1f2937; /* gray-800 */
 	--dm-text-color: #d1d5db; /* gray-300 */
+	/* Elements */
+	--dm-hyperlink: #60a5fa; /* blue-400 */
+	--dm-hyperlink-hover: #1d4ed8; /* blue-700 */
+	--dm-quote: #facc15; /* yellow-400 */
 	/* Home Page */
 	--dm-home-page-text: #94a3b8; /* slate-400 */
 	--dm-hero-bg: #000000; /* black */
@@ -139,12 +211,85 @@
 	--dm-craps-home-page-sub-section-bg-hover: #1f2937; /* gray-800 */
 	--dm-craps-home-page-sub-section-text: #60a5fa; /* blue-400 */
 	--dm-craps-home-page-sub-section-link: #fdba74; /* orange-300 */
+	/* Content Pages */
+	--dm-content-page-section-title: #60a5fa; /* blue-400 */
+	--dm-bookmark: #fb923c; /* orange-400 */
+	--dm-bookmark-popup-bg: #1f2937; /* gray-800 */
+	--dm-bookmark-popup-border: #f87171; /* red-400 */
+	--dm-bookmark-popup-text: #f87171; /* red-400 */
+	--dm-content-page-h1: #94a3b8; /* slate-400 */
+	--dm-content-page-h2: #94a3b8; /* slate-400 */
+	--dm-content-page-h3: #94a3b8; /* slate-400 */
+	--dm-ul-h4: #60a5fa; /* blue-400 */
+	--dm-ul-li: #d1d5db; /* gray-300 */
+	--dm-content-table-bg: #111827; /* gray-900 */
+	--dm-content-table-border: #374151; /* gray-700 */
+	--dm-content-table-text: #d1d5db; /* gray-300 */
+	/* Calculator Styles */
+	--dm-calculator-title: #E5E7EB; /* gray-200 */
+	--dm-calc-input-label: #9ca3af; /* gray-400 */
+	--dm-calc-input-bg: #0f172a; /* slate-900 */
+	--dm-calc-input-hover-bg: #020617; /* slate-950 */
+	--dm-calc-input-text: white; /* white */
+	--dm-calc-input-border: #374151; /* gray-700 */
+	--dm-calc-input-placeholder: #6b7280; /* gray-500 */
+	--dm-calc-input-focus-border: #60a5fa; /* blue-400 */
+	--dm-calculator-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-calculator-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-calculator-btn-text: #d1d5db; /* gray-300 */
+	--dm-calculator-btn-text-hover: #ffffff; /* white */
+	--dm-calculator-error-text: #f87171; /* red-400 */
+	--dm-calculator-success-text: #34d399; /* green-500 */
+	/* Home Pages Heading Styles */
+	--dm-home-page-heading-bg: #111827; /* gray-900 */
+	--dm-home-page-heading-text: #f3f4f6; /* gray-100 */
+	--dm-home-page-body-bg-1: #374151; /* gray-700 */
+	--dm-home-page-body-bg-2: #1f2937; /* gray-800 */
+	--dm-home-page-body-bg-3: #374151; /* gray-700 */
+	/* Practice Home Page */
+	--dm-practice-view-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-practice-view-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-practice-view-btn-text: #d1d5db; /* gray-300 */
+	--dm-practice-view-btn-text-hover: #ffffff; /* white */
+	--dm-practice-view-btn-border: #1e3a8a; /* blue-900 */
+	--dm-practice-view-btn-border-hover: #1d4ed8; /* blue-700 */
+	--dm-practice-dwnld-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-practice-dwnld-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-practice-dwnld-btn-text: #d1d5db; /* gray-300 */
+	--dm-practice-dwnld-btn-text-hover: #ffffff; /* white */
+	--dm-practice-dwnld-btn-border: #1e3a8a; /* blue-900 */
+	--dm-practice-dwnld-btn-border-hover: #1d4ed8; /* blue-700 */
+	/* Other Page Styles */
+	--dm-glossary-word: #60a5fa; /* blue-400 */
+	--dm-site-map-heading: #60a5fa; /* blue-400 */
+	--dm-contact-input-bg: #1e293b; /* slate-800 */
+	--dm-contact-input-hover-bg: #0f172a; /* slate-900 */
+	--dm-contact-input-border: #374151; /* gray-700 */
+	--dm-contact-input-text: #d1d5db; /* gray-300 */
+	--dm-contact-input-placeholder: #6b7280; /* gray-500 */
+	--dm-contact-input-focus-border: #60a5fa; /* blue-400 */
+	--dm-contact-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-contact-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-contact-btn-text: #d1d5db; /* gray-300 */
+	--dm-contact-btn-text-hover: #ffffff; /* white */
+	--dm-contact-btn-border: transparent; /* transparent */
+	--dm-contact-btn-border-hover: transparent; /* transparent */
 }
 
 /* Main Styles */
 .body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
+}
+/* Elements */
+.hyperlink {
+	color: var(--hyperlink);
+}
+.hyperlink:hover {
+	color: var(--hyperlink-hover);
+}
+.quote {
+	color: var(--quote);
 }
 /* Home Page Styles */
 .home-page-text {
@@ -318,12 +463,145 @@
 .craps-home-page-sub-section-link {
 	color: var(--craps-home-page-sub-section-link);
 }
+/* Content Pages */
+.content-page-section-title {
+	color: var(--content-page-section-title);
+}
+.bookmark {
+	color: var(--bookmark);
+}
+.bookmark-popup {
+	background-color: var(--bookmark-popup-bg);
+	border-color: var(--bookmark-popup-border);
+	color: var(--bookmark-popup-text);
+}
+.content-page-h1 {
+	color: var(--content-page-h1);
+}
+.content-page-h2 {
+	color: var(--content-page-h2);
+}
+.content-page-h3 {
+	color: var(--content-page-h3);
+}
+.ul-h4 {
+	color: var(--ul-h4);
+}
+.ul-li {
+	color: var(--ul-li);
+}
+.content-table {
+	background-color: var(--content-table-bg);
+	color: var(--content-table-text);
+}
+.content-table-border {
+	border-color: var(--content-table-border);
+}
+/* Calculator Styles */
+.calculator-title {
+	color: var(--calculator-title);
+}
+.calc-input-label {
+	color: var(--calc-input-label);
+}
+.calculator-input {
+	background-color: var(--calc-input-bg);
+	color: var(--calc-input-text);
+	border-color: var(--calc-input-border);
+}
+.calculator-input:hover {
+	background-color: var(--calc-input-hover-bg);
+}
+.calculator-input::placeholder {
+	color: var(--calc-input-placeholder);
+}
+.calculator-input:focus {
+	border-color: var(--calc-input-focus-border);
+}
+.calculator-btn {
+	background-color: var(--calculator-btn-bg);
+	color: var(--calculator-btn-text);
+}
+.calculator-btn:hover {
+	background-color: var(--calculator-btn-hover-bg);
+	color: var(--calculator-btn-text-hover);
+}
+/* Site Home Pages Heading Styles */
+.home-page-heading {
+	background-color: var(--home-page-heading-bg);
+	color: var(--home-page-heading-text);
+}
+.home-page-body-bg-1 {
+	background-color: var(--home-page-body-bg-1);
+}
+.home-page-body-bg-2 {
+	background-color: var(--home-page-body-bg-2);
+}
+.home-page-body-bg-3 {
+	background-color: var(--home-page-body-bg-3);
+}
+/* Practice Home Page */
+.practice-view-btn {
+	background-color: var(--practice-view-btn-bg);
+	color: var(--practice-view-btn-text);
+	border-color: var(--practice-view-btn-border);
+}
+.practice-view-btn:hover {
+	background-color: var(--practice-view-btn-hover-bg);
+	border-color: var(--practice-view-btn-border-hover);
+	color: var(--practice-view-btn-text-hover);
+}
+.practice-dwnld-btn {
+	background-color: var(--practice-dwnld-btn-bg);
+	color: var(--practice-dwnld-btn-text);
+	border-color: var(--practice-dwnld-btn-border);
+}
+.practice-dwnld-btn:hover {
+	background-color: var(--practice-dwnld-btn-hover-bg);
+	border-color: var(--practice-dwnld-btn-border-hover);
+	color: var(--practice-dwnld-btn-text-hover);
+}
+/* Other Page Styles */
+.glossary-word {
+	color: var(--glossary-word);
+}
+.site-map-heading {
+	color: var(--site-map-heading);
+}
+.contact-input {
+	background-color: var(--contact-input-bg);
+	color: var(--contact-input-text);
+	border-color: var(--contact-input-border);
+}
+.contact-input:hover {
+	background-color: var(--contact-input-hover-bg);
+}
+.contact-input::placeholder {
+	color: var(--contact-input-placeholder);
+}
+.contact-input:focus {
+	border-color: var(--contact-input-focus-border);
+}
+.contact-btn {
+	background-color: var(--contact-btn-bg);
+	color: var(--contact-btn-text);
+	border-color: var(--contact-btn-border);
+}
+.contact-btn:hover {
+	background-color: var(--contact-btn-hover-bg);
+	color: var(--contact-btn-text-hover);
+	border-color: var(--contact-btn-border-hover);
+}
 
 /* Dark mode styles */
 [data-theme='dark'] {
 	/* Default colors */
 	--text-color: var(--dm-text-color);
 	--bg-color: var(--dm-bg-color);
+	/* Elements */
+	--hyperlink: var(--dm-hyperlink);
+	--hyperlink-hover: var(--dm-hyperlink-hover);
+	--quote: var(--dm-quote);
 	/* Home Page */
 	--home-page-text: var(--dm-home-page-text);
 	--hero-bg: var(--dm-hero-bg);
@@ -391,6 +669,69 @@
 	--craps-home-page-sub-section-bg-hover: var(--dm-craps-home-page-sub-section-bg-hover);
 	--craps-home-page-sub-section-text: var(--dm-craps-home-page-sub-section-text);
 	--craps-home-page-sub-section-link: var(--dm-craps-home-page-sub-section-link);
+	/* Content Pages */
+	--content-page-section-title: var(--dm-content-page-section-title);
+	--bookmark: var(--dm-bookmark);
+	--bookmark-popup-bg: var(--dm-bookmark-popup-bg);
+	--bookmark-popup-border: var(--dm-bookmark-popup-border);
+	--bookmark-popup-text: var(--dm-bookmark-popup-text);
+	--content-page-h1: var(--dm-content-page-h1);
+	--content-page-h2: var(--dm-content-page-h2);
+	--content-page-h3: var(--dm-content-page-h3);
+	--ul-h4: var(--dm-ul-h4);
+	--ul-li: var(--dm-ul-li);
+	--content-table-bg: var(--dm-content-table-bg);
+	--content-table-border: var(--dm-content-table-border);
+	--content-table-text: var(--dm-content-table-text);
+	/* Calculator Styles */
+	--calculator-title: var(--dm-calculator-title);
+	--calc-input-label: var(--dm-calc-input-label);
+	--calc-input-bg: var(--dm-calc-input-bg);
+	--calc-input-hover-bg: var(--dm-calc-input-hover-bg);
+	--calc-input-active-bg: var(--dm-calc-input-active-bg);
+	--calc-input-text: var(--dm-calc-input-text);
+	--calc-input-border: var(--dm-calc-input-border);
+	--calc-input-placeholder: var(--dm-calc-input-placeholder);
+	--calc-input-focus-border: var(--dm-calc-input-focus-border);
+	--calculator-btn-bg: var(--dm-calculator-btn-bg);
+	--calculator-btn-hover-bg: var(--dm-calculator-btn-hover-bg);
+	--calculator-btn-text: var(--dm-calculator-btn-text);
+	--calculator-btn-text-hover: var(--dm-calculator-btn-text-hover);
+	--calculator-error-text: var(--dm-calculator-error-text);
+	--calculator-success-text: var(--dm-calculator-success-text);
+	/* Site Home Pages Heading Styles */
+	--home-page-heading-bg: var(--dm-home-page-heading-bg);
+	--home-page-heading-text: var(--dm-home-page-heading-text);
+	--home-page-body-bg-1: var(--dm-home-page-body-bg-1);
+	--home-page-body-bg-2: var(--dm-home-page-body-bg-2);
+	--home-page-body-bg-3: var(--dm-home-page-body-bg-3);
+	/* Practice Home Page */
+	--practice-view-btn-bg: var(--dm-practice-view-btn-bg);
+	--practice-view-btn-hover-bg: var(--dm-practice-view-btn-hover-bg);
+	--practice-view-btn-text: var(--dm-practice-view-btn-text);
+	--practice-view-btn-text-hover: var(--dm-practice-view-btn-text-hover);
+	--practice-view-btn-border: var(--dm-practice-view-btn-border);
+	--practice-view-btn-border-hover: var(--dm-practice-view-btn-border-hover);
+	--practice-dwnld-btn-bg: var(--dm-practice-dwnld-btn-bg);
+	--practice-dwnld-btn-hover-bg: var(--dm-practice-dwnld-btn-hover-bg);
+	--practice-dwnld-btn-text: var(--dm-practice-dwnld-btn-text);
+	--practice-dwnld-btn-text-hover: var(--dm-practice-dwnld-btn-text-hover);
+	--practice-dwnld-btn-border: var(--dm-practice-dwnld-btn-border);
+	--practice-dwnld-btn-border-hover: var(--dm-practice-dwnld-btn-border-hover);
+	/* Other Page Styles */
+	--glossary-word: var(--dm-glossary-word);
+	--site-map-heading: var(--dm-site-map-heading);
+	--contact-input-bg: var(--dm-contact-input-bg);
+	--contact-input-hover-bg: var(--dm-contact-input-hover-bg);
+	--contact-input-border: var(--dm-contact-input-border);
+	--contact-input-border-hover: var(--dm-contact-input-border-hover);
+	--contact-input-text: var(--dm-contact-input-text);
+	--contact-input-placeholder: var(--dm-contact-input-placeholder);
+	--contact-input-focus-border: var(--dm-contact-input-focus-border);
+	--contact-btn-bg: var(--dm-contact-btn-bg);
+	--contact-btn-hover-bg: var(--dm-contact-btn-hover-bg);
+	--contact-btn-text: var(--dm-contact-btn-text);
+	--contact-btn-text-hover: var(--dm-contact-btn-text-hover);
 
 	/* Dark mode for sign-in */
 	.sign-in {

@@ -265,12 +265,12 @@
 </svelte:head>
 
 <MoreLayout>
-	<main aria-label="Main content" class="bg-gray-100 dark:bg-gray-800 p-6">
+	<main aria-label="Main content" class="p-6">
 		<h1 class="text-4xl font-bold mb-10 text-center">Site Map</h1>
 		<div class="grid gap-4 grid-cols-2 justify-items-stretch">
 			<div>
 				{#each sections as section (section.title)}
-					<h2 class="text-xl text-emerald-700 mt-4">{section.title}</h2>
+					<h2 class="text-xl site-map-heading mt-4">{section.title}</h2>
 					<ul>
 						{#each section.links as link, index (link)}
 							<li class="ml-4 list-disc">
@@ -287,7 +287,7 @@
 			<div class="flex flex-col">
 				<div>
 					{#each sections2 as section (section.title)}
-						<h2 class="text-xl text-emerald-700 mt-4">{section.title}</h2>
+						<h2 class="text-xl site-map-heading mt-4">{section.title}</h2>
 						<ul>
 							{#each section.links as link, index (link)}
 								<li class="ml-4 list-disc">
@@ -303,7 +303,7 @@
 				</div>
 				<div>
 					{#each sections3 as section (section.title)}
-						<h2 class="text-xl text-emerald-700 mt-4">{section.title}</h2>
+						<h2 class="text-xl site-map-heading mt-4">{section.title}</h2>
 						<ul>
 							{#each section.links as link, index (link)}
 								<li class="ml-4 list-disc">

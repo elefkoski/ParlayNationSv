@@ -1,4 +1,32 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { theme } from '$lib/stores/theme';
+
+	let currentTheme: string;
+
+	theme.subscribe((value) => {
+		currentTheme = value;
+		if (typeof document !== 'undefined') {
+			document.documentElement.setAttribute('data-theme', currentTheme);
+		}
+	});
+
+	// Function to detect system theme
+	function detectSystemTheme() {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark';
+		}
+		return 'light';
+	}
+
+	// Apply the initial theme on mount
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			const systemTheme = detectSystemTheme();
+			theme.set(systemTheme); // Set the initial theme based on system preference
+			document.documentElement.setAttribute('data-theme', currentTheme);
+		}
+	});
 	interface Page {
 		name: string;
 		sentence: string;
@@ -43,7 +71,9 @@
 						<img
 							src={page.src}
 							alt={page.alt}
-							class="w-6 h-6 mr-2 filter dark:invert dark:brightness-200 dark:saturate-150 {page.transform}"
+							class="w-6 h-6 mr-2 filter {currentTheme === 'dark'
+								? 'dark:invert dark:brightness-200 dark:saturate-150'
+								: ''} {page.transform}"
 						/>
 						<span
 							>{page.sentence}<span class="font-semibold craps-home-page-sub-section-link"

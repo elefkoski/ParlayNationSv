@@ -1864,14 +1864,11 @@
 </svelte:head>
 
 <MoreLayout>
-	<main
-		aria-label="Main content"
-		class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-slate-400 p-6"
-	>
-		<h1 class="text-4xl font-bold mb-10 text-center dark:text-white">Craps Glossary</h1>
+	<main aria-label="Main content" class="p-6">
+		<h1 class="text-4xl font-bold mb-10 text-center">Craps Glossary</h1>
 		<div class="space-y-4">
 			{#each sets as set}
-				<p><strong class="text-lg dark:text-stone-400">{set.word}</strong> - {set.definition}</p>
+				<p><strong class="text-lg glossary-word">{set.word}</strong> - {set.definition}</p>
 			{/each}
 		</div>
 	</main>

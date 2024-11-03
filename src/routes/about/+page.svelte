@@ -40,21 +40,12 @@
 </svelte:head>
 
 <MoreLayout>
-	<main
-		aria-label="Main content"
-		class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white p-6"
-	>
-		<div class="flex flex-col bg-gray-100 dark:bg-gray-800 px-4 sm:px-6 lg:px-8">
-			<h1
-				class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-10 text-center text-gray-800 dark:text-gray-100"
-			>
-				About Me
-			</h1>
+	<main aria-label="Main content" class="p-6">
+		<div class="flex flex-col px-4 sm:px-6 lg:px-8">
+			<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-10 text-center">About Me</h1>
 
-			<div
-				class="bg-white dark:bg-gray-700 shadow-md rounded-lg overflow-hidden w-full max-w-4xl mb-10"
-			>
-				<div class="w-full text-center p-6 text-gray-700 dark:text-gray-200">
+			<div class="home-page-body-bg-1 shadow-md rounded-lg overflow-hidden w-full max-w-4xl mb-10">
+				<div class="w-full text-center p-6">
 					<div class="flex justify-center items-center mb-4">
 						<img
 							class="object-cover rounded-full w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 mx-auto"
@@ -73,14 +64,10 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800">
+			<div class="flex flex-col items-center">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-					<div
-						class="bg-white dark:bg-gray-700 shadow-md rounded px-6 py-8 text-gray-700 dark:text-gray-200"
-					>
-						<h2 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-							The Mission
-						</h2>
+					<div class="home-page-body-bg-1 shadow-md rounded px-6 py-8">
+						<h2 class="text-xl sm:text-2xl font-bold mb-4">The Mission</h2>
 						<p class="text-base sm:text-lg">
 							At Parlay Nation, my mission is to empower individuals to become confident and
 							successful craps players by providing accessible resources, step-by-step guides, and
@@ -89,12 +76,8 @@
 						</p>
 					</div>
 
-					<div
-						class="bg-white dark:bg-gray-700 shadow-md rounded px-6 py-8 text-gray-700 dark:text-gray-200"
-					>
-						<h2 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-							The Vision
-						</h2>
+					<div class="home-page-body-bg-1 shadow-md rounded px-6 py-8">
+						<h2 class="text-xl sm:text-2xl font-bold mb-4">The Vision</h2>
 						<p class="text-base sm:text-lg">
 							My vision is to create a supportive platform where individuals can discover the joy of
 							playing craps and develop their skills, while fostering a community of confident and

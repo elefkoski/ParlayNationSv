@@ -31,32 +31,18 @@
 </svelte:head>
 
 <MoreLayout>
-	<main
-		aria-label="Main content"
-		class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white p-6"
-	>
-		<div
-			class="flex flex-col items-center min-h-screen bg-gray-100 dark:bg-gray-800 px-4 sm:px-6 lg:px-8"
-		>
-			<h1
-				class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-10 text-center text-gray-800 dark:text-gray-100"
-			>
-				Contact
-			</h1>
+	<main aria-label="Main content" class="p-6">
+		<div class="flex flex-col items-center min-h-screen px-4 sm:px-6 lg:px-8">
+			<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-10 text-center">Contact</h1>
 
 			<form
-				class="bg-white dark:bg-gray-700 shadow-md rounded px-6 py-8 mb-4 w-full max-w-md"
+				class="home-page-body-bg-1 shadow-md rounded px-6 py-8 mb-4 w-full max-w-md"
 				on:submit|preventDefault={handleSubmit}
 			>
 				<div class="mb-4">
-					<label
-						class="block text-gray-700 dark:text-gray-200 text-sm sm:text-base font-bold mb-2"
-						for="name"
-					>
-						Name
-					</label>
+					<label class="block text-sm sm:text-base font-bold mb-2" for="name"> Name </label>
 					<input
-						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+						class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring contact-input"
 						id="name"
 						type="text"
 						bind:value={name}
@@ -65,14 +51,9 @@
 				</div>
 
 				<div class="mb-4">
-					<label
-						class="block text-gray-700 dark:text-gray-200 text-sm sm:text-base font-bold mb-2"
-						for="email"
-					>
-						Email
-					</label>
+					<label class="block text-sm sm:text-base font-bold mb-2" for="email"> Email </label>
 					<input
-						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+						class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring contact-input"
 						id="email"
 						type="text"
 						bind:value={email}
@@ -81,14 +62,9 @@
 				</div>
 
 				<div class="mb-4">
-					<label
-						class="block text-gray-700 dark:text-gray-200 text-sm sm:text-base font-bold mb-2"
-						for="message"
-					>
-						Message
-					</label>
+					<label class="block text-sm sm:text-base font-bold mb-2" for="message"> Message </label>
 					<textarea
-						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+						class="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring contact-input"
 						id="message"
 						bind:value={message}
 						placeholder="Type your message..."
@@ -97,9 +73,7 @@
 				</div>
 
 				<div class="flex items-center justify-between">
-					<button class="btn btn-primary dark:btn-dark w-full sm:w-auto" type="submit">
-						Submit
-					</button>
+					<button class="btn contact-btn w-full sm:w-auto" type="submit"> Submit </button>
 				</div>
 			</form>
 		</div>

@@ -2,4 +2,4 @@
 	export let text: string = '';
 </script>
 
-<span class="text-yellow-400">"{text}"</span>
+<span class="quote">"{text}"</span>

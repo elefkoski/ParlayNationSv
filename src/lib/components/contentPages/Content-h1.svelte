@@ -30,7 +30,7 @@
 	user.subscribe(async (value) => {
 		current_user = value;
 		handleBookmarkIdFetch();
-		// Add this if block to populate bookmarkedPages
+		// Populate bookmarkedPages
 		if (current_user && current_user.id) {
 			const allBookmarks = await fetchAllBookmarks(current_user.id);
 			bookmarkedPages.set(allBookmarks);
@@ -87,19 +87,17 @@
 
 <header>
 	<div class="flex justify-between">
-		<span class="text-lg uppercase font-semibold text-blue-600 dark:text-blue-400"
-			>{sectionTitle}</span
-		>
+		<span class="text-lg uppercase font-semibold content-page-section-title">{sectionTitle}</span>
 		<div class="flex">
 			{#if !bookmarked}
-				<p class="text-sm dark:text-orange-400 pt-1 mr-1">Bookmark this page</p>
+				<p class="text-sm bookmark pt-1 mr-1">Bookmark this page</p>
 				<button data-track="bookmark" on:click={bookmarkPage}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
 						viewBox="0 0 24 24"
 						width="24px"
-						fill="#FB923C"
+						fill="var(--bookmark)"
 						><path d="M0 0h24v24H0V0z" fill="none" /><path
 							d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"
 						/></svg
@@ -109,14 +107,14 @@
 					<Popup message="You must be signed in to bookmark a page." />
 				{/if}
 			{:else}
-				<p class="text-sm dark:text-orange-400 pt-1 mr-1">Remove bookmark</p>
+				<p class="text-sm bookmark pt-1 mr-1">Remove bookmark</p>
 				<button data-track="unbookmark" on:click={unBookmarkPage}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
 						viewBox="0 0 24 24"
 						width="24px"
-						fill="#FB923C"
+						fill="var(--bookmark)"
 						><path d="M0 0h24v24H0V0z" fill="none" /><path
 							d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"
 						/></svg
@@ -125,7 +123,7 @@
 			{/if}
 		</div>
 	</div>
-	<h1 class="text-slate-400 text-3xl pb-2 font-bold">{title}</h1>
+	<h1 class="content-page-h1 text-3xl pb-2 font-bold">{title}</h1>
 </header>
 <section aria-label="Intro Section">
 	<slot />

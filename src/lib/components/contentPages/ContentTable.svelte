@@ -14,18 +14,18 @@
 
 <section aria-label={tblAria} class="w-full px-4">
 	<table class="table-auto w-full text-center">
-		<thead class="bg-white dark:bg-gray-800">
+		<thead class="content-table">
 			<tr>
 				{#each tblHeaders as header (header)}
-					<th class="border px-4 py-2">{header}</th>
+					<th class="content-table-border border-2 px-4 py-2">{header}</th>
 				{/each}
 			</tr>
 		</thead>
-		<tbody class="bg-white dark:bg-gray-800">
+		<tbody>
 			{#each tblRows as row (row)}
 				<tr>
 					{#each row as cell (cell)}
-						<td class="border px-4 py-2">{cell}</td>
+						<td class="content-table-border border-2 px-4 py-2">{cell}</td>
 					{/each}
 				</tr>
 			{/each}

@@ -33,11 +33,36 @@ export function commonValidation(amt: number, pId: string, conditions: Condition
 	return true;
 }
 
+function updateColors() {
+	if (typeof window === 'undefined') {
+		return { errorColor: '', successColor: '' };
+	}
+
+	const currentTheme = document.documentElement.getAttribute('data-theme');
+	const isDarkMode = currentTheme === 'dark';
+	const errorColor = isDarkMode
+		? 'var(--dm-calculator-error-text)'
+		: 'var(--calculator-error-text)';
+	const successColor = isDarkMode
+		? 'var(--dm-calculator-success-text)'
+		: 'var(--calculator-success-text)';
+
+	return { errorColor, successColor };
+}
+
+// Initial color update
+let { errorColor, successColor } = updateColors();
+
+// Function to handle theme change
+export function handleThemeChange() {
+	({ errorColor, successColor } = updateColors());
+}
+
 export function setMessage(pId: string, message: string, isError: boolean = false) {
 	const pElement = document.getElementById(pId);
 	if (pElement) {
 		pElement.innerText = message;
-		pElement.style.color = isError ? 'red' : 'yellow';
+		pElement.style.color = isError ? errorColor : successColor;
 		pElement.style.marginTop = '8px';
 	}
 }
