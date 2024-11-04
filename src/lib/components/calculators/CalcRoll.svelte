@@ -13,8 +13,8 @@
 	{#each rollInfo as { value, title }}
 		<div class="flex flex-col items-center justify-center">
 			<button
-				class="bg-rose-500 btn border-gray-600 dark:bg-rose-300 dark:hover:bg-rose-200 flex font-extrabold h-16 hover:bg-rose-400 items-center justify-center text-3xl text-black w-16
-        {selectedValue === value ? 'bg-rose-400 dark:bg-rose-400 border-4 dark:border-slate' : ''}"
+				class="btn calculator-roll-btn flex font-extrabold h-16 items-center justify-center text-3xl w-16
+        {selectedValue === value ? 'border-4 calculator-roll-btn-active' : ''}"
 				on:click={() => handleClick(value)}
 				type="button"
 			>

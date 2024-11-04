@@ -126,14 +126,10 @@
 </script>
 
 <div
-	class="relative p-8 w-full self-center bg-slate-600 rounded-lg text-center dark:bg-gray-900 transition-colors duration-500"
+	class="relative p-8 w-full self-center rounded-lg text-center transition-colors duration-500 home-page-body-bg-1"
 >
-	<h3 class="text-xl lg:text-2xl font-bold text-white dark:text-gray-200">
-		More Downloadable PDF's
-	</h3>
-	<p class="mt-2 text-white dark:text-gray-400">
-		Check out other PDF's that you can use to practice Craps.
-	</p>
+	<h3 class="text-xl lg:text-2xl font-bold">More Downloadable PDF's</h3>
+	<p class="mt-2">Check out other PDF's that you can use to practice Craps.</p>
 	<div class="flex overflow-x-auto mt-4 space-x-2 scrollbar-hide" bind:this={scrollContainer}>
 		{#each options as { url, href, title }, i}
 			<a
@@ -148,22 +144,20 @@
 						src={url}
 						alt={`Thumbnail ${i + 1}`}
 					/>
-					<div
-						class="pointer-events-none absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20"
-					/>
+					<div class="pointer-events-none absolute inset-0 image-cover dark:opacity-20" />
 				</div>
 				<h4 class="w-3/4 mx-auto">{title}</h4>
 			</a>
 		{/each}
 	</div>
 	<button
-		class="prev absolute top-[55%] left-4 transform -translate-y-1/2 bg-white dark:bg-black text-black dark:text-white p-2 rounded-full shadow-lg z-10"
+		class="prev absolute top-[55%] left-4 transform -translate-y-1/2 practice-page-left-right-btn p-2 rounded-full shadow-lg z-10"
 		on:click={scrollLeft}
 	>
 		&#10094;
 	</button>
 	<button
-		class="next absolute top-[55%] right-4 transform -translate-y-1/2 bg-white dark:bg-black text-black dark:text-white p-2 rounded-full shadow-lg z-10"
+		class="next absolute top-[55%] right-4 transform -translate-y-1/2 practice-page-left-right-btn p-2 rounded-full shadow-lg z-10"
 		on:click={scrollRight}
 	>
 		&#10095;

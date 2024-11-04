@@ -1,39 +1,17 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { theme } from '$lib/stores/theme';
 
-	let currentTheme: string;
-
-	theme.subscribe((value) => {
-		currentTheme = value;
-		if (typeof document !== 'undefined') {
-			document.documentElement.setAttribute('data-theme', currentTheme);
-		}
-	});
-
-	// Function to detect system theme
-	function detectSystemTheme() {
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark';
-		}
-		return 'light';
+	// Apply theme to document
+	$: if (typeof document !== 'undefined') {
+		document.documentElement.setAttribute('data-theme', $theme);
 	}
-
-	// Apply the initial theme on mount
-	onMount(() => {
-		if (typeof document !== 'undefined') {
-			const systemTheme = detectSystemTheme();
-			theme.set(systemTheme); // Set the initial theme based on system preference
-			document.documentElement.setAttribute('data-theme', currentTheme);
-		}
-	});
 </script>
 
 <footer class="footer w-full p-10">
 	<div>
 		<figure>
 			<a data-track="footer-logo" href="/">
-				{#if currentTheme === 'dark'}
+				{#if $theme === 'dark'}
 					<img
 						src="src/images/assets/white-logo_950x257.webp"
 						alt="white parlay nation logo"

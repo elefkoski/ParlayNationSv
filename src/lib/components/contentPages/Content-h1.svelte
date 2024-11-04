@@ -87,7 +87,7 @@
 
 <header>
 	<div class="flex justify-between">
-		<span class="text-lg uppercase font-semibold content-page-section-title">{sectionTitle}</span>
+		<span class="text-lg uppercase font-semibold page-section-title">{sectionTitle}</span>
 		<div class="flex">
 			{#if !bookmarked}
 				<p class="text-sm bookmark pt-1 mr-1">Bookmark this page</p>
@@ -123,7 +123,7 @@
 			{/if}
 		</div>
 	</div>
-	<h1 class="content-page-h1 text-3xl pb-2 font-bold">{title}</h1>
+	<h1 class="article-h1 text-3xl pb-2 font-bold">{title}</h1>
 </header>
 <section aria-label="Intro Section">
 	<slot />

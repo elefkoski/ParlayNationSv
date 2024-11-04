@@ -3,10 +3,21 @@
 	/* Base Colors */
 	--text-color: #000;
 	--bg-color: #fff;
+	--page-section-title: #2563eb; /* blue-600 */
+	--article-h1: #475569; /* slate-600 */
+	--article-h2: #475569; /* slate-600 */
+	--article-h3: #475569; /* slate-600 */
+	--ul-h4: #2563eb; /* blue-600 */
+	--ul-li: #374151; /* gray-700 */
+	--ul-li-span: #475569; /* slate-600 */
 	/* Elements */
 	--hyperlink: #2563eb; /* blue-600 */
 	--hyperlink-hover: #1e40af; /* blue-800 */
 	--quote: #f97316; /* orange-500 */
+	--bookmark: #2563eb; /* blue-600 */
+	--bookmark-popup-bg: #ffffff; /* white */
+	--bookmark-popup-border: #dc2626; /* red-600 */
+	--bookmark-popup-text: #dc2626; /* red-600 */
 	/* Home Page */
 	--home-page-text: #111827; /* gray-900 */
 	--hero-bg: #f9fafb; /* base-50 */
@@ -27,6 +38,10 @@
 	--left-nav-menu-text-hover: #1e293b; /* slate-900 */
 	--left-nav-menu-vertical-bars: transparent; /* transparent */
 	--left-nav-menu-vertical-bars-hover: #1e293b; /* slate-800 */
+	--left-nav-more-menu-text: #334155; /* slate-700 */
+	--left-nav-more-menu-text-hover: #1e293b; /* slate-900 */
+	--left-nav-more-menu-border: transparent; /* transparent */
+	--left-nav-more-menu-border-hover: #1e293b; /* slate-800 */
 	/* Theme Slider */
 	--slider-bg-color: #ccc;
 	--theme-slider-thumb-color: white;
@@ -76,17 +91,7 @@
 	--craps-home-page-sub-section-bg-hover: #e5e7eb; /* base-300 */
 	--craps-home-page-sub-section-text: #475569; /* slate-600 */
 	--craps-home-page-sub-section-link: #2563eb; /* blue-600 */
-	/* Content Pages */
-	--content-page-section-title: #2563eb; /* blue-600 */
-	--bookmark: #2563eb; /* blue-600 */
-	--bookmark-popup-bg: #ffffff; /* white */
-	--bookmark-popup-border: #dc2626; /* red-600 */
-	--bookmark-popup-text: #dc2626; /* red-600 */
-	--content-page-h1: #475569; /* slate-600 */
-	--content-page-h2: #475569; /* slate-600 */
-	--content-page-h3: #475569; /* slate-600 */
-	--ul-h4: #2563eb; /* blue-600 */
-	--ul-li: #374151; /* gray-700 */
+	/* Content Tables */
 	--content-table-bg: #f3f4f6; /* base-200 */
 	--content-table-border: #d1d5db; /* gray-300 */
 	--content-table-text: #475569; /* slate-600 */
@@ -99,12 +104,21 @@
 	--calc-input-border: #d1d5db; /* gray-300 */
 	--calc-input-placeholder: #9ca3af; /* gray-400 */
 	--calc-input-focus-border: #2563eb; /* blue-600 */
-	--calculator-btn-bg: #60a5fa; /* blue-400 */
-	--calculator-btn-hover-bg: #3b82f6; /* blue-500 */
-	--calculator-btn-text: #000000; /* black */
-	--calculator-btn-text-hover: #000000; /* black */
+	--calculator-btn-bg: #3b82f6; /* blue-500 */
+	--calculator-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--calculator-btn-text: white; /* white */
+	--calculator-btn-text-hover: white; /* white */
 	--calculator-error-text: #B91C1C; /* red-700 */
 	--calculator-success-text: #15803D; /* green-700 */
+	--calculator-roll-btn-bg: #60a5fa; /* blue-400 */
+	--calculator-roll-btn-hover-bg: #3b82f6; /* blue-500 */
+	--calculator-roll-btn-active-bg: #3b82f6; /* blue-500 */
+	--calculator-roll-btn-text: #ffffff; /* white */
+	--calculator-roll-btn-text-hover: #ffffff; /* white */
+	--calculator-roll-btn-text-active: #ffffff; /* white */
+	--calculator-roll-btn-border: #60a5fa; /* blue-400 */
+	--calculator-roll-btn-border-hover: #3b82f6; /* blue-500 */
+	--calculator-roll-btn-border-active: #3b82f6; /* blue-500 */
 	/* Site Home Pages Heading Styles */
 	--home-page-heading-bg: #e2e8f0; /* base-300 */
 	--home-page-heading-text: #111827; /* gray-900 */
@@ -124,6 +138,22 @@
 	--practice-dwnld-btn-text-hover: #ffffff; /* white */
 	--practice-dwnld-btn-border: #60a5fa; /* blue-400 */
 	--practice-dwnld-btn-border-hover: #3b82f6; /* blue-500 */
+	/* Practice Pages */
+	--practice-page-left-right-btn-bg: #000000; /* black */
+	--practice-page-left-right-btn-hover-bg: #f3f4f6; /* gray-100 */
+	--practice-page-left-right-btn-text: #ffffff; /* white */
+	--practice-page-left-right-btn-text-hover: #374151; /* slate-700 */
+	--practice-page-left-right-btn-border: black; /* black */
+	--practice-page-left-right-btn-border-hover: #374151; /* slate-700 */
+	--practice-list-title: #2563eb; /* blue-600 */
+	--practice-list-text: #475569; /* slate-600 */
+	--practice-download-btn-bg: #60a5fa; /* blue-400 */
+	--practice-download-btn-hover-bg: #3b82f6; /* blue-500 */
+	--practice-download-btn-text: #ffffff; /* white */
+	--practice-download-btn-text-hover: #ffffff; /* white */
+	/* Blog Pages */
+	--blog-page-title: #374151; /* gray-700 */
+	--blog-page-h2: #475569; /* slate-600 */
 	/*Other Page Styles */
 	--glossary-word: #2563eb; /* blue-600 */
 	--site-map-heading: #2563eb; /* blue-600 */
@@ -144,10 +174,21 @@
 	/* Base Colors */
 	--dm-bg-color: #1f2937; /* gray-800 */
 	--dm-text-color: #d1d5db; /* gray-300 */
+	--dm-page-section-title: #60a5fa; /* blue-400 */
+	--dm-article-h1: #94a3b8; /* slate-400 */
+	--dm-article-h2: #94a3b8; /* slate-400 */
+	--dm-article-h3: #94a3b8; /* slate-400 */
+	--dm-ul-h4: #60a5fa; /* blue-400 */
+	--dm-ul-li: #d1d5db; /* gray-300 */
+	--dm-ul-li-span: #94a3b8; /* slate-400 */
 	/* Elements */
 	--dm-hyperlink: #60a5fa; /* blue-400 */
 	--dm-hyperlink-hover: #1d4ed8; /* blue-700 */
 	--dm-quote: #facc15; /* yellow-400 */
+	--dm-bookmark: #fb923c; /* orange-400 */
+	--dm-bookmark-popup-bg: #1f2937; /* gray-800 */
+	--dm-bookmark-popup-border: #f87171; /* red-400 */
+	--dm-bookmark-popup-text: #f87171; /* red-400 */
 	/* Home Page */
 	--dm-home-page-text: #94a3b8; /* slate-400 */
 	--dm-hero-bg: #000000; /* black */
@@ -167,6 +208,10 @@
 	--dm-left-nav-menu-text: #94a3b8; /* slate-400 */
 	--dm-left-nav-menu-text-hover: #cbd5e1; /* slate-300 */
 	--dm-left-nav-menu-vertical-bars-hover: #64748b; /* slate-500 */
+	--dm-left-nav-more-menu-text: #94a3b8; /* slate-400 */
+	--dm-left-nav-more-menu-text-hover: #cbd5e1; /* slate-300 */
+	--dm-left-nav-more-menu-border: transparent; /* transparent */
+	--dm-left-nav-more-menu-border-hover: #cbd5e1; /* slate-300 */
 	/* Prev/Next */
 	--dm-prev-next-bg: #1f2937; /* gray-800 */
 	--dm-prev-next-bg-hover: #374151; /* gray-700 */
@@ -211,17 +256,7 @@
 	--dm-craps-home-page-sub-section-bg-hover: #1f2937; /* gray-800 */
 	--dm-craps-home-page-sub-section-text: #60a5fa; /* blue-400 */
 	--dm-craps-home-page-sub-section-link: #fdba74; /* orange-300 */
-	/* Content Pages */
-	--dm-content-page-section-title: #60a5fa; /* blue-400 */
-	--dm-bookmark: #fb923c; /* orange-400 */
-	--dm-bookmark-popup-bg: #1f2937; /* gray-800 */
-	--dm-bookmark-popup-border: #f87171; /* red-400 */
-	--dm-bookmark-popup-text: #f87171; /* red-400 */
-	--dm-content-page-h1: #94a3b8; /* slate-400 */
-	--dm-content-page-h2: #94a3b8; /* slate-400 */
-	--dm-content-page-h3: #94a3b8; /* slate-400 */
-	--dm-ul-h4: #60a5fa; /* blue-400 */
-	--dm-ul-li: #d1d5db; /* gray-300 */
+	/* Content Tables */
 	--dm-content-table-bg: #111827; /* gray-900 */
 	--dm-content-table-border: #374151; /* gray-700 */
 	--dm-content-table-text: #d1d5db; /* gray-300 */
@@ -240,6 +275,15 @@
 	--dm-calculator-btn-text-hover: #ffffff; /* white */
 	--dm-calculator-error-text: #f87171; /* red-400 */
 	--dm-calculator-success-text: #34d399; /* green-500 */
+	--dm-calculator-roll-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-calculator-roll-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-calculator-roll-btn-active-bg: #1d4ed8; /* blue-700 */
+	--dm-calculator-roll-btn-text: #ffffff; /* white */
+	--dm-calculator-roll-btn-text-hover: #ffffff; /* white */
+	--dm-calculator-roll-btn-text-active: #ffffff; /* white */
+	--dm-calculator-roll-btn-border: #1e3a8a; /* blue-900 */
+	--dm-calculator-roll-btn-border-hover: #1d4ed8; /* blue-700 */
+	--dm-calculator-roll-btn-border-active: #1d4ed8; /* blue-700 */
 	/* Home Pages Heading Styles */
 	--dm-home-page-heading-bg: #111827; /* gray-900 */
 	--dm-home-page-heading-text: #f3f4f6; /* gray-100 */
@@ -259,6 +303,20 @@
 	--dm-practice-dwnld-btn-text-hover: #ffffff; /* white */
 	--dm-practice-dwnld-btn-border: #1e3a8a; /* blue-900 */
 	--dm-practice-dwnld-btn-border-hover: #1d4ed8; /* blue-700 */
+	/* Practice Pages */
+	--dm-practice-page-left-right-btn-bg: #1f2937; /* gray-800 */
+	--dm-practice-page-left-right-btn-hover-bg: #374151; /* gray-700 */
+	--dm-practice-page-left-right-btn-text: #d1d5db; /* gray-300 */
+	--dm-practice-page-left-right-btn-text-hover: #d1d5db; /* gray-300 */
+	--dm-practice-page-left-right-btn-border: #white; /* white */
+	--dm-practice-page-left-right-btn-border-hover: #374151; /* gray-700 */
+	--dm-practice-list-title: #60a5fa; /* blue-400 */
+	--dm-practice-list-text: #94a3b8; /* slate-400 */
+	--dm-practice-download-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-practice-download-btn-hover-bg: #1d4ed8; /* blue-700 */
+	/* Blog Pages */
+	--dm-blog-page-title: #94a3b8; /* slate-400 */
+	--dm-blog-page-h2: #94a3b8; /* slate-400 */
 	/* Other Page Styles */
 	--dm-glossary-word: #60a5fa; /* blue-400 */
 	--dm-site-map-heading: #60a5fa; /* blue-400 */
@@ -281,6 +339,27 @@
 	background-color: var(--bg-color);
 	color: var(--text-color);
 }
+.page-section-title {
+	color: var(--page-section-title);
+}
+.article-h1 {
+	color: var(--article-h1);
+}
+.article-h2 {
+	color: var(--article-h2);
+}
+.article-h3 {
+	color: var(--article-h3);
+}
+.ul-h4 {
+	color: var(--ul-h4);
+}
+.ul-li {
+	color: var(--ul-li);
+}
+.ul-li-span {
+	color: var(--ul-li-span);
+}
 /* Elements */
 .hyperlink {
 	color: var(--hyperlink);
@@ -290,6 +369,14 @@
 }
 .quote {
 	color: var(--quote);
+}
+.bookmark {
+	color: var(--bookmark);
+}
+.bookmark-popup {
+	background-color: var(--bookmark-popup-bg);
+	border-color: var(--bookmark-popup-border);
+	color: var(--bookmark-popup-text);
 }
 /* Home Page Styles */
 .home-page-text {
@@ -340,6 +427,14 @@
 .left-nav-menu-text:hover {
 	color: var(--left-nav-menu-text-hover);
 	border-color: var(--left-nav-menu-vertical-bars-hover);
+}
+.left-nav-more-menu {
+	color: var(--left-nav-more-menu-text);
+	border-color: var(--left-nav-more-menu-border);
+}
+.left-nav-more-menu:hover {
+	color: var(--left-nav-more-menu-text-hover);
+	border-color: var(--left-nav-more-menu-border-hover);
 }
 /* Prev/Next Styles */
 .prev-next-btn {
@@ -463,33 +558,7 @@
 .craps-home-page-sub-section-link {
 	color: var(--craps-home-page-sub-section-link);
 }
-/* Content Pages */
-.content-page-section-title {
-	color: var(--content-page-section-title);
-}
-.bookmark {
-	color: var(--bookmark);
-}
-.bookmark-popup {
-	background-color: var(--bookmark-popup-bg);
-	border-color: var(--bookmark-popup-border);
-	color: var(--bookmark-popup-text);
-}
-.content-page-h1 {
-	color: var(--content-page-h1);
-}
-.content-page-h2 {
-	color: var(--content-page-h2);
-}
-.content-page-h3 {
-	color: var(--content-page-h3);
-}
-.ul-h4 {
-	color: var(--ul-h4);
-}
-.ul-li {
-	color: var(--ul-li);
-}
+/* Content Tables */
 .content-table {
 	background-color: var(--content-table-bg);
 	color: var(--content-table-text);
@@ -526,6 +595,21 @@
 	background-color: var(--calculator-btn-hover-bg);
 	color: var(--calculator-btn-text-hover);
 }
+.calculator-roll-btn {
+	background-color: var(--calculator-roll-btn-bg);
+	color: var(--calculator-roll-btn-text);
+	border-color: var(--calculator-roll-btn-border);
+}
+.calculator-roll-btn:hover {
+	background-color: var(--calculator-roll-btn-hover-bg);
+	color: var(--calculator-roll-btn-text-hover);
+	border-color: var(--calculator-roll-btn-border-hover);
+}
+.calculator-roll-btn-active {
+	background-color: var(--calculator-roll-btn-active-bg);
+	color: var(--calculator-roll-btn-text-active);
+	border-color: var(--calculator-roll-btn-border-active);
+}
 /* Site Home Pages Heading Styles */
 .home-page-heading {
 	background-color: var(--home-page-heading-bg);
@@ -561,6 +645,38 @@
 	border-color: var(--practice-dwnld-btn-border-hover);
 	color: var(--practice-dwnld-btn-text-hover);
 }
+/* Practice Pages */
+.practice-page-left-right-btn {
+	background-color: var(--practice-page-left-right-btn-bg);
+	color: var(--practice-page-left-right-btn-text);
+	border-color: var(--practice-page-left-right-btn-border);
+}
+.practice-page-left-right-btn:hover {
+	color: var(--practice-page-left-right-btn-text-hover);
+	background-color: var(--practice-page-left-right-btn-hover-bg);
+	border-color: var(--practice-page-left-right-btn-border-hover);
+}
+.practice-list-title {
+	color: var(--practice-list-title);
+}
+.practice-list-text {
+	color: var(--practice-list-text);
+}
+.practice-download-btn {
+	background-color: var(--practice-download-btn-bg);
+	color: var(--practice-download-btn-text);
+}
+.practice-download-btn:hover {
+	background-color: var(--practice-download-btn-hover-bg);
+	color: var(--practice-download-btn-text-hover);
+}
+/* Blog Pages */
+.blog-page-title {
+	color: var(--blog-page-title);
+}
+.blog-page-h2 {
+	color: var(--blog-page-h2);
+}
 /* Other Page Styles */
 .glossary-word {
 	color: var(--glossary-word);
@@ -595,13 +711,24 @@
 
 /* Dark mode styles */
 [data-theme='dark'] {
-	/* Default colors */
+	/* Base Colors */
 	--text-color: var(--dm-text-color);
 	--bg-color: var(--dm-bg-color);
+	--page-section-title: var(--dm-page-section-title);
+	--article-h1: var(--dm-article-h1);
+	--article-h2: var(--dm-article-h2);
+	--article-h3: var(--dm-article-h3);
+	--ul-h4: var(--dm-ul-h4);
+	--ul-li: var(--dm-ul-li);
+	--ul-li-span: var(--dm-ul-li-span);
 	/* Elements */
 	--hyperlink: var(--dm-hyperlink);
 	--hyperlink-hover: var(--dm-hyperlink-hover);
 	--quote: var(--dm-quote);
+	--bookmark: var(--dm-bookmark);
+	--bookmark-popup-bg: var(--dm-bookmark-popup-bg);
+	--bookmark-popup-border: var(--dm-bookmark-popup-border);
+	--bookmark-popup-text: var(--dm-bookmark-popup-text);
 	/* Home Page */
 	--home-page-text: var(--dm-home-page-text);
 	--hero-bg: var(--dm-hero-bg);
@@ -621,6 +748,10 @@
 	--left-nav-menu-text: var(--dm-left-nav-menu-text);
 	--left-nav-menu-text-hover: var(--dm-left-nav-menu-text-hover);
 	--left-nav-menu-vertical-bars-hover: var(--dm-left-nav-menu-vertical-bars-hover);
+	--left-nav-more-menu-text: var(--dm-left-nav-more-menu-text);
+	--left-nav-more-menu-text-hover: var(--dm-left-nav-more-menu-text-hover);
+	--left-nav-more-menu-border: var(--dm-left-nav-more-menu-border);
+	--left-nav-more-menu-border-hover: var(--dm-left-nav-more-menu-border-hover);
 	/* Theme Slider */
 	--slider-bg-color: #666;
 	--theme-slider-thumb-color: #fff;
@@ -669,17 +800,7 @@
 	--craps-home-page-sub-section-bg-hover: var(--dm-craps-home-page-sub-section-bg-hover);
 	--craps-home-page-sub-section-text: var(--dm-craps-home-page-sub-section-text);
 	--craps-home-page-sub-section-link: var(--dm-craps-home-page-sub-section-link);
-	/* Content Pages */
-	--content-page-section-title: var(--dm-content-page-section-title);
-	--bookmark: var(--dm-bookmark);
-	--bookmark-popup-bg: var(--dm-bookmark-popup-bg);
-	--bookmark-popup-border: var(--dm-bookmark-popup-border);
-	--bookmark-popup-text: var(--dm-bookmark-popup-text);
-	--content-page-h1: var(--dm-content-page-h1);
-	--content-page-h2: var(--dm-content-page-h2);
-	--content-page-h3: var(--dm-content-page-h3);
-	--ul-h4: var(--dm-ul-h4);
-	--ul-li: var(--dm-ul-li);
+	/* Content Tables */
 	--content-table-bg: var(--dm-content-table-bg);
 	--content-table-border: var(--dm-content-table-border);
 	--content-table-text: var(--dm-content-table-text);
@@ -699,6 +820,9 @@
 	--calculator-btn-text-hover: var(--dm-calculator-btn-text-hover);
 	--calculator-error-text: var(--dm-calculator-error-text);
 	--calculator-success-text: var(--dm-calculator-success-text);
+	--calculator-roll-btn-bg: var(--dm-calculator-roll-btn-bg);
+	--calculator-roll-btn-hover-bg: var(--dm-calculator-roll-btn-hover-bg);
+	--calculator-roll-btn-text: var(--dm-calculator-roll-btn-text);
 	/* Site Home Pages Heading Styles */
 	--home-page-heading-bg: var(--dm-home-page-heading-bg);
 	--home-page-heading-text: var(--dm-home-page-heading-text);
@@ -718,6 +842,22 @@
 	--practice-dwnld-btn-text-hover: var(--dm-practice-dwnld-btn-text-hover);
 	--practice-dwnld-btn-border: var(--dm-practice-dwnld-btn-border);
 	--practice-dwnld-btn-border-hover: var(--dm-practice-dwnld-btn-border-hover);
+	/* Practice Pages */
+	--practice-page-left-right-btn-bg: var(--dm-practice-page-left-right-btn-bg);
+	--practice-page-left-right-btn-hover-bg: var(--dm-practice-page-left-right-btn-hover-bg);
+	--practice-page-left-right-btn-text: var(--dm-practice-page-left-right-btn-text);
+	--practice-page-left-right-btn-text-hover: var(--dm-practice-page-left-right-btn-text-hover);
+	--practice-page-left-right-btn-border: var(--dm-practice-page-left-right-btn-border);
+	--practice-page-left-right-btn-border-hover: var(--dm-practice-page-left-right-btn-border-hover);
+	--practice-list-title: var(--dm-practice-list-title);
+	--practice-list-text: var(--dm-practice-list-text);
+	--practice-download-btn-bg: var(--dm-practice-download-btn-bg);
+	--practice-download-btn-hover-bg: var(--dm-practice-download-btn-hover-bg);
+	--practice-download-btn-text: var(--dm-practice-download-btn-text);
+	--practice-download-btn-text-hover: var(--dm-practice-download-btn-text-hover);
+	/* Blog Pages */
+	--blog-page-title: var(--dm-blog-page-title);
+	--blog-page-h2: var(--dm-blog-page-h2);
 	/* Other Page Styles */
 	--glossary-word: var(--dm-glossary-word);
 	--site-map-heading: var(--dm-site-map-heading);

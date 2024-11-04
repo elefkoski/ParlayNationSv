@@ -4,6 +4,6 @@
 </script>
 
 <section aria-label={title}>
-	<h2 {id} class="content-page-h2 text-2xl pb-1">{title}</h2>
+	<h2 {id} class="article-h2 text-2xl pb-1">{title}</h2>
 	<slot />
 </section>

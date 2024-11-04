@@ -21,18 +21,18 @@
 				<div class="numbertext absolute left-2 top-1">{i + 1} / {slides.length}</div>
 				<div class="relative">
 					<img class="w-full h-auto" src={slide} alt="Slide {i + 1}" />
-					<div class="absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20" />
+					<div class="absolute inset-0 image-cover dark:opacity-20" />
 				</div>
 			</div>
 		{/each}
 		<button
-			class="prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white dark:bg-black text-black dark:text-white p-2 rounded-full shadow-lg z-10"
+			class="absolute top-1/2 left-4 transform -translate-y-1/2 practice-page-left-right-btn p-2 rounded-full z-10"
 			on:click={() => plusSlides(-1)}
 		>
 			&#10094;
 		</button>
 		<button
-			class="next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white dark:bg-black text-black dark:text-white p-2 rounded-full shadow-lg z-10"
+			class="absolute top-1/2 right-4 transform -translate-y-1/2 practice-page-left-right-btn p-2 rounded-full z-10"
 			on:click={() => plusSlides(1)}
 		>
 			&#10095;

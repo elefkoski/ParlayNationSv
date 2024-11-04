@@ -37,12 +37,11 @@
 		<div class="flex-grow overscroll-contain">
 			<LeftNavMainUl />
 			<div class="mt-8">
-				<ul class="space-y-6 lg:space-y-2 border-l left-nav-vert-bars">
+				<ul class="space-y-6 lg:space-y-2 border-l border-transparent left-nav-vert-bars">
 					{#each submenus as submenu (submenu.title)}
 						<li>
-							<a
-								class="block pl-4 -ml-px uppercase border-l border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-								href={submenu.href}>{submenu.title}</a
+							<a class="block pl-4 -ml-px uppercase border-l left-nav-more-menu" href={submenu.href}
+								>{submenu.title}</a
 							>
 						</li>
 					{/each}

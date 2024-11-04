@@ -4,43 +4,26 @@
 	import { user, type User } from '$lib/utils/store';
 	import { onAuthStateChanged, signOut } from 'firebase/auth';
 	import { auth } from '$lib/utils/firebase';
-	import { theme, toggleTheme, setTheme } from '$lib/stores/theme';
+	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
 
 	let current_user: User | null;
 	let isAuthenticated = false;
 	let profilePicture: string = '';
-	let currentTheme: string;
 
 	user.subscribe((value) => {
-		current_user = value;
 		current_user = { ...value, profilePicture };
 	});
 
-	theme.subscribe((value) => {
-		currentTheme = value;
-		if (typeof document !== 'undefined') {
-			document.documentElement.setAttribute('data-theme', currentTheme);
-		}
-	});
-
-	// Function to detect system theme
-	function detectSystemTheme() {
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark';
-		}
-		return 'light';
-	}
-
 	// Apply the initial theme on mount
 	onMount(() => {
-		if (typeof document !== 'undefined') {
-			const systemTheme = detectSystemTheme();
-			setTheme(systemTheme); // Set the initial theme based on system preference
-			document.documentElement.setAttribute('data-theme', currentTheme);
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		}
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	});
+
+	// Apply theme to document
+	$: if (typeof document !== 'undefined') {
+		document.documentElement.setAttribute('data-theme', $theme);
+	}
 
 	onAuthStateChanged(auth, (firebaseUser) => {
 		isAuthenticated = firebaseUser ? true : false;
@@ -94,7 +77,7 @@
 				</div>
 				<div class="ml-8 md:absolute md:left-32 lg:ml-0">
 					<a data-track="parlay-nation-logo" href="/">
-						{#if currentTheme === 'dark'}
+						{#if $theme === 'dark'}
 							{#if typeof window !== 'undefined' && window.innerWidth >= 768}
 								<img
 									class="w-auto h-12"
@@ -134,7 +117,7 @@
 								data-track="theme-toggle"
 								on:click={handleThemeToggle}
 							>
-								{#if currentTheme === 'dark'}
+								{#if $theme === 'dark'}
 									<img
 										src="src/images/assets/sun-white-icon.png"
 										alt="Sun Icon 1"

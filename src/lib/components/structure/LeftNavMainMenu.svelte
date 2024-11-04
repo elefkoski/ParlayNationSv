@@ -1,32 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { theme } from '$lib/stores/theme';
 
-	let currentTheme: string;
-
-	theme.subscribe((value) => {
-		currentTheme = value;
-		if (typeof document !== 'undefined') {
-			document.documentElement.setAttribute('data-theme', currentTheme);
-		}
-	});
-
-	// Function to detect system theme
-	function detectSystemTheme() {
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark';
-		}
-		return 'light';
+	// Apply theme to document
+	$: if (typeof document !== 'undefined') {
+		document.documentElement.setAttribute('data-theme', $theme);
 	}
-
-	// Apply the initial theme on mount
-	onMount(() => {
-		if (typeof document !== 'undefined') {
-			const systemTheme = detectSystemTheme();
-			theme.set(systemTheme); // Set the initial theme based on system preference
-			document.documentElement.setAttribute('data-theme', currentTheme);
-		}
-	});
 
 	export const pages = [
 		{
@@ -82,7 +60,7 @@
 			class="flex items-center left-nav-main-menu-text"
 		>
 			<img
-				src={currentTheme === 'dark' ? page.darkSrc : page.lightSrc}
+				src={$theme === 'dark' ? page.darkSrc : page.lightSrc}
 				alt={page.alt}
 				class="w-5 h-5 mr-2 filter"
 			/>

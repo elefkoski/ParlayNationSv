@@ -7,12 +7,12 @@
 </script>
 
 <div class="w-full">
-	<h2 class="text-lg font-bold text-gray-800 dark:text-gray-200">{title}</h2>
+	<h2 class="text-lg font-bold">{title}</h2>
 	<p>{description}</p>
 	{#if listItems.length > 0}
 		<div class="p-4">
-			<p class="text-blue-600 dark:text-blue-400">{listPara}</p>
-			<ul class="ml-4 list-disc text-gray-700 dark:text-gray-300">
+			<p class="practice-list-title">{listPara}</p>
+			<ul class="ml-4 list-disc practice-list-text">
 				{#each listItems as listItem}
 					<li>{listItem}</li>
 				{/each}
@@ -24,7 +24,7 @@
 		href={downloadUrl}
 		target="_blank"
 		rel="noopener noreferrer"
-		class="float-right px-4 py-2 mt-4 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 focus:outline-none"
+		class="float-right px-4 py-2 mt-4 font-medium rounded practice-download-btn focus:outline-none"
 	>
 		<div class="flex items-center">
 			Download Now

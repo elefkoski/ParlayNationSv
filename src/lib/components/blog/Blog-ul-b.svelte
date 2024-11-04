@@ -23,13 +23,13 @@
 <ul class="ml-4 flex flex-col space-y-2">
 	{#each liBs as section (section.title)}
 		<li class="rounded shadow-lg dark:shadow-none">
-			<h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">
+			<h4 class="text-lg font-semibold ul-h4">
 				{section.title}
 			</h4>
 			<ul class="list-disc list-inside space-y-1">
 				{#each section.items as item, index}
-					<li class="text-gray-700 dark:text-gray-300 ml-1">
-						<span class="font-bold uppercase dark:text-slate-400">{section.subTitle[index]}</span>
+					<li class="ul-li ml-1">
+						<span class="font-bold uppercase ul-li-span">{section.subTitle[index]}</span>
 						{item}
 					</li>
 				{/each}
