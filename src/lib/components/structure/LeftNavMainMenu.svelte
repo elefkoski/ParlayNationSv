@@ -22,7 +22,7 @@
 			title: 'Practice Craps'
 		},
 		{
-			href: 'craps-blog',
+			href: 'craps-blog-2',
 			lightSrc: 'src/images/icons/paper-black-icon.png',
 			darkSrc: 'src/images/icons/paper-white-icon.png',
 			alt: 'Piece of paper',

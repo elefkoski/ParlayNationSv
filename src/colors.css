@@ -11,6 +11,7 @@
 	--ul-li: #374151; /* gray-700 */
 	--ul-li-span: #475569; /* slate-600 */
 	/* Elements */
+	--divider: #F97316; /* orange-500 */
 	--hyperlink: #2563eb; /* blue-600 */
 	--hyperlink-hover: #1e40af; /* blue-800 */
 	--quote: #f97316; /* orange-500 */
@@ -42,6 +43,16 @@
 	--left-nav-more-menu-text-hover: #1e293b; /* slate-900 */
 	--left-nav-more-menu-border: transparent; /* transparent */
 	--left-nav-more-menu-border-hover: #1e293b; /* slate-800 */
+	/* Navbar Drawer */
+	--nav-drawer-bg: #f3f4f6; /* base-200 */
+	--nav-drawer-main-menu-text: #111827; /* gray-900 */
+	--nav-drawer-section-title: #1e293b; /* slate-900 */
+	--nav-drawer-section-link: #2563eb; /* blue-600 */
+	--nav-drawer-practice-icon-fill: transparent; /* transparent */
+	--nav-drawer-practice-icon-stroke: #000000; /* black */
+	--nav-drawer-practice-main-title: #0f172a; /* slate-900 */
+	--nav-drawer-practice-title: #0f172a; /* slate-900 */
+	--nav-drawer-practice-link: #2563eb; /* blue-600 */
 	/* Theme Slider */
 	--slider-bg-color: #ccc;
 	--theme-slider-thumb-color: white;
@@ -151,9 +162,8 @@
 	--practice-download-btn-hover-bg: #3b82f6; /* blue-500 */
 	--practice-download-btn-text: #ffffff; /* white */
 	--practice-download-btn-text-hover: #ffffff; /* white */
+	--practice-carousel-border-hover: #2563eb; /* blue-600 */
 	/* Blog Pages */
-	--blog-page-title: #374151; /* gray-700 */
-	--blog-page-h2: #475569; /* slate-600 */
 	/*Other Page Styles */
 	--glossary-word: #2563eb; /* blue-600 */
 	--site-map-heading: #2563eb; /* blue-600 */
@@ -182,6 +192,7 @@
 	--dm-ul-li: #d1d5db; /* gray-300 */
 	--dm-ul-li-span: #94a3b8; /* slate-400 */
 	/* Elements */
+	--dm-divider: #facc15; /* yellow-400 */
 	--dm-hyperlink: #60a5fa; /* blue-400 */
 	--dm-hyperlink-hover: #1d4ed8; /* blue-700 */
 	--dm-quote: #facc15; /* yellow-400 */
@@ -212,6 +223,16 @@
 	--dm-left-nav-more-menu-text-hover: #cbd5e1; /* slate-300 */
 	--dm-left-nav-more-menu-border: transparent; /* transparent */
 	--dm-left-nav-more-menu-border-hover: #cbd5e1; /* slate-300 */
+	/* Navbar Drawer */
+	--dm-nav-drawer-bg: #111827; /* gray-900 */
+	--dm-nav-drawer-main-menu-text: #f3f4f6; /* gray-100 */
+	--dm-nav-drawer-section-title: #d1d5db; /* gray-300 */
+	--dm-nav-drawer-section-link: #60a5fa; /* blue-400 */
+	--dm-nav-drawer-practice-icon-fill: #f3f4f6; /* gray-100 */
+	--dm-nav-drawer-practice-icon-stroke: #f3f4f6; /* gray-100 */
+	--dm-nav-drawer-practice-main-title: #f3f4f6; /* gray-100 */
+	--dm-nav-drawer-practice-title: #d1d5db; /* gray-300 */
+	--dm-nav-drawer-practice-link: #60a5fa; /* blue-400 */
 	/* Prev/Next */
 	--dm-prev-next-bg: #1f2937; /* gray-800 */
 	--dm-prev-next-bg-hover: #374151; /* gray-700 */
@@ -314,9 +335,8 @@
 	--dm-practice-list-text: #94a3b8; /* slate-400 */
 	--dm-practice-download-btn-bg: #1e3a8a; /* blue-900 */
 	--dm-practice-download-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-practice-carousel-border-hover: #fb923c; /* orange-400 */
 	/* Blog Pages */
-	--dm-blog-page-title: #94a3b8; /* slate-400 */
-	--dm-blog-page-h2: #94a3b8; /* slate-400 */
 	/* Other Page Styles */
 	--dm-glossary-word: #60a5fa; /* blue-400 */
 	--dm-site-map-heading: #60a5fa; /* blue-400 */
@@ -361,6 +381,9 @@
 	color: var(--ul-li-span);
 }
 /* Elements */
+.divider {
+	background-color: var(--divider);
+}
 .hyperlink {
 	color: var(--hyperlink);
 }
@@ -436,6 +459,32 @@
 	color: var(--left-nav-more-menu-text-hover);
 	border-color: var(--left-nav-more-menu-border-hover);
 }
+/* Navbar Drawer */
+.nav-drawer {
+	background-color: var(--nav-drawer-bg);
+}
+.nav-drawer-main-menu-text {
+	color: var(--nav-drawer-main-menu-text);
+}
+.nav-drawer-section-title {
+	color: var(--nav-drawer-section-title);
+}
+.nav-drawer-section-link {
+	color: var(--nav-drawer-section-link);
+}
+.nav-drawer-practice-icon {
+	fill: var(--nav-drawer-practice-icon-fill);
+	stroke: var(--nav-drawer-practice-icon-stroke);
+}
+.nav-drawer-practice-main-title {
+	color: var(--nav-drawer-practice-main-title);
+}
+.nav-drawer-practice-title {
+	color: var(--nav-drawer-practice-title);
+}
+.nav-drawer-practice-link {
+	color: var(--nav-drawer-practice-link);
+}
 /* Prev/Next Styles */
 .prev-next-btn {
 	background-color: var(--prev-next-bg);
@@ -468,9 +517,6 @@
 }
 .search::placeholder {
 	color: var(--search-placeholder);
-}
-.sign-in {
-	color: var(--text-color);
 }
 .profile-menu {
 	background-color: var(--top-nav-profile-menu-bg);
@@ -670,13 +716,10 @@
 	background-color: var(--practice-download-btn-hover-bg);
 	color: var(--practice-download-btn-text-hover);
 }
+.practice-carousel-border:hover {
+	border-color: var(--practice-carousel-border-hover);
+}
 /* Blog Pages */
-.blog-page-title {
-	color: var(--blog-page-title);
-}
-.blog-page-h2 {
-	color: var(--blog-page-h2);
-}
 /* Other Page Styles */
 .glossary-word {
 	color: var(--glossary-word);
@@ -722,6 +765,7 @@
 	--ul-li: var(--dm-ul-li);
 	--ul-li-span: var(--dm-ul-li-span);
 	/* Elements */
+	--divider: var(--dm-divider);
 	--hyperlink: var(--dm-hyperlink);
 	--hyperlink-hover: var(--dm-hyperlink-hover);
 	--quote: var(--dm-quote);
@@ -752,6 +796,16 @@
 	--left-nav-more-menu-text-hover: var(--dm-left-nav-more-menu-text-hover);
 	--left-nav-more-menu-border: var(--dm-left-nav-more-menu-border);
 	--left-nav-more-menu-border-hover: var(--dm-left-nav-more-menu-border-hover);
+	/* Navbar Drawer */
+	--nav-drawer-bg: var(--dm-nav-drawer-bg);
+	--nav-drawer-main-menu-text: var(--dm-nav-drawer-main-menu-text);
+	--nav-drawer-section-title: var(--dm-nav-drawer-section-title);
+	--nav-drawer-section-link: var(--dm-nav-drawer-section-link);
+	--nav-drawer-practice-icon-fill: var(--dm-nav-drawer-practice-icon-fill);
+	--nav-drawer-practice-icon-stroke: var(--dm-nav-drawer-practice-icon-stroke);
+	--nav-drawer-practice-main-title: var(--dm-nav-drawer-practice-main-title);
+	--nav-drawer-practice-title: var(--dm-nav-drawer-practice-title);
+	--nav-drawer-practice-link: var(--dm-nav-drawer-practice-link);
 	/* Theme Slider */
 	--slider-bg-color: #666;
 	--theme-slider-thumb-color: #fff;
@@ -855,9 +909,8 @@
 	--practice-download-btn-hover-bg: var(--dm-practice-download-btn-hover-bg);
 	--practice-download-btn-text: var(--dm-practice-download-btn-text);
 	--practice-download-btn-text-hover: var(--dm-practice-download-btn-text-hover);
+	--practice-carousel-border-hover: var(--dm-practice-carousel-border-hover);
 	/* Blog Pages */
-	--blog-page-title: var(--dm-blog-page-title);
-	--blog-page-h2: var(--dm-blog-page-h2);
 	/* Other Page Styles */
 	--glossary-word: var(--dm-glossary-word);
 	--site-map-heading: var(--dm-site-map-heading);
@@ -872,9 +925,4 @@
 	--contact-btn-hover-bg: var(--dm-contact-btn-hover-bg);
 	--contact-btn-text: var(--dm-contact-btn-text);
 	--contact-btn-text-hover: var(--dm-contact-btn-text-hover);
-
-	/* Dark mode for sign-in */
-	.sign-in {
-		color: var(--dm-text-color);
-	}
 }

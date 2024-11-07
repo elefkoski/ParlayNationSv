@@ -4,7 +4,7 @@
 
 {#each textParts as part}
 	{#if part.url}
-		<a href={part.url} class="text-blue-600 hover:text-blue-700">{part.text}</a>
+		<a href={part.url} class="hyperlink">{part.text}</a>
 	{:else}
 		{part.text}
 	{/if}

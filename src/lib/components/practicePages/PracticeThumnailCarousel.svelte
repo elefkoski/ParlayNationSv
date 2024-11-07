@@ -140,7 +140,7 @@
 			>
 				<div class="relative">
 					<img
-						class="w-36 h-auto border-2 border-transparent hover:border-blue-500 dark:hover:border-yellow-500 transition-colors duration-200"
+						class="w-36 h-auto border-2 border-transparent practice-carousel-border transition-colors duration-200"
 						src={url}
 						alt={`Thumbnail ${i + 1}`}
 					/>

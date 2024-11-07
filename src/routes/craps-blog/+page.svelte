@@ -128,11 +128,7 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
-	<!--Script Me-->
-	<!--Script Me-->
-	<!--Script Me-->
-	<!--Script Me-->
-	<!--Script Me-->
+	<!-- Schema TODO-->
 </svelte:head>
 
 <SingleColumnLayout>

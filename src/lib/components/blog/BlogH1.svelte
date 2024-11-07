@@ -81,7 +81,7 @@
 </script>
 
 <header>
-	<h1 class="text-3xl md:text-5xl lg:text-6xl pb-2 font-bold blog-page-title">{title}</h1>
+	<h1 class="text-3xl md:text-5xl lg:text-6xl pb-2 font-bold article-h1">{title}</h1>
 	<div class="flex justify-between">
 		<span class="text-lg uppercase font-semibold page-section-title">{sectionTitle}</span>
 		<div class="flex">

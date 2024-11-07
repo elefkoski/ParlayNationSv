@@ -38,18 +38,4 @@
 			&#10095;
 		</button>
 	</div>
-	<!--<div class="flex overflow-x-auto mt-4 space-x-2 pr-4">
-					{#each slides as slide, i}
-						<button
-							class="focus:outline-none flex-shrink-0 inline-block"
-							on:click={() => goToSlide(i)}
-						>
-							<img
-								class="w-24 h-auto border-2 border-transparent hover:border-blue-500"
-								src={slide}
-								alt={`Thumbnail ${i + 1}`}
-							/>
-						</button>
-					{/each}
-				</div>-->
 </div>
