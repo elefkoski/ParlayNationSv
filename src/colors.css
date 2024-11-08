@@ -164,6 +164,7 @@
 	--practice-download-btn-text-hover: #ffffff; /* white */
 	--practice-carousel-border-hover: #2563eb; /* blue-600 */
 	/* Blog Pages */
+	--blog-home-page-section-border: #d1d5db; /* gray-300 */
 	/*Other Page Styles */
 	--glossary-word: #2563eb; /* blue-600 */
 	--site-map-heading: #2563eb; /* blue-600 */
@@ -337,6 +338,7 @@
 	--dm-practice-download-btn-hover-bg: #1d4ed8; /* blue-700 */
 	--dm-practice-carousel-border-hover: #fb923c; /* orange-400 */
 	/* Blog Pages */
+	--dm-blog-home-page-section-border: #374151; /* gray-700 */
 	/* Other Page Styles */
 	--dm-glossary-word: #60a5fa; /* blue-400 */
 	--dm-site-map-heading: #60a5fa; /* blue-400 */
@@ -720,6 +722,9 @@
 	border-color: var(--practice-carousel-border-hover);
 }
 /* Blog Pages */
+.blog-home-page-section-border {
+	border-color: var(--blog-home-page-section-border);
+}
 /* Other Page Styles */
 .glossary-word {
 	color: var(--glossary-word);
@@ -911,6 +916,7 @@
 	--practice-download-btn-text-hover: var(--dm-practice-download-btn-text-hover);
 	--practice-carousel-border-hover: var(--dm-practice-carousel-border-hover);
 	/* Blog Pages */
+	--blog-home-page-section-border: var(--dm-blog-home-page-section-border);
 	/* Other Page Styles */
 	--glossary-word: var(--dm-glossary-word);
 	--site-map-heading: var(--dm-site-map-heading);
