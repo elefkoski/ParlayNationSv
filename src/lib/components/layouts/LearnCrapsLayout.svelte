@@ -6,13 +6,14 @@
 	import type { PageMenu } from '$lib/utils/types';
 
 	export let pageLinks: PageMenu[] = [];
+	export let showContentMenuBox: boolean = true;
 </script>
 
 <MasterLayout>
 	<LeftNavStructure>
 		<LeftNavLearnMenu />
 	</LeftNavStructure>
-	<StructureRemaining {pageLinks}>
+	<StructureRemaining {pageLinks} {showContentMenuBox}>
 		<slot />
 	</StructureRemaining>
 </MasterLayout>

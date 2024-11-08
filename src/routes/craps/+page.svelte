@@ -410,7 +410,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout showContentMenuBox={false}>
 	<div class="flex float-right">
 		<a
 			data-track="nxt-1-craps-basics"

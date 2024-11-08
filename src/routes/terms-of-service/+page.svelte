@@ -42,7 +42,7 @@
 	</script>
 </svelte:head>
 
-<MoreLayout>
+<MoreLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="container mx-auto p-6">
 		<div class="transition duration-300 ease-in-out">
 			<div class="container mx-auto p-6">

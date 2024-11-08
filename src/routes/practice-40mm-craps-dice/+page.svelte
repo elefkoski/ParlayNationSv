@@ -33,7 +33,7 @@
 	</script>
 </svelte:head>
 
-<PracticeLayout>
+<PracticeLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<PracticeH1 title="Foldable Craps Dice - 40mm" />
 		<div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 pb-8">

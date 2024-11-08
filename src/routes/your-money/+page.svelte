@@ -29,7 +29,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Double Checking Your Bet Placement',
+			title: 'Checking Bet Placement',
 			href: '#rightSpot',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']

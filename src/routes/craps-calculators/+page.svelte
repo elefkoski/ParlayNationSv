@@ -84,7 +84,7 @@
 	<!-- TODO Schema-->
 </svelte:head>
 
-<MoreCrapsLayout>
+<MoreCrapsLayout showContentMenuBox={false}>
 	<header aria-label="Craps Calculators" class="p-6 shadow-lg home-page-heading">
 		<h1 class="text-3xl font-bold mb-4">Craps Calculators</h1>
 		<p class="mb-4 leading-7">Check the payment for all the bets on the Craps table.</p>

@@ -158,7 +158,7 @@
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 </svelte:head>
 
-<LearnLayout>
+<LearnLayout showContentMenuBox={false}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col space-y-8 my-6">
 		<HomeHeadings

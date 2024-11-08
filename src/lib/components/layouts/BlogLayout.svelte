@@ -6,13 +6,14 @@
 	import type { PageMenu } from '$lib/utils/types';
 
 	export let pageLinks: PageMenu[] = [];
+	export let showContentMenuBox;
 </script>
 
 <MasterLayout>
 	<LeftNavStructure>
 		<LeftNavBlogMenu />
 	</LeftNavStructure>
-	<StructureRemaining {pageLinks}>
+	<StructureRemaining {pageLinks} {showContentMenuBox}>
 		<slot />
 	</StructureRemaining>
 </MasterLayout>

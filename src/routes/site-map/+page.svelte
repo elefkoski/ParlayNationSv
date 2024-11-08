@@ -264,7 +264,7 @@
 	</script>
 </svelte:head>
 
-<MoreLayout>
+<MoreLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="p-6">
 		<h1 class="text-4xl font-bold mb-10 text-center">Site Map</h1>
 		<div class="grid gap-4 grid-cols-2 justify-items-stretch">

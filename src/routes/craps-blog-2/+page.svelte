@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BlogLayout from '$lib/components/layouts/BlogCrapsLayout.svelte';
+	import BlogLayout from '$lib/components/layouts/BlogLayout.svelte';
 	import BlogCard from '$lib/components/blog/BlogCard.svelte';
 
 	let title: string = 'Craps Blog';
@@ -271,7 +271,7 @@
 	<!-- TODO Schema-->
 	</script>
 </svelte:head>
-<BlogLayout>
+<BlogLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="flex flex-col my-6">
 		<div>
 			<h1 class="article-h1 text-3xl pb-2 mb-4 font-bold text-center">Craps Blog</h1>

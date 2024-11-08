@@ -1863,7 +1863,7 @@
 	</script>
 </svelte:head>
 
-<MoreLayout>
+<MoreLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="p-6">
 		<h1 class="text-4xl font-bold mb-10 text-center">Craps Glossary</h1>
 		<div class="space-y-4">

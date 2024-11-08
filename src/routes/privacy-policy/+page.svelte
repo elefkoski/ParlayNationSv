@@ -42,7 +42,7 @@
 	</script>
 </svelte:head>
 
-<MoreLayout>
+<MoreLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="container mx-auto p-6">
 		<h1 class="text-4xl font-bold mb-10 text-center">Privacy Policy</h1>
 		{#each sections as section (section.title)}

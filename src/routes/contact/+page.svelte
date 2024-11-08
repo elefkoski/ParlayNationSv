@@ -30,7 +30,7 @@
 	<!-- Script Me -->
 </svelte:head>
 
-<MoreLayout>
+<MoreLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="p-6">
 		<div class="flex flex-col items-center min-h-screen px-4 sm:px-6 lg:px-8">
 			<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-10 text-center">Contact</h1>

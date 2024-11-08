@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BlogLayout from '$lib/components/layouts/BlogCrapsLayout.svelte';
+	import BlogLayout from '$lib/components/layouts/BlogLayout.svelte';
 	import ContentMenuBox from '$lib/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	import BlogH2 from '$lib/components/blog/BlogH2.svelte';

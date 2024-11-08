@@ -84,7 +84,7 @@
 	<!-- TODO Schema-->
 </svelte:head>
 
-<MoreCrapsLayout>
+<MoreCrapsLayout showContentMenuBox={false}>
 	<header aria-label="Craps simulator" class="p-6 bg-gray-100 dark:bg-gray-900">
 		<h1 class="text-3xl font-bold text-gray-900 dark:text-gray-200 mb-4">Craps Simulator</h1>
 		<p class="text-gray-700 dark:text-gray-300 mb-4 leading-7">

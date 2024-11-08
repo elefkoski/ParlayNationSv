@@ -516,7 +516,7 @@
 	</script>
 </svelte:head>
 
-<PracticeLayout>
+<PracticeLayout showContentMenuBox={false}>
 	<header aria-label="Practice Craps" class="p-6 shadow-md home-page-heading">
 		<h1 class="text-3xl font-bold mb-4">Practice Craps</h1>
 		<p class="mb-4 leading-7">
