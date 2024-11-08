@@ -23,11 +23,16 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
-	<!-- Script Me -->
-	<!-- Script Me -->
-	<!-- Script Me -->
-	<!-- Script Me -->
-	<!-- Script Me -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"name": "Contact",
+			"description": "If you have any questions, comments, or concers, contact Parlay Nation so we can hear what you have to say and do what we can do to help.",
+			"url": "http://parlaynation.com/contact",
+			"image": "http://parlaynation.com/images/contact/contact-header.jpg"
+		}
+	</script>
 </svelte:head>
 
 <MoreLayout showContentMenuBox={false}>

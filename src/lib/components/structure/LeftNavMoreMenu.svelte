@@ -32,21 +32,19 @@
 	];
 </script>
 
-<div class="h-screen fixed overflow-y-auto pb-40 left-nav-bg px-10 pt-6">
-	<nav id="nav" class="lg:leading-6">
-		<div class="flex-grow overscroll-contain">
-			<LeftNavMainUl />
-			<div class="mt-8">
-				<ul class="space-y-6 lg:space-y-2 border-l border-transparent left-nav-vert-bars">
-					{#each submenus as submenu (submenu.title)}
-						<li>
-							<a class="block pl-4 -ml-px uppercase border-l left-nav-more-menu" href={submenu.href}
-								>{submenu.title}</a
-							>
-						</li>
-					{/each}
-				</ul>
-			</div>
+<nav id="nav" class="lg:leading-6">
+	<div class="flex-grow overscroll-contain">
+		<LeftNavMainUl />
+		<div class="mt-8">
+			<ul class="space-y-6 lg:space-y-2 border-l border-transparent left-nav-vert-bars">
+				{#each submenus as submenu (submenu.title)}
+					<li>
+						<a class="block pl-4 -ml-px uppercase border-l left-nav-more-menu" href={submenu.href}
+							>{submenu.title}</a
+						>
+					</li>
+				{/each}
+			</ul>
 		</div>
-	</nav>
-</div>
+	</div>
+</nav>

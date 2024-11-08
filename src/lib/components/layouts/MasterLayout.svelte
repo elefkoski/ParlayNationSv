@@ -43,6 +43,9 @@
 </svelte:head>
 
 <Navbar />
-<div id="parentElement" class=" container mx-auto flex flex-wrap pt-20 z-10">
+<div
+	id="parentElement"
+	class="container lg:w-full lg:max-w-[100%] mx-auto flex flex-wrap pt-20 z-10"
+>
 	<slot />
 </div>

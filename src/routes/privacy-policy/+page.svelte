@@ -35,10 +35,50 @@
 	<meta property="og:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<script type="application/ld+json">
-		//Schema Here
-		//Schema Here
-		//Schema Here
-		//Schema Here
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Privacy Policy",
+			"description": "Read Parlay Nation's Terms and Conditions to understand user responsibilities, content policies, age requirements, and more. Stay informed while using our services.",
+			"url": "http://parlaynation.com/privacy-policy",
+			"mainEntity": {
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "Content and Intellectual Property",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "All text, images, videos, and other content ('Content') on Parlay Nation are protected by intellectual property laws and are the property of Parlay Nation or its licensors. Distribution, modification, or commercial use of Content is prohibited without explicit written consent from Parlay Nation."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "User-Generated Content",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Users may post, upload, or contribute content ('User Content'). By doing so, you confirm that your User Content is legal and that you hold the rights to it. Parlay Nation is not responsible for, nor does it endorse, User Content. If a claim is made against Parlay Nation due to your User Content, you agree to indemnify Parlay Nation for any arising damages."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Account and Data Security",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "You are responsible for maintaining the confidentiality of your account information. Notify Parlay Nation immediately if you suspect unauthorized use. By using the services, you agree to the collection and use of your data as outlined in our Privacy Policy."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "User Obligations and Limitations",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "You're expected to adhere to these terms. Users must be at least 18 years old to use the services. Violations may lead to suspension or banning from the platform. Parlay Nation is not liable for any damages—direct or indirect—that arise from your use or inability to use the service."
+						}
+					}
+				]
+			}
+		}
 	</script>
 </svelte:head>
 

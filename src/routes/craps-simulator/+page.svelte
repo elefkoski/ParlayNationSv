@@ -80,7 +80,6 @@
 	<link rel="stylesheet" href="src/styles.css" />
 	<link rel="stylesheet" href="src/craps-simulator.css" />
 	<script defer type="module" src="src/lib/utils/craps-simulator.ts"></script>
-
 	<!-- TODO Schema-->
 </svelte:head>
 

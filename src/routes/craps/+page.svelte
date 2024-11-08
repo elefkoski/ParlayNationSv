@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
+	import LearnCrapsLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
 	import CrapsPageSection from '$lib/components/contentPages/CrapsPageSection.svelte';
 	let title: string = 'Learn How to Play Craps';
 	let description: string =
@@ -410,7 +410,7 @@
 	</script>
 </svelte:head>
 
-<LearnLayout showContentMenuBox={false}>
+<LearnCrapsLayout showContentMenuBox={false}>
 	<div class="flex float-right">
 		<a
 			data-track="nxt-1-craps-basics"
@@ -503,4 +503,4 @@
 			</svg>
 		</a>
 	</div>
-</LearnLayout>
+</LearnCrapsLayout>

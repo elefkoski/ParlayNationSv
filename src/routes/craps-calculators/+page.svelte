@@ -81,7 +81,28 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={'images/' + url + '/' + url + '-header.jpg'} />
 	<meta name="twitter:image" content={'images/' + url + '/' + url + '-header.jpg'} />
-	<!-- TODO Schema-->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"url": "http://parlaynation.com/craps-calculators",
+			"headline": "Craps Calculators",
+			"description": "Craps bet calculators for all the bets on the Craps table.",
+			"datePublished": "2025-01-01",
+			"author": {
+				"@type": "Person",
+				"name": "Elvis Lefkoski"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Parlay Nation",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+				}
+			}
+		}
+	</script>
 </svelte:head>
 
 <MoreCrapsLayout showContentMenuBox={false}>

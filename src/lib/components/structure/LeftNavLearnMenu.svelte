@@ -120,11 +120,9 @@
 	];
 </script>
 
-<div class="h-screen fixed overflow-y-auto pb-40 left-nav-bg px-10 pt-6 drop-shadow-sm">
-	<nav id="nav" class="lg:leading-6">
-		<ul class="flex-grow overscroll-contain">
-			<LeftNavMainUl />
-			<LeftNavUl {subMenus} />
-		</ul>
-	</nav>
-</div>
+<nav id="nav" class="lg:leading-6">
+	<ul class="flex-grow overscroll-contain">
+		<LeftNavMainUl />
+		<LeftNavUl {subMenus} />
+	</ul>
+</nav>
