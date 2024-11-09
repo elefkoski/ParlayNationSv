@@ -134,7 +134,7 @@
 							<div>
 								<div>
 									<input
-										class="input input-bordered join-item search h-10 placeholder"
+										class="input input-bordered join-item search h-10 placeholder md:w-32 lg:w-48"
 										placeholder="Search..."
 									/>
 								</div>

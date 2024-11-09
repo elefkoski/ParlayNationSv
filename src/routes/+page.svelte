@@ -10,7 +10,170 @@
 		enableScrollTracking();
 		sessionStorage.setItem('last_url', window.location.pathname);
 	});
+
+	let description: string =
+		"Want to play the most exciting game in the casino? Learn How to Play Craps so you'll never miss another exciting moment on the table.";
 </script>
+
+<svelte:head>
+	<title>Parlay Nation - How to Play Craps</title>
+	<link rel="canonical" href="http://parlaynation.com/" />
+	<meta name="description" content={description} />
+	<meta property="og:url" content="http://parlaynation.com/" />
+	<meta property="og:title" content="Parlay Nation - How to Play Craps" />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={'images/home-page/header.jpg'} />
+	<meta name="twitter:image" content={'images/home-page/header.jpg'} />
+	<script type="application/ld+json">
+		{
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"name": "Parlay Nation - Learn How to Play Craps",
+	"headline": "Learn How to Play Craps | Parlay Nation",
+	"description": "Learn the rules, practice payouts, and play Craps with our comprehensive resources. As a professional Craps dealer, I teach you everything you need to master the game.",
+	"url": "http://parlaynation.com/",
+	"mainEntity": {
+		"@type": "WebPageElement",
+		"name": "Craps Content Sections",
+		"hasPart": [
+		{
+			"@type": "CreativeWork",
+			"name": "Learn Craps",
+			"headline": "Learn Craps",
+			"description": "New to the game? Looking for a refresher? A journey into the world of Craps begins right here.",
+			"url": "http://parlaynation.com/craps",
+			"image": {
+			"@type": "ImageObject",
+			"url": "http://parlaynation.com/src/images/home-page/learn-craps_1280x720.webp",
+			"width": 1280,
+			"height": 720,
+			"caption": "Learn Craps"
+			}
+		},
+		{
+			"@type": "CreativeWork",
+			"name": "Practice Craps",
+			"headline": "Practice Craps",
+			"description": "Practice craps payouts with downloadable PDFs. Print the Craps Table layout, dice, and more.",
+			"url": "http://parlaynation.com/practice-craps",
+			"image": {
+			"@type": "ImageObject",
+			"url": "http://parlaynation.com/src/images/home-page/practice-craps_1280x720.webp",
+			"width": 1280,
+			"height": 720,
+			"caption": "Practice Craps"
+			}
+		},
+		{
+			"@type": "CreativeWork",
+			"name": "Play Craps",
+			"headline": "Play Craps",
+			"description": "Play Craps using the Craps Simulator. Bet the Pass Line, Place Bets, and more.",
+			"url": "http://parlaynation.com/craps-simulator",
+			"image": {
+			"@type": "ImageObject",
+			"url": "http://parlaynation.com/src/images/home-page/play-craps_1280x720.webp",
+			"width": 1280,
+			"height": 720,
+			"caption": "Play Craps"
+			}
+		},
+		{
+			"@type": "CreativeWork",
+			"name": "Craps Calculators",
+			"headline": "Craps Calculators",
+			"description": "Calculate bets, odds, and payouts with our powerful Craps calculators. Perfect for beginners and experts alike.",
+			"url": "http://parlaynation.com/craps-calculators",
+			"image": {
+			"@type": "ImageObject",
+			"url": "http://parlaynation.com/src/images/home-page/craps-calculators_1280x720.webp",
+			"width": 1280,
+			"height": 720,
+			"caption": "Craps Calculators"
+			}
+		},
+		{
+			"@type": "CreativeWork",
+			"name": "Craps Blog",
+			"headline": "Craps Blog",
+			"description": "Discover tips, strategies, and insights on playing Craps in our blog, curated by a seasoned Craps dealer.",
+			"url": "http://parlaynation.com/craps-blog",
+			"image": {
+			"@type": "ImageObject",
+			"url": "http://parlaynation.com/src/images/home-page/craps-blog_1280x720.webp",
+			"width": 900,
+			"height": 600,
+			"caption": "Craps Blog"
+			}
+		}
+		]
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "http://parlaynation.com/src/images/home-page/craps-table-layout.jpg",
+		"width": 1920,
+		"height": 1080,
+		"caption": "Main Hero background showing a craps table layout."
+	},
+	"breadcrumb": {
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": "http://parlaynation.com/"
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Learn Craps",
+			"item": "http://parlaynation.com/craps"
+		},
+		{
+			"@type": "ListItem",
+			"position": 3,
+			"name": "Practice Craps",
+			"item": "http://parlaynation.com/practice-craps"
+		},
+		{
+			"@type": "ListItem",
+			"position": 4,
+			"name": "Play Craps",
+			"item": "http://parlaynation.com/craps-simulator"
+		},
+		{
+			"@type": "ListItem",
+			"position": 5,
+			"name": "Craps Calculators",
+			"item": "http://parlaynation.com/craps-calculators"
+		},
+		{
+			"@type": "ListItem",
+			"position": 6,
+			"name": "Craps Blog",
+			"item": "http://parlaynation.com/craps-blog"
+		}
+		]
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Parlay Nation",
+		"logo": {
+		"@type": "ImageObject",
+		"url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp",
+		"width": 275,
+		"height": 218
+		}
+	},
+	"author": {
+		"@type": "Person",
+		"name": "Elvis Lefkoski"
+	}
+	}
+
+	</script>
+</svelte:head>
 
 <Navbar />
 <main id="parentElement" class="home-page-text">
@@ -167,7 +330,8 @@
 		<div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-0">
 			<h1 class="text-2xl font-bold">CRAPS BLOG</h1>
 			<p class="p-6 max-w-xs m-auto">
-				This is going to be something about a craps blog and some more things to write about here.
+				Discover tips, strategies, and insights on playing Craps in our blog, curated by a seasoned
+				Craps dealer.
 			</p>
 			<a
 				data-track="home-craps-blog"
@@ -178,14 +342,14 @@
 		<div class="col-span-8 h-auto">
 			<!-- svelte-ignore a11y-img-redundant-alt -->
 			<img
-				srcset="https://picsum.photos/300/200 640w,
-						https://picsum.photos/600/400 768w,
-						https://picsum.photos/900/600 1024w"
+				srcset="src/images/home-page/craps-blog_640x360.webp 640w,
+						src/images/home-page/craps-blog_960x540.webp 768w,
+						src/images/home-page/craps-blog_1280x720.webp 1024w"
 				sizes="(max-width: 640px) 300px,
 					   (max-width: 768px) 600px,
 					   900px"
-				src="https://picsum.photos/900/600"
-				alt="Randomly generated image from Picsum"
+				src="src/images/home-page/craps-blog_1280x720.webp"
+				alt="Craps stick with two purple dice"
 				class="w-full shadow-2xl"
 			/>
 		</div>

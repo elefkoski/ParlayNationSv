@@ -48,8 +48,6 @@
 	--nav-drawer-main-menu-text: #111827; /* gray-900 */
 	--nav-drawer-section-title: #1e293b; /* slate-900 */
 	--nav-drawer-section-link: #2563eb; /* blue-600 */
-	--nav-drawer-practice-icon-fill: transparent; /* transparent */
-	--nav-drawer-practice-icon-stroke: #000000; /* black */
 	--nav-drawer-practice-main-title: #0f172a; /* slate-900 */
 	--nav-drawer-practice-title: #0f172a; /* slate-900 */
 	--nav-drawer-practice-link: #2563eb; /* blue-600 */
@@ -229,8 +227,6 @@
 	--dm-nav-drawer-main-menu-text: #f3f4f6; /* gray-100 */
 	--dm-nav-drawer-section-title: #d1d5db; /* gray-300 */
 	--dm-nav-drawer-section-link: #60a5fa; /* blue-400 */
-	--dm-nav-drawer-practice-icon-fill: #f3f4f6; /* gray-100 */
-	--dm-nav-drawer-practice-icon-stroke: #f3f4f6; /* gray-100 */
 	--dm-nav-drawer-practice-main-title: #f3f4f6; /* gray-100 */
 	--dm-nav-drawer-practice-title: #d1d5db; /* gray-300 */
 	--dm-nav-drawer-practice-link: #60a5fa; /* blue-400 */
@@ -473,10 +469,6 @@
 }
 .nav-drawer-section-link {
 	color: var(--nav-drawer-section-link);
-}
-.nav-drawer-practice-icon {
-	fill: var(--nav-drawer-practice-icon-fill);
-	stroke: var(--nav-drawer-practice-icon-stroke);
 }
 .nav-drawer-practice-main-title {
 	color: var(--nav-drawer-practice-main-title);
@@ -806,8 +798,6 @@
 	--nav-drawer-main-menu-text: var(--dm-nav-drawer-main-menu-text);
 	--nav-drawer-section-title: var(--dm-nav-drawer-section-title);
 	--nav-drawer-section-link: var(--dm-nav-drawer-section-link);
-	--nav-drawer-practice-icon-fill: var(--dm-nav-drawer-practice-icon-fill);
-	--nav-drawer-practice-icon-stroke: var(--dm-nav-drawer-practice-icon-stroke);
 	--nav-drawer-practice-main-title: var(--dm-nav-drawer-practice-main-title);
 	--nav-drawer-practice-title: var(--dm-nav-drawer-practice-title);
 	--nav-drawer-practice-link: var(--dm-nav-drawer-practice-link);

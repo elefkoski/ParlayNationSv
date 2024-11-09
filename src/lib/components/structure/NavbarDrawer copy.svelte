@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { theme } from '$lib/stores/theme';
 	import ThemeSlider from '../ThemeSlider.svelte';
 
 	let isOpen = false;
@@ -7,15 +6,21 @@
 	type Menu = {
 		title: string;
 		href?: string;
-		lightSrc?: string;
-		darkSrc?: string;
-		alt?: string;
+		iconD?: string[];
+		iconFills?: string[];
+		iconStrokes?: string[];
+		iconCircles?: Array<{ cx: string; cy: string; r: string; stroke?: string; fill?: string }>;
+		iconRects?: Array<{
+			height: string;
+			width: string;
+			x: string;
+			y: string;
+			stroke?: string;
+			fill?: string;
+		}>;
+		iconPolygons?: Array<{ points: string; stroke?: string; fill?: string }>;
+		iconColor?: string;
 		subs?: SubMenu[];
-	};
-
-	type Menu2 = {
-		title: string;
-		subs: SubMenu[];
 	};
 
 	type SubMenu = {
@@ -23,62 +28,157 @@
 		href: string;
 	};
 
+	type Menu2 = {
+		title: string;
+		subs: SubMenu[];
+	};
+
 	let menus: Menu[] = [
+		{
+			title: 'Home',
+			href: '/',
+			iconD: [
+				'M0 0h24v24H0V0z',
+				'M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z'
+			],
+			iconStrokes: ['transparent', 'var(--text-color)'],
+			iconFills: ['transparent', 'transparent']
+		},
 		{
 			title: 'Learn Craps',
 			href: 'craps',
-			lightSrc: 'src/images/icons/grad-hat-black-icon.png',
-			darkSrc: 'src/images/icons/grad-hat-white-icon.png',
-			alt: 'Graduation Hat Icon'
-		},
-		{
-			title: 'Practice Craps',
-			href: 'practice-craps',
-			lightSrc: 'src/images/icons/bullseye-black-icon.png',
-			darkSrc: 'src/images/icons/bullseye-white-icon.png',
-			alt: 'Bullseye'
-		},
-		{
-			title: 'Craps Blog',
-			href: 'craps-blog',
-			lightSrc: 'src/images/icons/paper-black-icon.png',
-			darkSrc: 'src/images/icons/paper-white-icon.png',
-			alt: 'Piece of paper'
-		},
-		{
-			title: 'Craps Corner',
-			href: 'craps-corner',
-			lightSrc: 'src/images/icons/more-black-icon.png',
-			darkSrc: 'src/images/icons/more-white-icon.png',
-			alt: 'Craps Corner'
-		},
-		{
-			title: 'Craps Calculators',
-			href: 'craps-calculators',
-			lightSrc: 'src/images/icons/calculator-black-icon.png',
-			darkSrc: 'src/images/icons/calculator-white-icon.png',
-			alt: 'Calculator'
+			iconD: [
+				'M0 0h24v24H0z',
+				'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z'
+			],
+			iconStrokes: ['transparent', 'var(--text-color)'], // Black replaced with dark gray, blue toned down
+			iconFills: ['transparent', 'transparent'], // Green toned down to match dark blues
+			iconCircles: [
+				{ cx: '7.5', cy: '16.5', r: '1.5', fill: 'var(--text-color)' }, // Consistent green
+				{ cx: '7.5', cy: '7.5', r: '1.5', fill: 'var(--text-color)' },
+				{ cx: '12', cy: '12', r: '1.5', fill: 'var(--text-color)' },
+				{ cx: '16.5', cy: '16.5', r: '1.5', fill: 'var(--text-color)' },
+				{ cx: '16.5', cy: '7.5', r: '1.5', fill: 'var(--text-color)' }
+			]
 		},
 		{
 			title: 'Craps Simulator',
 			href: 'craps-simulator',
-			lightSrc: 'src/images/icons/controller-black-icon.png',
-			darkSrc: 'src/images/icons/controller-white-icon.png',
-			alt: 'Controller'
+			iconD: [
+				'M21.58,16.09l-1.09-7.66C20.21,6.46,18.52,5,16.53,5H7.47C5.48,5,3.79,6.46,3.51,8.43l-1.09,7.66 C2.2,17.63,3.39,19,4.94,19h0c0.68,0,1.32-0.27,1.8-0.75L9,16h6l2.25,2.25c0.48,0.48,1.13,0.75,1.8,0.75h0 C20.61,19,21.8,17.63,21.58,16.09z',
+				'M19.48,16.81C19.4,16.9,19.27,17,19.06,17c-0.15,0-0.29-0.06-0.39-0.16L15.83,14H8.17 l-2.84,2.84C5.23,16.94,5.09,17,4.94,17c-0.21,0-0.34-0.1-0.42-0.19c-0.08-0.09-0.16-0.23-0.13-0.44l1.09-7.66 C5.63,7.74,6.48,7,7.47,7h9.06c0.99,0,1.84,0.74,1.98,1.72l1.09,7.66C19.63,16.58,19.55,16.72,19.48,16.81z'
+			],
+			iconStrokes: ['transparent', 'var(--text-color)'],
+			iconFills: ['transparent', 'transparent'],
+			iconRects: [{ height: '24', width: '24', x: '6.25', y: '7.72' }],
+			iconCircles: [
+				{ cx: '17', cy: '12', r: '1', stroke: 'transparent', fill: 'var(--text-color)' },
+				{ cx: '15', cy: '9', r: '1', stroke: 'transparent', fill: 'var(--text-color)' }
+			],
+			iconPolygons: [
+				{
+					points: '9,8 8,8 8,10 6,10 6,11 8,11 8,13 9,13 9,11 11,11 11,10 9,10',
+					stroke: 'transparent',
+					fill: 'var(--text-color)'
+				}
+			]
+		},
+		{
+			title: 'Craps Calculators',
+			href: 'craps-calculators',
+			iconD: [
+				'M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z',
+				'M19,19H5V5h14V19z'
+			],
+			iconStrokes: ['var(--text-color)', 'transparent'],
+			iconFills: ['transparent', 'transparent'],
+			iconRects: [
+				{
+					height: '1.5',
+					width: '5',
+					x: '6.25',
+					y: '7.72',
+					stroke: 'transparent',
+					fill: 'var(--text-color)'
+				},
+				{
+					height: '1.5',
+					width: '5',
+					x: '13',
+					y: '15.75',
+					stroke: 'transparent',
+					fill: 'var(--text-color)'
+				},
+				{
+					height: '1.5',
+					width: '5',
+					x: '13',
+					y: '13.25',
+					stroke: 'transparent',
+					fill: 'var(--text-color)'
+				}
+			],
+			iconPolygons: [
+				{
+					points:
+						'8,18 9.5,18 9.5,16 11.5,16 11.5,14.5 9.5,14.5 9.5,12.5 8,12.5 8,14.5 6,14.5 6,16 8,16',
+					stroke: 'transparent',
+					fill: 'var(--text-color)'
+				},
+				{
+					points:
+						'14.09,10.95 15.5,9.54 16.91,10.95 17.97,9.89 16.56,8.47 17.97,7.06 16.91,6 15.5,7.41 14.09,6 13.03,7.06 14.44,8.47 13.03,9.89',
+					stroke: 'transparent',
+					fill: 'var(--text-color)'
+				}
+			]
+		},
+		{
+			title: 'Craps Blog',
+			href: 'craps-blog',
+			iconD: [
+				'M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z',
+				'M19,19H5V5h14V19z'
+			],
+			iconStrokes: ['green', 'black'],
+			iconFills: ['red', 'blue'],
+			iconRects: [
+				{ height: '1.5', width: '5', x: '6.25', y: '7.72', stroke: 'black', fill: 'yellow' },
+				{ height: '1.5', width: '5', x: '13', y: '15.75', stroke: 'black', fill: 'yellow' },
+				{ height: '1.5', width: '5', x: '13', y: '13.25', stroke: 'black', fill: 'yellow' }
+			],
+			iconPolygons: [
+				{
+					points:
+						'8,18 9.5,18 9.5,16 11.5,16 11.5,14.5 9.5,14.5 9.5,12.5 8,12.5 8,14.5 6,14.5 6,16 8,16',
+					stroke: 'green',
+					fill: 'yellow'
+				},
+				{
+					points:
+						'14.09,10.95 15.5,9.54 16.91,10.95 17.97,9.89 16.56,8.47 17.97,7.06 16.91,6 15.5,7.41 14.09,6 13.03,7.06 14.44,8.47 13.03,9.89',
+					stroke: 'green',
+					fill: 'yellow'
+				}
+			]
 		},
 		{
 			title: 'Glossary',
 			href: 'glossary',
-			lightSrc: 'src/images/icons/glossary-black-icon.png',
-			darkSrc: 'src/images/icons/glossary-white-icon.png',
-			alt: 'Glossary'
+			iconD: [
+				'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z'
+			],
+			iconStrokes: ['transparent', 'transparent'],
+			iconFills: ['var(--text-color)', 'transparent']
 		},
 		{
 			title: 'FAQ',
 			href: 'faq',
-			lightSrc: 'src/images/icons/question-black-icon.png',
-			darkSrc: 'src/images/icons/question-white-icon.png',
-			alt: 'Question Mark'
+			iconD: [
+				'M15 4v7H5.17l-.59.59-.58.58V4h11m1-2H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm5 4h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1z'
+			],
+			iconStrokes: ['transparent', 'transparent'],
+			iconFills: ['var(--text-color)', 'transparent']
 		}
 	];
 
@@ -281,131 +381,6 @@
 
 	let menus3: Menu2[] = [
 		{
-			title: 'Craps Info',
-			subs: [
-				{
-					title: 'First Time Craps Player',
-					href: 'first-time-craps-player'
-				},
-				{
-					title: 'Rank of Craps Bets',
-					href: 'rank-of-craps-bets'
-				},
-				{
-					title: 'Craps Myths',
-					href: 'craps-myths'
-				},
-				{
-					title: 'Craps Superstitions',
-					href: 'craps-superstitions'
-				}
-			]
-		},
-		{
-			title: 'Better Player',
-			subs: [
-				{
-					title: 'Better Craps Shooter',
-					href: 'better-craps-shooter'
-				},
-				{
-					title: 'Advantage of a Great Roll',
-					href: 'a-great-craps-roll'
-				},
-				{
-					title: 'Dealing with New Players',
-					href: 'dealing-with-new-craps-players'
-				},
-				{
-					title: 'What Not To Do',
-					href: 'not-to-do-at-craps-table'
-				}
-			]
-		},
-		{
-			title: 'Improver Your Game',
-			subs: [
-				{
-					title: 'Be an Efficient Player',
-					href: 'be-an-efficient-craps-player'
-				},
-				{
-					title: 'Art of Verbal Betting',
-					href: 'art-of-verbal-betting'
-				},
-				{
-					title: 'A Perfect Craps Bet',
-					href: 'a-perfect-craps-bet'
-				}
-			]
-		},
-		{
-			title: 'Dealing with Dealers',
-			subs: [
-				{
-					title: 'Tipping the Dealers',
-					href: 'tipping-the-dealers'
-				},
-				{
-					title: 'Win a Dispute',
-					href: 'win-a-craps-dispute'
-				},
-				{
-					title: 'Dealer Pet Peeves',
-					href: 'craps-dealer-pet-peeves'
-				}
-			]
-		},
-		{
-			title: 'Money Management',
-			subs: [
-				{
-					title: 'Money Techniques',
-					href: 'craps-money-techniques'
-				},
-				{
-					title: 'Managing Your Bankroll',
-					href: 'managing-craps-bankroll'
-				},
-				{
-					title: 'Protecting Your Money',
-					href: 'protecting-your-money'
-				},
-				{
-					title: 'Choosing the Right Table',
-					href: 'right-craps-table'
-				},
-				{
-					title: 'When to Leave the Table',
-					href: 'leaving-the-craps-table'
-				}
-			]
-		},
-		{
-			title: 'Craps Betting',
-			subs: [
-				{
-					title: "Playing the Don'ts",
-					href: 'playing-the-donts'
-				},
-				{
-					title: 'Come VS Place Bets',
-					href: 'come-vs-place-bets'
-				},
-				{
-					title: 'Lure of Proposition Bets',
-					href: 'lure-of-craps-proposition-bets'
-				},
-				{
-					title: 'Order of Operation',
-					href: 'craps-order-of-operation'
-				}
-			]
-		}
-	];
-
-	let menus4: Menu2[] = [
-		{
 			title: 'Pass Line Odds',
 			subs: [
 				{
@@ -562,7 +537,7 @@
 		}`}
 	>
 		<!-- List of links -->
-		<div class="w-80 min-h-screen max-h-screen nav-drawer overflow-y-auto pl-4">
+		<div class="w-96 min-h-screen max-h-screen nav-drawer overflow-y-auto">
 			<div class="flex justify-between">
 				<div class="mt-6 ml-6">
 					<ThemeSlider />
@@ -584,12 +559,59 @@
 			</div>
 			<div class="clear-both max-h-screen overflow-y-auto">
 				{#each menus as menu (menu.title)}
-					<a class="flex items-center py-1 pl-4" data-track="drawer-{menu.href}" href={menu.href}>
-						<img
-							src={$theme === 'dark' ? menu.darkSrc : menu.lightSrc}
-							alt={menu.alt}
-							class="w-5 h-5 mr-2 filter"
-						/>
+					<a class="flex items-center py-2 px-4" data-track="drawer-{menu.href}" href={menu.href}>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							height="24px"
+							viewBox="0 0 24 24"
+							width="24px"
+							fill="#{menu.iconColor}"
+						>
+							{#if menu.iconD}
+								{#each menu.iconD as d, i (i)}
+									<path
+										{d}
+										fill={menu.iconFills ? menu.iconFills[i] : 'none'}
+										stroke={menu.iconStrokes ? menu.iconStrokes[i] : 'none'}
+									/>
+								{/each}
+							{/if}
+
+							{#if menu.iconPolygons}
+								{#each menu.iconPolygons as polygon}
+									<polygon
+										points={polygon.points}
+										stroke={polygon.stroke ? polygon.stroke : 'none'}
+										fill={polygon.fill ? polygon.fill : 'none'}
+									/>
+								{/each}
+							{/if}
+
+							{#if menu.iconRects}
+								{#each menu.iconRects as rect}
+									<rect
+										x={rect.x}
+										y={rect.y}
+										width={rect.width}
+										height={rect.height}
+										stroke={rect.stroke ? rect.stroke : 'none'}
+										fill={rect.fill ? rect.fill : 'none'}
+									/>
+								{/each}
+							{/if}
+
+							{#if menu.iconCircles}
+								{#each menu.iconCircles as circle}
+									<circle
+										cx={circle.cx}
+										cy={circle.cy}
+										r={circle.r}
+										stroke={circle.stroke ? circle.stroke : 'none'}
+										fill={circle.fill ? circle.fill : 'none'}
+									/>
+								{/each}
+							{/if}
+						</svg>
 						<h1 class="ml-4 text-lg nav-drawer-main-menu-text">{menu.title}</h1>
 					</a>
 				{/each}
@@ -597,6 +619,7 @@
 					<a class="flex py-2 px-4" data-track="drawer-{menu.href}" href={menu.href}>
 						<h1 class="text-lg nav-drawer-section-title">{menu.title}</h1>
 					</a>
+
 					{#each menu.subs as sub (sub.title)}
 						<a
 							class="flex py-1 px-8 nav-drawer-section-link"
@@ -607,39 +630,28 @@
 						</a>
 					{/each}
 				{/each}
-				<a class="flex py-2 px-4 items-center" data-track="drawer-craps-blog" href="craps-blog">
-					<img
-						src={$theme === 'dark'
-							? 'src/images/icons/paper-white-icon.png'
-							: 'src/images/icons/paper-black-icon.png'}
-						alt="Piece of paper"
-						class="w-5 h-5 mr-2 filter"
-					/>
-					<h1 class="ml-4 text-lg nav-drawer-practice-main-title">Craps Blog</h1>
-				</a>
-				{#each menus3 as menu (menu.title)}
-					<h1 class="block py-2 px-4 nav-drawer-practice-title text-lg">{menu.title}</h1>
-					{#each menu.subs as sub (sub.title)}
-						<a class="block py-1 px-8" data-track="drawer-{sub.href}" href={sub.href}>
-							<h2 class="nav-drawer-practice-link">{sub.title}</h2>
-						</a>
-					{/each}
-				{/each}
+
 				<a
 					class="flex py-2 px-4 items-center"
 					data-track="drawer-practice-craps"
 					href="practice-craps"
 				>
-					<img
-						src={$theme === 'dark'
-							? 'src/images/icons/bullseye-white-icon.png'
-							: 'src/images/icons/bullseye-black-icon.png'}
-						alt="Bullseye"
-						class="w-5 h-5 mr-2 filter"
-					/>
-					<h1 class="ml-4 text-lg nav-drawer-practice-main-title">Practice Downloads</h1>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						height="24px"
+						viewBox="0 0 24 24"
+						width="24px"
+						fill="#00000"
+						><path d="M0 0h24v24H0V0z" fill="none" /><path
+							d="M19.07 4.93l-1.41 1.41C19.1 7.79 20 9.79 20 12c0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V2h-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.76-1.12-5.26-2.93-7.07z"
+							fill="var(--nav-drawer-practice-icon-fill)"
+							stroke="var(--nav-drawer-practice-icon-stroke)"
+						/></svg
+					>
+					<h1 class="ml-4 text-xl nav-drawer-practice-main-title">Practice Downloads</h1>
 				</a>
-				{#each menus4 as menu (menu.title)}
+
+				{#each menus3 as menu (menu.title)}
 					<h1 class="block py-2 px-4 nav-drawer-practice-title text-lg">{menu.title}</h1>
 					{#each menu.subs as sub (sub.title)}
 						<a class="block py-1 px-8" data-track="drawer-{sub.href}" href={sub.href}>
