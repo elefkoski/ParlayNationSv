@@ -30,7 +30,7 @@
 	<meta property="og:site_name" content="Parlay Nation" />
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N6DDTMN7FM"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];

@@ -1,9 +1,11 @@
+
+-----  MY TODO LIST  -----
 Rewrite /craps Section one-liners.. horrible..
-home page schema
 
 
 
 
 
-** Notes
+
+----- Notes  -----
 Cmd + Return - Jump to create new line

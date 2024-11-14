@@ -1,0 +1,182 @@
+.game-area {
+	background: url('images/craps-simulator/craps-simulator-table-layout.webp') center/cover no-repeat;
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	height: auto;
+}
+.dice {
+	width: 3vw; /* Scale width relative to screen width */
+	height: 3vw; /* Scale height relative to screen width */
+}
+.dice-area {
+	position: absolute;
+	top: 24%;
+	left: 84.6%;
+	transform: translate(-50%, -50%);
+}
+.bankroll-area {
+	position: absolute;
+	bottom: 2.5%;
+	right: 5%;
+	font-size: 1vw; /* Scale text size relative to screen width */
+	padding: 0.5vw; /* Scale padding relative to screen width */
+	color: white;
+	background-color: #1f2937;
+}
+.control-buttons {
+	position: absolute;
+	bottom: 12.5%;
+	left: 5%;
+}
+.grn-ctl-btn {
+	margin-right: 0.5rem;
+	background-color: #22c55e;
+	padding: 0.5rem 1rem;
+	font-size: 1vw; /* Scale text size relative to screen width */
+}
+.red-ctl-btn {
+	background-color: #ef4444;
+	padding: 0.5rem 1rem;
+	font-size: 1vw; /* Scale text size relative to screen width */
+}
+.chip-area {
+	position: absolute;
+	height: 0.9vw; /* Scale height relative to screen width */
+	width: 7.7vw; /* Scale width relative to screen width */
+	bottom: 6%;
+	left: 36.6%;
+	row-gap: 0.27vw; /* Scale row gap relative to screen width */
+}
+.chip-container {
+	position: relative;
+	height: 100%; /* Scale height relative to screen width */
+}
+.chip-image {
+	width: 0.1vw; /* Scale width relative to screen width */
+	height: 100%; /* Scale height relative to screen width */
+}
+
+/* Extra Large Screens */
+
+@media (max-width: 1280px) {
+	.grn-ctl-btn,
+	.red-ctl-btn {
+		font-size: 1vw !important; /* Scale text size relative to screen width */
+		padding: 0.5vw 1vw; /* Scale padding relative to screen width */
+	}
+	.chip-area {
+		bottom: 6.1%;
+		height: 0.85vw; /* Scale height relative to screen width */
+		width: 7.6vw; /* Scale width relative to screen width */
+		row-gap: 0.25vw; /* Scale row gap relative to screen width */
+	}
+	.chip-image {
+		width: 0.098vw !important; /* Scale width relative to screen width */
+	}
+}
+
+/* Large Screens */
+
+@media (max-width: 1024px) {
+	.bankroll-area {
+		font-size: 1.5vw; /* Scale text size relative to screen width */
+		padding: 0.75vw; /* Scale padding relative to screen width */
+	}
+	.chip-area {
+		bottom: 6.1%;
+		height: 1.55vw; /* Scale height relative to screen width */
+		width: 11.8vw; /* Scale width relative to screen width */
+		row-gap: 0.38vw; /* Scale row gap relative to screen width */
+	}
+	.chip-image {
+		width: 0.152vw !important; /* Scale width relative to screen width */
+	}
+	.grn-ctl-btn,
+	.red-ctl-btn {
+		font-size: 1.5vw !important; /* Scale text size relative to screen width */
+		padding: 0.5vw 1vw; /* Scale padding relative to screen width */
+	}
+}
+@media (max-width: 976px) {
+	.chip-area {
+		width: 12.4vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.16vw !important; /* Scale width relative to screen width */
+	}
+}
+@media (max-width: 928px) {
+	.chip-area {
+		width: 12.9vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.167vw !important; /* Scale width relative to screen width */
+	}
+}
+@media (max-width: 860px) {
+	.chip-area {
+		width: 14vw; /* Scale width relative to screen width */
+		row-gap: 0.5vw; /* Scale row gap relative to screen width */
+	}
+	.chip-image {
+		width: 0.18vw !important; /* Scale width relative to screen width */
+	}
+}
+
+/* Medium Screens */
+
+@media (max-width: 768px) {
+	.bankroll-area {
+		font-size: 1.75vw; /* Scale text size relative to screen width */
+		padding: 1vw; /* Scale padding relative to screen width */
+	}
+	.game-area {
+		aspect-ratio: 16 / 9;
+		background-size: contain; /* Ensure full image fits */
+	}
+	.chip-area {
+		width: 12.8vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.165vw !important; /* Scale width relative to screen width */
+	}
+}
+@media (max-width: 738px) {
+	.chip-area {
+		width: 13.3vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.172vw !important; /* Scale width relative to screen width */
+	}
+}
+@media (max-width: 708px) {
+	.chip-area {
+		width: 13.9vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.18vw !important; /* Scale width relative to screen width */
+	}
+}
+@media (max-width: 674px) {
+	.chip-area {
+		width: 14.5vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.187vw !important; /* Scale width relative to screen width */
+	}
+}
+
+/* Small Screens */
+
+@media (max-width: 640px) {
+	.bankroll-area {
+		font-size: 2vw; /* Scale text size relative to screen width */
+		padding: 1vw; /* Scale padding relative to screen width */
+	}
+	.chip-area {
+		width: 15.4vw; /* Scale width relative to screen width */
+	}
+	.chip-image {
+		width: 0.199vw !important; /* Scale width relative to screen width */
+	}
+}

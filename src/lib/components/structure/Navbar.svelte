@@ -16,9 +16,9 @@
 	});
 
 	// Apply the initial theme on mount
-	onMount(() => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	});
+	// onMount(() => {
+	//	window.scrollTo({ top: 0, behavior: 'smooth' });
+	//});
 
 	// Apply theme to document
 	$: if (typeof document !== 'undefined') {
