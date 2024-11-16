@@ -2,21 +2,28 @@
 	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
-		chips1,
-		chips5,
-		chips25,
-		chips100,
-		chips500,
-		chips1000,
-		chips5000,
+		totalBankroll,
+		addToBankroll,
+		subtractFromBankroll,
 		addChip,
-		removeChip
+		removeChip,
+		chips
 	} from '../../craps-simulator';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
 		'This Craps Simulator will help you learn some of the most basic bets in Craps: The Pass Line, Pass Line Odds, Place Bets, and the Field.';
 	let url: string = 'craps-simulator';
+
+	let addAmount: number = 0;
+	let subtractAmount: number = 0;
+	let dollarChips = chips[1]; // access $1 chip store
+	let nickelChips = chips[5]; // access $5 chip store
+	let quarterChips = chips[25]; // access $25 chip store
+	let hundredChips = chips[100]; // access $100 chip store
+	let fiveHundredChips = chips[500]; // access $500 chip store
+	let thousandChips = chips[1000]; // access $1,000 chip store
+	let fiveThousandChips = chips[5000]; // access $5,000 chip store
 
 	// Check for orientation change
 	onMount(() => {
@@ -130,66 +137,78 @@
 			<!-- Displayed Bankroll Total -->
 			<div class="bankroll-area flex p-2 rounded-sm">
 				<p>Bankroll</p>
-				<p class=" ml-2">$1,000</p>
+				<p class=" ml-2">{$totalBankroll}</p>
 			</div>
 			<!-- Control Buttons -->
 			<div class="control-buttons">
-				<button on:click={() => addChip('dollar')} class="grn-ctl-btn">Add $1</button>
-				<button on:click={() => removeChip('dollar')} class="red-ctl-btn">Remove $1</button>
-				<button on:click={() => addChip('nickel')} class="grn-ctl-btn">Add $5</button>
-				<button on:click={() => removeChip('nickel')} class="red-ctl-btn">Remove $5</button>
-				<button on:click={() => addChip('quarter')} class="grn-ctl-btn">Add $25</button>
-				<button on:click={() => removeChip('quarter')} class="red-ctl-btn">Remove $25</button>
-				<button on:click={() => addChip('black')} class="grn-ctl-btn">Add $100</button>
-				<button on:click={() => removeChip('black')} class="red-ctl-btn">Remove $100</button>
-				<button on:click={() => addChip('purple')} class="grn-ctl-btn">Add $500</button>
-				<button on:click={() => removeChip('purple')} class="red-ctl-btn">Remove $500</button>
-				<button on:click={() => addChip('orange')} class="grn-ctl-btn">Add $1,000</button>
-				<button on:click={() => removeChip('orange')} class="red-ctl-btn">Remove $1,000</button>
-				<button on:click={() => addChip('gray')} class="grn-ctl-btn">Add $5,000</button>
-				<button on:click={() => removeChip('gray')} class="red-ctl-btn">Remove $5,000</button>
+				<!-- Add/Remove Buttons-->
+				<input type="number" bind:value={addAmount} placeholder="Add amount" class="input-field" />
+				<button on:click={() => addToBankroll(addAmount)} class="grn-ctl-btn">Add</button>
+				<input
+					type="number"
+					bind:value={subtractAmount}
+					placeholder="Remove amount"
+					class="input-field"
+				/>
+				<button on:click={() => subtractFromBankroll(subtractAmount)} class="red-ctl-btn"
+					>Remove</button
+				>
+				<button on:click={() => addChip(1)} class="grn-ctl-btn">Add $1</button>
+				<button on:click={() => removeChip(1)} class="red-ctl-btn">Remove $1</button>
+				<button on:click={() => addChip(5)} class="grn-ctl-btn">Add $5</button>
+				<button on:click={() => removeChip(5)} class="red-ctl-btn">Remove $5</button>
+				<button on:click={() => addChip(25)} class="grn-ctl-btn">Add $25</button>
+				<button on:click={() => removeChip(25)} class="red-ctl-btn">Remove $25</button>
+				<button on:click={() => addChip(100)} class="grn-ctl-btn">Add $100</button>
+				<button on:click={() => removeChip(100)} class="red-ctl-btn">Remove $100</button>
+				<button on:click={() => addChip(500)} class="grn-ctl-btn">Add $500</button>
+				<button on:click={() => removeChip(500)} class="red-ctl-btn">Remove $500</button>
+				<button on:click={() => addChip(1000)} class="grn-ctl-btn">Add $1,000</button>
+				<button on:click={() => removeChip(1000)} class="red-ctl-btn">Remove $1,000</button>
+				<button on:click={() => addChip(5000)} class="grn-ctl-btn">Add $5,000</button>
+				<button on:click={() => removeChip(5000)} class="red-ctl-btn">Remove $5,000</button>
 			</div>
 			<!-- Displayed Chips in Rail -->
 			<div class="chip-area flex flex-wrap">
 				<!-- $1 Chips-->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips1 as chip}
+					{#each $dollarChips as chip}
 						<img src={chip} alt="$1 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
 				<!-- $5 Chips -->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips5 as chip}
+					{#each $nickelChips as chip}
 						<img src={chip} alt="$5 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
 				<!-- $25 Chips -->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips25 as chip}
+					{#each $quarterChips as chip}
 						<img src={chip} alt="$25 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
 				<!-- $100 Chips -->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips100 as chip}
+					{#each $hundredChips as chip}
 						<img src={chip} alt="$100 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
 				<!-- $500 Chips -->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips500 as chip}
+					{#each $fiveHundredChips as chip}
 						<img src={chip} alt="$500 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
 				<!-- $1,000 Chips -->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips1000 as chip}
+					{#each $thousandChips as chip}
 						<img src={chip} alt="$1,000 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
 				<!-- $5,000 Chips -->
 				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $chips5000 as chip}
+					{#each $fiveThousandChips as chip}
 						<img src={chip} alt="$5,000 Chip" class="chip-image m-0 p-0" />
 					{/each}
 				</div>
