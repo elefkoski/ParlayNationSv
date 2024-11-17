@@ -3,10 +3,8 @@
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
 		totalBankroll,
-		addToBankroll,
-		subtractFromBankroll,
-		addChip,
-		removeChip,
+		addToBankAndRail,
+		takeFromBankAndRail,
 		chips
 	} from '../../craps-simulator';
 
@@ -143,30 +141,16 @@
 			<div class="control-buttons">
 				<!-- Add/Remove Buttons-->
 				<input type="number" bind:value={addAmount} placeholder="Add amount" class="input-field" />
-				<button on:click={() => addToBankroll(addAmount)} class="grn-ctl-btn">Add</button>
+				<button on:click={() => addToBankAndRail(addAmount)} class="grn-ctl-btn">Add</button>
 				<input
 					type="number"
 					bind:value={subtractAmount}
 					placeholder="Remove amount"
 					class="input-field"
 				/>
-				<button on:click={() => subtractFromBankroll(subtractAmount)} class="red-ctl-btn"
+				<button on:click={() => takeFromBankAndRail(subtractAmount)} class="red-ctl-btn"
 					>Remove</button
 				>
-				<button on:click={() => addChip(1)} class="grn-ctl-btn">Add $1</button>
-				<button on:click={() => removeChip(1)} class="red-ctl-btn">Remove $1</button>
-				<button on:click={() => addChip(5)} class="grn-ctl-btn">Add $5</button>
-				<button on:click={() => removeChip(5)} class="red-ctl-btn">Remove $5</button>
-				<button on:click={() => addChip(25)} class="grn-ctl-btn">Add $25</button>
-				<button on:click={() => removeChip(25)} class="red-ctl-btn">Remove $25</button>
-				<button on:click={() => addChip(100)} class="grn-ctl-btn">Add $100</button>
-				<button on:click={() => removeChip(100)} class="red-ctl-btn">Remove $100</button>
-				<button on:click={() => addChip(500)} class="grn-ctl-btn">Add $500</button>
-				<button on:click={() => removeChip(500)} class="red-ctl-btn">Remove $500</button>
-				<button on:click={() => addChip(1000)} class="grn-ctl-btn">Add $1,000</button>
-				<button on:click={() => removeChip(1000)} class="red-ctl-btn">Remove $1,000</button>
-				<button on:click={() => addChip(5000)} class="grn-ctl-btn">Add $5,000</button>
-				<button on:click={() => removeChip(5000)} class="red-ctl-btn">Remove $5,000</button>
 			</div>
 			<!-- Displayed Chips in Rail -->
 			<div class="chip-area flex flex-wrap">
