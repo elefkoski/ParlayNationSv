@@ -2,19 +2,24 @@
 	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
+		railTotal,
+		layoutTotal,
 		totalBankroll,
 		addToBankAndRail,
 		takeFromBankAndRail,
-		chips
-	} from '../../craps-simulator';
+		chips,
+		rollDice,
+		firstDieImage,
+		secondDieImage,
+		toggleSettingsPopup,
+		showSettingsPopup
+	} from '../../craps-simulator-game';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
 		'This Craps Simulator will help you learn some of the most basic bets in Craps: The Pass Line, Pass Line Odds, Place Bets, and the Field.';
 	let url: string = 'craps-simulator';
 
-	let addAmount: number = 0;
-	let subtractAmount: number = 0;
 	let dollarChips = chips[1]; // access $1 chip store
 	let nickelChips = chips[5]; // access $5 chip store
 	let quarterChips = chips[25]; // access $25 chip store
@@ -127,30 +132,37 @@
 			</section>
 		</section>
 		<section aria-label="Game area" class="game-area relative p-6">
+			<!-- Displayed Layout Total -->
+			<div class="layout-display flex p-2 rounded-sm">
+				<p>Layout:</p>
+				<p class=" ml-2">{$layoutTotal}</p>
+			</div>
 			<!-- Dice Area -->
 			<div class="dice-area flex pl-2">
-				<img src="src/images/craps-simulator/die_ne.png" alt="Chip 1" class="dice" />
-				<img src="src/images/craps-simulator/die_sw.png" alt="Chip 2" class="ml-2 dice" />
+				<img src={$firstDieImage} alt="Chip 1" class="dice" />
+				<img src={$secondDieImage} alt="Chip 2" class="ml-2 dice" />
 			</div>
+			<!-- Stickwoman -->
+			<div id="stickwoman" class="stickwoman" />
+			<!-- Guide Container -->
+			<div id="guide" class="guide-container rounded-sm border">
+				<!-- Stick Call -->
+				<p id="stick-call" class="stick-call text-xs">
+					We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are in the
+					middle.
+				</p>
+			</div>
+			<!-- Displayed Rail Total -->
+			<div class="rail-display flex p-2 rounded-lg">
+				<p>Rail:</p>
+				<p class=" ml-2">{$railTotal}</p>
+			</div>
+			<!-- Roll Button -->
+			<button class="roll-btn rounded-sm" on:click={() => rollDice()}>Roll</button>
 			<!-- Displayed Bankroll Total -->
-			<div class="bankroll-area flex p-2 rounded-sm">
-				<p>Bankroll</p>
+			<div class="bankroll-display flex p-2 rounded-sm">
+				<p>Bankroll:</p>
 				<p class=" ml-2">{$totalBankroll}</p>
-			</div>
-			<!-- Control Buttons -->
-			<div class="control-buttons">
-				<!-- Add/Remove Buttons-->
-				<input type="number" bind:value={addAmount} placeholder="Add amount" class="input-field" />
-				<button on:click={() => addToBankAndRail(addAmount)} class="grn-ctl-btn">Add</button>
-				<input
-					type="number"
-					bind:value={subtractAmount}
-					placeholder="Remove amount"
-					class="input-field"
-				/>
-				<button on:click={() => takeFromBankAndRail(subtractAmount)} class="red-ctl-btn"
-					>Remove</button
-				>
 			</div>
 			<!-- Displayed Chips in Rail -->
 			<div class="chip-area flex flex-wrap">
@@ -197,6 +209,24 @@
 					{/each}
 				</div>
 			</div>
+			<!-- Settings Button -->
+			<div class="settings-icon-container">
+				<button on:click={toggleSettingsPopup} class="settings-button">
+					<img
+						src="src/images/craps-simulator/settings-icon.png"
+						alt="Settings Icon"
+						class="settings-icon"
+					/>
+				</button>
+			</div>
+			<!-- Settings Popup -->
+			{#if $showSettingsPopup}
+				<div class="settings-popup">
+					<h2>Settings</h2>
+					<!-- Add your settings content here -->
+					<button on:click={toggleSettingsPopup}>Close</button>
+				</div>
+			{/if}
 		</section>
 	</main>
 </MoreCrapsLayout>

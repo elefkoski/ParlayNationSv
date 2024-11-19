@@ -4,9 +4,12 @@
 	width: 100%;
 	height: auto;
 }
-.dice {
-	width: 3vw; /* Scale width relative to screen width */
-	height: 3vw; /* Scale height relative to screen width */
+.layout-display {
+	position: absolute;
+	top: 13%;
+	left: 60%;
+	font-size: 1vw; /* Scale text size relative to screen width */
+	padding: 0.5vw; /* Scale padding relative screen width */
 }
 .dice-area {
 	position: absolute;
@@ -14,14 +17,30 @@
 	left: 84.6%;
 	transform: translate(-50%, -50%);
 }
-.bankroll-area {
+.dice {
+	width: 3vw; /* Scale width relative to screen width */
+	height: 3vw; /* Scale height relative to screen width */
+}
+.rail-display {
+	position: absolute;
+	bottom: 1%;
+	left: 20%;
+	font-size: 1vw; /* Scale text size relative to screen width */
+	padding: 0.5vw; /* Scale padding relative to screen width */
+}
+.roll-btn {
+	position: absolute;
+	bottom: 2.5%;
+	left: 55%;
+	padding: 0.25rem 1rem;
+	font-size: 1vw; /* Scale text size relative to screen width */
+}
+.bankroll-display {
 	position: absolute;
 	bottom: 2.5%;
 	right: 5%;
 	font-size: 1vw; /* Scale text size relative to screen width */
 	padding: 0.5vw; /* Scale padding relative to screen width */
-	color: white;
-	background-color: #1f2937;
 }
 .control-buttons {
 	position: absolute;
@@ -55,6 +74,42 @@
 	width: 0.1vw; /* Scale width relative to screen width */
 	height: 100%; /* Scale height relative to screen width */
 }
+.stickwoman {
+	position: absolute;
+	top: 5%;
+	left: 2%;
+	width: 10vw;
+	height: 10vw;
+	background: url('images/craps-simulator/stickwoman.webp') center/cover no-repeat;
+}
+.guide-container {
+	position: absolute;
+	top: 5%;
+	left: 25%;
+	width: 15vw;
+	height: auto;
+	padding: 0.25vw 0.5vw;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+.settings-icon-container {
+	position: absolute;
+	bottom: 4%;
+	right: 0.5%;
+	width: 1.5vw;
+	height: 1.5vw;
+}
+.settings-popup {
+	position: absolute;
+	width: 90%;
+	height: 85%;
+	margin: auto;
+	padding: 0.5vw;
+	background-color: #f3f4f6;
+	border: 1px solid #d1d5db;
+	border-radius: 0.25rem;
+}
 
 /* Extra Large Screens */
 
@@ -78,7 +133,7 @@
 /* Large Screens */
 
 @media (max-width: 1024px) {
-	.bankroll-area {
+	.bankroll-display {
 		font-size: 1.5vw; /* Scale text size relative to screen width */
 		padding: 0.75vw; /* Scale padding relative to screen width */
 	}
@@ -126,7 +181,7 @@
 /* Medium Screens */
 
 @media (max-width: 768px) {
-	.bankroll-area {
+	.bankroll-display {
 		font-size: 1.75vw; /* Scale text size relative to screen width */
 		padding: 1vw; /* Scale padding relative to screen width */
 	}
@@ -169,7 +224,7 @@
 /* Small Screens */
 
 @media (max-width: 640px) {
-	.bankroll-area {
+	.bankroll-display {
 		font-size: 2vw; /* Scale text size relative to screen width */
 		padding: 1vw; /* Scale padding relative to screen width */
 	}

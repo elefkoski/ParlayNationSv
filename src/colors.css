@@ -163,7 +163,7 @@
 	--practice-carousel-border-hover: #2563eb; /* blue-600 */
 	/* Blog Pages */
 	--blog-home-page-section-border: #d1d5db; /* gray-300 */
-	/*Other Page Styles */
+	/* Other Page Styles */
 	--glossary-word: #2563eb; /* blue-600 */
 	--site-map-heading: #2563eb; /* blue-600 */
 	--contact-input-bg: #ffffff; /* white */
@@ -178,6 +178,21 @@
 	--contact-btn-text-hover: #ffffff; /* white */
 	--contact-btn-border: transparent; /* transparent */
 	--contact-btn-border-hover: transparent; /* transparent */
+	/* Craps Simulator Styles */
+	--bankroll-display-bg: #f3f4f6; /* base-200 */
+	--bankroll-display-text: #000000; /* black */
+	--rail-display-bg: #f3f4f6; /* base-200 */
+	--rail-display-text: #000000; /* black */
+	--layout-display-bg: #f3f4f6; /* base-200 */
+	--layout-display-text: #000000; /* black */
+	--roll-btn-bg: #60a5fa; /* blue-400 */
+	--roll-btn-hover-bg: #3b82f6; /* blue-500 */
+	--roll-btn-active-bg: #3b82f6; /* blue-500 */
+	--roll-btn-text: #ffffff; /* white */
+	--roll-btn-text-hover: #ffffff; /* white */
+	--guide-container-bg: rgba(255, 255, 255, 0.8); /* 50% transparency */
+	--settings-popup-bg: #f3f4f6; /* base-200 */
+	--settings-popup-border: #d1d5db; /* gray-300 */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
@@ -350,6 +365,21 @@
 	--dm-contact-btn-text-hover: #ffffff; /* white */
 	--dm-contact-btn-border: transparent; /* transparent */
 	--dm-contact-btn-border-hover: transparent; /* transparent */
+	/* Craps Simulator Styles */
+	--dm-bankroll-display-bg: #111827; /* gray-900 */
+	--dm-bankroll-display-text: #d1d5db; /* gray-300 */
+	--dm-rail-display-bg: #111827; /* gray-900 */
+	--dm-rail-display-text: #d1d5db; /* gray-300 */
+	--dm-layout-display-bg: #111827; /* gray-900 */
+	--dm-layout-display-text: #d1d5db; /* gray-300 */
+	--dm-roll-btn-bg: #1e3a8a; /* blue-900 */
+	--dm-roll-btn-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-roll-btn-active-bg: #1d4ed8; /* blue-700 */
+	--dm-roll-btn-text: #d1d5db; /* gray-300 */
+	--dm-roll-btn-text-hover: #ffffff; /* white */
+	--dm-guide-container-bg: rgba(31, 41, 55, 0.8); /* 50% transparency */
+	--dm-settings-popup-bg: #111827; /* gray-900 */
+	--dm-settings-popup-border: #374151; /* gray-700 */
 }
 
 /* Main Styles */
@@ -748,6 +778,37 @@
 	color: var(--contact-btn-text-hover);
 	border-color: var(--contact-btn-border-hover);
 }
+/* Craps Simulator Styles */
+.bankroll-display {
+	background-color: var(--bankroll-display-bg);
+	color: var(--bankroll-display-text);
+}
+.rail-display {
+	background-color: var(--rail-display-bg);
+	color: var(--rail-display-text);
+}
+.layout-display {
+	background-color: var(--layout-display-bg);
+	color: var(--layout-display-text);
+}
+.roll-btn {
+	background-color: var(--roll-btn-bg);
+	color: var(--roll-btn-text);
+}
+.roll-btn:hover {
+	background-color: var(--roll-btn-hover-bg);
+	color: var(--roll-btn-text-hover);
+}
+.roll-btn:active {
+	background-color: var(--roll-btn-active-bg);
+}
+.guide-container {
+	background-color: var(--guide-container-bg);
+}
+.settings-popup {
+	background-color: var(--settings-popup-bg);
+	border-color: var(--settings-popup-border);
+}
 
 /* Dark mode styles */
 [data-theme='dark'] {
@@ -921,4 +982,19 @@
 	--contact-btn-hover-bg: var(--dm-contact-btn-hover-bg);
 	--contact-btn-text: var(--dm-contact-btn-text);
 	--contact-btn-text-hover: var(--dm-contact-btn-text-hover);
+	/* Craps Simulator Styles */
+	--bankroll-display-bg: var(--dm-bankroll-display-bg);
+	--bankroll-display-text: var(--dm-bankroll-display-text);
+	--rail-display-bg: var(--dm-rail-display-bg);
+	--rail-display-text: var(--dm-rail-display-text);
+	--layout-display-bg: var(--dm-layout-display-bg);
+	--layout-display-text: var(--dm-layout-display-text);
+	--roll-btn-bg: var(--dm-roll-btn-bg);
+	--roll-btn-hover-bg: var(--dm-roll-btn-hover-bg);
+	--roll-btn-active-bg: var(--dm-roll-btn-active-bg);
+	--roll-btn-text: var(--dm-roll-btn-text);
+	--roll-btn-text-hover: var(--dm-roll-btn-text-hover);
+	--guide-container-bg: var(--dm-guide-container-bg);
+	--settings-popup-bg: var(--dm-settings-popup-bg);
+	--settings-popup-border: var(--dm-settings-popup-border);
 }

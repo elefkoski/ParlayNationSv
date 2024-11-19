@@ -150,9 +150,9 @@ const optimumAddRanges: Readonly<OptimumAddRange[]> = [
 	{
 		min: 1000,
 		max: 5999,
-		dollars: 10,
-		nickels: 20,
-		quarters: 20,
+		dollars: 5,
+		nickels: 15,
+		quarters: 15,
 		hundreds: 15,
 		fiveHundreds: 10,
 		thousands: 0,
@@ -161,24 +161,24 @@ const optimumAddRanges: Readonly<OptimumAddRange[]> = [
 	{
 		min: 6000,
 		max: 9999,
-		dollars: 10,
-		nickels: 20,
-		quarters: 20,
-		hundreds: 15,
-		fiveHundreds: 10,
-		thousands: 3,
+		dollars: 5,
+		nickels: 10,
+		quarters: 10,
+		hundreds: 10,
+		fiveHundreds: 4,
+		thousands: 5,
 		fiveThousands: 0
 	},
 	{
 		min: 10000,
 		max: 24999,
 		dollars: 5,
-		nickels: 10,
-		quarters: 12,
-		hundreds: 20,
-		fiveHundreds: 15,
-		thousands: 5,
-		fiveThousands: 0
+		nickels: 5,
+		quarters: 8,
+		hundreds: 10,
+		fiveHundreds: 10,
+		thousands: 15,
+		fiveThousands: 2
 	},
 	{
 		min: 25000,
@@ -571,129 +571,6 @@ function removeChips(denomination: number, count: number): void {
 // Distribute chips at start
 addToRail(get(railTotal));
 displayChipCounts();
-/*
-// Helper function to calculate optimum chips for a given amount
-function calculateOptimumChips(amount: number): { denom: number; count: number }[] {
-	console.log(`Calculating optimum chips for amount: ${amount}`);
-	const denominations = [5000, 1000, 500, 100, 25, 5, 1];
-	const optimumChips: { denom: number; count: number }[] = [];
-
-	for (let denom of denominations) {
-		const count = Math.floor(amount / denom);
-		console.log(`Denomination: ${denom}, Count: ${count}`);
-		if (count > 0) {
-			optimumChips.push({ denom, count });
-			amount -= count * denom;
-			console.log(`Remaining amount: ${amount}`);
-		}
-	}
-
-	console.log('Required chips:', optimumChips);
-	return optimumChips;
-}
-interface OptimumTakeRange {
-	min: number;
-	max: number;
-	dollars?: number | undefined;
-	nickels?: number | undefined;
-	quarters?: number | undefined;
-	hundreds?: number | undefined;
-	fiveHundreds?: number | undefined;
-	thousands?: number | undefined;
-	fiveThousands?: number | undefined;
-}
-const optimumTakeRanges: Readonly<OptimumTakeRange[]> = [
-	{
-		min: 0,
-		max: 199,
-		dollars: 5,
-		nickels: 5,
-		quarters: 4,
-		hundreds: 0,
-		fiveHundreds: 0,
-		thousands: 0,
-		fiveThousands: 0
-	},
-	{
-		min: 200,
-		max: 499,
-		dollars: 5,
-		nickels: 10,
-		quarters: 10,
-		hundreds: 0,
-		fiveHundreds: 0,
-		thousands: 0,
-		fiveThousands: 0
-	},
-	{
-		min: 500,
-		max: 999,
-		dollars: 5,
-		nickels: 10,
-		quarters: 20,
-		hundreds: 3,
-		fiveHundreds: 0,
-		thousands: 0,
-		fiveThousands: 0
-	},
-	{
-		min: 1000,
-		max: 5999,
-		dollars: 0,
-		nickels: 10,
-		quarters: 20,
-		hundreds: 10,
-		fiveHundreds: 4,
-		thousands: 0,
-		fiveThousands: 0
-	},
-	{
-		min: 6000,
-		max: 9999,
-		dollars: 0,
-		nickels: 0,
-		quarters: 10,
-		hundreds: 20,
-		fiveHundreds: 10,
-		thousands: 2,
-		fiveThousands: 0
-	},
-	{
-		min: 10000,
-		max: 24999,
-		dollars: 0,
-		nickels: 0,
-		quarters: 8,
-		hundreds: 10,
-		fiveHundreds: 10,
-		thousands: 5,
-		fiveThousands: 0
-	},
-	{
-		min: 25000,
-		max: 49999,
-		dollars: 0,
-		nickels: 0,
-		quarters: 8,
-		hundreds: 10,
-		fiveHundreds: 10,
-		thousands: 20,
-		fiveThousands: 2
-	},
-	{
-		min: 50000,
-		max: 999999,
-		dollars: 0,
-		nickels: 0,
-		quarters: 0,
-		hundreds: 0,
-		fiveHundreds: 0,
-		thousands: 50,
-		fiveThousands: 190
-	}
-];
-function getOptimumTakeRange(): OptimumTakeRange | undefined {
-	let currentRail: number = get(railTotal);
-	return optimumTakeRanges.find((range) => currentRail >= range.min && currentRail <= range.max);
-}
-*/
+console.log('Rail Total: ', get(railTotal));
+console.log('Layout Total: ', get(layoutTotal));
+console.log('Total Bankroll: ', get(totalBankroll));
