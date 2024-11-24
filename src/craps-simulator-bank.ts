@@ -1,7 +1,7 @@
 import { derived, get, writable, type Writable } from 'svelte/store';
 
 // Bankroll
-export const railTotal: Writable<number> = writable(900); // Rail Amount
+export const railTotal: Writable<number> = writable(30519); // Rail Amount
 export const layoutTotal: Writable<number> = writable(0); // Layout Amount
 export const totalBankroll = derived(
 	[railTotal, layoutTotal],
@@ -39,6 +39,8 @@ function displayChipCounts(): void {
 	chipCounts.forEach(({ denomination, count, totalValue }) => {
 		console.log(`Denomination: $${denomination}, Count: ${count}, Total Value: $${totalValue}`);
 	});
+	const totalChipCount = chipCounts.reduce((acc, { count }) => acc + count, 0);
+	console.log(`Total number of chips: ${totalChipCount}`);
 	const totalValue = chipCounts.reduce((acc, { totalValue }) => acc + totalValue, 0);
 	console.log(`Total Value of all chips: $${totalValue}`);
 }

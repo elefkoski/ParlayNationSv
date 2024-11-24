@@ -2,18 +2,21 @@
 	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
+		enterFullScreen,
+		exitFullScreen,
+		scaleElements,
+		scaleChipsToFit,
 		railTotal,
 		layoutTotal,
 		totalBankroll,
-		addToBankAndRail,
-		takeFromBankAndRail,
 		chips,
-		rollDice,
-		firstDieImage,
-		secondDieImage,
-		toggleSettingsPopup,
-		showSettingsPopup
-	} from '../../craps-simulator-game';
+		settings,
+		toggleSetting,
+		showRollButton,
+		showEnterBtn,
+		showExitBtn
+	} from '../../craps-simulator-chips';
+	import { rollDice, firstDieImage, secondDieImage } from '../../craps-simulator-game';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
@@ -28,11 +31,23 @@
 	let thousandChips = chips[1000]; // access $1,000 chip store
 	let fiveThousandChips = chips[5000]; // access $5,000 chip store
 
-	// Check for orientation change
+	const { showSettingsPopup, showStickperson, showGuide, showBankroll, showRail, showLayout } =
+		settings;
+
 	onMount(() => {
-		if (window.innerHeight > window.innerWidth) {
-			alert('Please rotate your device to landscape to play the game!');
-		}
+		// Add event listener for Escape key press
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') {
+				exitFullScreen();
+			}
+		});
+
+		setTimeout(() => {
+			scaleElements();
+			setTimeout(() => {
+				scaleChipsToFit();
+			}, 750);
+		}, 500);
 	});
 </script>
 
@@ -131,102 +146,233 @@
 				</div>
 			</section>
 		</section>
-		<section aria-label="Game area" class="game-area relative p-6">
-			<!-- Displayed Layout Total -->
-			<div class="layout-display flex p-2 rounded-sm">
-				<p>Layout:</p>
-				<p class=" ml-2">{$layoutTotal}</p>
-			</div>
-			<!-- Dice Area -->
-			<div class="dice-area flex pl-2">
-				<img src={$firstDieImage} alt="Chip 1" class="dice" />
-				<img src={$secondDieImage} alt="Chip 2" class="ml-2 dice" />
-			</div>
-			<!-- Stickwoman -->
-			<div id="stickwoman" class="stickwoman" />
-			<!-- Guide Container -->
-			<div id="guide" class="guide-container rounded-sm border">
-				<!-- Stick Call -->
-				<p id="stick-call" class="stick-call text-xs">
-					We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are in the
-					middle.
-				</p>
-			</div>
-			<!-- Displayed Rail Total -->
-			<div class="rail-display flex p-2 rounded-lg">
-				<p>Rail:</p>
-				<p class=" ml-2">{$railTotal}</p>
-			</div>
-			<!-- Roll Button -->
-			<button class="roll-btn rounded-sm" on:click={() => rollDice()}>Roll</button>
-			<!-- Displayed Bankroll Total -->
-			<div class="bankroll-display flex p-2 rounded-sm">
-				<p>Bankroll:</p>
-				<p class=" ml-2">{$totalBankroll}</p>
-			</div>
-			<!-- Displayed Chips in Rail -->
-			<div class="chip-area flex flex-wrap">
-				<!-- $1 Chips-->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $dollarChips as chip}
-						<img src={chip} alt="$1 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-				<!-- $5 Chips -->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $nickelChips as chip}
-						<img src={chip} alt="$5 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-				<!-- $25 Chips -->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $quarterChips as chip}
-						<img src={chip} alt="$25 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-				<!-- $100 Chips -->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $hundredChips as chip}
-						<img src={chip} alt="$100 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-				<!-- $500 Chips -->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $fiveHundredChips as chip}
-						<img src={chip} alt="$500 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-				<!-- $1,000 Chips -->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $thousandChips as chip}
-						<img src={chip} alt="$1,000 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-				<!-- $5,000 Chips -->
-				<div class="chip-container flex flex-row items-center gap-0">
-					{#each $fiveThousandChips as chip}
-						<img src={chip} alt="$5,000 Chip" class="chip-image m-0 p-0" />
-					{/each}
-				</div>
-			</div>
-			<!-- Settings Button -->
-			<div class="settings-icon-container">
-				<button on:click={toggleSettingsPopup} class="settings-button">
+		<button id="start-game-btn" class="clear-both" on:click={() => enterFullScreen()}
+			>Play Full Screen</button
+		>
+
+		<div id="game-area-wrapper">
+			<div id="game-area-container">
+				<section aria-label="Game area" id="game-area" class="game-area">
+					<!-- Layout Total -->
+					{#if $showLayout}
+						<div
+							class="layout-display game-element rounded-md"
+							data-x="67"
+							data-y="18.5"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+						>
+							<p>Layout: ${$layoutTotal.toLocaleString()}</p>
+						</div>
+					{/if}
+					<!-- Dice -->
 					<img
-						src="src/images/craps-simulator/settings-icon.png"
-						alt="Settings Icon"
-						class="settings-icon"
+						src={$firstDieImage}
+						alt="Chip 1"
+						class="die-one game-element"
+						data-x="81.5"
+						data-y="24"
+						data-width="6"
+						data-height="10.66"
 					/>
-				</button>
+					<img
+						src={$secondDieImage}
+						alt="Chip 2"
+						class="die-two game-element"
+						data-x="89"
+						data-y="24"
+						data-width="6"
+						data-height="10.66"
+					/>
+					<!-- Stickwoman -->
+					{#if $showStickperson}
+						<div
+							id="stickwoman"
+							class="stickwoman game-element"
+							data-x="12"
+							data-y="26"
+							data-width="22"
+							data-height="40"
+						/>
+					{/if}
+					<!-- Text Container -->
+					{#if $showGuide}
+						<div
+							id="guide"
+							class="guide-container rounded-md game-element"
+							data-x="41.5"
+							data-y="12.75"
+							data-fontsize="1.375"
+							data-paddinglr="1.5"
+							data-paddingtb="1.5"
+							data-width="35"
+							data-height="20"
+						>
+							<!-- Stick Call -->
+							<p id="stick-call" class="stick-call">
+								We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are
+								in the middle.
+							</p>
+						</div>
+					{/if}
+					<!-- Rail Total -->
+					{#if $showRail}
+						<div
+							class="rail-display game-element rounded-md"
+							data-x="25"
+							data-y="94"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+						>
+							<p>Rail: ${$railTotal.toLocaleString()}</p>
+						</div>
+					{/if}
+					<!-- Roll Button -->
+					{#if $showRollButton}
+						<button
+							class="roll-btn game-element rounded-md"
+							data-x="60"
+							data-y="94"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+							on:click={() => rollDice()}>Roll</button
+						>
+					{/if}
+					<!-- Bankroll Total -->
+					{#if $showBankroll}
+						<div
+							class="bankroll-display game-element rounded-md"
+							data-x="88"
+							data-y="92.75"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+						>
+							<p>Bankroll: ${$totalBankroll.toLocaleString()}</p>
+						</div>
+					{/if}
+					<!-- Chips in Rail -->
+					<div
+						class="chip-area flex flex-wrap game-element"
+						data-x="44.85"
+						data-y="92.25"
+						data-width="16.5"
+						data-height="3.2"
+					>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $dollarChips as chip}
+								<img src={chip} alt="$1 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $nickelChips as chip}
+								<img src={chip} alt="$5 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $quarterChips as chip}
+								<img src={chip} alt="$25 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $hundredChips as chip}
+								<img src={chip} alt="$100 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $fiveHundredChips as chip}
+								<img src={chip} alt="$500 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $thousandChips as chip}
+								<img src={chip} alt="$1,000 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+						<div class="chip-container flex flex-row items-center gap-0">
+							{#each $fiveThousandChips as chip}
+								<img src={chip} alt="$5,000 Chip" class="chip-image m-0 p-0" />
+							{/each}
+						</div>
+					</div>
+					<!-- Settings Button -->
+					<div
+						class="settings-icon-container game-element"
+						data-x="96"
+						data-y="7"
+						data-width="4"
+						data-height="4"
+					>
+						<button on:click={() => toggleSetting('showSettingsPopup')} class="settings-button">
+							<img
+								src="src/images/craps-simulator/settings-icon.png"
+								alt="Settings Icon"
+								class="settings-icon"
+							/>
+						</button>
+					</div>
+					<!-- Settings Popup -->
+					{#if $showSettingsPopup}
+						<div class="settings-popup">
+							<h2>Settings</h2>
+							<div class="settings-option">
+								<label>
+									<input type="checkbox" bind:checked={$showStickperson} />
+									Show Stickperson
+								</label>
+							</div>
+							<div class="settings-option">
+								<label>
+									<input type="checkbox" bind:checked={$showGuide} />
+									Show Guide
+								</label>
+							</div>
+							<div class="settings-option">
+								<label>
+									<input type="checkbox" bind:checked={$showBankroll} />
+									Show Bankroll
+								</label>
+							</div>
+							<div class="settings-option">
+								<label>
+									<input type="checkbox" bind:checked={$showRail} />
+									Show Rail
+								</label>
+							</div>
+							<div class="settings-option">
+								<label>
+									<input type="checkbox" bind:checked={$showLayout} />
+									Show Layout
+								</label>
+							</div>
+							<div class="roll-option">
+								<label>
+									<input type="checkbox" bind:checked={$showRollButton} />
+									Show Roll Button
+								</label>
+							</div>
+							{#if $showEnterBtn}
+								<button
+									id="enter-btn"
+									class="enter-fullscreen-btn"
+									on:click={() => enterFullScreen()}>Enter Full Screen</button
+								>
+							{/if}
+							{#if $showExitBtn}
+								<button id="exit-btn" class="exit-fullscreen-btn" on:click={() => exitFullScreen()}
+									>Exit Full Screen</button
+								>
+							{/if}
+							<button class="settings-close-btn" on:click={() => toggleSetting('showSettingsPopup')}
+								>Close</button
+							>
+						</div>
+					{/if}
+				</section>
 			</div>
-			<!-- Settings Popup -->
-			{#if $showSettingsPopup}
-				<div class="settings-popup">
-					<h2>Settings</h2>
-					<!-- Add your settings content here -->
-					<button on:click={toggleSettingsPopup}>Close</button>
-				</div>
-			{/if}
-		</section>
+		</div>
 	</main>
 </MoreCrapsLayout>

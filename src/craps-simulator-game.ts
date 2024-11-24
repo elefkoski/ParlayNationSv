@@ -1,21 +1,4 @@
-import { get, writable } from 'svelte/store';
-import {
-	railTotal,
-	layoutTotal,
-	totalBankroll,
-	addToBankAndRail,
-	takeFromBankAndRail,
-	chips
-} from './craps-simulator-bankroll';
-
-export {
-	railTotal,
-	layoutTotal,
-	totalBankroll,
-	addToBankAndRail,
-	takeFromBankAndRail,
-	chips
-} from './craps-simulator-bankroll';
+import { writable } from 'svelte/store';
 
 export const firstDieImage = writable('src/images/craps-simulator/dice/die_ne.png');
 export const secondDieImage = writable('src/images/craps-simulator/dice/die_sw.png');
@@ -25,12 +8,10 @@ let rollHard = false;
 let rollTotal = 0;
 let pointMade = false;
 let sevenOut = false;
-
 const count = {
 	totalPoints: 0
 };
 
-// Function to simulate rolling dice
 export function rollDice(): void {
 	cycleDice();
 	// Wait for the dice to finish rolling
@@ -85,6 +66,7 @@ function createDiceObject(): {
 	console.log(`Rolled dice: ${firstDie}, ${secondDie}, total: ${total}, cameHard: ${cameHard}`);
 	return { firstDie, secondDie, total, cameHard, firstDieImage, secondDieImage };
 }
+
 // Helper function to determine stick call
 function numberToWords(num: number): string {
 	const words = [
@@ -252,25 +234,3 @@ const diceAreOutCalls = [
 	'We gotta go, dice are out, watch your mittens!',
 	'Dice are goin, pick up your hands!'
 ];
-// Function to place a bet
-export function placeBet(amount: number): void {
-	console.log('placeBet called with amount:', amount);
-	if (amount > get(railTotal)) {
-		console.error('Error: Amount exceeds rail total.');
-		return;
-	}
-	takeFromBankAndRail(amount);
-	layoutTotal.update((current) => current + amount);
-}
-// Function to resolve a bet
-export function resolveBet(amount: number, won: boolean): void {
-	console.log(`resolveBet called with amount: ${amount}, won: ${won}`);
-	layoutTotal.update((current) => current - amount);
-	if (won) {
-		addToBankAndRail(amount * 2); // Assuming a 1:1 payout
-	}
-}
-export const showSettingsPopup = writable(false);
-export function toggleSettingsPopup(): void {
-	showSettingsPopup.update((current) => !current);
-}
