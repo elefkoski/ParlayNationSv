@@ -35,8 +35,9 @@ export function toggleSetting(key: keyof typeof settings): void {
 	settings[key].update((current) => !current);
 }
 // Helper function to scale elements via 16:9 aspect ratio
-export function scaleElements() {
+export async function scaleElements() {
 	console.log('scaleElements: scaling elements');
+	await new Promise((resolve) => setTimeout(resolve, 500));
 	const gameArea = document.getElementById('game-area');
 	if (!gameArea) {
 		console.log('scaleElements: gameArea not found');
@@ -97,8 +98,8 @@ export function scaleElements() {
 	});
 }
 // Helper function to scale chips to fit the rail
-export function scaleChipsToFit() {
-	// Select the .chip-area container
+export async function scaleChipsToFit() {
+	await new Promise((resolve) => setTimeout(resolve, 750));
 	const chipArea = document.querySelector('.chip-area');
 	console.log('chipArea:', chipArea);
 	if (!chipArea) {
@@ -192,9 +193,7 @@ export function enterFullScreen() {
 			console.error('Element with ID "game-area-wrapper" not found.');
 		}
 		scaleElements();
-		setTimeout(() => {
-			scaleChipsToFit();
-		}, 750);
+		scaleChipsToFit();
 	}
 }
 
@@ -243,8 +242,14 @@ if (typeof window !== 'undefined') {
 	window.addEventListener('resize', () => {
 		console.log('Window resized');
 		scaleElements();
-		setTimeout(() => {
-			scaleChipsToFit();
-		}, 750);
+		scaleChipsToFit();
+	});
+}
+if (typeof window !== 'undefined') {
+	// Add listener for device orientation change
+	window.addEventListener('orientationchange', () => {
+		console.log('Device orientation changed');
+		scaleElements();
+		scaleChipsToFit();
 	});
 }

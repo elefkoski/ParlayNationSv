@@ -42,12 +42,8 @@
 			}
 		});
 
-		setTimeout(() => {
-			scaleElements();
-			setTimeout(() => {
-				scaleChipsToFit();
-			}, 750);
-		}, 500);
+		scaleElements();
+		scaleChipsToFit();
 	});
 </script>
 
