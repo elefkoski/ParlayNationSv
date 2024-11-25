@@ -33,11 +33,17 @@ export const settings = {
 
 export function toggleSetting(key: keyof typeof settings): void {
 	settings[key].update((current) => !current);
+	// If toggling the settings popup, delay scaling until DOM is updated
+	if (key === 'showSettingsPopup') {
+		setTimeout(() => {
+			scaleAllPopups();
+		}, 0); // Small delay to ensure DOM updates are complete
+	}
 }
 // Helper function to scale elements via 16:9 aspect ratio
 export async function scaleElements() {
 	console.log('scaleElements: scaling elements');
-	await new Promise((resolve) => setTimeout(resolve, 500));
+	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
 	if (!gameArea) {
 		console.log('scaleElements: gameArea not found');
@@ -85,6 +91,8 @@ export async function scaleElements() {
 			el.style.removeProperty('height'); // Remove height if null
 		}
 
+		el.classList.remove('hidden');
+
 		console.log('scaleElements: updated styles for element:', el);
 		console.log('Element Styles:', {
 			left: el.style.left,
@@ -97,9 +105,69 @@ export async function scaleElements() {
 		});
 	});
 }
+export async function scaleAllPopups() {
+	await new Promise((resolve) => setTimeout(resolve, 100));
+	const gameArea = document.getElementById('game-area');
+	if (!gameArea) {
+		console.log('scaleAllPopups: gameArea not found');
+		return;
+	}
+
+	// Get the actual dimensions of the game area
+	const { width: containerWidth, height: containerHeight } = gameArea.getBoundingClientRect();
+	const elements = document.querySelectorAll('.popup'); // Select all elements with the .popup class
+
+	elements.forEach((el) => {
+		const x = parseFloat(el.dataset.x) || 0;
+		const y = parseFloat(el.dataset.y) || 0;
+		const fontSize = parseFloat(el.dataset.fontsize) || 2.25;
+		const width = parseFloat(el.dataset.width) || null;
+		const height = parseFloat(el.dataset.height) || null;
+		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
+		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
+
+		// Apply styles dynamically
+		el.style.position = 'absolute'; // Ensure absolute positioning
+		el.style.left = `${(x / 100) * containerWidth}px`;
+		el.style.top = `${(y / 100) * containerHeight}px`;
+		el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
+		el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
+		el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
+
+		if (width !== null) {
+			el.style.width = `${(width / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('width'); // Remove width if null
+		}
+
+		if (height !== null) {
+			el.style.height = `${(height / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('height'); // Remove height if null
+		}
+
+		console.log('scaleAllPopups: updated styles for element:', el, {
+			left: el.style.left,
+			top: el.style.top,
+			width: el.style.width,
+			height: el.style.height,
+			paddingLeft: el.style.paddingLeft,
+			paddingTop: el.style.paddingTop,
+			fontSize: el.style.fontSize
+		});
+		// Once scaling is done, add the 'scaled' class to make it visible
+		el.classList.add('scaled');
+	});
+
+	const stickCallElement = document.querySelector('.stick-call');
+	if (stickCallElement) {
+		stickCallElement.classList.remove('hidden');
+	}
+}
+
 // Helper function to scale chips to fit the rail
 export async function scaleChipsToFit() {
-	await new Promise((resolve) => setTimeout(resolve, 750));
+	await new Promise((resolve) => setTimeout(resolve, 100));
 	const chipArea = document.querySelector('.chip-area');
 	console.log('chipArea:', chipArea);
 	if (!chipArea) {
@@ -120,6 +188,7 @@ export async function scaleChipsToFit() {
 	const chips = chipArea.querySelectorAll('.chip-image');
 	chips.forEach((chip) => {
 		chip.style.width = `${chipWidth}px`;
+		chip.classList.remove('hidden');
 	});
 }
 
@@ -237,19 +306,16 @@ export function exitFullScreen() {
 	}
 }
 
+// Add event listeners for window resize and device orientation change
 if (typeof window !== 'undefined') {
-	// Add resize listener globally to handle responsiveness
-	window.addEventListener('resize', () => {
-		console.log('Window resized');
+	const handleResizeOrOrientationChange = () => {
+		console.log('Window resized or device orientation changed');
 		scaleElements();
 		scaleChipsToFit();
-	});
-}
-if (typeof window !== 'undefined') {
-	// Add listener for device orientation change
-	window.addEventListener('orientationchange', () => {
-		console.log('Device orientation changed');
-		scaleElements();
-		scaleChipsToFit();
-	});
+		scaleAllPopups();
+	};
+
+	window.addEventListener('resize', handleResizeOrOrientationChange);
+	window.addEventListener('orientationchange', handleResizeOrOrientationChange);
+	window.addEventListener('fullscreenchange', handleResizeOrOrientationChange);
 }

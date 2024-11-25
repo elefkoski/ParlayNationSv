@@ -14,10 +14,7 @@
 	justify-content: center;
 	overflow: hidden; /* Hide overflow outside the container */
 }
-
 .game-area {
-	width: 100%;
-	height: 100%;
 	aspect-ratio: 16 / 9;
 	background: url('images/craps-simulator/craps-simulator-table-layout.webp') center/cover no-repeat;
 	position: relative;
@@ -29,7 +26,9 @@
 .layout-display,
 .rail-display,
 .roll-btn,
-.bankroll-display {
+.bankroll-display,
+.exit-fullscreen-btn,
+.enter-fullscreen-btn {
 	display: flex;
 	align-items: center;
 	box-sizing: border-box;
@@ -47,36 +46,27 @@
 	border: 1px solid;
 }
 .chip-area {
+	display: flex;
 	row-gap: 0.27vw;
 }
 .chip-container {
+	display: flex;
 	position: relative;
 	height: 100%;
 }
 .chip-image {
 	height: 100%;
 }
+.popup {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+.popup.scaled {
+	visibility: visible;
+	opacity: 1;
+}
 .settings-popup {
 	position: absolute;
-	width: 75%;
-	height: 50%;
-	top: 25%;
-	left: 12.5%;
-	padding: 0.5vw;
 	border: 1px solid;
-	border-radius: 0.25rem;
-}
-.enter-fullscreen-btn {
-	position: absolute;
-	top: 0.25vw;
-	right: 0.5vw;
-	padding: 1vw;
-	font-size: 1vw;
-}
-.exit-fullscreen-btn {
-	position: absolute;
-	top: 0.25vw;
-	right: 0.5vw;
-	padding: 1vw;
-	font-size: 1vw;
 }

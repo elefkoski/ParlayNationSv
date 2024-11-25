@@ -6,6 +6,7 @@
 		exitFullScreen,
 		scaleElements,
 		scaleChipsToFit,
+		scaleAllPopups,
 		railTotal,
 		layoutTotal,
 		totalBankroll,
@@ -15,7 +16,7 @@
 		showRollButton,
 		showEnterBtn,
 		showExitBtn
-	} from '../../craps-simulator-chips';
+	} from '../../craps-simulator-layout';
 	import { rollDice, firstDieImage, secondDieImage } from '../../craps-simulator-game';
 
 	let title: string = 'Craps Simulator';
@@ -44,6 +45,7 @@
 
 		scaleElements();
 		scaleChipsToFit();
+		scaleAllPopups();
 	});
 </script>
 
@@ -152,7 +154,7 @@
 					<!-- Layout Total -->
 					{#if $showLayout}
 						<div
-							class="layout-display game-element rounded-md"
+							class="layout-display game-element rounded-md hidden"
 							data-x="67"
 							data-y="18.5"
 							data-fontsize="2"
@@ -166,7 +168,7 @@
 					<img
 						src={$firstDieImage}
 						alt="Chip 1"
-						class="die-one game-element"
+						class="die-one game-element hidden"
 						data-x="81.5"
 						data-y="24"
 						data-width="6"
@@ -175,7 +177,7 @@
 					<img
 						src={$secondDieImage}
 						alt="Chip 2"
-						class="die-two game-element"
+						class="die-two game-element hidden"
 						data-x="89"
 						data-y="24"
 						data-width="6"
@@ -196,7 +198,7 @@
 					{#if $showGuide}
 						<div
 							id="guide"
-							class="guide-container rounded-md game-element"
+							class="guide-container rounded-md game-element hidden"
 							data-x="41.5"
 							data-y="12.75"
 							data-fontsize="1.375"
@@ -206,7 +208,7 @@
 							data-height="20"
 						>
 							<!-- Stick Call -->
-							<p id="stick-call" class="stick-call">
+							<p id="stick-call" class="stick-call hidden">
 								We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are
 								in the middle.
 							</p>
@@ -215,7 +217,7 @@
 					<!-- Rail Total -->
 					{#if $showRail}
 						<div
-							class="rail-display game-element rounded-md"
+							class="rail-display game-element rounded-md hidden"
 							data-x="25"
 							data-y="94"
 							data-fontsize="2"
@@ -228,7 +230,7 @@
 					<!-- Roll Button -->
 					{#if $showRollButton}
 						<button
-							class="roll-btn game-element rounded-md"
+							class="roll-btn game-element rounded-md hidden"
 							data-x="60"
 							data-y="94"
 							data-fontsize="2"
@@ -240,7 +242,7 @@
 					<!-- Bankroll Total -->
 					{#if $showBankroll}
 						<div
-							class="bankroll-display game-element rounded-md"
+							class="bankroll-display game-element rounded-md hidden"
 							data-x="88"
 							data-y="92.75"
 							data-fontsize="2"
@@ -252,51 +254,51 @@
 					{/if}
 					<!-- Chips in Rail -->
 					<div
-						class="chip-area flex flex-wrap game-element"
+						class="chip-area flex-wrap game-element"
 						data-x="44.85"
 						data-y="92.25"
 						data-width="16.5"
 						data-height="3.2"
 					>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $dollarChips as chip}
-								<img src={chip} alt="$1 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$1 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $nickelChips as chip}
-								<img src={chip} alt="$5 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$5 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $quarterChips as chip}
-								<img src={chip} alt="$25 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$25 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $hundredChips as chip}
-								<img src={chip} alt="$100 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$100 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $fiveHundredChips as chip}
-								<img src={chip} alt="$500 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$500 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $thousandChips as chip}
-								<img src={chip} alt="$1,000 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$1,000 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
-						<div class="chip-container flex flex-row items-center gap-0">
+						<div class="chip-container flex-row items-center gap-0">
 							{#each $fiveThousandChips as chip}
-								<img src={chip} alt="$5,000 Chip" class="chip-image m-0 p-0" />
+								<img src={chip} alt="$5,000 Chip" class="chip-image m-0 p-0 hidden" />
 							{/each}
 						</div>
 					</div>
 					<!-- Settings Button -->
 					<div
-						class="settings-icon-container game-element"
+						class="settings-icon-container game-element hidden"
 						data-x="96"
 						data-y="7"
 						data-width="4"
@@ -312,7 +314,16 @@
 					</div>
 					<!-- Settings Popup -->
 					{#if $showSettingsPopup}
-						<div class="settings-popup">
+						<div
+							class="settings-popup game-element rounded-md popup"
+							data-x="50"
+							data-y="50"
+							data-fontsize="1.5"
+							data-width="80"
+							data-height="60"
+							data-paddinglr="2"
+							data-paddingtb="2"
+						>
 							<h2>Settings</h2>
 							<div class="settings-option">
 								<label>
@@ -353,17 +364,36 @@
 							{#if $showEnterBtn}
 								<button
 									id="enter-btn"
-									class="enter-fullscreen-btn"
+									class="enter-fullscreen-btn game-element popup"
+									data-x="8"
+									data-y="52"
+									data-fontsize="1.5"
+									data-paddinglr="1"
+									data-paddingtb="1"
 									on:click={() => enterFullScreen()}>Enter Full Screen</button
 								>
 							{/if}
 							{#if $showExitBtn}
-								<button id="exit-btn" class="exit-fullscreen-btn" on:click={() => exitFullScreen()}
-									>Exit Full Screen</button
+								<button
+									id="exit-btn"
+									class="exit-fullscreen-btn game-element popup"
+									data-x="8"
+									data-y="52"
+									data-fontsize="1.5"
+									data-paddinglr="1"
+									data-paddingtb="1"
+									on:click={() => exitFullScreen()}>Exit Full Screen</button
 								>
 							{/if}
-							<button class="settings-close-btn" on:click={() => toggleSetting('showSettingsPopup')}
-								>Close</button
+							<button
+								id="toggle-button"
+								class="settings-close-btn game-element popup"
+								data-x="75"
+								data-y="6"
+								data-fontsize="1.5"
+								data-paddinglr="1"
+								data-paddingtb="1"
+								on:click={() => toggleSetting('showSettingsPopup')}>Close</button
 							>
 						</div>
 					{/if}

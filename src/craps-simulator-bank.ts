@@ -1,7 +1,7 @@
 import { derived, get, writable, type Writable } from 'svelte/store';
 
 // Bankroll
-export const railTotal: Writable<number> = writable(30519); // Rail Amount
+export const railTotal: Writable<number> = writable(100519); // Rail Amount
 export const layoutTotal: Writable<number> = writable(0); // Layout Amount
 export const totalBankroll = derived(
 	[railTotal, layoutTotal],

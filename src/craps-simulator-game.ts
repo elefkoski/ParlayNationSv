@@ -17,36 +17,31 @@ export function rollDice(): void {
 	// Wait for the dice to finish rolling
 	setTimeout(() => {
 		sayStickCall();
-	}, 2500);
+	}, 2050);
 }
 // Helper function to cycle dice images
 function cycleDice() {
-	let interval1 = 100;
-	let interval2 = 100;
-
 	const rollInterval1 = setInterval(() => {
 		const roll = createDiceObject();
 		firstDieImage.set(roll.firstDieImage);
-		if (interval1 < 200) {
-			interval1 += 10;
-		}
-	}, interval1);
+	}, 100); // Fixed interval for dice animation
 
 	const rollInterval2 = setInterval(() => {
 		const roll = createDiceObject();
 		secondDieImage.set(roll.secondDieImage);
-		if (interval2 < 200) {
-			interval2 += 10;
-		}
-	}, interval2);
+	}, 100); // Fixed interval for dice animation
 
-	const stopRolling = () => {
+	setTimeout(() => {
 		clearInterval(rollInterval1);
 		clearInterval(rollInterval2);
-	};
 
-	setTimeout(stopRolling, 2000); // Stop rolling after 2 seconds
+		// Set the final dice roll
+		const finalRoll = createDiceObject();
+		firstDieImage.set(finalRoll.firstDieImage);
+		secondDieImage.set(finalRoll.secondDieImage);
+	}, 2000); // 2 seconds animation duration
 }
+
 // Helper function to create dice object
 function createDiceObject(): {
 	firstDie: number;
@@ -88,6 +83,7 @@ function numberToWords(num: number): string {
 }
 // Stick Calls
 function sayStickCall() {
+	console.log('rollTotal:', rollTotal);
 	let callType;
 	const stickCallElement = document.getElementById('stick-call');
 	if (!stickCallElement) {
