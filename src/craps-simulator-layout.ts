@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+//import { scale } from 'svelte/transition';
 
 export {
 	railTotal,
@@ -37,11 +38,12 @@ export function toggleSetting(key: keyof typeof settings): void {
 	if (key === 'showSettingsPopup') {
 		setTimeout(() => {
 			scaleAllPopups();
+			scaleElements();
 		}, 0); // Small delay to ensure DOM updates are complete
 	}
 }
 // Helper function to scale elements via 16:9 aspect ratio
-export async function scaleElements() {
+export async function scaleElements(type = null) {
 	console.log('scaleElements: scaling elements');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
@@ -60,13 +62,15 @@ export async function scaleElements() {
 	);
 
 	// Scale elements relative to the container size
-	const elements = document.querySelectorAll('.game-element');
+	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
+	const elements = document.querySelectorAll(selector);
 	elements.forEach((el) => {
 		const x = parseFloat(el.dataset.x) || 0;
 		const y = parseFloat(el.dataset.y) || 0;
 		const fontSize = parseFloat(el.dataset.fontsize) || 2.25;
 		const height = parseFloat(el.dataset.height) || null;
 		const width = parseFloat(el.dataset.width) || null;
+		const gap = parseFloat(el.dataset.gap) || null;
 		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
 		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
 
@@ -91,7 +95,16 @@ export async function scaleElements() {
 			el.style.removeProperty('height'); // Remove height if null
 		}
 
+		if (gap !== null) {
+			el.style.rowGap = `${(gap / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('gap'); // Remove gap if null
+		}
+
+		// Remove the hidden class from the element and its children
 		el.classList.remove('hidden');
+		const childElements = el.querySelectorAll('.hidden');
+		childElements.forEach((child) => child.classList.remove('hidden'));
 
 		console.log('scaleElements: updated styles for element:', el);
 		console.log('Element Styles:', {
@@ -99,6 +112,7 @@ export async function scaleElements() {
 			top: el.style.top,
 			width: el.style.width,
 			height: el.style.height,
+			gap: el.style.gap,
 			paddingLeft: el.style.paddingLeft,
 			paddingTop: el.style.paddingTop,
 			fontSize: el.style.fontSize
@@ -197,13 +211,6 @@ export function enterFullScreen() {
 		const gameWrapper = document.getElementById('game-area-wrapper');
 		const gameContainer = document.getElementById('game-area-container');
 		const gameArea = document.getElementById('game-area');
-		console.log('Toggling showEnterBtn');
-		toggleSetting('showEnterBtn');
-		console.log('Toggling showExitBtn');
-		toggleSetting('showExitBtn');
-		console.log('Toggling showSettingsPopup');
-		toggleSetting('showSettingsPopup');
-		console.log('gameWrapper:', gameWrapper);
 
 		if (gameWrapper) {
 			if (gameWrapper.requestFullscreen) {
@@ -261,6 +268,12 @@ export function enterFullScreen() {
 		} else {
 			console.error('Element with ID "game-area-wrapper" not found.');
 		}
+		console.log('Toggling showEnterBtn');
+		toggleSetting('showEnterBtn');
+		console.log('Toggling showExitBtn');
+		toggleSetting('showExitBtn');
+		console.log('Toggling showSettingsPopup');
+		toggleSetting('showSettingsPopup');
 		scaleElements();
 		scaleChipsToFit();
 	}

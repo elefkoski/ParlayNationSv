@@ -155,6 +155,7 @@
 					{#if $showLayout}
 						<div
 							class="layout-display game-element rounded-md hidden"
+							data-type="layout"
 							data-x="67"
 							data-y="18.5"
 							data-fontsize="2"
@@ -188,6 +189,7 @@
 						<div
 							id="stickwoman"
 							class="stickwoman game-element"
+							data-type="stickperson"
 							data-x="12"
 							data-y="26"
 							data-width="22"
@@ -199,6 +201,7 @@
 						<div
 							id="guide"
 							class="guide-container rounded-md game-element hidden"
+							data-type="guide"
 							data-x="41.5"
 							data-y="12.75"
 							data-fontsize="1.375"
@@ -208,7 +211,7 @@
 							data-height="20"
 						>
 							<!-- Stick Call -->
-							<p id="stick-call" class="stick-call hidden">
+							<p id="stick-call" class="stick-call hidden" data-type="stick-call">
 								We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are
 								in the middle.
 							</p>
@@ -218,6 +221,7 @@
 					{#if $showRail}
 						<div
 							class="rail-display game-element rounded-md hidden"
+							data-type="rail"
 							data-x="25"
 							data-y="94"
 							data-fontsize="2"
@@ -231,6 +235,7 @@
 					{#if $showRollButton}
 						<button
 							class="roll-btn game-element rounded-md hidden"
+							data-type="roll-button"
 							data-x="60"
 							data-y="94"
 							data-fontsize="2"
@@ -243,6 +248,7 @@
 					{#if $showBankroll}
 						<div
 							class="bankroll-display game-element rounded-md hidden"
+							data-type="bankroll"
 							data-x="88"
 							data-y="92.75"
 							data-fontsize="2"
@@ -259,6 +265,7 @@
 						data-y="92.25"
 						data-width="16.5"
 						data-height="3.2"
+						data-gap="0.6"
 					>
 						<div class="chip-container flex-row items-center gap-0">
 							{#each $dollarChips as chip}
@@ -327,40 +334,70 @@
 							<h2>Settings</h2>
 							<div class="settings-option">
 								<label>
-									<input type="checkbox" bind:checked={$showStickperson} />
+									<input
+										type="checkbox"
+										bind:checked={$showStickperson}
+										on:change={() => scaleElements('stickperson')}
+									/>
 									Show Stickperson
 								</label>
 							</div>
+							<!-- show stickperson -->
 							<div class="settings-option">
 								<label>
-									<input type="checkbox" bind:checked={$showGuide} />
+									<input
+										type="checkbox"
+										bind:checked={$showGuide}
+										on:change={() => scaleElements('guide')}
+									/>
 									Show Guide
 								</label>
 							</div>
+							<!-- show guide -->
 							<div class="settings-option">
 								<label>
-									<input type="checkbox" bind:checked={$showBankroll} />
+									<input
+										type="checkbox"
+										bind:checked={$showBankroll}
+										on:change={() => scaleElements('bankroll')}
+									/>
 									Show Bankroll
 								</label>
 							</div>
+							<!-- show bankroll -->
 							<div class="settings-option">
 								<label>
-									<input type="checkbox" bind:checked={$showRail} />
+									<input
+										type="checkbox"
+										bind:checked={$showRail}
+										on:change={() => scaleElements('rail')}
+									/>
 									Show Rail
 								</label>
 							</div>
+							<!-- show rail -->
 							<div class="settings-option">
 								<label>
-									<input type="checkbox" bind:checked={$showLayout} />
+									<input
+										type="checkbox"
+										bind:checked={$showLayout}
+										on:change={() => scaleElements('layout')}
+									/>
 									Show Layout
 								</label>
 							</div>
+							<!-- show layout -->
 							<div class="roll-option">
 								<label>
-									<input type="checkbox" bind:checked={$showRollButton} />
+									<input
+										type="checkbox"
+										bind:checked={$showRollButton}
+										on:change={() => scaleElements('roll-button')}
+									/>
 									Show Roll Button
 								</label>
 							</div>
+							<!-- show roll button -->
 							{#if $showEnterBtn}
 								<button
 									id="enter-btn"

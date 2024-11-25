@@ -47,7 +47,6 @@
 }
 .chip-area {
 	display: flex;
-	row-gap: 0.27vw;
 }
 .chip-container {
 	display: flex;
