@@ -191,8 +191,8 @@
 	--roll-btn-text: #ffffff; /* white */
 	--roll-btn-text-hover: #ffffff; /* white */
 	--guide-container-bg: rgba(255, 255, 255, 0.8); /* 50% transparency */
-	--settings-popup-bg: #f3f4f6; /* base-200 */
-	--settings-popup-border: #d1d5db; /* gray-300 */
+	--settings-menu-bg: #f3f4f6; /* base-200 */
+	--settings-menu-border: #d1d5db; /* gray-300 */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
@@ -378,8 +378,8 @@
 	--dm-roll-btn-text: #d1d5db; /* gray-300 */
 	--dm-roll-btn-text-hover: #ffffff; /* white */
 	--dm-guide-container-bg: rgba(31, 41, 55, 0.8); /* 50% transparency */
-	--dm-settings-popup-bg: #111827; /* gray-900 */
-	--dm-settings-popup-border: #374151; /* gray-700 */
+	--dm-settings-menu-bg: #111827; /* gray-900 */
+	--dm-settings-menu-border: #374151; /* gray-700 */
 }
 
 /* Main Styles */
@@ -805,9 +805,9 @@
 .guide-container {
 	background-color: var(--guide-container-bg);
 }
-.settings-popup {
-	background-color: var(--settings-popup-bg);
-	border-color: var(--settings-popup-border);
+.settings-menu {
+	background-color: var(--settings-menu-bg);
+	border-color: var(--settings-menu-border);
 }
 
 /* Dark mode styles */
@@ -995,6 +995,6 @@
 	--roll-btn-text: var(--dm-roll-btn-text);
 	--roll-btn-text-hover: var(--dm-roll-btn-text-hover);
 	--guide-container-bg: var(--dm-guide-container-bg);
-	--settings-popup-bg: var(--dm-settings-popup-bg);
-	--settings-popup-border: var(--dm-settings-popup-border);
+	--settings-menu-bg: var(--dm-settings-menu-bg);
+	--settings-menu-border: var(--dm-settings-menu-border);
 }

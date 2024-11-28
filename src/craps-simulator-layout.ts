@@ -1,6 +1,4 @@
 import { writable } from 'svelte/store';
-//import { scale } from 'svelte/transition';
-
 export {
 	railTotal,
 	layoutTotal,
@@ -10,173 +8,95 @@ export {
 	chips
 } from './craps-simulator-bank';
 
-export const showSettingsPopup = writable(false);
-export const showStickperson = writable(true);
-export const showGuide = writable(true);
-export const showBankroll = writable(true);
-export const showRail = writable(true);
-export const showLayout = writable(true);
-export const showRollButton = writable(true);
-export const showEnterBtn = writable(true);
-export const showExitBtn = writable(false);
+// Track elements that need to be scaled
+const scaledElements = new WeakSet();
 
-export const settings = {
-	showSettingsPopup,
-	showStickperson,
-	showGuide,
-	showBankroll,
-	showRail,
-	showLayout,
-	showRollButton,
-	showEnterBtn,
-	showExitBtn
-};
-
-export function toggleSetting(key: keyof typeof settings): void {
-	settings[key].update((current) => !current);
-	// If toggling the settings popup, delay scaling until DOM is updated
-	if (key === 'showSettingsPopup') {
-		setTimeout(() => {
-			scaleAllPopups();
-			scaleElements();
-		}, 0); // Small delay to ensure DOM updates are complete
-	}
+function resetScaledElements() {
+	scaledElements.clear();
+	console.log('All elements marked for re-scaling');
 }
+
+export const visibilityState = writable<Record<string, boolean>>({
+	rollButton: true,
+	layout: true,
+	settingsMenu: true,
+	stickperson: true
+});
+
+export function toggleVisibility(elementId: string): void {
+	visibilityState.update((state) => {
+		const element = document.getElementById(elementId);
+		if (element) {
+			const isVisible = !state[elementId];
+			if (isVisible) {
+				element.classList.remove('hidden');
+			} else {
+				element.classList.add('hidden');
+			}
+			return { ...state, [elementId]: isVisible }; // Update state
+		}
+		return state;
+	});
+}
+
 // Helper function to scale elements via 16:9 aspect ratio
-export async function scaleElements(type = null) {
+export async function scaleElements(elementId: string | null = null): Promise<void> {
 	console.log('scaleElements: scaling elements');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
-	if (!gameArea) {
-		console.log('scaleElements: gameArea not found');
-		return;
-	}
-
-	// Get the actual dimensions of the game area
+	if (!gameArea) return;
 	const { width: containerWidth, height: containerHeight } = gameArea.getBoundingClientRect();
-	console.log(
-		'scaleElements: containerWidth:',
-		containerWidth,
-		'containerHeight:',
-		containerHeight
-	);
+	const elements = elementId
+		? [document.getElementById(elementId)]
+		: document.querySelectorAll('.game-element');
 
-	// Scale elements relative to the container size
-	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
-	const elements = document.querySelectorAll(selector);
 	elements.forEach((el) => {
+		// Skip already scaled elements
+		if (scaledElements.has(el)) {
+			console.log('scaleElements: skipping already scaled element:', el);
+			return;
+		}
+
+		scaledElements.add(el); // Mark element as scaled
+
 		const x = parseFloat(el.dataset.x) || 0;
 		const y = parseFloat(el.dataset.y) || 0;
 		const fontSize = parseFloat(el.dataset.fontsize) || 2.25;
-		const height = parseFloat(el.dataset.height) || null;
 		const width = parseFloat(el.dataset.width) || null;
+		const height = parseFloat(el.dataset.height) || null;
 		const gap = parseFloat(el.dataset.gap) || null;
 		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
 		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
 
-		console.log('scaleElements: element:', el, 'x:', x, 'y:', y, 'size:', fontSize);
-
-		// Dynamically calculate position and size
-		el.style.left = `${(x / 100) * containerWidth}px`;
-		el.style.top = `${(y / 100) * containerHeight}px`;
-		el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
-		el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
-		el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerWidth}px`;
-
-		if (width !== null) {
-			el.style.width = `${(width / 100) * containerWidth}px`;
-		} else {
-			el.style.removeProperty('width'); // Remove width if null
-		}
-
-		if (height !== null) {
-			el.style.height = `${(height / 100) * containerHeight}px`;
-		} else {
-			el.style.removeProperty('height'); // Remove height if null
-		}
-
-		if (gap !== null) {
-			el.style.rowGap = `${(gap / 100) * containerWidth}px`;
-		} else {
-			el.style.removeProperty('gap'); // Remove gap if null
-		}
-
-		// Remove the hidden class from the element and its children
-		el.classList.remove('hidden');
-		const childElements = el.querySelectorAll('.hidden');
-		childElements.forEach((child) => child.classList.remove('hidden'));
-
-		console.log('scaleElements: updated styles for element:', el);
-		console.log('Element Styles:', {
-			left: el.style.left,
-			top: el.style.top,
-			width: el.style.width,
-			height: el.style.height,
-			gap: el.style.gap,
-			paddingLeft: el.style.paddingLeft,
-			paddingTop: el.style.paddingTop,
-			fontSize: el.style.fontSize
-		});
-	});
-}
-export async function scaleAllPopups() {
-	await new Promise((resolve) => setTimeout(resolve, 100));
-	const gameArea = document.getElementById('game-area');
-	if (!gameArea) {
-		console.log('scaleAllPopups: gameArea not found');
-		return;
-	}
-
-	// Get the actual dimensions of the game area
-	const { width: containerWidth, height: containerHeight } = gameArea.getBoundingClientRect();
-	const elements = document.querySelectorAll('.popup'); // Select all elements with the .popup class
-
-	elements.forEach((el) => {
-		const x = parseFloat(el.dataset.x) || 0;
-		const y = parseFloat(el.dataset.y) || 0;
-		const fontSize = parseFloat(el.dataset.fontsize) || 2.25;
-		const width = parseFloat(el.dataset.width) || null;
-		const height = parseFloat(el.dataset.height) || null;
-		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
-		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
-
-		// Apply styles dynamically
-		el.style.position = 'absolute'; // Ensure absolute positioning
+		// Apply dynamic styles
+		el.style.position = 'absolute'; // Default to absolute positioning
 		el.style.left = `${(x / 100) * containerWidth}px`;
 		el.style.top = `${(y / 100) * containerHeight}px`;
 		el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
 		el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
 		el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
 
-		if (width !== null) {
-			el.style.width = `${(width / 100) * containerWidth}px`;
-		} else {
-			el.style.removeProperty('width'); // Remove width if null
-		}
+		if (width !== null) el.style.width = `${(width / 100) * containerWidth}px`;
+		else el.style.removeProperty('width');
 
-		if (height !== null) {
-			el.style.height = `${(height / 100) * containerHeight}px`;
-		} else {
-			el.style.removeProperty('height'); // Remove height if null
-		}
+		if (height !== null) el.style.height = `${(height / 100) * containerHeight}px`;
+		else el.style.removeProperty('height');
 
-		console.log('scaleAllPopups: updated styles for element:', el, {
-			left: el.style.left,
-			top: el.style.top,
-			width: el.style.width,
-			height: el.style.height,
-			paddingLeft: el.style.paddingLeft,
-			paddingTop: el.style.paddingTop,
-			fontSize: el.style.fontSize
-		});
-		// Once scaling is done, add the 'scaled' class to make it visible
-		el.classList.add('scaled');
+		if (gap !== null) el.style.rowGap = `${(gap / 100) * containerWidth}px`;
+		else el.style.removeProperty('gap');
+
+		// Remove hidden class
+		el.classList.remove('hidden');
+		const childElements = el.querySelectorAll('.hidden');
+		childElements.forEach((child) => child.classList.remove('hidden'));
+
+		console.log('scaleElements: updated styles for element:', el);
 	});
+}
 
-	const stickCallElement = document.querySelector('.stick-call');
-	if (stickCallElement) {
-		stickCallElement.classList.remove('hidden');
-	}
+export async function scaleAllPopups() {
+	console.log('scaleAllPopups: scaling all popups');
+	await scaleElements(null, true);
 }
 
 // Helper function to scale chips to fit the rail
@@ -323,9 +243,9 @@ export function exitFullScreen() {
 if (typeof window !== 'undefined') {
 	const handleResizeOrOrientationChange = () => {
 		console.log('Window resized or device orientation changed');
+		resetScaledElements();
 		scaleElements();
 		scaleChipsToFit();
-		scaleAllPopups();
 	};
 
 	window.addEventListener('resize', handleResizeOrOrientationChange);

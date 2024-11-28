@@ -7,16 +7,14 @@
 		scaleElements,
 		scaleChipsToFit,
 		scaleAllPopups,
+		toggleVisibility,
 		railTotal,
 		layoutTotal,
 		totalBankroll,
-		chips,
-		settings,
-		toggleSetting,
-		showRollButton,
-		showEnterBtn,
-		showExitBtn
+		chips
 	} from '../../craps-simulator-layout';
+	import Menu from '$lib/components/simulator/gameMenu.svelte';
+	import ToggleCheckbox from '$lib/components/simulator/toggleCheckbox.svelte';
 	import { rollDice, firstDieImage, secondDieImage } from '../../craps-simulator-game';
 
 	let title: string = 'Craps Simulator';
@@ -31,9 +29,6 @@
 	let fiveHundredChips = chips[500]; // access $500 chip store
 	let thousandChips = chips[1000]; // access $1,000 chip store
 	let fiveThousandChips = chips[5000]; // access $5,000 chip store
-
-	const { showSettingsPopup, showStickperson, showGuide, showBankroll, showRail, showLayout } =
-		settings;
 
 	onMount(() => {
 		// Add event listener for Escape key press
@@ -152,19 +147,17 @@
 			<div id="game-area-container">
 				<section aria-label="Game area" id="game-area" class="game-area">
 					<!-- Layout Total -->
-					{#if $showLayout}
-						<div
-							class="layout-display game-element rounded-md hidden"
-							data-type="layout"
-							data-x="67"
-							data-y="18.5"
-							data-fontsize="2"
-							data-paddinglr="2"
-							data-paddingtb="1"
-						>
-							<p>Layout: ${$layoutTotal.toLocaleString()}</p>
-						</div>
-					{/if}
+					<div
+						id="layout-total"
+						class="layout-display game-element rounded-md hidden"
+						data-x="67"
+						data-y="18.5"
+						data-fontsize="2"
+						data-paddinglr="2"
+						data-paddingtb="1"
+					>
+						<p class="hidden">Layout: ${$layoutTotal.toLocaleString()}</p>
+					</div>
 					<!-- Dice -->
 					<img
 						src={$firstDieImage}
@@ -185,79 +178,67 @@
 						data-height="10.66"
 					/>
 					<!-- Stickwoman -->
-					{#if $showStickperson}
-						<div
-							id="stickwoman"
-							class="stickwoman game-element"
-							data-type="stickperson"
-							data-x="12"
-							data-y="26"
-							data-width="22"
-							data-height="40"
-						/>
-					{/if}
+					<div
+						id="stickperson"
+						class="stickperson game-element"
+						data-x="12"
+						data-y="26"
+						data-width="22"
+						data-height="40"
+					/>
 					<!-- Text Container -->
-					{#if $showGuide}
-						<div
-							id="guide"
-							class="guide-container rounded-md game-element hidden"
-							data-type="guide"
-							data-x="41.5"
-							data-y="12.75"
-							data-fontsize="1.375"
-							data-paddinglr="1.5"
-							data-paddingtb="1.5"
-							data-width="35"
-							data-height="20"
-						>
-							<!-- Stick Call -->
-							<p id="stick-call" class="stick-call hidden" data-type="stick-call">
-								We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are
-								in the middle.
-							</p>
-						</div>
-					{/if}
+					<div
+						id="guide"
+						class="guide-container rounded-md game-element hidden"
+						data-x="41.5"
+						data-y="12.75"
+						data-fontsize="1.375"
+						data-paddinglr="1.5"
+						data-paddingtb="1.5"
+						data-width="35"
+						data-height="20"
+					>
+						<!-- Stick Call -->
+						<p id="stick-call" class="stick-call hidden">
+							We’re coming out. World’s, Horn’s, Yo’s, Hi Low’s, C&E’s. Get em while the dice are in
+							the middle.
+						</p>
+					</div>
 					<!-- Rail Total -->
-					{#if $showRail}
-						<div
-							class="rail-display game-element rounded-md hidden"
-							data-type="rail"
-							data-x="25"
-							data-y="94"
-							data-fontsize="2"
-							data-paddinglr="2"
-							data-paddingtb="1"
-						>
-							<p>Rail: ${$railTotal.toLocaleString()}</p>
-						</div>
-					{/if}
+					<div
+						id="rail-total"
+						class="rail-display game-element rounded-md hidden"
+						data-x="25"
+						data-y="94"
+						data-fontsize="2"
+						data-paddinglr="2"
+						data-paddingtb="1"
+					>
+						<p class="hidden">Rail: ${$railTotal.toLocaleString()}</p>
+					</div>
 					<!-- Roll Button -->
-					{#if $showRollButton}
-						<button
-							class="roll-btn game-element rounded-md hidden"
-							data-type="roll-button"
-							data-x="60"
-							data-y="94"
-							data-fontsize="2"
-							data-paddinglr="2"
-							data-paddingtb="1"
-							on:click={() => rollDice()}>Roll</button
-						>
-					{/if}
+					<button
+						id="roll-button"
+						class="roll-btn game-element rounded-md hidden"
+						data-x="60"
+						data-y="94"
+						data-fontsize="2"
+						data-paddinglr="2"
+						data-paddingtb="1"
+						on:click={() => rollDice()}>Roll</button
+					>
 					<!-- Bankroll Total -->
-					{#if $showBankroll}
-						<div
-							class="bankroll-display game-element rounded-md hidden"
-							data-type="bankroll"
-							data-x="88"
-							data-y="92.75"
-							data-fontsize="2"
-							data-paddinglr="2"
-							data-paddingtb="1"
-						>
-							<p>Bankroll: ${$totalBankroll.toLocaleString()}</p>
-						</div>
-					{/if}
+					<div
+						id="bankroll-total"
+						class="bankroll-display game-element rounded-md hidden"
+						data-x="88"
+						data-y="92.75"
+						data-fontsize="2"
+						data-paddinglr="2"
+						data-paddingtb="1"
+					>
+						<p class="hidden">Bankroll: ${$totalBankroll.toLocaleString()}</p>
+					</div>
 					<!-- Chips in Rail -->
 					<div
 						class="chip-area flex-wrap game-element"
@@ -311,7 +292,7 @@
 						data-width="4"
 						data-height="4"
 					>
-						<button on:click={() => toggleSetting('showSettingsPopup')} class="settings-button">
+						<button on:click={() => toggleVisibility('showSettingsPopup')} class="settings-button">
 							<img
 								src="src/images/craps-simulator/settings-icon.png"
 								alt="Settings Icon"
@@ -319,121 +300,50 @@
 							/>
 						</button>
 					</div>
-					<!-- Settings Popup -->
-					{#if $showSettingsPopup}
-						<div
-							class="settings-popup game-element rounded-md popup"
-							data-x="50"
-							data-y="50"
+					<!-- Settings Menu -->
+					<Menu
+						id="settings-menu"
+						title="Settings"
+						className="settings-menu"
+						onClose={() => toggleVisibility('settings-menu')}
+					>
+						<ToggleCheckbox id="stickperson" label="Show Stickperson" />
+						<ToggleCheckbox id="guide" label="Show Guide" />
+						<ToggleCheckbox id="bankroll-total" label="Show Bankroll" />
+						<ToggleCheckbox id="rail-total" label="Show Rail" />
+						<ToggleCheckbox id="layout-total" label="Show Layout" />
+						<ToggleCheckbox id="roll-button" label="Show Roll Button" />
+						<button
+							id="enter-btn"
+							class="enter-fullscreen-btn game-element"
+							data-x="8"
+							data-y="52"
 							data-fontsize="1.5"
-							data-width="80"
-							data-height="60"
-							data-paddinglr="2"
-							data-paddingtb="2"
+							data-paddinglr="1"
+							data-paddingtb="1"
+							on:click={() => enterFullScreen()}>Enter Full Screen</button
 						>
-							<h2>Settings</h2>
-							<div class="settings-option">
-								<label>
-									<input
-										type="checkbox"
-										bind:checked={$showStickperson}
-										on:change={() => scaleElements('stickperson')}
-									/>
-									Show Stickperson
-								</label>
-							</div>
-							<!-- show stickperson -->
-							<div class="settings-option">
-								<label>
-									<input
-										type="checkbox"
-										bind:checked={$showGuide}
-										on:change={() => scaleElements('guide')}
-									/>
-									Show Guide
-								</label>
-							</div>
-							<!-- show guide -->
-							<div class="settings-option">
-								<label>
-									<input
-										type="checkbox"
-										bind:checked={$showBankroll}
-										on:change={() => scaleElements('bankroll')}
-									/>
-									Show Bankroll
-								</label>
-							</div>
-							<!-- show bankroll -->
-							<div class="settings-option">
-								<label>
-									<input
-										type="checkbox"
-										bind:checked={$showRail}
-										on:change={() => scaleElements('rail')}
-									/>
-									Show Rail
-								</label>
-							</div>
-							<!-- show rail -->
-							<div class="settings-option">
-								<label>
-									<input
-										type="checkbox"
-										bind:checked={$showLayout}
-										on:change={() => scaleElements('layout')}
-									/>
-									Show Layout
-								</label>
-							</div>
-							<!-- show layout -->
-							<div class="roll-option">
-								<label>
-									<input
-										type="checkbox"
-										bind:checked={$showRollButton}
-										on:change={() => scaleElements('roll-button')}
-									/>
-									Show Roll Button
-								</label>
-							</div>
-							<!-- show roll button -->
-							{#if $showEnterBtn}
-								<button
-									id="enter-btn"
-									class="enter-fullscreen-btn game-element popup"
-									data-x="8"
-									data-y="52"
-									data-fontsize="1.5"
-									data-paddinglr="1"
-									data-paddingtb="1"
-									on:click={() => enterFullScreen()}>Enter Full Screen</button
-								>
-							{/if}
-							{#if $showExitBtn}
-								<button
-									id="exit-btn"
-									class="exit-fullscreen-btn game-element popup"
-									data-x="8"
-									data-y="52"
-									data-fontsize="1.5"
-									data-paddinglr="1"
-									data-paddingtb="1"
-									on:click={() => exitFullScreen()}>Exit Full Screen</button
-								>
-							{/if}
-							<button
-								id="toggle-button"
-								class="settings-close-btn game-element popup"
-								data-x="75"
-								data-y="6"
-								data-fontsize="1.5"
-								data-paddinglr="1"
-								data-paddingtb="1"
-								on:click={() => toggleSetting('showSettingsPopup')}>Close</button
-							>
-						</div>
-					{/if}
+						<button
+							id="exit-btn"
+							class="exit-fullscreen-btn game-element hidden"
+							data-x="8"
+							data-y="52"
+							data-fontsize="1.5"
+							data-paddinglr="1"
+							data-paddingtb="1"
+							on:click={() => exitFullScreen()}>Exit Full Screen</button
+						>
+						<button
+							id="toggle-button"
+							class="settings-close-btn game-element"
+							data-x="75"
+							data-y="6"
+							data-fontsize="1.5"
+							data-paddinglr="1"
+							data-paddingtb="1"
+							on:click={() => toggleVisibility('showSettingsPopup')}>Close</button
+						>
+					</Menu>
 				</section>
 			</div>
 		</div>

@@ -22,6 +22,7 @@
 .game-element {
 	position: absolute;
 	transform: translate(-50%, -50%);
+	transition: opacity 0.2s ease;
 }
 .layout-display,
 .rail-display,
@@ -36,8 +37,8 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.stickwoman {
-	background: url('images/craps-simulator/stickwoman.webp') center/cover no-repeat;
+.stickperson {
+	background: url('images/craps-simulator/stickperson.webp') center/cover no-repeat;
 }
 .guide-container {
 	display: flex;
@@ -56,16 +57,19 @@
 .chip-image {
 	height: 100%;
 }
-.popup {
+.hidden {
 	visibility: hidden;
 	opacity: 0;
-	transition: opacity 0.2s ease;
+	pointer-events: none;
+	transition: visibility 0s, opacity 0.2s ease-in-out;
 }
-.popup.scaled {
+
+.game-element:not(.hidden) {
 	visibility: visible;
 	opacity: 1;
 }
-.settings-popup {
+
+.settings-menu {
 	position: absolute;
 	border: 1px solid;
 }
