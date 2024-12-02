@@ -1,3 +1,4 @@
+console.log('Running craps-simulator-bank.ts');
 import { derived, get, writable, type Writable } from 'svelte/store';
 
 // Bankroll
@@ -350,11 +351,11 @@ function applyChipOperation(
 		if (remainingAmount <= 0 || count <= 0) continue;
 
 		const chipsToOperate = Math.min(Math.floor(remainingAmount / denom), count);
-		console.log(
-			`${
-				operation === 'add' ? 'Adding' : 'Taking'
-			} ${chipsToOperate} chips of denomination ${denom}`
-		);
+		//console.log(
+		//	`${
+		//		operation === 'add' ? 'Adding' : 'Taking'
+		//	} ${chipsToOperate} chips of denomination ${denom}`
+		//);
 
 		if (operation === 'add') {
 			addChips(denom, chipsToOperate);
@@ -546,16 +547,14 @@ function denomToKey(denom: number): keyof OptimumTakeRange {
 
 // Add chips to the appropriate stack -- from addToRail
 function addChips(denomination: number, count: number): void {
-	console.log(`addChips called with denomination: ${denomination}, count: ${count}`);
 	chips[denomination].update((current) => {
 		const newChips = [...current];
 		for (let i = 0; i < count; i++) {
 			newChips.push(getRandomChip(denomination));
 		}
-		console.log(`New chips array for denomination ${denomination}:`, newChips);
 		return newChips;
 	});
-	console.log(`Added ${count} chips of denomination ${denomination}`);
+	//console.log(`Added ${count} chips of denomination ${denomination}`);
 }
 function removeChips(denomination: number, count: number): void {
 	console.log(`removeChips called with denomination: ${denomination}, count: ${count}`);
@@ -576,3 +575,4 @@ displayChipCounts();
 console.log('Rail Total: ', get(railTotal));
 console.log('Layout Total: ', get(layoutTotal));
 console.log('Total Bankroll: ', get(totalBankroll));
+console.log('Finished running craps-simulator-bank.ts');

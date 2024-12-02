@@ -36,7 +36,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.stickwoman {
+.stickperson {
 	background: url('images/craps-simulator/stickwoman.webp') center/cover no-repeat;
 }
 .guide-container {
@@ -65,7 +65,11 @@
 	visibility: visible;
 	opacity: 1;
 }
-.settings-popup {
+.game-popup {
 	position: absolute;
 	border: 1px solid;
+}
+.touch-box {
+	position: absolute;
+	background-color: rgba(0, 242, 255, 0.599);
 }

@@ -1,4 +1,5 @@
 <script lang="ts">
+	console.log('Craps Simulator page is being loaded');
 	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
@@ -11,18 +12,25 @@
 		layoutTotal,
 		totalBankroll,
 		chips,
-		settings,
-		toggleSetting,
-		showRollButton,
+		toggleUiSetting,
+		showSettingsPopup,
 		showEnterBtn,
 		showExitBtn
 	} from '../../craps-simulator-layout';
 	import { rollDice, firstDieImage, secondDieImage } from '../../craps-simulator-game';
+	import LgMenu from '$lib/components/simulator/LgMenu.svelte';
+	import TouchBox from '$lib/components/simulator/TouchBox.svelte';
+	import { crapsSimulatorPreferences } from '../../lib/utils/store';
+	import { updateDoc, doc } from 'firebase/firestore';
+	import { db } from '../../lib/utils/firebase';
+	import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
 		'This Craps Simulator will help you learn some of the most basic bets in Craps: The Pass Line, Pass Line Odds, Place Bets, and the Field.';
 	let url: string = 'craps-simulator';
+
+	let userId: string | null = null;
 
 	let dollarChips = chips[1]; // access $1 chip store
 	let nickelChips = chips[5]; // access $5 chip store
@@ -32,21 +40,54 @@
 	let thousandChips = chips[1000]; // access $1,000 chip store
 	let fiveThousandChips = chips[5000]; // access $5,000 chip store
 
-	const { showSettingsPopup, showStickperson, showGuide, showBankroll, showRail, showLayout } =
-		settings;
+	async function updatePreference(key: string, value: boolean) {
+		if (!userId) {
+			console.error('Cannot update preferences: No user ID available.');
+			return;
+		}
 
-	onMount(() => {
-		// Add event listener for Escape key press
+		const docRef = doc(db, 'users', userId);
+
+		try {
+			const updatedPrefs = { ...$crapsSimulatorPreferences, [key]: value };
+
+			// Update Firestore
+			await updateDoc(docRef, { crapsSimulator: updatedPrefs });
+
+			// Update local store
+			crapsSimulatorPreferences.set(updatedPrefs);
+
+			console.log(`Preference updated: ${key} = ${value}`);
+		} catch (error) {
+			console.error(`Failed to update preference: ${key}`, error);
+		}
+	}
+
+	onMount(async () => {
+		console.log('Entered onMount in craps-simulator/+page.svelte');
+		const auth = getAuth();
+
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				userId = user.uid;
+				console.log(`Auth state changed. User ID: ${userId}`);
+			} else {
+				userId = null;
+				console.error('User logged out or no user authenticated.');
+			}
+		});
 		document.addEventListener('keydown', (event) => {
 			if (event.key === 'Escape') {
 				exitFullScreen();
 			}
 		});
 
-		scaleElements();
-		scaleChipsToFit();
-		scaleAllPopups();
+		await scaleElements();
+		await scaleChipsToFit();
+		await scaleAllPopups();
+		console.log('Leaving onMount in craps-simulator/+page.svelte');
 	});
+	console.log('Craps Simulator page has been loaded');
 </script>
 
 <svelte:head>
@@ -98,7 +139,7 @@
 		</p>
 	</header>
 	<main aria-label="Main sections with craps simulator" class="mt-6">
-		<section aria-label="Rules of craps" class="craps-rules">
+		<!-- <section aria-label="Rules of craps" class="craps-rules">
 			<h2>Objective:</h2>
 			<p>
 				Roll the dice to establish a Point of 4, 5, 6, 8, 9, or 10. Roll that Point again before a 7
@@ -143,7 +184,7 @@
 					</ul>
 				</div>
 			</section>
-		</section>
+		</section>-->
 		<button id="start-game-btn" class="clear-both" on:click={() => enterFullScreen()}
 			>Play Full Screen</button
 		>
@@ -152,7 +193,7 @@
 			<div id="game-area-container">
 				<section aria-label="Game area" id="game-area" class="game-area">
 					<!-- Layout Total -->
-					{#if $showLayout}
+					{#if $crapsSimulatorPreferences.showLayout}
 						<div
 							class="layout-display game-element rounded-md hidden"
 							data-type="layout"
@@ -185,19 +226,19 @@
 						data-height="10.66"
 					/>
 					<!-- Stickwoman -->
-					{#if $showStickperson}
+					{#if $crapsSimulatorPreferences.showStickperson}
 						<div
-							id="stickwoman"
-							class="stickwoman game-element"
+							id="stickperson"
+							class="stickperson game-element"
 							data-type="stickperson"
 							data-x="12"
 							data-y="26"
-							data-width="22"
+							data-width="22.5"
 							data-height="40"
 						/>
 					{/if}
 					<!-- Text Container -->
-					{#if $showGuide}
+					{#if $crapsSimulatorPreferences.showGuide}
 						<div
 							id="guide"
 							class="guide-container rounded-md game-element hidden"
@@ -218,7 +259,7 @@
 						</div>
 					{/if}
 					<!-- Rail Total -->
-					{#if $showRail}
+					{#if $crapsSimulatorPreferences.showRail}
 						<div
 							class="rail-display game-element rounded-md hidden"
 							data-type="rail"
@@ -232,7 +273,7 @@
 						</div>
 					{/if}
 					<!-- Roll Button -->
-					{#if $showRollButton}
+					{#if $crapsSimulatorPreferences.showRollButton}
 						<button
 							class="roll-btn game-element rounded-md hidden"
 							data-type="roll-button"
@@ -245,7 +286,7 @@
 						>
 					{/if}
 					<!-- Bankroll Total -->
-					{#if $showBankroll}
+					{#if $crapsSimulatorPreferences.showBankroll}
 						<div
 							class="bankroll-display game-element rounded-md hidden"
 							data-type="bankroll"
@@ -311,7 +352,7 @@
 						data-width="4"
 						data-height="4"
 					>
-						<button on:click={() => toggleSetting('showSettingsPopup')} class="settings-button">
+						<button on:click={() => toggleUiSetting('showSettingsPopup')} class="settings-button">
 							<img
 								src="src/images/craps-simulator/settings-icon.png"
 								alt="Settings Icon"
@@ -321,83 +362,109 @@
 					</div>
 					<!-- Settings Popup -->
 					{#if $showSettingsPopup}
-						<div
-							class="settings-popup game-element rounded-md popup"
-							data-x="50"
-							data-y="50"
-							data-fontsize="1.5"
-							data-width="80"
-							data-height="60"
-							data-paddinglr="2"
-							data-paddingtb="2"
-						>
-							<h2>Settings</h2>
-							<div class="settings-option">
+						<LgMenu title="Settings">
+							<!-- show stickperson -->
+							<div>
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$showStickperson}
-										on:change={() => scaleElements('stickperson')}
+										bind:checked={$crapsSimulatorPreferences.showStickperson}
+										on:change={(e) => {
+											const target = e.currentTarget;
+											if (target && target instanceof HTMLInputElement) {
+												updatePreference('showStickperson', target.checked);
+												scaleElements('stickperson');
+											}
+										}}
 									/>
 									Show Stickperson
 								</label>
 							</div>
-							<!-- show stickperson -->
-							<div class="settings-option">
+							<!-- show guide -->
+							<div>
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$showGuide}
-										on:change={() => scaleElements('guide')}
+										bind:checked={$crapsSimulatorPreferences.showGuide}
+										on:change={(e) => {
+											const target = e.currentTarget;
+											if (target && target instanceof HTMLInputElement) {
+												updatePreference('showGuide', target.checked);
+												scaleElements('guide');
+											}
+										}}
 									/>
 									Show Guide
 								</label>
 							</div>
-							<!-- show guide -->
-							<div class="settings-option">
+							<!-- show bankroll total -->
+							<div>
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$showBankroll}
-										on:change={() => scaleElements('bankroll')}
+										bind:checked={$crapsSimulatorPreferences.showBankroll}
+										on:change={(e) => {
+											const target = e.currentTarget;
+											if (target && target instanceof HTMLInputElement) {
+												updatePreference('showBankroll', target.checked);
+												scaleElements('bankroll');
+											}
+										}}
 									/>
 									Show Bankroll
 								</label>
 							</div>
-							<!-- show bankroll -->
-							<div class="settings-option">
+							<!-- show rail total -->
+							<div>
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$showRail}
-										on:change={() => scaleElements('rail')}
+										bind:checked={$crapsSimulatorPreferences.showRail}
+										on:change={(e) => {
+											const target = e.currentTarget;
+											if (target && target instanceof HTMLInputElement) {
+												updatePreference('showRail', target.checked);
+												scaleElements('rail');
+											}
+										}}
 									/>
 									Show Rail
 								</label>
 							</div>
-							<!-- show rail -->
-							<div class="settings-option">
+							<!-- show layout total -->
+							<div>
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$showLayout}
-										on:change={() => scaleElements('layout')}
+										bind:checked={$crapsSimulatorPreferences.showLayout}
+										on:change={(e) => {
+											const target = e.currentTarget;
+											if (target && target instanceof HTMLInputElement) {
+												updatePreference('showLayout', target.checked);
+												scaleElements('layout');
+											}
+										}}
 									/>
 									Show Layout
 								</label>
 							</div>
-							<!-- show layout -->
+							<!-- show roll button -->
 							<div class="roll-option">
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$showRollButton}
-										on:change={() => scaleElements('roll-button')}
+										bind:checked={$crapsSimulatorPreferences.showRollButton}
+										on:change={(e) => {
+											const target = e.currentTarget;
+											if (target && target instanceof HTMLInputElement) {
+												updatePreference('showRollButton', target.checked);
+												scaleElements('roll-button');
+											}
+										}}
 									/>
 									Show Roll Button
 								</label>
 							</div>
-							<!-- show roll button -->
 							{#if $showEnterBtn}
 								<button
 									id="enter-btn"
@@ -430,10 +497,70 @@
 								data-fontsize="1.5"
 								data-paddinglr="1"
 								data-paddingtb="1"
-								on:click={() => toggleSetting('showSettingsPopup')}>Close</button
+								on:click={() => toggleUiSetting('showSettingsPopup')}>Close</button
 							>
-						</div>
+						</LgMenu>
 					{/if}
+					<TouchBox id="touch-pass-line" dataX={40.25} dataY={75.5} dataWidth={15} dataHeight={4} />
+					<TouchBox
+						id="touch-pass-line-odds"
+						dataX={40.5}
+						dataY={81.5}
+						dataWidth={15}
+						dataHeight={4.5}
+					/>
+					<TouchBox id="touch-dont-pass" dataX={40.5} dataY={69} dataWidth={15} dataHeight={4.5} />
+					<TouchBox
+						id="touch-dont-pass-lay-odds"
+						dataX={28.5}
+						dataY={69}
+						dataWidth={5}
+						dataHeight={4.5}
+					/>
+					<TouchBox id="the-field" dataX={40.25} dataY={60.5} dataWidth={25} dataHeight={7.5} />
+					<TouchBox id="come-bet" dataX={39.75} dataY={49} dataWidth={16.5} dataHeight={7.5} />
+					<TouchBox id="dont-come-bet" dataX={21} dataY={34} dataWidth={3.25} dataHeight={12} />
+					<TouchBox id="inside-four" dataX={26.25} dataY={36.5} dataWidth={4.75} dataHeight={9} />
+					<TouchBox id="behind-four" dataX={26.25} dataY={27} dataWidth={4.75} dataHeight={4.5} />
+					<TouchBox id="inside-five" dataX={33.5} dataY={36.5} dataWidth={4.75} dataHeight={9} />
+					<TouchBox id="behind-five" dataX={33.5} dataY={27} dataWidth={4.75} dataHeight={4.5} />
+					<TouchBox id="inside-six" dataX={40.25} dataY={36.5} dataWidth={4.75} dataHeight={9} />
+					<TouchBox id="behind-six" dataX={40.25} dataY={27} dataWidth={4.75} dataHeight={4.5} />
+					<TouchBox id="inside-eight" dataX={47} dataY={36.5} dataWidth={4.75} dataHeight={9} />
+					<TouchBox id="behind-eight" dataX={47} dataY={27} dataWidth={4.75} dataHeight={4.5} />
+					<TouchBox id="inside-nine" dataX={54} dataY={36.5} dataWidth={4.75} dataHeight={9} />
+					<TouchBox id="behind-nine" dataX={54} dataY={27} dataWidth={4.75} dataHeight={4.5} />
+					<TouchBox id="inside-ten" dataX={61} dataY={36.5} dataWidth={4.75} dataHeight={9} />
+					<TouchBox id="behind-ten" dataX={61} dataY={27} dataWidth={4.75} dataHeight={4.5} />
+					<TouchBox id="c-and-e" dataX={70} dataY={61} dataWidth={4.75} dataHeight={35} />
+					<TouchBox id="world" dataX={70} dataY={38.5} dataWidth={4.75} dataHeight={7} />
+					<TouchBox id="hard-six" dataX={79} dataY={40} dataWidth={9} dataHeight={5} />
+					<TouchBox id="hard-eight" dataX={92} dataY={40} dataWidth={9} dataHeight={5} />
+					<TouchBox id="hard-four" dataX={79} dataY={48} dataWidth={9} dataHeight={5} />
+					<TouchBox id="hard-ten" dataX={92} dataY={48} dataWidth={9} dataHeight={5} />
+					<TouchBox id="any-seven" dataX={85.5} dataY={53.25} dataWidth={10} dataHeight={3} />
+					<TouchBox id="horn-high-yo" dataX={75.75} dataY={58.5} dataWidth={5} dataHeight={5} />
+					<TouchBox
+						id="horn-high-ace-deuce"
+						dataX={82.25}
+						dataY={58.5}
+						dataWidth={5}
+						dataHeight={5}
+					/>
+					<TouchBox id="horn-bet" dataX={85.25} dataY={68} dataWidth={7.5} dataHeight={8} />
+					<TouchBox id="horn-high-aces" dataX={88.5} dataY={58.5} dataWidth={5} dataHeight={5} />
+					<TouchBox id="horn-high-twelve" dataX={94.75} dataY={58.5} dataWidth={5} dataHeight={5} />
+					<TouchBox id="straight-aces" dataX={76.75} dataY={65} dataWidth={6} dataHeight={5} />
+					<TouchBox id="straight-twelve" dataX={93.75} dataY={65} dataWidth={6} dataHeight={5} />
+					<TouchBox
+						id="straight-ace-deuce"
+						dataX={76.75}
+						dataY={71.5}
+						dataWidth={6}
+						dataHeight={5}
+					/>
+					<TouchBox id="straight-yo" dataX={93.75} dataY={71.5} dataWidth={6} dataHeight={5} />
+					<TouchBox id="any-craps" dataX={85.5} dataY={76.5} dataWidth={10} dataHeight={3} />
 				</section>
 			</div>
 		</div>

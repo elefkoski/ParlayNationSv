@@ -4,7 +4,8 @@
 		googleSignIn,
 		facebookSignIn,
 		loginWithEmailPassword,
-		registerWithEmailPassword
+		registerWithEmailPassword,
+		db
 	} from '$lib/utils/firebase';
 	import {
 		getAuth,
@@ -13,6 +14,8 @@
 		browserSessionPersistence,
 		sendEmailVerification
 	} from 'firebase/auth';
+	import { doc, getDoc } from 'firebase/firestore';
+	import { crapsSimulatorPreferences, defaultPreferences } from '$lib/utils/store';
 	import { writable } from 'svelte/store';
 	import { goto } from '$app/navigation';
 
@@ -109,8 +112,37 @@
 		}
 	}
 
-	function redirectAfterLogin() {
-		goto('/profile');
+	async function redirectAfterLogin() {
+		try {
+			const authInstance = getAuth();
+			const user = authInstance.currentUser;
+
+			if (user) {
+				// Fetch user-specific preferences from Firestore
+				const docRef = doc(db, 'users', user.uid);
+				const docSnap = await getDoc(docRef);
+
+				if (docSnap.exists()) {
+					const userPreferences = docSnap.data().crapsSimulator;
+					crapsSimulatorPreferences.set(userPreferences || { ...defaultPreferences });
+					console.log('Loaded user preferences:', userPreferences);
+				} else {
+					// No preferences found, use default
+					crapsSimulatorPreferences.set({ ...defaultPreferences });
+					console.log('No user preferences found. Using default settings.');
+				}
+			} else {
+				// Handle cases where user is unexpectedly null
+				crapsSimulatorPreferences.set({ ...defaultPreferences });
+				console.error('No user found after login. Resetting to defaults.');
+			}
+
+			// Navigate to the previous or profile page
+			const previousPage = document.referrer || '/profile';
+			goto(previousPage);
+		} catch (error) {
+			console.error('Error loading preferences after login:', error);
+		}
 	}
 
 	function togglePasswordVisibility() {

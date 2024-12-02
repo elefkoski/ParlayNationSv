@@ -1,5 +1,5 @@
+console.log('Running craps-simulator-layout.ts');
 import { writable } from 'svelte/store';
-//import { scale } from 'svelte/transition';
 
 export {
 	railTotal,
@@ -11,40 +11,36 @@ export {
 } from './craps-simulator-bank';
 
 export const showSettingsPopup = writable(false);
-export const showStickperson = writable(true);
-export const showGuide = writable(true);
-export const showBankroll = writable(true);
-export const showRail = writable(true);
-export const showLayout = writable(true);
-export const showRollButton = writable(true);
 export const showEnterBtn = writable(true);
 export const showExitBtn = writable(false);
 
-export const settings = {
+const uiToggles = {
 	showSettingsPopup,
-	showStickperson,
-	showGuide,
-	showBankroll,
-	showRail,
-	showLayout,
-	showRollButton,
 	showEnterBtn,
 	showExitBtn
 };
 
-export function toggleSetting(key: keyof typeof settings): void {
-	settings[key].update((current) => !current);
-	// If toggling the settings popup, delay scaling until DOM is updated
-	if (key === 'showSettingsPopup') {
-		setTimeout(() => {
-			scaleAllPopups();
-			scaleElements();
-		}, 0); // Small delay to ensure DOM updates are complete
+export function toggleUiSetting(key: keyof typeof uiToggles): void {
+	console.log('Entering toggleUiSetting');
+	const store = uiToggles[key];
+	if (!store) {
+		console.warn(`Key '${key}' does not exist in uiToggles.`);
+		return;
 	}
+
+	store.update((current) => !current);
+	console.log(`Toggled ${key} to ${!store}`);
+
+	setTimeout(() => {
+		console.log(`Scaling elements for key: ${key}`);
+		scaleAllPopups();
+	}, 0);
+	console.log('Leaving toggleUiSetting');
 }
+
 // Helper function to scale elements via 16:9 aspect ratio
-export async function scaleElements(type = null) {
-	console.log('scaleElements: scaling elements');
+export async function scaleElements(type: string | null = null) {
+	console.log('Entering scaleElements');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
 	if (!gameArea) {
@@ -54,16 +50,11 @@ export async function scaleElements(type = null) {
 
 	// Get the actual dimensions of the game area
 	const { width: containerWidth, height: containerHeight } = gameArea.getBoundingClientRect();
-	console.log(
-		'scaleElements: containerWidth:',
-		containerWidth,
-		'containerHeight:',
-		containerHeight
-	);
 
 	// Scale elements relative to the container size
 	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
 	const elements = document.querySelectorAll(selector);
+	console.log('Elements being scaled :', elements);
 	elements.forEach((el) => {
 		const x = parseFloat(el.dataset.x) || 0;
 		const y = parseFloat(el.dataset.y) || 0;
@@ -73,8 +64,6 @@ export async function scaleElements(type = null) {
 		const gap = parseFloat(el.dataset.gap) || null;
 		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
 		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
-
-		console.log('scaleElements: element:', el, 'x:', x, 'y:', y, 'size:', fontSize);
 
 		// Dynamically calculate position and size
 		el.style.left = `${(x / 100) * containerWidth}px`;
@@ -105,21 +94,11 @@ export async function scaleElements(type = null) {
 		el.classList.remove('hidden');
 		const childElements = el.querySelectorAll('.hidden');
 		childElements.forEach((child) => child.classList.remove('hidden'));
-
-		console.log('scaleElements: updated styles for element:', el);
-		console.log('Element Styles:', {
-			left: el.style.left,
-			top: el.style.top,
-			width: el.style.width,
-			height: el.style.height,
-			gap: el.style.gap,
-			paddingLeft: el.style.paddingLeft,
-			paddingTop: el.style.paddingTop,
-			fontSize: el.style.fontSize
-		});
 	});
+	console.log('Leaving scaleElements');
 }
 export async function scaleAllPopups() {
+	console.log('Entering scaleAllPopups');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
 	if (!gameArea) {
@@ -159,16 +138,6 @@ export async function scaleAllPopups() {
 		} else {
 			el.style.removeProperty('height'); // Remove height if null
 		}
-
-		console.log('scaleAllPopups: updated styles for element:', el, {
-			left: el.style.left,
-			top: el.style.top,
-			width: el.style.width,
-			height: el.style.height,
-			paddingLeft: el.style.paddingLeft,
-			paddingTop: el.style.paddingTop,
-			fontSize: el.style.fontSize
-		});
 		// Once scaling is done, add the 'scaled' class to make it visible
 		el.classList.add('scaled');
 	});
@@ -177,13 +146,14 @@ export async function scaleAllPopups() {
 	if (stickCallElement) {
 		stickCallElement.classList.remove('hidden');
 	}
+	console.log('Leaving scaleAllPopups');
 }
 
 // Helper function to scale chips to fit the rail
 export async function scaleChipsToFit() {
+	console.log('Entering scaleChipsToFit');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const chipArea = document.querySelector('.chip-area');
-	console.log('chipArea:', chipArea);
 	if (!chipArea) {
 		console.log('scaleChipsToFit: .chip-area not found');
 		return;
@@ -204,9 +174,11 @@ export async function scaleChipsToFit() {
 		chip.style.width = `${chipWidth}px`;
 		chip.classList.remove('hidden');
 	});
+	console.log('Leaving scaleChipsToFit');
 }
 
 export function enterFullScreen() {
+	console.log('Entering enterFullScreen');
 	if (typeof document !== 'undefined') {
 		const gameWrapper = document.getElementById('game-area-wrapper');
 		const gameContainer = document.getElementById('game-area-container');
@@ -268,25 +240,24 @@ export function enterFullScreen() {
 		} else {
 			console.error('Element with ID "game-area-wrapper" not found.');
 		}
-		console.log('Toggling showEnterBtn');
-		toggleSetting('showEnterBtn');
-		console.log('Toggling showExitBtn');
-		toggleSetting('showExitBtn');
-		console.log('Toggling showSettingsPopup');
-		toggleSetting('showSettingsPopup');
+		toggleUiSetting('showEnterBtn');
+		toggleUiSetting('showExitBtn');
+		toggleUiSetting('showSettingsPopup');
 		scaleElements();
 		scaleChipsToFit();
 	}
+	console.log('Leaving enterFullScreen');
 }
 
 export function exitFullScreen() {
+	console.log('Entering exitFullScreen');
 	if (typeof document !== 'undefined') {
 		const gameWrapper = document.getElementById('game-area-wrapper');
 		const gameContainer = document.getElementById('game-area-container');
 		const gameArea = document.getElementById('game-area');
-		toggleSetting('showEnterBtn');
-		toggleSetting('showExitBtn');
-		toggleSetting('showSettingsPopup');
+		toggleUiSetting('showEnterBtn');
+		toggleUiSetting('showExitBtn');
+		toggleUiSetting('showSettingsPopup');
 		console.log('gameWrapper:', gameWrapper);
 
 		if (gameWrapper) {
@@ -317,18 +288,22 @@ export function exitFullScreen() {
 			scaleChipsToFit();
 		}, 1000);
 	}
+	console.log('Leaving exitFullScreen');
 }
 
 // Add event listeners for window resize and device orientation change
 if (typeof window !== 'undefined') {
 	const handleResizeOrOrientationChange = () => {
+		console.log('Entering handleResizeOrOrientationChange');
 		console.log('Window resized or device orientation changed');
 		scaleElements();
 		scaleChipsToFit();
 		scaleAllPopups();
+		console.log('Leaving handleResizeOrOrientationChange');
 	};
 
 	window.addEventListener('resize', handleResizeOrOrientationChange);
 	window.addEventListener('orientationchange', handleResizeOrOrientationChange);
 	window.addEventListener('fullscreenchange', handleResizeOrOrientationChange);
 }
+console.log('Finished running craps-simulator-layout.ts');

@@ -1,3 +1,4 @@
+console.log('Running craps-simulator-game.ts');
 import { writable } from 'svelte/store';
 
 export const firstDieImage = writable('src/images/craps-simulator/dice/die_ne.png');
@@ -230,3 +231,4 @@ const diceAreOutCalls = [
 	'We gotta go, dice are out, watch your mittens!',
 	'Dice are goin, pick up your hands!'
 ];
+console.log('Finished running craps-simulator-game.ts');
