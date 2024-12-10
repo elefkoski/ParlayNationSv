@@ -13,14 +13,18 @@ export {
 export const showSettingsPopup = writable(false);
 export const showEnterBtn = writable(true);
 export const showExitBtn = writable(false);
+export const showPassLinePopup = writable(false);
 
 const uiToggles = {
 	showSettingsPopup,
 	showEnterBtn,
-	showExitBtn
+	showExitBtn,
+	showPassLinePopup
 };
 
-export function toggleUiSetting(key: keyof typeof uiToggles): void {
+export type UiToggleKey = keyof typeof uiToggles;
+
+export function toggleUiSetting(key: UiToggleKey): void {
 	console.log('Entering toggleUiSetting');
 	const store = uiToggles[key];
 	if (!store) {
@@ -54,40 +58,92 @@ export async function scaleElements(type: string | null = null) {
 	// Scale elements relative to the container size
 	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
 	const elements = document.querySelectorAll(selector);
-	console.log('Elements being scaled :', elements);
+	//console.log('Elements being scaled :', elements);
 	elements.forEach((el) => {
-		const x = parseFloat(el.dataset.x) || 0;
-		const y = parseFloat(el.dataset.y) || 0;
-		const fontSize = parseFloat(el.dataset.fontsize) || 2.25;
+		const x = parseFloat(el.dataset.x) || null;
+		const y = parseFloat(el.dataset.y) || null;
+		const fontSize = parseFloat(el.dataset.fontsize) || null;
 		const height = parseFloat(el.dataset.height) || null;
 		const width = parseFloat(el.dataset.width) || null;
+		const paddingLR = parseFloat(el.dataset.paddinglr) || null;
+		const paddingTB = parseFloat(el.dataset.paddingtb) || null;
+		const marginLR = parseFloat(el.dataset.marginlr) || null;
+		const marginTB = parseFloat(el.dataset.margintb) || null;
+		const border = parseFloat(el.dataset.border) || null;
+		const borderRadius = parseFloat(el.dataset.borderradius) || null;
+		const rowGap = parseFloat(el.dataset.rowgap) || null;
 		const gap = parseFloat(el.dataset.gap) || null;
-		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
-		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
 
-		// Dynamically calculate position and size
-		el.style.left = `${(x / 100) * containerWidth}px`;
-		el.style.top = `${(y / 100) * containerHeight}px`;
-		el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
-		el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
-		el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerWidth}px`;
-
-		if (width !== null) {
-			el.style.width = `${(width / 100) * containerWidth}px`;
+		if (x !== null) {
+			el.style.left = `${(x / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('width'); // Remove width if null
+			el.style.removeProperty('left'); // Remove left if null
 		}
-
+		if (y !== null) {
+			el.style.top = `${(y / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('top'); // Remove top if null
+		}
+		if (fontSize !== null) {
+			el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('fontSize'); // Remove fontSize if null
+		}
 		if (height !== null) {
 			el.style.height = `${(height / 100) * containerHeight}px`;
 		} else {
 			el.style.removeProperty('height'); // Remove height if null
 		}
-
-		if (gap !== null) {
-			el.style.rowGap = `${(gap / 100) * containerWidth}px`;
+		if (width !== null) {
+			el.style.width = `${(width / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('gap'); // Remove gap if null
+			el.style.removeProperty('width'); // Remove width if null
+		}
+		if (paddingLR !== null) {
+			el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('paddingLeft'); // Remove padding if null
+			el.style.removeProperty('paddingRight');
+		}
+		if (paddingTB !== null) {
+			el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('paddingTop'); // Remove padding if null
+			el.style.removeProperty('paddingBottom');
+		}
+		if (marginLR !== null) {
+			el.style.marginLeft = el.style.marginRight = `${(marginLR / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('marginLeft'); // Remove margin if null
+			el.style.removeProperty('marginRight');
+		}
+		if (marginTB !== null) {
+			el.style.marginTop = el.style.marginBottom = `${(marginTB / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('marginTop'); // Remove margin if null
+			el.style.removeProperty('marginBottom	');
+		}
+		if (border !== null) {
+			el.style.borderWidth = `${(border / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('borderWidth');
+		}
+		if (borderRadius !== null) {
+			el.style.borderRadius = `${(borderRadius / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('borderRadius'); // Remove border radius if null
+		}
+		// Gap for flex containers
+		if (gap !== null) {
+			el.style.gap = `${(gap / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('gap');
+		}
+		// Row gap for grid containers or vertical spacing
+		if (rowGap !== null) {
+			el.style.rowGap = `${(rowGap / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('rowGap');
 		}
 
 		// Remove the hidden class from the element and its children
@@ -111,32 +167,90 @@ export async function scaleAllPopups() {
 	const elements = document.querySelectorAll('.popup'); // Select all elements with the .popup class
 
 	elements.forEach((el) => {
-		const x = parseFloat(el.dataset.x) || 0;
-		const y = parseFloat(el.dataset.y) || 0;
-		const fontSize = parseFloat(el.dataset.fontsize) || 2.25;
-		const width = parseFloat(el.dataset.width) || null;
+		const x = parseFloat(el.dataset.x) || null;
+		const y = parseFloat(el.dataset.y) || null;
+		const fontSize = parseFloat(el.dataset.fontsize) || null;
 		const height = parseFloat(el.dataset.height) || null;
-		const paddingLR = parseFloat(el.dataset.paddinglr) || 0;
-		const paddingTB = parseFloat(el.dataset.paddingtb) || 0;
+		const width = parseFloat(el.dataset.width) || null;
+		const paddingLR = parseFloat(el.dataset.paddinglr) || null;
+		const paddingTB = parseFloat(el.dataset.paddingtb) || null;
+		const marginLR = parseFloat(el.dataset.marginlr) || null;
+		const marginTB = parseFloat(el.dataset.margintb) || null;
+		const border = parseFloat(el.dataset.border) || null;
+		const borderRadius = parseFloat(el.dataset.borderradius) || null;
+		const rowGap = parseFloat(el.dataset.rowgap) || null;
+		const gap = parseFloat(el.dataset.gap) || null;
 
-		// Apply styles dynamically
-		el.style.position = 'absolute'; // Ensure absolute positioning
-		el.style.left = `${(x / 100) * containerWidth}px`;
-		el.style.top = `${(y / 100) * containerHeight}px`;
-		el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
-		el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
-		el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
-
+		if (x !== null) {
+			el.style.left = `${(x / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('left'); // Remove left if null
+		}
+		if (y !== null) {
+			el.style.top = `${(y / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('top'); // Remove top if null
+		}
+		if (fontSize !== null) {
+			el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('fontSize'); // Remove fontSize if null
+		}
+		if (height !== null) {
+			el.style.height = `${(height / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('height'); // Remove height if null
+		}
 		if (width !== null) {
 			el.style.width = `${(width / 100) * containerWidth}px`;
 		} else {
 			el.style.removeProperty('width'); // Remove width if null
 		}
-
-		if (height !== null) {
-			el.style.height = `${(height / 100) * containerHeight}px`;
+		if (paddingLR !== null) {
+			el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('height'); // Remove height if null
+			el.style.removeProperty('paddingLeft'); // Remove padding if null
+			el.style.removeProperty('paddingRight');
+		}
+		if (paddingTB !== null) {
+			el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('paddingTop'); // Remove padding if null
+			el.style.removeProperty('paddingBottom');
+		}
+		if (marginLR !== null) {
+			el.style.marginLeft = el.style.marginRight = `${(marginLR / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('marginLeft'); // Remove margin if null
+			el.style.removeProperty('marginRight');
+		}
+		if (marginTB !== null) {
+			el.style.marginTop = el.style.marginBottom = `${(marginTB / 100) * containerHeight}px`;
+		} else {
+			el.style.removeProperty('marginTop'); // Remove margin if null
+			el.style.removeProperty('marginBottom	');
+		}
+		if (border !== null) {
+			el.style.borderWidth = `${(border / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('borderWidth');
+		}
+		if (borderRadius !== null) {
+			el.style.borderRadius = `${(borderRadius / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('borderRadius'); // Remove border radius if null
+		}
+		// Gap for flex containers
+		if (gap !== null) {
+			el.style.gap = `${(gap / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('gap');
+		}
+		// Row gap for grid containers or vertical spacing
+		if (rowGap !== null) {
+			el.style.rowGap = `${(rowGap / 100) * containerWidth}px`;
+		} else {
+			el.style.removeProperty('rowGap');
 		}
 		// Once scaling is done, add the 'scaled' class to make it visible
 		el.classList.add('scaled');
@@ -146,6 +260,7 @@ export async function scaleAllPopups() {
 	if (stickCallElement) {
 		stickCallElement.classList.remove('hidden');
 	}
+	console.log(`Total number of elements scaled: ${elements.length}`);
 	console.log('Leaving scaleAllPopups');
 }
 

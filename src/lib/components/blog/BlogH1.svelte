@@ -1,81 +1,67 @@
 <script lang="ts">
 	import Popup from '../Popup.svelte';
-	import { savePage, removePage, fetchBookmarkId, fetchAllBookmarks } from '$lib/utils/firebase';
-	import { user, bookmarkedPages } from '$lib/utils/store';
-	import { onMount } from 'svelte';
+	import { savePage, removePage, fetchBookmarkId } from '$lib/utils/firebase';
+	import { bookmarkedPages } from '$lib/utils/userData';
+	import { user } from '$lib/utils/userData';
 
 	export let sectionTitle: string = 'Section Title';
-	export let introParas: any[] = [''];
 	export let title: string = 'The title';
 	export let pageData: any = '';
+	export let introParas: any[] = [''];
 
 	let current_user: any = null;
 	let bookmarked: boolean = false;
 	let current_bookmark_id: string | null = null;
-	let bookmarkedPagesValue: any[] = [];
 	let showPopup: boolean = false;
 
-	onMount(async () => {
-		if (current_user && current_user.id) {
-			const allBookmarks = await fetchAllBookmarks(current_user.id);
-			bookmarkedPages.set(allBookmarks);
-		}
-	});
-
-	user.subscribe(async (value) => {
-		current_user = value;
-		handleBookmarkIdFetch();
-		// Add this if block to populate bookmarkedPages
-		if (current_user && current_user.id) {
-			const allBookmarks = await fetchAllBookmarks(current_user.id);
-			bookmarkedPages.set(allBookmarks);
-		}
-	});
-
-	bookmarkedPages.subscribe((value) => {
-		bookmarkedPagesValue = value;
-		bookmarked = bookmarkedPagesValue.some(
-			(bookmark) => bookmark.bookmarkId === current_bookmark_id
-		);
-	});
-
-	$: if (current_user && current_bookmark_id) {
-		bookmarked = true;
+	$: current_user = $user;
+	$: if (current_user && pageData.pageUrl) {
+		handleBookmarkState();
 	}
 
-	async function handleBookmarkIdFetch() {
-		if (current_user && current_user.id && pageData.pageUrl) {
-			const fetchedBookmarkId = await fetchBookmarkId(current_user.id, pageData.pageUrl);
-			if (fetchedBookmarkId) {
-				current_bookmark_id = fetchedBookmarkId;
+	async function handleBookmarkState() {
+		try {
+			if (current_user?.id) {
+				current_bookmark_id = await fetchBookmarkId(current_user.id, pageData.pageUrl);
+				bookmarked = !!current_bookmark_id;
 			} else {
 				current_bookmark_id = null;
+				bookmarked = false;
 			}
+		} catch (error) {
+			console.error('Error fetching bookmark state:', error);
 		}
 	}
-
 	async function bookmarkPage() {
-		if (current_user && current_user.id) {
+		if (!current_user?.id) {
+			showPopup = true;
+			setTimeout(() => (showPopup = false), 3000);
+			return;
+		}
+
+		try {
 			const bookmarkId = await savePage(current_user.id, pageData);
 			if (bookmarkId) {
 				current_bookmark_id = bookmarkId;
-				bookmarkedPages.update((pages) => [...pages, { bookmarkId }]);
+				bookmarkedPages.update((pages) => [...pages, { bookmarkId, ...pageData }]);
 				bookmarked = true;
 			}
-		} else {
-			showPopup = true;
-			setTimeout(() => (showPopup = false), 3000);
+		} catch (error) {
+			console.error('Error bookmarking page:', error);
 		}
 	}
-
 	async function unBookmarkPage() {
-		const bookmarkToRemove = bookmarkedPagesValue.find((b) => b.bookmarkId === current_bookmark_id);
-		console.log('Bookmark to remove:', bookmarkToRemove);
-		console.log('Current User:', current_user);
-		console.log('Current User ID::', current_user.id);
-		if (bookmarkToRemove && current_user && current_user.id) {
-			await removePage(current_user.id, bookmarkToRemove.bookmarkId);
+		if (!current_user?.id || !current_bookmark_id) return;
+
+		try {
+			await removePage(current_user.id, current_bookmark_id);
+			bookmarkedPages.update((pages) =>
+				pages.filter((bookmark) => bookmark.bookmarkId !== current_bookmark_id)
+			);
+			current_bookmark_id = null;
 			bookmarked = false;
+		} catch (error) {
+			console.error('Error removing bookmark:', error);
 		}
 	}
 </script>

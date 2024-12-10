@@ -1,33 +1,37 @@
 <script lang="ts">
 	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
 	import { deleteDoc, doc } from 'firebase/firestore';
-	import { db, fetchAllBookmarks } from '$lib/utils/firebase';
+	import { db } from '$lib/utils/firebase';
 	import ProfileContentCard from '$lib/components/profilePage/ProfileContentCard.svelte';
-	import { bookmarkedPages, user, type User } from '$lib/utils/store';
+	import { bookmarkedPages, fetchAllBookmarks } from '$lib/utils/userData';
+	import { user } from '$lib/utils/userData';
 
-	let current_user: User | null = null;
-	let bookmarks: any[] = [];
+	let current_user: any = null;
 
-	user.subscribe(async (value: any) => {
-		current_user = value;
-		if (current_user && current_user.id) {
-			bookmarks = await fetchAllBookmarks(current_user.id);
-		}
-	});
+	$: current_user = $user;
+	$: if (current_user == $user) {
+		fetchBookmarks();
+	}
 
-	async function handleDelete(bookmarkId: string) {
-		console.log('Entered handleDelete');
+	async function fetchBookmarks() {
 		try {
-			// Step 1: Delete from Firestore
+			if (!current_user || !current_user.id) {
+				console.warn('User is not logged in. Skipping fetching bookmarks.');
+				return; // Exit the function early
+			}
+
+			const bookmarksData = await fetchAllBookmarks(current_user.id);
+			bookmarkedPages.set(bookmarksData); // Assuming bookmarksData matches Bookmark[]
+			console.log('Fetched bookmarks:', bookmarksData);
+		} catch (error) {
+			console.error('Error fetching bookmarks:', error);
+		}
+	}
+	async function handleDelete(bookmarkId: string) {
+		try {
 			const bookmarkRef = doc(db, `users/${current_user?.id}/bookmarks`, bookmarkId);
 			await deleteDoc(bookmarkRef);
-
-			// Step 2: Update local state
-			bookmarks = bookmarks.filter((b) => b.bookmarkId !== bookmarkId);
-
-			// Step 3: Update Svelte store
-			const updatedBookmarks = bookmarks.filter((b) => b.bookmarkId !== bookmarkId);
-			bookmarkedPages.set(updatedBookmarks);
+			bookmarkedPages.update((current) => current.filter((b) => b.bookmarkId !== bookmarkId));
 		} catch (error) {
 			console.error('Error deleting bookmark:', error);
 		}
@@ -42,16 +46,16 @@
 					<section aria-label="Left column basic profile info" class="col-span-4 sm:col-span-3">
 						<div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
 							<div class="flex flex-col items-center">
-								{#if current_user && current_user.profilePicture}
+								{#if current_user && current_user.profile && current_user.profile.profilePicture}
 									<img
 										alt=""
-										src={current_user.profilePicture}
+										src={current_user.profile.profilePicture}
 										class="w-32 h-32 bg-gray-300 dark:bg-gray-500 rounded-full mb-4 shrink-0"
 									/>
 								{/if}
 
 								<h1 class="text-xl font-bold text-gray-900 dark:text-gray-200">
-									{current_user?.display_name}
+									{current_user?.profile.displayName}
 								</h1>
 								<p class="text-gray-600 dark:text-gray-400">Software Developer</p>
 								<div class="mt-6 flex flex-wrap gap-4 justify-center">
@@ -90,9 +94,9 @@
 							class="bg-white dark:bg-gray-700 shadow rounded-lg p-6"
 						>
 							<h2 class="text-xl font-bold mb-4">Learn Craps</h2>
-							{#if bookmarks.length > 0}
+							{#if $bookmarkedPages.length > 0}
 								<div class="hidden lg:block" style="column-count: 3; column-gap: 1em; ">
-									{#each bookmarks as bookmark}
+									{#each $bookmarkedPages as bookmark}
 										<div style="break-inside: avoid; margin-bottom: 1em;">
 											<ProfileContentCard
 												title={bookmark.title}
@@ -105,7 +109,7 @@
 									{/each}
 								</div>
 								<div class="hidden sm:block lg:hidden" style="column-count: 2; column-gap: 1em; ">
-									{#each bookmarks as bookmark}
+									{#each $bookmarkedPages as bookmark}
 										<div style="break-inside: avoid; margin-bottom: 1em;">
 											<ProfileContentCard
 												title={bookmark.title}
@@ -118,7 +122,7 @@
 									{/each}
 								</div>
 								<div class="block sm:hidden" style="column-count: 1; column-gap: 1em; ">
-									{#each bookmarks as bookmark}
+									{#each $bookmarkedPages as bookmark}
 										<div style="break-inside: avoid; margin-bottom: 1em;">
 											<ProfileContentCard
 												title={bookmark.title}

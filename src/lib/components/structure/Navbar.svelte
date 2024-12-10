@@ -1,117 +1,45 @@
 <script lang="ts">
-	console.log('Navbar.svelte is being loaded');
 	import NavbarDrawer from './NavbarDrawer.svelte';
 	import { goto } from '$app/navigation';
-	import {
-		crapsSimulatorPreferences,
-		resetToDefaultPreferences,
-		user,
-		type User
-	} from '$lib/utils/store';
-	import { onAuthStateChanged, signOut } from 'firebase/auth';
-	import { auth, db } from '$lib/utils/firebase';
+	import { logout, handleAuthStateChange } from '$lib/utils/auth';
 	import { theme, toggleTheme } from '$lib/stores/theme';
-	import { doc, getDoc } from 'firebase/firestore';
-	//import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
+	import { user } from '$lib/utils/userData';
 
-	let current_user: User | null;
+	let current_user: any = null;
 	let isAuthenticated = false;
-	let profilePicture: string = '';
+	let profilePicture: string = 'https://picsum.photos/100';
 
-	user.subscribe((value) => {
-		console.log('Entering user.subscribe() in Navbar.svelte');
-		current_user = { ...value, profilePicture };
-		console.log('current_user:', current_user);
-		console.log('Leaving user.subscribe() in Navbar.svelte');
-	});
+	onMount(() => {
+		console.log('Entering Navbar Mount');
+		console.log('Current User: ', current_user);
+		const unsubscribe = user.subscribe((value) => {
+			console.log('User value:', value);
+			current_user = value;
+			console.log('New User:', current_user);
+			isAuthenticated = !!value;
+			profilePicture = value?.profile?.profilePicture || 'https://picsum.photos/100';
+			console.log('Profile Picture:', profilePicture);
+		});
 
-	// Apply the initial theme on mount
-	// onMount(() => {
-	//	window.scrollTo({ top: 0, behavior: 'smooth' });
-	//});
-
-	// Apply theme to document
-	$: if (typeof document !== 'undefined') {
-		console.log('Applying theme to document');
-		document.documentElement.setAttribute('data-theme', $theme);
-		console.log('Theme: ', $theme, 'applied to document');
-	}
-
-	onAuthStateChanged(auth, async (firebaseUser) => {
-		console.log('Entering onAuthStateChanged() in Navbar.svelte');
-		isAuthenticated = firebaseUser ? true : false;
-		console.log('isAuthenticated:', isAuthenticated);
-		if (firebaseUser) {
-			profilePicture = firebaseUser.photoURL || 'https://picsum.photos/100/100';
-			const userId = firebaseUser.uid;
-			let displayName = firebaseUser.displayName;
-			const email = firebaseUser.email || 'N/A';
-
-			// Fallback to email if no display name is set
-			if (!displayName && email) {
-				const index = email.indexOf('@');
-				displayName = index !== -1 ? email.substring(0, index) : email;
+		handleAuthStateChange(async (userId) => {
+			if (userId) {
+				console.log('Auth state handled successfully.');
+			} else {
+				console.log('User logged out.');
 			}
-			// Fetch and apply user preferences from Firestore
-			try {
-				const docRef = doc(db, 'users', userId);
-				const userDoc = await getDoc(docRef);
+		});
 
-				if (userDoc.exists()) {
-					const userPreferences = userDoc.data()?.crapsSimulator;
-					if (userPreferences) {
-						console.log('User preferences retrieved from Firebase:', userPreferences);
-
-						// Update the local store with the user's preferences
-						crapsSimulatorPreferences.set(userPreferences);
-					} else {
-						console.warn('No preferences found for this user. Using defaults.');
-					}
-				} else {
-					console.warn('No document found for this user in Firestore. Using defaults.');
-				}
-			} catch (error) {
-				console.error('Error fetching user preferences from Firestore:', error);
-			}
-			user.set({
-				id: userId,
-				display_name: displayName || 'Anonymous',
-				email: email,
-				profilePicture: profilePicture
-			});
-		} else {
-			resetToDefaultPreferences();
-			user.set(null);
-		}
-		console.log('Leaving onAuthStateChanged() in Navbar.svelte');
+		return () => unsubscribe();
 	});
-
-	async function logout() {
-		console.log('Entering logout()');
-		try {
-			await signOut(auth);
-			resetToDefaultPreferences();
-			console.log('User has been logged out');
-			window.location.reload();
-		} catch (error) {
-			console.error('There was an error logging out:', error);
-		}
-		console.log('Leaving logout()');
-	}
 
 	function navigateToLogin(event: any) {
-		console.log('Entering navigateToLogin()');
 		event.preventDefault();
 		goto('/login');
-		console.log('Leaving navigateToLogin()');
 	}
-
 	function handleThemeToggle() {
-		console.log('Entering handleThemeToggle()');
 		toggleTheme();
-		console.log('Leaving handleThemeToggle()');
 	}
-	console.log('Navbar.svelte has been loaded');
 </script>
 
 <div class="relative z-20">
@@ -191,7 +119,6 @@
 							</div>
 							<ul class="menu menu-horizontal px-1 sign-in">
 								{#if isAuthenticated}
-									<!-- User is logged in -->
 									<li>
 										<img
 											src={profilePicture}
@@ -204,13 +131,12 @@
 											<summary> More </summary>
 											<ul class="p-2 profile-menu">
 												<li><a href="profile">Profile</a></li>
-												<li><a href="/" on:click={logout}>Sign Out</a></li>
+												<li><button on:click={logout}>Sign Out</button></li>
 											</ul>
 										</details>
 									</li>
 								{:else}
-									<!-- User is not logged in -->
-									<li><a href="login" on:click={navigateToLogin}>Sign In</a></li>
+									<li><button on:click={navigateToLogin}>Sign In</button></li>
 								{/if}
 							</ul>
 						</div>

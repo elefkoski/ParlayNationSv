@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import type { Bookmark } from './store';
+//import type { Bookmark } from './userData';
 import {
 	getFirestore,
 	addDoc,
@@ -152,25 +152,3 @@ export const fetchBookmarkId = async (userId: string, pageUrl: string): Promise<
 	}
 	return null;
 };
-
-export async function fetchAllBookmarks(userId: string): Promise<Array<Bookmark>> {
-	const bookmarks: Array<Bookmark> = [];
-
-	try {
-		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
-		const bookmarkDocs = await getDocs(bookmarksCollection);
-
-		for (const doc of bookmarkDocs.docs) {
-			const bookmarkId = doc.id;
-			//console.log('Bookmark ID:', bookmarkId);
-			const bookmarkData = doc.data();
-			//console.log('Bookmark Data:', bookmarkData);
-			// Combine the bookmark ID and its details into one object
-			bookmarks.push({ bookmarkId, ...bookmarkData });
-		}
-	} catch (error) {
-		console.log('Error fetching all bookmarks:', error);
-	}
-
-	return bookmarks;
-}

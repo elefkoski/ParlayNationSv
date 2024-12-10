@@ -193,6 +193,15 @@
 	--guide-container-bg: rgba(255, 255, 255, 0.8); /* 50% transparency */
 	--game-popup-bg: #f3f4f6; /* base-200 */
 	--game-popup-border: #d1d5db; /* gray-300 */
+	--scroll-menu-inner-bg: #f3f4f6; /* base-200 */
+	--scroll-menu-inner-border: #d1d5db; /* gray-300 */
+	--split-button-border: #d1d5db; /* gray-300 */
+	--menu-bet-button-bg: #60a5fa; /* blue-400 */
+	--menu-bet-button-hover-bg: #3b82f6; /* blue-500 */
+	--favorite-btn-star: #faca15; /* yellow-400 */
+	--favorite-btn-border-left: #e5e7eb; /* gray-200 */
+	--favorite-btn-bg: #fef3c7; /* amber-100 */
+	--favorite-btn-bg-hover: #fde68a; /* yellow-200 */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
@@ -380,6 +389,15 @@
 	--dm-guide-container-bg: rgba(31, 41, 55, 0.8); /* 50% transparency */
 	--dm-game-popup-bg: #111827; /* gray-900 */
 	--dm-game-popup-border: #374151; /* gray-700 */
+	--dm-scroll-menu-inner-bg: transparent; /* transparent */
+	--dm-scroll-menu-inner-border: #374151; /* gray-700 */
+	--dm-split-button-border: #374151; /* gray-700 */
+	--dm-menu-bet-button-bg: #1e3a8a; /* blue-900 */
+	--dm-menu-bet-button-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-favorite-btn-star: #faca15; /* yellow-400 */
+	--dm-favorite-btn-border-left: #374151; /* gray-700 */
+	--dm-favorite-btn-bg: #1f2937; /* gray-800 */
+	--dm-favorite-btn-bg-hover: #374151; /* gray-700 */
 }
 
 /* Main Styles */
@@ -809,6 +827,27 @@
 	background-color: var(--game-popup-bg);
 	border-color: var(--game-popup-border);
 }
+.scroll-menu-inner {
+	background-color: var(--scroll-menu-inner-bg);
+	border-color: var(--scroll-menu-inner-border);
+}
+.split-button {
+	border-color: var(--split-button-border);
+}
+.menu-bet-button {
+	background-color: var(--menu-bet-button-bg);
+}
+.menu-bet-button:hover {
+	background-color: var(--menu-bet-button-hover-bg);
+}
+.favorite-toggle {
+	color: var(--favorite-btn-star);
+	border-left: var(--favorite-btn-border-left);
+	background-color: var(--favorite-btn-bg);
+}
+.favorite-toggle:hover {
+	background-color: var(--favorite-btn-bg-hover);
+}
 
 /* Dark mode styles */
 [data-theme='dark'] {
@@ -997,4 +1036,13 @@
 	--guide-container-bg: var(--dm-guide-container-bg);
 	--game-popup-bg: var(--dm-game-popup-bg);
 	--game-popup-border: var(--dm-game-popup-border);
+	--scroll-menu-inner-bg: var(--dm-scroll-menu-inner-bg);
+	--scroll-menu-inner-border: var(--dm-scroll-menu-inner-border);
+	--split-button-border: var(--dm-split-button-border);
+	--menu-bet-button-bg: var(--dm-menu-bet-button-bg);
+	--menu-bet-button-hover-bg: var(--dm-menu-bet-button-hover-bg);
+	--favorite-btn-star: var(--dm-favorite-btn-star);
+	--favorite-btn-border-left: var(--dm-favorite-btn-border-left);
+	--favorite-btn-bg: var(--dm-favorite-btn-bg);
+	--favorite-btn-bg-hover: var(--dm-favorite-btn-bg-hover);
 }

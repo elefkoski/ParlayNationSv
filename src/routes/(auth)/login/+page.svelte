@@ -1,157 +1,120 @@
 <script lang="ts">
 	import EmptyLayout from '$lib/components/layouts/EmptyLayout.svelte';
+	import { handleAuthStateChange } from '$lib/utils/auth';
+	import { goto } from '$app/navigation';
 	import {
 		googleSignIn,
 		facebookSignIn,
 		loginWithEmailPassword,
-		registerWithEmailPassword,
-		db
+		registerWithEmailPassword
 	} from '$lib/utils/firebase';
 	import {
-		getAuth,
 		setPersistence,
 		browserLocalPersistence,
 		browserSessionPersistence,
 		sendEmailVerification
 	} from 'firebase/auth';
-	import { doc, getDoc } from 'firebase/firestore';
-	import { crapsSimulatorPreferences, defaultPreferences } from '$lib/utils/store';
+	import { getAuth } from 'firebase/auth';
 	import { writable } from 'svelte/store';
-	import { goto } from '$app/navigation';
 
 	const authInstance = getAuth();
-	const errorMessage = writable('');
-	let agreeToTerms = true;
+	const errorMessage = writable<string>('');
+
 	let email = '';
 	let password = '';
-	let showLogin = true;
 	let rememberMe = false;
+	let agreeToTerms = true;
 	let showPassword = false;
+	let isLoginMode = true; // Default to login mode
+
+	// Sync with userData.ts
+	handleAuthStateChange(() => {
+		console.log('Auth state change handled on Login Page');
+	});
+
+	async function loginUser(event: SubmitEvent) {
+		event.preventDefault();
+		errorMessage.set('');
+		try {
+			await setPersistence(
+				authInstance,
+				rememberMe ? browserLocalPersistence : browserSessionPersistence
+			);
+			const firebaseUser = await loginWithEmailPassword(email, password);
+			if (firebaseUser) {
+				goto('/');
+			}
+		} catch (error) {
+			handleAuthError(error);
+		}
+	}
 
 	async function registerUser(event: SubmitEvent) {
 		event.preventDefault();
-
 		if (!agreeToTerms) {
 			errorMessage.set('You must agree to the Terms and Conditions.');
 			return;
 		}
-
+		errorMessage.set('');
 		try {
 			const firebaseUser = await registerWithEmailPassword(email, password);
-
 			if (firebaseUser) {
 				await sendEmailVerification(firebaseUser);
 				errorMessage.set('Registration successful. Please verify your email before logging in.');
-			} else {
-				errorMessage.set('Error during registration. Please try again.');
+				isLoginMode = true; // Switch back to login mode after registration
 			}
 		} catch (error) {
-			errorMessage.set('An unexpected error occurred during registration.');
-			console.error('Error during registration:', error);
-		}
-	}
-
-	async function loginUser(event: SubmitEvent) {
-		event.preventDefault();
-		try {
-			if (rememberMe) {
-				await setPersistence(authInstance, browserLocalPersistence);
-			} else {
-				await setPersistence(authInstance, browserSessionPersistence);
-			}
-			const firebaseUser = await loginWithEmailPassword(email, password);
-			if (firebaseUser) {
-				redirectAfterLogin();
-			}
-		} catch (error) {
-			if (error instanceof Error) {
-				errorMessage.set(error.message);
-			} else {
-				errorMessage.set('An unknown error occurred.');
-			}
+			handleAuthError(error);
 		}
 	}
 
 	async function handleGoogleSignIn() {
+		errorMessage.set('');
 		try {
-			if (rememberMe) {
-				await setPersistence(authInstance, browserLocalPersistence);
-			} else {
-				await setPersistence(authInstance, browserSessionPersistence);
-			}
+			await setPersistence(
+				authInstance,
+				rememberMe ? browserLocalPersistence : browserSessionPersistence
+			);
 			const firebaseUser = await googleSignIn();
 			if (firebaseUser) {
-				redirectAfterLogin();
+				goto('/');
 			}
 		} catch (error) {
-			if (error instanceof Error) {
-				errorMessage.set(error.message);
-			} else {
-				errorMessage.set('An unknown error occurred during Google sign-in.');
-			}
+			handleAuthError(error);
 		}
 	}
 
 	async function handleFacebookSignIn() {
+		errorMessage.set('');
 		try {
-			if (rememberMe) {
-				await setPersistence(authInstance, browserLocalPersistence);
-			} else {
-				await setPersistence(authInstance, browserSessionPersistence);
-			}
+			await setPersistence(
+				authInstance,
+				rememberMe ? browserLocalPersistence : browserSessionPersistence
+			);
 			const firebaseUser = await facebookSignIn();
 			if (firebaseUser) {
-				redirectAfterLogin();
+				goto('/');
 			}
 		} catch (error) {
-			if (error instanceof Error) {
-				errorMessage.set(error.message);
-			} else {
-				errorMessage.set('An unknown error occurred during Facebook sign-in.');
-			}
-		}
-	}
-
-	async function redirectAfterLogin() {
-		try {
-			const authInstance = getAuth();
-			const user = authInstance.currentUser;
-
-			if (user) {
-				// Fetch user-specific preferences from Firestore
-				const docRef = doc(db, 'users', user.uid);
-				const docSnap = await getDoc(docRef);
-
-				if (docSnap.exists()) {
-					const userPreferences = docSnap.data().crapsSimulator;
-					crapsSimulatorPreferences.set(userPreferences || { ...defaultPreferences });
-					console.log('Loaded user preferences:', userPreferences);
-				} else {
-					// No preferences found, use default
-					crapsSimulatorPreferences.set({ ...defaultPreferences });
-					console.log('No user preferences found. Using default settings.');
-				}
-			} else {
-				// Handle cases where user is unexpectedly null
-				crapsSimulatorPreferences.set({ ...defaultPreferences });
-				console.error('No user found after login. Resetting to defaults.');
-			}
-
-			// Navigate to the previous or profile page
-			const previousPage = document.referrer || '/profile';
-			goto(previousPage);
-		} catch (error) {
-			console.error('Error loading preferences after login:', error);
+			handleAuthError(error);
 		}
 	}
 
 	function togglePasswordVisibility() {
 		showPassword = !showPassword;
 	}
+
+	function handleAuthError(error: any) {
+		if (error instanceof Error) {
+			errorMessage.set(error.message);
+		} else {
+			errorMessage.set('An unknown error occurred.');
+		}
+	}
 </script>
 
 <EmptyLayout>
-	{#if showLogin}
+	{#if isLoginMode}
 		<div class="flex flex-col justify-center lg:px-8 min-h-full px-6 py-12">
 			<div class="sm:max-w-sm sm:mx-auto sm:w-full">
 				<img
@@ -181,8 +144,8 @@
 								<span
 									class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
 									data-track="toggle_to_sign_up_here"
-									on:click={() => (showLogin = false)}
-									on:keydown={() => (showLogin = false)}
+									on:click={() => (isLoginMode = false)}
+									on:keydown={() => (isLoginMode = false)}
 									tabindex="0"
 									role="button"
 								>
@@ -324,8 +287,8 @@
 								<span
 									class="cursor-pointer dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 leading-6 text-indigo-600"
 									data-track="toggle_to_sign_in"
-									on:click={() => (showLogin = true)}
-									on:keydown={() => (showLogin = true)}
+									on:click={() => (isLoginMode = true)}
+									on:keydown={() => (isLoginMode = true)}
 									role="button"
 									tabindex="0"
 								>

@@ -1,9 +1,8 @@
 <script lang="ts">
-	console.log('Content-h1.svelte is being loaded');
 	import Popup from '../Popup.svelte';
-	import { savePage, removePage, fetchBookmarkId, fetchAllBookmarks } from '$lib/utils/firebase';
-	import { user, bookmarkedPages } from '$lib/utils/store';
-	import { onMount } from 'svelte';
+	import { savePage, removePage } from '$lib/utils/firebase';
+	import { bookmarkedPages } from '$lib/utils/userData';
+	import { user } from '$lib/utils/userData';
 
 	export let sectionTitle: string = 'Section Title';
 	export let title: string = 'The title';
@@ -12,91 +11,48 @@
 	let current_user: any = null;
 	let bookmarked: boolean = false;
 	let current_bookmark_id: string | null = null;
-	let bookmarkedPagesValue: any[] = [];
 	let showPopup: boolean = false;
 
-	onMount(async () => {
-		console.log('Entering onMount() in Content-h1.svelte');
-		if (current_user && current_user.id) {
-			const allBookmarks = await fetchAllBookmarks(current_user.id);
-			bookmarkedPages.set(allBookmarks);
-			console.log('All bookmarks:', allBookmarks);
+	$: current_user = $user;
+	$: {
+		if (current_user?.id && pageData.pageUrl) {
+			const bookmark = $bookmarkedPages.find((b) => b.pageUrl === pageData.pageUrl);
+			current_bookmark_id = bookmark?.bookmarkId || null;
+			bookmarked = !!current_bookmark_id;
+		} else {
+			current_bookmark_id = null;
+			bookmarked = false;
 		}
-		console.log('Leaving onMount() in Content-h1.svelte');
-	});
-
-	user.subscribe(async (value) => {
-		console.log('Entering user.subscribe() in Content-h1.svelte');
-		current_user = value;
-		handleBookmarkIdFetch();
-		console.log('BookmarkId:', current_bookmark_id);
-		// Populate bookmarkedPages
-		if (current_user && current_user.id) {
-			const allBookmarks = await fetchAllBookmarks(current_user.id);
-			bookmarkedPages.set(allBookmarks);
-			console.log('All bookmarks:', allBookmarks);
-		}
-		console.log('Leaving user.subscribe() in Content-h1.svelte');
-	});
-
-	bookmarkedPages.subscribe((value) => {
-		console.log('Entering bookmarkedPages.subscribe() in Content-h1.svelte');
-		bookmarkedPagesValue = value;
-		bookmarked = bookmarkedPagesValue.some(
-			(bookmark) => bookmark.bookmarkId === current_bookmark_id
-		);
-		console.log('Leaving bookmarkedPages.subscribe() in Content-h1.svelte');
-	});
-
-	$: if (current_user && current_bookmark_id) {
-		bookmarked = true;
-		console.log('Bookmarked:', bookmarked);
-	}
-
-	async function handleBookmarkIdFetch() {
-		console.log('Entering handleBookmarkIdFetch()');
-		if (current_user && current_user.id && pageData.pageUrl) {
-			const fetchedBookmarkId = await fetchBookmarkId(current_user.id, pageData.pageUrl);
-			if (fetchedBookmarkId) {
-				current_bookmark_id = fetchedBookmarkId;
-			} else {
-				current_bookmark_id = null;
-			}
-		}
-		console.log('Leaving handleBookmarkIdFetch()');
 	}
 
 	async function bookmarkPage() {
-		console.log('Entering bookmarkPage()');
-		if (current_user && current_user.id) {
-			const bookmarkId = await savePage(current_user.id, pageData);
-			if (bookmarkId) {
-				current_bookmark_id = bookmarkId;
-				bookmarkedPages.update((pages) => [...pages, { bookmarkId }]);
-				bookmarked = true;
-			}
-		} else {
+		if (!current_user?.id) {
 			showPopup = true;
 			setTimeout(() => (showPopup = false), 3000);
+			return;
 		}
-		console.log('Leaving bookmarkPage()');
-	}
 
-	async function unBookmarkPage() {
-		console.log('Entering unBookmarkPage()');
-		const bookmarkToRemove = bookmarkedPagesValue.find((b) => b.bookmarkId === current_bookmark_id);
-		console.log('Bookmark to remove:', bookmarkToRemove);
-		console.log('Current User:', current_user);
-		console.log('Current User ID::', current_user.id);
-		if (bookmarkToRemove && current_user && current_user.id) {
-			console.log('Removing bookmark:', bookmarkToRemove.bookmarkId);
-			await removePage(current_user.id, bookmarkToRemove.bookmarkId);
-			bookmarked = false;
-			console.log('Bookmark removed');
+		try {
+			const bookmarkId = await savePage(current_user.id, pageData);
+			if (bookmarkId) {
+				bookmarkedPages.update((pages) => [...pages, { bookmarkId, ...pageData }]);
+				// Reactive declarations will update `bookmarked` automatically
+			}
+		} catch (error) {
+			console.error('Error bookmarking page:', error);
 		}
-		console.log('Leaving unBookmarkPage()');
 	}
-	console.log('Content-h1.svelte has been loaded');
+	async function unBookmarkPage() {
+		if (!current_user?.id || !current_bookmark_id) return;
+
+		try {
+			await removePage(current_user.id, current_bookmark_id);
+			bookmarkedPages.update((pages) => pages.filter((b) => b.bookmarkId !== current_bookmark_id));
+			// Reactive declarations will update `bookmarked` automatically
+		} catch (error) {
+			console.error('Error removing bookmark:', error);
+		}
+	}
 </script>
 
 <header>
