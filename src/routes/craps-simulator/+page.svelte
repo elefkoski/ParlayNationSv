@@ -19,19 +19,18 @@
 		showExitBtn
 	} from '../../craps-simulator-layout';
 	import { rollDice, firstDieImage, secondDieImage } from '../../craps-simulator-game';
-	import LgMenu from '$lib/components/simulator/LgMenu.svelte';
-	import TouchBox from '$lib/components/simulator/TouchBox.svelte';
 	import ChipSetVert1 from '$lib/components/simulator/ChipSetVert1.svelte';
 	import ChipSetVert2 from '$lib/components/simulator/ChipSetVert2.svelte';
 	import ChipSetHoriz from '$lib/components/simulator/ChipSetHoriz.svelte';
-	import MenuBetButton from '$lib/components/simulator/MenuBetButton.svelte';
+	import TouchBox from '$lib/components/simulator/TouchBox.svelte';
+	import LgMenu from '$lib/components/simulator/LgMenu.svelte';
+	import SmBetButton from '$lib/components/simulator/SmMenuBetButton.svelte';
+	import MdBetMenuButton from '$lib/components/simulator/MdBetMenuButton.svelte';
+	import MdBtnMenu from '$lib/components/simulator/MdBtnMenu.svelte';
+	import GameInputBox from '$lib/components/simulator/GameInputBox.svelte';
 	import ScrollMenu from '$lib/components/simulator/HorizScrollMenu.svelte';
 	import { crapsSimulatorPreferences, user } from '../../lib/utils/userData';
-	import {
-		loadTempPreferences,
-		saveTempPreferences,
-		clearTempPreferences
-	} from '$lib/utils/tempPreferences';
+	import { loadTempPreferences, saveTempPreferences } from '$lib/utils/tempPreferences';
 	import { updateDoc, doc } from 'firebase/firestore';
 	import { db } from '../../lib/utils/firebase';
 
@@ -270,7 +269,7 @@
 							data-paddinglr="2"
 							data-paddingtb="1"
 						>
-							<p>Rail: ${$railTotal.toLocaleString()}</p>
+							<p class="popup">Rail: ${$railTotal.toLocaleString()}</p>
 						</div>
 					{/if}
 					<!-- Roll Button -->
@@ -297,7 +296,7 @@
 							data-paddinglr="2"
 							data-paddingtb="1"
 						>
-							<p>Bankroll: ${$totalBankroll.toLocaleString()}</p>
+							<p class="popup">Bankroll: ${$totalBankroll.toLocaleString()}</p>
 						</div>
 					{/if}
 					<!-- Chips in Rail -->
@@ -578,12 +577,27 @@
 						{#if $showPassLinePopup}
 							<LgMenu title="Bet the Pass Line" toggleKey="showPassLinePopup">
 								<ScrollMenu>
-									<MenuBetButton betType="Pass Line" betAmount={1} />
-									<MenuBetButton betType="Pass Line" betAmount={5} />
-									<MenuBetButton betType="Pass Line" betAmount={25} />
-									<MenuBetButton betType="Pass Line" betAmount={100} />
-									<MenuBetButton betType="Pass Line" betAmount={500} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={1} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={5} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={25} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={100} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={500} />
 								</ScrollMenu>
+								<MdBtnMenu>
+									<MdBetMenuButton
+										betName="Pass Line"
+										betType="pass-line"
+										betAmount={'Max Bet'}
+										betClass="max-bet-btn"
+									/>
+									<MdBetMenuButton
+										betName="Pass Line"
+										betType="pass-line"
+										betAmount={'All In'}
+										betClass="all-in-btn"
+									/>
+								</MdBtnMenu>
+								<GameInputBox betType="pass-line" />
 							</LgMenu>
 						{/if}
 					</div>

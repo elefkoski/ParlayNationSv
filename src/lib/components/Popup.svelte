@@ -4,9 +4,9 @@
 
 <div class="relative">
 	<div
-		class="absolute top-0 right-0 p-2 w-64 z-10
+		class="absolute top-0 right-0 p-2 w-64 z-30
 		       bookmark-popup border
-		       rounded-md"
+		       rounded-md popup"
 	>
 		{message}
 	</div>

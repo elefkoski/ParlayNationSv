@@ -13,20 +13,20 @@
 	class="game-popup game-element rounded-md popup z-20"
 	data-x="50"
 	data-y="50"
-	data-fontsize="2.25"
 	data-width="80"
-	data-height="60"
+	data-height="83"
 	data-paddinglr="2"
 	data-paddingtb="2.5"
 >
 	<div class="relative flex justify-between items-center">
-		<h2>{title}</h2>
+		<h2 class="popup" data-fontsize="4.5">{title}</h2>
 		<button
 			id="toggle-button"
-			class="settings-close-btn"
+			class="settings-close-btn popup"
+			data-fontsize="5"
 			on:click={handleClick}
 			on:keydown={(e) => e.key === 'Enter' && handleClick()}
-			on:keyup={(e) => e.key === ' ' && handleClick()}>Close</button
+			on:keyup={(e) => e.key === ' ' && handleClick()}>☒</button
 		>
 	</div>
 	<slot />

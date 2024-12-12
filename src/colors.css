@@ -198,10 +198,21 @@
 	--split-button-border: #d1d5db; /* gray-300 */
 	--menu-bet-button-bg: #60a5fa; /* blue-400 */
 	--menu-bet-button-hover-bg: #3b82f6; /* blue-500 */
+	--max-bet-btn-bg: #f87171; /* red-400 */
+	--max-bet-btn-hover-bg: #ef4444; /* red-500 */
+	--all-in-btn-bg: #fb923c; /* orange-400 */
+	--all-in-btn-hover-bg: #f59e0b; /* orange-500 */
 	--favorite-btn-star: #faca15; /* yellow-400 */
 	--favorite-btn-border-left: #e5e7eb; /* gray-200 */
 	--favorite-btn-bg: #fef3c7; /* amber-100 */
 	--favorite-btn-bg-hover: #fde68a; /* yellow-200 */
+	--game-menu-input-bg: #f3f4f6; /* base-200 */
+	--game-menu-input-border: #d1d5db; /* gray-300 */
+	--game-menu-input-text: #000000; /* black */
+	--game-menu-input-placeholder: #9ca3af; /* gray-400 */
+	--game-menu-input-focus-border: #2563eb; /* blue-600 */
+	--game-input-btn-bg: #10b981; /* green-500 */
+	--game-input-btn-hover-bg: #059669; /* green-600 */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
@@ -394,10 +405,21 @@
 	--dm-split-button-border: #374151; /* gray-700 */
 	--dm-menu-bet-button-bg: #1e3a8a; /* blue-900 */
 	--dm-menu-bet-button-hover-bg: #1d4ed8; /* blue-700 */
+	--dm-max-bet-btn-bg: #581c87; /* purple-800 */
+	--dm-max-bet-btn-hover-bg: #6b21a8; /* purple-900 */
+	--dm-all-in-btn-bg: #78350f; /* orange-800 */
+	--dm-all-in-btn-hover-bg: #92400e; /* orange-900 */
 	--dm-favorite-btn-star: #faca15; /* yellow-400 */
 	--dm-favorite-btn-border-left: #374151; /* gray-700 */
 	--dm-favorite-btn-bg: #1f2937; /* gray-800 */
 	--dm-favorite-btn-bg-hover: #374151; /* gray-700 */
+	--dm-game-menu-input-bg: #111827; /* gray-900 */
+	--dm-game-menu-input-border: #374151; /* gray-700 */
+	--dm-game-menu-input-text: #d1d5db; /* gray-300 */
+	--dm-game-menu-input-placeholder: #6b7280; /* gray-500 */
+	--dm-game-menu-input-focus-border: #60a5fa; /* blue-400 */
+	--dm-game-input-btn-bg: #065f46; /* green-900 */
+	--dm-game-input-btn-hover-bg: #059669; /* green-700 */
 }
 
 /* Main Styles */
@@ -840,6 +862,18 @@
 .menu-bet-button:hover {
 	background-color: var(--menu-bet-button-hover-bg);
 }
+.max-bet-btn {
+	background-color: var(--max-bet-btn-bg);
+}
+.max-bet-btn:hover {
+	background-color: var(--max-bet-btn-hover-bg);
+}
+.all-in-btn {
+	background-color: var(--all-in-btn-bg);
+}
+.all-in-btn:hover {
+	background-color: var(--all-in-btn-hover-bg);
+}
 .favorite-toggle {
 	color: var(--favorite-btn-star);
 	border-left: var(--favorite-btn-border-left);
@@ -847,6 +881,23 @@
 }
 .favorite-toggle:hover {
 	background-color: var(--favorite-btn-bg-hover);
+}
+.game-menu-input {
+	background-color: var(--game-menu-input-bg);
+	border-color: var(--game-menu-input-border);
+	color: var(--game-menu-input-text);
+}
+.game-menu-input::placeholder {
+	color: var(--game-menu-input-placeholder);
+}
+.game-menu-input:focus {
+	border-color: var(--game-menu-input-focus-border);
+}
+.game-input-btn {
+	background-color: var(--game-input-btn-bg);
+}
+.game-input-btn:hover {
+	background-color: var(--game-input-btn-hover-bg);
 }
 
 /* Dark mode styles */
@@ -1041,8 +1092,19 @@
 	--split-button-border: var(--dm-split-button-border);
 	--menu-bet-button-bg: var(--dm-menu-bet-button-bg);
 	--menu-bet-button-hover-bg: var(--dm-menu-bet-button-hover-bg);
+	--max-bet-btn-bg: var(--dm-max-bet-btn-bg);
+	--max-bet-btn-hover-bg: var(--dm-max-bet-btn-hover-bg);
+	--all-in-btn-bg: var(--dm-all-in-btn-bg);
+	--all-in-btn-hover-bg: var(--dm-all-in-btn-hover-bg);
 	--favorite-btn-star: var(--dm-favorite-btn-star);
 	--favorite-btn-border-left: var(--dm-favorite-btn-border-left);
 	--favorite-btn-bg: var(--dm-favorite-btn-bg);
 	--favorite-btn-bg-hover: var(--dm-favorite-btn-bg-hover);
+	--game-menu-input-bg: var(--dm-game-menu-input-bg);
+	--game-menu-input-border: var(--dm-game-menu-input-border);
+	--game-menu-input-text: var(--dm-game-menu-input-text);
+	--game-menu-input-placeholder: var(--dm-game-menu-input-placeholder);
+	--game-menu-input-focus-border: var(--dm-game-menu-input-focus-border);
+	--game-input-btn-bg: var(--dm-game-input-btn-bg);
+	--game-input-btn-hover-bg: var(--dm-game-input-btn-hover-bg);
 }

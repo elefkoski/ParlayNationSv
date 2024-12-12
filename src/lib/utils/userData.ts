@@ -208,3 +208,6 @@ export async function fetchFavoriteBets(userId: string) {
 		console.error('Error fetching favorite bets:', error);
 	}
 }
+export function generateBetId(type: string, amount: number): string {
+	return `${type}-${amount || 0}`.replace(/\s+/g, '-').toLowerCase();
+}
