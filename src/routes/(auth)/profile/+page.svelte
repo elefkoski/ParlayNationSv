@@ -1,10 +1,8 @@
 <script lang="ts">
 	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
-	import { deleteDoc, doc } from 'firebase/firestore';
-	import { db } from '$lib/utils/firebase';
 	import ProfileContentCard from '$lib/components/profilePage/ProfileContentCard.svelte';
-	import { bookmarkedPages, fetchAllBookmarks } from '$lib/utils/userData';
-	import { user } from '$lib/utils/userData';
+	import { user, bookmarkedPages } from '$lib/utils/userData';
+	import { fetchUserBookmarks, deleteUserBookmark } from '$lib/utils/userDataOperations';
 
 	let current_user: any = null;
 
@@ -15,23 +13,15 @@
 
 	async function fetchBookmarks() {
 		try {
-			if (!current_user || !current_user.id) {
-				console.warn('User is not logged in. Skipping fetching bookmarks.');
-				return; // Exit the function early
-			}
-
-			const bookmarksData = await fetchAllBookmarks(current_user.id);
-			bookmarkedPages.set(bookmarksData); // Assuming bookmarksData matches Bookmark[]
-			console.log('Fetched bookmarks:', bookmarksData);
+			await fetchUserBookmarks(current_user.id);
 		} catch (error) {
 			console.error('Error fetching bookmarks:', error);
 		}
 	}
+
 	async function handleDelete(bookmarkId: string) {
 		try {
-			const bookmarkRef = doc(db, `users/${current_user?.id}/bookmarks`, bookmarkId);
-			await deleteDoc(bookmarkRef);
-			bookmarkedPages.update((current) => current.filter((b) => b.bookmarkId !== bookmarkId));
+			await deleteUserBookmark(current_user.id, bookmarkId);
 		} catch (error) {
 			console.error('Error deleting bookmark:', error);
 		}

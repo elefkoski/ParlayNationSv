@@ -1,12 +1,16 @@
 <script lang="ts">
-	import { toggleUiSetting } from '../../../craps-simulator-layout';
-	import type { UiToggleKey } from '../../../craps-simulator-layout';
+	console.log('LgMenu component loading');
+
+	import { toggleUiSetting } from '../../utils/simulator/craps-simulator-scaling';
+	import type { UiToggleKey } from '../../utils/simulator/craps-simulator-scaling';
 	export let title: string;
 	export let toggleKey: UiToggleKey = 'showSettingsPopup';
 
 	function handleClick() {
 		toggleUiSetting(toggleKey);
 	}
+
+	console.log('LgMenu component loaded.');
 </script>
 
 <div
@@ -19,15 +23,18 @@
 	data-paddingtb="2.5"
 >
 	<div class="relative flex justify-between items-center">
-		<h2 class="popup" data-fontsize="4.5">{title}</h2>
+		<h2 class="popup" data-fontsize="3.5">{title}</h2>
 		<button
 			id="toggle-button"
-			class="settings-close-btn popup"
-			data-fontsize="5"
+			class="popup"
+			data-fontsize="4"
 			on:click={handleClick}
 			on:keydown={(e) => e.key === 'Enter' && handleClick()}
 			on:keyup={(e) => e.key === ' ' && handleClick()}>☒</button
 		>
 	</div>
-	<slot />
+	<div class="grid grid-rows-[auto,1fr,auto] popup" data-gap="1.25">
+		<slot />
+	</div>
 </div>
+``

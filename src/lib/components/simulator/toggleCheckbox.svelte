@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { visibilityState, scaleElements } from '../../../craps-simulator-layout';
+	console.log('ToggleCheckbox component loading');
+	import { visibilityState, scaleElements } from '../../utils/simulator/craps-simulator-scaling';
 	export let id: string;
 	export let label: string = '';
 
@@ -20,6 +21,8 @@
 		toggle();
 		setTimeout(() => scaleElements(id), 0); // Delay to allow DOM updates
 	}
+
+	console.log('ToggleCheckbox component loaded.');
 </script>
 
 <div>

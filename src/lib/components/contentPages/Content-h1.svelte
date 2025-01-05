@@ -1,8 +1,8 @@
 <script lang="ts">
+	console.log('Content-h1 component loading');
 	import Popup from '../Popup.svelte';
-	import { savePage, removePage } from '$lib/utils/firebase';
-	import { bookmarkedPages } from '$lib/utils/userData';
 	import { user } from '$lib/utils/userData';
+	import { fetchBookmarkId, toggleBookmark } from '$lib/utils/userDataOperations';
 
 	export let sectionTitle: string = 'Section Title';
 	export let title: string = 'The title';
@@ -16,43 +16,40 @@
 	$: current_user = $user;
 	$: {
 		if (current_user?.id && pageData.pageUrl) {
-			const bookmark = $bookmarkedPages.find((b) => b.pageUrl === pageData.pageUrl);
-			current_bookmark_id = bookmark?.bookmarkId || null;
-			bookmarked = !!current_bookmark_id;
+			fetchBookmarkId(current_user.id, pageData.pageUrl).then((id) => {
+				current_bookmark_id = id;
+				bookmarked = !!id;
+			});
 		} else {
 			current_bookmark_id = null;
 			bookmarked = false;
 		}
 	}
 
-	async function bookmarkPage() {
+	async function handleToggleBookmark() {
 		if (!current_user?.id) {
+			// Show popup if user is not logged in
 			showPopup = true;
 			setTimeout(() => (showPopup = false), 3000);
 			return;
 		}
 
 		try {
-			const bookmarkId = await savePage(current_user.id, pageData);
-			if (bookmarkId) {
-				bookmarkedPages.update((pages) => [...pages, { bookmarkId, ...pageData }]);
-				// Reactive declarations will update `bookmarked` automatically
-			}
+			const updatedBookmarkId = await toggleBookmark(
+				current_user.id,
+				pageData,
+				bookmarked,
+				current_bookmark_id
+			);
+			// Update local state
+			current_bookmark_id = updatedBookmarkId;
+			bookmarked = !!updatedBookmarkId;
 		} catch (error) {
-			console.error('Error bookmarking page:', error);
+			console.error('Error toggling bookmark:', error);
 		}
 	}
-	async function unBookmarkPage() {
-		if (!current_user?.id || !current_bookmark_id) return;
 
-		try {
-			await removePage(current_user.id, current_bookmark_id);
-			bookmarkedPages.update((pages) => pages.filter((b) => b.bookmarkId !== current_bookmark_id));
-			// Reactive declarations will update `bookmarked` automatically
-		} catch (error) {
-			console.error('Error removing bookmark:', error);
-		}
-	}
+	console.log('Content-h1 component loaded');
 </script>
 
 <header>
@@ -61,7 +58,7 @@
 		<div class="flex">
 			{#if !bookmarked}
 				<p class="text-sm bookmark pt-1 mr-1">Bookmark this page</p>
-				<button data-track="bookmark" on:click={bookmarkPage}>
+				<button data-track="bookmark" on:click={handleToggleBookmark}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
@@ -78,7 +75,7 @@
 				{/if}
 			{:else}
 				<p class="text-sm bookmark pt-1 mr-1">Remove bookmark</p>
-				<button data-track="unbookmark" on:click={unBookmarkPage}>
+				<button data-track="unbookmark" on:click={handleToggleBookmark}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"

@@ -1,8 +1,9 @@
 <script lang="ts">
+	console.log('BlogH1 component loading');
+
 	import Popup from '../Popup.svelte';
-	import { savePage, removePage, fetchBookmarkId } from '$lib/utils/firebase';
-	import { bookmarkedPages } from '$lib/utils/userData';
 	import { user } from '$lib/utils/userData';
+	import { toggleBookmark, fetchBookmarkId } from '$lib/utils/userDataOperations';
 
 	export let sectionTitle: string = 'Section Title';
 	export let title: string = 'The title';
@@ -15,55 +16,42 @@
 	let showPopup: boolean = false;
 
 	$: current_user = $user;
-	$: if (current_user && pageData.pageUrl) {
-		handleBookmarkState();
-	}
-
-	async function handleBookmarkState() {
-		try {
-			if (current_user?.id) {
-				current_bookmark_id = await fetchBookmarkId(current_user.id, pageData.pageUrl);
-				bookmarked = !!current_bookmark_id;
-			} else {
-				current_bookmark_id = null;
-				bookmarked = false;
-			}
-		} catch (error) {
-			console.error('Error fetching bookmark state:', error);
+	$: {
+		if (current_user?.id && pageData.pageUrl) {
+			fetchBookmarkId(current_user.id, pageData.pageUrl).then((id) => {
+				current_bookmark_id = id;
+				bookmarked = !!id;
+			});
+		} else {
+			current_bookmark_id = null;
+			bookmarked = false;
 		}
 	}
-	async function bookmarkPage() {
+
+	async function handleToggleBookmark() {
 		if (!current_user?.id) {
+			// Show popup if user is not logged in
 			showPopup = true;
 			setTimeout(() => (showPopup = false), 3000);
 			return;
 		}
 
 		try {
-			const bookmarkId = await savePage(current_user.id, pageData);
-			if (bookmarkId) {
-				current_bookmark_id = bookmarkId;
-				bookmarkedPages.update((pages) => [...pages, { bookmarkId, ...pageData }]);
-				bookmarked = true;
-			}
-		} catch (error) {
-			console.error('Error bookmarking page:', error);
-		}
-	}
-	async function unBookmarkPage() {
-		if (!current_user?.id || !current_bookmark_id) return;
-
-		try {
-			await removePage(current_user.id, current_bookmark_id);
-			bookmarkedPages.update((pages) =>
-				pages.filter((bookmark) => bookmark.bookmarkId !== current_bookmark_id)
+			const updatedBookmarkId = await toggleBookmark(
+				current_user.id,
+				pageData,
+				bookmarked,
+				current_bookmark_id
 			);
-			current_bookmark_id = null;
-			bookmarked = false;
+			// Update local state
+			current_bookmark_id = updatedBookmarkId;
+			bookmarked = !!updatedBookmarkId;
 		} catch (error) {
-			console.error('Error removing bookmark:', error);
+			console.error('Error toggling bookmark:', error);
 		}
 	}
+
+	console.log('BlogH1 component loaded');
 </script>
 
 <header>
@@ -73,7 +61,7 @@
 		<div class="flex">
 			{#if !bookmarked}
 				<p class="text-sm bookmark pt-1 mr-1">Bookmark this page</p>
-				<button data-track="bookmark" on:click={bookmarkPage}>
+				<button data-track="bookmark" on:click={handleToggleBookmark}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
@@ -85,12 +73,9 @@
 						/></svg
 					>
 				</button>
-				{#if showPopup}
-					<Popup message="You must be signed in to bookmark a page." />
-				{/if}
 			{:else}
 				<p class="text-sm bookmark pt-1 mr-1">Remove bookmark</p>
-				<button data-track="unbookmark" on:click={unBookmarkPage}>
+				<button data-track="unbookmark" on:click={handleToggleBookmark}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
@@ -102,6 +87,9 @@
 						/></svg
 					>
 				</button>
+			{/if}
+			{#if showPopup}
+				<Popup message="You must be siggged in to bookmark a page." />
 			{/if}
 		</div>
 	</div>

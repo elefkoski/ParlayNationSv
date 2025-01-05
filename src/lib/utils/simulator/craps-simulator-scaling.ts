@@ -1,14 +1,7 @@
-console.log('Running craps-simulator-layout.ts');
+console.log('Entering craps-simulator-layout.ts');
 import { writable } from 'svelte/store';
 
-export {
-	railTotal,
-	layoutTotal,
-	totalBankroll,
-	addToBankAndRail,
-	takeFromBankAndRail,
-	chips
-} from './craps-simulator-bank';
+export { chips } from './craps-simulator-rail';
 
 export const showSettingsPopup = writable(false);
 export const showEnterBtn = writable(true);
@@ -22,19 +15,18 @@ const uiToggles = {
 	showPassLinePopup
 };
 
-export type UiToggleKey = keyof typeof uiToggles;
+export type UiToggleKey = keyof typeof uiToggles | string;
 
 export function toggleUiSetting(key: UiToggleKey): void {
 	console.log('Entering toggleUiSetting');
-	const store = uiToggles[key];
-	if (!store) {
+	if (key in uiToggles) {
+		console.log(`Toggling key: ${key}`);
+		const store = uiToggles[key as keyof typeof uiToggles];
+		store.update((current) => !current);
+		console.log(`New value for key '${key}': ${store}`);
+	} else {
 		console.warn(`Key '${key}' does not exist in uiToggles.`);
-		return;
 	}
-
-	store.update((current) => !current);
-	console.log(`Toggled ${key} to ${!store}`);
-
 	setTimeout(() => {
 		console.log(`Scaling elements for key: ${key}`);
 		scaleAllPopups();
@@ -57,8 +49,9 @@ export async function scaleElements(type: string | null = null) {
 
 	// Scale elements relative to the container size
 	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
+	console.log('Selector:', selector);
 	const elements = document.querySelectorAll(selector);
-	//console.log('Elements being scaled :', elements);
+	console.log('Elements being scaled :', elements);
 	elements.forEach((el) => {
 		const x = parseFloat(el.dataset.x) || null;
 		const y = parseFloat(el.dataset.y) || null;
@@ -260,7 +253,7 @@ export async function scaleAllPopups() {
 	if (stickCallElement) {
 		stickCallElement.classList.remove('hidden');
 	}
-	console.log(`Total number of elements scaled: ${elements.length}`);
+	console.log(`Total number of elements scaled: ${elements.length}`, elements);
 	console.log('Leaving scaleAllPopups');
 }
 
@@ -421,4 +414,4 @@ if (typeof window !== 'undefined') {
 	window.addEventListener('orientationchange', handleResizeOrOrientationChange);
 	window.addEventListener('fullscreenchange', handleResizeOrOrientationChange);
 }
-console.log('Finished running craps-simulator-layout.ts');
+console.log('Exiting craps-simulator-layout.ts');

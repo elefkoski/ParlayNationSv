@@ -1,3 +1,5 @@
+console.log('Entering theme.ts');
+
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
@@ -45,3 +47,5 @@ export function setTheme(value: 'light' | 'dark') {
 export function toggleTheme() {
 	theme.update((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
 }
+
+console.log('Exiting theme.ts');

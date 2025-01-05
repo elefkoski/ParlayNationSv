@@ -1,3 +1,8 @@
+<script lang="ts">
+	console.log('HorizScrollMenu component loading');
+	console.log('HorizScrollMenu component loaded.');
+</script>
+
 <div class="scroll-menu popup z-20" data-paddingtb="1" data-borderRadius="1">
 	<div
 		class="scroll-menu-inner popup"

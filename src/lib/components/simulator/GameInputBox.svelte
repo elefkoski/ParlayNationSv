@@ -1,20 +1,19 @@
 <script lang="ts">
-	import {
-		favoriteBets,
-		saveFavoriteBet,
-		removeFavoriteBet,
-		generateBetId
-	} from '$lib/utils/userData';
-	import { toggleUiSetting } from '../../../craps-simulator-layout';
+	console.log('GameInputBox component loading');
+
+	import { user, favoriteBets, generateBetId } from '$lib/utils/userData';
+	import { saveFavoriteBet, removeFavoriteBet } from '$lib/utils/userDataOperations';
+	import { toggleUiSetting } from '../../utils/simulator/craps-simulator-scaling';
 	import { get } from 'svelte/store';
 
-	export let betType: string = 'bet-type'; // Default bet type
-	let betAmount: number = null; // Holds the entered bet amount
-	let favorites = get(favoriteBets); // Initialize favorites from the store
-	let isFavorite: boolean = false; // Tracks if the current bet is a favorite
-	let checkmarked: boolean = false; // Tracks if the checkbox is checked
-	let checkboxText: string = 'Add to Favorites'; // Text to display next to the checkbox
-	let userToggledCheckbox: boolean = false; // Tracks if the user toggled the checkbox
+	let current_user = get(user);
+	export let betType: string = 'bet-type';
+	let betAmount: number = 0;
+	let favorites = get(favoriteBets);
+	let isFavorite: boolean = false;
+	let checkmarked: boolean = false;
+	let checkboxText: string = 'Add to Favorites';
+	let userToggledCheckbox: boolean = false;
 
 	// Subscribe to favorites store updates
 	favoriteBets.subscribe((bets) => {
@@ -63,7 +62,10 @@
 
 	function toggleFavorite() {
 		console.log('toggleFavorite called. Current checkmarked=', checkmarked);
-
+		if (!current_user) {
+			alert('Please log in to manage favorite bets.');
+			return;
+		}
 		userToggledCheckbox = true; // Prevent syncing
 		checkmarked = !checkmarked; // Toggle the state
 		updateCheckboxText(); // Update the checkbox text
@@ -108,17 +110,24 @@
 			console.log('handleSubmit: No action taken. Bet is not marked as favorite.');
 			checkboxText = 'Add to Favorites';
 		}
-		toggleUiSetting('showPassLinePopup', false);
+		toggleUiSetting('showPassLinePopup');
 
 		// Reset user interaction state
 		userToggledCheckbox = false;
 
 		alert(`Bet submitted: ${betAmount}`);
 	}
+
+	console.log('GameInputBox component loaded');
 </script>
 
-<div aria-label="bet input" class="input-box flex items-center popup" data-gap="2">
-	<label for="pass-line-input" class="font-semibold">Other Bet Amount:</label>
+<div
+	aria-label="bet input"
+	class="input-box flex items-center popup"
+	data-gap="2"
+	data-fontsize="2"
+>
+	<label for="pass-line-input" class="font-semibold">Bet Other Amount:</label>
 	<input
 		type="number"
 		id="pass-line-input"
@@ -126,8 +135,9 @@
 		class="border rounded game-menu-input popup"
 		data-width="12"
 		data-paddinglr=".5"
+		data-border=".25"
 		placeholder="Amount"
-		min="1"
+		min="5"
 		max="5000"
 		step="5"
 		bind:value={betAmount}
@@ -146,11 +156,15 @@
 			type="checkbox"
 			id="add-to-favorites"
 			name="add-to-favorites"
-			class="checkbox"
+			class="checkbox popup"
+			data-width="2.25"
+			data-height="4"
+			data-border=".25"
+			data-borderRadius=".5"
 			checked={checkmarked}
 			on:change={toggleFavorite}
 		/>
-		<span class="text-sm font-semibold">
+		<span class="font-semibold">
 			{checkboxText}
 		</span>
 	</label>

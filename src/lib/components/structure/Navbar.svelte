@@ -1,4 +1,5 @@
 <script lang="ts">
+	console.log('Navbar component loading');
 	import NavbarDrawer from './NavbarDrawer.svelte';
 	import { goto } from '$app/navigation';
 	import { logout, handleAuthStateChange } from '$lib/utils/auth';
@@ -22,13 +23,7 @@
 			console.log('Profile Picture:', profilePicture);
 		});
 
-		handleAuthStateChange(async (userId) => {
-			if (userId) {
-				console.log('Auth state handled successfully.');
-			} else {
-				console.log('User logged out.');
-			}
-		});
+		handleAuthStateChange();
 
 		return () => unsubscribe();
 	});
@@ -40,6 +35,8 @@
 	function handleThemeToggle() {
 		toggleTheme();
 	}
+
+	console.log('Navbar component loaded');
 </script>
 
 <div class="relative z-20">

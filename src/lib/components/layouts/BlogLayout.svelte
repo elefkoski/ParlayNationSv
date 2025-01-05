@@ -6,7 +6,7 @@
 	import type { PageMenu } from '$lib/utils/types';
 
 	export let pageLinks: PageMenu[] = [];
-	export let showContentMenuBox;
+	export let showContentMenuBox = true;
 </script>
 
 <MasterLayout>

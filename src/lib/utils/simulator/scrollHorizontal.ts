@@ -1,3 +1,5 @@
+console.log('Entering scrollHorizontal.ts');
+
 export function scrollHorizontal(node: HTMLElement): { destroy(): void } {
 	const handleWheel = (event: WheelEvent) => {
 		const isMouseWheel = event.deltaMode === 1;
@@ -15,3 +17,5 @@ export function scrollHorizontal(node: HTMLElement): { destroy(): void } {
 		}
 	};
 }
+
+console.log('Exiting scrollHorizontal.ts');

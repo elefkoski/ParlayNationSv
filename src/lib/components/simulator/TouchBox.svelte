@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { toggleUiSetting } from '../../../craps-simulator-layout';
-	import type { UiToggleKey } from '../../../craps-simulator-layout';
+	console.log('TouchBox component loading');
+
+	import { toggleUiSetting } from '../../utils/simulator/craps-simulator-scaling';
+	import type { UiToggleKey } from '../../utils/simulator/craps-simulator-scaling';
 	export let id: string = '';
 	export let dataX: number = 0;
 	export let dataY: number = 0;
@@ -11,6 +13,8 @@
 	function handleClick() {
 		toggleUiSetting(toggleKey);
 	}
+
+	console.log('TouchBox component loaded.');
 </script>
 
 <div

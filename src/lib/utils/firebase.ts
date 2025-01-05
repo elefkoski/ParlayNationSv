@@ -1,3 +1,5 @@
+console.log('Entering firebase.ts');
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 //import type { Bookmark } from './userData';
@@ -34,15 +36,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore();
-
-let analytics;
-
-export const initializeFirebaseAnalytics = () => {
-	// Dynamic import for Firebase Analytics
-	import('firebase/analytics').then((firebaseAnalytics) => {
-		analytics = firebaseAnalytics.getAnalytics(app);
-	});
-};
 
 export const registerWithEmailPassword = async (email: string, password: string) => {
 	try {
@@ -99,8 +92,6 @@ export const facebookSignIn = async () => {
 	}
 };
 
-export const sendPasswordResetEmail = async () => {};
-
 export const savePage = async (userId: string, pageData: any) => {
 	//console.log('Debut firebase.ts: Entered savePage function.');
 	let docRefId = null; // Initialize docRefId to null
@@ -136,19 +127,13 @@ export const removePage = async (userId: string, bookmarkId: string) => {
 	}
 };
 
-export const fetchBookmarkId = async (userId: string, pageUrl: string): Promise<string | null> => {
-	try {
-		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
-		const querySnapshot = await getDocs(
-			firestoreQuery(bookmarksCollection, where('pageUrl', '==', pageUrl))
-		);
-
-		if (!querySnapshot.empty) {
-			const doc = querySnapshot.docs[0];
-			return doc.id;
-		}
-	} catch (e) {
-		console.error('Error fetching bookmark: ', e);
-	}
-	return null;
+// <<<<< Not being used >>>>> //
+let analytics;
+export const initializeFirebaseAnalytics = () => {
+	import('firebase/analytics').then((firebaseAnalytics) => {
+		analytics = firebaseAnalytics.getAnalytics(app);
+	});
 };
+export const sendPasswordResetEmail = async () => {};
+
+console.log('Leaving firebase.ts');

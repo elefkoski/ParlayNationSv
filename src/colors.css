@@ -202,6 +202,9 @@
 	--max-bet-btn-hover-bg: #ef4444; /* red-500 */
 	--all-in-btn-bg: #fb923c; /* orange-400 */
 	--all-in-btn-hover-bg: #f59e0b; /* orange-500 */
+	--pickup-btn-bg: #14b8a6; /* teal-500 */
+	--pickup-btn-hover-bg: #047857; /* teal-900 */
+	--pickup-btn-border: #047857; /* teal-900 */
 	--favorite-btn-star: #faca15; /* yellow-400 */
 	--favorite-btn-border-left: #e5e7eb; /* gray-200 */
 	--favorite-btn-bg: #fef3c7; /* amber-100 */
@@ -213,6 +216,8 @@
 	--game-menu-input-focus-border: #2563eb; /* blue-600 */
 	--game-input-btn-bg: #10b981; /* green-500 */
 	--game-input-btn-hover-bg: #059669; /* green-600 */
+	--lg-menu-text-box: #f3f4f6; /* base-200 */
+	--lg-menu-text-box-border: #d1d5db; /* gray-300 */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
@@ -409,6 +414,9 @@
 	--dm-max-bet-btn-hover-bg: #6b21a8; /* purple-900 */
 	--dm-all-in-btn-bg: #78350f; /* orange-800 */
 	--dm-all-in-btn-hover-bg: #92400e; /* orange-900 */
+	--dm-pickup-btn-bg: #083344; /* cyan-950 */
+	--dm-pickup-btn-hover-bg:#155E75; /* cyan-800 */
+	--dm-pickup-btn-border: #374151; /* gray-700 */
 	--dm-favorite-btn-star: #faca15; /* yellow-400 */
 	--dm-favorite-btn-border-left: #374151; /* gray-700 */
 	--dm-favorite-btn-bg: #1f2937; /* gray-800 */
@@ -420,6 +428,8 @@
 	--dm-game-menu-input-focus-border: #60a5fa; /* blue-400 */
 	--dm-game-input-btn-bg: #065f46; /* green-900 */
 	--dm-game-input-btn-hover-bg: #059669; /* green-700 */
+	--dm-lg-menu-text-box: #111827; /* gray-900 */
+	--dm-lg-menu-text-box-border: #374151; /* gray-700 */
 }
 
 /* Main Styles */
@@ -874,6 +884,13 @@
 .all-in-btn:hover {
 	background-color: var(--all-in-btn-hover-bg);
 }
+.pickup-btn {
+	background-color: var(--pickup-btn-bg);
+	border-color: var(--pickup-btn-border);
+}
+.pickup-btn:hover {
+	background-color: var(--pickup-btn-hover-bg);
+}
 .favorite-toggle {
 	color: var(--favorite-btn-star);
 	border-left: var(--favorite-btn-border-left);
@@ -898,6 +915,10 @@
 }
 .game-input-btn:hover {
 	background-color: var(--game-input-btn-hover-bg);
+}
+.lg-menu-text-box {
+	background-color: var(--lg-menu-text-box);
+	border-color: var(--lg-menu-text-box-border);
 }
 
 /* Dark mode styles */
@@ -1096,6 +1117,9 @@
 	--max-bet-btn-hover-bg: var(--dm-max-bet-btn-hover-bg);
 	--all-in-btn-bg: var(--dm-all-in-btn-bg);
 	--all-in-btn-hover-bg: var(--dm-all-in-btn-hover-bg);
+	--pickup-btn-bg: var(--dm-pickup-btn-bg);
+	--pickup-btn-hover-bg: var(--dm-pickup-btn-hover-bg);
+	--pickup-btn-border: var(--dm-pickup-btn-border);
 	--favorite-btn-star: var(--dm-favorite-btn-star);
 	--favorite-btn-border-left: var(--dm-favorite-btn-border-left);
 	--favorite-btn-bg: var(--dm-favorite-btn-bg);
@@ -1107,4 +1131,6 @@
 	--game-menu-input-focus-border: var(--dm-game-menu-input-focus-border);
 	--game-input-btn-bg: var(--dm-game-input-btn-bg);
 	--game-input-btn-hover-bg: var(--dm-game-input-btn-hover-bg);
+	--lg-menu-text-box: var(--dm-lg-menu-text-box);
+	--lg-menu-text-box-border: var(--dm-lg-menu-text-box-border);
 }

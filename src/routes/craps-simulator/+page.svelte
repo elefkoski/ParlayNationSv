@@ -1,6 +1,7 @@
 <script lang="ts">
-	console.log('Craps Simulator page is being loaded');
-	import { onMount } from 'svelte';
+	console.log('craps-simulator +page loading');
+
+	import { onMount, tick } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
 		enterFullScreen,
@@ -8,31 +9,45 @@
 		scaleElements,
 		scaleChipsToFit,
 		scaleAllPopups,
-		railTotal,
-		layoutTotal,
-		totalBankroll,
 		chips,
 		toggleUiSetting,
 		showSettingsPopup,
 		showPassLinePopup,
 		showEnterBtn,
 		showExitBtn
-	} from '../../craps-simulator-layout';
-	import { rollDice, firstDieImage, secondDieImage } from '../../craps-simulator-game';
-	import ChipSetVert1 from '$lib/components/simulator/ChipSetVert1.svelte';
-	import ChipSetVert2 from '$lib/components/simulator/ChipSetVert2.svelte';
-	import ChipSetHoriz from '$lib/components/simulator/ChipSetHoriz.svelte';
+	} from '../../lib/utils/simulator/craps-simulator-scaling';
+	import {
+		railTotal,
+		layoutTotal,
+		totalBankroll
+	} from '../../lib/utils/simulator/default-game-settings';
+	import {
+		rollDice,
+		firstDieImage,
+		secondDieImage
+	} from '../../lib/utils/simulator/craps-simulator-game';
+	import { placeBet } from '$lib/utils/simulator/bet-objects';
+	import ChipSet from '$lib/components/simulator/ChipSet.svelte';
 	import TouchBox from '$lib/components/simulator/TouchBox.svelte';
+	import { touchBoxes } from '$lib/utils/simulator/touchboxes';
 	import LgMenu from '$lib/components/simulator/LgMenu.svelte';
-	import SmBetButton from '$lib/components/simulator/SmMenuBetButton.svelte';
-	import MdBetMenuButton from '$lib/components/simulator/MdBetMenuButton.svelte';
+	import ScrollMenu from '$lib/components/simulator/HorizScrollMenu.svelte';
+	import SmBetButton from '$lib/components/simulator/SmMenuBetBtn.svelte';
+	import MdBetMenuButton from '$lib/components/simulator/MdBetMenuBtn.svelte';
 	import MdBtnMenu from '$lib/components/simulator/MdBtnMenu.svelte';
 	import GameInputBox from '$lib/components/simulator/GameInputBox.svelte';
-	import ScrollMenu from '$lib/components/simulator/HorizScrollMenu.svelte';
-	import { crapsSimulatorPreferences, user } from '../../lib/utils/userData';
-	import { loadTempPreferences, saveTempPreferences } from '$lib/utils/tempPreferences';
-	import { updateDoc, doc } from 'firebase/firestore';
-	import { db } from '../../lib/utils/firebase';
+	import LgMenuTextBox from '$lib/components/simulator/LgMenuTextBox.svelte';
+	import PickupBetButton from '$lib/components/simulator/PickupBetBtn.svelte';
+	import { user, crapsSimulatorPreferences, playerBets } from '../../lib/utils/userData';
+	import {
+		savePlayerBetsToLocalStorage,
+		savePlayerBetsToFirebase,
+		savePreferencesToLocalStorage,
+		savePreferencesToFirebase,
+		clearPlayerBetsFromLocalStorage,
+		clearPlayerBetsFromFirebase
+	} from '$lib/utils/userDataOperations';
+	import { isInitializing } from '$lib/utils/auth';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
@@ -46,38 +61,15 @@
 	let fiveHundredChips = chips[500];
 	let thousandChips = chips[1000];
 	let fiveThousandChips = chips[5000];
+	let inputValue: number = 5;
+	let inputValue2: number = 5;
 
 	let current_user: any = null;
 	$: current_user = $user;
 
-	async function updatePreference(key: string, value: boolean) {
-		if (!current_user?.id) {
-			console.error('Cannot update preferences: No user authenticated.');
-			return;
-		}
-
-		const updatedPrefs = { ...$crapsSimulatorPreferences, [key]: value };
-		if (current_user.id) {
-			const docRef = doc(db, 'users', current_user.id);
-			try {
-				await updateDoc(docRef, { crapsSimulator: updatedPrefs });
-				console.log(`Preference updated: ${key} = ${value}`);
-			} catch (error) {
-				console.error(`Failed to update preference: ${key}`, error);
-			}
-		} else {
-			saveTempPreferences(updatedPrefs);
-			console.log(`Temporary preference updated: ${key} = ${value}`);
-		}
-		crapsSimulatorPreferences.set(updatedPrefs);
-	}
-
 	onMount(async () => {
-		const tempPreferences = loadTempPreferences();
-		if (tempPreferences) {
-			crapsSimulatorPreferences.set(tempPreferences);
-			console.log('Loaded temporary preferences:', tempPreferences);
-		}
+		console.log('Craps-simulator on Mount being called');
+
 		document.addEventListener('keydown', (event) => {
 			if (event.key === 'Escape') {
 				exitFullScreen();
@@ -88,6 +80,52 @@
 		await scaleChipsToFit();
 		await scaleAllPopups();
 	});
+
+	crapsSimulatorPreferences.subscribe(async (prefs) => {
+		if (isInitializing) return;
+		console.log(
+			'Craps Simulator Preferences being updated via subscription in craps-simulator:',
+			prefs
+		);
+		if (current_user?.id) {
+			console.log(
+				'savePreferencesToFirebase called via crapsSimulator subscription in craps-simulator'
+			);
+			await savePreferencesToFirebase(current_user.id, prefs);
+		} else {
+			console.log(
+				'savePreferencesToLocalStorage called via crapsSimulator subscription in craps-simulator'
+			);
+			savePreferencesToLocalStorage(prefs);
+		}
+	});
+
+	playerBets.subscribe(async (bets) => {
+		if (isInitializing) return;
+		console.log('Player Bets being updated via subscription in craps-simulator:', bets);
+		if (current_user?.id) {
+			console.log('savePlayerBetsToFirebase called via playerBets subscription in craps-simulator');
+			await savePlayerBetsToFirebase(current_user.id, bets);
+		} else {
+			console.log(
+				'savePlayerBetsToLocalStorage called via playerBets subscription in craps-simulator'
+			);
+			savePlayerBetsToLocalStorage(bets);
+		}
+		await tick();
+		scaleElements('cheque');
+	});
+
+	//function clearLocalStorageKey(key: string): void {
+	//	if (typeof window !== 'undefined' && localStorage) {
+	//		localStorage.removeItem(key);
+	//		console.log(`${key} has been removed from local storage.`);
+	//	}
+	//}
+	//clearLocalStorageKey('playerBets');
+	//clearLocalStorageKey('crapsSimulatorPreferences');
+
+	console.log('craps-simulator +page loaded.');
 </script>
 
 <svelte:head>
@@ -274,6 +312,16 @@
 					{/if}
 					<!-- Roll Button -->
 					{#if $crapsSimulatorPreferences.showRollButton}
+						<input
+							type="number"
+							id="test-input"
+							class="simple-input-box game-element hidden"
+							data-x="60"
+							data-y="85"
+							data-width="5"
+							data-height="4"
+							bind:value={inputValue}
+						/>
 						<button
 							class="roll-btn game-element rounded-md hidden"
 							data-type="roll-button"
@@ -282,7 +330,60 @@
 							data-fontsize="2"
 							data-paddinglr="2"
 							data-paddingtb="1"
-							on:click={() => rollDice()}>Roll</button
+							on:click={() => placeBet('passLine', inputValue)}>PL</button
+						>
+						<input
+							type="number"
+							id="second-input"
+							class="simple-input-box game-element hidden"
+							data-x="67"
+							data-y="85"
+							data-width="5"
+							data-height="4"
+							bind:value={inputValue2}
+						/>
+						<button
+							class="roll-btn game-element rounded-md hidden"
+							data-type="roll-button"
+							data-x="67"
+							data-y="94"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+							on:click={() => placeBet('dontPass', inputValue2)}>DP</button
+						>
+						<button
+							class="roll-btn game-element rounded-md hidden"
+							data-type="roll-button"
+							data-x="76"
+							data-y="94"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+							on:click={() => console.log('Player Bets: ', $playerBets)}>Log</button
+						>
+						<button
+							class="roll-btn game-element rounded-md hidden"
+							data-type="roll-button"
+							data-x="50"
+							data-y="94"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+							on:click={() => clearPlayerBetsFromLocalStorage()}>C.Lo</button
+						>
+						<button
+							class="roll-btn game-element rounded-md hidden"
+							data-type="roll-button"
+							data-x="50"
+							data-y="85"
+							data-fontsize="2"
+							data-paddinglr="2"
+							data-paddingtb="1"
+							on:click={() => {
+								console.log('Clearing bets for user:', current_user);
+								clearPlayerBetsFromFirebase(current_user);
+							}}>C.Fb</button
 						>
 					{/if}
 					<!-- Bankroll Total -->
@@ -369,13 +470,7 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showStickperson}
-										on:change={(e) => {
-											const target = e.currentTarget;
-											if (target && target instanceof HTMLInputElement) {
-												updatePreference('showStickperson', target.checked);
-												scaleElements('stickperson');
-											}
-										}}
+										on:change={() => scaleElements('stickperson')}
 									/>
 									Show Stickperson
 								</label>
@@ -386,13 +481,7 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showGuide}
-										on:change={(e) => {
-											const target = e.currentTarget;
-											if (target && target instanceof HTMLInputElement) {
-												updatePreference('showGuide', target.checked);
-												scaleElements('guide');
-											}
-										}}
+										on:change={() => scaleElements('guide')}
 									/>
 									Show Guide
 								</label>
@@ -403,13 +492,7 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showBankroll}
-										on:change={(e) => {
-											const target = e.currentTarget;
-											if (target && target instanceof HTMLInputElement) {
-												updatePreference('showBankroll', target.checked);
-												scaleElements('bankroll');
-											}
-										}}
+										on:change={() => scaleElements('bankroll')}
 									/>
 									Show Bankroll
 								</label>
@@ -420,13 +503,7 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showRail}
-										on:change={(e) => {
-											const target = e.currentTarget;
-											if (target && target instanceof HTMLInputElement) {
-												updatePreference('showRail', target.checked);
-												scaleElements('rail');
-											}
-										}}
+										on:change={() => scaleElements('rail')}
 									/>
 									Show Rail
 								</label>
@@ -437,13 +514,7 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showLayout}
-										on:change={(e) => {
-											const target = e.currentTarget;
-											if (target && target instanceof HTMLInputElement) {
-												updatePreference('showLayout', target.checked);
-												scaleElements('layout');
-											}
-										}}
+										on:change={() => scaleElements('layout')}
 									/>
 									Show Layout
 								</label>
@@ -454,13 +525,7 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showRollButton}
-										on:change={(e) => {
-											const target = e.currentTarget;
-											if (target && target instanceof HTMLInputElement) {
-												updatePreference('showRollButton', target.checked);
-												scaleElements('roll-button');
-											}
-										}}
+										on:change={() => scaleElements('roll-button')}
 									/>
 									Show Roll Button
 								</label>
@@ -493,95 +558,32 @@
 					{/if}
 					<!-- Touch Boxes -->
 					<div id="touch-boxes">
-						<TouchBox
-							id="touch-pass-line"
-							dataX={40.25}
-							dataY={75.5}
-							dataWidth={15}
-							dataHeight={4}
-							toggleKey="showPassLinePopup"
-						/>
-						<TouchBox
-							id="touch-pass-line-odds"
-							dataX={40.5}
-							dataY={81.5}
-							dataWidth={15}
-							dataHeight={4.5}
-						/>
-						<TouchBox
-							id="touch-dont-pass"
-							dataX={40.5}
-							dataY={69}
-							dataWidth={15}
-							dataHeight={4.5}
-						/>
-						<TouchBox id="the-field" dataX={40.25} dataY={60.5} dataWidth={32} dataHeight={9} />
-						<TouchBox id="come-bet" dataX={40.25} dataY={49} dataWidth={32} dataHeight={9} />
-						<TouchBox id="dont-come-bet" dataX={21} dataY={34} dataWidth={3.25} dataHeight={12} />
-						<TouchBox id="inside-four" dataX={26.25} dataY={36.5} dataWidth={6} dataHeight={9} />
-						<TouchBox
-							id="behind-four"
-							dataX={26.375}
-							dataY={27}
-							dataWidth={6.25}
-							dataHeight={4.5}
-						/>
-						<TouchBox id="inside-five" dataX={33.5} dataY={36.5} dataWidth={6} dataHeight={9} />
-						<TouchBox id="behind-five" dataX={33.25} dataY={27} dataWidth={6.25} dataHeight={4.5} />
-						<TouchBox id="inside-six" dataX={40.25} dataY={36.5} dataWidth={6} dataHeight={9} />
-						<TouchBox id="behind-six" dataX={40.25} dataY={27} dataWidth={6.25} dataHeight={4.5} />
-						<TouchBox id="inside-eight" dataX={47} dataY={36.5} dataWidth={6} dataHeight={9} />
-						<TouchBox id="behind-eight" dataX={47} dataY={27} dataWidth={6.25} dataHeight={4.5} />
-						<TouchBox id="inside-nine" dataX={54} dataY={36.5} dataWidth={6} dataHeight={9} />
-						<TouchBox id="behind-nine" dataX={54} dataY={27} dataWidth={6.25} dataHeight={4.5} />
-						<TouchBox id="inside-ten" dataX={61} dataY={36.5} dataWidth={6} dataHeight={9} />
-						<TouchBox id="behind-ten" dataX={61} dataY={27} dataWidth={6.25} dataHeight={4.5} />
-						<TouchBox id="c-and-e" dataX={70} dataY={61} dataWidth={4.75} dataHeight={35} />
-						<TouchBox id="world" dataX={70} dataY={38.5} dataWidth={4.75} dataHeight={7} />
-						<TouchBox id="hard-six" dataX={79} dataY={40} dataWidth={9} dataHeight={5} />
-						<TouchBox id="hard-eight" dataX={92} dataY={40} dataWidth={9} dataHeight={5} />
-						<TouchBox id="hard-four" dataX={79} dataY={48} dataWidth={9} dataHeight={5} />
-						<TouchBox id="hard-ten" dataX={92} dataY={48} dataWidth={9} dataHeight={5} />
-						<TouchBox id="any-seven" dataX={85.5} dataY={53.25} dataWidth={10} dataHeight={3} />
-						<TouchBox id="horn-high-yo" dataX={75.75} dataY={58.5} dataWidth={5} dataHeight={5} />
-						<TouchBox
-							id="horn-high-ace-deuce"
-							dataX={82.25}
-							dataY={58.5}
-							dataWidth={5}
-							dataHeight={5}
-						/>
-						<TouchBox id="horn-bet" dataX={85.25} dataY={68} dataWidth={7.5} dataHeight={8} />
-						<TouchBox id="horn-high-aces" dataX={88.5} dataY={58.5} dataWidth={5} dataHeight={5} />
-						<TouchBox
-							id="horn-high-twelve"
-							dataX={94.75}
-							dataY={58.5}
-							dataWidth={5}
-							dataHeight={5}
-						/>
-						<TouchBox id="straight-aces" dataX={76.75} dataY={65} dataWidth={6} dataHeight={5} />
-						<TouchBox id="straight-twelve" dataX={93.75} dataY={65} dataWidth={6} dataHeight={5} />
-						<TouchBox
-							id="straight-ace-deuce"
-							dataX={76.75}
-							dataY={71.5}
-							dataWidth={6}
-							dataHeight={5}
-						/>
-						<TouchBox id="straight-yo" dataX={93.75} dataY={71.5} dataWidth={6} dataHeight={5} />
-						<TouchBox id="any-craps" dataX={85.5} dataY={76.5} dataWidth={10} dataHeight={3} />
+						{#each touchBoxes as touchBox}
+							<TouchBox
+								id={touchBox.id}
+								dataX={touchBox.dataX}
+								dataY={touchBox.dataY}
+								dataWidth={touchBox.dataWidth}
+								dataHeight={touchBox.dataHeight}
+								toggleKey={touchBox.toggleKey}
+							/>
+						{/each}
 					</div>
 					<!-- Popup Menus -->
 					<div id="popups">
 						{#if $showPassLinePopup}
 							<LgMenu title="Bet the Pass Line" toggleKey="showPassLinePopup">
 								<ScrollMenu>
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={1} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={5} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={10} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={15} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={20} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={25} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={50} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={100} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={200} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={500} />
+									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={1000} />
 								</ScrollMenu>
 								<MdBtnMenu>
 									<MdBetMenuButton
@@ -598,29 +600,29 @@
 									/>
 								</MdBtnMenu>
 								<GameInputBox betType="pass-line" />
+								<div class="flex justify-between gap-2">
+									<LgMenuTextBox />
+									<PickupBetButton betType="pass-line" />
+								</div>
 							</LgMenu>
 						{/if}
 					</div>
 					<!-- Chip Set -->
-					<ChipSetVert1 id={'pass-line-cheques'} dataX={40} dataY={74.25} />
-					<ChipSetVert1 id={'pass-line-payment-cheques'} dataX={41.875} dataY={74.25} />
-					<ChipSetVert1 id={'pass-line-odds-cheques'} dataX={40} dataY={80.25} />
-					<ChipSetVert1 id={'pass-line-odds-payment-cheques'} dataX={41.875} dataY={80.25} />
-					<ChipSetVert1 id={'dont-pass-cheques'} dataX={40} dataY={68} />
-					<ChipSetVert1 id={'dont-pass-payment-cheques'} dataX={41.875} dataY={68} />
-					<ChipSetHoriz id={'dont-pass-lay-odds-cheques'} dataX={38} dataY={69.5} />
-					<ChipSetHoriz id={'dont-pass-lay-odds-payment-cheques'} dataX={38} dataY={66.25} />
-					<ChipSetVert1 id={'field-cheques'} dataX={40} dataY={59.25} />
-					<ChipSetVert1 id={'field-single-payment-cheques'} dataX={41.875} dataY={59.25} />
-					<ChipSetVert1 id={'field-double-payment-cheques'} dataX={38.125} dataY={59.25} />
-					<ChipSetVert1 id={'come-bet-cheques'} dataX={39.5} dataY={48.25} />
-					<ChipSetVert1 id={'come-bet-payment-cheques'} dataX={41.375} dataY={48.25} />
-					<ChipSetVert1 id={'dont-come-bet-cheques'} dataX={19.875} dataY={33.375} />
-					<ChipSetVert1 id={'dont-come-bet-payment-cheques'} dataX={21.75} dataY={33.25} />
-					<ChipSetVert2 id={'place-four-cheques'} dataX={28} dataY={42.75} />
-					<ChipSetVert2 id={'come-bet-four-cheques'} dataX={24.5} dataY={39} />
-					<ChipSetHoriz id={'come-bet-odds-four-cheques'} dataX={25.5} dataY={39.25} />
-					<ChipSetVert1 id={'behind-four-cheques'} dataX={26} dataY={26.25} />
+					{#each $playerBets as { betId, amount, baseX, baseY, direction } (betId)}
+						{#if baseX !== undefined && baseY !== undefined && direction !== undefined}
+							<ChipSet id={betId} {amount} {baseX} {baseY} {direction} />
+						{:else}
+							<p>
+								Error: Missing data for bet {JSON.stringify({
+									betId,
+									amount,
+									baseX,
+									baseY,
+									direction
+								})}
+							</p>
+						{/if}
+					{/each}
 				</section>
 			</div>
 		</div>

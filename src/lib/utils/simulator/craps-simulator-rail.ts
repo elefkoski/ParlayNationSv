@@ -1,26 +1,19 @@
-console.log('Running craps-simulator-bank.ts');
-import { derived, get, writable, type Writable } from 'svelte/store';
+console.log('Entering craps-simulator-bank.ts');
+import { get, writable, type Writable } from 'svelte/store';
+import { railTotal, layoutTotal, totalBankroll } from './default-game-settings';
 
-// Bankroll
-export const railTotal: Writable<number> = writable(100519); // Rail Amount
-export const layoutTotal: Writable<number> = writable(0); // Layout Amount
-export const totalBankroll = derived(
-	[railTotal, layoutTotal],
-	([$railTotal, $layoutTotal]) => $railTotal + $layoutTotal
-);
-
-// Function to add to the bankroll
-function addToBankroll(addAmount: number): void {
-	console.log('addToBankroll called with amount:', addAmount);
+// Function to add to the rail
+function addToRailTotal(addAmount: number): void {
+	console.log('addToRailTotal called with amount:', addAmount);
 	railTotal.update((current) => {
 		const newBankroll = current + addAmount;
 		console.log('New bankroll value:', newBankroll);
 		return newBankroll;
 	});
 }
-// Function to subtract from the bankroll
-function subtractFromBankroll(subtractAmount: number): void {
-	console.log('subtractFromBankroll called with amount:', subtractAmount);
+// Function to subtract from the rail
+function subtractFromRailTotal(subtractAmount: number): void {
+	console.log('subtractFromRailTotal called with amount:', subtractAmount);
 	railTotal.update((current) => {
 		console.log('Current bankroll value:', current);
 		const newBankroll = current - subtractAmount;
@@ -45,21 +38,21 @@ function displayChipCounts(): void {
 	const totalValue = chipCounts.reduce((acc, { totalValue }) => acc + totalValue, 0);
 	console.log(`Total Value of all chips: $${totalValue}`);
 }
-export function addToBankAndRail(amount: number): void {
-	console.log('addToBankAndRail called with amount:', amount);
-	addToRail(amount);
-	addToBankroll(amount);
+export function addChipsAndTotalToRail(amount: number): void {
+	console.log('addChipsAndTotalToRail called with amount:', amount);
+	placeChipsInRail(amount);
+	addToRailTotal(amount);
 	displayChipCounts();
 }
 
-export function takeFromBankAndRail(amount: number): void {
+export function subractChipsAndTotalFromRail(amount: number): void {
 	console.log('takeFundsFromBankrollAndChipsFromRail called with amount:', amount);
 	if (amount > get(railTotal)) {
 		console.error('Error: Amount exceeds rail total.');
 		return;
 	}
-	takeFromRail(amount);
-	subtractFromBankroll(amount);
+	takeChipsFromRail(amount);
+	subtractFromRailTotal(amount);
 	displayChipCounts();
 }
 
@@ -418,8 +411,8 @@ function breakChip(largerDenom: number, targetDenom: number): void {
 	}
 }
 
-function addToRail(amount: number): void {
-	console.log('addToRail called with amount:', amount);
+function placeChipsInRail(amount: number): void {
+	console.log('placeChipsInRail called with amount:', amount);
 	const range = getOptimumAddRange();
 	if (!range) return;
 
@@ -438,8 +431,8 @@ function addToRail(amount: number): void {
 	remainingAmount = applyChipOperation(optimalValues, remainingAmount, 'add');
 }
 
-function takeFromRail(amount: number): void {
-	console.log('takeFromRail called with amount:', amount);
+function takeChipsFromRail(amount: number): void {
+	console.log('takeChipsFromRail called with amount:', amount);
 	let remainingAmount = amount;
 
 	// Define chip denominations from smallest to largest
@@ -545,7 +538,7 @@ function denomToKey(denom: number): keyof OptimumTakeRange {
 	}
 }
 
-// Add chips to the appropriate stack -- from addToRail
+// Add chips to the appropriate stack -- from placeChipsInRail
 function addChips(denomination: number, count: number): void {
 	chips[denomination].update((current) => {
 		const newChips = [...current];
@@ -570,9 +563,10 @@ function removeChips(denomination: number, count: number): void {
 }
 
 // Distribute chips at start
-addToRail(get(railTotal));
+placeChipsInRail(get(railTotal));
 displayChipCounts();
 console.log('Rail Total: ', get(railTotal));
 console.log('Layout Total: ', get(layoutTotal));
 console.log('Total Bankroll: ', get(totalBankroll));
-console.log('Finished running craps-simulator-bank.ts');
+
+console.log('Exiting craps-simulator-bank.ts');

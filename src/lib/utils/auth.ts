@@ -1,3 +1,5 @@
+console.log('Entering auth.ts');
+
 import {
 	getAuth,
 	onAuthStateChanged,
@@ -5,43 +7,52 @@ import {
 	browserLocalPersistence,
 	signOut
 } from 'firebase/auth';
-import { scaleElements, scaleChipsToFit, scaleAllPopups } from '../../craps-simulator-layout';
-import { clearTempPreferences } from './tempPreferences';
 import {
-	user,
+	scaleElements,
+	scaleChipsToFit,
+	scaleAllPopups
+} from './simulator/craps-simulator-scaling';
+import { user, crapsSimulatorPreferences, defaultCrapsSimulatorPreferences } from './userData';
+import {
 	fetchUserData,
-	crapsSimulatorPreferences,
-	defaultCrapsSimulatorPreferences
-} from './userData';
+	loadNonUserData,
+	loadPreferencesFromLocalStorage
+} from './userDataOperations';
 import { goto } from '$app/navigation';
 import { get } from 'svelte/store';
 import { page } from '$app/stores';
 
-export function handleAuthStateChange(callback: (userId: string | null) => void) {
+export let isInitializing: boolean = true;
+
+export function handleAuthStateChange(): void {
+	console.log('handleAuthStateChange called.');
 	const auth = getAuth();
 
 	onAuthStateChanged(auth, async (firebaseUser) => {
+		console.log('onAuthStateChanged called.');
 		if (firebaseUser) {
 			console.log('User authenticated:', firebaseUser.uid);
 
-			// Fetch user data (including Google profile)
+			// Fetch and load user data
 			await fetchUserData(firebaseUser);
-			callback(firebaseUser.uid);
 		} else {
-			console.log('User logged out.');
+			console.log('No authenticated user. Loading non-user data via loadnonUserData:');
 
-			user.set(null);
-			callback(null);
+			// Load non-user data
+			await loadNonUserData();
 		}
 	});
+
+	isInitializing = false;
 }
 
 export async function logout() {
 	try {
 		const auth = getAuth();
 		await signOut(auth);
-		clearTempPreferences();
-		crapsSimulatorPreferences.set(defaultCrapsSimulatorPreferences);
+		crapsSimulatorPreferences.set(
+			loadPreferencesFromLocalStorage() || defaultCrapsSimulatorPreferences
+		);
 		user.set(null);
 
 		const currentPath = get(page).url.pathname;
@@ -55,6 +66,7 @@ export async function logout() {
 	}
 }
 
+// <<<<<< Not being used >>>>> //
 export async function enablePersistentLogin() {
 	const auth = getAuth();
 	try {
@@ -64,3 +76,5 @@ export async function enablePersistentLogin() {
 		console.error('Failed to enable persistent login:', error);
 	}
 }
+
+console.log('Exiting auth.ts');
