@@ -21,9 +21,13 @@ export function toggleUiSetting(key: UiToggleKey): void {
 	console.log('Entering toggleUiSetting');
 	if (key in uiToggles) {
 		console.log(`Toggling key: ${key}`);
+
 		const store = uiToggles[key as keyof typeof uiToggles];
 		store.update((current) => !current);
-		console.log(`New value for key '${key}': ${store}`);
+
+		store.subscribe((newValue) => {
+			console.log(`New value for key '${key}': ${newValue}`);
+		})();
 	} else {
 		console.warn(`Key '${key}' does not exist in uiToggles.`);
 	}
@@ -32,6 +36,14 @@ export function toggleUiSetting(key: UiToggleKey): void {
 		scaleAllPopups();
 	}, 0);
 	console.log('Leaving toggleUiSetting');
+}
+
+export async function scaleEverything(): Promise<void> {
+	console.log('Entering scaleEverything');
+	scaleElements();
+	scaleChipsToFit();
+	scaleAllPopups();
+	console.log('Leaving scaleEverything');
 }
 
 // Helper function to scale elements via 16:9 aspect ratio
@@ -51,7 +63,7 @@ export async function scaleElements(type: string | null = null) {
 	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
 	console.log('Selector:', selector);
 	const elements = document.querySelectorAll(selector);
-	console.log('Elements being scaled :', elements);
+	//console.log('Elements being scaled :', elements);
 	elements.forEach((el) => {
 		const x = parseFloat(el.dataset.x) || null;
 		const y = parseFloat(el.dataset.y) || null;

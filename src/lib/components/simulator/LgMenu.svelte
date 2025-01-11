@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="game-popup game-element rounded-md popup z-20"
+	class="game-popup game-element rounded-md popup z-40"
 	data-x="50"
 	data-y="50"
 	data-width="80"

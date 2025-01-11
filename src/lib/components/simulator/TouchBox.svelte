@@ -1,5 +1,5 @@
 <script lang="ts">
-	console.log('TouchBox component loading');
+	//console.log('TouchBox component loading');
 
 	import { toggleUiSetting } from '../../utils/simulator/craps-simulator-scaling';
 	import type { UiToggleKey } from '../../utils/simulator/craps-simulator-scaling';
@@ -14,7 +14,7 @@
 		toggleUiSetting(toggleKey);
 	}
 
-	console.log('TouchBox component loaded.');
+	//console.log('TouchBox component loaded.');
 </script>
 
 <div

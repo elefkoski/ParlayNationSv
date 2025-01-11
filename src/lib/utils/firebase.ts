@@ -92,41 +92,6 @@ export const facebookSignIn = async () => {
 	}
 };
 
-export const savePage = async (userId: string, pageData: any) => {
-	//console.log('Debut firebase.ts: Entered savePage function.');
-	let docRefId = null; // Initialize docRefId to null
-	try {
-		//console.log('Debug firebase.ts: User ID:', userId);
-		//console.log('Debug firebase.ts: Page data:', pageData);
-		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
-		//console.log('Debug firebase.ts: Bookmarks Collection:', bookmarksCollection);
-		const docRef = await addDoc(bookmarksCollection, pageData);
-		docRefId = docRef.id; // Set docRefId to the id of the document
-		//console.log('Debug firebase.ts: Doc Ref:', docRef);
-		//console.log('Debug firebase.ts: Doc Ref Id:', docRefId);
-	} catch (e) {
-		console.error('Error saving bookmark: ', e);
-	}
-	//console.log('Debut firebase.ts: Leaving savePage function.');
-	return docRefId; // Return the id of the document or null if there was an error
-};
-
-export const removePage = async (userId: string, bookmarkId: string) => {
-	console.log('Debug firebase.ts: Entered removePage function');
-	console.log(`Debug firebase.ts: User ID: ${userId}`);
-	console.log(`Debug firebase.ts: BookmarkId: ${bookmarkId}`);
-
-	try {
-		const bookmarkRef = doc(db, `users/${userId}/bookmarks/${bookmarkId}`);
-		console.log('Debug firebase.ts: Bookmark Reference:', bookmarkRef);
-
-		await deleteDoc(bookmarkRef);
-		console.log(`Debug firebase.ts: Successfully removed bookmarkId ${bookmarkId}.`);
-	} catch (error) {
-		console.error('Error removing document:', error);
-	}
-};
-
 // <<<<< Not being used >>>>> //
 let analytics;
 export const initializeFirebaseAnalytics = () => {

@@ -2,10 +2,12 @@
 	console.log('Navbar component loading');
 	import NavbarDrawer from './NavbarDrawer.svelte';
 	import { goto } from '$app/navigation';
-	import { logout, handleAuthStateChange } from '$lib/utils/auth';
+	import { logout, handleAuthStateChange, hasUserLoaded } from '$lib/utils/auth';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
 	import { user } from '$lib/utils/userData';
+	import { get } from 'svelte/store';
+	import { page } from '$app/stores';
 
 	let current_user: any = null;
 	let isAuthenticated = false;
@@ -13,14 +15,18 @@
 
 	onMount(() => {
 		console.log('Entering Navbar Mount');
+
+		localStorage.setItem('redirectAfterLogin', get(page).url.pathname);
+		console.log('Redirect path saved:', get(page).url.pathname);
+
 		console.log('Current User: ', current_user);
 		const unsubscribe = user.subscribe((value) => {
 			console.log('User value:', value);
 			current_user = value;
-			console.log('New User:', current_user);
+
+			hasUserLoaded.set(true);
 			isAuthenticated = !!value;
 			profilePicture = value?.profile?.profilePicture || 'https://picsum.photos/100';
-			console.log('Profile Picture:', profilePicture);
 		});
 
 		handleAuthStateChange();

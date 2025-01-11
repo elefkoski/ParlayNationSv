@@ -1,10 +1,6 @@
 console.log('Entering userData.ts');
 
 import { writable } from 'svelte/store';
-import {
-	loadPlayerBetsFromLocalStorage,
-	loadPreferencesFromLocalStorage
-} from './userDataOperations';
 import { directionOffsets } from './simulator/craps-simulator-bet-placement';
 
 export const user = writable<{ id: string; profile?: any } | null>(null);
@@ -12,7 +8,7 @@ export const userPreferences = writable({});
 export const bookmarks = writable<Bookmark[]>([]);
 export const bookmarkedPages = writable<Bookmark[]>([]);
 export const favoriteBets = writable<FavoriteBet[]>([]);
-export const playerBets = writable<PlayerBet[]>(loadPlayerBetsFromLocalStorage() || []);
+export const playerBets = writable<PlayerBet[]>([]);
 
 export interface User {
 	id?: string;
@@ -46,7 +42,7 @@ export interface FavoriteBet {
 	};
 }
 export interface PlayerBet {
-	betId: string; // Unique identifier for the bet
+	id: string; // Unique identifier for the bet
 	type: string; // Type of bet (e.g., "Pass Line", "Don't Pass")
 	amount: number; // Amount of chips
 	isWorking: boolean; // Indicates if the bet is active
@@ -67,7 +63,7 @@ export const defaultCrapsSimulatorPreferences: CrapsSimulatorPreferences = {
 	savedRolls: []
 };
 export const crapsSimulatorPreferences = writable<CrapsSimulatorPreferences>(
-	loadPreferencesFromLocalStorage() || defaultCrapsSimulatorPreferences
+	defaultCrapsSimulatorPreferences
 );
 
 export function resetToDefaultPreferences() {

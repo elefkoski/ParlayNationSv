@@ -1,14 +1,21 @@
 <script lang="ts">
 	console.log('craps-simulator +page loading');
 
-	import { onMount, tick } from 'svelte';
+	import {
+		hasUserLoaded,
+		hasInitialized,
+		isInitializing,
+		isLoggingIn,
+		isLoggingOut,
+		isReadyForSync
+	} from '$lib/utils/auth';
+	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
 		enterFullScreen,
 		exitFullScreen,
 		scaleElements,
-		scaleChipsToFit,
-		scaleAllPopups,
+		scaleEverything,
 		chips,
 		toggleUiSetting,
 		showSettingsPopup,
@@ -40,14 +47,14 @@
 	import PickupBetButton from '$lib/components/simulator/PickupBetBtn.svelte';
 	import { user, crapsSimulatorPreferences, playerBets } from '../../lib/utils/userData';
 	import {
-		savePlayerBetsToLocalStorage,
-		savePlayerBetsToFirebase,
-		savePreferencesToLocalStorage,
-		savePreferencesToFirebase,
+		syncPlayerBetsToLocalStorage,
+		syncPlayerBetsToFirebase,
+		syncCrSimPrefsToLocalStorage,
+		syncCrSimPrefsToFirebase,
 		clearPlayerBetsFromLocalStorage,
 		clearPlayerBetsFromFirebase
 	} from '$lib/utils/userDataOperations';
-	import { isInitializing } from '$lib/utils/auth';
+	import { get } from 'svelte/store';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
@@ -76,54 +83,51 @@
 			}
 		});
 
-		await scaleElements();
-		await scaleChipsToFit();
-		await scaleAllPopups();
+		await scaleEverything();
 	});
 
-	crapsSimulatorPreferences.subscribe(async (prefs) => {
-		if (isInitializing) return;
+	crapsSimulatorPreferences.subscribe((prefs) => {
+		console.log('Has Initialized:', get(hasInitialized));
+		console.log('Has User Loaded:', get(hasUserLoaded));
+		console.log('Is Initializing:', get(isInitializing));
+		console.log('Is Logging In:', get(isLoggingIn));
+		console.log('Is Logging Out:', get(isLoggingOut));
+		console.log('Is Ready For Sync:', get(isReadyForSync));
+		const readyForSync = get(isReadyForSync);
+		console.log('Craps Simulator Preferences isReadyForSync state:', readyForSync);
+		if (!readyForSync) return;
+
 		console.log(
-			'Craps Simulator Preferences being updated via subscription in craps-simulator:',
+			'Craps Simulator Preferences updating via subscription. Current Preferences:',
 			prefs
 		);
+
+		console.log('Current User:', current_user);
 		if (current_user?.id) {
-			console.log(
-				'savePreferencesToFirebase called via crapsSimulator subscription in craps-simulator'
-			);
-			await savePreferencesToFirebase(current_user.id, prefs);
+			console.log('Syncing subscription preferences to Firebase for user:', current_user);
+			syncCrSimPrefsToFirebase(current_user.id, prefs);
 		} else {
-			console.log(
-				'savePreferencesToLocalStorage called via crapsSimulator subscription in craps-simulator'
-			);
-			savePreferencesToLocalStorage(prefs);
+			console.log('Syncing subscription preferences to Local Storage.');
+			syncCrSimPrefsToLocalStorage(prefs);
 		}
 	});
 
-	playerBets.subscribe(async (bets) => {
-		if (isInitializing) return;
-		console.log('Player Bets being updated via subscription in craps-simulator:', bets);
-		if (current_user?.id) {
-			console.log('savePlayerBetsToFirebase called via playerBets subscription in craps-simulator');
-			await savePlayerBetsToFirebase(current_user.id, bets);
-		} else {
-			console.log(
-				'savePlayerBetsToLocalStorage called via playerBets subscription in craps-simulator'
-			);
-			savePlayerBetsToLocalStorage(bets);
-		}
-		await tick();
-		scaleElements('cheque');
-	});
+	playerBets.subscribe((bets) => {
+		const readyForSync = get(isReadyForSync);
+		console.log('Player Bets Subscripton isReadyForSync state:', readyForSync);
+		if (!readyForSync) return;
 
-	//function clearLocalStorageKey(key: string): void {
-	//	if (typeof window !== 'undefined' && localStorage) {
-	//		localStorage.removeItem(key);
-	//		console.log(`${key} has been removed from local storage.`);
-	//	}
-	//}
-	//clearLocalStorageKey('playerBets');
-	//clearLocalStorageKey('crapsSimulatorPreferences');
+		console.log('Player Bets updating via subscription. Current Player Bets:', bets);
+
+		console.log('Current User:', current_user);
+		if (current_user?.id) {
+			console.log('Syncing player bets to Firebase for user:', current_user);
+			syncPlayerBetsToFirebase(current_user.id, bets);
+		} else {
+			console.log('Syncing player bets to Local Storage.');
+			syncPlayerBetsToLocalStorage(bets);
+		}
+	});
 
 	console.log('craps-simulator +page loaded.');
 </script>
@@ -370,7 +374,10 @@
 							data-fontsize="2"
 							data-paddinglr="2"
 							data-paddingtb="1"
-							on:click={() => clearPlayerBetsFromLocalStorage()}>C.Lo</button
+							on:click={() => {
+								console.log('Clearing Local Storage bets.');
+								clearPlayerBetsFromLocalStorage();
+							}}>C.Lo</button
 						>
 						<button
 							class="roll-btn game-element rounded-md hidden"
@@ -381,7 +388,7 @@
 							data-paddinglr="2"
 							data-paddingtb="1"
 							on:click={() => {
-								console.log('Clearing bets for user:', current_user);
+								console.log('Clearing Firebase bets for user:', current_user);
 								clearPlayerBetsFromFirebase(current_user);
 							}}>C.Fb</button
 						>
@@ -470,7 +477,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showStickperson}
-										on:change={() => scaleElements('stickperson')}
+										on:change={() => {
+											scaleElements('stickperson');
+										}}
 									/>
 									Show Stickperson
 								</label>
@@ -481,7 +490,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showGuide}
-										on:change={() => scaleElements('guide')}
+										on:change={() => {
+											scaleElements('guide');
+										}}
 									/>
 									Show Guide
 								</label>
@@ -492,7 +503,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showBankroll}
-										on:change={() => scaleElements('bankroll')}
+										on:change={() => {
+											scaleElements('bankroll');
+										}}
 									/>
 									Show Bankroll
 								</label>
@@ -503,7 +516,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showRail}
-										on:change={() => scaleElements('rail')}
+										on:change={() => {
+											scaleElements('rail');
+										}}
 									/>
 									Show Rail
 								</label>
@@ -514,7 +529,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showLayout}
-										on:change={() => scaleElements('layout')}
+										on:change={() => {
+											scaleElements('layout');
+										}}
 									/>
 									Show Layout
 								</label>
@@ -525,7 +542,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crapsSimulatorPreferences.showRollButton}
-										on:change={() => scaleElements('roll-button')}
+										on:change={() => {
+											scaleElements('roll-button');
+										}}
 									/>
 									Show Roll Button
 								</label>
@@ -534,9 +553,8 @@
 								<button
 									id="enter-btn"
 									class="enter-fullscreen-btn game-element popup"
-									data-x="8"
-									data-y="52"
-									data-fontsize="1.5"
+									data-x="10.25"
+									data-y="77.5"
 									data-paddinglr="1"
 									data-paddingtb="1"
 									on:click={() => enterFullScreen()}>Enter Full Screen</button
@@ -608,13 +626,13 @@
 						{/if}
 					</div>
 					<!-- Chip Set -->
-					{#each $playerBets as { betId, amount, baseX, baseY, direction } (betId)}
+					{#each $playerBets as { id, amount, baseX, baseY, direction } (id)}
 						{#if baseX !== undefined && baseY !== undefined && direction !== undefined}
-							<ChipSet id={betId} {amount} {baseX} {baseY} {direction} />
+							<ChipSet {id} {amount} {baseX} {baseY} {direction} />
 						{:else}
 							<p>
 								Error: Missing data for bet {JSON.stringify({
-									betId,
+									id,
 									amount,
 									baseX,
 									baseY,

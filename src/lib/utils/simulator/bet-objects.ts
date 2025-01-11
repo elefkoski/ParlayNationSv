@@ -1,52 +1,72 @@
 console.log('Entering bet-objects.ts');
 
 import { playerBets, generateBetId } from '../userData';
-import type { PlayerBet } from '../userData';
 import type { directionOffsets } from './craps-simulator-bet-placement';
 
 export const betObjects = {
 	passLine: {
-		name: 'Pass Line',
 		id: 'pass-line',
-		betCoordinates: { baseX: 40, baseY: 75.5 },
-		chipDirection: 'n',
+		type: 'Pass Line',
+		amount: 0,
 		isWorking: true,
-		isLockedIn: false
+		isLockedIn: false,
+		baseX: 40,
+		baseY: 75.5,
+		chipDirection: 'n'
 	},
 	dontPass: {
-		name: "Don't Pass",
 		id: 'dont-pass',
-		betCoordinates: { baseX: 40, baseY: 69 },
-		chipDirection: 'n',
+		type: "Don't Pass",
+		amount: 0,
 		isWorking: true,
-		isLockedIn: false
+		isLockedIn: false,
+		baseX: 40,
+		baseY: 69,
+		chipDirection: 'n'
 	}
 };
 
-export function placeBet(
-	betId: string,
-	amount: number,
-	options: Partial<Omit<PlayerBet, 'betId' | 'type' | 'amount'>> = {}
-) {
-	const bet = betObjects[betId as keyof typeof betObjects];
-	if (!bet) throw new Error(`Invalid betId: ${betId}`);
-
-	// Merge options with defaults
-	const betData: PlayerBet = {
-		betId: generateBetId(bet.id, amount),
-		type: bet.name,
-		amount,
-		isWorking: options.isWorking ?? bet.isWorking,
-		isLockedIn: options.isLockedIn ?? bet.isLockedIn,
-		baseX: options.baseX ?? bet.betCoordinates.baseX,
-		baseY: options.baseY ?? bet.betCoordinates.baseY,
-		direction:
-			(options.direction as keyof typeof directionOffsets) ??
-			(bet.chipDirection as keyof typeof directionOffsets)
+function getDefaultBetData(type: string) {
+	const defaults = {
+		id: 'Bet Id',
+		type: 'Bet Type',
+		amount: 0,
+		isWorking: true,
+		isLockedIn: false,
+		baseX: 0,
+		baseY: 0,
+		direction: 'n' as keyof typeof directionOffsets
 	};
 
-	playerBets.update((bets) => [...bets, betData]);
-	console.log('Placed bet:', betData);
+	switch (type) {
+		case 'passLine':
+			return { ...betObjects.passLine, direction: 'n' as keyof typeof directionOffsets };
+		case 'dontPass':
+			return { ...betObjects.dontPass, direction: 'n' as keyof typeof directionOffsets };
+		default:
+			return defaults;
+	}
+}
+
+export function placeBet(betId: string, amount: number): void {
+	const defaultBetData = getDefaultBetData(betId);
+	console.log('defaultBetData:', defaultBetData);
+
+	const newBetId = generateBetId(betId, amount);
+
+	playerBets.update((currentBets) => {
+		const newBet = {
+			...defaultBetData,
+			id: newBetId,
+			amount
+		};
+		console.log('newBet:', newBet);
+		const updatedBets = [...currentBets, newBet];
+		console.log('returning:', updatedBets);
+		return updatedBets;
+	});
+
+	console.log(`Bet placed: ${newBetId}`);
 }
 
 console.log('Exiting bet-objects.ts');

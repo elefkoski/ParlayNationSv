@@ -30,9 +30,9 @@ function displayChipCounts(): void {
 		return { denomination: Number(denomination), count, totalValue };
 	});
 
-	chipCounts.forEach(({ denomination, count, totalValue }) => {
-		console.log(`Denomination: $${denomination}, Count: ${count}, Total Value: $${totalValue}`);
-	});
+	//chipCounts.forEach(({ denomination, count, totalValue }) => {
+	//	console.log(`Denomination: $${denomination}, Count: ${count}, Total Value: $${totalValue}`);
+	//});
 	const totalChipCount = chipCounts.reduce((acc, { count }) => acc + count, 0);
 	console.log(`Total number of chips: ${totalChipCount}`);
 	const totalValue = chipCounts.reduce((acc, { totalValue }) => acc + totalValue, 0);

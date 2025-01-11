@@ -1,6 +1,5 @@
 <script lang="ts">
 	import EmptyLayout from '$lib/components/layouts/EmptyLayout.svelte';
-	import { handleAuthStateChange } from '$lib/utils/auth';
 	import { goto } from '$app/navigation';
 	import {
 		googleSignIn,
@@ -16,39 +15,56 @@
 	} from 'firebase/auth';
 	import { getAuth } from 'firebase/auth';
 	import { writable } from 'svelte/store';
+	import { get } from 'svelte/store';
+	import { page } from '$app/stores';
 
 	const authInstance = getAuth();
 	const errorMessage = writable<string>('');
+	const isProcessing = writable<boolean>(false); // To prevent multiple clicks
 
 	let email = '';
 	let password = '';
 	let rememberMe = false;
 	let agreeToTerms = true;
 	let showPassword = false;
-	let isLoginMode = true; // Default to login mode
+	let isLoginMode = true;
 
-	// Sync with userData.ts
-	handleAuthStateChange(() => {
-		console.log('Auth state change handled on Login Page');
-	});
+	function setRedirectPath() {
+		const currentPath = get(page).url.pathname;
 
-	async function loginUser(event: SubmitEvent) {
-		event.preventDefault();
+		if (currentPath === '/login') {
+			console.log('Already on login page. Skipping redirectAfterLogin set.');
+			return;
+		}
+
+		localStorage.setItem('redirectAfterLogin', currentPath);
+		console.log('Set redirectAfterLogin:', currentPath);
+	}
+
+	// Centralized login function
+	async function handleLogin(authCallback: () => Promise<any>) {
 		errorMessage.set('');
+		isProcessing.set(true);
 		try {
 			await setPersistence(
 				authInstance,
 				rememberMe ? browserLocalPersistence : browserSessionPersistence
 			);
-			const firebaseUser = await loginWithEmailPassword(email, password);
+			setRedirectPath(); // Set redirect path before login
+			const firebaseUser = await authCallback();
 			if (firebaseUser) {
-				goto('/');
+				const redirectPath = localStorage.getItem('redirectAfterLogin') || '/';
+				localStorage.removeItem('redirectAfterLogin'); // Clear redirect after use
+				goto(redirectPath);
 			}
 		} catch (error) {
 			handleAuthError(error);
+		} finally {
+			isProcessing.set(false);
 		}
 	}
 
+	// Register with email and password
 	async function registerUser(event: SubmitEvent) {
 		event.preventDefault();
 		if (!agreeToTerms) {
@@ -56,6 +72,7 @@
 			return;
 		}
 		errorMessage.set('');
+		isProcessing.set(true);
 		try {
 			const firebaseUser = await registerWithEmailPassword(email, password);
 			if (firebaseUser) {
@@ -65,39 +82,25 @@
 			}
 		} catch (error) {
 			handleAuthError(error);
+		} finally {
+			isProcessing.set(false);
 		}
 	}
 
+	// Login with email and password
+	async function loginUser(event: SubmitEvent) {
+		event.preventDefault();
+		await handleLogin(() => loginWithEmailPassword(email, password));
+	}
+
+	// Google Sign-In
 	async function handleGoogleSignIn() {
-		errorMessage.set('');
-		try {
-			await setPersistence(
-				authInstance,
-				rememberMe ? browserLocalPersistence : browserSessionPersistence
-			);
-			const firebaseUser = await googleSignIn();
-			if (firebaseUser) {
-				goto('/');
-			}
-		} catch (error) {
-			handleAuthError(error);
-		}
+		await handleLogin(googleSignIn);
 	}
 
+	// Facebook Sign-In
 	async function handleFacebookSignIn() {
-		errorMessage.set('');
-		try {
-			await setPersistence(
-				authInstance,
-				rememberMe ? browserLocalPersistence : browserSessionPersistence
-			);
-			const firebaseUser = await facebookSignIn();
-			if (firebaseUser) {
-				goto('/');
-			}
-		} catch (error) {
-			handleAuthError(error);
-		}
+		await handleLogin(facebookSignIn);
 	}
 
 	function togglePasswordVisibility() {
