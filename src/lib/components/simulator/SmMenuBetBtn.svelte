@@ -1,20 +1,21 @@
 <script lang="ts">
-	console.log('SmMenuBetBtn component loading');
-
-	import { toggleFavoriteBet } from '$lib/utils/userDataOperations';
+	import { toggleFavoriteBet, getFavoriteStatus } from '$lib/utils/userDataOperations';
 
 	export let betName: string = 'Pass Line';
 	export let betAmount: number = 100;
 	export let betType: string = 'Pass Line';
 	let isFavorite: boolean = false;
 
-	$: (async () => {
+	console.log('SmMenuBetBtn component loading:', { betName, betAmount });
+
+	async function initializeFavoriteStatus() {
 		try {
-			isFavorite = await toggleFavoriteBet(betType, betAmount);
+			console.log('Initializing favorite status:', { betType, betAmount });
+			isFavorite = await getFavoriteStatus(betType, betAmount);
 		} catch (error) {
 			console.error('Failed to initialize favorite status:', error);
 		}
-	})();
+	}
 
 	async function handleToggleFavorite() {
 		try {
@@ -29,7 +30,9 @@
 		console.log('Bet button clicked:', { betType, betAmount });
 	}
 
-	console.log('SmMenuBetBtn component loaded.');
+	initializeFavoriteStatus();
+
+	console.log('SmMenuBetBtn component loaded:', { betName, betAmount });
 </script>
 
 <div class="split-button popup" data-border=".25" data-borderRadius="1">

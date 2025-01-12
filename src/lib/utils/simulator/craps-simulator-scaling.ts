@@ -42,7 +42,7 @@ export async function scaleEverything(): Promise<void> {
 	console.log('Entering scaleEverything');
 	scaleElements();
 	scaleChipsToFit();
-	scaleAllPopups();
+	//scaleAllPopups();
 	console.log('Leaving scaleEverything');
 }
 
@@ -265,7 +265,7 @@ export async function scaleAllPopups() {
 	if (stickCallElement) {
 		stickCallElement.classList.remove('hidden');
 	}
-	console.log(`Total number of elements scaled: ${elements.length}`, elements);
+	console.log(`Total number of elements scaled: ${elements.length}`);
 	console.log('Leaving scaleAllPopups');
 }
 

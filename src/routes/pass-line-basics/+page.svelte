@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { calculatePassLine } from '$lib/utils/calculations';
+	import { calculatePassLine } from '$lib/utils/craps-calculators';
 	import ContentMenuBox from '$lib/components/PageMenuBox.svelte';
 	import type { PageMenu } from '$lib/utils/types';
 	import CalcBox from '$lib/components/calculators/CalcBox.svelte';

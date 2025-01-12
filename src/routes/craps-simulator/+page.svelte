@@ -1,14 +1,7 @@
 <script lang="ts">
 	console.log('craps-simulator +page loading');
 
-	import {
-		hasUserLoaded,
-		hasInitialized,
-		isInitializing,
-		isLoggingIn,
-		isLoggingOut,
-		isReadyForSync
-	} from '$lib/utils/auth';
+	import { isReadyForSync, isDataReady } from '$lib/utils/auth';
 	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
@@ -27,7 +20,7 @@
 		railTotal,
 		layoutTotal,
 		totalBankroll
-	} from '../../lib/utils/simulator/default-game-settings';
+	} from '../../lib/utils/simulator/simulator-calculations';
 	import {
 		rollDice,
 		firstDieImage,
@@ -74,7 +67,7 @@
 	let current_user: any = null;
 	$: current_user = $user;
 
-	onMount(async () => {
+	onMount(() => {
 		console.log('Craps-simulator on Mount being called');
 
 		document.addEventListener('keydown', (event) => {
@@ -83,15 +76,19 @@
 			}
 		});
 
-		await scaleEverything();
+		const unsubscribeDataReady = isDataReady.subscribe((ready) => {
+			if (ready) {
+				console.log('Craps Simulator isDataReady state:', ready);
+				scaleEverything();
+			}
+		});
+
+		return () => {
+			unsubscribeDataReady();
+		};
 	});
 
 	crapsSimulatorPreferences.subscribe((prefs) => {
-		console.log('Has Initialized:', get(hasInitialized));
-		console.log('Has User Loaded:', get(hasUserLoaded));
-		console.log('Is Initializing:', get(isInitializing));
-		console.log('Is Logging In:', get(isLoggingIn));
-		console.log('Is Logging Out:', get(isLoggingOut));
 		console.log('Is Ready For Sync:', get(isReadyForSync));
 		const readyForSync = get(isReadyForSync);
 		console.log('Craps Simulator Preferences isReadyForSync state:', readyForSync);
@@ -311,7 +308,7 @@
 							data-paddinglr="2"
 							data-paddingtb="1"
 						>
-							<p class="popup">Rail: ${$railTotal.toLocaleString()}</p>
+							<p>Rail: ${$railTotal.toLocaleString()}</p>
 						</div>
 					{/if}
 					<!-- Roll Button -->
@@ -404,7 +401,7 @@
 							data-paddinglr="2"
 							data-paddingtb="1"
 						>
-							<p class="popup">Bankroll: ${$totalBankroll.toLocaleString()}</p>
+							<p>Bankroll: ${$totalBankroll.toLocaleString()}</p>
 						</div>
 					{/if}
 					<!-- Chips in Rail -->
@@ -617,7 +614,7 @@
 										betClass="all-in-btn"
 									/>
 								</MdBtnMenu>
-								<GameInputBox betType="pass-line" />
+								<GameInputBox betType="pass-line" popupBox="showPassLinePopup" />
 								<div class="flex justify-between gap-2">
 									<LgMenuTextBox />
 									<PickupBetButton betType="pass-line" />

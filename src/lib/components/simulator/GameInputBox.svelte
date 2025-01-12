@@ -8,6 +8,7 @@
 
 	let current_user = get(user);
 	export let betType: string = 'bet-type';
+	export let popupBox: string = 'popupBox';
 	let betAmount: number = 0;
 	let favorites = get(favoriteBets);
 	let isFavorite: boolean = false;
@@ -24,8 +25,10 @@
 
 	// Updates the favorite status and synchronizes the checkbox
 	function updateFavoriteStatus() {
+		console.log('updateFavoriteStatus called. betType=', betType, ', betAmount=', betAmount);
 		const betId = generateBetId(betType, betAmount); // Generate unique bet ID
 		isFavorite = favorites.some((bet) => bet.betId === betId); // Check if the bet is in favorites
+		console.log('updateFavoriteStatus isFavorite=', isFavorite);
 
 		// Only sync the checkbox if the user hasn't toggled it
 		if (!userToggledCheckbox) {
@@ -44,7 +47,7 @@
 			checkmarked
 		);
 	}
-
+	// Helper Functions
 	// Updates the text displayed next to the checkbox
 	function updateCheckboxText() {
 		if (isFavorite && checkmarked) {
@@ -73,7 +76,7 @@
 		console.log('toggleFavorite called. Toggled checkmarked to', checkmarked);
 	}
 
-	async function handleSubmit() {
+	async function handleSubmit(popupBox: string) {
 		const betId = generateBetId(betType, betAmount); // Generate bet ID
 
 		console.log(
@@ -89,7 +92,11 @@
 			console.log('handleSubmit: No changes needed. Bet is already a favorite.');
 		} else if (isFavorite && !checkmarked) {
 			try {
-				await removeFavoriteBet('user-id', betId);
+				if (current_user) {
+					await removeFavoriteBet(current_user.id, betId);
+				} else {
+					console.error('handleSubmit: current_user is null.');
+				}
 				console.log('handleSubmit: Removed from favorites. betId=', betId);
 			} catch (error) {
 				console.error('handleSubmit: Failed to remove favorite bet. Error:', error);
@@ -97,11 +104,15 @@
 			checkboxText = 'Submit to Unfavorite';
 		} else if (!isFavorite && checkmarked) {
 			try {
-				await saveFavoriteBet('user-id', {
-					betId,
-					betDetails: { type: betType, amount: betAmount }
-				});
-				console.log('handleSubmit: Added to favorites. betId=', betId);
+				if (current_user) {
+					await saveFavoriteBet(current_user.id, {
+						betId,
+						betDetails: { type: betType, amount: betAmount }
+					});
+					console.log('handleSubmit: Added to favorites. betId=', betId);
+				} else {
+					console.error('handleSubmit: current_user is null.');
+				}
 			} catch (error) {
 				console.error('handleSubmit: Failed to save favorite bet. Error:', error);
 			}
@@ -110,12 +121,10 @@
 			console.log('handleSubmit: No action taken. Bet is not marked as favorite.');
 			checkboxText = 'Add to Favorites';
 		}
-		toggleUiSetting('showPassLinePopup');
+		toggleUiSetting(popupBox);
 
 		// Reset user interaction state
 		userToggledCheckbox = false;
-
-		alert(`Bet submitted: ${betAmount}`);
 	}
 
 	console.log('GameInputBox component loaded');
@@ -147,7 +156,7 @@
 		class="game-input-btn rounded popup"
 		data-paddingtb="1"
 		data-paddinglr="2.5"
-		on:click={handleSubmit}
+		on:click={async () => await handleSubmit(popupBox)}
 	>
 		Submit
 	</button>

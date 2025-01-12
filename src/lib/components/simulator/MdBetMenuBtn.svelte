@@ -1,7 +1,7 @@
 <script lang="ts">
 	console.log('MdBetMenuBtn component loading');
 
-	import { toggleFavoriteBet } from '$lib/utils/userDataOperations';
+	import { toggleFavoriteBet, getFavoriteStatus } from '$lib/utils/userDataOperations';
 
 	export let betName: string = 'Pass Line';
 	export let betAmount: any = 100;
@@ -10,13 +10,16 @@
 
 	let isFavorite: boolean = false;
 
-	$: (async () => {
+	console.log('MdMenuBetBtn component loading:', { betName, betAmount });
+
+	async function initializeFavoriteStatus() {
 		try {
-			isFavorite = await toggleFavoriteBet(betType, betAmount);
+			console.log('Initializing favorite status:', { betType, betAmount });
+			isFavorite = await getFavoriteStatus(betType, betAmount);
 		} catch (error) {
 			console.error('Failed to initialize favorite status:', error);
 		}
-	})();
+	}
 
 	async function handleToggleFavorite() {
 		try {
@@ -30,6 +33,8 @@
 	function handleBetAction() {
 		console.log('Bet button clicked:', { betType, betAmount });
 	}
+
+	initializeFavoriteStatus();
 
 	console.log('MdBetMenuBtn component loaded.');
 </script>

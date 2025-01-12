@@ -65,7 +65,7 @@
 		calculateSixEightOverlay,
 		calculateFiveNineOverlay,
 		calculateFourTenOverlay
-	} from '$lib/utils/calculations';
+	} from '$lib/utils/craps-calculators';
 
 	let title: string = 'Craps Calculators';
 	let description: string = 'Craps bet calculators for all the bets on the Craps table.';

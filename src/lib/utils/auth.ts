@@ -19,18 +19,23 @@ import { goto } from '$app/navigation';
 import { writable, get, derived } from 'svelte/store';
 import { page } from '$app/stores';
 
-export let isInitializing = writable(false);
-export let isLoggingOut = writable(false);
-export let isLoggingIn = writable(false);
-export let hasUserLoaded = writable(false);
-export let hasInitialized = writable(false);
-
+// Flag stores for subscription management
+export const isInitializing = writable(false);
+export const isLoggingOut = writable(false);
+export const isLoggingIn = writable(false);
+export const hasUserLoaded = writable(false);
+export const hasInitialized = writable(false);
+// Derived from above
 export const isReadyForSync = derived(
 	[hasInitialized, hasUserLoaded, isInitializing, isLoggingOut, isLoggingIn],
 	([$hasInitialized, $hasUserLoaded, $isInitializing, $isLoggingOut, $isLoggingIn]) =>
 		$hasInitialized && $hasUserLoaded && !$isInitializing && !$isLoggingOut && !$isLoggingIn
 );
 
+// Flag store for scaling elements
+export const isDataReady = writable(false);
+
+// Flag to prevent multiple auth listeners
 let authListenerInitialized = false;
 
 export function handleAuthStateChange(): void {
@@ -52,6 +57,7 @@ export function handleAuthStateChange(): void {
 		}
 
 		isInitializing.set(true); // Prevent subscriptions from triggering during initialization
+		isDataReady.set(false); // Prevent scaling until initialization is complete
 
 		try {
 			if (firebaseUser) {
@@ -67,6 +73,7 @@ export function handleAuthStateChange(): void {
 		} finally {
 			isLoggingIn.set(false);
 			isInitializing.set(false);
+			isDataReady.set(true);
 			console.log('Exiting handleAuthStateChange.');
 		}
 	});

@@ -111,7 +111,6 @@ export async function toggleFavoriteBet(
 		if (currentFavoriteState) {
 			// Remove favorite
 			await removeFavoriteBet(currentUser.id, betId);
-			favoriteBets.update((bets) => bets.filter((bet) => bet.betId !== betId));
 			console.log(`Removed bet from favorites: ${betId}`);
 			console.log('Exiting toggleFavoriteBet.');
 			return false; // Updated state: not a favorite
@@ -119,7 +118,6 @@ export async function toggleFavoriteBet(
 			// Add favorite
 			const betDetails = { type: betType, amount: betAmount };
 			await saveFavoriteBet(currentUser.id, { betId, betDetails });
-			favoriteBets.update((bets) => [...bets, { betId, betDetails }]);
 			console.log(`Added bet to favorites: ${betId}`);
 			console.log('Exiting toggleFavoriteBet.');
 			return true; // Updated state: favorite
@@ -136,7 +134,16 @@ export async function saveFavoriteBet(userId: string, favoriteBet: FavoriteBet) 
 		const docRef = doc(collection(db, `users/${userId}/favoriteBets`), favoriteBet.betId);
 		await setDoc(docRef, favoriteBet);
 		console.log('Favorite bet saved:', favoriteBet);
-		favoriteBets.update((current) => [...current, favoriteBet]);
+
+		favoriteBets.update((current) => {
+			console.log('Current bets:', current);
+			if (!current.some((bet) => bet.betId === favoriteBet.betId)) {
+				console.log('Returning:', [...current, favoriteBet]);
+				return [...current, favoriteBet];
+			}
+			console.log('Returning:', current);
+			return current; // Avoid redundant updates
+		});
 	} catch (error) {
 		console.error('Error saving favorite bet:', error);
 	}
@@ -150,6 +157,7 @@ export async function removeFavoriteBet(userId: string, betId: string) {
 		const docRef = doc(db, `users/${userId}/favoriteBets/${betId}`);
 		await deleteDoc(docRef);
 		console.log('Favorite bet removed:', betId);
+
 		favoriteBets.update((current) => current.filter((bet) => bet.betId !== betId));
 	} catch (error) {
 		console.error('Error removing favorite bet:', error);
@@ -157,6 +165,20 @@ export async function removeFavoriteBet(userId: string, betId: string) {
 
 	console.log('Exiting removeFavoriteBet.');
 }
+export async function getFavoriteStatus(betType: string, betAmount: number): Promise<boolean> {
+	console.log('getFavoriteStatus called.');
+
+	const currentUser = get(user);
+	if (!currentUser?.id) {
+		throw new Error('User is not logged in.');
+	}
+
+	const betId = generateBetId(betType, betAmount);
+	const isFavorite = get(favoriteBets).some((bet) => bet.betId === betId);
+	console.log(`Favorite status for ${betId}:`, isFavorite);
+	return isFavorite;
+}
+
 async function fetchFavoriteBets(userId: string): Promise<void> {
 	console.log('fetchFavoriteBets called.');
 
@@ -285,25 +307,40 @@ export async function fetchPlayerBets(userId: string): Promise<void> {
 
 	console.log('Exiting fetchPlayerBets.');
 }
-export async function clearPlayerBetsFromFirebase(userId: string): Promise<void> {
-	console.log('clearPlayerBetsFromFirebase called.');
-
+export async function clearPlayerBetsFromFirebase(userId: string | any): Promise<void> {
 	try {
-		const betsCollection = collection(db, `users/${userId}/playerBets`);
+		console.log('Clearing Firebase bets for user:', userId);
+
+		// Ensure userId is a string
+		const resolvedUserId = typeof userId === 'string' ? userId : userId?.id;
+		if (!resolvedUserId) {
+			throw new Error('Invalid userId provided.');
+		}
+		console.log('Resolved User ID:', resolvedUserId);
+
+		const betsCollection = collection(db, `users/${resolvedUserId}/playerBets`);
 		console.log('betsCollection path:', betsCollection.path);
+
+		// Fetch documents in the collection
 		const querySnapshot = await getDocs(betsCollection);
 		console.log('querySnapshot size:', querySnapshot.size);
 
 		if (querySnapshot.empty) {
 			console.log('No player bets found in Firestore.');
-		} else {
-			const deletePromises = querySnapshot.docs.map((doc) => {
-				console.log('Deleting document with ID:', doc.id);
-				return deleteDoc(doc.ref);
-			});
-			console.log('Number of deletePromises:', deletePromises.length);
-			await Promise.all(deletePromises);
+			playerBets.set([]); // Clear local state anyway
+			return;
 		}
+
+		// Delete all documents
+		const deletePromises = querySnapshot.docs.map((doc) => {
+			console.log('Deleting document with ID:', doc.id);
+			return deleteDoc(doc.ref);
+		});
+		await Promise.all(deletePromises);
+
+		// Clear local state
+		playerBets.set([]);
+		console.log('Player bets cleared from Firebase.');
 	} catch (error) {
 		console.error('Error clearing player bets from Firebase:', error);
 	}

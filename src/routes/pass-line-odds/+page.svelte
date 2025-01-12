@@ -6,7 +6,7 @@
 		calculateSixEightOdds,
 		calculateFiveNineOdds,
 		calculateFourTenOdds
-	} from '$lib/utils/calculations';
+	} from '$lib/utils/craps-calculators';
 	import CalcBox from '$lib/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/components/calculators/CalcContainer.svelte';
 	import CalcInput from '$lib/components/calculators/CalcInput.svelte';

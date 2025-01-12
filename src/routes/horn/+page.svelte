@@ -5,7 +5,7 @@
 	import CalcBox from '$lib/components/calculators/CalcBox.svelte';
 	import CalcContainer from '$lib/components/calculators/CalcContainer.svelte';
 	import CalcInput2 from '$lib/components/calculators/CalcInput2.svelte';
-	import { calculateHorn } from '$lib/utils/calculations';
+	import { calculateHorn } from '$lib/utils/craps-calculators';
 	import PrevNext from '$lib/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';

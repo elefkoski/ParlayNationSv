@@ -73,5 +73,9 @@ export function resetToDefaultPreferences() {
 export function generateBetId(type: string, amount: number): string {
 	return `${type}-${amount || 0}`.replace(/\s+/g, '-').toLowerCase();
 }
+export function deduceBaseName(id: string): string {
+	// Remove trailing numbers or special characters (e.g., `-5`, `_123`, etc.)
+	return id.replace(/[-_]\d+$/, '');
+}
 
 console.log('Exiting userData.ts');

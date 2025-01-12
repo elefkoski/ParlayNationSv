@@ -10,7 +10,7 @@
 		calculateFiveNineLayOdds,
 		calculateFourTenLayOdds,
 		calculateMaxLay
-	} from '$lib/utils/calculations';
+	} from '$lib/utils/craps-calculators';
 	import PrevNext from '$lib/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';

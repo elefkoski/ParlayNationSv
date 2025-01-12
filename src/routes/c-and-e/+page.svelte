@@ -6,7 +6,7 @@
 	import CalcContainer from '$lib/components/calculators/CalcContainer.svelte';
 	import CalcInput2 from '$lib/components/calculators/CalcInput2.svelte';
 	import CalcInput3 from '$lib/components/calculators/CalcInput3.svelte';
-	import { calculateCAndESplit, calculateCAndE } from '$lib/utils/calculations';
+	import { calculateCAndESplit, calculateCAndE } from '$lib/utils/craps-calculators';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';

@@ -1,6 +1,6 @@
 console.log('Entering craps-simulator-bank.ts');
 import { get, writable, type Writable } from 'svelte/store';
-import { railTotal, layoutTotal, totalBankroll } from './default-game-settings';
+import { railTotal, layoutTotal, totalBankroll } from './simulator-calculations';
 
 // Function to add to the rail
 function addToRailTotal(addAmount: number): void {

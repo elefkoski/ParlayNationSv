@@ -1,4 +1,4 @@
-console.log('Entering default-game-settings.ts');
+console.log('Entering simulator-calculations.ts');
 
 import { writable, derived } from 'svelte/store';
 
@@ -10,4 +10,4 @@ export const totalBankroll = derived(
 	([$railTotal, $layoutTotal]) => $railTotal + $layoutTotal
 );
 
-console.log('Exiting default-game-settings.ts');
+console.log('Exiting simulator-calculations.ts');

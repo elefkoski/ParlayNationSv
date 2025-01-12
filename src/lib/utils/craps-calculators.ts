@@ -1,6 +1,29 @@
-// calculations.ts
+console.log('Entering calculations.ts');
 
-export function validateGeneralInput(input: any, pId: string): boolean {
+// Initial color update
+let { errorColor, successColor } = updateColors();
+
+export function handleThemeChange() {
+	({ errorColor, successColor } = updateColors());
+}
+function updateColors() {
+	if (typeof window === 'undefined') {
+		return { errorColor: '', successColor: '' };
+	}
+
+	const currentTheme = document.documentElement.getAttribute('data-theme');
+	const isDarkMode = currentTheme === 'dark';
+	const errorColor = isDarkMode
+		? 'var(--dm-calculator-error-text)'
+		: 'var(--calculator-error-text)';
+	const successColor = isDarkMode
+		? 'var(--dm-calculator-success-text)'
+		: 'var(--calculator-success-text)';
+
+	return { errorColor, successColor };
+}
+
+function validateGeneralInput(input: any, pId: string): boolean {
 	if (input == null || isNaN(input) || input <= 0 || typeof input !== 'number' || input % 1 !== 0) {
 		setMessage(pId, 'Choose a whole number above zero.', true);
 		return false;
@@ -8,7 +31,7 @@ export function validateGeneralInput(input: any, pId: string): boolean {
 	return true;
 }
 
-export function validateAmount(
+function validateAmount(
 	amt: number,
 	pId: string,
 	conditions: { condition: (amt: number) => boolean; message: string }[]
@@ -27,38 +50,13 @@ type Condition = {
 	message: string;
 };
 
-export function commonValidation(amt: number, pId: string, conditions: Condition[]): boolean {
+function commonValidation(amt: number, pId: string, conditions: Condition[]): boolean {
 	if (!validateGeneralInput(amt, pId)) return false;
 	if (!validateAmount(amt, pId, conditions)) return false;
 	return true;
 }
 
-function updateColors() {
-	if (typeof window === 'undefined') {
-		return { errorColor: '', successColor: '' };
-	}
-
-	const currentTheme = document.documentElement.getAttribute('data-theme');
-	const isDarkMode = currentTheme === 'dark';
-	const errorColor = isDarkMode
-		? 'var(--dm-calculator-error-text)'
-		: 'var(--calculator-error-text)';
-	const successColor = isDarkMode
-		? 'var(--dm-calculator-success-text)'
-		: 'var(--calculator-success-text)';
-
-	return { errorColor, successColor };
-}
-
-// Initial color update
-let { errorColor, successColor } = updateColors();
-
-// Function to handle theme change
-export function handleThemeChange() {
-	({ errorColor, successColor } = updateColors());
-}
-
-export function setMessage(pId: string, message: string, isError: boolean = false) {
+function setMessage(pId: string, message: string, isError: boolean = false) {
 	const pElement = document.getElementById(pId);
 	if (pElement) {
 		pElement.innerText = message;
@@ -67,7 +65,7 @@ export function setMessage(pId: string, message: string, isError: boolean = fals
 	}
 }
 
-export function numCommas(x: number) {
+function numCommas(x: number) {
 	var parts = x.toString().split('.');
 	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	return parts.join('.');
