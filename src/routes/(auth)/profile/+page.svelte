@@ -1,25 +1,27 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { isDataReady } from '$lib/utils/auth';
+	import { user, bookmarks } from '$lib/utils/userData';
+	import { deleteUserBookmark, fetchUserBookmarks } from '$lib/utils/userDataOperations';
 	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
 	import ProfileContentCard from '$lib/components/profilePage/ProfileContentCard.svelte';
-	import { user, bookmarkedPages } from '$lib/utils/userData';
-	import { fetchUserBookmarks, deleteUserBookmark } from '$lib/utils/userDataOperations';
 
 	let current_user: any = null;
 
 	$: current_user = $user;
-	$: if (current_user == $user) {
-		fetchBookmarks();
-	}
+	$: allBookmarks = $bookmarks;
 
-	async function fetchBookmarks() {
-		try {
+	onMount(async () => {
+		if (current_user) {
 			await fetchUserBookmarks(current_user.id);
-		} catch (error) {
-			console.error('Error fetching bookmarks:', error);
 		}
-	}
+	});
 
 	async function handleDelete(bookmarkId: string) {
+		if (!bookmarkId) {
+			console.error('Cannot delete bookmark: Bookmark ID is undefined.');
+			return;
+		}
 		try {
 			await deleteUserBookmark(current_user.id, bookmarkId);
 		} catch (error) {
@@ -84,48 +86,52 @@
 							class="bg-white dark:bg-gray-700 shadow rounded-lg p-6"
 						>
 							<h2 class="text-xl font-bold mb-4">Learn Craps</h2>
-							{#if $bookmarkedPages.length > 0}
-								<div class="hidden lg:block" style="column-count: 3; column-gap: 1em; ">
-									{#each $bookmarkedPages as bookmark}
-										<div style="break-inside: avoid; margin-bottom: 1em;">
-											<ProfileContentCard
-												title={bookmark.title}
-												description={bookmark.description}
-												imageUrl={bookmark.imageUrl}
-												pageUrl={bookmark.pageUrl}
-												handleDelete={() => handleDelete(bookmark.bookmarkId)}
-											/>
-										</div>
-									{/each}
-								</div>
-								<div class="hidden sm:block lg:hidden" style="column-count: 2; column-gap: 1em; ">
-									{#each $bookmarkedPages as bookmark}
-										<div style="break-inside: avoid; margin-bottom: 1em;">
-											<ProfileContentCard
-												title={bookmark.title}
-												description={bookmark.description}
-												imageUrl={bookmark.imageUrl}
-												pageUrl={bookmark.pageUrl}
-												handleDelete={() => handleDelete(bookmark.bookmarkId)}
-											/>
-										</div>
-									{/each}
-								</div>
-								<div class="block sm:hidden" style="column-count: 1; column-gap: 1em; ">
-									{#each $bookmarkedPages as bookmark}
-										<div style="break-inside: avoid; margin-bottom: 1em;">
-											<ProfileContentCard
-												title={bookmark.title}
-												description={bookmark.description}
-												imageUrl={bookmark.imageUrl}
-												pageUrl={bookmark.pageUrl}
-												handleDelete={() => handleDelete(bookmark.bookmarkId)}
-											/>
-										</div>
-									{/each}
-								</div>
-							{:else}
-								<p>No bookmarks available</p>
+							{#if isDataReady}
+								{#if allBookmarks.length > 0}
+									<div class="hidden lg:block" style="column-count: 3; column-gap: 1em; ">
+										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
+											<div style="break-inside: avoid; margin-bottom:1em">
+												<ProfileContentCard
+													title={bookmark.title}
+													description={bookmark.description}
+													imageUrl={bookmark.imageUrl}
+													pageUrl={bookmark.pageUrl}
+													handleDelete={() => handleDelete(bookmark.bookmarkId)}
+												/>
+											</div>
+										{/each}
+									</div>
+									<div class="hidden sm:block lg:hidden" style="column-count: 2; column-gap: 1em; ">
+										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
+											<div style="break-inside: avoid; margin-bottom:1em">
+												<ProfileContentCard
+													title={bookmark.title}
+													description={bookmark.description}
+													imageUrl={bookmark.imageUrl}
+													pageUrl={bookmark.pageUrl}
+													handleDelete={() => handleDelete(bookmark.bookmarkId)}
+												/>
+											</div>
+										{/each}
+									</div>
+									<div class="block sm:hidden" style="column-count: 1; column-gap: 1em; ">
+										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
+											<div style="break-inside: avoid; margin-bottom:1em">
+												<ProfileContentCard
+													title={bookmark.title}
+													description={bookmark.description}
+													imageUrl={bookmark.imageUrl}
+													pageUrl={bookmark.pageUrl}
+													handleDelete={() => handleDelete(bookmark.bookmarkId)}
+												/>
+											</div>
+										{/each}
+									</div>
+								{:else if current_user && !isDataReady}
+									<p>Loading bookmarks...</p>
+								{:else}
+									<p>No bookmarks available</p>
+								{/if}
 							{/if}
 						</section>
 						<section

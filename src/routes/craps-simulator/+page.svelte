@@ -1,7 +1,7 @@
 <script lang="ts">
 	console.log('craps-simulator +page loading');
 
-	import { isReadyForSync, isDataReady } from '$lib/utils/auth';
+	import { isReadyForSync } from '$lib/utils/auth';
 	import { onMount } from 'svelte';
 	import MoreCrapsLayout from '$lib/components/layouts/MoreCrapsLayout.svelte';
 	import {
@@ -76,14 +76,15 @@
 			}
 		});
 
-		const unsubscribeDataReady = isDataReady.subscribe((ready) => {
+		const unsubscribeDataReady = isReadyForSync.subscribe((ready) => {
 			if (ready) {
-				console.log('Craps Simulator isDataReady state:', ready);
+				console.log('Craps Simulator isReadyForSync state:', ready);
 				scaleEverything();
 			}
 		});
 
 		return () => {
+			document.removeEventListener('keydown', exitFullScreen);
 			unsubscribeDataReady();
 		};
 	});
@@ -588,7 +589,7 @@
 					<div id="popups">
 						{#if $showPassLinePopup}
 							<LgMenu title="Bet the Pass Line" toggleKey="showPassLinePopup">
-								<ScrollMenu>
+								<ScrollMenu popupName="smBtnPassLineMenu">
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={5} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={10} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={15} />
@@ -600,7 +601,7 @@
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={500} />
 									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={1000} />
 								</ScrollMenu>
-								<MdBtnMenu>
+								<MdBtnMenu popupName="mdBtnPassLineMenu">
 									<MdBetMenuButton
 										betName="Pass Line"
 										betType="pass-line"
@@ -616,7 +617,7 @@
 								</MdBtnMenu>
 								<GameInputBox betType="pass-line" popupBox="showPassLinePopup" />
 								<div class="flex justify-between gap-2">
-									<LgMenuTextBox />
+									<LgMenuTextBox popupName="lgMenuTxtBoxPassLine" />
 									<PickupBetButton betType="pass-line" />
 								</div>
 							</LgMenu>

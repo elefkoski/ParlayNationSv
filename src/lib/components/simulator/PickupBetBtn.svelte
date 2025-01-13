@@ -1,6 +1,15 @@
 <script lang="ts">
 	console.log('PickupBetBtn component loading');
 
+	import { onMount } from 'svelte';
+	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
+
+	export const popupName: string = 'pickupBetBtn';
+
+	onMount(() => {
+		scalePopup(popupName);
+	});
+
 	export let betType: string = 'pass-line';
 	function handleBetAction() {
 		console.log('Removing Bet:', betType);
@@ -12,7 +21,8 @@
 <div>
 	<button
 		on:click={handleBetAction}
-		class="bet-info pickup-btn popup align-middle flex justify-center items-center"
+		class="bet-info pickup-btn align-middle flex justify-center items-center"
+		data-type={popupName}
 		data-fontSize="2"
 		data-border=".25"
 		data-borderRadius="1"

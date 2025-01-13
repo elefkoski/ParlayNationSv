@@ -1,9 +1,10 @@
 <script lang="ts">
 	console.log('GameInputBox component loading');
 
+	import { onMount } from 'svelte';
 	import { user, favoriteBets, generateBetId } from '$lib/utils/userData';
 	import { saveFavoriteBet, removeFavoriteBet } from '$lib/utils/userDataOperations';
-	import { toggleUiSetting } from '../../utils/simulator/craps-simulator-scaling';
+	import { toggleUiSetting, scalePopup } from '../../utils/simulator/craps-simulator-scaling';
 	import { get } from 'svelte/store';
 
 	let current_user = get(user);
@@ -15,6 +16,12 @@
 	let checkmarked: boolean = false;
 	let checkboxText: string = 'Add to Favorites';
 	let userToggledCheckbox: boolean = false;
+
+	let popupName = betType + '-popup-box';
+
+	onMount(() => {
+		scalePopup(popupName);
+	});
 
 	// Subscribe to favorites store updates
 	favoriteBets.subscribe((bets) => {
@@ -132,7 +139,8 @@
 
 <div
 	aria-label="bet input"
-	class="input-box flex items-center popup"
+	class="input-box flex items-center"
+	data-type={popupName}
 	data-gap="2"
 	data-fontsize="2"
 >
@@ -141,7 +149,8 @@
 		type="number"
 		id="pass-line-input"
 		name="pass-line-input"
-		class="border rounded game-menu-input popup"
+		class="border rounded game-menu-input"
+		data-type={popupName}
 		data-width="12"
 		data-paddinglr=".5"
 		data-border=".25"
@@ -153,7 +162,8 @@
 		on:input={updateFavoriteStatus}
 	/>
 	<button
-		class="game-input-btn rounded popup"
+		class="game-input-btn rounded"
+		data-type={popupName}
 		data-paddingtb="1"
 		data-paddinglr="2.5"
 		on:click={async () => await handleSubmit(popupBox)}
@@ -165,7 +175,8 @@
 			type="checkbox"
 			id="add-to-favorites"
 			name="add-to-favorites"
-			class="checkbox popup"
+			class="checkbox"
+			data-type={popupName}
 			data-width="2.25"
 			data-height="4"
 			data-border=".25"

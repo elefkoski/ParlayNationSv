@@ -62,9 +62,11 @@
 }
 /* To avoid viewing on reload */
 .popup {
+	position: absolute;
+	transform: translate(-50%, -50%);
 	visibility: hidden;
 	opacity: 0;
-	transition: opacity 0.2s ease;
+	transition: opacity 0.1s ease;
 }
 /* To view on reload */
 .popup.scaled {

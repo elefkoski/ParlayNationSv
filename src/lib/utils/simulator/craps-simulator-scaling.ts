@@ -31,10 +31,10 @@ export function toggleUiSetting(key: UiToggleKey): void {
 	} else {
 		console.warn(`Key '${key}' does not exist in uiToggles.`);
 	}
-	setTimeout(() => {
-		console.log(`Scaling elements for key: ${key}`);
-		scaleAllPopups();
-	}, 0);
+	//setTimeout(() => {
+	//	console.log(`Scaling elements for key: ${key}`);
+	//	scalePopup();
+	//}, 0);
 	console.log('Leaving toggleUiSetting');
 }
 
@@ -42,7 +42,6 @@ export async function scaleEverything(): Promise<void> {
 	console.log('Entering scaleEverything');
 	scaleElements();
 	scaleChipsToFit();
-	//scaleAllPopups();
 	console.log('Leaving scaleEverything');
 }
 
@@ -158,18 +157,25 @@ export async function scaleElements(type: string | null = null) {
 	});
 	console.log('Leaving scaleElements');
 }
-export async function scaleAllPopups() {
-	console.log('Entering scaleAllPopups');
+export async function scalePopup(type: string | null = null) {
+	console.log('Entering scalePopup');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
 	if (!gameArea) {
-		console.log('scaleAllPopups: gameArea not found');
+		console.log('scalePopup: gameArea not found');
 		return;
 	}
 
 	// Get the actual dimensions of the game area
 	const { width: containerWidth, height: containerHeight } = gameArea.getBoundingClientRect();
-	const elements = document.querySelectorAll('.popup'); // Select all elements with the .popup class
+
+	// Scale elements relative to the container size
+	const selector = type ? `[data-type="${type}"]` : '.popup';
+	console.log('Selector:', selector);
+	const elements = document.querySelectorAll(selector); // Select all elements with the .popup class
+	elements.forEach((el) => {
+		el.classList.remove('hidden');
+	});
 
 	elements.forEach((el) => {
 		const x = parseFloat(el.dataset.x) || null;
@@ -266,7 +272,7 @@ export async function scaleAllPopups() {
 		stickCallElement.classList.remove('hidden');
 	}
 	console.log(`Total number of elements scaled: ${elements.length}`);
-	console.log('Leaving scaleAllPopups');
+	console.log('Leaving scalePopup');
 }
 
 // Helper function to scale chips to fit the rail
@@ -418,7 +424,7 @@ if (typeof window !== 'undefined') {
 		console.log('Window resized or device orientation changed');
 		scaleElements();
 		scaleChipsToFit();
-		scaleAllPopups();
+		scalePopup();
 		console.log('Leaving handleResizeOrOrientationChange');
 	};
 

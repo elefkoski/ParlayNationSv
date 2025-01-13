@@ -1,12 +1,20 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
 	import { toggleFavoriteBet, getFavoriteStatus } from '$lib/utils/userDataOperations';
+	import { generateBetId } from '$lib/utils/userData';
 
 	export let betName: string = 'Pass Line';
 	export let betAmount: number = 100;
 	export let betType: string = 'Pass Line';
 	let isFavorite: boolean = false;
+	let popupName = generateBetId(betType, betAmount);
 
 	console.log('SmMenuBetBtn component loading:', { betName, betAmount });
+
+	onMount(() => {
+		scalePopup(popupName);
+	});
 
 	async function initializeFavoriteStatus() {
 		try {
@@ -35,15 +43,24 @@
 	console.log('SmMenuBetBtn component loaded:', { betName, betAmount });
 </script>
 
-<div class="split-button popup" data-border=".25" data-borderRadius="1">
-	<button class="menu-bet-button popup" on:click={handleBetAction}>
-		<div class="bet-info popup" data-fontSize="1.5" data-marginLR="2" data-marginTB="1">
-			<span class="bet-amount popup" data-fontSize="2">${betAmount.toLocaleString()}</span>
+<div class="split-button" data-type={popupName} data-border=".25" data-borderRadius="1">
+	<button class="menu-bet-button" on:click={handleBetAction}>
+		<div
+			class="bet-info"
+			data-type={popupName}
+			data-fontSize="1.5"
+			data-marginLR="2"
+			data-marginTB="1"
+		>
+			<span class="bet-amount" data-type={popupName} data-fontSize="2"
+				>${betAmount.toLocaleString()}</span
+			>
 			<span class="bet-type">{betName}</span>
 		</div>
 	</button>
 	<button
-		class="favorite-toggle popup"
+		class="favorite-toggle"
+		data-type={popupName}
 		data-fontSize="2.5"
 		data-paddingLR="1"
 		data-paddingTB="1"

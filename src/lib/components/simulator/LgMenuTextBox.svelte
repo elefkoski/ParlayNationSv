@@ -1,18 +1,29 @@
 <script lang="ts">
 	console.log('LgMenuTextBox component loading');
+
+	import { onMount } from 'svelte';
+	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
+
+	export const popupName: string = 'popupName';
+
+	onMount(() => {
+		scalePopup(popupName);
+	});
+
 	console.log('LgMenuTextBox component loaded.');
 </script>
 
 <div
 	id="lg-menu-text-box"
-	class="lg-menu-text-box border popup flex items-center justify-center"
+	class="lg-menu-text-box border flex items-center justify-center"
+	data-type={popupName}
 	data-height="21"
 	data-paddingtb="2"
 	data-paddinglr="2"
 	data-borderRadius="1"
 	data-border=".25"
 >
-	<p class="popup" data-fontsize="2">
+	<p data-type={popupName} data-fontsize="2">
 		At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis piusto.
 	</p>
 </div>

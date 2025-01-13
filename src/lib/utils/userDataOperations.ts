@@ -15,13 +15,12 @@ import {
 } from 'firebase/firestore';
 import {
 	user,
-	userPreferences,
-	bookmarkedPages,
 	favoriteBets,
 	playerBets,
 	crapsSimulatorPreferences,
 	defaultCrapsSimulatorPreferences,
-	generateBetId
+	generateBetId,
+	bookmarks
 } from './userData';
 import type { Bookmark, CrapsSimulatorPreferences, FavoriteBet, PlayerBet } from './userData';
 import { get } from 'svelte/store';
@@ -431,20 +430,12 @@ export async function toggleBookmark(
 	console.log('toggleBookmark called.');
 
 	if (isBookmarked && currentBookmarkId) {
-		// Remove bookmark
 		await removeBookmark(userId, currentBookmarkId);
-		bookmarkedPages.update((pages) =>
-			pages.filter((page) => page.bookmarkId !== currentBookmarkId)
-		);
 		console.log('Bookmark removed.', currentBookmarkId);
 		console.log('Exiting toggleBookmark.');
-		return null; // No bookmarkId after removal
+		return null;
 	} else {
-		// Add bookmark
 		const bookmarkId = await saveBookmark(userId, pageData);
-		if (bookmarkId) {
-			bookmarkedPages.update((pages) => [...pages, { bookmarkId, ...pageData }]);
-		}
 		console.log('Bookmark added:', bookmarkId);
 		console.log('Exiting toggleBookmark.');
 		return bookmarkId;
@@ -474,7 +465,6 @@ const removeBookmark = async (userId: string, bookmarkId: string) => {
 		const bookmarkRef = doc(db, `users/${userId}/bookmarks/${bookmarkId}`);
 		await deleteDoc(bookmarkRef);
 		console.log(`Successfully removed bookmarkId ${bookmarkId}.`);
-		bookmarkedPages.update((pages) => pages.filter((b) => b.bookmarkId !== bookmarkId));
 	} catch (e) {
 		console.error('Error removing bookmark:', e);
 	}
@@ -484,12 +474,28 @@ const removeBookmark = async (userId: string, bookmarkId: string) => {
 export async function fetchUserBookmarks(userId: string): Promise<void> {
 	console.log('fetchUserBookmarks called.');
 
-	const bookmarks = await fetchCollection<Bookmark>(`users/${userId}/bookmarks`);
-	bookmarkedPages.set(bookmarks);
-	console.log('Fetched bookmarks:', bookmarks);
+	try {
+		const bookmarksCollection = collection(db, `users/${userId}/bookmarks`);
+		const snapshot = await getDocs(bookmarksCollection);
 
-	console.log('Exiting fetchUserBookmarks.');
+		const fetchedBookmarks = snapshot.docs.map((doc) => ({
+			bookmarkId: doc.id, // Add the document ID as bookmarkId
+			title: doc.data().title,
+			description: doc.data().description,
+			imageUrl: doc.data().imageUrl,
+			pageUrl: doc.data().pageUrl
+		}));
+
+		console.log('Fetched bookmarks:', fetchedBookmarks);
+		bookmarks.set(fetchedBookmarks); // Update the bookmarks store
+		console.log('Exiting fetchUserBookmarks.');
+	} catch (e) {
+		console.error('Error fetching bookmarks:', e);
+		bookmarks.set([]); // Clear the store if there's an error
+		console.log('Exiting fetchUserBookmarks.');
+	}
 }
+
 export const fetchBookmarkId = async (userId: string, pageUrl: string): Promise<string | null> => {
 	console.log('fetchBookmarkId called.');
 
@@ -499,6 +505,7 @@ export const fetchBookmarkId = async (userId: string, pageUrl: string): Promise<
 			firestoreQuery(bookmarksCollection, where('pageUrl', '==', pageUrl))
 		);
 		if (!querySnapshot.empty) {
+			console.log('Exiting fetchBookmarkId.');
 			return querySnapshot.docs[0].id;
 		}
 	} catch (e) {
@@ -513,12 +520,15 @@ export const deleteUserBookmark = async (userId: string, bookmarkId: string): Pr
 	console.log('deleteUserBookmark called.');
 
 	try {
+		console.log('User ID:', userId);
+		console.log('Bookmark ID:', bookmarkId);
 		const bookmarkRef = doc(db, `users/${userId}/bookmarks`, bookmarkId);
+		console.log('bookmarkRef:', bookmarkRef);
 		await deleteDoc(bookmarkRef);
 
-		// Update the store to reflect the deletion
-		bookmarkedPages.update((current) => current.filter((b) => b.bookmarkId !== bookmarkId));
-		console.log(`Deleted bookmark: ${bookmarkId}`);
+		bookmarks.update((currentBookmarks) =>
+			currentBookmarks.filter((bookmark) => bookmark.bookmarkId !== bookmarkId)
+		);
 	} catch (error) {
 		console.error('Error deleting bookmark:', error);
 		throw error;
