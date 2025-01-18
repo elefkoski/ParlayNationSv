@@ -5,7 +5,6 @@
 	import { scaleElements } from '$lib/utils/simulator/craps-simulator-scaling';
 	import { calculateChipPlacement } from '$lib/utils/simulator/craps-simulator-bet-placement';
 	import { directionOffsets } from '$lib/utils/simulator/craps-simulator-bet-placement';
-	import { deduceBaseName } from '$lib/utils/userData';
 
 	export let id: string = '';
 	export let amount: number = 0;
@@ -13,6 +12,7 @@
 	export let baseY: number = 0;
 	export let direction: keyof typeof directionOffsets = 'n';
 
+	const deduceBaseName = (id: string) => id.split('-')[0];
 	const baseName = deduceBaseName(id);
 
 	onMount(() => {

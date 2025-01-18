@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
 
-	export const popupName: string = 'pickupBetBtn';
+	export let popupName: string = 'pickupBetBtn';
 
 	onMount(() => {
 		scalePopup(popupName);

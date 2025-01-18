@@ -38,14 +38,18 @@
 	import GameInputBox from '$lib/components/simulator/GameInputBox.svelte';
 	import LgMenuTextBox from '$lib/components/simulator/LgMenuTextBox.svelte';
 	import PickupBetButton from '$lib/components/simulator/PickupBetBtn.svelte';
-	import { user, crapsSimulatorPreferences, playerBets } from '../../lib/utils/userData';
 	import {
-		syncPlayerBetsToLocalStorage,
-		syncPlayerBetsToFirebase,
-		syncCrSimPrefsToLocalStorage,
-		syncCrSimPrefsToFirebase,
+		user,
+		playerBets,
+		playerBetQueue,
+		crSimPrefs,
+		crSimPrefsQueue
+	} from '../../lib/utils/userData';
+	import {
 		clearPlayerBetsFromLocalStorage,
-		clearPlayerBetsFromFirebase
+		clearPlayerBetsFromFirebase,
+		updateCrSimPrefsQueue,
+		updatePlayerBetQueue
 	} from '$lib/utils/userDataOperations';
 	import { get } from 'svelte/store';
 
@@ -89,42 +93,35 @@
 		};
 	});
 
-	crapsSimulatorPreferences.subscribe((prefs) => {
-		console.log('Is Ready For Sync:', get(isReadyForSync));
-		const readyForSync = get(isReadyForSync);
-		console.log('Craps Simulator Preferences isReadyForSync state:', readyForSync);
-		if (!readyForSync) return;
+	crSimPrefs.subscribe((prefs) => {
+		console.log('Preferences updated:', prefs);
 
-		console.log(
-			'Craps Simulator Preferences updating via subscription. Current Preferences:',
-			prefs
-		);
+		// Compare current preferences with the queued state
+		const currentQueue = get(crSimPrefsQueue);
+		const queuedPrefs = currentQueue.get('preferences')?.data;
 
-		console.log('Current User:', current_user);
-		if (current_user?.id) {
-			console.log('Syncing subscription preferences to Firebase for user:', current_user);
-			syncCrSimPrefsToFirebase(current_user.id, prefs);
-		} else {
-			console.log('Syncing subscription preferences to Local Storage.');
-			syncCrSimPrefsToLocalStorage(prefs);
+		// Only queue an update if preferences have changed
+		if (!queuedPrefs || JSON.stringify(queuedPrefs) !== JSON.stringify(prefs)) {
+			updateCrSimPrefsQueue('add', prefs);
 		}
 	});
 
 	playerBets.subscribe((bets) => {
-		const readyForSync = get(isReadyForSync);
-		console.log('Player Bets Subscripton isReadyForSync state:', readyForSync);
-		if (!readyForSync) return;
+		console.log('Player Bets updated:', bets);
 
-		console.log('Player Bets updating via subscription. Current Player Bets:', bets);
+		// Compare current bets to the queue and update accordingly
+		const cachedBets = get(playerBetQueue);
 
-		console.log('Current User:', current_user);
-		if (current_user?.id) {
-			console.log('Syncing player bets to Firebase for user:', current_user);
-			syncPlayerBetsToFirebase(current_user.id, bets);
-		} else {
-			console.log('Syncing player bets to Local Storage.');
-			syncPlayerBetsToLocalStorage(bets);
-		}
+		bets.forEach((bet) => {
+			updatePlayerBetQueue('add', bet); // Add or update the bet
+		});
+
+		// Handle removed bets (not in the current bets list but present in the queue)
+		Array.from(cachedBets.keys()).forEach((betId) => {
+			if (!bets.some((bet) => bet.id === betId)) {
+				updatePlayerBetQueue('remove', { id: betId });
+			}
+		});
 	});
 
 	console.log('craps-simulator +page loaded.');
@@ -233,7 +230,7 @@
 			<div id="game-area-container">
 				<section aria-label="Game area" id="game-area" class="game-area">
 					<!-- Layout Total -->
-					{#if $crapsSimulatorPreferences.showLayout}
+					{#if $crSimPrefs.showLayout}
 						<div
 							class="layout-display game-element rounded-md hidden"
 							data-type="layout"
@@ -266,7 +263,7 @@
 						data-height="10.66"
 					/>
 					<!-- Stickwoman -->
-					{#if $crapsSimulatorPreferences.showStickperson}
+					{#if $crSimPrefs.showStickperson}
 						<div
 							id="stickperson"
 							class="stickperson game-element"
@@ -278,7 +275,7 @@
 						/>
 					{/if}
 					<!-- Text Container -->
-					{#if $crapsSimulatorPreferences.showGuide}
+					{#if $crSimPrefs.showGuide}
 						<div
 							id="guide"
 							class="guide-container rounded-md game-element hidden"
@@ -299,7 +296,7 @@
 						</div>
 					{/if}
 					<!-- Rail Total -->
-					{#if $crapsSimulatorPreferences.showRail}
+					{#if $crSimPrefs.showRail}
 						<div
 							class="rail-display game-element rounded-md hidden"
 							data-type="rail"
@@ -313,7 +310,7 @@
 						</div>
 					{/if}
 					<!-- Roll Button -->
-					{#if $crapsSimulatorPreferences.showRollButton}
+					{#if $crSimPrefs.showRollButton}
 						<input
 							type="number"
 							id="test-input"
@@ -392,7 +389,7 @@
 						>
 					{/if}
 					<!-- Bankroll Total -->
-					{#if $crapsSimulatorPreferences.showBankroll}
+					{#if $crSimPrefs.showBankroll}
 						<div
 							class="bankroll-display game-element rounded-md hidden"
 							data-type="bankroll"
@@ -474,7 +471,7 @@
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$crapsSimulatorPreferences.showStickperson}
+										bind:checked={$crSimPrefs.showStickperson}
 										on:change={() => {
 											scaleElements('stickperson');
 										}}
@@ -487,7 +484,7 @@
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$crapsSimulatorPreferences.showGuide}
+										bind:checked={$crSimPrefs.showGuide}
 										on:change={() => {
 											scaleElements('guide');
 										}}
@@ -500,7 +497,7 @@
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$crapsSimulatorPreferences.showBankroll}
+										bind:checked={$crSimPrefs.showBankroll}
 										on:change={() => {
 											scaleElements('bankroll');
 										}}
@@ -513,7 +510,7 @@
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$crapsSimulatorPreferences.showRail}
+										bind:checked={$crSimPrefs.showRail}
 										on:change={() => {
 											scaleElements('rail');
 										}}
@@ -526,7 +523,7 @@
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$crapsSimulatorPreferences.showLayout}
+										bind:checked={$crSimPrefs.showLayout}
 										on:change={() => {
 											scaleElements('layout');
 										}}
@@ -539,7 +536,7 @@
 								<label>
 									<input
 										type="checkbox"
-										bind:checked={$crapsSimulatorPreferences.showRollButton}
+										bind:checked={$crSimPrefs.showRollButton}
 										on:change={() => {
 											scaleElements('roll-button');
 										}}

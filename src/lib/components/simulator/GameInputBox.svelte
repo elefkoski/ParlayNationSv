@@ -2,8 +2,8 @@
 	console.log('GameInputBox component loading');
 
 	import { onMount } from 'svelte';
-	import { user, favoriteBets, generateBetId } from '$lib/utils/userData';
-	import { saveFavoriteBet, removeFavoriteBet } from '$lib/utils/userDataOperations';
+	import { user, favoriteBets } from '$lib/utils/userData';
+	import { updatePlayerBetQueue, generatePlayerBetId } from '$lib/utils/userDataOperations';
 	import { toggleUiSetting, scalePopup } from '../../utils/simulator/craps-simulator-scaling';
 	import { get } from 'svelte/store';
 
@@ -33,7 +33,7 @@
 	// Updates the favorite status and synchronizes the checkbox
 	function updateFavoriteStatus() {
 		console.log('updateFavoriteStatus called. betType=', betType, ', betAmount=', betAmount);
-		const betId = generateBetId(betType, betAmount); // Generate unique bet ID
+		const betId = generatePlayerBetId(betType, betAmount); // Generate unique bet ID
 		isFavorite = favorites.some((bet) => bet.betId === betId); // Check if the bet is in favorites
 		console.log('updateFavoriteStatus isFavorite=', isFavorite);
 
@@ -84,7 +84,7 @@
 	}
 
 	async function handleSubmit(popupBox: string) {
-		const betId = generateBetId(betType, betAmount); // Generate bet ID
+		const betId = generatePlayerBetId(betType, betAmount); // Generate bet ID
 
 		console.log(
 			'handleSubmit called. betId=',
@@ -95,43 +95,27 @@
 			isFavorite
 		);
 
-		if (isFavorite && checkmarked) {
-			console.log('handleSubmit: No changes needed. Bet is already a favorite.');
-		} else if (isFavorite && !checkmarked) {
-			try {
-				if (current_user) {
-					await removeFavoriteBet(current_user.id, betId);
-				} else {
-					console.error('handleSubmit: current_user is null.');
-				}
-				console.log('handleSubmit: Removed from favorites. betId=', betId);
-			} catch (error) {
-				console.error('handleSubmit: Failed to remove favorite bet. Error:', error);
+		try {
+			if (isFavorite && !checkmarked) {
+				// Remove from favorites
+				updatePlayerBetQueue('remove', { id: betId, type: betType, amount: betAmount });
+				console.log('handleSubmit: Queued removal from favorites. betId=', betId);
+				checkboxText = 'Submit to Unfavorite';
+			} else if (!isFavorite && checkmarked) {
+				// Add to favorites
+				updatePlayerBetQueue('add', { id: betId, type: betType, amount: betAmount });
+				console.log('handleSubmit: Queued addition to favorites. betId=', betId);
+				checkboxText = 'Submit to Favorite';
+			} else {
+				console.log('handleSubmit: No action taken. Bet is not marked as favorite.');
+				checkboxText = 'Add to Favorites';
 			}
-			checkboxText = 'Submit to Unfavorite';
-		} else if (!isFavorite && checkmarked) {
-			try {
-				if (current_user) {
-					await saveFavoriteBet(current_user.id, {
-						betId,
-						betDetails: { type: betType, amount: betAmount }
-					});
-					console.log('handleSubmit: Added to favorites. betId=', betId);
-				} else {
-					console.error('handleSubmit: current_user is null.');
-				}
-			} catch (error) {
-				console.error('handleSubmit: Failed to save favorite bet. Error:', error);
-			}
-			checkboxText = 'Submit to Favorite';
-		} else {
-			console.log('handleSubmit: No action taken. Bet is not marked as favorite.');
-			checkboxText = 'Add to Favorites';
-		}
-		toggleUiSetting(popupBox);
 
-		// Reset user interaction state
-		userToggledCheckbox = false;
+			toggleUiSetting(popupBox);
+			userToggledCheckbox = false; // Reset interaction state
+		} catch (error) {
+			console.error('Error in handleSubmit:', error);
+		}
 	}
 
 	console.log('GameInputBox component loaded');

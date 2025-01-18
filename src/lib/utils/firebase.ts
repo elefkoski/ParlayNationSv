@@ -1,18 +1,8 @@
 console.log('Entering firebase.ts');
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 //import type { Bookmark } from './userData';
-import {
-	getFirestore,
-	addDoc,
-	collection,
-	getDocs,
-	deleteDoc,
-	doc,
-	where,
-	query as firestoreQuery
-} from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import {
 	getAuth,
 	GoogleAuthProvider,
@@ -21,6 +11,8 @@ import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword
 } from 'firebase/auth';
+import { user } from './userData';
+import { fetchUserData } from './userDataOperations';
 
 // Add SDKs for Firebase products that you want to use
 const firebaseConfig = {
@@ -50,7 +42,21 @@ export const registerWithEmailPassword = async (email: string, password: string)
 export const loginWithEmailPassword = async (email: string, password: string) => {
 	try {
 		const userCredential = await signInWithEmailAndPassword(auth, email, password);
-		return userCredential.user;
+		const firebaseUser = userCredential.user;
+
+		// Update the user store
+		user.set({
+			id: firebaseUser.uid,
+			email: firebaseUser.email,
+			displayName: firebaseUser.displayName,
+			profilePicture: firebaseUser.photoURL
+		});
+
+		// Fetch user data from Firebase and cache it locally
+		await fetchUserData(firebaseUser);
+
+		console.log('Login successful and data fetched.');
+		return firebaseUser;
 	} catch (error: any) {
 		console.error('Error during login:', error);
 		if ('code' in error) {

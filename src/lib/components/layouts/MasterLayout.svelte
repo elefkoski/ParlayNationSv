@@ -1,26 +1,53 @@
-<script>
+<script lang="ts">
 	import '../../../app.css';
 	import '../../../colors.css';
 	import Navbar from '$lib/components/structure/Navbar.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
+	import { user } from '$lib/utils/userData';
+	import { get } from 'svelte/store';
+	import { syncUserData } from '$lib/utils/userDataOperations';
 	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
+	import { handleAuthStateChange } from '$lib/utils/auth';
+
 	onMount(() => {
 		enableEventTracking();
 		enableScrollTracking();
 
-		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-				const targetElement = document.querySelector(this.getAttribute('href'));
-				if (targetElement) {
-					window.scrollTo({
-						top: targetElement.offsetTop - 85, // 80 is the height of your navbar
-						behavior: 'smooth'
-					});
-				}
-			});
-		});
+		if (typeof window !== 'undefined') {
+			console.log('Browser environment detected. Attaching listeners.');
+			handleAuthStateChange();
+			attachBeforeUnloadListener();
+		} else {
+			console.log('Server environment detected. Skipping listeners.');
+		}
 	});
+
+	onDestroy(() => {
+		if (typeof window !== 'undefined') {
+			detachBeforeUnloadListener();
+		}
+	});
+
+	function attachBeforeUnloadListener() {
+		console.log('Attaching beforeunload listener');
+		window.addEventListener('beforeunload', handleBeforeUnload);
+	}
+
+	function detachBeforeUnloadListener() {
+		console.log('Detaching beforeunload listener');
+		window.removeEventListener('beforeunload', handleBeforeUnload);
+	}
+
+	// Separate async logic for handling beforeunload
+	async function handleBeforeUnload(): Promise<void> {
+		console.log('Handling beforeunload event.');
+
+		const current_user = get(user);
+		if (current_user?.id) {
+			console.log('Syncing user data before unload...');
+			await syncUserData(current_user.id);
+		}
+	}
 </script>
 
 <svelte:head>

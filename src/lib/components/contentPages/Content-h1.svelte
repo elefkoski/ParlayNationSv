@@ -1,8 +1,9 @@
 <script lang="ts">
 	console.log('Content-h1 component loading');
+
 	import Popup from '../Popup.svelte';
 	import { user } from '$lib/utils/userData';
-	import { fetchBookmarkId, toggleBookmark } from '$lib/utils/userDataOperations';
+	import { isPageBookmarked, toggleBookmarkHandler } from '$lib/utils/userDataOperations';
 
 	export let sectionTitle: string = 'Section Title';
 	export let title: string = 'The title';
@@ -10,40 +11,21 @@
 
 	let current_user: any = null;
 	let bookmarked: boolean = false;
-	let current_bookmark_id: string | null = null;
 	let showPopup: boolean = false;
 
 	$: current_user = $user;
-	$: {
-		if (current_user?.id && pageData.pageUrl) {
-			fetchBookmarkId(current_user.id, pageData.pageUrl).then((id) => {
-				current_bookmark_id = id;
-				bookmarked = !!id;
-			});
-		} else {
-			current_bookmark_id = null;
-			bookmarked = false;
-		}
-	}
+	$: bookmarked = isPageBookmarked(pageData.pageUrl);
 
 	async function handleToggleBookmark() {
 		if (!current_user?.id) {
-			// Show popup if user is not logged in
 			showPopup = true;
 			setTimeout(() => (showPopup = false), 3000);
 			return;
 		}
 
 		try {
-			const updatedBookmarkId = await toggleBookmark(
-				current_user.id,
-				pageData,
-				bookmarked,
-				current_bookmark_id
-			);
-			// Update local state
-			current_bookmark_id = updatedBookmarkId;
-			bookmarked = !!updatedBookmarkId;
+			await toggleBookmarkHandler(pageData); // Update LocalStorage
+			bookmarked = isPageBookmarked(pageData.pageUrl); // Explicitly re-check LocalStorage
 		} catch (error) {
 			console.error('Error toggling bookmark:', error);
 		}

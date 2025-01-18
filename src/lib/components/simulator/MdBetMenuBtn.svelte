@@ -2,15 +2,18 @@
 	console.log('MdBetMenuBtn component loading');
 
 	import { onMount } from 'svelte';
-	import { toggleFavoriteBet, getFavoriteStatus } from '$lib/utils/userDataOperations';
-	import { generateBetId } from '$lib/utils/userData';
+	import {
+		toggleFavoriteBet,
+		getFavoriteStatus,
+		generatePlayerBetId
+	} from '$lib/utils/userDataOperations';
 	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
 
 	export let betName: string = 'Pass Line';
 	export let betAmount: any = 100;
 	export let betType: string = 'Pass Line';
 	export let betClass: string = 'bl-bet-btn';
-	let popupName = generateBetId(betType, betAmount);
+	let popupName = generatePlayerBetId(betType, betAmount);
 
 	let isFavorite: boolean = false;
 

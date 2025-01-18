@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
-	import { toggleFavoriteBet, getFavoriteStatus } from '$lib/utils/userDataOperations';
-	import { generateBetId } from '$lib/utils/userData';
+	import {
+		toggleFavoriteBet,
+		getFavoriteStatus,
+		generatePlayerBetId
+	} from '$lib/utils/userDataOperations';
 
 	export let betName: string = 'Pass Line';
 	export let betAmount: number = 100;
 	export let betType: string = 'Pass Line';
 	let isFavorite: boolean = false;
-	let popupName = generateBetId(betType, betAmount);
+	let popupName = generatePlayerBetId(betType, betAmount);
 
 	console.log('SmMenuBetBtn component loading:', { betName, betAmount });
 

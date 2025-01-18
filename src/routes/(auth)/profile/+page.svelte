@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { isDataReady } from '$lib/utils/auth';
-	import { user, bookmarks } from '$lib/utils/userData';
-	import { deleteUserBookmark, fetchUserBookmarks } from '$lib/utils/userDataOperations';
+	import { user, savedBookmarks } from '$lib/utils/userData';
+	import { deleteProfilePageBookmark, fetchUserBookmarks } from '$lib/utils/userDataOperations';
 	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
-	import ProfileContentCard from '$lib/components/profilePage/ProfileContentCard.svelte';
+	import ProfileBookmarkCard from '$lib/components/profilePage/ProfileBookmarkCard.svelte';
 
 	let current_user: any = null;
 
 	$: current_user = $user;
-	$: allBookmarks = $bookmarks;
+	$: allBookmarks = $savedBookmarks;
 
 	onMount(async () => {
 		if (current_user) {
@@ -23,7 +23,8 @@
 			return;
 		}
 		try {
-			await deleteUserBookmark(current_user.id, bookmarkId);
+			await deleteProfilePageBookmark(bookmarkId);
+			console.log('Bookmark deleted:', bookmarkId);
 		} catch (error) {
 			console.error('Error deleting bookmark:', error);
 		}
@@ -91,7 +92,7 @@
 									<div class="hidden lg:block" style="column-count: 3; column-gap: 1em; ">
 										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
 											<div style="break-inside: avoid; margin-bottom:1em">
-												<ProfileContentCard
+												<ProfileBookmarkCard
 													title={bookmark.title}
 													description={bookmark.description}
 													imageUrl={bookmark.imageUrl}
@@ -104,7 +105,7 @@
 									<div class="hidden sm:block lg:hidden" style="column-count: 2; column-gap: 1em; ">
 										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
 											<div style="break-inside: avoid; margin-bottom:1em">
-												<ProfileContentCard
+												<ProfileBookmarkCard
 													title={bookmark.title}
 													description={bookmark.description}
 													imageUrl={bookmark.imageUrl}
@@ -117,7 +118,7 @@
 									<div class="block sm:hidden" style="column-count: 1; column-gap: 1em; ">
 										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
 											<div style="break-inside: avoid; margin-bottom:1em">
-												<ProfileContentCard
+												<ProfileBookmarkCard
 													title={bookmark.title}
 													description={bookmark.description}
 													imageUrl={bookmark.imageUrl}

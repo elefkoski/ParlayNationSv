@@ -8,42 +8,35 @@ import {
 	signOut
 } from 'firebase/auth';
 import { scaleEverything } from './simulator/craps-simulator-scaling';
-import { user, playerBets, crapsSimulatorPreferences } from './userData';
-import {
-	fetchUserData,
-	loadNonUserData,
-	loadPlayerBetsFromLocalStorage,
-	loadCrSimPrefsFromLocalStorage
-} from './userDataOperations';
+import { user, playerBets, crSimPrefs } from './userData';
+import { fetchUserData, loadCrSimPrefsFromLocalStorage } from './userDataOperations';
 import { goto } from '$app/navigation';
 import { writable, get, derived } from 'svelte/store';
 import { page } from '$app/stores';
 
-// Flag stores for subscription management
+// Flag stores for scalign elements
 export const isInitializing = writable(false);
 export const isLoggingOut = writable(false);
 export const isLoggingIn = writable(false);
-export const hasUserLoaded = writable(false);
-export const hasInitialized = writable(false);
-// Derived from above
 export const isReadyForSync = derived(
-	[hasInitialized, hasUserLoaded, isInitializing, isLoggingOut, isLoggingIn],
-	([$hasInitialized, $hasUserLoaded, $isInitializing, $isLoggingOut, $isLoggingIn]) =>
-		$hasInitialized && $hasUserLoaded && !$isInitializing && !$isLoggingOut && !$isLoggingIn
+	[isInitializing, isLoggingOut, isLoggingIn],
+	([$isInitializing, $isLoggingOut, $isLoggingIn]) =>
+		!$isInitializing && !$isLoggingOut && !$isLoggingIn
 );
 
 // Flag store for scaling elements
 export const isDataReady = writable(false);
 
-// Flag to prevent multiple auth listeners
-let authListenerInitialized = false;
+let isAuthInitialized = false;
+
+// TODO Try to get rid of some of these flags
 
 export function handleAuthStateChange(): void {
-	if (authListenerInitialized) {
+	if (isAuthInitialized) {
 		console.log('Auth listener already initialized. Skipping setup.');
 		return;
 	}
-	authListenerInitialized = true;
+	isAuthInitialized = true;
 
 	console.log('handleAuthStateChange called.');
 	const auth = getAuth();
@@ -66,7 +59,8 @@ export function handleAuthStateChange(): void {
 				await fetchUserData(firebaseUser);
 			} else {
 				console.log('No authenticated user. Initializing non-user data.');
-				await loadNonUserData();
+				user.set(null);
+				initializeGuestState();
 			}
 		} catch (error) {
 			console.error('Error during auth state handling:', error);
@@ -77,6 +71,26 @@ export function handleAuthStateChange(): void {
 			console.log('Exiting handleAuthStateChange.');
 		}
 	});
+}
+
+function initializeGuestState(): void {
+	console.log('Initializing guest state.');
+
+	// Set default state for guest users
+	user.set({
+		id: 'guest',
+		profile: {
+			displayName: 'Guest',
+			profilePicture: 'https://picsum.photos/100'
+		}
+	});
+
+	// Optionally, use session storage for guest data
+	if (typeof sessionStorage !== 'undefined') {
+		sessionStorage.setItem('guestPlayerBets', JSON.stringify([]));
+		sessionStorage.setItem('guestBookmarks', JSON.stringify([]));
+		sessionStorage.setItem('guestCrSimPrefs', JSON.stringify({}));
+	}
 }
 
 export async function logout(): Promise<void> {
@@ -95,7 +109,7 @@ export async function logout(): Promise<void> {
 		const localPreferences = loadCrSimPrefsFromLocalStorage();
 		const localBets = loadPlayerBetsFromLocalStorage();
 
-		crapsSimulatorPreferences.set(localPreferences || {});
+		crSimPrefs.set(localPreferences || {});
 		console.log('Craps simulator preferences reloaded from local storage:', localPreferences);
 
 		playerBets.set(localBets || []);

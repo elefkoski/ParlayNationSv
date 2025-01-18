@@ -1,10 +1,14 @@
 console.log('Entering simulator-calculations.ts');
 
 import { writable, derived } from 'svelte/store';
+import { playerBets } from '../userData';
 
-// Bankroll
-export const railTotal = writable(0); // Rail Amount
-export const layoutTotal = writable(0); // Layout Amount
+export const railTotal = writable(6);
+
+export const layoutTotal = derived(playerBets, ($playerBets) =>
+	$playerBets.reduce((total, bet) => total + bet.amount, 0)
+);
+
 export const totalBankroll = derived(
 	[railTotal, layoutTotal],
 	([$railTotal, $layoutTotal]) => $railTotal + $layoutTotal
