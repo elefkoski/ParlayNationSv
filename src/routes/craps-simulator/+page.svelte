@@ -7,31 +7,26 @@
 	import {
 		enterFullScreen,
 		exitFullScreen,
-		scaleElements,
+		scaleElement,
 		scaleEverything,
 		chips,
 		toggleUiSetting,
-		showSettingsPopup,
-		showPassLinePopup,
-		showEnterBtn,
-		showExitBtn
+		settingsPopupKey,
+		passLinePopupKey,
+		enterBtnKey,
+		exitBtnKey
 	} from '../../lib/utils/simulator/craps-simulator-scaling';
-	import {
-		railTotal,
-		layoutTotal,
-		totalBankroll
-	} from '../../lib/utils/simulator/simulator-calculations';
+	import { railTotal, layoutTotal, totalBankroll } from '../../lib/utils/simulator/gameData';
 	import {
 		rollDice,
 		firstDieImage,
 		secondDieImage
 	} from '../../lib/utils/simulator/craps-simulator-game';
-	import { placeBet } from '$lib/utils/simulator/bet-objects';
 	import ChipSet from '$lib/components/simulator/ChipSet.svelte';
 	import TouchBox from '$lib/components/simulator/TouchBox.svelte';
 	import { touchBoxes } from '$lib/utils/simulator/touchboxes';
 	import LgMenu from '$lib/components/simulator/LgMenu.svelte';
-	import ScrollMenu from '$lib/components/simulator/HorizScrollMenu.svelte';
+	import HorizScrollMenu from '$lib/components/simulator/HorizScrollMenu.svelte';
 	import SmBetButton from '$lib/components/simulator/SmMenuBetBtn.svelte';
 	import MdBetMenuButton from '$lib/components/simulator/MdBetMenuBtn.svelte';
 	import MdBtnMenu from '$lib/components/simulator/MdBtnMenu.svelte';
@@ -40,18 +35,20 @@
 	import PickupBetButton from '$lib/components/simulator/PickupBetBtn.svelte';
 	import {
 		user,
+		isFirebaseUser,
+		favoriteBets,
 		playerBets,
-		playerBetQueue,
-		crSimPrefs,
-		crSimPrefsQueue
+		crSimPrefs
 	} from '../../lib/utils/userData';
 	import {
+		toggleCrSimPref,
+		syncCrSimPrefsToLocal,
+		syncPlayerBetsToLocal,
 		clearPlayerBetsFromLocalStorage,
-		clearPlayerBetsFromFirebase,
-		updateCrSimPrefsQueue,
-		updatePlayerBetQueue
+		clearPlayerBetsFromFirebase
 	} from '$lib/utils/userDataOperations';
 	import { get } from 'svelte/store';
+	import { makeBet } from '$lib/utils/simulator/bet-objects';
 
 	let title: string = 'Craps Simulator';
 	let description: string =
@@ -69,7 +66,9 @@
 	let inputValue2: number = 5;
 
 	let current_user: any = null;
+	let is_ready: boolean = false;
 	$: current_user = $user;
+	$: is_ready = $isReadyForSync;
 
 	onMount(() => {
 		console.log('Craps-simulator on Mount being called');
@@ -80,49 +79,41 @@
 			}
 		});
 
-		const unsubscribeDataReady = isReadyForSync.subscribe((ready) => {
-			if (ready) {
-				console.log('Craps Simulator isReadyForSync state:', ready);
-				scaleEverything();
-			}
-		});
+		if (is_ready) {
+			console.log('Ready to scale everything.');
+			scaleEverything();
+		}
 
-		return () => {
-			document.removeEventListener('keydown', exitFullScreen);
-			unsubscribeDataReady();
-		};
+		console.log('Craps Simulator isReadyForSync state:', get(isReadyForSync));
+		console.log('Craps simulator preferences: ', get(crSimPrefs));
+		console.log('Player Bets: ', get(playerBets));
+		console.log('Favorite Bets: ', get(favoriteBets));
 	});
 
 	crSimPrefs.subscribe((prefs) => {
-		console.log('Preferences updated:', prefs);
-
-		// Compare current preferences with the queued state
-		const currentQueue = get(crSimPrefsQueue);
-		const queuedPrefs = currentQueue.get('preferences')?.data;
-
-		// Only queue an update if preferences have changed
-		if (!queuedPrefs || JSON.stringify(queuedPrefs) !== JSON.stringify(prefs)) {
-			updateCrSimPrefsQueue('add', prefs);
+		if (!is_ready) {
+			console.log('crSimPrefs subscription called, but not ready to scale everything.');
+			return;
 		}
+		console.log('crSimPrefs subscription called.', prefs);
+		syncCrSimPrefsToLocal();
 	});
 
 	playerBets.subscribe((bets) => {
-		console.log('Player Bets updated:', bets);
-
-		// Compare current bets to the queue and update accordingly
-		const cachedBets = get(playerBetQueue);
-
-		bets.forEach((bet) => {
-			updatePlayerBetQueue('add', bet); // Add or update the bet
-		});
-
-		// Handle removed bets (not in the current bets list but present in the queue)
-		Array.from(cachedBets.keys()).forEach((betId) => {
-			if (!bets.some((bet) => bet.id === betId)) {
-				updatePlayerBetQueue('remove', { id: betId });
-			}
-		});
+		if (!is_ready) {
+			console.log('playerBets subscription called, but not ready to scale everything.');
+			return;
+		}
+		console.log('playerBets subscription called.', bets);
+		syncPlayerBetsToLocal();
 	});
+
+	function handleCheckboxChange(event: Event, settingKey: string): void {
+		const target = event.target as HTMLInputElement;
+		if (target) {
+			toggleCrSimPref(settingKey, target.checked);
+		}
+	}
 
 	console.log('craps-simulator +page loaded.');
 </script>
@@ -262,7 +253,7 @@
 						data-width="6"
 						data-height="10.66"
 					/>
-					<!-- Stickwoman -->
+					<!-- Stickperson -->
 					{#if $crSimPrefs.showStickperson}
 						<div
 							id="stickperson"
@@ -319,6 +310,7 @@
 							data-y="85"
 							data-width="5"
 							data-height="4"
+							data-type="test-input"
 							bind:value={inputValue}
 						/>
 						<button
@@ -329,11 +321,11 @@
 							data-fontsize="2"
 							data-paddinglr="2"
 							data-paddingtb="1"
-							on:click={() => placeBet('passLine', inputValue)}>PL</button
+							on:click={() => makeBet('passLine', inputValue)}>PL</button
 						>
 						<input
-							type="number"
 							id="second-input"
+							type="number"
 							class="simple-input-box game-element hidden"
 							data-x="67"
 							data-y="85"
@@ -349,7 +341,7 @@
 							data-fontsize="2"
 							data-paddinglr="2"
 							data-paddingtb="1"
-							on:click={() => placeBet('dontPass', inputValue2)}>DP</button
+							on:click={() => makeBet('dontPass', inputValue2)}>DP</button
 						>
 						<button
 							class="roll-btn game-element rounded-md hidden"
@@ -359,7 +351,7 @@
 							data-fontsize="2"
 							data-paddinglr="2"
 							data-paddingtb="1"
-							on:click={() => console.log('Player Bets: ', $playerBets)}>Log</button
+							on:click={() => console.log('Firebase User', $isFirebaseUser)}>Log</button
 						>
 						<button
 							class="roll-btn game-element rounded-md hidden"
@@ -384,7 +376,7 @@
 							data-paddingtb="1"
 							on:click={() => {
 								console.log('Clearing Firebase bets for user:', current_user);
-								clearPlayerBetsFromFirebase(current_user);
+								clearPlayerBetsFromFirebase(current_user.id);
 							}}>C.Fb</button
 						>
 					{/if}
@@ -464,7 +456,7 @@
 						</button>
 					</div>
 					<!-- Settings Popup -->
-					{#if $showSettingsPopup}
+					{#if $settingsPopupKey}
 						<LgMenu title="Settings" toggleKey="showSettingsPopup">
 							<!-- show stickperson -->
 							<div>
@@ -472,8 +464,9 @@
 									<input
 										type="checkbox"
 										bind:checked={$crSimPrefs.showStickperson}
-										on:change={() => {
-											scaleElements('stickperson');
+										on:change={(e) => {
+											scaleElement('stickperson');
+											handleCheckboxChange(e, 'showStickperson');
 										}}
 									/>
 									Show Stickperson
@@ -486,7 +479,7 @@
 										type="checkbox"
 										bind:checked={$crSimPrefs.showGuide}
 										on:change={() => {
-											scaleElements('guide');
+											scaleElement('guide');
 										}}
 									/>
 									Show Guide
@@ -499,7 +492,7 @@
 										type="checkbox"
 										bind:checked={$crSimPrefs.showBankroll}
 										on:change={() => {
-											scaleElements('bankroll');
+											scaleElement('bankroll');
 										}}
 									/>
 									Show Bankroll
@@ -512,7 +505,7 @@
 										type="checkbox"
 										bind:checked={$crSimPrefs.showRail}
 										on:change={() => {
-											scaleElements('rail');
+											scaleElement('rail');
 										}}
 									/>
 									Show Rail
@@ -525,7 +518,7 @@
 										type="checkbox"
 										bind:checked={$crSimPrefs.showLayout}
 										on:change={() => {
-											scaleElements('layout');
+											scaleElement('layout');
 										}}
 									/>
 									Show Layout
@@ -538,16 +531,16 @@
 										type="checkbox"
 										bind:checked={$crSimPrefs.showRollButton}
 										on:change={() => {
-											scaleElements('roll-button');
+											scaleElement('roll-button');
 										}}
 									/>
 									Show Roll Button
 								</label>
 							</div>
-							{#if $showEnterBtn}
+							{#if $enterBtnKey}
 								<button
 									id="enter-btn"
-									class="enter-fullscreen-btn game-element popup"
+									class="enter-fullscreen-btn game-element"
 									data-x="10.25"
 									data-y="77.5"
 									data-paddinglr="1"
@@ -555,10 +548,10 @@
 									on:click={() => enterFullScreen()}>Enter Full Screen</button
 								>
 							{/if}
-							{#if $showExitBtn}
+							{#if $exitBtnKey}
 								<button
 									id="exit-btn"
-									class="exit-fullscreen-btn game-element popup"
+									class="exit-fullscreen-btn game-element"
 									data-x="8"
 									data-y="52"
 									data-fontsize="1.5"
@@ -584,43 +577,105 @@
 					</div>
 					<!-- Popup Menus -->
 					<div id="popups">
-						{#if $showPassLinePopup}
-							<LgMenu title="Bet the Pass Line" toggleKey="showPassLinePopup">
-								<ScrollMenu popupName="smBtnPassLineMenu">
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={5} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={10} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={15} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={20} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={25} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={50} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={100} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={200} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={500} />
-									<SmBetButton betName="Pass Line" betType="pass-line" betAmount={1000} />
-								</ScrollMenu>
-								<MdBtnMenu popupName="mdBtnPassLineMenu">
+						{#if $passLinePopupKey}
+							<LgMenu
+								title="Bet the Pass Line"
+								toggleKey="passLinePopupKey"
+								scalePopupKey="LgMenuPassLine"
+							>
+								<HorizScrollMenu scalePopupKey="HorizScrollMenuPassLine">
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={5}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={10}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={15}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={20}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={25}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={50}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={100}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={200}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={500}
+									/>
+									<SmBetButton
+										betName="Pass Line"
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										betAmount={1000}
+									/>
+								</HorizScrollMenu>
+								<MdBtnMenu scalePopupKey="mdBtnMenuPassLine">
 									<MdBetMenuButton
 										betName="Pass Line"
-										betType="pass-line"
+										betType="passLine"
 										betAmount={'Max Bet'}
 										betClass="max-bet-btn"
 									/>
 									<MdBetMenuButton
 										betName="Pass Line"
-										betType="pass-line"
+										betType="passLine"
 										betAmount={'All In'}
 										betClass="all-in-btn"
 									/>
 								</MdBtnMenu>
-								<GameInputBox betType="pass-line" popupBox="showPassLinePopup" />
+								<GameInputBox
+									betType="passLine"
+									toggleKey="passLinePopupKey"
+									scalePopupKey="gameInputBoxPassLine"
+								/>
 								<div class="flex justify-between gap-2">
-									<LgMenuTextBox popupName="lgMenuTxtBoxPassLine" />
-									<PickupBetButton betType="pass-line" />
+									<LgMenuTextBox scalePopupKey="lgMenuTxtBoxPassLine" />
+									<PickupBetButton
+										betType="passLine"
+										toggleKey="passLinePopupKey"
+										scalePopupKey="pickupBtnPassLine"
+									/>
 								</div>
 							</LgMenu>
 						{/if}
 					</div>
-					<!-- Chip Set -->
+					<!-- Chip Sets -->
 					{#each $playerBets as { id, amount, baseX, baseY, direction } (id)}
 						{#if baseX !== undefined && baseY !== undefined && direction !== undefined}
 							<ChipSet {id} {amount} {baseX} {baseY} {direction} />

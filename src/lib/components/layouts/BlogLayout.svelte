@@ -1,5 +1,4 @@
 <script lang="ts">
-	import MasterLayout from './MasterLayout.svelte';
 	import LeftNavStructure from '../structure/Structure-LeftNav.svelte';
 	import LeftNavBlogMenu from '$lib/components/structure/LeftNavBlogMenu.svelte';
 	import StructureRemaining from '../structure/Structure-Remaining.svelte';
@@ -21,11 +20,9 @@
 	});
 </script>
 
-<MasterLayout>
-	<LeftNavStructure>
-		<LeftNavBlogMenu />
-	</LeftNavStructure>
-	<StructureRemaining {pageLinks} {showContentMenuBox}>
-		<slot />
-	</StructureRemaining>
-</MasterLayout>
+<LeftNavStructure>
+	<LeftNavBlogMenu />
+</LeftNavStructure>
+<StructureRemaining {pageLinks} {showContentMenuBox}>
+	<slot />
+</StructureRemaining>

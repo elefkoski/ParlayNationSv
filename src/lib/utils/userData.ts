@@ -1,6 +1,6 @@
 console.log('Entering userData.ts');
 
-import { writable } from 'svelte/store';
+import { writable, derived } from 'svelte/store';
 import { directionOffsets } from './simulator/craps-simulator-bet-placement';
 
 const defaultCrapsSimulatorPreferences: CrapsSimulatorPreference = {
@@ -9,34 +9,21 @@ const defaultCrapsSimulatorPreferences: CrapsSimulatorPreference = {
 	showBankroll: true,
 	showRail: true,
 	showLayout: true,
-	showRollButton: true,
-	bankroll: 1000,
-	savedRolls: []
+	showRollButton: true
 };
 export const user = writable<User | null>(null);
+export const isFirebaseUser = derived(user, ($user) => $user !== null && $user.id !== 'guest');
 
 export const savedBookmarks = writable<Bookmark[]>([]);
-export const savedBookmarkQueue = writable<Map<string, { action: 'add' | 'remove'; data: any }>>(
-	new Map()
-);
 export const crSimPrefs = writable<CrapsSimulatorPreference>(defaultCrapsSimulatorPreferences);
-export const crSimPrefsQueue = writable<Map<string, { action: 'add' | 'remove'; data: any }>>(
-	new Map()
-);
 export const playerBets = writable<PlayerBet[]>([]);
-export const playerBetQueue = writable<Map<string, { action: 'add' | 'remove'; data: any }>>(
-	new Map()
-);
 export const favoriteBets = writable<FavoriteBet[]>([]);
-export const favoriteBetQueue = writable<Map<string, { action: 'add' | 'remove'; data: any }>>(
-	new Map()
-);
 
 export interface User {
 	id: string;
 	displayName?: string | null;
 	email?: string | null;
-	profilePicture?: string | null;
+	photoURL?: string | null;
 	profile?: any; // Optional, for additional fields
 }
 export interface Bookmark {
@@ -53,8 +40,6 @@ export interface CrapsSimulatorPreference {
 	showRail?: boolean;
 	showLayout?: boolean;
 	showRollButton?: boolean;
-	bankroll?: number;
-	savedRolls?: number[];
 	[key: string]: any; // Allow for additional preferences as needed
 }
 export interface PlayerBet {
@@ -73,11 +58,6 @@ export interface FavoriteBet {
 		type: string;
 		amount: number;
 	};
-}
-
-export function resetToDefaultPreferences() {
-	console.log('resetToDefaultPreferences: Resetting to default simulator preferences');
-	crSimPrefs.set({ ...defaultCrapsSimulatorPreferences });
 }
 
 console.log('Exiting userData.ts');

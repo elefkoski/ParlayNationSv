@@ -2,7 +2,7 @@
 	console.log('ChipSet component loading');
 
 	import { onMount } from 'svelte';
-	import { scaleElements } from '$lib/utils/simulator/craps-simulator-scaling';
+	import { scaleElement } from '$lib/utils/simulator/craps-simulator-scaling';
 	import { calculateChipPlacement } from '$lib/utils/simulator/craps-simulator-bet-placement';
 	import { directionOffsets } from '$lib/utils/simulator/craps-simulator-bet-placement';
 
@@ -16,7 +16,7 @@
 	const baseName = deduceBaseName(id);
 
 	onMount(() => {
-		scaleElements(`${baseName}-cheque`);
+		scaleElement(`${baseName}-cheque`);
 	});
 
 	const bet = { amount, baseX, baseY, direction };

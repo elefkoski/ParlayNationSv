@@ -5,17 +5,18 @@
 	import { logout } from '$lib/utils/auth';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
-	import { user } from '$lib/utils/userData';
+	import { user, isFirebaseUser } from '$lib/utils/userData';
 	import { get } from 'svelte/store';
 	import { page } from '$app/stores';
 
 	let current_user: any = null;
-	let isAuthenticated = false;
+	$: current_user = $user;
 	let profilePicture: string = 'https://picsum.photos/100';
 
-	$: current_user = $user;
-	$: isAuthenticated = !!current_user;
-	$: profilePicture = current_user?.profile?.profilePicture || 'https://picsum.photos/100';
+	$: {
+		profilePicture = current_user?.photoURL || 'https://picsum.photos/100';
+		console.log('isFirebaseUser:', $isFirebaseUser);
+	}
 
 	onMount(() => {
 		console.log('Navbar mounted.');
@@ -109,7 +110,7 @@
 								<button class="btn join-item search min-h-0 h-10">Search</button>
 							</div>
 							<ul class="menu menu-horizontal px-1 sign-in">
-								{#if isAuthenticated}
+								{#if $isFirebaseUser}
 									<li>
 										<img
 											src={profilePicture}

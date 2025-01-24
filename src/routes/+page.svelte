@@ -1,13 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import '../colors.css';
-	import Navbar from '$lib/components/structure/Navbar.svelte';
 	import Footer from '$lib/components/structure/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
 	onMount(() => {
-		enableEventTracking();
-		enableScrollTracking();
 		sessionStorage.setItem('last_url', window.location.pathname);
 	});
 
@@ -175,7 +172,6 @@
 	</script>
 </svelte:head>
 
-<Navbar />
 <main id="parentElement" class="home-page-text">
 	<section
 		aria-label="Main Hero"

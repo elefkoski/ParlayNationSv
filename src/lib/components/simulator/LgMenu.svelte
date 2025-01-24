@@ -6,11 +6,12 @@
 	import type { UiToggleKey } from '../../utils/simulator/craps-simulator-scaling';
 	export let title: string;
 	export let toggleKey: UiToggleKey = 'showSettingsPopup';
+	export let scalePopupKey: string = 'scalePopupKey';
 
 	onMount(() => {
 		console.log('LgMenu component mounted.');
 
-		scalePopup(toggleKey);
+		scalePopup(scalePopupKey);
 	});
 	function handleClick() {
 		toggleUiSetting(toggleKey);
@@ -21,7 +22,7 @@
 
 <div
 	class="game-popup rounded-md popup z-40"
-	data-type={toggleKey}
+	data-type={scalePopupKey}
 	data-x="50"
 	data-y="50"
 	data-width="80"
@@ -30,17 +31,17 @@
 	data-paddingtb="2.5"
 >
 	<div class="relative flex justify-between items-center">
-		<h2 data-type={toggleKey} data-fontsize="3.5">{title}</h2>
+		<h2 data-type={scalePopupKey} data-fontsize="3.5">{title}</h2>
 		<button
 			id="toggle-button"
-			data-type={toggleKey}
+			data-type={scalePopupKey}
 			data-fontsize="4"
 			on:click={handleClick}
 			on:keydown={(e) => e.key === 'Enter' && handleClick()}
 			on:keyup={(e) => e.key === ' ' && handleClick()}>☒</button
 		>
 	</div>
-	<div class="grid grid-rows-[auto,1fr,auto]" data-type={toggleKey} data-gap="1.25">
+	<div class="grid grid-rows-[auto,1fr,auto]" data-type={scalePopup} data-gap="1.25">
 		<slot />
 	</div>
 </div>

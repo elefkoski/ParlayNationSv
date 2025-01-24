@@ -2,17 +2,7 @@ console.log('Entering userDataOperations.ts');
 
 import { db } from './firebase';
 import { doc, getDoc, updateDoc, collection, getDocs, setDoc, deleteDoc } from 'firebase/firestore';
-import {
-	user,
-	savedBookmarks,
-	savedBookmarkQueue,
-	crSimPrefs,
-	crSimPrefsQueue,
-	playerBets,
-	playerBetQueue,
-	favoriteBets,
-	favoriteBetQueue
-} from './userData';
+import { user, savedBookmarks, crSimPrefs, playerBets, favoriteBets } from './userData';
 import type { CrapsSimulatorPreference, FavoriteBet, PlayerBet, Bookmark } from './userData';
 import { get } from 'svelte/store';
 
@@ -26,6 +16,7 @@ export async function fetchUserData(firebaseUser: any): Promise<void> {
 	}
 
 	const userId = firebaseUser.uid;
+	console.log('fetchUserData userId:', userId);
 
 	// Fetch and cache user data
 	await Promise.all([
@@ -35,269 +26,129 @@ export async function fetchUserData(firebaseUser: any): Promise<void> {
 		fetchPlayerBets(userId)
 	]);
 
+	user.set({
+		id: firebaseUser.uid,
+		email: firebaseUser.email || '',
+		displayName: firebaseUser.displayName || 'Anonymous',
+		photoURL: firebaseUser.photoURL || 'https://picsum.photos/100'
+	});
+
+	console.log('fetchUserData user:', user);
+	const currentUser = get(user);
+	console.log('User id:', currentUser?.id);
+	console.log('User email:', currentUser?.email);
+	console.log('User displayName:', currentUser?.displayName);
+	console.log('User profilePicture:', currentUser?.photoURL);
+
 	console.log('Exiting fetchUserData.');
 }
 export async function fetchUserBookmarks(userId: string): Promise<void> {
 	try {
-		const cachedBookmarks = getUserDataFromLocal<Bookmark[]>('savedBookmarks');
-		if (cachedBookmarks && (cachedBookmarks as Bookmark[]).length > 0) {
-			savedBookmarks.set(cachedBookmarks || []);
-			console.log('Loaded bookmarks from localStorage:', cachedBookmarks);
-		} else {
-			const fetchedBookmarks = await fetchCollection<Bookmark>(`users/${userId}/savedBookmarks`);
-			savedBookmarks.set(fetchedBookmarks);
-			setUserDataToLocalStorage('savedBookmarks', fetchedBookmarks);
-			console.log('Bookmarks fetched from Firebase and cached:', fetchedBookmarks);
-		}
+		const bookmarks = await fetchCollection<Bookmark>(`users/${userId}/savedBookmarks`);
+		setUserDataToLocalStorage('savedBookmarks', bookmarks);
+		savedBookmarks.set(bookmarks);
 	} catch (error) {
 		console.error('Error fetching bookmarks:', error);
 		savedBookmarks.set([]);
 	}
 }
-export async function fetchPlayerBets(userId: string): Promise<void> {
-	console.log('fetchPlayerBets called.');
-
+async function fetchCrSimPrefs(userId: string): Promise<void> {
 	try {
-		const cachedBets = getUserDataFromLocal<PlayerBet[]>('playerBets');
-		if (cachedBets && (cachedBets as PlayerBet[]).length > 0) {
-			playerBets.set(cachedBets);
-			console.log('Loaded player bets from localStorage:', cachedBets);
-			return;
-		}
-
-		const bets = await fetchCollection<PlayerBet>(`users/${userId}/playerBets`);
-		playerBets.set(bets);
-		setUserDataToLocalStorage('playerBets', bets);
-
-		console.log('Player bets fetched from Firebase and cached:', bets);
-	} catch (error) {
-		console.error('Error fetching player bets:', error);
-	}
-}
-export async function fetchCrSimPrefs(userId: string): Promise<void> {
-	console.log('fetchCrSimPrefs called.');
-
-	try {
-		const cachedPrefs = getUserDataFromLocal<CrapsSimulatorPreference[]>('crSimPrefs');
-		if (cachedPrefs) {
-			crSimPrefs.set(cachedPrefs);
-			console.log('Loaded preferences from localStorage:', cachedPrefs);
-			return;
-		}
-
-		const docRef = doc(db, 'users', userId);
-		const userData = await fetchDocument(docRef);
-
-		if (userData?.crapsSimulator) {
-			crSimPrefs.set(userData.crapsSimulator);
-			saveCrSimPrefsToLocalStorage(userData.crapsSimulator);
-			console.log('Preferences fetched from Firebase and cached:', userData.crapsSimulator);
-		} else {
-			console.log('No preferences found in Firebase.');
+		const prefs = await fetchDocument(doc(db, `users/${userId}`));
+		if (prefs?.crapsSimulator) {
+			crSimPrefs.set(prefs.crapsSimulator);
+			setUserDataToLocalStorage('crSimPrefs', prefs.crapsSimulator);
 		}
 	} catch (error) {
 		console.error('Error fetching preferences:', error);
+		crSimPrefs.set({} as CrapsSimulatorPreference);
 	}
 }
-export async function fetchFavoriteBets(userId: string): Promise<void> {
-	console.log('fetchFavoriteBets called.');
-
+async function fetchFavoriteBets(userId: string): Promise<void> {
 	try {
-		const cachedBets = getUserDataFromLocal<FavoriteBet[]>('favoriteBets');
-		if (cachedBets && (cachedBets as FavoriteBet[]).length > 0) {
-			favoriteBets.set(cachedBets);
-			console.log('Loaded favorite bets from localStorage:', cachedBets);
-			return;
-		}
-
 		const bets = await fetchCollection<FavoriteBet>(`users/${userId}/favoriteBets`);
 		favoriteBets.set(bets);
-		setUserDataToLocalStorage('favoriteBets', bets);
-
-		console.log('Favorite bets fetched from Firebase and cached:', bets);
 	} catch (error) {
 		console.error('Error fetching favorite bets:', error);
+		favoriteBets.set([]);
 	}
 }
-
-// Queue User Data Sync
-export async function updateSavedBookmarkQueue(
-	action: 'add' | 'remove',
-	pageData: any
-): Promise<void> {
-	console.log('updateSavedBookmarkQueue called.');
-	savedBookmarkQueue.update((queue) => {
-		const updatedQueue = new Map(queue);
-		updatedQueue.set(pageData.pageUrl, { action, data: pageData });
-		console.log('Updated Queue:', updatedQueue);
-		return updatedQueue;
-	});
-}
-export async function updatePlayerBetQueue(action: 'add' | 'remove', betData: any): Promise<void> {
-	console.log('updatePlayerBetQueue called.');
-
-	playerBetQueue.update((queue) => {
-		const updatedQueue = new Map(queue);
-
-		if (action === 'add') {
-			// If the bet is already marked for removal, remove it from the queue
-			if (updatedQueue.get(betData.id)?.action === 'remove') {
-				updatedQueue.delete(betData.id);
-			} else {
-				// Otherwise, add it to the queue
-				updatedQueue.set(betData.id, { action, data: betData });
-			}
-		} else if (action === 'remove') {
-			// If the bet is already marked for addition, remove it from the queue
-			if (updatedQueue.get(betData.id)?.action === 'add') {
-				updatedQueue.delete(betData.id);
-			} else {
-				// Otherwise, add it to the queue as a removal
-				updatedQueue.set(betData.id, { action, data: betData });
-			}
-		}
-
-		console.log('Updated Player Bet Queue:', updatedQueue);
-		return updatedQueue;
-	});
-}
-export async function updateFavoriteBetQueue(
-	action: 'add' | 'remove',
-	betData: any
-): Promise<void> {
-	console.log('updateFavoriteBetQueue called.');
-
-	favoriteBetQueue.update((queue) => {
-		const updatedQueue = new Map(queue);
-		updatedQueue.set(betData.betId, { action, data: betData });
-		console.log('Updated Queue:', updatedQueue);
-		return updatedQueue;
-	});
-}
-export function updateCrSimPrefsQueue(action: 'add' | 'remove', prefs: any): void {
-	console.log('updateCrSimPrefsQueue called.');
-
-	crSimPrefsQueue.update((queue) => {
-		const updatedQueue = new Map(queue);
-
-		if (action === 'add') {
-			// If 'remove' already exists in the queue, clear it
-			if (updatedQueue.get('preferences')?.action === 'remove') {
-				updatedQueue.delete('preferences');
-			}
-			// Add or update the preferences with the latest state
-			updatedQueue.set('preferences', { action, data: prefs });
-		} else if (action === 'remove') {
-			// If 'add' already exists in the queue, clear it
-			if (updatedQueue.get('preferences')?.action === 'add') {
-				updatedQueue.delete('preferences');
-			} else {
-				// Add or update the preferences as a removal
-				updatedQueue.set('preferences', { action, data: prefs });
-			}
-		}
-
-		console.log('Updated CrSimPrefs Queue:', updatedQueue);
-		return updatedQueue;
-	});
-}
-
-// Sync User Data with Firebase
-export async function syncUserData(userId: string): Promise<void> {
+async function fetchPlayerBets(userId: string): Promise<void> {
 	try {
-		console.log('Syncing user data...');
-
-		await Promise.all([
-			syncSavedBookmarkQueue(userId),
-			syncPlayerBetQueue(userId),
-			syncFavoriteBetQueue(userId),
-			syncCrSimPrefsQueue(userId)
-		]);
-
-		console.log('User data synced successfully.');
+		const bets = await fetchCollection<PlayerBet>(`users/${userId}/playerBets`);
+		playerBets.set(bets);
 	} catch (error) {
-		console.error('Error syncing user data:', error);
+		console.error('Error fetching player bets:', error);
+		playerBets.set([]);
 	}
 }
-async function syncSavedBookmarkQueue(userId: string): Promise<void> {
-	const queue = get(savedBookmarkQueue);
 
-	await processQueue(
-		queue,
-		userId,
-		'savedBookmarks',
-		(userId, data) => doc(db, `users/${userId}/savedBookmarks/${generateBookmarkId(data.title)}`),
-		async (docRef, action, data) => {
-			if (action === 'add') {
-				await setDoc(docRef, data);
-			} else if (action === 'remove') {
-				await deleteDoc(docRef);
-			}
-		}
-	);
-
-	// Clear the queue after syncing
-	savedBookmarkQueue.set(new Map());
+// Sync to Local
+export async function syncUserBookmarksToLocal(): Promise<void> {
+	console.log('Syncing bookmarks to LocalStorage...');
+	const bookmarks = get(savedBookmarks);
+	setUserDataToLocalStorage('savedBookmarks', bookmarks);
+	console.log('Bookmarks synced to LocalStorage successfully.');
 }
-async function syncPlayerBetQueue(userId: string): Promise<void> {
-	const queue = get(playerBetQueue);
-
-	await processQueue(
-		queue,
-		userId,
-		'playerBets',
-		(userId, data) => doc(db, `users/${userId}/playerBets/${data.id}`),
-		async (docRef, action, data) => {
-			if (action === 'add') {
-				await setDoc(docRef, data);
-			} else if (action === 'remove') {
-				await deleteDoc(docRef);
-			}
-		}
-	);
-
-	// Clear the queue after syncing
-	playerBetQueue.set(new Map());
+export async function syncCrSimPrefsToLocal(): Promise<void> {
+	console.log('Syncing preferences to LocalStorage...');
+	const prefs = get(crSimPrefs);
+	setUserDataToLocalStorage('crSimPrefs', prefs);
+	console.log('Preferences synced to LocalStorage successfully.');
 }
-async function syncFavoriteBetQueue(userId: string): Promise<void> {
-	const queue = get(favoriteBetQueue);
-
-	await processQueue(
-		queue,
-		userId,
-		'favoriteBets',
-		(userId, data) => doc(db, `users/${userId}/favoriteBets/${data.betId}`),
-		async (docRef, action, data) => {
-			if (action === 'add') {
-				await setDoc(docRef, data.betDetails);
-			} else if (action === 'remove') {
-				await deleteDoc(docRef);
-			}
-		}
-	);
-
-	// Clear the queue after syncing
-	favoriteBetQueue.set(new Map());
+export async function syncPlayerBetsToLocal(): Promise<void> {
+	console.log('Syncing player bets to LocalStorage...');
+	const bets = get(playerBets);
+	setUserDataToLocalStorage('playerBets', bets);
+	console.log('Player bets synced to LocalStorage successfully.');
 }
-async function syncCrSimPrefsQueue(userId: string): Promise<void> {
-	const queue = get(crSimPrefsQueue);
-
-	await processQueue(
-		queue,
-		userId,
-		'crSimPrefs',
-		(userId, data) => doc(db, `users/${userId}`),
-		async (docRef, action, data) => {
-			if (action === 'add') {
-				await updateDoc(docRef, { crapsSimulator: data });
-			} else if (action === 'remove') {
-				await updateDoc(docRef, { crapsSimulator: null });
-			}
-		}
+export async function syncFavoriteBetsToLocal(): Promise<void> {
+	console.log('syncFavoriteBetsToLocal called.');
+	console.log('Syncing favorite bets to LocalStorage...');
+	const bets = get(favoriteBets);
+	setUserDataToLocalStorage('favoriteBets', bets);
+	console.log(
+		'Favorite bets synced to LocalStorage successfully. Exiting syncFavoriteBetsToLocal.'
 	);
+}
 
-	// Clear the queue after syncing
-	crSimPrefsQueue.set(new Map());
+// Sync to Firebase
+export async function syncLocalToFirebase(): Promise<void> {
+	const currentUser = get(user);
+	if (!currentUser || currentUser.id === 'guest') {
+		console.log('No user logged in. Skipping sync.');
+		return;
+	}
+
+	console.log('Syncing local data to Firebase...');
+	try {
+		const userId = currentUser.id;
+
+		const bookmarks = getUserDataFromLocal<Bookmark[]>('savedBookmarks');
+		if (bookmarks) {
+			await Promise.all(
+				bookmarks.map((bookmark) =>
+					setDoc(doc(db, `users/${userId}/savedBookmarks/${bookmark.id}`), bookmark)
+				)
+			);
+		}
+
+		const bets = getUserDataFromLocal<PlayerBet[]>('playerBets');
+		if (bets) {
+			await Promise.all(
+				bets.map((bet) => setDoc(doc(db, `users/${userId}/playerBets/${bet.id}`), bet))
+			);
+		}
+
+		const prefs = getUserDataFromLocal<CrapsSimulatorPreference>('crSimPrefs');
+		if (prefs) {
+			await updateDoc(doc(db, `users/${userId}`), { crapsSimulator: prefs });
+		}
+
+		console.log('Local data synced to Firebase successfully.');
+	} catch (error) {
+		console.error('Error syncing local data to Firebase:', error);
+	}
 }
 
 // Generate ID's
@@ -308,9 +159,14 @@ function generateBookmarkId(input: string): string {
 		.replace(/^-+|-+$/g, '') // Remove leading and trailing hyphens
 		.slice(0, 50); // Limit to 50 characters for brevity
 }
-export function generatePlayerBetId(type: string, amount: number): string {
-	console.log('Generating Player Bet ID.');
-	return `${type}-${amount || 0}`.replace(/\s+/g, '-').toLowerCase();
+export function generatePlayerBetId(betId: string, amount: number | string): string {
+	// Convert the betId to kebab-case (e.g., 'passLine' -> 'pass-line')
+	const formattedBetId = betId
+		.replace(/([a-z])([A-Z])/g, '$1-$2') // Add a hyphen between lowercase and uppercase letters
+		.toLowerCase();
+
+	// Combine the formatted ID with the amount
+	return `${formattedBetId}-${amount}`;
 }
 
 // -----> Saved Bookmarks <----- //
@@ -322,10 +178,11 @@ export function isPageBookmarked(pageUrl: string): boolean {
 	const cachedBookmarks = JSON.parse(localStorage.getItem('savedBookmarks') || '[]');
 	return cachedBookmarks.some((savedBookmark: any) => savedBookmark.pageUrl === pageUrl);
 }
-
 export async function toggleBookmarkHandler(pageData: {
 	pageUrl: string;
 	title: string;
+	description?: string; // Optional fields
+	imageUrl?: string; // Optional fields
 }): Promise<boolean> {
 	try {
 		const cachedBookmarks = getUserDataFromLocal<Bookmark[]>('savedBookmarks');
@@ -344,19 +201,26 @@ export async function toggleBookmarkHandler(pageData: {
 			setUserDataToLocalStorage('savedBookmarks', updatedBookmarks);
 			updateSavedBookmarkQueue('remove', pageData);
 		} else {
-			// Add bookmark
+			// Fetch description and imageUrl dynamically if missing
+			const description = pageData.description;
+			const imageUrl = pageData.imageUrl;
+
+			// Add bookmark with all fields populated
+			const newBookmark = {
+				...pageData,
+				bookmarkId: generateBookmarkId(pageData.title),
+				description: description || 'Image Description Not Available',
+				imageUrl: imageUrl || 'Image URL Not Available'
+			};
+
 			if (cachedBookmarks) {
-				cachedBookmarks.push({
-					...pageData,
-					bookmarkId: generateBookmarkId(pageData.title),
-					description: '',
-					imageUrl: ''
-				});
+				cachedBookmarks.push(newBookmark);
 			} else {
-				setUserDataToLocalStorage('savedBookmarks', [pageData]);
+				setUserDataToLocalStorage('savedBookmarks', [newBookmark]);
 			}
+
 			setUserDataToLocalStorage('savedBookmarks', cachedBookmarks);
-			updateSavedBookmarkQueue('add', pageData);
+			updateSavedBookmarkQueue('add', newBookmark);
 			isBookmarked = true;
 		}
 
@@ -392,66 +256,18 @@ export async function deleteProfilePageBookmark(bookmarkId: string): Promise<voi
 	}
 }
 
-// -----> Player Bets <----- //
-export async function toggleFavoriteBet(
-	betType: string,
-	betAmount: number,
-	isFavorite?: boolean
-): Promise<boolean> {
-	console.log('toggleFavoriteBet called.');
-
-	const currentUser = get(user);
-	if (!currentUser?.id) {
-		throw new Error('User is not logged in.');
-	}
-
-	const betId = generatePlayerBetId(betType, betAmount);
-
-	const currentFavoriteState = isFavorite ?? (await getFavoriteStatus(betType, betAmount));
-
-	try {
-		if (currentFavoriteState) {
-			updatePlayerBetQueue('remove', { id: betId, type: betType, amount: betAmount });
-			console.log(`Queued removal of favorite bet: ${betId}`);
-			return false;
-		} else {
-			updatePlayerBetQueue('add', { id: betId, type: betType, amount: betAmount });
-			console.log(`Queued addition of favorite bet: ${betId}`);
-			return true;
-		}
-	} catch (error) {
-		console.error('Error toggling favorite bet:', error);
-		throw error;
-	}
-}
-export async function getFavoriteStatus(betType: string, betAmount: number): Promise<boolean> {
-	console.log('getFavoriteStatus called.');
-
-	const betId = generatePlayerBetId(betType, betAmount);
-	const isFavorite = get(favoriteBets).some((bet) => bet.betId === betId);
-	console.log(`Favorite status for ${betId}:`, isFavorite);
-	return isFavorite;
-}
-export async function clearPlayerBetsFromFirebase(userId: string): Promise<void> {
-	console.log('clearPlayerBetsFromFirebase called.');
-
-	try {
-		const playerBetsRef = collection(db, `users/${userId}/playerBets`);
-		const querySnapshot = await getDocs(playerBetsRef);
-
-		await Promise.all(
-			querySnapshot.docs.map(async (doc) => {
-				await deleteDoc(doc.ref);
-			})
-		);
-
-		console.log('Player bets cleared from Firebase.');
-	} catch (error) {
-		console.error('Error clearing player bets from Firebase:', error);
-	}
-}
-
 // Craps Simulator Preferences
+export function toggleCrSimPref(settingKey: string, value: any): void {
+	crSimPrefs.update((currentPrefs) => {
+		const updatedPrefs = {
+			...currentPrefs,
+			[settingKey]: value
+		};
+
+		syncCrSimPrefsToLocal();
+		return updatedPrefs;
+	});
+}
 export async function saveCrSimPrefsToFirebase(userId: string, prefs: CrapsSimulatorPreference) {
 	console.log('saveCrSimPrefsToFirebase called.');
 
@@ -493,20 +309,107 @@ export function loadCrSimPrefsFromLocalStorage(): CrapsSimulatorPreference | nul
 	}
 }
 
-// Player Bets
+// -----> Player Bets <----- //
+export function addPlayerBet(bet: PlayerBet): void {
+	playerBets.update((currentBets) => {
+		const updatedBets = [...currentBets, bet];
+		syncPlayerBetsToLocal(); // Sync updated state to localStorage
+		return updatedBets;
+	});
+}
+export function removePlayerBet(betId: string): void {
+	playerBets.update((currentBets) => {
+		const updatedBets = currentBets.filter((b) => b.id !== betId);
+		syncPlayerBetsToLocal(); // Sync updated state to localStorage
+		return updatedBets;
+	});
+}
 export function clearPlayerBetsFromLocalStorage(): void {
 	console.log('clearPlayerBetsFromLocalStorage called.');
 
 	try {
-		localStorage.removeItem('playerBets');
 		playerBets.set([]);
+		localStorage.removeItem('playerBets');
 		console.log('Player bets cleared from localStorage.');
 	} catch (error) {
 		console.error('Error clearing player bets from localStorage:', error);
 	}
 }
+export async function clearPlayerBetsFromFirebase(userId: string): Promise<void> {
+	if (!userId) {
+		throw new Error('User ID is required to clear player bets.');
+	}
 
-// ----> Player Bet Helpers -----> //
+	try {
+		console.log(`Clearing player bets for user: ${userId}`);
+
+		// Reference the user's player bets collection in Firestore
+		const betsCollectionRef = collection(db, `users/${userId}/playerBets`);
+
+		// Fetch all documents (player bets) in the collection
+		const betsSnapshot = await getDocs(betsCollectionRef);
+
+		// Iterate through each document and delete it
+		const deletePromises = betsSnapshot.docs.map((betDoc) =>
+			deleteDoc(doc(db, `users/${userId}/playerBets/${betDoc.id}`))
+		);
+
+		// Wait for all deletions to complete
+		await Promise.all(deletePromises);
+
+		console.log(`Successfully cleared all player bets for user: ${userId}`);
+	} catch (error) {
+		console.error('Error clearing player bets:', error);
+		throw new Error('Failed to clear player bets. Please try again.');
+	}
+}
+
+// Favorite Bets
+export async function toggleFavoriteBet(betType: string, betAmount: number): Promise<boolean> {
+	console.log('toggleFavoriteBet called.');
+
+	const currentUser = get(user);
+	if (!currentUser?.id) {
+		throw new Error('User is not logged in.');
+	}
+
+	const betId = generatePlayerBetId(betType, betAmount);
+
+	const isFavoriteBet = await getFavoriteBetStatus(betType, betAmount);
+
+	try {
+		if (isFavoriteBet) {
+			// Remove from favorites
+			favoriteBets.update((bets) => bets.filter((b) => b.betId !== betId));
+			syncFavoriteBetsToLocal(); // Save to localStorage
+			console.log(`Removed favorite bet: ${betId}`);
+			return false;
+		} else {
+			// Add to favorites
+			favoriteBets.update((bets) => [
+				...bets,
+				{ betId: betId, betDetails: { type: betType, amount: betAmount } } as FavoriteBet
+			]);
+			syncFavoriteBetsToLocal(); // Save to localStorage
+			console.log(`Added favorite bet: ${betId}`);
+			return true;
+		}
+	} catch (error) {
+		console.error('Error toggling favorite bet:', error);
+		throw error;
+	}
+}
+
+export async function getFavoriteBetStatus(betType: string, betAmount: number): Promise<boolean> {
+	console.log('getFavoriteBetStatus called.');
+
+	const betId = generatePlayerBetId(betType, betAmount);
+	console.log('betId:', betId);
+	console.log('favoriteBets:', get(favoriteBets));
+	const isFavorite = get(favoriteBets).some((bet) => bet.betId === betId);
+	console.log(`Favorite status for ${betId}:`, isFavorite);
+	return isFavorite;
+}
 
 // Helper Functions
 async function fetchCollection<T>(collectionPath: string): Promise<T[]> {
@@ -543,47 +446,14 @@ function getUserDataFromLocal<T>(key: string): T | null {
 	}
 }
 function setUserDataToLocalStorage<T>(key: string, data: T): void {
+	console.log('setUserDataToLocalStorage called.');
 	try {
 		localStorage.setItem(key, JSON.stringify(data));
+		console.log(`Saved ${key} to LocalStorage:`, data);
 	} catch (error) {
 		console.error(`Error writing ${key} to LocalStorage:`, error);
 	}
-}
-async function processQueue<T>(
-	queue: Map<string, { action: 'add' | 'remove'; data: T }>,
-	userId: string,
-	collectionPath: string,
-	generateDocRef: (userId: string, data: T) => any,
-	handleData: (docRef: any, action: 'add' | 'remove', data: T) => Promise<void>
-): Promise<void> {
-	console.log(`Processing queue for ${collectionPath}...`);
-
-	const failedItems = new Map<string, { action: 'add' | 'remove'; data: T }>();
-
-	try {
-		await Promise.all(
-			Array.from(queue.entries()).map(async ([key, item]) => {
-				const docRef = generateDocRef(userId, item.data);
-				try {
-					await handleData(docRef, item.action, item.data);
-				} catch (error) {
-					console.error(`Error syncing item ${key} in ${collectionPath}:`, error);
-					failedItems.set(key, item); // Keep failed items in the queue
-				}
-			})
-		);
-
-		console.log(`${collectionPath} queue processed successfully.`);
-	} catch (error) {
-		console.error(`Error processing ${collectionPath} queue:`, error);
-	}
-
-	// Restore failed items in the queue
-	if (failedItems.size > 0) {
-		console.warn(`${failedItems.size} items failed to sync. Keeping them in the queue.`);
-		queue.clear();
-		failedItems.forEach((value, key) => queue.set(key, value));
-	}
+	console.log('Exiting setUserDataToLocalStorage.');
 }
 
 console.log('Exiting userDataOperations.ts');

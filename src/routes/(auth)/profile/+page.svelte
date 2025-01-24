@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { isDataReady } from '$lib/utils/auth';
+	import { isInitializing } from '$lib/utils/auth';
 	import { user, savedBookmarks } from '$lib/utils/userData';
 	import { deleteProfilePageBookmark, fetchUserBookmarks } from '$lib/utils/userDataOperations';
 	import SingleColumnLayout from '$lib/components/layouts/SingleColumnLayout.svelte';
@@ -9,7 +9,6 @@
 	let current_user: any = null;
 
 	$: current_user = $user;
-	$: allBookmarks = $savedBookmarks;
 
 	onMount(async () => {
 		if (current_user) {
@@ -39,16 +38,16 @@
 					<section aria-label="Left column basic profile info" class="col-span-4 sm:col-span-3">
 						<div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
 							<div class="flex flex-col items-center">
-								{#if current_user && current_user.profile && current_user.profile.profilePicture}
+								{#if current_user && current_user.photoURL}
 									<img
 										alt=""
-										src={current_user.profile.profilePicture}
+										src={current_user.photoURL}
 										class="w-32 h-32 bg-gray-300 dark:bg-gray-500 rounded-full mb-4 shrink-0"
 									/>
 								{/if}
 
 								<h1 class="text-xl font-bold text-gray-900 dark:text-gray-200">
-									{current_user?.profile.displayName}
+									{current_user?.displayName}
 								</h1>
 								<p class="text-gray-600 dark:text-gray-400">Software Developer</p>
 								<div class="mt-6 flex flex-wrap gap-4 justify-center">
@@ -87,10 +86,10 @@
 							class="bg-white dark:bg-gray-700 shadow rounded-lg p-6"
 						>
 							<h2 class="text-xl font-bold mb-4">Learn Craps</h2>
-							{#if isDataReady}
-								{#if allBookmarks.length > 0}
+							{#if isInitializing}
+								{#if $savedBookmarks.length > 0}
 									<div class="hidden lg:block" style="column-count: 3; column-gap: 1em; ">
-										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
+										{#each $savedBookmarks as bookmark (bookmark.bookmarkId)}
 											<div style="break-inside: avoid; margin-bottom:1em">
 												<ProfileBookmarkCard
 													title={bookmark.title}
@@ -103,7 +102,7 @@
 										{/each}
 									</div>
 									<div class="hidden sm:block lg:hidden" style="column-count: 2; column-gap: 1em; ">
-										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
+										{#each $savedBookmarks as bookmark (bookmark.bookmarkId)}
 											<div style="break-inside: avoid; margin-bottom:1em">
 												<ProfileBookmarkCard
 													title={bookmark.title}
@@ -116,7 +115,7 @@
 										{/each}
 									</div>
 									<div class="block sm:hidden" style="column-count: 1; column-gap: 1em; ">
-										{#each allBookmarks as bookmark (bookmark.bookmarkId)}
+										{#each $savedBookmarks as bookmark (bookmark.bookmarkId)}
 											<div style="break-inside: avoid; margin-bottom:1em">
 												<ProfileBookmarkCard
 													title={bookmark.title}
@@ -128,7 +127,7 @@
 											</div>
 										{/each}
 									</div>
-								{:else if current_user && !isDataReady}
+								{:else if current_user && !isInitializing}
 									<p>Loading bookmarks...</p>
 								{:else}
 									<p>No bookmarks available</p>

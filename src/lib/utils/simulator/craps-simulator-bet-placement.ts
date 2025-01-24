@@ -1,6 +1,6 @@
 console.log('Entering craps-simulator-bet-placement.ts');
 
-import { scaleElements } from './craps-simulator-scaling';
+import { scaleElement } from './craps-simulator-scaling';
 import { playerBets } from '../userData';
 import type { PlayerBet } from '../userData';
 
@@ -23,7 +23,7 @@ export function showCheques() {
 			// Rendering logic for cheques
 			console.log(`Placements for bet ${bet.betId}:`, placements);
 		});
-		scaleElements('cheque');
+		scaleElement('cheque');
 	});
 }
 

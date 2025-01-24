@@ -5,7 +5,7 @@ export const touchBoxes = [
 		dataY: 75.5,
 		dataWidth: 15,
 		dataHeight: 4.5,
-		toggleKey: 'showPassLinePopup'
+		toggleKey: 'passLinePopupKey'
 	},
 	{
 		id: 'touch-pass-line-odds',

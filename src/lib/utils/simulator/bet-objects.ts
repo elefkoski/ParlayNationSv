@@ -3,7 +3,8 @@ console.log('Entering bet-objects.ts');
 import { playerBets } from '../userData';
 import { generatePlayerBetId } from '../userDataOperations';
 import type { directionOffsets } from './craps-simulator-bet-placement';
-import { railTotal } from './simulator-calculations';
+import { railTotal } from './gameData';
+import { takeChipsFromRail } from './craps-simulator-rail';
 
 export const betObjects = {
 	passLine: {
@@ -50,7 +51,7 @@ function getDefaultBetData(type: string) {
 	}
 }
 
-export function placeBet(betId: string, amount: number): void {
+export function makeBet(betId: string, amount: number): void {
 	const defaultBetData = getDefaultBetData(betId);
 	console.log('defaultBetData:', defaultBetData);
 
@@ -69,6 +70,7 @@ export function placeBet(betId: string, amount: number): void {
 	});
 
 	railTotal.update((currentRailTotal) => currentRailTotal - amount);
+	takeChipsFromRail(amount);
 	console.log(`Bet placed: ${newBetId}`);
 }
 

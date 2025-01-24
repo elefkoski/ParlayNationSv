@@ -8,7 +8,7 @@ import {
 	signOut
 } from 'firebase/auth';
 import { scaleEverything } from './simulator/craps-simulator-scaling';
-import { user, playerBets, crSimPrefs } from './userData';
+import { user, playerBets, crSimPrefs, savedBookmarks, favoriteBets } from './userData';
 import { fetchUserData, loadCrSimPrefsFromLocalStorage } from './userDataOperations';
 import { goto } from '$app/navigation';
 import { writable, get, derived } from 'svelte/store';
@@ -18,20 +18,16 @@ import { page } from '$app/stores';
 export const isInitializing = writable(false);
 export const isLoggingOut = writable(false);
 export const isLoggingIn = writable(false);
+export const isLoadingGuestData = writable(false);
 export const isReadyForSync = derived(
-	[isInitializing, isLoggingOut, isLoggingIn],
-	([$isInitializing, $isLoggingOut, $isLoggingIn]) =>
-		!$isInitializing && !$isLoggingOut && !$isLoggingIn
+	[isInitializing, isLoggingOut, isLoggingIn, isLoadingGuestData],
+	([$isInitializing, $isLoggingOut, $isLoggingIn, $isLoadingGuestData]) =>
+		!$isInitializing && !$isLoggingOut && !$isLoggingIn && !$isLoadingGuestData
 );
 
-// Flag store for scaling elements
-export const isDataReady = writable(false);
+let isAuthInitialized = false; // To skip multiple auth listener calls
 
-let isAuthInitialized = false;
-
-// TODO Try to get rid of some of these flags
-
-export function handleAuthStateChange(): void {
+export async function handleAuthStateChange(): Promise<void> {
 	if (isAuthInitialized) {
 		console.log('Auth listener already initialized. Skipping setup.');
 		return;
@@ -41,39 +37,44 @@ export function handleAuthStateChange(): void {
 	console.log('handleAuthStateChange called.');
 	const auth = getAuth();
 
-	onAuthStateChanged(auth, async (firebaseUser) => {
-		console.log('onAuthStateChanged called.');
+	isInitializing.set(true); // Prevent scaling/rendering during initialization
 
-		if (get(isLoggingOut)) {
-			console.log('Skipping onAuthStateChanged handling due to logout in progress.');
-			return;
-		}
+	await new Promise<void>((resolve) => {
+		onAuthStateChanged(auth, async (firebaseUser) => {
+			console.log('onAuthStateChanged called.');
+			console.log('Auth State Changed:', firebaseUser);
 
-		isInitializing.set(true); // Prevent subscriptions from triggering during initialization
-		isDataReady.set(false); // Prevent scaling until initialization is complete
-
-		try {
-			if (firebaseUser) {
-				console.log('User authenticated:', firebaseUser.uid);
-				isLoggingIn.set(true);
-				await fetchUserData(firebaseUser);
-			} else {
-				console.log('No authenticated user. Initializing non-user data.');
-				user.set(null);
-				initializeGuestState();
+			if (get(isLoggingOut)) {
+				console.log('Skipping onAuthStateChanged handling due to logout in progress.');
+				resolve();
+				return;
 			}
-		} catch (error) {
-			console.error('Error during auth state handling:', error);
-		} finally {
-			isLoggingIn.set(false);
-			isInitializing.set(false);
-			isDataReady.set(true);
-			console.log('Exiting handleAuthStateChange.');
-		}
+
+			try {
+				if (firebaseUser) {
+					console.log('User authenticated:', firebaseUser.uid);
+					isLoggingIn.set(true);
+					await fetchUserData(firebaseUser);
+				} else {
+					console.log('No authenticated user. Switching to guest mode.');
+					user.set(null);
+					isLoadingGuestData.set(true);
+					initializeGuestState();
+				}
+			} catch (error) {
+				console.error('Error during auth state handling:', error);
+			} finally {
+				isInitializing.set(false);
+				isLoggingIn.set(false);
+				isLoadingGuestData.set(false);
+				console.log('Exiting handleAuthStateChange.');
+				resolve();
+			}
+		});
 	});
 }
 
-function initializeGuestState(): void {
+export function initializeGuestState(): void {
 	console.log('Initializing guest state.');
 
 	// Set default state for guest users
@@ -85,11 +86,37 @@ function initializeGuestState(): void {
 		}
 	});
 
-	// Optionally, use session storage for guest data
-	if (typeof sessionStorage !== 'undefined') {
-		sessionStorage.setItem('guestPlayerBets', JSON.stringify([]));
-		sessionStorage.setItem('guestBookmarks', JSON.stringify([]));
-		sessionStorage.setItem('guestCrSimPrefs', JSON.stringify({}));
+	if (typeof localStorage !== 'undefined') {
+		try {
+			// Check and preserve existing localStorage data
+			if (!localStorage.getItem('playerBets')) {
+				localStorage.setItem('playerBets', JSON.stringify([]));
+			}
+
+			if (!localStorage.getItem('favoriteBets')) {
+				localStorage.setItem('favoriteBets', JSON.stringify([]));
+			}
+
+			if (!localStorage.getItem('crSimPrefs')) {
+				localStorage.setItem('crSimPrefs', JSON.stringify({}));
+			}
+
+			if (!localStorage.getItem('savedBookmarks')) {
+				localStorage.setItem('savedBookmarks', JSON.stringify([]));
+			}
+
+			// Reload from localStorage into Svelte stores
+			playerBets.set(JSON.parse(localStorage.getItem('playerBets') || '[]'));
+			favoriteBets.set(JSON.parse(localStorage.getItem('favoriteBets') || '[]'));
+			crSimPrefs.set(JSON.parse(localStorage.getItem('crSimPrefs') || '{}'));
+			savedBookmarks.set(JSON.parse(localStorage.getItem('savedBookmarks') || '[]'));
+
+			console.log('Guest state initialized successfully.');
+		} catch (error) {
+			console.error('Error initializing guest state:', error);
+		}
+	} else {
+		console.warn('localStorage is not available. Guest state cannot be initialized.');
 	}
 }
 

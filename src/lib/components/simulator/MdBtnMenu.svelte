@@ -3,14 +3,14 @@
 	import { onMount } from 'svelte';
 	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
 
-	export let popupName: string = 'popupName';
+	export let scalePopupKey: string = 'scalePopupKey';
 
 	onMount(() => {
-		scalePopup(popupName);
+		scalePopup(scalePopupKey);
 	});
 	console.log('MdBtnMenu component loaded.');
 </script>
 
-<div class="grid grid-cols-2" data-type={popupName} data-gap="2">
+<div class="grid grid-cols-2" data-type={scalePopupKey} data-gap="2">
 	<slot />
 </div>

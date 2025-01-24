@@ -3,16 +3,16 @@ import { writable } from 'svelte/store';
 
 export { chips } from './craps-simulator-rail';
 
-export const showSettingsPopup = writable(false);
-export const showEnterBtn = writable(true);
-export const showExitBtn = writable(false);
-export const showPassLinePopup = writable(false);
+export const settingsPopupKey = writable(false);
+export const enterBtnKey = writable(true);
+export const exitBtnKey = writable(false);
+export const passLinePopupKey = writable(false);
 
 const uiToggles = {
-	showSettingsPopup,
-	showEnterBtn,
-	showExitBtn,
-	showPassLinePopup
+	settingsPopupKey,
+	enterBtnKey,
+	exitBtnKey,
+	passLinePopupKey
 };
 
 export type UiToggleKey = keyof typeof uiToggles | string;
@@ -31,27 +31,21 @@ export function toggleUiSetting(key: UiToggleKey): void {
 	} else {
 		console.warn(`Key '${key}' does not exist in uiToggles.`);
 	}
-	//setTimeout(() => {
-	//	console.log(`Scaling elements for key: ${key}`);
-	//	scalePopup();
-	//}, 0);
 	console.log('Leaving toggleUiSetting');
 }
 
 export async function scaleEverything(): Promise<void> {
 	console.log('Entering scaleEverything');
-	scaleElements();
+	scaleElement();
 	scaleChipsToFit();
 	console.log('Leaving scaleEverything');
 }
-
-// Helper function to scale elements via 16:9 aspect ratio
-export async function scaleElements(type: string | null = null) {
-	console.log('Entering scaleElements');
+export async function scaleElement(type: string | null = null) {
+	console.log('Entering scaleElement');
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	const gameArea = document.getElementById('game-area');
 	if (!gameArea) {
-		console.log('scaleElements: gameArea not found');
+		console.log('scaleElement: gameArea not found');
 		return;
 	}
 
@@ -155,7 +149,7 @@ export async function scaleElements(type: string | null = null) {
 		const childElements = el.querySelectorAll('.hidden');
 		childElements.forEach((child) => child.classList.remove('hidden'));
 	});
-	console.log('Leaving scaleElements');
+	console.log('Leaving scaleElement');
 }
 export async function scalePopup(type: string | null = null) {
 	console.log('Entering scalePopup');
@@ -274,8 +268,6 @@ export async function scalePopup(type: string | null = null) {
 	console.log(`Total number of elements scaled: ${elements.length}`);
 	console.log('Leaving scalePopup');
 }
-
-// Helper function to scale chips to fit the rail
 export async function scaleChipsToFit() {
 	console.log('Entering scaleChipsToFit');
 	await new Promise((resolve) => setTimeout(resolve, 100));
@@ -369,7 +361,7 @@ export function enterFullScreen() {
 		toggleUiSetting('showEnterBtn');
 		toggleUiSetting('showExitBtn');
 		toggleUiSetting('showSettingsPopup');
-		scaleElements();
+		scaleElement();
 		scaleChipsToFit();
 	}
 	console.log('Leaving enterFullScreen');
@@ -409,7 +401,7 @@ export function exitFullScreen() {
 		} else {
 			console.error('Element with ID "game-area-wrapper" not found.');
 		}
-		scaleElements();
+		scaleElement();
 		setTimeout(() => {
 			scaleChipsToFit();
 		}, 1000);
@@ -422,7 +414,7 @@ if (typeof window !== 'undefined') {
 	const handleResizeOrOrientationChange = () => {
 		console.log('Entering handleResizeOrOrientationChange');
 		console.log('Window resized or device orientation changed');
-		scaleElements();
+		scaleElement();
 		scaleChipsToFit();
 		scalePopup();
 		console.log('Leaving handleResizeOrOrientationChange');
