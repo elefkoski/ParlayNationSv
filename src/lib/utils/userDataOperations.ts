@@ -199,7 +199,7 @@ export async function toggleBookmarkHandler(pageData: {
 				(savedBookmark: any) => savedBookmark.pageUrl !== pageData.pageUrl
 			);
 			setUserDataToLocalStorage('savedBookmarks', updatedBookmarks);
-			updateSavedBookmarkQueue('remove', pageData);
+			//updateSavedBookmarkQueue('remove', pageData);
 		} else {
 			// Fetch description and imageUrl dynamically if missing
 			const description = pageData.description;
@@ -220,7 +220,7 @@ export async function toggleBookmarkHandler(pageData: {
 			}
 
 			setUserDataToLocalStorage('savedBookmarks', cachedBookmarks);
-			updateSavedBookmarkQueue('add', newBookmark);
+			//updateSavedBookmarkQueue('add', newBookmark);
 			isBookmarked = true;
 		}
 
@@ -318,6 +318,7 @@ export function addPlayerBet(bet: PlayerBet): void {
 	});
 }
 export function removePlayerBet(betId: string): void {
+	console.log('removePlayerBet called.');
 	playerBets.update((currentBets) => {
 		const updatedBets = currentBets.filter((b) => b.id !== betId);
 		syncPlayerBetsToLocal(); // Sync updated state to localStorage

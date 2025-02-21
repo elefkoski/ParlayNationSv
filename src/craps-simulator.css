@@ -57,6 +57,9 @@
 	position: relative;
 	height: 100%;
 }
+.chipStack {
+	overflow: auto;
+}
 .chip-image {
 	height: 100%;
 }

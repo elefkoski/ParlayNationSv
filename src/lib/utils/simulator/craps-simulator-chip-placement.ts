@@ -1,7 +1,5 @@
 console.log('Entering craps-simulator-bet-placement.ts');
 
-import { scaleElement } from './craps-simulator-scaling';
-import { playerBets } from '../userData';
 import type { PlayerBet } from '../userData';
 
 export const directionOffsets = {
@@ -15,24 +13,10 @@ export const directionOffsets = {
 	nw: { dx: -0.375, dy: -0.375 }
 };
 
-export function showCheques() {
-	playerBets.subscribe((bets) => {
-		console.log('Rendering cheques for Player Bets:', bets);
-		bets.forEach((bet) => {
-			const placements = calculateChipPlacement(bet);
-			// Rendering logic for cheques
-			console.log(`Placements for bet ${bet.betId}:`, placements);
-		});
-		scaleElement('cheque');
-	});
-}
-
 export function calculateChipPlacement({
 	amount,
-	baseX,
-	baseY,
-	direction
-}: Pick<PlayerBet, 'amount' | 'baseX' | 'baseY' | 'direction'>) {
+	chipDirection
+}: Pick<PlayerBet, 'amount' | 'chipDirection'>) {
 	const num = amount.toString();
 	const len = num.length;
 
@@ -74,11 +58,11 @@ export function calculateChipPlacement({
 	const activeCheques = chequeTypes.filter((cheque) => cheque.condition);
 	console.log('activeCheques:', activeCheques);
 
-	const { dx, dy } = directionOffsets[direction];
+	const { dx, dy } = directionOffsets[chipDirection];
 	console.log('dx:', dx, 'dy:', dy);
 
-	let currentX = baseX; // Initialize the current X position
-	let currentY = baseY; // Initialize the current Y position
+	let currentX = 1.375; // Initialize the current X position
+	let currentY = 2.375; // Initialize the current Y position
 
 	const placements = activeCheques.map((cheque, index) => {
 		const placement = {

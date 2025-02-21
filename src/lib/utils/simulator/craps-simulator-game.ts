@@ -1,10 +1,12 @@
 console.log('Entering craps-simulator-game.ts');
-import { writable } from 'svelte/store';
+import { writable, derived } from 'svelte/store';
 
 export const firstDieImage = writable('src/images/craps-simulator/dice/die_ne.png');
 export const secondDieImage = writable('src/images/craps-simulator/dice/die_sw.png');
 
-let comeoutRoll = true;
+export const comeoutRoll = writable(true);
+export const thePoint = writable(0);
+export const currentPoint = derived(thePoint, ($thePoint) => $thePoint);
 let rollHard = false;
 let rollTotal = 0;
 let pointMade = false;

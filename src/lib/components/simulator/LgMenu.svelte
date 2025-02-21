@@ -41,7 +41,7 @@
 			on:keyup={(e) => e.key === ' ' && handleClick()}>☒</button
 		>
 	</div>
-	<div class="grid grid-rows-[auto,1fr,auto]" data-type={scalePopup} data-gap="1.25">
+	<div class="grid grid-rows-[auto,1fr,auto]" data-type={scalePopupKey} data-gap="1.25">
 		<slot />
 	</div>
 </div>

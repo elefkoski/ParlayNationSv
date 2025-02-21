@@ -1,6 +1,6 @@
 console.log('Entering craps-simulator-bank.ts');
 import { get, writable, type Writable } from 'svelte/store';
-import { railTotal, layoutTotal, totalBankroll } from './gameData';
+import { railTotal, layoutTotal, currentBankroll } from './craps-simulator-game-data';
 
 interface ChipsStore {
 	[denomination: number]: Writable<string[]>; // Denomination of chip images
@@ -335,9 +335,9 @@ export function takeChipsFromRail(amount: number): void {
 
 // Get the current optimum ranges for the bankroll
 function getOptimumAddRange(): OptimumAddRange | undefined {
-	let currentBankroll: number = get(totalBankroll);
+	let theCurrentBankroll: number = get(currentBankroll);
 	return optimumAddRanges.find(
-		(range) => currentBankroll >= range.min && currentBankroll <= range.max
+		(range) => theCurrentBankroll >= range.min && theCurrentBankroll <= range.max
 	);
 }
 function getOptimumTakeRange(): OptimumTakeRange | undefined {
@@ -526,7 +526,7 @@ placeChipsInRail(get(railTotal));
 displayChipCounts();
 console.log('Rail Total: ', get(railTotal));
 console.log('Layout Total: ', get(layoutTotal));
-console.log('Total Bankroll: ', get(totalBankroll));
+console.log('Total Bankroll: ', get(currentBankroll));
 
 console.log('Exiting craps-simulator-bank.ts');
 

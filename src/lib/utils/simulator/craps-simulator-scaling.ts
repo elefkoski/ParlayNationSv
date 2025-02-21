@@ -51,6 +51,7 @@ export async function scaleElement(type: string | null = null) {
 
 	// Get the actual dimensions of the game area
 	const { width: containerWidth, height: containerHeight } = gameArea.getBoundingClientRect();
+	console.log('Container dimensions:', { containerWidth, containerHeight });
 
 	// Scale elements relative to the container size
 	const selector = type ? `.game-element[data-type="${type}"]` : '.game-element';
@@ -58,96 +59,111 @@ export async function scaleElement(type: string | null = null) {
 	const elements = document.querySelectorAll(selector);
 	//console.log('Elements being scaled :', elements);
 	elements.forEach((el) => {
-		const x = parseFloat(el.dataset.x) || null;
-		const y = parseFloat(el.dataset.y) || null;
-		const fontSize = parseFloat(el.dataset.fontsize) || null;
-		const height = parseFloat(el.dataset.height) || null;
-		const width = parseFloat(el.dataset.width) || null;
-		const paddingLR = parseFloat(el.dataset.paddinglr) || null;
-		const paddingTB = parseFloat(el.dataset.paddingtb) || null;
-		const marginLR = parseFloat(el.dataset.marginlr) || null;
-		const marginTB = parseFloat(el.dataset.margintb) || null;
-		const border = parseFloat(el.dataset.border) || null;
-		const borderRadius = parseFloat(el.dataset.borderradius) || null;
-		const rowGap = parseFloat(el.dataset.rowgap) || null;
-		const gap = parseFloat(el.dataset.gap) || null;
+		const x = parseFloat((el as HTMLElement).dataset.x ?? '') || null;
+		const y = parseFloat((el as HTMLElement).dataset.y ?? '') || null;
+		const fontSize = parseFloat((el as HTMLElement).dataset.fontsize ?? '') || null;
+		const height = parseFloat((el as HTMLElement).dataset.height ?? '') || null;
+		const width = parseFloat((el as HTMLElement).dataset.width ?? '') || null;
+		const paddingLR = parseFloat((el as HTMLElement).dataset.paddinglr ?? '') || null;
+		const paddingTB = parseFloat((el as HTMLElement).dataset.paddingtb ?? '') || null;
+		const marginLR = parseFloat((el as HTMLElement).dataset.marginlr ?? '') || null;
+		const marginTB = parseFloat((el as HTMLElement).dataset.margintb ?? '') || null;
+		const border = parseFloat((el as HTMLElement).dataset.border ?? '') || null;
+		const borderRadius = parseFloat((el as HTMLElement).dataset.borderradius ?? '') || null;
+		const rowGap = parseFloat((el as HTMLElement).dataset.rowgap ?? '') || null;
+		const gap = parseFloat((el as HTMLElement).dataset.gap ?? '') || null;
 
 		if (x !== null) {
-			el.style.left = `${(x / 100) * containerWidth}px`;
+			(el as HTMLElement).style.left = `${(x / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('left'); // Remove left if null
+			(el as HTMLElement).style.removeProperty('left'); // Remove left if null
 		}
 		if (y !== null) {
-			el.style.top = `${(y / 100) * containerHeight}px`;
+			(el as HTMLElement).style.top = `${(y / 100) * containerHeight}px`;
 		} else {
-			el.style.removeProperty('top'); // Remove top if null
+			(el as HTMLElement).style.removeProperty('top'); // Remove top if null
 		}
 		if (fontSize !== null) {
-			el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
+			(el as HTMLElement).style.fontSize = `${(fontSize / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('fontSize'); // Remove fontSize if null
+			(el as HTMLElement).style.removeProperty('fontSize'); // Remove fontSize if null
 		}
 		if (height !== null) {
-			el.style.height = `${(height / 100) * containerHeight}px`;
+			(el as HTMLElement).style.height = `${(height / 100) * containerHeight}px`;
 		} else {
-			el.style.removeProperty('height'); // Remove height if null
+			(el as HTMLElement).style.removeProperty('height'); // Remove height if null
 		}
 		if (width !== null) {
-			el.style.width = `${(width / 100) * containerWidth}px`;
+			(el as HTMLElement).style.width = `${(width / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('width'); // Remove width if null
+			(el as HTMLElement).style.removeProperty('width'); // Remove width if null
 		}
 		if (paddingLR !== null) {
-			el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
+			(el as HTMLElement).style.paddingLeft = (el as HTMLElement).style.paddingRight = `${
+				(paddingLR / 100) * containerWidth
+			}px`;
 		} else {
-			el.style.removeProperty('paddingLeft'); // Remove padding if null
-			el.style.removeProperty('paddingRight');
+			(el as HTMLElement).style.removeProperty('paddingLeft'); // Remove padding if null
+			(el as HTMLElement).style.removeProperty('paddingRight');
 		}
 		if (paddingTB !== null) {
-			el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
+			(el as HTMLElement).style.paddingTop = (el as HTMLElement).style.paddingBottom = `${
+				(paddingTB / 100) * containerHeight
+			}px`;
 		} else {
-			el.style.removeProperty('paddingTop'); // Remove padding if null
-			el.style.removeProperty('paddingBottom');
+			(el as HTMLElement).style.removeProperty('paddingTop'); // Remove padding if null
+			(el as HTMLElement).style.removeProperty('paddingBottom');
 		}
 		if (marginLR !== null) {
-			el.style.marginLeft = el.style.marginRight = `${(marginLR / 100) * containerWidth}px`;
+			(el as HTMLElement).style.marginLeft = (el as HTMLElement).style.marginRight = `${
+				(marginLR / 100) * containerWidth
+			}px`;
 		} else {
-			el.style.removeProperty('marginLeft'); // Remove margin if null
-			el.style.removeProperty('marginRight');
+			(el as HTMLElement).style.removeProperty('marginLeft'); // Remove margin if null
+			(el as HTMLElement).style.removeProperty('marginRight');
 		}
 		if (marginTB !== null) {
-			el.style.marginTop = el.style.marginBottom = `${(marginTB / 100) * containerHeight}px`;
+			(el as HTMLElement).style.marginTop = (el as HTMLElement).style.marginBottom = `${
+				(marginTB / 100) * containerHeight
+			}px`;
 		} else {
-			el.style.removeProperty('marginTop'); // Remove margin if null
-			el.style.removeProperty('marginBottom	');
+			(el as HTMLElement).style.removeProperty('marginTop'); // Remove margin if null
+			(el as HTMLElement).style.removeProperty('marginBottom	');
 		}
 		if (border !== null) {
-			el.style.borderWidth = `${(border / 100) * containerWidth}px`;
+			(el as HTMLElement).style.borderWidth = `${(border / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('borderWidth');
+			(el as HTMLElement).style.removeProperty('borderWidth');
 		}
 		if (borderRadius !== null) {
-			el.style.borderRadius = `${(borderRadius / 100) * containerWidth}px`;
+			(el as HTMLElement).style.borderRadius = `${(borderRadius / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('borderRadius'); // Remove border radius if null
+			(el as HTMLElement).style.removeProperty('borderRadius'); // Remove border radius if null
 		}
 		// Gap for flex containers
 		if (gap !== null) {
-			el.style.gap = `${(gap / 100) * containerWidth}px`;
+			(el as HTMLElement).style.gap = `${(gap / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('gap');
+			(el as HTMLElement).style.removeProperty('gap');
 		}
 		// Row gap for grid containers or vertical spacing
 		if (rowGap !== null) {
-			el.style.rowGap = `${(rowGap / 100) * containerWidth}px`;
+			(el as HTMLElement).style.rowGap = `${(rowGap / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('rowGap');
+			(el as HTMLElement).style.removeProperty('rowGap');
 		}
 
 		// Remove the hidden class from the element and its children
 		el.classList.remove('hidden');
 		const childElements = el.querySelectorAll('.hidden');
 		childElements.forEach((child) => child.classList.remove('hidden'));
+		console.log(`Scaling element:`, {
+			name: el,
+			left: (el as HTMLElement).style.left,
+			top: (el as HTMLElement).style.top,
+			width: (el as HTMLElement).style.width,
+			height: (el as HTMLElement).style.height
+		});
 	});
 	console.log('Leaving scaleElement');
 }
@@ -172,90 +188,98 @@ export async function scalePopup(type: string | null = null) {
 	});
 
 	elements.forEach((el) => {
-		const x = parseFloat(el.dataset.x) || null;
-		const y = parseFloat(el.dataset.y) || null;
-		const fontSize = parseFloat(el.dataset.fontsize) || null;
-		const height = parseFloat(el.dataset.height) || null;
-		const width = parseFloat(el.dataset.width) || null;
-		const paddingLR = parseFloat(el.dataset.paddinglr) || null;
-		const paddingTB = parseFloat(el.dataset.paddingtb) || null;
-		const marginLR = parseFloat(el.dataset.marginlr) || null;
-		const marginTB = parseFloat(el.dataset.margintb) || null;
-		const border = parseFloat(el.dataset.border) || null;
-		const borderRadius = parseFloat(el.dataset.borderradius) || null;
-		const rowGap = parseFloat(el.dataset.rowgap) || null;
-		const gap = parseFloat(el.dataset.gap) || null;
+		const x = parseFloat((el as HTMLElement).dataset.x ?? '') || null;
+		const y = parseFloat((el as HTMLElement).dataset.y ?? '') || null;
+		const fontSize = parseFloat((el as HTMLElement).dataset.fontsize ?? '') || null;
+		const height = parseFloat((el as HTMLElement).dataset.height ?? '') || null;
+		const width = parseFloat((el as HTMLElement).dataset.width ?? '') || null;
+		const paddingLR = parseFloat((el as HTMLElement).dataset.paddinglr ?? '') || null;
+		const paddingTB = parseFloat((el as HTMLElement).dataset.paddingtb ?? '') || null;
+		const marginLR = parseFloat((el as HTMLElement).dataset.marginlr ?? '') || null;
+		const marginTB = parseFloat((el as HTMLElement).dataset.margintb ?? '') || null;
+		const border = parseFloat((el as HTMLElement).dataset.border ?? '') || null;
+		const borderRadius = parseFloat((el as HTMLElement).dataset.borderradius ?? '') || null;
+		const rowGap = parseFloat((el as HTMLElement).dataset.rowgap ?? '') || null;
+		const gap = parseFloat((el as HTMLElement).dataset.gap ?? '') || null;
 
 		if (x !== null) {
-			el.style.left = `${(x / 100) * containerWidth}px`;
+			(el as HTMLElement).style.left = `${(x / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('left'); // Remove left if null
+			(el as HTMLElement).style.removeProperty('left'); // Remove left if null
 		}
 		if (y !== null) {
-			el.style.top = `${(y / 100) * containerHeight}px`;
+			(el as HTMLElement).style.top = `${(y / 100) * containerHeight}px`;
 		} else {
-			el.style.removeProperty('top'); // Remove top if null
+			(el as HTMLElement).style.removeProperty('top'); // Remove top if null
 		}
 		if (fontSize !== null) {
-			el.style.fontSize = `${(fontSize / 100) * containerWidth}px`;
+			(el as HTMLElement).style.fontSize = `${(fontSize / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('fontSize'); // Remove fontSize if null
+			(el as HTMLElement).style.removeProperty('fontSize'); // Remove fontSize if null
 		}
 		if (height !== null) {
-			el.style.height = `${(height / 100) * containerHeight}px`;
+			(el as HTMLElement).style.height = `${(height / 100) * containerHeight}px`;
 		} else {
-			el.style.removeProperty('height'); // Remove height if null
+			(el as HTMLElement).style.removeProperty('height'); // Remove height if null
 		}
 		if (width !== null) {
-			el.style.width = `${(width / 100) * containerWidth}px`;
+			(el as HTMLElement).style.width = `${(width / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('width'); // Remove width if null
+			(el as HTMLElement).style.removeProperty('width'); // Remove width if null
 		}
 		if (paddingLR !== null) {
-			el.style.paddingLeft = el.style.paddingRight = `${(paddingLR / 100) * containerWidth}px`;
+			(el as HTMLElement).style.paddingLeft = (el as HTMLElement).style.paddingRight = `${
+				(paddingLR / 100) * containerWidth
+			}px`;
 		} else {
-			el.style.removeProperty('paddingLeft'); // Remove padding if null
-			el.style.removeProperty('paddingRight');
+			(el as HTMLElement).style.removeProperty('paddingLeft'); // Remove padding if null
+			(el as HTMLElement).style.removeProperty('paddingRight');
 		}
 		if (paddingTB !== null) {
-			el.style.paddingTop = el.style.paddingBottom = `${(paddingTB / 100) * containerHeight}px`;
+			(el as HTMLElement).style.paddingTop = (el as HTMLElement).style.paddingBottom = `${
+				(paddingTB / 100) * containerHeight
+			}px`;
 		} else {
-			el.style.removeProperty('paddingTop'); // Remove padding if null
-			el.style.removeProperty('paddingBottom');
+			(el as HTMLElement).style.removeProperty('paddingTop'); // Remove padding if null
+			(el as HTMLElement).style.removeProperty('paddingBottom');
 		}
 		if (marginLR !== null) {
-			el.style.marginLeft = el.style.marginRight = `${(marginLR / 100) * containerWidth}px`;
+			(el as HTMLElement).style.marginLeft = (el as HTMLElement).style.marginRight = `${
+				(marginLR / 100) * containerWidth
+			}px`;
 		} else {
-			el.style.removeProperty('marginLeft'); // Remove margin if null
-			el.style.removeProperty('marginRight');
+			(el as HTMLElement).style.removeProperty('marginLeft'); // Remove margin if null
+			(el as HTMLElement).style.removeProperty('marginRight');
 		}
 		if (marginTB !== null) {
-			el.style.marginTop = el.style.marginBottom = `${(marginTB / 100) * containerHeight}px`;
+			(el as HTMLElement).style.marginTop = (el as HTMLElement).style.marginBottom = `${
+				(marginTB / 100) * containerHeight
+			}px`;
 		} else {
-			el.style.removeProperty('marginTop'); // Remove margin if null
-			el.style.removeProperty('marginBottom	');
+			(el as HTMLElement).style.removeProperty('marginTop'); // Remove margin if null
+			(el as HTMLElement).style.removeProperty('marginBottom	');
 		}
 		if (border !== null) {
-			el.style.borderWidth = `${(border / 100) * containerWidth}px`;
+			(el as HTMLElement).style.borderWidth = `${(border / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('borderWidth');
+			(el as HTMLElement).style.removeProperty('borderWidth');
 		}
 		if (borderRadius !== null) {
-			el.style.borderRadius = `${(borderRadius / 100) * containerWidth}px`;
+			(el as HTMLElement).style.borderRadius = `${(borderRadius / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('borderRadius'); // Remove border radius if null
+			(el as HTMLElement).style.removeProperty('borderRadius'); // Remove border radius if null
 		}
 		// Gap for flex containers
 		if (gap !== null) {
-			el.style.gap = `${(gap / 100) * containerWidth}px`;
+			(el as HTMLElement).style.gap = `${(gap / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('gap');
+			(el as HTMLElement).style.removeProperty('gap');
 		}
 		// Row gap for grid containers or vertical spacing
 		if (rowGap !== null) {
-			el.style.rowGap = `${(rowGap / 100) * containerWidth}px`;
+			(el as HTMLElement).style.rowGap = `${(rowGap / 100) * containerWidth}px`;
 		} else {
-			el.style.removeProperty('rowGap');
+			(el as HTMLElement).style.removeProperty('rowGap');
 		}
 		// Once scaling is done, add the 'scaled' class to make it visible
 		el.classList.add('scaled');

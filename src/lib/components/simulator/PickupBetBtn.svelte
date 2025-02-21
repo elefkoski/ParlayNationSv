@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { scalePopup } from '$lib/utils/simulator/craps-simulator-scaling';
 	import { removePlayerBet } from '$lib/utils/userDataOperations';
-	import { railTotal } from '$lib/utils/simulator/gameData';
+	import { railTotal } from '$lib/utils/simulator/craps-simulator-game-data';
 	import { placeChipsInRail } from '$lib/utils/simulator/craps-simulator-rail';
 	import { toggleUiSetting } from '$lib/utils/simulator/craps-simulator-scaling';
 

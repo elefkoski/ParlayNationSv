@@ -16,7 +16,11 @@
 		enterBtnKey,
 		exitBtnKey
 	} from '../../lib/utils/simulator/craps-simulator-scaling';
-	import { railTotal, layoutTotal, totalBankroll } from '../../lib/utils/simulator/gameData';
+	import {
+		railTotal,
+		layoutTotal,
+		currentBankroll
+	} from '../../lib/utils/simulator/craps-simulator-game-data';
 	import {
 		rollDice,
 		firstDieImage,
@@ -54,16 +58,6 @@
 	let description: string =
 		'This Craps Simulator will help you learn some of the most basic bets in Craps: The Pass Line, Pass Line Odds, Place Bets, and the Field.';
 	let url: string = 'craps-simulator';
-
-	let dollarChips = chips[1];
-	let nickelChips = chips[5];
-	let quarterChips = chips[25];
-	let hundredChips = chips[100];
-	let fiveHundredChips = chips[500];
-	let thousandChips = chips[1000];
-	let fiveThousandChips = chips[5000];
-	let inputValue: number = 5;
-	let inputValue2: number = 5;
 
 	let current_user: any = null;
 	let is_ready: boolean = false;
@@ -114,6 +108,17 @@
 			toggleCrSimPref(settingKey, target.checked);
 		}
 	}
+
+	let dollarChips = chips[1];
+	let nickelChips = chips[5];
+	let quarterChips = chips[25];
+	let hundredChips = chips[100];
+	let fiveHundredChips = chips[500];
+	let thousandChips = chips[1000];
+	let fiveThousandChips = chips[5000];
+
+	let inputValue: number = 5;
+	let inputValue2: number = 5;
 
 	console.log('craps-simulator +page loaded.');
 </script>
@@ -391,7 +396,7 @@
 							data-paddinglr="2"
 							data-paddingtb="1"
 						>
-							<p>Bankroll: ${$totalBankroll.toLocaleString()}</p>
+							<p>Bankroll: ${$currentBankroll.toLocaleString()}</p>
 						</div>
 					{/if}
 					<!-- Chips in Rail -->
@@ -676,17 +681,14 @@
 						{/if}
 					</div>
 					<!-- Chip Sets -->
-					{#each $playerBets as { id, amount, baseX, baseY, direction } (id)}
-						{#if baseX !== undefined && baseY !== undefined && direction !== undefined}
-							<ChipSet {id} {amount} {baseX} {baseY} {direction} />
+					{#each $playerBets as { id, amount } (id)}
+						{#if id !== undefined}
+							<ChipSet {id} {amount} />
 						{:else}
 							<p>
 								Error: Missing data for bet {JSON.stringify({
 									id,
-									amount,
-									baseX,
-									baseY,
-									direction
+									amount
 								})}
 							</p>
 						{/if}

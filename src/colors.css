@@ -218,6 +218,7 @@
 	--game-input-btn-hover-bg: #059669; /* green-600 */
 	--lg-menu-text-box: #f3f4f6; /* base-200 */
 	--lg-menu-text-box-border: #d1d5db; /* gray-300 */
+	--chip-set-bg: #f3f4f6; /* base-200 */
 
 	/* ---- DARK MODE COLORS ---- */
 	/* Base Colors */
@@ -430,6 +431,7 @@
 	--dm-game-input-btn-hover-bg: #059669; /* green-700 */
 	--dm-lg-menu-text-box: #111827; /* gray-900 */
 	--dm-lg-menu-text-box-border: #374151; /* gray-700 */
+	--dm-chip-set-bg: #111827; /* gray-900 */
 }
 
 /* Main Styles */
@@ -921,6 +923,12 @@
 	border-color: var(--lg-menu-text-box-border);
 }
 
+/*
+.chip-stack {
+	background-color: var(--chip-set-bg);
+}
+*/
+
 /* Dark mode styles */
 [data-theme='dark'] {
 	/* Base Colors */
@@ -1133,4 +1141,5 @@
 	--game-input-btn-hover-bg: var(--dm-game-input-btn-hover-bg);
 	--lg-menu-text-box: var(--dm-lg-menu-text-box);
 	--lg-menu-text-box-border: var(--dm-lg-menu-text-box-border);
+	--chip-set-bg: var(--dm-chip-set-bg);
 }
