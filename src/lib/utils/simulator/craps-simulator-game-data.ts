@@ -17,6 +17,7 @@ export const currentBankroll = derived(
 const variableOddsOption = writable(345);
 const variableGameLimit = writable(true);
 const fixedGameLimit = writable(5);
+const vigUpFront = writable(true);
 
 export const currentGameLimit = derived(
 	variableGameLimit,
@@ -45,5 +46,6 @@ export const currentOddsOption = derived(
 	variableOddsOption,
 	($variableOddsOption) => $variableOddsOption
 );
+export const currentVigUpFront = derived(vigUpFront, ($vigUpFront) => $vigUpFront);
 
 console.log('Exiting simulator-calculations.ts');

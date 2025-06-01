@@ -10,7 +10,8 @@ export const directionOffsets = {
 	s: { dx: 0, dy: 0.375 },
 	sw: { dx: -0.375, dy: 0.375 },
 	w: { dx: -0.375, dy: 0 },
-	nw: { dx: -0.375, dy: -0.375 }
+	nw: { dx: -0.375, dy: -0.375 },
+	z: { dx: 0, dy: 0 }
 };
 
 export function calculateChipPlacement({
