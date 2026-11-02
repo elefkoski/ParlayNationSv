@@ -7,8 +7,10 @@ from jwt import decode, InvalidTokenError
 
 app = Flask(__name__)
 CORS(app)
-app.config['SECRET_KEY'] = os.environ.get(
-    'FLASK_SECRET_KEY', 'w5)C]167~}ge[}ofw')
+secret_key = os.environ.get('FLASK_SECRET_KEY')
+if not secret_key:
+    raise RuntimeError('FLASK_SECRET_KEY environment variable is not set')
+app.config['SECRET_KEY'] = secret_key
 
 
 def token_required(f):
@@ -48,4 +50,4 @@ def logout(_current_user_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

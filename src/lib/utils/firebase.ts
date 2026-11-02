@@ -15,14 +15,19 @@ import { user } from './userData';
 import { fetchUserData } from './userDataOperations';
 
 // Add SDKs for Firebase products that you want to use
+// Firebase web config is loaded from environment variables (see .env.example).
+// Vite exposes VITE_ variables to the client, so these values are still
+// present in the built client bundle, but they are no longer hardcoded
+// in this file or committed to git. Restrict the key in the Firebase
+// console by API restriction and authorized domain.
 const firebaseConfig = {
-	apiKey: 'AIzaSyBwNrd8KXJ1tpw6NucTSliKIyI7vHA389M',
-	authDomain: 'parlaynationsv.firebaseapp.com',
-	projectId: 'parlaynationsv',
-	storageBucket: 'parlaynationsv.appspot.com',
-	messagingSenderId: '178868050222',
-	appId: '1:178868050222:web:5f2622b07c7ca077be42bf',
-	measurementId: 'G-LNN949GCYB'
+	apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+	authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+	projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+	storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+	appId: import.meta.env.VITE_FIREBASE_APP_ID,
+	measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
