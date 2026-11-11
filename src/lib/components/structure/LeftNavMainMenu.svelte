@@ -43,7 +43,7 @@
 			title: 'Craps Calculators'
 		},
 		{
-			href: 'craps-simulator',
+			href: 'craps-simulator2',
 			lightSrc: 'src/images/icons/controller-black-icon.png',
 			darkSrc: 'src/images/icons/controller-white-icon.png',
 			alt: 'Controller',
