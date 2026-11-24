@@ -17,6 +17,10 @@
 	import puckOn from '../../images/craps-simulator/puck_on.webp';
 	import puckOff from '../../images/craps-simulator/puck_off.webp';
 
+	const railChipModules = import.meta.glob('../../images/craps-simulator/chips/*_chip_*.jpg', { eager: true, import: 'default' });
+	const railChipImages = {};
+	for (let railChipPath in railChipModules) { let railChipMatch = railChipPath.match(/(\d+)_chip_(\d+)\.jpg$/); if (railChipMatch) { let rd = Number(railChipMatch[1]); if (!railChipImages[rd]) railChipImages[rd] = {}; railChipImages[rd][Number(railChipMatch[2])] = railChipModules[railChipPath]; } }
+
 	const diceImages = [die1, die2, die3, die4, die5, die6];
 	const chequeImages = { 1: whiteCheque, 5: redCheque, 25: greenCheque, 100: blackCheque, 500: purpleCheque, 1000: orangeCheque };
 	const betLabels = { passLine: 'Pass Line', passOdds: 'Pass Line Odds', dontPass: "Don't Pass", dontOdds: "Don't Pass Lay Odds", field: 'Field', place4: 'Place 4', place5: 'Place 5', place6: 'Place 6', place8: 'Place 8', place9: 'Place 9', place10: 'Place 10', come: 'Come', dontCome: "Don't Come" };
@@ -116,6 +120,7 @@
 	function reanchorPlaceLammers(desired) { let oldLammer = {}; for (let k of placeOrderInsideOut) oldLammer[k] = placeLammer[k]; let current = point !== 0; let newLammer = {}; for (let k of placeOrderInsideOut) { if (bets[k] === 0 || desired[k] === undefined) { newLammer[k] = null; continue; } if (desired[k] !== current) { newLammer[k] = desired[k] ? 'on' : 'off'; current = desired[k]; } else newLammer[k] = null; } placeLammer = newLammer; for (let k of placeOrderInsideOut) if (placeLammer[k]) lammerAngles[k] = randomAngle(); lammerAngles = lammerAngles; cleanupLammers(); placeLammer = placeLammer; }
 	function togglePlaceLammer(key) { let working = placeWorking(key); let desiredWorking = !working; let beforeWorkingToggle = {}; for (let k of placeOrderInsideOut) if (bets[k] > 0) beforeWorkingToggle[k] = placeWorking(k); let wasOnDuringCR = placeOnDuringCR[key]; if (desiredWorking) placeForeverOff[key] = false; else if (point !== 0) placeForeverOff[key] = true; else placeForeverOff[key] = wasOnDuringCR ? false : true; placeForeverOff = placeForeverOff; let desired = {}; for (let k of placeOrderInsideOut) if (bets[k] > 0) desired[k] = k === key ? desiredWorking : placeWorking(k); let current = point !== 0; let newLammer = {}; for (let k of placeOrderInsideOut) { if (bets[k] === 0) { newLammer[k] = null; continue; } if (k === key) { newLammer[k] = desiredWorking ? 'on' : 'off'; current = desiredWorking; } else if (desired[k] !== current) { newLammer[k] = desired[k] ? 'on' : 'off'; current = desired[k]; } else newLammer[k] = null; } let oldLammerForToggle = {}; for (let k of placeOrderInsideOut) oldLammerForToggle[k] = placeLammer[k]; placeLammer = newLammer; for (let k of placeOrderInsideOut) if (placeLammer[k]) lammerAngles[k] = randomAngle(); lammerAngles = lammerAngles; cleanupLammers(); if (!desiredWorking && placeForeverOff[key]) placeLammer[key] = 'off'; ensureDisplayLammerAngles(); markOnDuringCR(beforeWorkingToggle); placeLammer = placeLammer; let workingList = placeOrderInsideOut.filter((k) => bets[k] > 0 && placeWorking(k)).map((k) => placeNum(k)).reverse().join(', '); let numWord = key === 'place4' ? 'Four' : key === 'place5' ? 'Five' : key === 'place6' ? 'Six' : key === 'place8' ? 'Eight' : key === 'place9' ? 'Nine' : 'Ten'; let toggleMsg = desiredWorking ? (buys[key] ? 'Your Buy ' + numWord + ' is ON.' : 'Your Place ' + numWord + ' is ON.') : (buys[key] ? 'Your Buy ' + numWord + ' is OFF. It is OFF until you turn it back ON.' : 'Your Place ' + placeNum(key) + ' is OFF. It is OFF until you turn it back ON.'); showInform(toggleMsg + ' Working Place bets now: ' + (workingList || 'none') + '.'); closePopup(); }
 	let offGateBet = null;
+	let offGateKeepOff = null;
 	let subMenu = null;
 	let subMenuReturn = null;
 	let popupReturn = null;
@@ -170,6 +175,7 @@
 		cancelCeCWinSequence();
 		cancelCeEWinSequence();
 		cancelHhWinSequence();
+		cancelHwWinSequence();
 		sweepPropComboLosers();
 		cancelPropComboSequence();
 		railHornWin();
@@ -177,6 +183,7 @@
 		railWorldWin();
 		railCeWins();
 		railHhWins();
+		railHwWins();
 		railStraightUpWins();
 		if (point === 0) {
 			if (wins.passLine > 0) { if (winAfterPoint.passLine) bankroll += wins.passLine; else { bets.passLine += wins.passLine; assignChipAngles('passLine'); } wins.passLine = 0; winAfterPoint.passLine = false; }
@@ -215,7 +222,7 @@
 	let stickCall = 'Shooter, dice are out. Place your bets.';
 	$: bubbleText = bubbleMode === 'stick' ? stickCall : (message !== '' ? message : stickCall);
 	$: bubbleKind = bubbleMode === 'stick' ? 'normal' : messageKind;
-	$: anyMenuOpen = popupBet || payMenu || fieldPayMenu || offGateBet || subMenu || mustBetPopup || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || popupPending || pendingComeOddsMenu || ceremonyActive || dcPileMenu || overlayWinMenu || overlayWinPending || pendingDcMenu || hornMenu || anySevenMenu || anyCrapsMenu || worldMenu || ceMenu || worldWinMenu || worldWinPending || ceSplitWinMenu || ceSplitWinPending || ceCWinMenu || ceCWinPending || ceEWinMenu || ceEWinPending || hornWinMenu || hornWinPending || anySevenWinMenu || anySevenWinPending || anyCrapsWinMenu || anyCrapsWinPending || propComboMenu || propComboPending || hhMenu || hhWinMenuKey || hhWinPendingKey || hopChooser || hopSub;
+	$: anyMenuOpen = popupBet || payMenu || fieldPayMenu || offGateBet || subMenu || mustBetPopup || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || popupPending || pendingComeOddsMenu || ceremonyActive || dcPileMenu || overlayWinMenu || overlayWinPending || pendingDcMenu || hornMenu || anySevenMenu || anyCrapsMenu || worldMenu || ceMenu || worldWinMenu || worldWinPending || ceSplitWinMenu || ceSplitWinPending || ceCWinMenu || ceCWinPending || ceEWinMenu || ceEWinPending || hornWinMenu || hornWinPending || anySevenWinMenu || anySevenWinPending || anyCrapsWinMenu || anyCrapsWinPending || propComboMenu || propComboPending || hhMenu || hhWinMenuKey || hhWinPendingKey || hopChooser || hopSub || hwMenu || hwWinMenuKey || hwWinPendingKey || hwOffPrompt || hwRescuePrompt || hwRescuePending || hwComeoutPrompt || railZoom;
 	$: if (comeMovePending && !popupPending && !payMenu && !fieldPayMenu && !comeMoveDecision) comeMoveDecision = { ...comeMovePending };
 	$: if (dcMovePending && !popupPending && !payMenu && !fieldPayMenu && !comeMoveDecision && !dcMoveDecision) dcMoveDecision = { ...dcMovePending };
 	$: if (comeAfterPay && !payMenu && !comeMoveDecision) { let n = comeAfterPay; comeAfterPay = 0; openComePtMenu(n, true); }
@@ -260,6 +267,54 @@
 	let hhWinTimer = null;
 	let hhWinCustom = '';
 	let hhWinErr = '';
+	const hwDefs = [
+		{ num: 4, name: 'Hard 4', dice: [2, 2], mult: 7, max: 5000, left: 16.2, top: 86.9, amtStyle: 'left: calc(16.2% + 16px); right: auto; top: 86.9%;' },
+		{ num: 6, name: 'Hard 6', dice: [3, 3], mult: 9, max: 4000, left: 16.2, top: 36.5, amtStyle: 'left: calc(16.2% + 16px); right: auto; top: 36.5%;' },
+		{ num: 8, name: 'Hard 8', dice: [4, 4], mult: 9, max: 4000, left: 66.4, top: 36.5, amtStyle: 'left: calc(66.4% + 16px); right: auto; top: 36.5%;' },
+		{ num: 10, name: 'Hard 10', dice: [5, 5], mult: 7, max: 5000, left: 66.4, top: 86.9, amtStyle: 'left: calc(66.4% + 16px); right: auto; top: 86.9%;' }
+	];
+	let hwBets = { 4: 0, 6: 0, 8: 0, 10: 0 };
+	let hwWins = { 4: 0, 6: 0, 8: 0, 10: 0 };
+	let hwDeclared = { 4: null, 6: null, 8: null, 10: null };
+	let hwCrOffUsed = { 4: false, 6: false, 8: false, 10: false };
+	let hwMenu = false;
+	let hwInputs = { 4: '', 6: '', 8: '', 10: '' };
+	let hwErr = '';
+	let hwClampErr = '';
+	let hwEachCustom = '';
+	let hwEachErr = '';
+	let hwWinPendingKey = 0;
+	let hwWinMenuKey = 0;
+	let hwWinTimer = null;
+	let hwWinCustom = '';
+	let hwWinErr = '';
+	let hwOffPrompt = false;
+	let hwOffAffectedNums = [];
+	let hwOffKeep = { 4: false, 6: false, 8: false, 10: false };
+	let hwComeoutPrompt = null;
+	let hwRescueOn = true;
+	let hwRescuePending = null;
+	let hwRescuePrompt = false;
+	let hwRescueTimer = null;
+	let hwRescueChoice = true;
+	let hwRescueAmount = '';
+	let hwRescuePromptSetting = true;
+	let hwRescueErr = '';
+	function hwDef(num) { return hwDefs.find((d) => d.num === num); }
+	function hwName(num) { return hwDef(num).name; }
+	function hwWinFor(num, amt) { return amt * hwDef(num).mult; }
+	function hwMaxFor(num) { return hwDef(num).max; }
+	function hwEachMax() { let m = Infinity; for (let d of hwDefs) { if (d.max < m) m = d.max; } return m; }
+	function hwWorkingWith(num, hw, declared, pt) { if (!(hw[num] > 0)) return false; if (declared[num] === 'on') return true; if (declared[num] === 'off') return false; return pt !== 0; }
+	function hwWorking(num) { return hwWorkingWith(num, hwBets, hwDeclared, point); }
+	function hwMarkerFor(num, hw, declared, pt) { if (declared[num] === 'off') return 'off'; if (pt === 0 && declared[num] === 'on') return 'on'; return null; }
+	let hwCarrierMemo = { sig: '', carrier: null };
+	function hwMarkerShown(num, hw, declared, pt) { let mine = hwMarkerFor(num, hw, declared, pt); if (!mine) return false; let up = [4, 6, 8, 10].filter((n) => hw[n] > 0); if (up.length < 2) return true; for (let n of up) { if (hwMarkerFor(n, hw, declared, pt) !== mine) return true; } let sig = mine + '|' + up.join(','); if (!hwCarrierMemo || hwCarrierMemo.sig !== sig) { let tier = up.filter((n) => n === 6 || n === 8); if (!tier.length) tier = up; hwCarrierMemo = { sig: sig, carrier: tier[Math.floor(Math.random() * tier.length)] }; } return num === hwCarrierMemo.carrier; }
+	function anyHwUp(hw) { for (let n of [4, 6, 8, 10]) { if (hw[n] > 0) return true; } return false; }
+	function anyHwWorking(hw, declared, pt) { for (let n of [4, 6, 8, 10]) { if (hwWorkingWith(n, hw, declared, pt)) return true; } return false; }
+	function anyHwOff(hw, declared, pt) { for (let n of [4, 6, 8, 10]) { if (hw[n] > 0 && !hwWorkingWith(n, hw, declared, pt)) return true; } return false; }
+	function assignHwAngles(num) { chipAngles['hw' + num] = stackCheques(hwBets[num]).map(() => randomAngle()); chipAngles = chipAngles; }
+	function railHwWins() { let any = false; for (let d of hwDefs) { if (hwWins[d.num] > 0) { bankroll += hwWins[d.num]; hwWins[d.num] = 0; any = true; } } if (any) hwWins = hwWins; }
 	let anySevenBet = 0;
 	let anySevenWin = 0;
 	let anySevenMenu = false;
@@ -408,7 +463,7 @@
 	let overlayCustom = 40;
 	let overlayErr = '';
 	let comeDownErr = '';
-	function clearInputErrs() { customErr = ''; payCustomErr = ''; payBuyErr = ''; each68Err = ''; each59Err = ''; each410Err = ''; fieldErr = ''; comeOddsErr = ''; dcOddsErr = ''; comeDownErr = ''; dpReduceErr = ''; dcReduceErr = ''; anySevenErr = ''; anyCrapsErr = ''; hornErr = ''; hornWinErr = ''; anySevenWinErr = ''; anyCrapsWinErr = ''; worldErr = ''; worldWinErr = ''; hhErr = ''; hhWinErr = ''; ceSplitErr = ''; cePairErr = ''; ceSplitWinErr = ''; ceCWinErr = ''; ceEWinErr = ''; hopErr = ''; hopClampErr = ''; splitErr = ''; splitClampErrs = {}; multiErr = ''; multiClampErrs = {}; }
+	function clearInputErrs() { customErr = ''; payCustomErr = ''; payBuyErr = ''; each68Err = ''; each59Err = ''; each410Err = ''; fieldErr = ''; comeOddsErr = ''; dcOddsErr = ''; comeDownErr = ''; dpReduceErr = ''; dcReduceErr = ''; anySevenErr = ''; anyCrapsErr = ''; hornErr = ''; hornWinErr = ''; anySevenWinErr = ''; anyCrapsWinErr = ''; worldErr = ''; worldWinErr = ''; hhErr = ''; hhWinErr = ''; hwErr = ''; hwWinErr = ''; ceSplitErr = ''; cePairErr = ''; ceSplitWinErr = ''; ceCWinErr = ''; ceEWinErr = ''; hopErr = ''; hopClampErr = ''; splitErr = ''; splitClampErrs = {}; multiErr = ''; multiClampErrs = {}; }
 	function customMaxFor() { return popupBet === 'passOdds' ? oddsMax() : popupBet === 'dontOdds' ? dontLayMax() : popupBet && popupBet.startsWith('place') ? placeMax(popupBet) : 5000; }
 	function onCustomAmountInput(e) { let m = customMaxFor(); let v = Number(e.target.value); if (v > m) { customAmount = m; e.target.value = m; customErr = 'Max on this bet is ' + fmt(m) + '.'; } else if (customErr) customErr = ''; }
 	function onPayCustomInput(e) { if (!payMenu) return; let m = placeMax(payMenu.key); let v = Number(e.target.value); if (v > m) { payCustom = m; e.target.value = m; payCustomErr = 'Max on this bet is ' + fmt(m) + '.'; } else if (payCustomErr) payCustomErr = ''; }
@@ -431,12 +486,132 @@
 	let mustBetPopup = false;
 	let canShootFromPlace = false;
 
-	$: onTable = Object.values(bets).reduce((a, b) => a + b, 0) + Object.values(wins).reduce((a, b) => a + b, 0) + Object.values(comePts).reduce((a, b) => a + b, 0) + Object.values(dontComePts).reduce((a, b) => a + b, 0) + Object.values(comeOdds).reduce((a, b) => a + b, 0) + Object.values(dontComeOdds).reduce((a, b) => a + b, 0) + Object.values(comePtWins).reduce((a, b) => a + b, 0) + Object.values(dontComePtWins).reduce((a, b) => a + b, 0) + Object.values(comeOddsWins).reduce((a, b) => a + b, 0) + Object.values(dontComeOddsWins).reduce((a, b) => a + b, 0) + (payMenu ? payMenu.win : 0) + (deferredPayMenu ? deferredPayMenu.win : 0) + (pendingPayMenu ? pendingPayMenu.menu.win : 0) + (comeMovePending ? comeMovePending.amount : 0) + comePile + buyVigTotal + Object.values(overlays).reduce((a, b) => a + b, 0) + Object.values(overlayVigs).reduce((a, b) => a + b, 0) + Object.values(overlayWins).reduce((a, b) => a + b, 0) + dcPile + dcFlyAmt + worldBet + worldWin + anySevenBet + anySevenWin + anyCrapsBet + anyCrapsWin + hornBet + hornWin + ceSplitBet + ceSplitWin + ceCBet + ceCWin + ceEBet + ceEWin + Object.values(suBets).reduce((a, b) => a + b, 0) + Object.values(suWins).reduce((a, b) => a + b, 0) + Object.values(hhBets).reduce((a, b) => a + b, 0) + Object.values(hhWins).reduce((a, b) => a + b, 0);
+	$: onTable = Object.values(bets).reduce((a, b) => a + b, 0) + Object.values(wins).reduce((a, b) => a + b, 0) + Object.values(comePts).reduce((a, b) => a + b, 0) + Object.values(dontComePts).reduce((a, b) => a + b, 0) + Object.values(comeOdds).reduce((a, b) => a + b, 0) + Object.values(dontComeOdds).reduce((a, b) => a + b, 0) + Object.values(comePtWins).reduce((a, b) => a + b, 0) + Object.values(dontComePtWins).reduce((a, b) => a + b, 0) + Object.values(comeOddsWins).reduce((a, b) => a + b, 0) + Object.values(dontComeOddsWins).reduce((a, b) => a + b, 0) + (payMenu ? payMenu.win : 0) + (deferredPayMenu ? deferredPayMenu.win : 0) + (pendingPayMenu ? pendingPayMenu.menu.win : 0) + (comeMovePending ? comeMovePending.amount : 0) + comePile + buyVigTotal + Object.values(overlays).reduce((a, b) => a + b, 0) + Object.values(overlayVigs).reduce((a, b) => a + b, 0) + Object.values(overlayWins).reduce((a, b) => a + b, 0) + dcPile + dcFlyAmt + worldBet + worldWin + anySevenBet + anySevenWin + anyCrapsBet + anyCrapsWin + hornBet + hornWin + ceSplitBet + ceSplitWin + ceCBet + ceCWin + ceEBet + ceEWin + Object.values(suBets).reduce((a, b) => a + b, 0) + Object.values(suWins).reduce((a, b) => a + b, 0) + Object.values(hhBets).reduce((a, b) => a + b, 0) + Object.values(hhWins).reduce((a, b) => a + b, 0) + Object.values(hwBets).reduce((a, b) => a + b, 0) + Object.values(hwWins).reduce((a, b) => a + b, 0);
 	$: totalBankroll = bankroll + onTable;
 	let scrollLocked = false;
 	let savedScrollY = 0;
-	$: if (typeof document !== 'undefined' && typeof window !== 'undefined') { let locked = !!(popupBet || offGateBet || subMenu || mustBetPopup || payMenu || fieldPayMenu || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || dcPileMenu || overlayWinMenu || hornWinMenu || hornMenu || anySevenMenu || anyCrapsMenu || anySevenWinMenu || worldMenu || worldWinMenu || ceMenu || ceSplitWinMenu || ceCWinMenu || ceEWinMenu || anyCrapsWinMenu || propComboMenu || hopChooser || hopSub); if (locked && !scrollLocked) { scrollLocked = true; savedScrollY = window.scrollY; document.body.style.position = 'fixed'; document.body.style.top = '-' + savedScrollY + 'px'; document.body.style.width = '100%'; document.body.style.overflow = 'hidden'; document.documentElement.style.overflow = 'hidden'; } else if (!locked && scrollLocked) { scrollLocked = false; document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; document.body.style.overflow = ''; document.documentElement.style.overflow = ''; window.scrollTo(0, savedScrollY); } }
+	$: if (typeof document !== 'undefined' && typeof window !== 'undefined') { let locked = !!(popupBet || offGateBet || subMenu || mustBetPopup || payMenu || fieldPayMenu || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || dcPileMenu || overlayWinMenu || hornWinMenu || hornMenu || anySevenMenu || anyCrapsMenu || anySevenWinMenu || worldMenu || worldWinMenu || ceMenu || ceSplitWinMenu || ceCWinMenu || ceEWinMenu || anyCrapsWinMenu || propComboMenu || hopChooser || hopSub || railZoom); if (locked && !scrollLocked) { scrollLocked = true; savedScrollY = window.scrollY; document.body.style.position = 'fixed'; document.body.style.top = '-' + savedScrollY + 'px'; document.body.style.width = '100%'; document.body.style.overflow = 'hidden'; document.documentElement.style.overflow = 'hidden'; } else if (!locked && scrollLocked) { scrollLocked = false; document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; document.body.style.overflow = ''; document.documentElement.style.overflow = ''; window.scrollTo(0, savedScrollY); } }
 	onDestroy(() => { cancelPopupDelay(); cancelDcCeremony(); cancelOverlayWinSequence(); cancelHornWinSequence(); cancelAnySevenWinSequence(); cancelAnyCrapsWinSequence(); cancelWorldWinSequence(); cancelPropComboSequence(); clearPendingDcMenu(); if (typeof document !== 'undefined') { document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; document.body.style.overflow = ''; document.documentElement.style.overflow = ''; } });
+
+	let railZoom = false;
+	const railAddRanges = [
+		{ min: 0, max: 124, dollars: 10, nickels: 20, quarters: 4, hundreds: 2, fiveHundreds: 2, thousands: 0, fiveThousands: 0 },
+		{ min: 125, max: 299, dollars: 10, nickels: 20, quarters: 6, hundreds: 2, fiveHundreds: 2, thousands: 0, fiveThousands: 0 },
+		{ min: 300, max: 699, dollars: 10, nickels: 20, quarters: 16, hundreds: 0, fiveHundreds: 0, thousands: 0, fiveThousands: 0 },
+		{ min: 700, max: 999, dollars: 10, nickels: 20, quarters: 16, hundreds: 4, fiveHundreds: 0, thousands: 0, fiveThousands: 0 },
+		{ min: 1000, max: 5999, dollars: 5, nickels: 15, quarters: 15, hundreds: 15, fiveHundreds: 10, thousands: 0, fiveThousands: 0 },
+		{ min: 6000, max: 9999, dollars: 5, nickels: 10, quarters: 10, hundreds: 10, fiveHundreds: 4, thousands: 5, fiveThousands: 0 },
+		{ min: 10000, max: 24999, dollars: 5, nickels: 5, quarters: 8, hundreds: 10, fiveHundreds: 10, thousands: 15, fiveThousands: 2 },
+		{ min: 25000, max: 49999, dollars: 5, nickels: 10, quarters: 8, hundreds: 10, fiveHundreds: 10, thousands: 20, fiveThousands: 2 },
+		{ min: 50000, max: 999999, dollars: 5, nickels: 10, quarters: 8, hundreds: 10, fiveHundreds: 15, thousands: 20, fiveThousands: 50 }
+	];
+	const railDenoms = [1, 5, 25, 100, 500, 1000, 5000];
+	let railMemo = null;
+	function railInvEmpty() { return { 1: [], 5: [], 25: [], 100: [], 500: [], 1000: [], 5000: [] }; }
+	function railInvCopy(inv) { let out = {}; for (let d of railDenoms) out[d] = inv[d].slice(); return out; }
+	function railInvTotal(inv) { let total = 0; for (let d of railDenoms) total += inv[d].length * d; return total; }
+	function railTargetsFor(totalBankrollAmt) {
+		let band = railAddRanges.find((r) => totalBankrollAmt >= r.min && totalBankrollAmt <= r.max) || railAddRanges[railAddRanges.length - 1];
+		return { 1: band.dollars || 0, 5: band.nickels || 0, 25: band.quarters || 0, 100: band.hundreds || 0, 500: band.fiveHundreds || 0, 1000: band.thousands || 0, 5000: band.fiveThousands || 0 };
+	}
+	function railPushChip(inv, denom) { inv[denom].push(Math.floor(Math.random() * 12) + 1); }
+	function railBreakChip(inv, largerDenom) {
+		if (!inv[largerDenom].length) return false;
+		inv[largerDenom].pop();
+		let rest = largerDenom;
+		for (let d of [5000, 1000, 500, 100, 25, 5, 1]) { if (d >= largerDenom) continue; let c = Math.floor(rest / d); for (let i = 0; i < c; i++) railPushChip(inv, d); rest -= c * d; }
+		return true;
+	}
+	function railPlaceInto(inv, amount, totalBankrollAmt) {
+		let remaining = amount;
+		if (remaining <= 0) return;
+		let targets = railTargetsFor(totalBankrollAmt);
+		for (let d of [5, 25, 1, 100, 500, 1000, 5000]) {
+			let deficit = targets[d] - inv[d].length;
+			if (deficit <= 0) continue;
+			let c = Math.min(deficit, Math.floor(remaining / d));
+			for (let i = 0; i < c; i++) railPushChip(inv, d);
+			remaining -= c * d;
+			if (remaining <= 0) return;
+		}
+		for (let d of [5000, 1000, 500, 100, 25, 5, 1]) { let c = Math.floor(remaining / d); for (let i = 0; i < c; i++) railPushChip(inv, d); remaining -= c * d; }
+	}
+	function railAddSimplest(inv, amount) {
+		let remaining = Math.floor(amount);
+		if (remaining <= 0) return;
+		for (let d of [5000, 1000, 500, 100, 25, 5, 1]) { let c = Math.floor(remaining / d); for (let i = 0; i < c; i++) railPushChip(inv, d); remaining -= c * d; }
+	}
+	function railPayOut(inv, amount) {
+		let remaining = Math.floor(amount);
+		if (remaining <= 0) return;
+		let guard = 0;
+		while (remaining > 0 && guard++ < 100000) {
+			let d = 0;
+			for (let x of [5000, 1000, 500, 100, 25, 5, 1]) { if (x <= remaining) { d = x; break; } }
+			if (d > 0 && inv[d].length > 0) { inv[d].pop(); remaining -= d; continue; }
+			let larger = 0;
+			for (let x of railDenoms) { if (x > d && inv[x].length > 0) { larger = x; break; } }
+			if (larger) { railBreakChip(inv, larger); continue; }
+			let smaller = 0;
+			for (let x of [1000, 500, 100, 25, 5, 1]) { if (x < d && inv[x].length > 0) { smaller = x; break; } }
+			if (smaller) { inv[smaller].pop(); remaining -= smaller; continue; }
+			break;
+		}
+	}
+	function railChipsFlat(bankrollAmt, totalBankrollAmt, sig) {
+		let target = Math.max(0, Math.floor(bankrollAmt));
+		if (!railMemo) {
+			railMemo = { bankroll: 0, totalBankroll: totalBankrollAmt, sig: sig || {}, inv: railInvEmpty() };
+			if (target > 0) railPlaceInto(railMemo.inv, target, totalBankrollAmt);
+			railMemo.bankroll = railInvTotal(railMemo.inv);
+		} else {
+			let prev = railMemo.sig || {};
+			let now = sig || {};
+			let keys = {};
+			for (let k in prev) keys[k] = true;
+			for (let k in now) keys[k] = true;
+			for (let k in keys) {
+				let dec = Math.floor((prev[k] || 0) - (now[k] || 0));
+				if (dec > 0) railAddSimplest(railMemo.inv, dec);
+			}
+			let increases = [];
+			let incTotal = 0;
+			for (let k in now) {
+				let inc = Math.floor((now[k] || 0) - (prev[k] || 0));
+				if (inc > 0) { increases.push(inc); incTotal += inc; }
+			}
+			let held = railInvTotal(railMemo.inv);
+			let settleIn = target - held + incTotal;
+			if (settleIn > 0) railAddSimplest(railMemo.inv, settleIn);
+			for (let inc of increases) railPayOut(railMemo.inv, inc);
+			held = railInvTotal(railMemo.inv);
+			if (target < held) railPayOut(railMemo.inv, held - target);
+			else if (target > held) railAddSimplest(railMemo.inv, target - held);
+			railMemo.bankroll = railInvTotal(railMemo.inv);
+			railMemo.totalBankroll = totalBankrollAmt;
+			railMemo.sig = now;
+		}
+		let out = [];
+		for (let d of [5000, 1000, 500, 100, 25, 5, 1]) { for (let v of railMemo.inv[d]) out.push({ denom: d, variant: v }); }
+		return out;
+	}
+	function railChipGroups(bankrollAmt, totalBankrollAmt, sig) {
+		let flat = railChipsFlat(bankrollAmt, totalBankrollAmt, sig);
+		let caps = [70, 70, 67, 67];
+		let groups = [[], [], [], []];
+		let at = 0;
+		for (let g = 0; g < 4; g++) { while (groups[g].length < caps[g] && at < flat.length) groups[g].push(flat[at++]); }
+		return groups;
+	}
+	function railBetSig(bets, comePts, comeOdds, dontComePts, dontComeOdds, overlays, hwBets, hhBets, suBets, comePileBet, hornBet, anySevenBet, anyCrapsBet, worldBet, ceSplitBet, ceCBet, ceEBet) {
+		let sig = { passLine: bets.passLine, passOdds: bets.passOdds, dontPass: bets.dontPass, dontOdds: bets.dontOdds, field: bets.field, place4: bets.place4, place5: bets.place5, place6: bets.place6, place8: bets.place8, place9: bets.place9, place10: bets.place10, come: bets.come, dontCome: bets.dontCome, comePile: comePileBet, horn: hornBet, anySeven: anySevenBet, anyCraps: anyCrapsBet, world: worldBet, ceSplit: ceSplitBet, ceC: ceCBet, ceE: ceEBet };
+		for (let n of [4, 5, 6, 8, 9, 10]) { sig['comePt' + n] = comePts[n]; sig['comeOdds' + n] = comeOdds[n]; sig['dcPt' + n] = dontComePts[n]; sig['dcOdds' + n] = dontComeOdds[n]; sig['overlay' + n] = overlays[n]; }
+		for (let n of [4, 6, 8, 10]) sig['hw' + n] = hwBets[n];
+		sig.hhAces = hhBets.aces; sig.hhAceDeuce = hhBets.aceDeuce; sig.hhYo = hhBets.yo; sig.hhTwelve = hhBets.twelve;
+		sig.suAces = suBets.aces; sig.suAceDeuce = suBets.aceDeuce; sig.suYo = suBets.yo; sig.suTwelve = suBets.twelve;
+		return sig;
+	}
+	function railChipImg(denom, variant) { return (railChipImages[denom] || {})[variant] || ''; }
 
 	function railStacks(amount) {
 		let remaining = amount;
@@ -762,12 +937,12 @@
 		if (key === 'passOdds' && bets.passLine === 0 && bets.passOdds === 0 && wins.passOdds === 0) { showAlert('Bet the Pass Line first, then add Odds behind it.'); return; }
 		if (key === 'dontOdds' && point === 0) { showAlert('You need a point first before you can lay odds.'); return; }
 		if (key === 'dontOdds' && bets.dontPass === 0) { showAlert("Bet Don't Pass first, then lay odds behind it."); return; }
-		if (!force && key.startsWith('place') && point === 0 && bets[key] === 0) { offGateBet = key; popupBet = null; subMenu = null; return; }
+		if (!force && key.startsWith('place') && point === 0 && bets[key] === 0) { offGateBet = key; offGateKeepOff = null; popupBet = null; subMenu = null; return; }
 		offGateBet = null;
 		popupBet = key;
 		customAmount = key === 'place6' || key === 'place8' ? 30 : key === 'passOdds' ? oddsMin() : key === 'dontOdds' ? layStep() : 25;
 	}
-	function closePopup() { if (popupBet === 'come' && comeOffForFollowUp) { pendingComeOddsMenu = comeOffForFollowUp; comeOffForFollowUp = 0; } popupBet = null; subMenu = null; subMenuReturn = null; offGateBet = null; popupReturn = null; clearInputErrs(); }
+	function closePopup() { if (popupBet === 'come' && comeOffForFollowUp) { pendingComeOddsMenu = comeOffForFollowUp; comeOffForFollowUp = 0; } popupBet = null; subMenu = null; subMenuReturn = null; offGateBet = null; offGateKeepOff = null; popupReturn = null; clearInputErrs(); }
 
 	function placeBuy(key, amount, fromTest = false) {
 		if (rolling && !fromTest) { showAlert('Dice are rolling, wait a second.'); return false; }
@@ -785,9 +960,9 @@
 		bankroll += oldBack;
 		bankroll -= cost;
 		let desiredBeforeBuy = {}; for (let k of placeOrderInsideOut) if (bets[k] > 0) desiredBeforeBuy[k] = placeWorking(k);
-		let beforeBuyWorking = { ...desiredBeforeBuy }; bets[key] = amount; buys[key] = true; buyVigTotal = newOwed; bumpPlacement(key); assignChipAngles(key); desiredBeforeBuy[key] = true; placeForeverOff[key] = false; placeForeverOff = placeForeverOff; reanchorPlaceLammers(desiredBeforeBuy); markOnDuringCR(beforeBuyWorking); if (point === 0) placeOnDuringCR[key] = true; placeOnDuringCR = placeOnDuringCR; if (comePts[placeNum(key)] > 0) { comeCorner[placeNum(key)] = true; comeCorner = comeCorner; }
+		let beforeBuyWorking = { ...desiredBeforeBuy }; bets[key] = amount; buys[key] = true; buyVigTotal = newOwed; bumpPlacement(key); assignChipAngles(key); desiredBeforeBuy[key] = !(point === 0 && offGateKeepOff === key); placeForeverOff[key] = false; placeForeverOff = placeForeverOff; reanchorPlaceLammers(desiredBeforeBuy); markOnDuringCR(beforeBuyWorking); if (point === 0 && offGateKeepOff !== key) placeOnDuringCR[key] = true; placeOnDuringCR = placeOnDuringCR; if (comePts[placeNum(key)] > 0) { comeCorner[placeNum(key)] = true; comeCorner = comeCorner; }
 		bets = bets; buys = buys; placeLammer = placeLammer;
-		showAsk('Buy the ' + (key === 'place4' ? 'Four' : 'Ten') + ' for  ' + fmt(amount) + (point === 0 ? ', working on the Comeout Roll.' : '.') + ' On the table now: ' + fmt(totalBuyAction() + buyVigTotal) + ' total Buy action.'); 
+		showAsk('Buy the ' + (key === 'place4' ? 'Four' : 'Ten') + ' for  ' + fmt(amount) + (point === 0 && offGateKeepOff !== key ? ', working on the Comeout Roll.' : '.') + ' On the table now: ' + fmt(totalBuyAction() + buyVigTotal) + ' total Buy action.'); 
 		closePopup(); return true;
 	}
 
@@ -825,10 +1000,10 @@
 		let oldBet = bets[key]; let oldWin = wins[key] || 0; let desiredBeforePlace = {}; if (key.startsWith('place')) for (let k of placeOrderInsideOut) if (bets[k] > 0) desiredBeforePlace[k] = placeWorking(k); if (oldWin > 0) { bankroll += oldWin; wins[key] = 0; if (winAfterPoint[key] !== undefined) winAfterPoint[key] = false; } bankroll += oldBet; bankroll -= amount;
 		bets[key] = newTotal;
 		if (key === 'field') fieldSplit = null;
-		if (key.startsWith('place')) { let beforePlaceWorking = { ...desiredBeforePlace }; desiredBeforePlace[key] = true; placeForeverOff[key] = false; placeForeverOff = placeForeverOff; reanchorPlaceLammers(desiredBeforePlace); markOnDuringCR(beforePlaceWorking); if (point === 0) placeOnDuringCR[key] = true; placeOnDuringCR = placeOnDuringCR; if (comePts[placeNum(key)] > 0) { comeCorner[placeNum(key)] = true; comeCorner = comeCorner; } }
+		if (key.startsWith('place')) { let beforePlaceWorking = { ...desiredBeforePlace }; desiredBeforePlace[key] = !(point === 0 && offGateKeepOff === key); placeForeverOff[key] = false; placeForeverOff = placeForeverOff; reanchorPlaceLammers(desiredBeforePlace); markOnDuringCR(beforePlaceWorking); if (point === 0 && offGateKeepOff !== key) placeOnDuringCR[key] = true; placeOnDuringCR = placeOnDuringCR; if (comePts[placeNum(key)] > 0) { comeCorner[placeNum(key)] = true; comeCorner = comeCorner; } }
 		bumpPlacement(key); assignChipAngles(key);
 		bets = bets; wins = wins; winAfterPoint = winAfterPoint;
-		if (key === 'passOdds') { let pay = oddsWinOld(amount, point); let ratio = point === 6 || point === 8 ? '6:5' : point === 5 || point === 9 ? '3:2' : '2:1'; showInform(fmt(amount) + ' Odds play. They pay ' + ratio + ' and will win ' + fmt(pay) + ' if you roll the Point.'); if ((point === 6 || point === 8) && amount % 5 !== 0) showAlert('You should bet Odds in multiples of 5. Every dollar above a multiple of five will get paid even money. Your Odds pay ' + fmt(pay) + '.'); else if ((point === 5 || point === 9) && amount % 2 === 1) showAlert('Uneven odds will cost you 50 cents when the Point is 5 or 9. Your Odds pay ' + fmt(amount / 2 * 3) + ', but your payment will be rounded down to ' + fmt(pay) + '.'); } else if (key.startsWith('place')) { let numWord = key === 'place4' ? 'Four' : key === 'place5' ? 'Five' : key === 'place6' ? 'Six' : key === 'place8' ? 'Eight' : key === 'place9' ? 'Nine' : 'Ten'; showAsk('Place the ' + numWord + ' for  ' + fmt(amount) + (point === 0 ? ', working on the Comeout Roll.' : '.')); } else if (key === 'passLine' && point === 0 && oldBet === 0) { showGuide(oldDiceOutCalls[Math.floor(Math.random() * oldDiceOutCalls.length)]); } else { showAsk((oldBet > 0 ? 'Replaced ' + fmt(oldBet) + ' bet with ' + fmt(amount) + ' on ' + betLabels[key] + '.' + (oldWin > 0 ? ' Win ' + fmt(oldWin) + ' returned to the rail.' : '') : 'Bet ' + fmt(amount) + ' on ' + betLabels[key] + '.') + ' On the table now: ' + fmt(bets[key]) + '.' + (key === 'dontOdds' ? ' That lay wins ' + fmt(layWin(amount)) + ' if a 7 rolls before the point.' : '')); }
+		if (key === 'passOdds') { let pay = oddsWinOld(amount, point); let ratio = point === 6 || point === 8 ? '6:5' : point === 5 || point === 9 ? '3:2' : '2:1'; showInform(fmt(amount) + ' Odds play. They pay ' + ratio + ' and will win ' + fmt(pay) + ' if you roll the Point.'); if ((point === 6 || point === 8) && amount % 5 !== 0) showAlert('You should bet Odds in multiples of 5. Every dollar above a multiple of five will get paid even money. Your Odds pay ' + fmt(pay) + '.'); else if ((point === 5 || point === 9) && amount % 2 === 1) showAlert('Uneven odds will cost you 50 cents when the Point is 5 or 9. Your Odds pay ' + fmt(amount / 2 * 3) + ', but your payment will be rounded down to ' + fmt(pay) + '.'); } else if (key.startsWith('place')) { let numWord = key === 'place4' ? 'Four' : key === 'place5' ? 'Five' : key === 'place6' ? 'Six' : key === 'place8' ? 'Eight' : key === 'place9' ? 'Nine' : 'Ten'; showAsk('Place the ' + numWord + ' for  ' + fmt(amount) + (point === 0 && offGateKeepOff !== key ? ', working on the Comeout Roll.' : '.')); } else if (key === 'passLine' && point === 0 && oldBet === 0) { showGuide(oldDiceOutCalls[Math.floor(Math.random() * oldDiceOutCalls.length)]); } else { showAsk((oldBet > 0 ? 'Replaced ' + fmt(oldBet) + ' bet with ' + fmt(amount) + ' on ' + betLabels[key] + '.' + (oldWin > 0 ? ' Win ' + fmt(oldWin) + ' returned to the rail.' : '') : 'Bet ' + fmt(amount) + ' on ' + betLabels[key] + '.') + ' On the table now: ' + fmt(bets[key]) + '.' + (key === 'dontOdds' ? ' That lay wins ' + fmt(layWin(amount)) + ' if a 7 rolls before the point.' : '')); }
 		closePopup(); mustBetPopup = false; return true;
 	}
 
@@ -911,18 +1086,49 @@
 		placeLammer = placeLammer; showInform('Your Place bets have been turned ON.'); closePopup();
 	}
 
-	function turnOffAllBets() {
+	function hwOffAffected(hw, declared, pt) { let out = []; for (let n of [4, 6, 8, 10]) { if (hwWorkingWith(n, hw, declared, pt)) out.push(n); } return out; }
+	function applyTurnOffAllBets(offNums, keepNums) {
 		for (let num of [4, 5, 6, 8, 9, 10]) if (comeOdds[num] > 0) { comeOddsOff[num] = true; comeOddsOverrideOn[num] = false; }
 		comeOddsOff = comeOddsOff; comeOddsOverrideOn = comeOddsOverrideOn;
+		for (let n of offNums) if (hwBets[n] > 0 && !keepNums.includes(n)) hwDeclared[n] = 'off';
+		hwDeclared = hwDeclared;
 		turnOffAllPlace();
-		showInform('All your bets have been turned OFF. Place bets and Come Odds are OFF until you turn them back ON.');
+		let keptOn = offNums.filter((n) => keepNums.includes(n));
+		showInform('All your bets have been turned OFF. Place bets and Come Odds are OFF until you turn them back ON.' + (!anyHwUp(hwBets) ? '' : keptOn.length === 0 ? ' Hardways are OFF too.' : keptOn.length === offNums.length ? ' Your Hardways were left as they were.' : ' The Hardways you kept on are still working.'));
 	}
+	function turnOffAllBets() {
+		let affected = hwOffAffected(hwBets, hwDeclared, point);
+		if (affected.length > 0) { hwOffAffectedNums = affected; hwOffKeep = { 4: false, 6: false, 8: false, 10: false }; hwOffPrompt = true; return; }
+		applyTurnOffAllBets(hwUpNums(hwBets), []);
+	}
+	function toggleHwOffKeep(num) { hwOffKeep[num] = !hwOffKeep[num]; hwOffKeep = hwOffKeep; }
+	function resolveHwOffPrompt(keepNums) { let affected = hwOffAffectedNums.slice(); hwOffPrompt = false; hwOffAffectedNums = []; applyTurnOffAllBets(affected, (keepNums || []).slice()); }
+	function hwOffPromptYes() { if (hwOffAffectedNums.length === 1) resolveHwOffPrompt(hwOffAffectedNums.slice()); else resolveHwOffPrompt([]); }
+	function hwOffPromptNo() { if (hwOffAffectedNums.length === 1) resolveHwOffPrompt([]); else resolveHwOffPrompt(hwOffAffectedNums.slice()); }
+	function hwOffPromptSubmit() { resolveHwOffPrompt(hwOffAffectedNums.filter((n) => hwOffKeep[n])); }
+	function hwOffPromptClose() { resolveHwOffPrompt([]); }
+	function hwRescueCandidateFor(num, stake, total, hard, working, placePaid, rescueOn) { if (!rescueOn) return null; if (!working) return null; if (!placePaid) return null; if (total === 7) return null; if (total !== num) return null; if (hard) return null; if (!(stake > 0)) return null; return { num: num, stake: stake }; }
+	function cancelHwRescueSequence() { if (hwRescueTimer) { clearTimeout(hwRescueTimer); hwRescueTimer = null; } hwRescuePrompt = false; hwRescuePending = null; }
+	function askHwComeoutPrompt(entries, fromTest) { if (fromTest || point !== 0 || hwComeoutPrompt) return; let nums = []; for (let e of entries) if (!nums.includes(e.num)) nums.push(e.num); if (nums.length > 0) hwComeoutPrompt = nums; }
+	function workHwComeoutPrompt() { if (!hwComeoutPrompt) return; let nums = hwComeoutPrompt.slice(); for (let n of nums) hwDeclared[n] = 'on'; hwDeclared = hwDeclared; hwComeoutPrompt = null; showInform(nums.length === 1 ? 'Your ' + hwName(nums[0]) + ' is ON.' : 'Your Hardways are ON.'); }
+	function closeHwComeoutPrompt() { hwComeoutPrompt = null; }
+	function queueHwRescuePrompt() { if (!hwRescuePending) return; if (!hwRescuePrompt && !hwRescueTimer) { hwRescueTimer = setTimeout(() => { hwRescueTimer = null; maybePopHwRescuePrompt(); }, 1500); } }
+	function maybePopHwRescuePrompt() { if (!hwRescuePending || hwRescuePrompt || ceremonyActive) return; if (hwRescueTimer) return; if (popupBet || payMenu || fieldPayMenu || offGateBet || subMenu || mustBetPopup || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || popupPending || pendingComeMenu || pendingPayMenu || pendingComeOddsMenu || dcPileMenu || pendingDcMenu || comeMovePending || dcMovePending || deferredPayMenu || hornMenu || anySevenMenu || anyCrapsMenu || worldMenu || ceMenu || hhMenu || hwMenu || hwOffPrompt || hwWinMenuKey || hwWinPendingKey || worldWinMenu || worldWinPending || overlayWinMenu || overlayWinPending || hornWinMenu || hornWinPending || anySevenWinMenu || anySevenWinPending || anyCrapsWinMenu || anyCrapsWinPending || ceSplitWinMenu || ceSplitWinPending || ceCWinMenu || ceCWinPending || ceEWinMenu || ceEWinPending || propComboMenu || propComboPending || hopChooser || hopSub) { hwRescueTimer = setTimeout(() => { hwRescueTimer = null; maybePopHwRescuePrompt(); }, 300); return; } clearInputErrs(); hwRescueChoice = true; hwRescueAmount = String(hwRescuePending.stake); hwRescuePromptSetting = hwRescueOn; hwRescueErr = ''; scrollTableIntoView(); hwRescuePrompt = true; }
+	function selectHwRescue(choice) { hwRescueChoice = !!choice; hwRescueErr = ''; }
+	function setHwRescuePromptSetting(on) { hwRescuePromptSetting = !!on; }
+	function onHwRescueInput(e) { if (!hwRescuePending) return; let cap = hwMaxFor(hwRescuePending.num); let v = Number(e.target.value); if (v > cap) { hwRescueAmount = cap; e.target.value = cap; hwRescueErr = 'Max on this bet is ' + fmt(cap) + '.'; } else if (hwRescueErr) hwRescueErr = ''; }
+	function setHwRescueAmount(amt) { if (!hwRescuePending) return; hwRescueAmount = Math.min(amt, hwMaxFor(hwRescuePending.num)); hwRescueErr = ''; }
+	function submitHwRescuePrompt() { if (!hwRescuePrompt || !hwRescuePending) return; let num = hwRescuePending.num; if (hwRescueChoice) { let amt = Math.floor(Number(hwRescueAmount)); if (!amt || amt < 1) { hwRescueErr = 'Minimum Hardway bet is $1.'; return; } if (amt > hwMaxFor(num)) { hwRescueErr = 'Max on this bet is ' + fmt(hwMaxFor(num)) + '.'; return; } if (amt > bankroll) { hwRescueErr = 'That needs ' + fmt(amt) + ' and you have ' + fmt(bankroll) + ' in the rail.'; return; } hwRescueOn = hwRescuePromptSetting; hwRescuePending = null; hwRescuePrompt = false; hwRescueErr = ''; bankroll -= amt; hwBets[num] = amt; hwWins[num] = 0; hwDeclared[num] = null; hwCrOffUsed[num] = false; hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; hwCrOffUsed = hwCrOffUsed; assignHwAngles(num); showInform('Back on the ' + hwName(num) + ' for ' + fmt(amt) + '.'); return; } hwRescueOn = hwRescuePromptSetting; hwRescuePending = null; hwRescuePrompt = false; hwRescueErr = ''; showInform('Your ' + hwName(num) + ' stays down.'); }
+	function closeHwRescuePrompt() { if (!hwRescuePrompt || !hwRescuePending) { hwRescuePrompt = false; return; } let num = hwRescuePending.num; hwRescueOn = hwRescuePromptSetting; hwRescuePending = null; hwRescuePrompt = false; hwRescueErr = ''; showInform('Your ' + hwName(num) + ' stays down.'); }
+	function setHwRescue(on) { if (rolling) return; hwRescueOn = !!on; if (!hwRescueOn && hwRescuePending && !hwRescuePrompt) cancelHwRescueSequence(); showInform(hwRescueOn ? 'Rescue is ON. If a hardway goes down on an easy number and your Place bet on that number was paid, you will be asked if you want to come back on it.' : 'Rescue is OFF.'); }
 
 	function turnOnAllBets() {
 		for (let num of [4, 5, 6, 8, 9, 10]) if (comeOdds[num] > 0) comeOddsOff[num] = false;
 		comeOddsOff = comeOddsOff;
+		for (let n of [4, 6, 8, 10]) if (hwBets[n] > 0) hwDeclared[n] = 'on';
+		hwDeclared = hwDeclared;
 		turnOnAllPlace();
-		showInform('All your bets have been turned ON. Place bets and Come Odds are working.');
+		showInform('All your bets have been turned ON. Place bets and Come Odds are working.' + (anyHwUp(hwBets) ? ' Hardways are working too.' : ''));
 	}
 
 	function allBetsDown() {
@@ -930,7 +1136,7 @@
 		let total = 0;
 		for (let num of [4, 5, 6, 8, 9, 10]) { if (comeOdds[num] > 0 || comeOddsWins[num] > 0) { total += comeOdds[num] + comeOddsWins[num]; comeOdds[num] = 0; comeOddsWins[num] = 0; comeOddsOff[num] = false; comeOddsDeclaredOn[num] = false; comeOddsOverrideOn[num] = false; comeTravelMadePt[num] = false; comeMadePtComeout[num] = false; chipAngles['comeOdds' + num] = undefined; } }
 		comeOdds = comeOdds; comeOddsWins = comeOddsWins; comeOddsOff = comeOddsOff; comeOddsDeclaredOn = comeOddsDeclaredOn; comeOddsOverrideOn = comeOddsOverrideOn; comeTravelMadePt = comeTravelMadePt; comeMadePtComeout = comeMadePtComeout; chipAngles = chipAngles;
-		for (let key of ['place4', 'place5', 'place6', 'place8', 'place9', 'place10']) { total += bets[key]; bets[key] = 0; buys[key] = false; placeLammer[key] = null; placeForeverOff[key] = false; placeOnDuringCR[key] = false; chipAngles[key] = undefined; lammerAngles[key] = undefined; buyLammerAngles[key] = undefined; } total += buyVigTotal; buyVigTotal = 0; bankroll += total; placeForeverOff = placeForeverOff; placeOnDuringCR = placeOnDuringCR;
+		for (let key of ['place4', 'place5', 'place6', 'place8', 'place9', 'place10']) { total += bets[key]; bets[key] = 0; buys[key] = false; placeLammer[key] = null; placeForeverOff[key] = false; placeOnDuringCR[key] = false; chipAngles[key] = undefined; lammerAngles[key] = undefined; buyLammerAngles[key] = undefined; } for (let n of [4, 6, 8, 10]) { if (hwBets[n] > 0 || hwWins[n] > 0) { total += hwBets[n] + hwWins[n]; hwBets[n] = 0; hwWins[n] = 0; hwDeclared[n] = null; chipAngles['hw' + n] = undefined; } } hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; if (hwWinPendingKey || hwWinMenuKey) cancelHwWinSequence(); total += buyVigTotal; buyVigTotal = 0; bankroll += total; placeForeverOff = placeForeverOff; placeOnDuringCR = placeOnDuringCR;
 		for (let num of [4, 5, 6, 8, 9, 10]) comeCorner[num] = false; comeCorner = comeCorner;
 		bets = bets; buys = buys; placeLammer = placeLammer; buyLammerAngles = buyLammerAngles; showInform(total > 0 ? 'All your Place bets are down. ' + fmt(total) + ' back to the rail.' : 'No Place bets to take down.'); closePopup();
 	}
@@ -961,6 +1167,7 @@
 
 	function resetGame() {
 		rollSnapshot = null;
+		railMemo = null;
 		cancelPopupDelay();
 		cancelDcCeremony();
 		cancelOverlayWinSequence();
@@ -972,10 +1179,12 @@
 		cancelCeCWinSequence();
 		cancelCeEWinSequence();
 		cancelHhWinSequence();
+		cancelHwWinSequence();
+		cancelHwRescueSequence();
 		cancelPropComboSequence();
-		clearPendingDcMenu(); sevenOutFlag = false; comeRailNote = 0;
+		clearPendingDcMenu(); sevenOutFlag = false; comeRailNote = 0; hwRescueOn = true;
 		bankroll = 1000; bets = { passLine: 0, passOdds: 0, dontPass: 0, dontOdds: 0, field: 0, place4: 0, place5: 0, place6: 0, place8: 0, place9: 0, place10: 0, come: 0, dontCome: 0 }; wins = { passLine: 0, passOdds: 0, dontPass: 0, dontOdds: 0, field: 0, come: 0, dontCome: 0 }; comePts = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; comePtWins = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; comeOdds = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; comeOddsWins = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; dontComePts = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; dontComePtWins = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; dontComeOdds = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; dontComeOddsWins = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; overlays = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; overlayVigs = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; overlayWins = { 4: 0, 5: 0, 6: 0, 8: 0, 9: 0, 10: 0 }; buys = { place4: false, place10: false }; buyVigTotal = 0; placeLammer = { place4: null, place5: null, place6: null, place8: null, place9: null, place10: null }; placeForeverOff = { place4: false, place5: false, place6: false, place8: false, place9: false, place10: false }; placeOnDuringCR = { place4: false, place5: false, place6: false, place8: false, place9: false, place10: false }; chipAngles = {}; lammerAngles = {}; buyLammerAngles = {}; offGateBet = null; subMenu = null; subMenuReturn = null; popupReturn = null; payMenu = null; fieldPayMenu = null; fieldSplit = null; comePtMenu = null; dcPtMenu = null; overlayMenu = null; bandChooser = null; comeMovePending = null; comeMoveDecision = null; deferredPayMenu = null; comeDownMenu = null; comeAfterPay = 0; pointChooser = null; dcMovePending = null; dcMoveDecision = null; comeCorner = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; comeOddsOff = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; inTestRoll = false; comePile = 0; comePileBet = 0; comePileWin = 0; comePileOffAndOn = false; comePileOrigBet = 0; comePileWinOdds = 0; comePileOffFor = 0; comePileOdds = 0; comePileOddsOff = false; pendingComeOddsMenu = 0; comeOddsDeclaredOn = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; comeOddsOverrideOn = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; comeTravelMadePt = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; comeMadePtComeout = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; comePtMenuChoice = false;
-		hornBet = 0; hornWin = 0; hornMenu = false; anySevenBet = 0; anySevenWin = 0; anySevenMenu = false; anyCrapsBet = 0; anyCrapsWin = 0; anyCrapsMenu = false; worldBet = 0; worldWin = 0; worldMenu = false; worldPushPending = false; ceSplitBet = 0; ceSplitWin = 0; ceMenu = false; ceCBet = 0; ceCWin = 0; ceEBet = 0; ceEWin = 0; hhBets = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; hhWins = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; hhMenu = false; hhInputs = { aces: '', aceDeuce: '', yo: '', twelve: '' }; suBets = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; suWins = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; suGroups = []; hopChooser = false; hopSub = null; hopInputs = { aces: '', aceDeuce: '', yo: '', twelve: '' }; splitInputs = { highLow: '', elevenTwelve: '', acesAceDeuce: '', sevenEleven: '' }; multiInputs = { highLowYo: '', threeWayCrap: '' };
+		hornBet = 0; hornWin = 0; hornMenu = false; anySevenBet = 0; anySevenWin = 0; anySevenMenu = false; anyCrapsBet = 0; anyCrapsWin = 0; anyCrapsMenu = false; worldBet = 0; worldWin = 0; worldMenu = false; worldPushPending = false; ceSplitBet = 0; ceSplitWin = 0; ceMenu = false; ceCBet = 0; ceCWin = 0; ceEBet = 0; ceEWin = 0; hhBets = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; hhWins = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; hhMenu = false; hhInputs = { aces: '', aceDeuce: '', yo: '', twelve: '' }; hwBets = { 4: 0, 6: 0, 8: 0, 10: 0 }; hwWins = { 4: 0, 6: 0, 8: 0, 10: 0 }; hwDeclared = { 4: null, 6: null, 8: null, 10: null }; hwCrOffUsed = { 4: false, 6: false, 8: false, 10: false }; hwMenu = false; hwInputs = { 4: '', 6: '', 8: '', 10: '' }; hwEachCustom = ''; hwOffPrompt = false; hwOffAffectedNums = []; hwOffKeep = { 4: false, 6: false, 8: false, 10: false }; hwComeoutPrompt = null; suBets = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; suWins = { aces: 0, aceDeuce: 0, yo: 0, twelve: 0 }; suGroups = []; hopChooser = false; hopSub = null; hopInputs = { aces: '', aceDeuce: '', yo: '', twelve: '' }; splitInputs = { highLow: '', elevenTwelve: '', acesAceDeuce: '', sevenEleven: '' }; multiInputs = { highLowYo: '', threeWayCrap: '' };
 		point = 0; diceA = 0; diceB = 0; lastRoll = 0; rolls = 0; pointsMade = 0; popupBet = null; mustBetPopup = false; canShootFromPlace = false; winAfterPoint = { passLine: false, dontPass: false }; winPoint = { passOdds: 0, dontOdds: 0 };
 		showInform('New game. Bankroll reset to $1000.'); stickCall = 'Shooter, dice are out. Place your bets.'; messageKind = 'inform';
 	}
@@ -1301,6 +1510,7 @@
 	function splitRowLabel(row, raw) { let amt = hopRowAmt(raw); return amt >= 1 ? 'Bet ' + fmt(amt) + ' Each ' + row.title : 'Bet Each ' + row.title; }
 	function multiRowLabel(row, raw) { let amt = hopRowAmt(raw); return amt >= 1 ? 'Bet ' + fmt(amt) + ' Each ' + row.title : 'Bet Each ' + row.title; }
 	function onHopInput(key, e) { let v = Number(e.target.value); if (v > 5000) { hopInputs[key] = 5000; e.target.value = 5000; hopClampErr = 'Max on this bet is ' + fmt(5000) + '.'; } else if (hopClampErr) hopClampErr = ''; hopInputs = hopInputs; hopErr = ''; }
+	function setHopInput(key, amt) { hopInputs[key] = Math.min(amt, 5000); hopInputs = hopInputs; hopClampErr = ''; hopErr = ''; }
 	function onSplitRowInput(id, e) { let v = Number(e.target.value); if (v > 5000) { splitInputs[id] = 5000; e.target.value = 5000; splitClampErrs[id] = 'Max on this bet is ' + fmt(5000) + '.'; } else if (splitClampErrs[id]) splitClampErrs[id] = ''; splitInputs = splitInputs; splitClampErrs = splitClampErrs; splitErr = ''; }
 	function onMultiRowInput(id, e) { let v = Number(e.target.value); if (v > 5000) { multiInputs[id] = 5000; e.target.value = 5000; multiClampErrs[id] = 'Max on this bet is ' + fmt(5000) + '.'; } else if (multiClampErrs[id]) multiClampErrs[id] = ''; multiInputs = multiInputs; multiClampErrs = multiClampErrs; multiErr = ''; }
 	function focusHopInput(key) { if (typeof document !== 'undefined') { let el = document.getElementById('hop-in-' + key); if (el) { el.focus(); if (el.select) el.select(); } } }
@@ -1533,6 +1743,7 @@
 	function cePairButtonLabel(eRaw, cRaw) { let e = cePairAmtE(eRaw); let c = cePairAmtC(cRaw); if (e >= 1 && c >= 1) return 'Bet ' + fmt(e) + ' on the E and ' + fmt(c) + ' on the C'; if (e >= 1) return 'Bet ' + fmt(e) + ' on the E'; if (c >= 1) return 'Bet ' + fmt(c) + ' on the C'; return 'Bet the C and E'; }
 	function onCeEInput(e) { let v = Number(e.target.value); if (v > 5000) { ceEInput = 5000; e.target.value = 5000; cePairErr = 'Max on this bet is ' + fmt(5000) + '.'; } else if (cePairErr) cePairErr = ''; }
 	function onCeCInput(e) { let v = Number(e.target.value); if (v > 5000) { ceCInput = 5000; e.target.value = 5000; cePairErr = 'Max on this bet is ' + fmt(5000) + '.'; } else if (cePairErr) cePairErr = ''; }
+	function setCeEachInput(which, amt) { let v = Math.min(amt, 5000); if (which === 'e') ceEInput = v; else ceCInput = v; cePairErr = ''; }
 	function placeCePair() {
 		if (rolling) return;
 		sweepPropComboLosers();
@@ -1851,6 +2062,7 @@
 	function hhPicksCap(picks) { return picks.length ? Math.min(...picks.map((k) => hhMaxFor(k))) : 5000; }
 	function assignHhAngles(key) { let d = hhDef(key); chipAngles[d.propKey] = stackCheques(hhBets[key]).map(() => randomAngle()); chipAngles = chipAngles; }
 	function hhWinFor(key, stake, total) { let d = hhDef(key); let u = stake / 5; if (total === d.total) return u * (d.total === 2 || d.total === 12 ? 57 : 27); if (total === 2 || total === 12) return u * 26; if (total === 3 || total === 11) return u * 11; return 0; }
+	function hhWinOn(betsObj, total) { let t = 0; for (let d of hhDefs) { if (betsObj[d.key] > 0) t += hhWinFor(d.key, betsObj[d.key], total); } return t; }
 	function resolveHornHigh(total, deferLoss) {
 		for (let d of hhDefs) {
 			if (hhBets[d.key] === 0) continue;
@@ -1908,6 +2120,126 @@
 		cancelPropComboSequence();
 		hhMenu = false;
 	}
+	function openHwMenu() { if (rolling) return; clearInputErrs(); hwInputs = { 4: '', 6: '', 8: '', 10: '' }; hwEachCustom = ''; hwErr = ''; hwClampErr = ''; hwEachErr = ''; hwMenu = true; }
+	function hwCurrentText(betsObj) { let parts = []; for (let d of hwDefs) { if (betsObj[d.num] > 0) parts.push(fmt(betsObj[d.num]) + ' ' + d.name); } return parts.join(', ') + '.'; }
+	function hwUpNums(betsObj) { let out = []; for (let d of hwDefs) { if (betsObj[d.num] > 0) out.push(d.num); } return out; }
+	function hwBarPairs(betsObj) { let out = []; for (let num of [4, 10, 6, 8]) { if (betsObj[num] > 0) out.push(num + ': ' + fmt(hwWinFor(num, betsObj[num]))); } return out; }
+	function hwEntriesFrom(inputs) { let out = []; for (let d of hwDefs) { let v = Math.floor(Number(inputs[d.num])); if (v >= 1) out.push({ num: d.num, amt: v }); } return out; }
+	function hwBetButtonLabel(inputs) { let entries = hwEntriesFrom(inputs); if (entries.length === 0) return 'Bet Hardways'; return 'Bet ' + joinBetList(entries.map((e) => fmt(e.amt) + ' on the ' + hwName(e.num))); }
+	function focusHwInput(num) { if (typeof document !== 'undefined') { let el = document.getElementById('hw-in-' + num); if (el) { el.focus(); if (el.select) el.select(); } } }
+	function onHwUnitInput(num, e) { let v = Number(e.target.value); if (v > hwMaxFor(num)) { hwInputs[num] = hwMaxFor(num); e.target.value = hwMaxFor(num); hwClampErr = 'Max on this bet is ' + fmt(hwMaxFor(num)) + '.'; } else if (hwClampErr) hwClampErr = ''; hwInputs = hwInputs; hwErr = ''; }
+	function setHwInput(num, amt) { hwInputs[num] = Math.min(amt, hwMaxFor(num)); hwInputs = hwInputs; hwClampErr = ''; hwErr = ''; }
+	function placeHardwayGroup(entries, fromTest = false) {
+		if (rolling && !fromTest) return false;
+		sweepPropComboLosers();
+		let total = 0; for (let e of entries) total += e.amt;
+		let avail = bankroll; for (let e of entries) avail += hwBets[e.num] + hwWins[e.num];
+		if (avail < total) return false;
+		cancelPropComboSequence();
+		for (let e of entries) { if (hwWinPendingKey === e.num || hwWinMenuKey === e.num) cancelHwWinSequence(); }
+		for (let e of entries) { bankroll += hwBets[e.num] + hwWins[e.num]; bankroll -= e.amt; hwBets[e.num] = e.amt; hwWins[e.num] = 0; hwDeclared[e.num] = null; hwCrOffUsed[e.num] = false; assignHwAngles(e.num); }
+		hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; hwCrOffUsed = hwCrOffUsed;
+		return true;
+	}
+	function placeHardwaysMain() {
+		if (rolling) return;
+		let entries = hwEntriesFrom(hwInputs);
+		if (entries.length === 0) return;
+		for (let e of entries) {
+			if (e.amt < 1) { hwErr = 'Minimum Hardway bet is $1.'; return; }
+			if (e.amt > hwMaxFor(e.num)) { showAlert('Table max on a Hardway bet is ' + fmt(hwMaxFor(e.num)) + '.'); return; }
+		}
+		if (!placeHardwayGroup(entries)) { let total = entries.reduce((a, e) => a + e.amt, 0); hwErr = 'That needs ' + fmt(total) + ' and you have ' + fmt(bankroll) + ' in the rail.'; return; }
+		hwErr = '';
+		showAsk('Bet ' + joinBetList(entries.map((e) => fmt(e.amt) + ' on the ' + hwName(e.num))) + '.');
+		hwMenu = false;
+		askHwComeoutPrompt(entries, false);
+	}
+	function onHwEachInput(e) { let v = Number(e.target.value); if (v > hwEachMax()) { hwEachCustom = hwEachMax(); e.target.value = hwEachMax(); hwEachErr = 'Max on this bet is ' + fmt(hwEachMax()) + '.'; } else if (hwEachErr) hwEachErr = ''; }
+	function placeHardwayEach(amt, fromTest = false) {
+		amt = Math.floor(Number(amt));
+		if (!amt || amt < 1) { if (!fromTest) hwEachErr = 'Minimum Hardway bet is $1.'; return false; }
+		if (amt > hwEachMax()) { if (!fromTest) hwEachErr = 'Table max on a Hardway bet is ' + fmt(hwEachMax()) + '.'; return false; }
+		let entries = hwDefs.map((d) => ({ num: d.num, amt: amt }));
+		if (!placeHardwayGroup(entries, fromTest)) { if (!fromTest) hwEachErr = 'That needs ' + fmt(amt * 4) + ' and you have ' + fmt(bankroll) + ' in the rail.'; return false; }
+		hwEachErr = '';
+		showAsk('Bet ' + fmt(amt) + ' on Each Hardway.');
+		hwMenu = false;
+		askHwComeoutPrompt(entries, fromTest);
+		return true;
+	}
+	function placeHardwayEachCustom() { if (rolling) return; placeHardwayEach(Number(hwEachCustom)); }
+	function setHardwayWorking(num, on) {
+		if (rolling) return;
+		if (!(hwBets[num] > 0)) return;
+		if (on) { hwDeclared[num] = 'on'; hwDeclared = hwDeclared; showInform('Your ' + hwName(num) + ' is ON.'); return; }
+		if (point === 0) {
+			if (hwDeclared[num] === 'off') { showInform('Your ' + hwName(num) + ' is OFF. It is OFF until you turn it back ON.'); return; }
+			if (!hwCrOffUsed[num]) { hwDeclared[num] = null; hwCrOffUsed[num] = true; hwDeclared = hwDeclared; hwCrOffUsed = hwCrOffUsed; showInform('Your ' + hwName(num) + ' is OFF for this Comeout Roll.'); return; }
+			if (hwDeclared[num] === null) { showInform('Your ' + hwName(num) + ' is OFF for this Comeout Roll.'); return; }
+		}
+		hwDeclared[num] = 'off';
+		hwDeclared = hwDeclared;
+		showInform('Your ' + hwName(num) + ' is OFF. It is OFF until you turn it back ON.');
+	}
+	function takeDownHardway(num) {
+		if (rolling) return;
+		let hadPropCombo = !!propCombo;
+		sweepPropComboLosers();
+		if (hwBets[num] <= 0) { if (hadPropCombo) { cancelPropComboSequence(); hwMenu = false; } return; }
+		let total = hwBets[num] + hwWins[num];
+		bankroll += total;
+		showInform('Took down your ' + hwName(num) + ' bet. ' + fmt(total) + ' back to the rail.' + (hwWins[num] > 0 ? ' That includes your ' + fmt(hwWins[num]) + ' win.' : ''));
+		hwBets[num] = 0; hwWins[num] = 0; hwDeclared[num] = null; hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; chipAngles['hw' + num] = undefined; chipAngles = chipAngles;
+		if (hwWinPendingKey === num || hwWinMenuKey === num) cancelHwWinSequence();
+		cancelPropComboSequence();
+		hwMenu = false;
+	}
+	function takeDownAllHardways() {
+		if (rolling) return;
+		sweepPropComboLosers();
+		let total = 0;
+		for (let d of hwDefs) { total += hwBets[d.num] + hwWins[d.num]; hwBets[d.num] = 0; hwWins[d.num] = 0; hwDeclared[d.num] = null; chipAngles['hw' + d.num] = undefined; }
+		hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; chipAngles = chipAngles;
+		cancelHwWinSequence();
+		cancelPropComboSequence();
+		bankroll += total;
+		showInform(total > 0 ? 'All your Hardway bets are down. ' + fmt(total) + ' back to the rail.' : 'No Hardway bets to take down.');
+		hwMenu = false;
+	}
+	function cancelHwWinSequence() { if (hwWinTimer) { clearTimeout(hwWinTimer); hwWinTimer = null; } hwWinPendingKey = 0; hwWinMenuKey = 0; }
+	function queueHwWinMenu(num) { if (!(hwBets[num] > 0 && hwWins[num] > 0)) { if (hwWinPendingKey === num) hwWinPendingKey = 0; return; } hwWinPendingKey = num; if (!ceremonyActive && !hwWinMenuKey && !hwWinTimer) { hwWinTimer = setTimeout(() => { hwWinTimer = null; maybePopHwWinMenu(); }, 1500); } }
+	function maybePopHwWinMenu() { if (!hwWinPendingKey || hwWinMenuKey || ceremonyActive) return; if (hwWinTimer) return; let num = hwWinPendingKey; if (!(hwWins[num] > 0 && hwBets[num] > 0)) { hwWinPendingKey = 0; return; } if (popupBet || payMenu || fieldPayMenu || offGateBet || subMenu || mustBetPopup || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || popupPending || pendingComeMenu || pendingPayMenu || pendingComeOddsMenu || dcPileMenu || pendingDcMenu || hornMenu || anySevenMenu || anyCrapsMenu || worldMenu || ceMenu || hhMenu || hwMenu || hwOffPrompt || hwRescuePrompt || hwRescuePending || worldWinMenu || overlayWinMenu || overlayWinPending || hornWinMenu || anySevenWinMenu || anyCrapsWinMenu || ceSplitWinMenu || ceCWinMenu || ceEWinMenu || propComboMenu || propComboPending || hopChooser || hopSub) { hwWinTimer = setTimeout(() => { hwWinTimer = null; maybePopHwWinMenu(); }, 300); return; } clearInputErrs(); hwWinCustom = ''; scrollTableIntoView(); hwWinMenuKey = num; }
+	function closeHwWinMenu() { if (hwWinMenuKey && hwWins[hwWinMenuKey] > 0 && hwBets[hwWinMenuKey] > 0) { let num = hwWinMenuKey; let w = hwWins[num]; bankroll += w; hwWins[num] = 0; hwWins = hwWins; showInform('Picked up your ' + hwName(num) + ' winnings ' + fmt(w) + '. Your ' + fmt(hwBets[num]) + ' ' + hwName(num) + ' bet stays up.'); } hwWinMenuKey = 0; hwWinPendingKey = 0; }
+	function hwWinSameBet() { let num = hwWinMenuKey; if (!num || hwWins[num] <= 0 || hwBets[num] <= 0) { closeHwWinMenu(); return; } let w = hwWins[num]; bankroll += w; hwWins[num] = 0; hwWins = hwWins; showInform('Picked up your ' + hwName(num) + ' winnings ' + fmt(w) + '. Your ' + fmt(hwBets[num]) + ' ' + hwName(num) + ' bet stays up.'); closeHwWinMenu(); }
+	function hwWinSameBetDown() { let num = hwWinMenuKey; if (!num || hwWins[num] <= 0 || hwBets[num] <= 0) { closeHwWinMenu(); return; } let s = hwBets[num]; let total = hwBets[num] + hwWins[num]; bankroll += total; hwBets[num] = 0; hwWins[num] = 0; hwDeclared[num] = null; hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; chipAngles['hw' + num] = undefined; chipAngles = chipAngles; showInform('Took your ' + fmt(s) + ' ' + hwName(num) + ' down. ' + fmt(total) + ' to the rail.'); closeHwWinMenu(); }
+	function hwWinPressTo(target, parlayed) { let num = hwWinMenuKey; if (!num || hwWins[num] <= 0 || hwBets[num] <= 0) { closeHwWinMenu(); return; } let s = hwBets[num]; let avail = hwBets[num] + hwWins[num]; let excess = Math.max(0, avail - target); let drop = Math.max(0, target - avail); if (drop > bankroll) { closeHwWinMenu(); return; } bankroll += excess; bankroll -= drop; hwBets[num] = target; hwWins[num] = 0; hwBets = hwBets; hwWins = hwWins; assignHwAngles(num); showInform((parlayed ? 'Parlayed your ' : 'Pressed your ') + fmt(s) + ' ' + hwName(num) + ' to ' + fmt(target) + '.' + (excess > 0 ? ' ' + fmt(excess) + ' back to the rail.' : '') + (drop > 0 ? ' ' + fmt(drop) + ' dropped from the rail.' : '')); closeHwWinMenu(); }
+	function onHwWinInput(e) { let v = Number(e.target.value); let cap = hwWinMenuKey ? hwMaxFor(hwWinMenuKey) : 5000; if (v > cap) { hwWinCustom = cap; e.target.value = cap; hwWinErr = 'Max on this bet is ' + fmt(cap) + '.'; } else if (hwWinErr) hwWinErr = ''; }
+	function placeHwWinCustom() {
+		let num = hwWinMenuKey;
+		if (!num || hwWins[num] <= 0 || hwBets[num] <= 0) { closeHwWinMenu(); return; }
+		let amt = Math.floor(Number(hwWinCustom));
+		if (!amt || amt < 1) { hwWinErr = 'Minimum Hardway bet is $1.'; return; }
+		if (amt > hwMaxFor(num)) { hwWinErr = 'Max on this bet is ' + fmt(hwMaxFor(num)) + '.'; return; }
+		let avail = hwBets[num] + hwWins[num]; let drop = Math.max(0, amt - avail);
+		if (drop > bankroll) { hwWinErr = 'That bet needs a ' + fmt(drop) + ' drop and you have ' + fmt(bankroll) + ' in the rail.'; return; }
+		hwWinErr = '';
+		hwWinPressTo(amt, false);
+	}
+	function resolveHardways(total, workingAtRoll, placePaid = false) {
+		let hwMsg = '';
+		let wonNum = 0;
+		for (let d of hwDefs) {
+			let num = d.num;
+			if (!(hwBets[num] > 0)) continue;
+			if (!workingAtRoll[num]) continue;
+			if (total === 7) { hwBets[num] = 0; hwWins[num] = 0; hwDeclared[num] = null; chipAngles['hw' + num] = undefined; hwMsg += (hwMsg ? ' ' : '') + hwName(num) + ' loses on 7.'; }
+			else if (total === num && diceA === diceB) { hwWins[num] = hwBets[num] * d.mult; wonNum = num; hwMsg += (hwMsg ? ' ' : '') + hwName(num) + ' won ' + fmt(hwWins[num]) + ' on ' + total + '.'; }
+			else if (total === num) { let rescueCand = hwRescueCandidateFor(num, hwBets[num], total, false, true, placePaid, hwRescueOn); if (rescueCand) hwRescuePending = rescueCand; hwBets[num] = 0; hwWins[num] = 0; hwDeclared[num] = null; chipAngles['hw' + num] = undefined; hwMsg += (hwMsg ? ' ' : '') + hwName(num) + ' loses on ' + total + '.'; }
+		}
+		if (hwMsg) { hwBets = hwBets; hwWins = hwWins; hwDeclared = hwDeclared; chipAngles = chipAngles; message = message ? message + ' ' + hwMsg : hwMsg; }
+		return wonNum;
+	}
 	function hhPressTargets(stake, win, rail, max) { let avail = stake + win; let cap = hornDropCap(stake); let out = []; if (stake <= 45) { for (let inc of [5, 10, 15, 25]) { let t = stake + inc; if (t > max) continue; let drop = Math.max(0, t - avail); if (drop <= cap && rail >= drop) out.push({ target: t, inc: inc }); } return out; } for (let m of [2, 3, 4, 5]) { let t = stake * m; if (t > max) continue; let drop = Math.max(0, t - avail); if (drop <= cap && rail >= drop) out.push({ target: t, inc: 0 }); } return out; }
 	function hhParlayOption(stake, win, rail, max) { let avail = stake + win; let p = Math.floor(avail / 5) * 5; if (p === avail) { return p > stake && p <= max ? { target: p, drop: 0 } : null; } let next = p + 5; let drop = next - avail; if (next <= max && drop <= hornDropCap(stake) && rail >= drop) return { target: next, drop: drop }; return p > stake ? { target: p, drop: 0 } : null; }
 	function hhHundredParlayOption(stake, win, rail, max) { let avail = stake + win; let h = Math.floor(avail / 100) * 100 + 100; if (h > max) return null; let drop = h - avail; if (drop > Math.max(10, avail / 10) || rail < drop) return null; let std = hhParlayOption(stake, win, rail, max); if (std && std.target === h) return null; return { target: h, drop: drop }; }
@@ -1933,8 +2265,12 @@
 		closeHhWinMenu();
 	}
 	function anyPressTargets(stake, win, rail) { let avail = stake + win; let cap = hornDropCap(stake); let out = []; if (stake <= 25) { for (let inc of [1, 5, 10, 25]) { let t = stake + inc; if (t > 5000) continue; let drop = Math.max(0, t - avail); if (drop <= cap && rail >= drop) out.push({ target: t, inc: inc }); } return out; } for (let m of [2, 3, 4, 5]) { let t = stake * m; if (t > 5000) continue; let drop = Math.max(0, t - avail); if (drop <= cap && rail >= drop) out.push({ target: t, inc: 0 }); } return out; }
+	function anySevenPressTargets(stake, win) { let out = []; if (win <= 0) return out; let steps = [1, 2, 5, 10, 25, 50, 100, 250]; let s = 0; for (let cand of steps) { let n = Math.floor(win / cand) + (win % cand !== 0 ? 1 : 0); if (n <= 8) { s = cand; break; } } if (!s) { s = 250; while (Math.floor(win / s) + (win % s !== 0 ? 1 : 0) > 8) s *= 2; } for (let inc = s; inc < win; inc += s) { let t = stake + inc; if (t <= 5000) out.push({ target: t, inc: inc }); } if (stake + win <= 5000) out.push({ target: stake + win, inc: win }); return out; }
 	function anyParlayOption(stake, win, rail) { let avail = stake + win; if (avail <= stake || avail > 5000) return null; return { target: avail, drop: 0 }; }
 	function anyHundredParlayOption(stake, win, rail) { let avail = stake + win; let h = Math.floor(avail / 100) * 100 + 100; if (h > 5000) return null; let drop = h - avail; if (drop > Math.max(10, avail / 10) || rail < drop) return null; return { target: h, drop: drop }; }
+	function hwPressTargets(stake, win, rail, max) { let avail = stake + win; let cap = hornDropCap(stake); let out = []; if (stake <= 25) { for (let inc of [1, 5, 10, 25]) { let t = stake + inc; if (t > max) continue; let drop = Math.max(0, t - avail); if (drop <= cap && rail >= drop) out.push({ target: t, inc: inc }); } return out; } for (let m of [2, 3, 4, 5]) { let t = stake * m; if (t > max) continue; let drop = Math.max(0, t - avail); if (drop <= cap && rail >= drop) out.push({ target: t, inc: 0 }); } return out; }
+	function hwParlayOption(stake, win, rail, max) { let avail = stake + win; if (avail <= stake || avail > max) return null; return { target: avail, drop: 0 }; }
+	function hwHundredParlayOption(stake, win, rail, max) { let avail = stake + win; let h = Math.floor(avail / 100) * 100 + 100; if (h > max) return null; let drop = h - avail; if (drop > Math.max(10, avail / 10) || rail < drop) return null; return { target: h, drop: drop }; }
 	function cancelAnySevenWinSequence() { if (anySevenWinTimer) { clearTimeout(anySevenWinTimer); anySevenWinTimer = null; } anySevenWinPending = false; anySevenWinMenu = false; }
 	function queueAnySevenWinMenu() { if (!(anySevenBet > 0 && anySevenWin > 0)) { anySevenWinPending = false; return; } anySevenWinPending = true; if (!ceremonyActive && !anySevenWinMenu && !anySevenWinTimer) { anySevenWinTimer = setTimeout(() => { anySevenWinTimer = null; maybePopAnySevenWinMenu(); }, 1500); } }
 	function maybePopAnySevenWinMenu() { if (!anySevenWinPending || anySevenWinMenu || ceremonyActive) return; if (anySevenWinTimer) return; if (!(anySevenWin > 0 && anySevenBet > 0)) { anySevenWinPending = false; return; } if (popupBet || payMenu || fieldPayMenu || offGateBet || subMenu || mustBetPopup || comePtMenu || dcPtMenu || comeMoveDecision || dcMoveDecision || comeDownMenu || pointChooser || overlayMenu || bandChooser || popupPending || pendingComeMenu || pendingPayMenu || pendingComeOddsMenu || dcPileMenu || pendingDcMenu || hornMenu || anySevenMenu || anyCrapsMenu || overlayWinMenu || overlayWinPending || hornWinMenu || hornWinPending || anyCrapsWinMenu || worldMenu || ceMenu || worldWinMenu || hopChooser || hopSub || hhMenu || hhWinMenuKey) { anySevenWinTimer = setTimeout(() => { anySevenWinTimer = null; maybePopAnySevenWinMenu(); }, 300); return; } clearInputErrs(); anySevenWinCustom = ''; scrollTableIntoView(); anySevenWinMenu = true; }
@@ -2494,6 +2830,10 @@
 		let classicWinForRoll = ((propStakesAtRoll.horn > 0 && hornWinFor(propStakesAtRoll.horn, total) > 0) || (propStakesAtRoll.anySeven > 0 && total === 7) || (propStakesAtRoll.anyCraps > 0 && (total === 2 || total === 3 || total === 12)) || (propStakesAtRoll.world > 0 && worldWinFor(propStakesAtRoll.world, total) > 0) || (propStakesAtRoll.ceSplit > 0 && ceSplitWinFor(propStakesAtRoll.ceSplit, total) > 0) || (propStakesAtRoll.ceC > 0 && ceCWinFor(propStakesAtRoll.ceC, total) > 0) || (propStakesAtRoll.ceE > 0 && ceEWinFor(propStakesAtRoll.ceE, total) > 0) || (propStakesAtRoll.hhAces > 0 && hhWinFor('aces', propStakesAtRoll.hhAces, total) > 0) || (propStakesAtRoll.hhAceDeuce > 0 && hhWinFor('aceDeuce', propStakesAtRoll.hhAceDeuce, total) > 0) || (propStakesAtRoll.hhYo > 0 && hhWinFor('yo', propStakesAtRoll.hhYo, total) > 0) || (propStakesAtRoll.hhTwelve > 0 && hhWinFor('twelve', propStakesAtRoll.hhTwelve, total) > 0));
 		let groupWinForRoll = groupsAtRoll.some((g) => groupWinFor(g, total));
 		let deferPropLoss = groupWinForRoll || ((classicUpAtRoll + groupsAtRoll.length) >= 2 && classicWinForRoll);
+		let hwWorkingAtRoll = { 4: hwWorking(4), 6: hwWorking(6), 8: hwWorking(8), 10: hwWorking(10) };
+		let hwPlacePaidAtRoll = false;
+		if (total === 4 || total === 6 || total === 8 || total === 10) { let hwPlaceKeyAtRoll = 'place' + total; hwPlacePaidAtRoll = bets[hwPlaceKeyAtRoll] > 0 && placeWorking(hwPlaceKeyAtRoll); }
+		let hwWinNumAtRoll = 0;
 		if (point === 0) {
 			if (total === 7 || total === 11) { stickCall = oldStickCallFor(total, 0, false, false); if (bets.passLine > 0) { wins.passLine = (wins.passLine || 0) + bets.passLine; winAfterPoint.passLine = false; message = 'Pass Line wins ' + fmt(wins.passLine) + '. Shoot again.'; messageKind = 'notify'; } if (total === 7) { let workingBefore7 = {}; for (let pk of placeOrderInsideOut) if (bets[pk] > 0) workingBefore7[pk] = placeWorking(pk); let lost7 = []; for (let pk of placeOrderInsideOut) if (bets[pk] > 0 && workingBefore7[pk]) { lost7.push(placeNum(pk)); bets[pk] = 0; buys[pk] = false; placeLammer[pk] = null; placeForeverOff[pk] = false; placeOnDuringCR[pk] = false; chipAngles[pk] = undefined; lammerAngles[pk] = undefined; buyLammerAngles[pk] = undefined; } if (lost7.length > 0) { message += ' Place bets that were ON lose on 7: ' + lost7.join(', ') + '.'; if (messageKind === 'normal') messageKind = 'alert'; cleanupLammers(); placeLammer = placeLammer; buyVigTotal = owedVig(totalBuyAction()); } } }
 			else if (total === 2 || total === 3 || total === 12) { stickCall = oldStickCallFor(total, 0, false, false); if (bets.passLine > 0) { message = 'Pass Line loses ' + fmt(bets.passLine) + ' on craps. Bet Pass Line to shoot again.'; messageKind = 'alert'; bets.passLine = 0; wins.passLine = 0; winAfterPoint.passLine = false; } }
@@ -2514,6 +2854,7 @@
 			resolveCeC(total, deferPropLoss);
 			resolveCeE(total, deferPropLoss);
 			resolveStraightUps(total, deferPropLoss);
+			hwWinNumAtRoll = resolveHardways(total, hwWorkingAtRoll, hwPlacePaidAtRoll);
 			resolveCome(total);
 			resolveDontCome(total);
 			resolveOverlays(total);
@@ -2529,15 +2870,18 @@
 			resolveCeC(total, deferPropLoss);
 			resolveCeE(total, deferPropLoss);
 			resolveStraightUps(total, deferPropLoss);
+			hwWinNumAtRoll = resolveHardways(total, hwWorkingAtRoll, hwPlacePaidAtRoll);
 			resolvePlace(total);
 			resolveCome(total);
 			resolveDontCome(total);
 			resolveOverlays(total);
-			if (total === 7) { stickCall = oldStickCallFor(total, point, false, true); let sevenOutPt = point; let dontWin = bets.dontPass; if (dontWin > 0) { wins.dontPass = (wins.dontPass || 0) + dontWin; winAfterPoint.dontPass = true; } let layWinAmt = bets.dontOdds > 0 ? layWin(bets.dontOdds) : 0; if (bets.dontOdds > 0) { wins.dontOdds = layWinAmt; winPoint.dontOdds = point; } message += ' Seven out. Pass, Odds, and Place bets lose.' + (dontWin > 0 ? " Don't Pass wins " + fmt(dontWin) + '.' : '') + (bets.dontOdds > 0 ? ' Lay wins ' + fmt(layWinAmt) + '.' : '') + ' ' + oldSevenOutCall(pointsMade); messageKind = 'normal'; bets.passLine = 0; wins.passLine = 0; winAfterPoint.passLine = false; bets.passOdds = 0; wins.passOdds = 0; let keptOff = false; for (let pk of ['place4', 'place5', 'place6', 'place8', 'place9', 'place10']) { if (bets[pk] > 0 && !placeWorking(pk)) keptOff = true; else if (placeWorking(pk)) { bets[pk] = 0; buys[pk] = false; placeLammer[pk] = null; placeForeverOff[pk] = false; } } placeForeverOff = placeForeverOff; placeLammer = placeLammer; buyVigTotal = owedVig(totalBuyAction()); if (keptOff) message += ' Place bets that were OFF stay up for the next shooter.'; sevenOutFlag = true; point = 0; comeOddsOverrideOn = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; for (let k of placeOrderInsideOut) placeLammer[k] = null; placeLammer = placeLammer; placeOnDuringCR = { place4: false, place5: false, place6: false, place8: false, place9: false, place10: false }; canShootFromPlace = false; ensureDisplayLammerAngles(); if ([4, 5, 6, 8, 9, 10].some((n) => dontComePts[n] > 0 || dontComeOdds[n] > 0)) startDcCeremony(sevenOutPt); }
-			else if (total === point) { stickCall = oldStickCallFor(total, point, true, false); let win = bets.passLine; let dontLose = bets.dontPass; let oddsWin = 0; if (bets.passOdds > 0) { oddsWin = oddsWinOld(bets.passOdds, point); } if (oddsWin > 0) { wins.passOdds = oddsWin; winPoint.passOdds = point; } if (win > 0) { wins.passLine = (wins.passLine || 0) + win; winAfterPoint.passLine = true; } message += ' Point made! Pass Line wins ' + fmt(win) + (oddsWin > 0 ? '. Odds wins ' + fmt(oddsWin) : '') + (dontLose > 0 ? ". Don't Pass loses " + fmt(dontLose) : '') + (bets.dontOdds > 0 ? '. Lay Odds loses ' + fmt(bets.dontOdds) : '') + '.'; messageKind = 'notify'; bets.dontPass = 0; wins.dontPass = 0; winAfterPoint.dontPass = false; bets.dontOdds = 0; wins.dontOdds = 0; pointsMade += 1; point = 0; comeOddsOverrideOn = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; for (let k of placeOrderInsideOut) placeLammer[k] = null; placeLammer = placeLammer; placeOnDuringCR = { place4: false, place5: false, place6: false, place8: false, place9: false, place10: false }; canShootFromPlace = false; ensureDisplayLammerAngles(); }
+			if (total === 7) { stickCall = oldStickCallFor(total, point, false, true); let sevenOutPt = point; let dontWin = bets.dontPass; if (dontWin > 0) { wins.dontPass = (wins.dontPass || 0) + dontWin; winAfterPoint.dontPass = true; } let layWinAmt = bets.dontOdds > 0 ? layWin(bets.dontOdds) : 0; if (bets.dontOdds > 0) { wins.dontOdds = layWinAmt; winPoint.dontOdds = point; } message += ' Seven out. Pass, Odds, and Place bets lose.' + (dontWin > 0 ? " Don't Pass wins " + fmt(dontWin) + '.' : '') + (bets.dontOdds > 0 ? ' Lay wins ' + fmt(layWinAmt) + '.' : '') + ' ' + oldSevenOutCall(pointsMade); messageKind = 'normal'; bets.passLine = 0; wins.passLine = 0; winAfterPoint.passLine = false; bets.passOdds = 0; wins.passOdds = 0; let keptOff = false; for (let pk of ['place4', 'place5', 'place6', 'place8', 'place9', 'place10']) { if (bets[pk] > 0 && !placeWorking(pk)) keptOff = true; else if (placeWorking(pk)) { bets[pk] = 0; buys[pk] = false; placeLammer[pk] = null; placeForeverOff[pk] = false; } } placeForeverOff = placeForeverOff; placeLammer = placeLammer; buyVigTotal = owedVig(totalBuyAction()); if (keptOff) message += ' Place bets that were OFF stay up for the next shooter.'; sevenOutFlag = true; point = 0; hwCrOffUsed = { 4: false, 6: false, 8: false, 10: false }; comeOddsOverrideOn = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; for (let k of placeOrderInsideOut) placeLammer[k] = null; placeLammer = placeLammer; placeOnDuringCR = { place4: false, place5: false, place6: false, place8: false, place9: false, place10: false }; canShootFromPlace = false; ensureDisplayLammerAngles(); if ([4, 5, 6, 8, 9, 10].some((n) => dontComePts[n] > 0 || dontComeOdds[n] > 0)) startDcCeremony(sevenOutPt); }
+			else if (total === point) { stickCall = oldStickCallFor(total, point, true, false); let win = bets.passLine; let dontLose = bets.dontPass; let oddsWin = 0; if (bets.passOdds > 0) { oddsWin = oddsWinOld(bets.passOdds, point); } if (oddsWin > 0) { wins.passOdds = oddsWin; winPoint.passOdds = point; } if (win > 0) { wins.passLine = (wins.passLine || 0) + win; winAfterPoint.passLine = true; } message += ' Point made! Pass Line wins ' + fmt(win) + (oddsWin > 0 ? '. Odds wins ' + fmt(oddsWin) : '') + (dontLose > 0 ? ". Don't Pass loses " + fmt(dontLose) : '') + (bets.dontOdds > 0 ? '. Lay Odds loses ' + fmt(bets.dontOdds) : '') + '.'; messageKind = 'notify'; bets.dontPass = 0; wins.dontPass = 0; winAfterPoint.dontPass = false; bets.dontOdds = 0; wins.dontOdds = 0; pointsMade += 1; point = 0; hwCrOffUsed = { 4: false, 6: false, 8: false, 10: false }; comeOddsOverrideOn = { 4: false, 5: false, 6: false, 8: false, 9: false, 10: false }; for (let k of placeOrderInsideOut) placeLammer[k] = null; placeLammer = placeLammer; placeOnDuringCR = { place4: false, place5: false, place6: false, place8: false, place9: false, place10: false }; canShootFromPlace = false; ensureDisplayLammerAngles(); }
 			else { stickCall = oldStickCallFor(total, point, false, false); }
 		}
 		if (comeRailNote > 0) { message += ' Picked up your money ' + fmt(comeRailNote) + ' from the COME.'; comeRailNote = 0; } if (overlayWinsPosted.length > 0) queueOverlayWinSequence(); let propUpNow = (propStakesAtRoll.horn > 0 ? 1 : 0) + (propStakesAtRoll.hhAces > 0 ? 1 : 0) + (propStakesAtRoll.hhAceDeuce > 0 ? 1 : 0) + (propStakesAtRoll.hhYo > 0 ? 1 : 0) + (propStakesAtRoll.hhTwelve > 0 ? 1 : 0) + (propStakesAtRoll.anySeven > 0 ? 1 : 0) + (propStakesAtRoll.anyCraps > 0 ? 1 : 0) + (propStakesAtRoll.world > 0 ? 1 : 0) + (propStakesAtRoll.ceSplit > 0 ? 1 : 0) + (propStakesAtRoll.ceC > 0 ? 1 : 0) + (propStakesAtRoll.ceE > 0 ? 1 : 0); let propWonNow = (propStakesAtRoll.horn > 0 && hornWin > 0) || (propStakesAtRoll.hhAces > 0 && hhWins.aces > 0) || (propStakesAtRoll.hhAceDeuce > 0 && hhWins.aceDeuce > 0) || (propStakesAtRoll.hhYo > 0 && hhWins.yo > 0) || (propStakesAtRoll.hhTwelve > 0 && hhWins.twelve > 0) || (propStakesAtRoll.anySeven > 0 && anySevenWin > 0) || (propStakesAtRoll.anyCraps > 0 && anyCrapsWin > 0) || (propStakesAtRoll.world > 0 && worldWin > 0) || (propStakesAtRoll.ceSplit > 0 && ceSplitWin > 0) || (propStakesAtRoll.ceC > 0 && ceCWin > 0) || (propStakesAtRoll.ceE > 0 && ceEWin > 0); let groupWonNow = groupsAtRoll.some((g) => grpWinOf(grpKeyOf(g.id)) > 0); if ((propUpNow + groupsAtRoll.length >= 2 && (propWonNow || groupWonNow)) || groupWonNow) queuePropComboMenu(propStakesAtRoll, groupsAtRoll); else { if (hornBet > 0 && hornWin > 0) queueHornWinMenu(); for (let d of hhDefs) { if (hhBets[d.key] > 0 && hhWins[d.key] > 0) queueHhWinMenu(d.key); } if (anySevenBet > 0 && anySevenWin > 0 && !groupsAtRoll.some((g) => g.id === 'sevenEleven')) queueAnySevenWinMenu(); if (anyCrapsBet > 0 && anyCrapsWin > 0) queueAnyCrapsWinMenu(); if (worldBet > 0 && worldWin > 0) queueWorldWinMenu(); if (ceSplitBet > 0 && ceSplitWin > 0) queueCeSplitWinMenu(); if (ceCBet > 0 && ceCWin > 0) queueCeCWinMenu(); if (ceEBet > 0 && ceEWin > 0) queueCeEWinMenu(); }
+		if (hwWinNumAtRoll) queueHwWinMenu(hwWinNumAtRoll);
+		if (hwRescuePending) queueHwRescuePrompt();
 		reconcileSuGroups();
 		bets = bets; wins = wins; if (!message) message = 'Rolled ' + total + '. No change to your bets.'; bubbleMode = 'stick';
 	}
@@ -2553,6 +2897,8 @@
 		if (parsed.fn === 'ceSplit') { if (!amt || amt < 2) { showAlert('Minimum C & E split bet is $2.'); return false; } return placeCeSplit(amt, true); }
 		if (parsed.fn === 'ceC') { if (!amt || amt < 1) { showAlert('Minimum C bet is $1.'); return false; } if (amt > 5000) { showAlert('Max on this bet is ' + fmt(5000) + '.'); return false; } if (bankroll + ceCBet + ceCWin < amt) { showAlert('Not enough in the rail for ' + fmt(amt) + ' on the C.'); return false; } sweepPropComboLosers(); if (ceCWin > 0) { bankroll += ceCWin; ceCWin = 0; } cancelCeCWinSequence(); cancelPropComboSequence(); bankroll += ceCBet; bankroll -= amt; ceCBet = amt; assignCeCAngles(); showAsk('Bet ' + fmt(amt) + ' on the C.'); return true; }
 		if (parsed.fn === 'ceE') { if (!amt || amt < 1) { showAlert('Minimum E bet is $1.'); return false; } if (amt > 5000) { showAlert('Max on this bet is ' + fmt(5000) + '.'); return false; } if (bankroll + ceEBet + ceEWin < amt) { showAlert('Not enough in the rail for ' + fmt(amt) + ' on the E.'); return false; } sweepPropComboLosers(); if (ceEWin > 0) { bankroll += ceEWin; ceEWin = 0; } cancelCeEWinSequence(); cancelPropComboSequence(); bankroll += ceEBet; bankroll -= amt; ceEBet = amt; assignCeEAngles(); showAsk('Bet ' + fmt(amt) + ' on the E.'); return true; }
+		if (parsed.fn === 'hardway') { if (!amt || amt < 1) { showAlert('Minimum Hardway bet is $1.'); return false; } if (amt > hwMaxFor(parsed.num)) { showAlert('Max on this bet is ' + fmt(hwMaxFor(parsed.num)) + '.'); return false; } if (!placeHardwayGroup([{ num: parsed.num, amt: amt }], true)) { showAlert('That needs ' + fmt(amt) + ' and you have ' + fmt(bankroll) + ' in the rail.'); return false; } showAsk('Bet ' + fmt(amt) + ' on the ' + hwName(parsed.num) + '.'); return true; }
+		if (parsed.fn === 'hardwayEach') { if (!amt || amt < 1) { showAlert('Minimum Hardway bet is $1.'); return false; } if (amt > hwEachMax()) { showAlert('Max on this bet is ' + fmt(hwEachMax()) + '.'); return false; } if (!placeHardwayEach(amt, true)) { showAlert('That needs ' + fmt(amt * 4) + ' and you have ' + fmt(bankroll) + ' in the rail.'); return false; } return true; }
 		if (parsed.fn === 'straightUp') { if (!amt || amt < 1) { showAlert('Minimum Straight Up bet is $1.'); return false; } if (amt > 5000) { showAlert('Max on this bet is ' + fmt(5000) + '.'); return false; } if (!placeStraightUpGroup([{ key: parsed.key, amt: amt }], true)) { showAlert('That needs ' + fmt(amt) + ' and you have ' + fmt(bankroll) + ' in the rail.'); return false; } dissolveGroupsCovering(parsed.key); showAsk('Bet ' + fmt(amt) + ' ' + suName(parsed.key) + '.'); return true; }
 		if (parsed.fn === 'suGroup') { let row = grpRowFor(parsed.id); if (!row) return false; if (!amt || amt < 1) { showAlert('Minimum bet on a Split or Multi-Bet is $1 each.'); return false; } if (amt > 5000) { showAlert('Max on this bet is ' + fmt(5000) + '.'); return false; } let entries = row.comps.map((c) => ({ comp: c, amt: amt })); if (!placePropEntries(entries, undefined, true)) { showAlert('That needs ' + fmt(amt * row.comps.length) + ' and you have ' + fmt(bankroll) + ' in the rail.'); return false; } for (let c of row.comps) dissolveGroupsCovering(c); registerSuGroup(row, amt); showAsk('Bet ' + fmt(amt) + ' Each ' + row.title + '.'); return true; }
 		return false;
@@ -2562,7 +2908,7 @@
 		if (/^\d+$/.test(t)) { let n = Number(t); return n >= 2 && n <= 12 ? { kind: 'roll', total: n } : null; }
 		let sm = t.match(/^(\d+)(ACROSSINCLUDING|ACROSS|INSIDE|OUTSIDE|UPTOWN|DOWNTOWN)$/);
 		if (sm) { let spreadName = { ACROSS: 'Across', INSIDE: 'Inside', OUTSIDE: 'Outside', UPTOWN: 'Uptown', DOWNTOWN: 'Downtown', ACROSSINCLUDING: 'AcrossIncluding' }[sm[2]]; return { kind: 'bet', fn: 'spread', group: spreadName, amount: Number(sm[1]) }; }
-		let m = t.match(/^(\d+)(PL|DP|CB|DC|PO|LO|P10|P[45689]|B10|B4|CO10|CO[45689]|DO10|DO[45689]|NO10|NO[45689]|HH12|HH11|HH2|HH3|SU12|SU11|SU2|SU3|HLY|HL|TWC|AD|ET|SE|A7|AC|CE|H|W|C|E|F)$/);
+		let m = t.match(/^(\d+)(PL|DP|CB|DC|PO|LO|P10|P[45689]|B10|B4|CO10|CO[45689]|DO10|DO[45689]|NO10|NO[45689]|HH12|HH11|HH2|HH3|SU12|SU11|SU2|SU3|HW10|HW4|HW6|HW8|HWE|HLY|HL|TWC|AD|ET|SE|A7|AC|CE|H|W|C|E|F)$/);
 		if (!m) return null;
 		let amount = Number(m[1]); let code = m[2];
 		if (code === 'PL') return { kind: 'bet', fn: 'place', key: 'passLine', amount };
@@ -2578,6 +2924,8 @@
 		if (code.startsWith('NO')) return { kind: 'bet', fn: 'overlay', num: Number(code.slice(2)), amount };
 		if (code === 'H') return { kind: 'bet', fn: 'horn', amount };
 		if (code.startsWith('HH')) return { kind: 'bet', fn: 'hornHigh', key: { '2': 'aces', '3': 'aceDeuce', '11': 'yo', '12': 'twelve' }[code.slice(2)], amount };
+		if (code === 'HWE') return { kind: 'bet', fn: 'hardwayEach', amount };
+		if (code.startsWith('HW')) return { kind: 'bet', fn: 'hardway', num: Number(code.slice(2)), amount };
 		if (code === 'A7') return { kind: 'bet', fn: 'anySeven', amount };
 		if (code === 'AC') return { kind: 'bet', fn: 'anyCraps', amount };
 		if (code === 'W') return { kind: 'bet', fn: 'world', amount };
@@ -2609,12 +2957,13 @@
 			comeCorner: deepCopyState(comeCorner), comeOddsOff: deepCopyState(comeOddsOff), comeOddsDeclaredOn: deepCopyState(comeOddsDeclaredOn), comeOddsOverrideOn: deepCopyState(comeOddsOverrideOn), comeTravelMadePt: deepCopyState(comeTravelMadePt), comeMadePtComeout: deepCopyState(comeMadePtComeout),
 			chipAngles: deepCopyState(chipAngles), lammerAngles: deepCopyState(lammerAngles), buyLammerAngles: deepCopyState(buyLammerAngles), placementCount: deepCopyState(placementCount),
 			point: point, diceA: diceA, diceB: diceB, lastRoll: lastRoll, rolls: rolls, pointsMade: pointsMade,
-			fieldSplit: deepCopyState(fieldSplit), hornBet: hornBet, hornWin: hornWin, anySevenBet: anySevenBet, anySevenWin: anySevenWin, anyCrapsBet: anyCrapsBet, anyCrapsWin: anyCrapsWin, worldBet: worldBet, worldWin: worldWin, ceSplitBet: ceSplitBet, ceSplitWin: ceSplitWin, ceCBet: ceCBet, ceCWin: ceCWin, ceEBet: ceEBet, ceEWin: ceEWin, suBets: deepCopyState(suBets), suWins: deepCopyState(suWins), suGroups: deepCopyState(suGroups), hhBets: deepCopyState(hhBets), hhWins: deepCopyState(hhWins),
+			fieldSplit: deepCopyState(fieldSplit), hornBet: hornBet, hornWin: hornWin, anySevenBet: anySevenBet, anySevenWin: anySevenWin, anyCrapsBet: anyCrapsBet, anyCrapsWin: anyCrapsWin, worldBet: worldBet, worldWin: worldWin, ceSplitBet: ceSplitBet, ceSplitWin: ceSplitWin, ceCBet: ceCBet, ceCWin: ceCWin, ceEBet: ceEBet, ceEWin: ceEWin, suBets: deepCopyState(suBets), suWins: deepCopyState(suWins), suGroups: deepCopyState(suGroups), hhBets: deepCopyState(hhBets), hhWins: deepCopyState(hhWins), hwBets: deepCopyState(hwBets), hwWins: deepCopyState(hwWins), hwDeclared: deepCopyState(hwDeclared), hwCrOffUsed: deepCopyState(hwCrOffUsed), hwRescueOn: hwRescueOn, hwRescuePending: deepCopyState(hwRescuePending), hwComeoutPrompt: deepCopyState(hwComeoutPrompt),
 			winAfterPoint: deepCopyState(winAfterPoint), winPoint: deepCopyState(winPoint), canShootFromPlace: canShootFromPlace,
 			sevenOutFlag: sevenOutFlag, comeRailNote: comeRailNote, comeTravelStaged: comeTravelStaged,
 			comeMovePending: deepCopyState(comeMovePending), dcMovePending: deepCopyState(dcMovePending), deferredPayMenu: deepCopyState(deferredPayMenu),
 			dcPile: dcPile, dcPileAt: dcPileAt, dcFlyAmt: dcFlyAmt, dcFlyX: dcFlyX, dcFlyY: dcFlyY, ceremonyPuckPt: ceremonyPuckPt, ceremonyLines: deepCopyState(ceremonyLines), ceremonyQueue: deepCopyState(ceremonyQueue), ceremonyLowZ: ceremonyLowZ, dcPileFromComeout: dcPileFromComeout,
-			overlayWinsPosted: deepCopyState(overlayWinsPosted), overlayWinQueue: deepCopyState(overlayWinQueue), overlayWinPending: overlayWinPending, hornWinPending: hornWinPending, anySevenWinPending: anySevenWinPending, anyCrapsWinPending: anyCrapsWinPending, worldWinPending: worldWinPending, worldPushPending: worldPushPending, ceSplitWinPending: ceSplitWinPending, ceCWinPending: ceCWinPending, ceEWinPending: ceEWinPending, hhWinPendingKey: hhWinPendingKey, propCombo: deepCopyState(propCombo), propComboPending: propComboPending,
+			overlayWinsPosted: deepCopyState(overlayWinsPosted), overlayWinQueue: deepCopyState(overlayWinQueue), overlayWinPending: overlayWinPending, hornWinPending: hornWinPending, anySevenWinPending: anySevenWinPending, anyCrapsWinPending: anyCrapsWinPending, worldWinPending: worldWinPending, worldPushPending: worldPushPending, ceSplitWinPending: ceSplitWinPending, ceCWinPending: ceCWinPending, ceEWinPending: ceEWinPending, hhWinPendingKey: hhWinPendingKey, hwWinPendingKey: hwWinPendingKey, propCombo: deepCopyState(propCombo), propComboPending: propComboPending,
+			railMemo: railMemo ? { bankroll: railMemo.bankroll, totalBankroll: railMemo.totalBankroll, sig: deepCopyState(railMemo.sig || {}), inv: railInvCopy(railMemo.inv) } : null,
 			message: message, messageKind: messageKind, bubbleMode: bubbleMode, stickCall: stickCall
 		};
 	}
@@ -2631,11 +2980,14 @@
 		cancelCeCWinSequence();
 		cancelCeEWinSequence();
 		cancelHhWinSequence();
+		cancelHwWinSequence();
+		cancelHwRescueSequence();
 		cancelPropComboSequence();
 		clearPendingDcMenu();
-		popupBet = null; popupReturn = null; payMenu = null; fieldPayMenu = null; comePtMenu = null; comePtMenuTravel = false; comePtMenuChoice = false; dcPtMenu = null; overlayMenu = null; bandChooser = null; hornMenu = false; hornWinMenu = false; hhMenu = false; hhWinMenuKey = ''; anySevenMenu = false; anyCrapsMenu = false; anySevenWinMenu = false; anyCrapsWinMenu = false; worldMenu = false; worldWinMenu = false; ceMenu = false; ceSplitWinMenu = false; ceCWinMenu = false; ceEWinMenu = false; hopChooser = false; hopSub = null; pointChooser = null; comeMoveDecision = null; dcMoveDecision = null; comeDownMenu = null; dcPileMenu = false; mustBetPopup = false; offGateBet = null; subMenu = null; subMenuReturn = null;
+		popupBet = null; popupReturn = null; payMenu = null; fieldPayMenu = null; comePtMenu = null; comePtMenuTravel = false; comePtMenuChoice = false; dcPtMenu = null; overlayMenu = null; bandChooser = null; hornMenu = false; hornWinMenu = false; hhMenu = false; hhWinMenuKey = ''; hwMenu = false; hwWinMenuKey = 0; hwOffPrompt = false; hwOffAffectedNums = []; hwComeoutPrompt = null; hwRescuePrompt = false; hwRescuePending = null; anySevenMenu = false; anyCrapsMenu = false; anySevenWinMenu = false; anyCrapsWinMenu = false; worldMenu = false; worldWinMenu = false; ceMenu = false; ceSplitWinMenu = false; ceCWinMenu = false; ceEWinMenu = false; hopChooser = false; hopSub = null; pointChooser = null; comeMoveDecision = null; dcMoveDecision = null; comeDownMenu = null; dcPileMenu = false; mustBetPopup = false; offGateBet = null; subMenu = null; subMenuReturn = null; railZoom = false;
 		let s = rollSnapshot; rollSnapshot = null;
 		bankroll = s.bankroll; bets = s.bets; wins = s.wins;
+		if (s.railMemo) railMemo = { bankroll: s.railMemo.bankroll, totalBankroll: s.railMemo.totalBankroll, sig: deepCopyState(s.railMemo.sig || {}), inv: railInvCopy(s.railMemo.inv) }; else railMemo = null;
 		comePts = s.comePts; comePtWins = s.comePtWins; comeOdds = s.comeOdds; comeOddsWins = s.comeOddsWins;
 		comePile = s.comePile; comePileBet = s.comePileBet; comePileWin = s.comePileWin; comePileOffAndOn = s.comePileOffAndOn; comePileOrigBet = s.comePileOrigBet; comePileWinOdds = s.comePileWinOdds; comePileOffFor = s.comePileOffFor; comeOffForFollowUp = s.comeOffForFollowUp; comePileOdds = s.comePileOdds; comePileOddsOff = s.comePileOddsOff;
 		dontComePts = s.dontComePts; dontComePtWins = s.dontComePtWins; dontComeOdds = s.dontComeOdds; dontComeOddsWins = s.dontComeOddsWins;
@@ -2645,7 +2997,7 @@
 		comeCorner = s.comeCorner; comeOddsOff = s.comeOddsOff; comeOddsDeclaredOn = s.comeOddsDeclaredOn; comeOddsOverrideOn = s.comeOddsOverrideOn; comeTravelMadePt = s.comeTravelMadePt; comeMadePtComeout = s.comeMadePtComeout;
 		chipAngles = s.chipAngles; lammerAngles = s.lammerAngles; buyLammerAngles = s.buyLammerAngles; placementCount = s.placementCount;
 		point = s.point; diceA = s.diceA; diceB = s.diceB; lastRoll = s.lastRoll; rolls = s.rolls; pointsMade = s.pointsMade;
-		fieldSplit = s.fieldSplit; hornBet = s.hornBet; hornWin = s.hornWin; anySevenBet = s.anySevenBet; anySevenWin = s.anySevenWin; anyCrapsBet = s.anyCrapsBet; anyCrapsWin = s.anyCrapsWin; worldBet = s.worldBet; worldWin = s.worldWin; worldPushPending = s.worldPushPending; ceSplitBet = s.ceSplitBet; ceSplitWin = s.ceSplitWin; ceCBet = s.ceCBet; ceCWin = s.ceCWin; ceEBet = s.ceEBet; ceEWin = s.ceEWin; suBets = s.suBets; suWins = s.suWins; suGroups = s.suGroups || []; hhBets = s.hhBets; hhWins = s.hhWins;
+		fieldSplit = s.fieldSplit; hornBet = s.hornBet; hornWin = s.hornWin; anySevenBet = s.anySevenBet; anySevenWin = s.anySevenWin; anyCrapsBet = s.anyCrapsBet; anyCrapsWin = s.anyCrapsWin; worldBet = s.worldBet; worldWin = s.worldWin; worldPushPending = s.worldPushPending; ceSplitBet = s.ceSplitBet; ceSplitWin = s.ceSplitWin; ceCBet = s.ceCBet; ceCWin = s.ceCWin; ceEBet = s.ceEBet; ceEWin = s.ceEWin; suBets = s.suBets; suWins = s.suWins; suGroups = s.suGroups || []; hhBets = s.hhBets; hhWins = s.hhWins; hwBets = s.hwBets || { 4: 0, 6: 0, 8: 0, 10: 0 }; hwWins = s.hwWins || { 4: 0, 6: 0, 8: 0, 10: 0 }; hwDeclared = s.hwDeclared || { 4: null, 6: null, 8: null, 10: null }; hwCrOffUsed = s.hwCrOffUsed || { 4: false, 6: false, 8: false, 10: false }; hwRescueOn = s.hwRescueOn !== undefined ? s.hwRescueOn : true; hwRescuePending = s.hwRescuePending || null; if (hwRescuePending) queueHwRescuePrompt(); hwComeoutPrompt = s.hwComeoutPrompt || null;
 		winAfterPoint = s.winAfterPoint; winPoint = s.winPoint; canShootFromPlace = s.canShootFromPlace;
 		sevenOutFlag = s.sevenOutFlag; comeRailNote = s.comeRailNote; comeTravelStaged = s.comeTravelStaged;
 		comeMovePending = s.comeMovePending; dcMovePending = s.dcMovePending; deferredPayMenu = s.deferredPayMenu;
@@ -2659,6 +3011,7 @@
 		ceCWinPending = s.ceCWinPending; if (ceCWinPending) queueCeCWinMenu();
 		ceEWinPending = s.ceEWinPending; if (ceEWinPending) queueCeEWinMenu();
 		hhWinPendingKey = s.hhWinPendingKey; if (hhWinPendingKey) queueHhWinMenu(hhWinPendingKey);
+		hwWinPendingKey = s.hwWinPendingKey || 0; if (hwWinPendingKey) queueHwWinMenu(hwWinPendingKey);
 		propCombo = s.propCombo; propComboPending = s.propComboPending; if (propComboPending) rearmPropCombo();
 		message = s.message; messageKind = s.messageKind; stickCall = s.stickCall;
 		showInform('Undid the last roll.');
@@ -2701,12 +3054,13 @@
 
 	<section class="table-wrap">
 		<img class="table-img" src={tableLayout} alt="Craps table layout" />
+		<button type="button" class="rail-band" on:click={() => { if (!anyMenuOpen) railZoom = true; }} aria-label="Your chip rail. Tap to zoom in.">{#each railChipGroups(bankroll, totalBankroll, railBetSig(bets, comePts, comeOdds, dontComePts, dontComeOdds, overlays, hwBets, hhBets, suBets, comePileBet, hornBet, anySevenBet, anyCrapsBet, worldBet, ceSplitBet, ceCBet, ceEBet)) as group, gi}<span class="rail-comp rail-comp-{gi}">{#each group as chip}<span class="rail-chip"><img src={railChipImg(chip.denom, chip.variant)} alt="" /></span>{/each}</span>{/each}</button>
 		{#if showStickwoman}<img class="stickwoman" src={stickwoman} alt="Stickwoman" />{/if}
 		{#if showStickCalls && bubbleText}<div class="stick-bubble {bubbleKind}">{bubbleText}</div>{/if}
 		{#each spots as spot}
 			{#if (spot.key !== 'passOdds' || (point !== 0 && bets.passLine > 0) || bets.passOdds > 0 || wins.passOdds > 0) && (spot.key !== 'dontPass' || point === 0 || bets.dontPass > 0) && ((spot.key !== 'come' && spot.key !== 'dontCome') || point !== 0 || (spot.key === 'come' && bets.come > 0 && wins.come > 0)) }
 			<button class="spot {spot.cls}" class:spot-hidden={!showSpots} class:has-lay={spot.key === 'dontPass' && bets.dontOdds > 0} class:has-win={spot.key === 'dontPass' && wins.dontPass > 0} class:come-split={spot.key === 'come' && dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0} on:click={(e) => handleSpotClick(e, spot.key)} aria-label={spot.label}>{#if spot.key === 'come' && dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0}<span class="come-half come-half-left" class:spot-hidden={!showSpots}></span><span class="come-half come-half-right" class:spot-hidden={!showSpots}></span>{/if}
-				{#if bets[spot.key] > 0 || (spot.key === 'come' && comePile > 0)}<span class="spot-bet">{#if showAmounts && !(spot.key.startsWith('place') && comeMovePending && comeMovePending.num === placeNum(spot.key))}{#if spot.key.startsWith('place')}{#if bothBetsMap[placeNum(spot.key)]}<span class="spot-amount both-amt" style="font-size: {bothAmtFontSize(bets[spot.key])}px; bottom: {buys[spot.key] ? 24 + (stackCheques(bets[spot.key]).length - 1) * 4 : 10}px;">${bets[spot.key]}</span>{:else}<span class="spot-amount" style="left: calc(50% - 4px); top: auto; bottom: {buys[spot.key] ? 24 + (stackCheques(bets[spot.key]).length - 1) * 4 : 10}px; transform: translateX(-50%);">${bets[spot.key]}</span>{/if}{:else if spot.key === 'come'}{#if bets[spot.key] > 0}<span class="spot-amount" style="font-size: {amtFontSize(bets[spot.key])}px;{dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? ' right: calc(25% + 16px);' : ''}">${bets[spot.key]}</span>{/if}{:else if spot.key === 'dontCome'}<span class="spot-amount" style="font-size: {amtFontSize(bets[spot.key])}px; left: 50%; right: auto; top: calc(50% - 10px); transform: translate(-50%, -100%);">${bets[spot.key]}</span>{:else if spot.key === 'field' && fieldSplit}<span class="spot-amount" style="right: calc(50% + 20px); top: 50%; transform: translateY(-50%); font-size: {amtFontSize(fieldSplit.left)}px;">${fieldSplit.left}</span><span class="spot-amount" style="left: calc(50% + 20px); right: auto; top: 50%; transform: translateY(-50%); font-size: {amtFontSize(fieldSplit.right)}px;">${fieldSplit.right}</span>{:else}<span class="spot-amount">${bets[spot.key]}</span>{/if}{/if}{#if spot.key.startsWith('place')}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 4 + ci * 4 : -10 - ci * 4}px); transform: translateX(-50%) rotate({getChipAngle(spot.key, bets[spot.key], ci)}deg);" />{/each}{#if buys[spot.key]}<span class="lammer buy-lammer" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({6 + (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getBuyLammerAngle(spot.key, bets[spot.key], buyLammerAngles[spot.key])}deg);">BUY</span>{/if}{#if point === 0}{#if displayLammers[spot.key]}<span class="lammer {displayLammers[spot.key] === 'on' ? 'on-lammer' : 'off-lammer'}" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 8 + (stackCheques(bets[spot.key]).length - 1) * 2 : -8 - (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getLammerAngle(spot.key, bets[spot.key], lammerAngles[spot.key])}deg);">{displayLammers[spot.key] === 'on' ? 'ON' : 'OFF'}</span>{/if}{:else}{#if combinedMarkerFor('place', placeNum(spot.key), comeOdds, comeOddsOff, bets, placeLammer) === 'off'}<span class="lammer off-lammer" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 8 + (stackCheques(bets[spot.key]).length - 1) * 2 : -8 - (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getLammerAngle(spot.key, bets[spot.key], lammerAngles[spot.key])}deg);">OFF</span>{/if}{#if combinedMarkerFor('place', placeNum(spot.key), comeOdds, comeOddsOff, bets, placeLammer) === 'on'}<span class="lammer on-lammer" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 8 + (stackCheques(bets[spot.key]).length - 1) * 2 : -8 - (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getLammerAngle(spot.key, bets[spot.key], lammerAngles[spot.key])}deg);">ON</span>{/if}{/if}{:else if spot.key === 'field' && fieldSplit}{#each stackCheques(fieldSplit.left) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% - 10px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('field', fieldSplit.left, ci)}deg);" />{/each}{#each stackCheques(fieldSplit.right) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% + 10px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('field', fieldSplit.right, ci)}deg);" />{/each}{:else if spot.key === 'come'}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc({dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? '75%' : '50%'} + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, bets[spot.key], ci)}deg);" />{/each}{:else}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, bets[spot.key], ci)}deg);" />{/each}{/if}{#if wins[spot.key] > 0 && spot.key !== 'come'}{#each Array.from({ length: winChips(spot.key) }) as _, wi}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} winning cheque" style="left: calc(50% + {10 + wi * 20}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle(spot.key, wins[spot.key], wi * 10 + ci)}deg);" />{/each}{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + {winChips(spot.key) * 20 + 10}px); top: 50%; transform: translateY(-50%);">${spot.key === 'dontPass' ? bets[spot.key] + wins[spot.key] : wins[spot.key]}</span>{/if}{/if}{#if spot.key === 'come' && wins.come > 0}{#each stackCheques(wins.come) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} winning cheque" style="left: calc({dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? '75%' : '50%'} + 10px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', wins.come, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc({dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? '75%' : '50%'} + 30px); top: 50%; transform: translateY(-50%);">${wins.come}</span>{/if}{/if}{#if spot.key === 'come' && comePile > 0}{#if comePileOffAndOn && bets.come === 0}{#if showAmounts}<span class="spot-amount" style="font-size: {amtFontSize(comePileBet)}px;">${comePileBet}</span>{/if}{#each stackCheques(comePileBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, comePileBet, ci)}deg);" />{/each}{#each stackCheques(comePileWin) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {(comePileWin !== comePileBet ? 16 : 10) + directionOffsets.se.dx * ci * 10}px); top: calc(50% + {directionOffsets.se.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileWin, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + {(comePileWin !== comePileBet ? 36 : 30) + (stackCheques(comePileWin).length - 1) * directionOffsets.se.dx * 10}px); top: 50%; transform: translateY(-50%);">${comePileWin}</span>{/if}{:else if comePileOffFor > 0 && bets.come === 0}{#if showAmounts}<span class="spot-amount" style="font-size: {comePileOdds > 0 ? comeSideFontSize(comePileBet - comePileOdds, comePileOdds) : amtFontSize(comePileBet)}px;">{comePileOdds > 0 ? fmt(comePileBet - comePileOdds) + ' w/ ' + fmt(comePileOdds) + ' Odds' : '$' + comePileBet}</span>{/if}{#each stackCheques(comePileBet - comePileOdds) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, comePileBet - comePileOdds, ci)}deg);" />{/each}{#if comePileOdds > 0 && comePileOddsOff}{#each stackCheques(comePileOdds) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="Come odds cheque" style="left: calc(50% + {20 + directionOffsets.s.dx * ci * 10}px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('comeOdds' + comePileOffFor, comePileOdds, ci)}deg);" />{/each}{:else if comePileOdds > 0}{#each stackCheques(comePileOdds) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="Come odds cheque" style="left: calc(50% + {directionOffsets.s.dx * ci * 10}px); top: calc(50% + 8px); transform: translate(-50%, -50%) rotate({getChipAngle('comeOdds' + comePileOffFor, comePileOdds, ci)}deg);" />{/each}{/if}{#each stackCheques(comePileWin) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {(comePileOdds > 0 && comePileOddsOff ? 30 : comePileOdds > 0 ? 16 : 10) + directionOffsets.se.dx * ci * 10}px); top: calc(50% + {directionOffsets.se.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileWin, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + {(comePileOdds > 0 && comePileOddsOff ? 50 : comePileOdds > 0 ? 36 : 30) + (stackCheques(comePileWin).length - 1) * directionOffsets.se.dx * 10}px); top: 50%; transform: translateY(-50%);">${comePileWin}</span>{/if}{:else}{#each stackCheques(comePileBet) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + 20px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileBet, ci)}deg);" />{/each}{#each stackCheques(comePileWin) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + 40px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileWin, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="right: calc(50% - 10px); left: auto; top: 50%; transform: translateY(-50%); font-size: {comePileOdds > 0 ? comeSideFontSize(comePileBet - comePileOdds, comePileOdds) : amtFontSize(comePileBet)}px;">{comePileOdds > 0 ? fmt(comePileBet - comePileOdds) + ' w/ ' + fmt(comePileOdds) + ' Odds' : '$' + comePileBet}</span><span class="win-amount" style="left: calc(50% + 50px); top: 50%; transform: translateY(-50%); font-size: {amtFontSize(comePileWin)}px;">${comePileWin}</span>{/if}{/if}{/if}</span>{/if}
+				{#if bets[spot.key] > 0 || (spot.key === 'come' && comePile > 0)}<span class="spot-bet">{#if showAmounts && !(spot.key.startsWith('place') && comeMovePending && comeMovePending.num === placeNum(spot.key))}{#if spot.key.startsWith('place')}{#if bothBetsMap[placeNum(spot.key)]}<span class="spot-amount both-amt" style="font-size: {bothAmtFontSize(bets[spot.key])}px; bottom: {buys[spot.key] ? 24 + (stackCheques(bets[spot.key]).length - 1) * 4 : 10}px;">${bets[spot.key]}</span>{:else}<span class="spot-amount" style="left: calc(50% - 4px); top: auto; bottom: {buys[spot.key] ? 24 + (stackCheques(bets[spot.key]).length - 1) * 4 : 10}px; transform: translateX(-50%);">${bets[spot.key]}</span>{/if}{:else if spot.key === 'come'}{#if bets[spot.key] > 0}<span class="spot-amount" style="font-size: {amtFontSize(bets[spot.key])}px;{dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? ' right: calc(25% + 16px);' : ''}">${bets[spot.key]}</span>{/if}{:else if spot.key === 'dontCome'}<span class="spot-amount" style="font-size: {amtFontSize(bets[spot.key])}px; left: 50%; right: auto; top: calc(50% - 10px); transform: translate(-50%, -100%);">${bets[spot.key]}</span>{:else if spot.key === 'field' && fieldSplit}<span class="spot-amount" style="right: calc(50% + 20px); top: 50%; transform: translateY(-50%); font-size: {amtFontSize(fieldSplit.left)}px;">${fieldSplit.left}</span><span class="spot-amount" style="left: calc(50% + 20px); right: auto; top: 50%; transform: translateY(-50%); font-size: {amtFontSize(fieldSplit.right)}px;">${fieldSplit.right}</span>{:else}<span class="spot-amount">${bets[spot.key]}</span>{/if}{/if}{#if spot.key.startsWith('place')}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 4 + ci * 4 : -10 - ci * 4}px); transform: translateX(-50%) rotate({getChipAngle(spot.key, bets[spot.key], ci)}deg);" />{/each}{#if buys[spot.key]}<span class="lammer buy-lammer" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({6 + (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getBuyLammerAngle(spot.key, bets[spot.key], buyLammerAngles[spot.key])}deg);">BUY</span>{/if}{#if point === 0}{#if displayLammers[spot.key]}<span class="lammer {displayLammers[spot.key] === 'on' ? 'on-lammer' : 'off-lammer'}" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 8 + (stackCheques(bets[spot.key]).length - 1) * 2 : -8 - (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getLammerAngle(spot.key, bets[spot.key], lammerAngles[spot.key])}deg);">{displayLammers[spot.key] === 'on' ? 'ON' : 'OFF'}</span>{/if}{:else}{#if combinedMarkerFor('place', placeNum(spot.key), comeOdds, comeOddsOff, bets, placeLammer) === 'off'}<span class="lammer off-lammer" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 8 + (stackCheques(bets[spot.key]).length - 1) * 2 : -8 - (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getLammerAngle(spot.key, bets[spot.key], lammerAngles[spot.key])}deg);">OFF</span>{/if}{#if combinedMarkerFor('place', placeNum(spot.key), comeOdds, comeOddsOff, bets, placeLammer) === 'on'}<span class="lammer on-lammer" style="left: {bothBetsMap[placeNum(spot.key)] ? '30%' : '50%'}; bottom: calc({buys[spot.key] ? 8 + (stackCheques(bets[spot.key]).length - 1) * 2 : -8 - (stackCheques(bets[spot.key]).length - 1) * 2}px); transform: translateX(-50%) rotate({getLammerAngle(spot.key, bets[spot.key], lammerAngles[spot.key])}deg);">ON</span>{/if}{/if}{:else if spot.key === 'field' && fieldSplit}{#each stackCheques(fieldSplit.left) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% - 10px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('field', fieldSplit.left, ci)}deg);" />{/each}{#each stackCheques(fieldSplit.right) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% + 10px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('field', fieldSplit.right, ci)}deg);" />{/each}{:else if spot.key === 'come'}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc({dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? '75%' : '50%'} + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, bets[spot.key], ci)}deg);" />{/each}{:else}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, bets[spot.key], ci)}deg);" />{/each}{/if}{#if wins[spot.key] > 0 && spot.key !== 'come'}{#each Array.from({ length: winChips(spot.key) }) as _, wi}{#each stackCheques(bets[spot.key]) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} winning cheque" style="left: calc(50% + {10 + wi * 20}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle(spot.key, wins[spot.key], wi * 10 + ci)}deg);" />{/each}{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + {winChips(spot.key) * 20 + 10}px); top: 50%; transform: translateY(-50%);">${wins[spot.key]}</span>{/if}{/if}{#if spot.key === 'come' && wins.come > 0}{#each stackCheques(wins.come) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} winning cheque" style="left: calc({dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? '75%' : '50%'} + 10px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', wins.come, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc({dcPile > 0 && dcPileAt === 'come' && bets.come > 0 && wins.come > 0 ? '75%' : '50%'} + 30px); top: 50%; transform: translateY(-50%);">${wins.come}</span>{/if}{/if}{#if spot.key === 'come' && comePile > 0}{#if comePileOffAndOn && bets.come === 0}{#if showAmounts}<span class="spot-amount" style="font-size: {amtFontSize(comePileBet)}px;">${comePileBet}</span>{/if}{#each stackCheques(comePileBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, comePileBet, ci)}deg);" />{/each}{#each stackCheques(comePileWin) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {(comePileWin !== comePileBet ? 16 : 10) + directionOffsets.se.dx * ci * 10}px); top: calc(50% + {directionOffsets.se.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileWin, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + {(comePileWin !== comePileBet ? 36 : 30) + (stackCheques(comePileWin).length - 1) * directionOffsets.se.dx * 10}px); top: 50%; transform: translateY(-50%);">${comePileWin}</span>{/if}{:else if comePileOffFor > 0 && bets.come === 0}{#if showAmounts}<span class="spot-amount" style="font-size: {comePileOdds > 0 ? comeSideFontSize(comePileBet - comePileOdds, comePileOdds) : amtFontSize(comePileBet)}px;">{comePileOdds > 0 ? fmt(comePileBet - comePileOdds) + ' w/ ' + fmt(comePileOdds) + ' Odds' : '$' + comePileBet}</span>{/if}{#each stackCheques(comePileBet - comePileOdds) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {directionOffsets[chipDirections[spot.key]].dx * ci * 10}px); top: calc(50% + {directionOffsets[chipDirections[spot.key]].dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(spot.key, comePileBet - comePileOdds, ci)}deg);" />{/each}{#if comePileOdds > 0 && comePileOddsOff}{#each stackCheques(comePileOdds) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="Come odds cheque" style="left: calc(50% + {20 + directionOffsets.s.dx * ci * 10}px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('comeOdds' + comePileOffFor, comePileOdds, ci)}deg);" />{/each}{:else if comePileOdds > 0}{#each stackCheques(comePileOdds) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="Come odds cheque" style="left: calc(50% + {directionOffsets.s.dx * ci * 10}px); top: calc(50% + 8px); transform: translate(-50%, -50%) rotate({getChipAngle('comeOdds' + comePileOffFor, comePileOdds, ci)}deg);" />{/each}{/if}{#each stackCheques(comePileWin) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + {(comePileOdds > 0 && comePileOddsOff ? 30 : comePileOdds > 0 ? 16 : 10) + directionOffsets.se.dx * ci * 10}px); top: calc(50% + {directionOffsets.se.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileWin, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + {(comePileOdds > 0 && comePileOddsOff ? 50 : comePileOdds > 0 ? 36 : 30) + (stackCheques(comePileWin).length - 1) * directionOffsets.se.dx * 10}px); top: 50%; transform: translateY(-50%);">${comePileWin}</span>{/if}{:else}{#each stackCheques(comePileBet) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + 20px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileBet, ci)}deg);" />{/each}{#each stackCheques(comePileWin) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} payout cheque" style="left: calc(50% + 40px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translateY(-50%) rotate({chipAngle('come', comePileWin, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="right: calc(50% - 10px); left: auto; top: 50%; transform: translateY(-50%); font-size: {comePileOdds > 0 ? comeSideFontSize(comePileBet - comePileOdds, comePileOdds) : amtFontSize(comePileBet)}px;">{comePileOdds > 0 ? fmt(comePileBet - comePileOdds) + ' w/ ' + fmt(comePileOdds) + ' Odds' : '$' + comePileBet}</span><span class="win-amount" style="left: calc(50% + 50px); top: 50%; transform: translateY(-50%); font-size: {amtFontSize(comePileWin)}px;">${comePileWin}</span>{/if}{/if}{/if}</span>{/if}
 				{#if spot.key.startsWith('place') && showAmounts && comePts[placeNum(spot.key)] > 0 && !(comeMovePending && comeMovePending.num === placeNum(spot.key))}<span class="spot-amount come-amt {bothBetsMap[placeNum(spot.key)] ? 'come-amt-side' : 'come-amt-center'}" style="font-size: {bothBetsMap[placeNum(spot.key)] ? comeSideFontSize(comePts[placeNum(spot.key)], comeOdds[placeNum(spot.key)]) : comeCenterFontSize(comePts[placeNum(spot.key)], comeOdds[placeNum(spot.key)])}px; bottom: {bothBetsMap[placeNum(spot.key)] ? (buys[spot.key] ? 26 + (stackCheques(bets[spot.key]).length - 1) * 4 : 26) : 26}px;">{#if comeOdds[placeNum(spot.key)] > 0}${comePts[placeNum(spot.key)]}<br />w/<br />${comeOdds[placeNum(spot.key)]}{:else}${comePts[placeNum(spot.key)]}{/if}</span>{/if}
 				{#if spot.key.startsWith('place') && comeMovePending && comeMovePending.num === placeNum(spot.key)}{#each stackCheques(comeMovePending.amount) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: 50%; bottom: calc({(buys[spot.key] ? 24 + (stackCheques(bets[spot.key]).length - 1) * 4 : 10) + ci * 4}px); transform: translateX(-50%) rotate({getChipAngle('come' + comeMovePending.num, comeMovePending.amount, ci)}deg);" />{/each}{/if}
 				{#if spot.key === 'dontPass' && bets.dontOdds > 0}
@@ -2779,7 +3133,7 @@
 		{/each}
 		<button class="spot spot-prop-ce" class:spot-hidden={!showSpots} on:click={openCeMenu} aria-label="C and E">{#if ceEBet > 0}<span class="spot-bet">{#if showAmounts}<span class="spot-amount" style="left: {ceSplitBet > 0 && ceCBet > 0 ? 'calc(54% - 27px)' : ceSplitBet > 0 ? 'calc(38% - 13.5px)' : ceCBet > 0 ? 'calc(54% - 13.5px)' : '24%'}; right: auto; top: calc(83% - {10 + (stackCheques(ceEBet).length - 1) * 3.75}px); transform: translate(-50%, -100%); z-index: 2;">{fmt(ceEBet)}</span>{/if}{#each stackCheques(ceEBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(24% + {directionOffsets.n.dx * ci * 10}px); top: calc(83% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('ceE', ceEBet, ci)}deg);" />{/each}</span>{/if}{#if ceSplitBet > 0}<span class="spot-bet">{#if showAmounts}<span class="spot-amount" style="left: {ceEBet > 0 && ceCBet > 0 ? '54%' : ceEBet > 0 ? 'calc(38% + 13.5px)' : ceCBet > 0 ? 'calc(68% - 13.5px)' : '52%'}; right: auto; top: calc(83% - {10 + (stackCheques(ceSplitBet).length - 1) * 3.75}px); transform: translate(-50%, -100%); z-index: 2;">{fmt(ceSplitBet)}</span>{/if}{#each stackCheques(ceSplitBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(52% + {directionOffsets.n.dx * ci * 10}px); top: calc(83% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('ceSplit', ceSplitBet, ci)}deg);" />{/each}</span>{/if}{#if ceCBet > 0}<span class="spot-bet">{#if showAmounts}<span class="spot-amount" style="left: {ceEBet > 0 && ceSplitBet > 0 ? 'calc(54% + 27px)' : ceEBet > 0 ? 'calc(54% + 13.5px)' : ceSplitBet > 0 ? 'calc(68% + 13.5px)' : '84%'}; right: auto; top: calc(83% - {10 + (stackCheques(ceCBet).length - 1) * 3.75}px); transform: translate(-50%, -100%); z-index: 2;">{fmt(ceCBet)}</span>{/if}{#each stackCheques(ceCBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(84% + {directionOffsets.n.dx * ci * 10}px); top: calc(83% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('ceC', ceCBet, ci)}deg);" />{/each}</span>{/if}</button>
 		<button class="spot spot-prop-world" class:spot-hidden={!showSpots} on:click={openWorldMenu} aria-label="World">{#if worldBet > 0}<span class="spot-bet">{#if showAmounts}<span class="spot-amount">${worldBet}</span>{/if}{#each stackCheques(worldBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(31% + {directionOffsets.n.dx * ci * 10}px); top: calc(83% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('world', worldBet, ci)}deg);" />{/each}</span>{/if}</button>
-		<div class="spot spot-prop spot-prop-hardways" class:spot-hidden={!showSpots} aria-hidden="true"></div>
+		<button class="spot spot-prop-hardways" class:spot-hidden={!showSpots} on:click={openHwMenu} aria-label="Hardways">{#each hwDefs as d}{#if hwBets[d.num] > 0}{#if showAmounts}<span class="spot-amount" style={d.amtStyle}>${hwBets[d.num]}</span>{/if}{#each stackCheques(hwBets[d.num]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc({d.left}% + {directionOffsets.n.dx * ci * 10}px); top: calc({d.top}% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('hw' + d.num, hwBets[d.num], ci)}deg);" />{/each}{#if hwDeclared[d.num] === 'off' && hwMarkerShown(d.num, hwBets, hwDeclared, point)}<span class="lammer off-lammer" style="left: {d.left}%; top: {d.top}%; transform: translate(-50%, -50%);">OFF</span>{/if}{#if point === 0 && hwDeclared[d.num] === 'on' && hwMarkerShown(d.num, hwBets, hwDeclared, point)}<span class="lammer on-lammer" style="left: {d.left}%; top: {d.top}%; transform: translate(-50%, -50%);">ON</span>{/if}{/if}{/each}</button>
 		<button class="spot spot-prop-anyseven" class:spot-hidden={!showSpots} on:click={openAnySevenMenu} aria-label="Any Seven">{#if anySevenBet > 0}<span class="spot-bet">{#if showAmounts}<span class="spot-amount">${anySevenBet}</span>{/if}{#each stackCheques(anySevenBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(33% + {directionOffsets.n.dx * ci * 10}px); top: calc(50% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('anySeven', anySevenBet, ci)}deg);" />{/each}</span>{/if}</button>
 		<button class="spot spot-prop-hornhigh" class:spot-hidden={!showSpots} on:click={openHornHighMenu} aria-label="Horn High bets">{#each hhDefs as d}{#if hhBets[d.key] > 0}{#if showAmounts}<span class="spot-amount" style={d.amtStyle}>${hhBets[d.key]}</span>{/if}{#each stackCheques(hhBets[d.key]) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc({d.left}% + {directionOffsets.n.dx * ci * 10}px); top: calc({d.top}% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle(d.propKey, hhBets[d.key], ci)}deg);" />{/each}{/if}{/each}</button>
 		<button class="spot spot-prop-anycraps" class:spot-hidden={!showSpots} on:click={openAnyCrapsMenu} aria-label="Any Craps">{#if anyCrapsBet > 0}<span class="spot-bet">{#if showAmounts}<span class="spot-amount">${anyCrapsBet}</span>{/if}{#each stackCheques(anyCrapsBet) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(33.5% + {directionOffsets.n.dx * ci * 10}px); top: calc(50% + {directionOffsets.n.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('anyCraps', anyCrapsBet, ci)}deg);" />{/each}</span>{/if}</button>
@@ -2792,7 +3146,7 @@
 		{:else}<img class="table-puck" src={puckOn} alt={'Puck on, point is ' + point} style="left: {puckLeft(point)}%; top: 26.5%;" />{/if}
 	{#if ceremonyActive}<div class="ceremony-shield"></div>{/if}
 	{#if dcPile > 0}<button type="button" class="dc-pile" class:under-puck={ceremonyLowZ} style="left: {dcPileAt === 'come' ? (bets.come > 0 && wins.come > 0 ? 33 : 29) : 21.25}%; top: {dcPileAt === 'come' ? 48.25 : 32.75}%;" aria-label="Don't Come winnings pile, {fmt(dcPile)}" on:click={openDcPileMenu}>{#each stackCheques(dcPile) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: calc(50% + {directionOffsets.s.dx * ci * 10}px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({getChipAngle('dcPile', dcPile, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style={dcPileAt === 'come' ? 'left: calc(50% + 30px); top: 50%; transform: translateY(-50%);' : 'left: 50%; top: -6px; transform: translate(-50%, -100%);'}>{fmt(dcPile)}</span>{/if}</button>{/if}
-	{#if hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve > 0}<div class="prop-payout" aria-hidden="true">{#each stackCheques(hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} winning cheque" style="left: calc(50% + {directionOffsets.s.dx * ci * 10}px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({chipAngle('propPayout', hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve, ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + 16px); top: 50%; transform: translateY(-50%);">${hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve}</span>{/if}</div>{/if}
+	{#if hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve + hwWins[4] + hwWins[6] + hwWins[8] + hwWins[10] > 0}<div class="prop-payout" aria-hidden="true">{#each stackCheques(hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve + hwWins[4] + hwWins[6] + hwWins[8] + hwWins[10]) as cheque, ci}<img class="win-chip" src={chequeImagesByType[cheque]} alt="{cheque} winning cheque" style="left: calc(50% + {directionOffsets.s.dx * ci * 10}px); top: calc(50% + {directionOffsets.s.dy * ci * 10}px); transform: translate(-50%, -50%) rotate({chipAngle('propPayout', hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve + hwWins[4] + hwWins[6] + hwWins[8] + hwWins[10], ci)}deg);" />{/each}{#if showAmounts}<span class="win-amount" style="left: calc(50% + 16px); top: 50%; transform: translateY(-50%);">${hornWin + hhWins.aces + hhWins.aceDeuce + hhWins.yo + hhWins.twelve + anySevenWin + anyCrapsWin + worldWin + ceSplitWin + ceCWin + ceEWin + suWins.aces + suWins.aceDeuce + suWins.yo + suWins.twelve + hwWins[4] + hwWins[6] + hwWins[8] + hwWins[10]}</span>{/if}</div>{/if}
 	{#if dcFlyAmt > 0}<div class="dc-fly" class:under-puck={ceremonyLowZ} style="left: {dcFlyX}%; top: {dcFlyY}%;">{#each stackCheques(dcFlyAmt) as cheque, ci}<img class="stack-chip" src={chequeImagesByType[cheque]} alt="{cheque} cheque" style="left: 50%; top: 50%; transform: translate(-50%, -50%) rotate({chipAngle('dcFly', dcFlyAmt, ci)}deg);" />{/each}</div>{/if}
 	{#if popupBet}
 		<div class="popup-backdrop" on:click={closePopup}>
@@ -2812,7 +3166,10 @@
 				{#if popupBet === 'passOdds' && wins.passOdds > 0}<p>Point was {winPoint.passOdds}. Pass Line Odds on {winPoint.passOdds} pays {passOddsMath()}. You had {fmt(bets.passOdds)} Odds, so it wins {fmt(wins.passOdds)}, the winnings are {fmt(wins.passOdds)}, not {fmt(bets.passOdds + wins.passOdds)}. Picking up your money returns {fmt(bets.passOdds + wins.passOdds)} to the rail, {fmt(bets.passOdds)} bet plus {fmt(wins.passOdds)} win. Your original Pass Line bet stays on the table.</p>{/if}
 				{#if popupBet === 'dontOdds' && wins.dontOdds > 0}<p>Point was {winPoint.dontOdds}. Lay Odds on {winPoint.dontOdds} pays {layOddsMath()}. You laid {fmt(bets.dontOdds)}, so it wins {fmt(wins.dontOdds)}. Picking up your money returns {fmt(bets.dontOdds + wins.dontOdds)} to the rail, {fmt(bets.dontOdds)} lay plus {fmt(wins.dontOdds)} win. Your original Don't Pass bet stays on the table.</p>{/if}
 				{#if popupBet.startsWith('place') && bets[popupBet] > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets[popupBet])}</span></span><span class="lb-right"><span class="lb-small">and it</span><span class="lb-big">wins {fmt(placeWorkingWith(placeLammer, popupBet) ? placeWinAmount(popupBet, bets[popupBet], buys[popupBet], placeNum(popupBet)) : 0)}</span></span></p>{/if}
-				{#if (popupBet === 'field' || popupBet === 'passLine' || popupBet === 'dontPass' || popupBet === 'dontCome') && bets[popupBet] > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets[popupBet])}</span></span></p>{/if}
+				{#if popupBet === 'passLine' && bets.passLine > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.passLine)}</span></span><span class="lb-right"><span class="lb-big">wins {fmt(bets.passLine)}</span></span></p>{/if}
+				{#if popupBet === 'dontPass' && bets.dontPass > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.dontPass)}</span></span><span class="lb-right"><span class="lb-big">wins {fmt(bets.dontPass)}</span></span></p>{/if}
+				{#if popupBet === 'dontCome' && bets.dontCome > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.dontCome)}</span></span><span class="lb-right"><span class="lb-big">wins {fmt(bets.dontCome)}</span></span></p>{/if}
+				{#if popupBet === 'field' && bets.field > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.field)}</span></span><span class="lb-right"><span class="lb-small">2 and 12 pay double</span><span class="lb-big">wins {fmt(bets.field)}</span></span></p>{/if}
 				{#if popupBet === 'passOdds'}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.passOdds + (wins.passOdds || 0))}</span></span>{#if wins.passOdds > 0 || point !== 0}<span class="lb-right">{#if wins.passOdds > 0}<span class="lb-small">(bet {fmt(bets.passOdds)} + winnings {fmt(wins.passOdds)} left on the table)</span>{/if}{#if point !== 0}<span class="lb-big">Max Odds {fmt(oddsMax())}</span>{/if}</span>{/if}</p>{/if}
 				{#if popupBet === 'dontOdds' && wins.dontOdds === 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.dontOdds)}</span></span>{#if point !== 0}<span class="lb-right"><span class="lb-small">Don't Pass bet {fmt(bets.dontPass)}</span><span class="lb-big">Max Lay {fmt(bets.dontPass * 6)} to win {fmt(layWin(bets.dontPass * 6))}</span></span>{/if}</p>{/if}
 				{#if popupBet === 'come' && bets.come > 0 && !(comePile > 0 && comePileOffAndOn) && !(comePile > 0 && comePileOffFor > 0)}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(bets.come)}</span></span><span class="lb-right"><span class="lb-small">and it</span><span class="lb-big">wins {fmt(bets.come)}</span></span></p>{/if}
@@ -2834,7 +3191,7 @@
 				{#if customErr}<p class="max-err">{customErr}</p>{/if}
 				{#if popupBet === 'dontOdds' && bets.dontPass > 5 && wins.dontPass === 0 && wins.dontOdds === 0}<div class="custom-row"><label>Reduce your Don't Pass Bet: <input type="number" min="5" max={bets.dontPass} step="1" bind:value={dpReduceCustom} on:input={onDpReduceInput} on:keydown={(e) => { if (e.key === 'Enter') reduceDontPass(Number(dpReduceCustom)); }} /></label><button type="button" class="custom-btn" on:click={() => reduceDontPass(Number(dpReduceCustom))}>Reduce Don't Pass Bet{Number(dpReduceCustom) > 0 ? ' to ' + fmt(Number(dpReduceCustom)) : ''}</button></div>{#if dpReduceErr}<p class="max-err">{dpReduceErr}</p>{/if}{/if}
 				{#if popupBet.startsWith('place')}<div class="btn-pair"><button class="custom-btn" on:click={() => { clearInputErrs(); subMenuReturn = popupBet; popupBet = null; subMenu = 'betEach'; }}>Bet Each</button><button class="custom-btn" on:click={() => { subMenuReturn = popupBet; popupBet = null; subMenu = 'spread'; }}>Bet a Spread Bet</button></div>{/if}
-				{#if popupBet.startsWith('place') && bets[popupBet] > 0}<div class="btn-pair"><button class="custom-btn" on:click={() => togglePlaceLammer(popupBet)}>{placeWorking(popupBet) ? 'Turn ' + placeNum(popupBet) + ' OFF' : 'Turn ' + placeNum(popupBet) + ' ON'}</button><button class="take-btn" on:click={() => takeDown(popupBet)}>{'Down on your ' + fmt(pickupTotal(popupBet)) + ' ' + placeNum(popupBet)}</button></div>{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds)}<p>All My Bets:</p>{#if anyPlaceBetUp(bets)}<div class="btn-pair">{#if anyPlaceWorking(bets, placeLammer)}<button class="custom-btn" on:click={turnOffAllPlace}>All Place Off</button>{/if}{#if anyPlaceOff(bets, placeLammer)}<button class="custom-btn" on:click={turnOnAllPlace}>All Place On</button>{/if}</div>{/if}<div class="btn-pair">{#if anyPlaceWorking(bets, placeLammer) || anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={turnOffAllBets}>All Bets Off</button>{/if}{#if anyPlaceOff(bets, placeLammer) || anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={turnOnAllBets}>All Bets On</button>{/if}</div><div class="btn-pair">{#if anyPlaceBetUp(bets)}<button class="custom-btn" on:click={allPlaceBetsDown}>All Place Down</button>{/if}<button class="take-btn" on:click={allBetsDown}>All Bets Down</button></div>{/if}{/if}
+				{#if popupBet.startsWith('place') && bets[popupBet] > 0}<div class="btn-pair"><button class="custom-btn" on:click={() => togglePlaceLammer(popupBet)}>{placeWorking(popupBet) ? 'Turn ' + placeNum(popupBet) + ' OFF' : 'Turn ' + placeNum(popupBet) + ' ON'}</button><button class="take-btn" on:click={() => takeDown(popupBet)}>{'Down on your ' + fmt(pickupTotal(popupBet)) + ' ' + placeNum(popupBet)}</button></div>{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds) || anyHwUp(hwBets)}<p>All My Bets:</p>{#if anyPlaceBetUp(bets)}<div class="btn-pair">{#if anyPlaceWorking(bets, placeLammer)}<button class="custom-btn" on:click={turnOffAllPlace}>All Place Off</button>{/if}{#if anyPlaceOff(bets, placeLammer)}<button class="custom-btn" on:click={turnOnAllPlace}>All Place On</button>{/if}</div>{/if}<div class="btn-pair">{#if anyPlaceWorking(bets, placeLammer) || anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point) || anyHwWorking(hwBets, hwDeclared, point)}<button class="custom-btn" on:click={turnOffAllBets}>All Bets Off</button>{/if}{#if anyPlaceOff(bets, placeLammer) || anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point) || anyHwOff(hwBets, hwDeclared, point)}<button class="custom-btn" on:click={turnOnAllBets}>All Bets On</button>{/if}</div><div class="btn-pair">{#if anyPlaceBetUp(bets)}<button class="custom-btn" on:click={allPlaceBetsDown}>All Place Down</button>{/if}<button class="take-btn" on:click={allBetsDown}>All Bets Down</button></div>{/if}{/if}
 				{#if popupBet === 'dontOdds' && bets.dontPass > 0}<button class="take-btn" on:click={pickupDontPassAfterPoint}>{'Pickup' + (((wins.dontPass || 0) > 0 || (wins.dontOdds || 0) > 0) ? ' all ' : ' ') + fmt(bets.dontPass + (wins.dontPass || 0) + bets.dontOdds + (wins.dontOdds || 0)) + ' on the ' + betLabels.dontPass}</button>{/if}
 				{#if popupBet === 'passLine' && wins.passLine > 0}<button class="take-btn" on:click={pickUpPassWinnings}>{'Pick up your winnings (' + fmt(wins.passLine) + ')'}</button>{/if}
 				{#if popupBet === 'dontPass' && wins.dontPass > 0}<button class="take-btn" on:click={pickUpDontWinnings}>{'Pick up your winnings (' + fmt(wins.dontPass) + ')'}</button>{/if}
@@ -2870,12 +3227,12 @@
 	{/if}
 
 	{#if offGateBet}
-		<div class="popup-backdrop" on:click={() => (offGateBet = null)}>
+		<div class="popup-backdrop" on:click={() => { offGateBet = null; offGateKeepOff = null; }}>
 			<div class="popup" on:click|stopPropagation>
-				<div class="popup-header"><h2>Place Bets are OFF.</h2><button class="popup-x" on:click={() => (offGateBet = null)} aria-label="Close">×</button></div>
+				<div class="popup-header"><h2>Place Bets are OFF.</h2><button class="popup-x" on:click={() => { offGateBet = null; offGateKeepOff = null; }} aria-label="Close">×</button></div>
 				<div class="popup-body">
 				<p>Place bets are OFF during the Comeout Roll. You can turn any number of Place bets ON by asking the dealer.</p>
-				<button class="custom-btn" on:click={() => { let g = offGateBet; offGateBet = null; openPopup(g, true); popupReturn = { kind: 'offGate', key: g }; }}>Place {placeNum(offGateBet)} and work it.</button>
+				<div class="btn-pair"><button class="custom-btn" on:click={() => { let g = offGateBet; offGateBet = null; offGateKeepOff = null; openPopup(g, true); popupReturn = { kind: 'offGate', key: g }; }}>Place {placeNum(offGateBet)} and work it.</button><button class="custom-btn" on:click={() => { let g = offGateBet; offGateBet = null; offGateKeepOff = g; openPopup(g, true); popupReturn = { kind: 'offGate', key: g }; }}>Place {placeNum(offGateBet)} and keep it off.</button></div>
 				</div>
 			</div>
 		</div>
@@ -2961,7 +3318,7 @@
 				<div class="custom-row"><label>Pick your own Odds: <input type="number" min={oddsMinFor(comePtMenu)} step={comeOddsStep(comePtMenu)} bind:value={comeOddsCustom} on:input={onComeOddsInput} on:keydown={(e) => { if (e.key === 'Enter') placeComeOdds(comePtMenu, Number(comeOddsCustom)); }} /></label><button class="custom-btn" on:click={() => placeComeOdds(comePtMenu, Number(comeOddsCustom))}>Bet {Number(comeOddsCustom) > 0 ? fmt(Number(comeOddsCustom)) + ' ' : ''}Odds</button></div>
 				{#if comeOddsErr}<p class="max-err">{comeOddsErr}</p>{/if}
 				{#if comeOdds[comePtMenu] > 0 || comeOddsWins[comePtMenu] > 0}<div class="btn-pair">{#if comeOdds[comePtMenu] > 0}<button class="custom-btn" on:click={() => toggleComeOddsOff(comePtMenu)}>{point === 0 ? ((!comeOddsOff[comePtMenu] && (placeWorkingWith(placeLammer, 'place' + comePtMenu) || comeOddsDeclaredOn[comePtMenu])) ? 'Turn Come Bet Odds OFF' : 'Turn Come Bet Odds ON') : (comeOddsOff[comePtMenu] ? 'Turn Come Bet Odds ON' : 'Turn Come Bet Odds OFF')}</button>{/if}{#if comeOddsWins[comePtMenu] > 0}<button class="take-btn" on:click={() => pickupComeOdds(comePtMenu)}>Pick up your money ({fmt(comeOdds[comePtMenu] + comeOddsWins[comePtMenu])})</button>{:else if comeOdds[comePtMenu] > 0}<button class="take-btn" on:click={() => pickupComeOdds(comePtMenu)}>Pickup {fmt(comeOdds[comePtMenu])} Come Bet Odds</button>{/if}</div>{/if}
-				{#if comeOdds[4] > 0 || comeOdds[5] > 0 || comeOdds[6] > 0 || comeOdds[8] > 0 || comeOdds[9] > 0 || comeOdds[10] > 0}{#if anyOddsUp(comeOdds) || anyPlaceBetUp(bets)}<p>All My Bets:</p>{/if}<div class="btn-pair">{#if anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={turnOffAllComeBetOdds}>All Come Bet Odds Off</button>{/if}{#if anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={turnOnAllComeBetOdds}>All Come Bet Odds On</button>{/if}</div>{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds)}<div class="btn-pair">{#if anyPlaceWorking(bets, placeLammer) || anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={() => { turnOffAllBets(); comePtMenu = null; }}>All Bets Off</button>{/if}{#if anyPlaceOff(bets, placeLammer) || anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={() => { turnOnAllBets(); comePtMenu = null; }}>All Bets On</button>{/if}</div>{/if}<div class="btn-pair">{#if anyOddsUp(comeOdds)}<button class="custom-btn" on:click={allComeBetOddsDown}>All Come Bet Odds Down</button>{/if}{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds)}<button class="take-btn" on:click={() => { allBetsDown(); comePtMenu = null; }}>All Bets Down</button>{/if}</div>{/if}
+				{#if comeOdds[4] > 0 || comeOdds[5] > 0 || comeOdds[6] > 0 || comeOdds[8] > 0 || comeOdds[9] > 0 || comeOdds[10] > 0}{#if anyOddsUp(comeOdds) || anyPlaceBetUp(bets) || anyHwUp(hwBets)}<p>All My Bets:</p>{/if}<div class="btn-pair">{#if anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={turnOffAllComeBetOdds}>All Come Bet Odds Off</button>{/if}{#if anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={turnOnAllComeBetOdds}>All Come Bet Odds On</button>{/if}</div>{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds) || anyHwUp(hwBets)}<div class="btn-pair">{#if anyPlaceWorking(bets, placeLammer) || anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point) || anyHwWorking(hwBets, hwDeclared, point)}<button class="custom-btn" on:click={() => { turnOffAllBets(); comePtMenu = null; }}>All Bets Off</button>{/if}{#if anyPlaceOff(bets, placeLammer) || anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point) || anyHwOff(hwBets, hwDeclared, point)}<button class="custom-btn" on:click={() => { turnOnAllBets(); comePtMenu = null; }}>All Bets On</button>{/if}</div>{/if}<div class="btn-pair">{#if anyOddsUp(comeOdds)}<button class="custom-btn" on:click={allComeBetOddsDown}>All Come Bet Odds Down</button>{/if}{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds) || anyHwUp(hwBets)}<button class="take-btn" on:click={() => { allBetsDown(); comePtMenu = null; }}>All Bets Down</button>{/if}</div>{/if}
 				</div>
 			</div>
 		</div>
@@ -3048,7 +3405,7 @@
 				<div class="popup-header"><h2>Horn</h2><button class="popup-x" on:click={() => (hornMenu = false)} aria-label="Close">×</button></div>
 				<div class="popup-body">
 				<p>The Horn is a one-roll bet on the horn numbers, 2, 3, 11, and 12, bet in four equal parts, one part on each number. The Horn pays 3x your bet if the 3, or 11 roll and 7x-1/4 if the 2 or 12 roll.</p>
-				{#if hornBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(hornBet)}</span></span></p>{/if}
+				{#if hornBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(hornBet)}</span></span><span class="lb-right"><span class="lb-small lb-pay">3 or 11 wins {fmt(hornWinFor(hornBet, 3))}</span><span class="lb-big lb-pay">2 or 12 wins {fmt(hornWinFor(hornBet, 2))}</span></span></p>{/if}
 				<p>Amount to bet on the Horn:</p>
 				<div class="preset-grid">{#each [4, 8, 12, 20] as amt}<button on:click={() => placeHorn(amt)} disabled={bankroll + hornBet + hornWin < amt}>${amt}</button>{/each}</div>
 				<div class="custom-row"><label>Amt to bet on Horn: <input type="number" min="4" max="5000" step="4" bind:value={hornCustom} on:input={onHornInput} on:keydown={(e) => { if (e.key === 'Enter') placeHornCustom(); }} /></label><button class="custom-btn" on:click={placeHornCustom}>Bet {Number(hornCustom) > 0 ? fmt(Number(hornCustom)) + ' ' : ''}on the Horn</button></div>
@@ -3066,7 +3423,7 @@
 			<div class="popup-header"><h2>Horn High</h2><button class="popup-x" on:click={() => (hhMenu = false)} aria-label="Close">×</button></div>
 			<div class="popup-body">
 			<p>A Horn High is a one-roll bet on the horn numbers, 2, 3, 11, and 12, bet in five equal units. Two units ride on the number you pick as high, and one unit rides on each of the other three. The 2 and 12 pay 30 to 1, and the 3 and 11 pay 15 to 1.</p>
-			{#if hhBets.aces > 0 || hhBets.aceDeuce > 0 || hhBets.yo > 0 || hhBets.twelve > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bets</span><span class="lb-amt">{hhCurrentText(hhBets)}</span></span></p>{/if}
+			{#if hhBets.aces > 0 || hhBets.aceDeuce > 0 || hhBets.yo > 0 || hhBets.twelve > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bets</span><span class="lb-amt">{hhCurrentText(hhBets)}</span></span><span class="lb-right"><span class="lb-small lb-pay">2: {fmt(hhWinOn(hhBets, 2))} · 12: {fmt(hhWinOn(hhBets, 12))}</span><span class="lb-big lb-pay">3: {fmt(hhWinOn(hhBets, 3))} · 11: {fmt(hhWinOn(hhBets, 11))}</span></span></p>{/if}
 			<p class="su-section">Bet Horn High</p>
 			<div class="su-row">{#each hhDefs as d}<span class="su-unit"><button type="button" class="su-pick {Number(hhInputs[d.key]) >= 5 ? 'active-opt' : ''}" on:click={() => focusHhInput(d.key)}><span class="su-hh-label">Horn High</span><span class="su-dice">{#each d.dice as face}<img src={diceImages[face - 1]} alt="Die showing {face}" />{/each}</span><span class="su-name">{d.name}</span></button><input id="hh-in-{d.key}" class="su-input" type="number" min="5" max={d.max} step="5" bind:value={hhInputs[d.key]} on:input={(e) => onHhUnitInput(d.key, e)} on:keydown={(e) => { if (e.key === 'Enter') placeHornHighMain(); }} /><span class="su-presets">{#each [5, 10, 25, 100] as amt}<button type="button" class="su-preset {Number(hhInputs[d.key]) === amt ? 'active-opt' : ''}" on:click={() => setHhInput(d.key, amt)}>${amt}</button>{/each}</span></span>{/each}</div>
 			{#if hhClampErr}<p class="max-err">{hhClampErr}</p>{/if}
@@ -3078,6 +3435,32 @@
 		</div>
 	</div>
 {/if}
+	{#if hwMenu}
+	<div class="popup-backdrop" on:click={() => (hwMenu = false)}>
+		<div class="popup" on:click|stopPropagation>
+			<div class="popup-header"><h2>Hardways</h2><button class="popup-x" on:click={() => (hwMenu = false)} aria-label="Close">×</button></div>
+			<div class="popup-body">
+			<p>A Hardway bet wins if its number rolls as a pair before it rolls easy or a 7 comes. Hard 4 is 2 and 2, Hard 6 is 3 and 3, Hard 8 is 4 and 4, Hard 10 is 5 and 5. The 6 and 8 pay 9 to 1, and the 4 and 10 pay 7 to 1.</p>
+			{#if anyHwUp(hwBets)}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bets</span><span class="lb-amt">{hwCurrentText(hwBets)}</span></span><span class="lb-right">{#if hwUpNums(hwBets).length === 1}<span class="lb-big">wins {fmt(hwWinFor(hwUpNums(hwBets)[0], hwBets[hwUpNums(hwBets)[0]]))}</span>{:else if hwUpNums(hwBets).length === 2}<span class="lb-big lb-pay">{hwBarPairs(hwBets).join(' · ')}</span>{:else}<span class="lb-small lb-pay">{hwBarPairs(hwBets).slice(0, 2).join(' · ')}</span><span class="lb-big lb-pay">{hwBarPairs(hwBets).slice(2).join(' · ')}</span>{/if}</span></p>{/if}
+			<p class="su-section">Bet Hardways</p>
+			<div class="su-row">{#each hwDefs as d}<span class="su-unit"><button type="button" class="su-pick {Number(hwInputs[d.num]) >= 1 ? 'active-opt' : ''}" on:click={() => focusHwInput(d.num)}><span class="su-dice">{#each d.dice as face}<img src={diceImages[face - 1]} alt="Die showing {face}" />{/each}</span><span class="su-name">{d.name}</span></button><input id="hw-in-{d.num}" class="su-input" type="number" min="1" max={hwMaxFor(d.num)} step="1" bind:value={hwInputs[d.num]} on:input={(e) => onHwUnitInput(d.num, e)} on:keydown={(e) => { if (e.key === 'Enter') placeHardwaysMain(); }} /><span class="su-presets">{#each [1, 2, 3, 5, 10] as amt}<button type="button" class="su-preset {Number(hwInputs[d.num]) === amt ? 'active-opt' : ''}" on:click={() => setHwInput(d.num, amt)}>${amt}</button>{/each}</span></span>{/each}</div>
+			{#if hwClampErr}<p class="max-err">{hwClampErr}</p>{/if}
+			<button class="custom-btn su-bet-btn" on:click={placeHardwaysMain} disabled={hwEntriesFrom(hwInputs).length === 0}>{hwBetButtonLabel(hwInputs)}</button>
+			{#if hwErr}<p class="max-err">{hwErr}</p>{/if}
+			<p class="su-section">Amount to bet on Each Hardway:</p>
+			<div class="preset-grid">{#each [1, 5, 10, 25] as amt}<button on:click={() => placeHardwayEach(amt)}>Bet {fmt(amt)} Each</button>{/each}</div>
+			<div class="custom-row"><label>Amt to bet on Each Hardway: <input type="number" min="1" max={hwEachMax()} step="1" bind:value={hwEachCustom} on:input={onHwEachInput} on:keydown={(e) => { if (e.key === 'Enter') placeHardwayEachCustom(); }} /></label><button class="custom-btn" on:click={placeHardwayEachCustom}>Bet {Number(hwEachCustom) > 0 ? fmt(Number(hwEachCustom)) + ' ' : ''}Each</button></div>
+			{#if hwEachErr}<p class="max-err">{hwEachErr}</p>{/if}
+			<p>Rescue:</p>
+			<div class="btn-pair"><button class="custom-btn {hwRescueOn ? 'active-opt' : ''}" on:click={() => setHwRescue(true)}>On</button><button class="custom-btn {!hwRescueOn ? 'active-opt' : ''}" on:click={() => setHwRescue(false)}>Off</button></div>
+			{#if anyHwUp(hwBets)}<p>On / Off:</p>
+			{#each hwDefs as d}{#if hwBets[d.num] > 0}<div class="btn-pair"><button class="custom-btn {hwWorkingWith(d.num, hwBets, hwDeclared, point) ? 'active-opt' : ''}" on:click={() => setHardwayWorking(d.num, true)}>{d.name} On</button><button class="custom-btn {!hwWorkingWith(d.num, hwBets, hwDeclared, point) ? 'active-opt' : ''}" on:click={() => setHardwayWorking(d.num, false)}>{d.name} Off</button></div>{/if}{/each}{/if}
+			{#each hwDefs as d}{#if hwBets[d.num] > 0}<button class="take-btn" on:click={() => takeDownHardway(d.num)}>{fmt(hwBets[d.num])} {d.name} Down</button>{/if}{/each}
+			{#if anyHwUp(hwBets)}<button class="take-btn" on:click={takeDownAllHardways}>All Hardways Down</button>{/if}
+			</div>
+		</div>
+	</div>
+	{/if}
 {#if hornWinMenu}
 		<div class="popup-backdrop" on:click={closeHornWinMenu}>
 			<div class="popup" on:click|stopPropagation>
@@ -3111,14 +3494,30 @@
 		</div>
 	</div>
 {/if}
+	{#if hwWinMenuKey && hwWins[hwWinMenuKey] > 0 && hwBets[hwWinMenuKey] > 0}
+	<div class="popup-backdrop" on:click={closeHwWinMenu}>
+		<div class="popup" on:click|stopPropagation>
+			<div class="popup-header"><h2>Your {fmt(hwBets[hwWinMenuKey])} {hwName(hwWinMenuKey)} won {fmt(hwWins[hwWinMenuKey])}</h2><button class="popup-x" on:click={closeHwWinMenu} aria-label="Close">×</button></div>
+			<div class="popup-body">
+			<p>What would you like to do?</p>
+			{#if hwPressTargets(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).length > 0}<p>Press It:</p>
+			<div class="preset-grid">{#each hwPressTargets(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)) as p}<button on:click={() => hwWinPressTo(p.target, false)}>{#if p.inc > 0}Press {fmt(p.inc)} to {fmt(p.target)} {hwName(hwWinMenuKey)}{:else}Press to {fmt(p.target)} {hwName(hwWinMenuKey)}{/if}</button>{/each}</div>{/if}
+			<div class="custom-row"><label>Bet something else: <input type="number" min="1" max={hwMaxFor(hwWinMenuKey)} step="1" bind:value={hwWinCustom} on:input={onHwWinInput} on:keydown={(e) => { if (e.key === 'Enter') placeHwWinCustom(); }} /></label><button class="custom-btn" on:click={placeHwWinCustom}>Bet {Number(hwWinCustom) > 0 ? fmt(Number(hwWinCustom)) + ' ' : ''}{hwName(hwWinMenuKey)}</button></div>
+			{#if hwWinErr}<p class="max-err">{hwWinErr}</p>{/if}
+			{#if hwParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)) || hwHundredParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey))}<div class="btn-pair">{#if hwParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey))}<button class="take-btn" on:click={() => hwWinPressTo(hwParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).target, true)}>Parlay to {fmt(hwParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).target)} {hwName(hwWinMenuKey)}{#if hwParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).drop > 0} (drop {fmt(hwParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).drop)}){/if}</button>{/if}{#if hwHundredParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey))}<button class="take-btn" on:click={() => hwWinPressTo(hwHundredParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).target, true)}>Parlay to {fmt(hwHundredParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).target)} {hwName(hwWinMenuKey)} (drop {fmt(hwHundredParlayOption(hwBets[hwWinMenuKey], hwWins[hwWinMenuKey], bankroll, hwMaxFor(hwWinMenuKey)).drop)})</button>{/if}</div>{/if}
+			<div class="btn-pair"><button class="take-btn" on:click={hwWinSameBet}>Same Bet</button><button class="take-btn" on:click={hwWinSameBetDown}>Same Bet and Down ({fmt(hwBets[hwWinMenuKey])} + {fmt(hwWins[hwWinMenuKey])})</button></div>
+			</div>
+		</div>
+	</div>
+	{/if}
 {#if anySevenWinMenu}
 		<div class="popup-backdrop" on:click={closeAnySevenWinMenu}>
 			<div class="popup" on:click|stopPropagation>
 				<div class="popup-header"><h2>Your {fmt(anySevenBet)} Any Seven won {fmt(anySevenWin)}</h2><button class="popup-x" on:click={closeAnySevenWinMenu} aria-label="Close">×</button></div>
 				<div class="popup-body">
 				<p>What would you like to do?</p>
-				{#if anyPressTargets(anySevenBet, anySevenWin, bankroll).length > 0}<p>Press It:</p>
-				<div class="preset-grid">{#each anyPressTargets(anySevenBet, anySevenWin, bankroll) as p}<button on:click={() => anySevenWinPressTo(p.target, false)}>{#if p.inc > 0}Press {fmt(p.inc)} to {fmt(p.target)} Any Seven{:else}Press to {fmt(p.target)} Any Seven{/if}</button>{/each}</div>{/if}
+				{#if anySevenPressTargets(anySevenBet, anySevenWin).length > 0}<p>Press It:</p>
+				<div class="preset-grid">{#each anySevenPressTargets(anySevenBet, anySevenWin) as p}<button on:click={() => anySevenWinPressTo(p.target, false)}>Press {fmt(p.inc)} to {fmt(p.target)} Any Seven</button>{/each}</div>{/if}
 				<div class="custom-row"><label>Bet something else: <input type="number" min="1" max="5000" step="1" bind:value={anySevenWinCustom} on:input={onAnySevenWinInput} on:keydown={(e) => { if (e.key === 'Enter') placeAnySevenWinCustom(); }} /></label><button class="custom-btn" on:click={placeAnySevenWinCustom}>Bet {Number(anySevenWinCustom) > 0 ? fmt(Number(anySevenWinCustom)) + ' ' : ''}Any Seven</button></div>
 				{#if anySevenWinErr}<p class="max-err">{anySevenWinErr}</p>{/if}
 				{#if anyParlayOption(anySevenBet, anySevenWin, bankroll) || anyHundredParlayOption(anySevenBet, anySevenWin, bankroll)}<div class="btn-pair">{#if anyParlayOption(anySevenBet, anySevenWin, bankroll)}<button class="take-btn" on:click={() => anySevenWinPressTo(anyParlayOption(anySevenBet, anySevenWin, bankroll).target, true)}>Parlay to {fmt(anyParlayOption(anySevenBet, anySevenWin, bankroll).target)} Any Seven{#if anyParlayOption(anySevenBet, anySevenWin, bankroll).drop > 0} (drop {fmt(anyParlayOption(anySevenBet, anySevenWin, bankroll).drop)}){/if}</button>{/if}{#if anyHundredParlayOption(anySevenBet, anySevenWin, bankroll)}<button class="take-btn" on:click={() => anySevenWinPressTo(anyHundredParlayOption(anySevenBet, anySevenWin, bankroll).target, true)}>Parlay to {fmt(anyHundredParlayOption(anySevenBet, anySevenWin, bankroll).target)} Any Seven (drop {fmt(anyHundredParlayOption(anySevenBet, anySevenWin, bankroll).drop)})</button>{/if}</div>{/if}
@@ -3217,13 +3616,13 @@
 				<div class="popup-body">
 				{#each propCombo.entries as e}<p>Your {fmt(e.group ? e.each : e.stake)}{e.group ? ' each' : ''} {e.name} {e.pushed ? 'pushed' : e.win > 0 ? 'won ' + fmt(e.group ? e.net : e.win) : 'lost'}</p>{/each}
 				{#if propCombo.net >= 0}<p>You won {fmt(propCombo.net)}.</p>
-				{#each propCombo.entries as e}{#if !e.pushed && e.win > 0}<p><strong>{fmt(e.group ? e.each : e.stake)}{e.group ? ' each' : ''} {e.name}</strong></p>
+				{#each propCombo.entries as e}{#if !e.pushed && e.win > 0}<p>{fmt(e.group ? e.each : e.stake)}{e.group ? ' each' : ''} {e.name}</p>
 				<div class="btn-pair"><button class="take-btn {(propComboChoices[e.key] || { type: 'same' }).type === 'same' ? 'active-opt' : ''}" on:click={() => propComboChoose(e.key, 'same', 0)}>Same Bet</button><button class="take-btn {(propComboChoices[e.key] || { type: 'same' }).type === 'down' ? 'active-opt' : ''}" on:click={() => propComboChoose(e.key, 'down', 0)}>Same Bet and Down ({fmt(e.stake)} + {fmt(e.group ? e.net : e.win)})</button></div>
 				{#if propPressOptions(e).length > 0}<p>Press It:</p>
 				<div class="preset-grid">{#each propPressOptions(e) as p}<button class={(propComboChoices[e.key] || { type: 'same' }).type === 'target' && (propComboChoices[e.key] || { target: 0 }).target === p.target ? 'active-opt' : ''} on:click={() => propComboChoose(e.key, 'target', p.target)}>{#if p.inc > 0}Press {fmt(p.inc)} to {fmt(p.target)}{e.group ? 'e' : ''} {e.name}{:else}Press to {fmt(p.target)}{e.group ? 'e' : ''} {e.name}{/if}</button>{/each}</div>{/if}
 				<div class="custom-row"><label>Bet another amt: <input type="number" min={e.key === 'horn' ? 4 : e.key.startsWith('hh') ? 5 : e.key === 'world' ? 5 : e.key === 'ceSplit' ? 2 : 1} max={e.key.startsWith('hh') ? (hhDefs.find((d) => d.propKey === e.key) || {}).max || 5000 : 5000} step={e.key === 'horn' ? 4 : e.key.startsWith('hh') ? 5 : e.key === 'world' ? 5 : e.key === 'ceSplit' ? 0.5 : 1} bind:value={propComboCustoms[e.key]} on:input={(ev) => onPropComboCustomInput(e.key, ev)} on:keydown={(ev) => { if (ev.key === 'Enter') propComboChooseCustom(e.key); }} /></label><button class="custom-btn {(propComboChoices[e.key] || { type: 'same' }).type === 'target' && Number(propComboCustoms[e.key]) > 0 && (propComboChoices[e.key] || { target: 0 }).target === Number(propComboCustoms[e.key]) ? 'active-opt' : ''}" on:click={() => propComboChooseCustom(e.key)}>Bet {Number(propComboCustoms[e.key]) > 0 ? fmt(Number(propComboCustoms[e.key])) + (e.group ? 'e ' : ' ') : ''}{e.name}</button></div>
 				{#if propComboErrs[e.key]}<p class="max-err">{propComboErrs[e.key]}</p>{/if}
-				{:else if !e.pushed}<p><strong>{fmt(e.group ? e.each : e.stake)}{e.group ? ' each' : ''} {e.name}</strong></p>
+				{:else if !e.pushed}<p>{fmt(e.group ? e.each : e.stake)}{e.group ? ' each' : ''} {e.name}</p>
 				<div class="btn-pair"><button class="take-btn {(propComboChoices[e.key] || { type: 'same' }).type === 'same' ? 'active-opt' : ''}" on:click={() => propComboChoose(e.key, 'same', 0)}>Same Bet</button><button class="take-btn {(propComboChoices[e.key] || { type: 'same' }).type === 'down' ? 'active-opt' : ''}" on:click={() => propComboChoose(e.key, 'down', 0)}>Take Down</button></div>
 				{#if propPressOptionsLoser(e, propCombo.grossWins, bankroll).length > 0}<p>Press It:</p>
 				<div class="preset-grid">{#each propPressOptionsLoser(e, propCombo.grossWins, bankroll) as p}<button class={(propComboChoices[e.key] || { type: 'same' }).type === 'target' && (propComboChoices[e.key] || { target: 0 }).target === p.target ? 'active-opt' : ''} on:click={() => propComboChoose(e.key, 'target', p.target)}>{#if p.inc > 0}Press {fmt(p.inc)} to {fmt(p.target)}{e.group ? 'e' : ''} {e.name}{:else}Press to {fmt(p.target)}{e.group ? 'e' : ''} {e.name}{/if}</button>{/each}</div>{/if}
@@ -3249,7 +3648,7 @@
 				<div class="popup-header"><h2>Any Seven</h2><button class="popup-x" on:click={() => (anySevenMenu = false)} aria-label="Close">×</button></div>
 				<div class="popup-body">
 				<p>Any Seven is a one-roll bet. It wins if the next roll is a 7 and pays 4 to 1. Any other number loses.</p>
-				{#if anySevenBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(anySevenBet)}</span></span></p>{/if}
+				{#if anySevenBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(anySevenBet)}</span></span><span class="lb-right"><span class="lb-big">wins {fmt(anySevenBet * 4)}</span></span></p>{/if}
 				<p>Amount to bet on the Any Seven:</p>
 				<div class="preset-grid">{#each [1, 5, 10, 25] as amt}<button on:click={() => placeAnySeven(amt)} disabled={bankroll + anySevenBet + anySevenWin < amt}>${amt}</button>{/each}</div>
 				<div class="custom-row"><label>Bet something else: <input type="number" min="1" max="5000" step="1" bind:value={anySevenCustom} on:input={onAnySevenInput} on:keydown={(e) => { if (e.key === 'Enter') placeAnySeven(Number(anySevenCustom)); }} /></label><button class="custom-btn" on:click={() => placeAnySeven(Number(anySevenCustom))}>Bet {Number(anySevenCustom) > 0 ? fmt(Number(anySevenCustom)) + ' ' : ''}Any Seven</button></div>
@@ -3267,7 +3666,7 @@
 				<div class="popup-header"><h2>Any Craps</h2><button class="popup-x" on:click={() => (anyCrapsMenu = false)} aria-label="Close">×</button></div>
 				<div class="popup-body">
 				<p>Any Craps is a one-roll bet. It wins if the next roll is a 2, 3, or 12 and pays 7 to 1. Any other number loses.</p>
-				{#if anyCrapsBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(anyCrapsBet)}</span></span></p>{/if}
+				{#if anyCrapsBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(anyCrapsBet)}</span></span><span class="lb-right"><span class="lb-big">wins {fmt(anyCrapsBet * 7)}</span></span></p>{/if}
 				<p>Amount to bet on the Any Craps:</p>
 				<div class="preset-grid">{#each [1, 5, 10, 25] as amt}<button on:click={() => placeAnyCraps(amt)} disabled={bankroll + anyCrapsBet + anyCrapsWin < amt}>${amt}</button>{/each}</div>
 				<div class="custom-row"><label>Bet something else: <input type="number" min="1" max="5000" step="1" bind:value={anyCrapsCustom} on:input={onAnyCrapsInput} on:keydown={(e) => { if (e.key === 'Enter') placeAnyCraps(Number(anyCrapsCustom)); }} /></label><button class="custom-btn" on:click={() => placeAnyCraps(Number(anyCrapsCustom))}>Bet {Number(anyCrapsCustom) > 0 ? fmt(Number(anyCrapsCustom)) + ' ' : ''}Any Craps</button></div>
@@ -3286,7 +3685,7 @@
 				<div class="popup-body">
 				<p>The World is a one-roll bet on the 2, 3, 7, 11, and 12. It wins on the 2, 3, 11, or 12, pushes on the 7, and loses on any other number.</p>
 				<p>For every $5 bet on the World it will win $26 if the 2 or 12 roll, $11 if the 3 or 11 roll, and it's a push if the 7 rolls.</p>
-				{#if worldBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(worldBet)}</span></span></p>{/if}
+				{#if worldBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bet</span><span class="lb-amt">{fmt(worldBet)}</span></span><span class="lb-right"><span class="lb-small lb-pay">3 or 11 wins {fmt((worldBet / 5) * 11)}</span><span class="lb-big lb-pay">2 or 12 wins {fmt((worldBet / 5) * 26)}</span></span></p>{/if}
 				<p>Amount to bet on the World:</p>
 				<div class="preset-grid">{#each [5, 10, 15, 20] as amt}<button on:click={() => placeWorld(amt)} disabled={bankroll + worldBet + worldWin < amt}>${amt}</button>{/each}</div>
 				<div class="custom-row"><label>Amt to bet on World: <input type="number" min="5" max="5000" step="5" bind:value={worldCustom} on:input={onWorldInput} on:keydown={(e) => { if (e.key === 'Enter') placeWorldCustom(); }} /></label><button class="custom-btn" on:click={placeWorldCustom}>Bet {Number(worldCustom) > 0 ? fmt(Number(worldCustom)) + ' ' : ''}on the World</button></div>
@@ -3304,14 +3703,14 @@
 				<div class="popup-header"><h2>C & E</h2><button class="popup-x" on:click={() => (ceMenu = false)} aria-label="Close">×</button></div>
 				<div class="popup-body">
 				<p>C & E is the combination of two bets: the C, any craps (2, 3, or 12), and the E, the eleven. You can bet them individually or as a pair. The E pays 15 to 1 and the C pays 7 to 1. Bet as a split, it pays 3 to 1 when a craps rolls and 7 to 1 when the eleven rolls.</p>
-				{#if ceSplitBet > 0 || ceCBet > 0 || ceEBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bets</span><span class="lb-amt">{ceCurrentText()}</span></span></p>{/if}
+				{#if ceSplitBet > 0 || ceCBet > 0 || ceEBet > 0}<p class="ledger-bar"><span class="lb-left"><span class="lb-label">Current Bets</span><span class="lb-amt">{ceCurrentText()}</span></span><span class="lb-right">{#if ceSplitBet > 0 && ceCBet === 0 && ceEBet === 0}<span class="lb-small lb-pay">craps wins {fmt(ceSplitBet * 3)}</span><span class="lb-big lb-pay">11 wins {fmt(ceSplitBet * 7)}</span>{:else if ceCBet > 0 && ceSplitBet === 0 && ceEBet === 0}<span class="lb-small">on 2, 3, or 12</span><span class="lb-big">wins {fmt(ceCBet * 7)}</span>{:else if ceEBet > 0 && ceSplitBet === 0 && ceCBet === 0}<span class="lb-small">on 11</span><span class="lb-big">wins {fmt(ceEBet * 15)}</span>{:else}<span class="lb-small lb-pay">on craps wins {fmt(ceSplitBet * 3 + ceCBet * 7)}</span><span class="lb-big lb-pay">on 11 wins {fmt(ceSplitBet * 7 + ceEBet * 15)}</span>{/if}</span></p>{/if}
 				<p class="su-section">Bet C & E Split</p>
 				<div class="preset-grid">{#each [2, 5, 10, 25] as amt}<button on:click={() => placeCeSplit(amt)} disabled={bankroll + ceSplitBet + ceSplitWin < amt}>${amt}</button>{/each}</div>
 				<div class="custom-row"><label>Amt to bet on the C & E split: <input type="number" min="2" max="5000" step={Number(ceSplitCustom) >= 20 ? 5 : 1} bind:value={ceSplitCustom} on:input={onCeSplitInput} on:keydown={(e) => { if (e.key === 'Enter') placeCeSplitCustom(); }} /></label><button class="custom-btn" on:click={placeCeSplitCustom}>Bet {Number(ceSplitCustom) > 0 ? fmt(Number(ceSplitCustom)) + ' ' : ''}on the C & E Split</button></div>
 				{#if ceSplitErr}<p class="max-err">{ceSplitErr}</p>{/if}
 				<p class="su-section">Each C and E</p>
 				<p>Choose how much to bet on each:</p>
-				<div class="su-row"><span class="su-unit"><button type="button" class="su-pick {Number(ceEInput) >= 1 ? 'active-opt' : ''}" on:click={() => focusCeInput('e')}><span class="su-num">E</span><span class="su-name">Eleven</span></button><input id="ce-in-e" class="su-input" type="number" min="1" max="5000" step={Number(ceEInput) >= 20 ? 5 : 1} bind:value={ceEInput} on:input={onCeEInput} on:keydown={(e) => { if (e.key === 'Enter') placeCePair(); }} /></span><span class="su-unit"><button type="button" class="su-pick {Number(ceCInput) >= 1 ? 'active-opt' : ''}" on:click={() => focusCeInput('c')}><span class="su-num">C</span><span class="su-name">Any Craps</span></button><input id="ce-in-c" class="su-input" type="number" min="1" max="5000" step={Number(ceCInput) >= 20 ? 5 : 1} bind:value={ceCInput} on:input={onCeCInput} on:keydown={(e) => { if (e.key === 'Enter') placeCePair(); }} /></span></div>
+				<div class="su-row"><span class="su-unit"><button type="button" class="su-pick {Number(ceEInput) >= 1 ? 'active-opt' : ''}" on:click={() => focusCeInput('e')}><span class="su-num">E</span><span class="su-name">Eleven</span></button><input id="ce-in-e" class="su-input" type="number" min="1" max="5000" step={Number(ceEInput) >= 20 ? 5 : 1} bind:value={ceEInput} on:input={onCeEInput} on:keydown={(e) => { if (e.key === 'Enter') placeCePair(); }} /><span class="su-presets">{#each [1, 2, 3, 5, 10] as amt}<button type="button" class="su-preset {Number(ceEInput) === amt ? 'active-opt' : ''}" on:click={() => setCeEachInput('e', amt)}>${amt}</button>{/each}</span></span><span class="su-unit"><button type="button" class="su-pick {Number(ceCInput) >= 1 ? 'active-opt' : ''}" on:click={() => focusCeInput('c')}><span class="su-num">C</span><span class="su-name">Any Craps</span></button><input id="ce-in-c" class="su-input" type="number" min="1" max="5000" step={Number(ceCInput) >= 20 ? 5 : 1} bind:value={ceCInput} on:input={onCeCInput} on:keydown={(e) => { if (e.key === 'Enter') placeCePair(); }} /><span class="su-presets">{#each [1, 2, 3, 5, 10] as amt}<button type="button" class="su-preset {Number(ceCInput) === amt ? 'active-opt' : ''}" on:click={() => setCeEachInput('c', amt)}>${amt}</button>{/each}</span></span></div>
 				{#if cePairErr}<p class="max-err">{cePairErr}</p>{/if}
 				<button class="custom-btn su-bet-btn" on:click={placeCePair} disabled={cePairAmtE(ceEInput) < 1 && cePairAmtC(ceCInput) < 1}>{cePairButtonLabel(ceEInput, ceCInput)}</button>
 				{#if ceSplitBet > 0}<button class="take-btn" on:click={takeDownCeSplit}>{fmt(ceSplitBet)} C & E Split Down</button>{/if}
@@ -3336,7 +3735,7 @@
 				{/if}
 				<p class="su-section">Bet Straight Up</p>
 				<p>Choose how much to bet on each:</p>
-				<div class="su-row">{#each suDefs as d}<span class="su-unit"><button type="button" class="su-pick {Number(hopInputs[d.key]) >= 1 ? 'active-opt' : ''}" on:click={() => focusHopInput(d.key)}><span class="su-num">{d.total}</span><span class="su-name">{d.name}</span></button><input id="hop-in-{d.key}" class="su-input" type="number" min="1" max="5000" step="1" bind:value={hopInputs[d.key]} on:input={(e) => onHopInput(d.key, e)} on:keydown={(e) => { if (e.key === 'Enter') placeHopMain(); }} /></span>{/each}</div>
+				<div class="su-row">{#each suDefs as d}<span class="su-unit"><button type="button" class="su-pick {Number(hopInputs[d.key]) >= 1 ? 'active-opt' : ''}" on:click={() => focusHopInput(d.key)}><span class="su-num">{d.total}</span><span class="su-name">{d.name}</span></button><input id="hop-in-{d.key}" class="su-input" type="number" min="1" max="5000" step="1" bind:value={hopInputs[d.key]} on:input={(e) => onHopInput(d.key, e)} on:keydown={(e) => { if (e.key === 'Enter') placeHopMain(); }} /><span class="su-presets">{#each [1, 2, 3, 5, 10] as amt}<button type="button" class="su-preset {Number(hopInputs[d.key]) === amt ? 'active-opt' : ''}" on:click={() => setHopInput(d.key, amt)}>${amt}</button>{/each}</span></span>{/each}</div>
 				{#if hopClampErr}<p class="max-err">{hopClampErr}</p>{/if}
 				<button class="custom-btn su-bet-btn" on:click={placeHopMain} disabled={hopEntriesFrom(hopInputs).length === 0}>{hopBetButtonLabel(hopInputs)}</button>
 				{#if hopErr}<p class="max-err">{hopErr}</p>{/if}
@@ -3430,11 +3829,63 @@
 				{#if bets['place' + pointChooser] > 0}<p>{fmt(bets['place' + pointChooser])} {buys['place' + pointChooser] ? 'Buy' : 'Place'} Bet wins {fmt(placeWorkingWith(placeLammer, 'place' + pointChooser) ? placeWinAmount('place' + pointChooser, bets['place' + pointChooser], buys['place' + pointChooser], pointChooser) : 0)}.</p>{/if}
 				{#if comePts[pointChooser] > 0}<p>{fmt(comePts[pointChooser])} Come Bet{#if comeOdds[pointChooser] > 0} w/ {fmt(comeOdds[pointChooser])} Odds{/if} wins {fmt(comeWinFigureWith(pointChooser, comePts, comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point))}.</p>{/if}
 				<div class="btn-pair"><button class="custom-btn" on:click={() => { let n = pointChooser; pointChooser = null; openPopup('place' + n); }}>{bets['place' + pointChooser] > 0 ? 'View Place Bet' : 'Make Place Bet'}</button><button class="custom-btn" on:click={() => { let n = pointChooser; pointChooser = null; openComePtMenu(n); }}>View Come Bet Odds</button></div>
-				{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds)}<div class="btn-pair">{#if anyPlaceOff(bets, placeLammer) || anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={() => { turnOnAllBets(); pointChooser = null; }}>Turn all my bets ON</button>{/if}{#if anyPlaceWorking(bets, placeLammer) || anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point)}<button class="custom-btn" on:click={() => { turnOffAllBets(); pointChooser = null; }}>Turn all my bets OFF</button>{/if}</div>{/if}
-				{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds)}<button class="take-btn" on:click={() => { allBetsDown(); pointChooser = null; }}>Take all my bets down</button>{/if}
+				{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds) || anyHwUp(hwBets)}<div class="btn-pair">{#if anyPlaceOff(bets, placeLammer) || anyOddsOff(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point) || anyHwOff(hwBets, hwDeclared, point)}<button class="custom-btn" on:click={() => { turnOnAllBets(); pointChooser = null; }}>Turn all my bets ON</button>{/if}{#if anyPlaceWorking(bets, placeLammer) || anyOddsWorking(comeOdds, comeOddsOff, placeLammer, comeOddsDeclaredOn, comeOddsOverrideOn, point) || anyHwWorking(hwBets, hwDeclared, point)}<button class="custom-btn" on:click={() => { turnOffAllBets(); pointChooser = null; }}>Turn all my bets OFF</button>{/if}</div>{/if}
+				{#if anyPlaceBetUp(bets) || anyOddsUp(comeOdds) || anyHwUp(hwBets)}<button class="take-btn" on:click={() => { allBetsDown(); pointChooser = null; }}>Take all my bets down</button>{/if}
 				</div>
 			</div>
 		</div>
+	{/if}
+	{#if hwOffPrompt}
+	<div class="popup-backdrop" on:click={hwOffPromptClose}>
+		<div class="popup" on:click|stopPropagation>
+			<div class="popup-header"><h2>{hwOffAffectedNums.length === 1 ? 'Do you want to work your ' + hwName(hwOffAffectedNums[0]) + '?' : 'Would you like your hardways off?'}</h2><button class="popup-x" on:click={hwOffPromptClose} aria-label="Close">×</button></div>
+			<div class="popup-body">
+			<div class="btn-pair"><button class="custom-btn" on:click={hwOffPromptYes}>Yes</button><button class="custom-btn" on:click={hwOffPromptNo}>No</button></div>
+			{#if hwOffAffectedNums.length > 1}
+			<p class="su-section">Choose specific Hardways</p>
+			<div class="hw-off-grid">{#each hwDefs as d}{#if hwOffAffectedNums.includes(d.num)}<span class="hw-off-unit"><span class="hw-off-title">{d.name}</span><span class="su-dice">{#each d.dice as face}<img src={diceImages[face - 1]} alt="Die showing {face}" />{/each}</span><button type="button" class="custom-btn {hwOffKeep[d.num] ? 'active-opt' : ''}" on:click={() => toggleHwOffKeep(d.num)}>Keep {d.name} On</button></span>{/if}{/each}</div>
+			<button class="custom-btn" on:click={hwOffPromptSubmit}>Submit</button>
+			{/if}
+			</div>
+		</div>
+	</div>
+	{/if}
+	{#if hwRescuePrompt && hwRescuePending}
+	<div class="popup-backdrop" on:click={closeHwRescuePrompt}>
+		<div class="popup" on:click|stopPropagation>
+			<div class="popup-header"><h2>Do you want to come back on your {hwName(hwRescuePending.num)}?</h2><button class="popup-x" on:click={closeHwRescuePrompt} aria-label="Close">×</button></div>
+			<div class="popup-body">
+			<div class="btn-pair"><button class="custom-btn {hwRescueChoice ? 'active-opt' : ''}" on:click={() => selectHwRescue(true)}>Yes</button><button class="custom-btn {!hwRescueChoice ? 'active-opt' : ''}" on:click={() => selectHwRescue(false)}>No</button></div>
+			<div class="custom-row"><label>Amt to bet on the {hwName(hwRescuePending.num)}: <input type="number" min="1" max={hwMaxFor(hwRescuePending.num)} step="1" bind:value={hwRescueAmount} on:input={onHwRescueInput} on:keydown={(e) => { if (e.key === 'Enter') submitHwRescuePrompt(); }} /></label></div>
+			<div class="su-presets">{#each [1, 2, 3, 5, 10] as amt}<button type="button" class="su-preset {Number(hwRescueAmount) === amt ? 'active-opt' : ''}" on:click={() => setHwRescueAmount(amt)}>${amt}</button>{/each}</div>
+			{#if hwRescueErr}<p class="max-err">{hwRescueErr}</p>{/if}
+			<div class="btn-pair"><button class="custom-btn {hwRescuePromptSetting ? 'active-opt' : ''}" on:click={() => setHwRescuePromptSetting(true)}>Rescue On</button><button class="custom-btn {!hwRescuePromptSetting ? 'active-opt' : ''}" on:click={() => setHwRescuePromptSetting(false)}>Rescue Off</button></div>
+			<button class="custom-btn" on:click={submitHwRescuePrompt}>Submit</button>
+			</div>
+		</div>
+	</div>
+	{/if}
+	{#if hwComeoutPrompt}
+	<div class="popup-backdrop" on:click={closeHwComeoutPrompt}>
+		<div class="popup" on:click|stopPropagation>
+			<div class="popup-header"><h2>Hardways are OFF.</h2><button class="popup-x" on:click={closeHwComeoutPrompt} aria-label="Close">×</button></div>
+			<div class="popup-body">
+			<p>Hardway bets are OFF during the Comeout Roll. You can turn any number of Hardway bets ON by asking the dealer.</p>
+			<div class="btn-pair"><button class="custom-btn" on:click={workHwComeoutPrompt}>{hwComeoutPrompt.length === 1 ? 'Work my ' + hwName(hwComeoutPrompt[0]) + '.' : 'Work my Hardways.'}</button><button class="custom-btn" on:click={closeHwComeoutPrompt}>{hwComeoutPrompt.length === 1 ? 'Keep my ' + hwName(hwComeoutPrompt[0]) + ' off.' : 'Keep my Hardways off.'}</button></div>
+			</div>
+		</div>
+	</div>
+	{/if}
+	{#if railZoom}
+	<div class="popup-backdrop" on:click={() => { railZoom = false; }}>
+		<div class="popup" on:click|stopPropagation>
+			<div class="popup-header"><h2>Your Rail</h2><button class="popup-x" on:click={() => { railZoom = false; }} aria-label="Close">×</button></div>
+			<div class="popup-body">
+			<div class="rail-zoom-fill">{#each railChipsFlat(bankroll, totalBankroll, railBetSig(bets, comePts, comeOdds, dontComePts, dontComeOdds, overlays, hwBets, hhBets, suBets, comePileBet, hornBet, anySevenBet, anyCrapsBet, worldBet, ceSplitBet, ceCBet, ceEBet)) as chip}<span class="rail-chip"><img src={railChipImg(chip.denom, chip.variant)} alt="" /></span>{/each}</div>
+			<p>In Rail {fmt(bankroll)} · On Table {fmt(onTable)} · Bankroll {fmt(totalBankroll)}</p>
+			</div>
+		</div>
+	</div>
 	{/if}
 	{#if dcPileMenu}<div class="popup-backdrop" role="presentation" on:click={() => (dcPileMenu = false)}><div class="popup" role="dialog" aria-modal="true" aria-label="Don't Come winnings" on:click|stopPropagation><div class="popup-header"><h3>Don't Come winnings</h3><button type="button" class="popup-x" aria-label="Close" on:click={() => (dcPileMenu = false)}>X</button></div><div class="popup-body"><p>Your Don't Come bets behind the numbers won on the {dcPileFromComeout ? 'comeout 7' : 'seven out'}:</p>{#each ceremonyLines as line}{#if line.flat > 0}<p>Don't Come behind the {line.num}: {fmt(line.flat)} bet won {fmt(line.flatWin)}.</p>{/if}{#if line.lay > 0}<p>Lay Odds behind the {line.num}: {fmt(line.lay)} won {fmt(line.layWin)}.</p>{/if}{/each}<p>Total: {fmt(dcPile)}.</p><button type="button" class="take-btn" on:click={pickupDcPile}>Pick up {fmt(dcPile)}</button></div></div></div>{/if}
 	</section>
@@ -3443,6 +3894,13 @@
 		{#if diceA >= 0}<img src={diceImages[diceA]} alt="Die one" />{/if}
 		{#if diceB >= 0}<img src={diceImages[diceB]} alt="Die two" />{/if}
 		<button class="roll" on:click={rollDice} disabled={rolling || anyMenuOpen}>{rolling ? 'Rolling...' : 'Roll Dice'}</button><button class="quick-bet" on:click={() => placeBet('passLine', 10)} disabled={rolling || anyMenuOpen}>Bet $10 Pass</button><input class="test-rolls" type="text" bind:value={testRolls} placeholder="Test, e.g. 10PL, 4, 10CB, 6" on:keydown={(e) => { if (e.key === 'Enter') rollDice(); }} /><button class="undo-roll" on:click={undoLastRoll} disabled={!rollSnapshot || rolling || inTestRoll || anyMenuOpen || ceremonyActive}>Undo last roll</button>
+	</section>
+
+	<section class="test-legend" aria-label="Test input shorthand">
+		<p>Test shorthand: amount first, no space, like 10PL, 12H, 1HLY. A bare number rolls.</p>
+		<p>Line and table: PL Pass, DP Don't Pass, F Field, CB Come, DC Don't Come, P4 to P10 Place, B4 and B10 Buy, PO Pass Odds, LO Lay Odds, CO4 to CO10 Come Odds, DO4 to DO10 DC Lay Odds, NO4 to NO10 Overlay, and the spread totals Across, Inside, Outside, Uptown, Downtown, AcrossIncluding.</p>
+		<p>Props: H Horn, HH2, HH3, HH11, HH12 Horn High, A7 Any Seven, AC Any Craps, W World, CE C &amp; E Split, C and E on their own, SU2, SU3, SU11, SU12 Straight Up, HW4, HW6, HW8, HW10 Hardways, HWE Hardways Each.</p>
+		<p>Splits and Multi-Bets, the amount is each: HL High - Low, HLY High - Low - Yo, AD Aces - Ace Deuce, ET Eleven - Twelve, SE Seven - Eleven, TWC Three Way Crap.</p>
 	</section>
 
 	<section class="bet-states" aria-label="Bet states">
@@ -3495,6 +3953,19 @@
 	.puck-label { display: block; font-weight: 700; margin-top: 4px; }
 	.table-wrap { position: relative; width: 100%; margin: 16px 0 4px; }
 	.table-img { width: 100%; height: auto; display: block; border-radius: 12px; }
+	.rail-band { position: absolute; left: 36.6%; right: 30.5%; top: 90.31%; height: 8.22%; z-index: 4; display: flex; align-items: stretch; background: transparent; border: none; padding: 0; cursor: pointer; font: inherit; color: #ffffff; text-align: left; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
+	.rail-comp { position: absolute; display: flex; flex-wrap: nowrap; overflow: hidden; }
+	.rail-comp-0 { left: 0%; top: 2.43%; width: 50.46%; height: 41.61%; }
+	.rail-comp-1 { left: 0%; top: 58.39%; width: 50.46%; height: 41.61%; }
+	.rail-comp-2 { left: 51.37%; top: 0%; width: 48.33%; height: 41.61%; }
+	.rail-comp-3 { left: 51.37%; top: 58.39%; width: 48.33%; height: 41.61%; }
+	.rail-chip { flex: none; width: 10px; height: 50%; }
+	.rail-chip img { display: block; width: 100%; height: 100%; object-fit: fill; }
+	.rail-comp .rail-chip { flex: 0 0 auto; width: 1.42%; min-width: 0; height: 100%; }
+	.rail-comp-2 .rail-chip, .rail-comp-3 .rail-chip { width: 1.48%; }
+	.rail-zoom-fill { display: flex; flex-wrap: wrap; align-content: flex-start; background: #14532d; border-radius: 8px; padding: 8px; min-height: 82px; }
+	.rail-zoom-fill .rail-chip { width: 20px; height: 66px; }
+	.cs2.dark .rail-zoom-fill { background: #052e16; }
 	.spot { position: absolute; background: rgba(0,0,0,0.28); border: none; border-radius: 6px; color: #fff; text-shadow: 0 1px 2px #000; padding: 2px 4px; font-weight: 700; font-size: clamp(9px, 1.6vw, 12px); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 	.spot:disabled { opacity: 0.45; cursor: not-allowed; }
 	.table-puck { position: absolute; width: 4%; height: auto; z-index: 5; pointer-events: none; }
@@ -3535,7 +4006,7 @@
 	.spot-pass { left: 25%; top: 72.5%; width: 31.9%; height: 5.3%; text-align: center; }
 	.spot-dontpass { left: 25%; top: 66.8%; width: 31.9%; height: 5%; }
 	.spot-dontpass.has-lay .spot-bet .spot-amount { left: calc(50% + 16px); right: auto; transform: translateY(-50%); }
-	.spot-dontpass.has-win .spot-bet .spot-amount { display: none; }
+	.spot-dontpass.has-win.has-lay .spot-bet .spot-amount { display: none; }
 	.spot-field { left: 25%; top: 54.7%; width: 31.8%; height: 11.5%; }
 	.spot-come { left: 25%; top: 43%; width: 31.8%; height: 10.5%; }
 	.spot-dontcome { left: 19.25%; top: 25%; width: 4.0%; height: 15.5%; }
@@ -3583,13 +4054,14 @@
 	.back-btn:hover { background: #eef2f7; }
 	.cs2.dark .back-btn { background: #0f172a; color: #e2e8f0; border-color: #475569; }
 	.popup p { margin: 6px 0; font-size: 13px; }
-	.popup .ledger-bar { background: #141414; color: #ffffff; border-top: 2px solid #c9a227; border-bottom: 2px solid #c9a227; padding: 8px 14px; margin: 10px -14px 12px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+	.popup .ledger-bar { background: #141414; color: #ffffff; border-top: 2px solid #c9a227; border-bottom: 2px solid #c9a227; padding: 8px 24px; margin: 10px -14px 12px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
 	.ledger-bar .lb-left { display: flex; flex-direction: column; gap: 1px; }
 	.ledger-bar .lb-right { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; text-align: right; }
 	.ledger-bar .lb-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a227; }
 	.ledger-bar .lb-amt { font-size: 17px; font-weight: 700; line-height: 1.15; color: #ffffff; }
 	.ledger-bar .lb-small { font-size: 11px; line-height: 1.15; color: #ffffff; }
 	.ledger-bar .lb-big { font-size: 17px; font-weight: 700; line-height: 1.15; color: #ffffff; }
+	.ledger-bar .lb-pay { font-size: 14px; font-weight: 700; line-height: 1.2; }
 	.preset-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 8px 0; }
 	@media (max-width: 520px) { .preset-grid { grid-template-columns: repeat(3, 1fr); } }
 	.preset-grid button { padding: 7px 4px; font-size: 13px; font-weight: 700; cursor: pointer; border-radius: 8px; border: 1px solid #d1d5db; background: #f8fafc; color: #111827; }
@@ -3616,6 +4088,10 @@
 	.take-btn.active-opt, .preset-grid button.active-opt { background: #166534; color: #fff; border-color: #166534; }
 	.noaction-section { margin-top: 10px; padding-top: 8px; border-top: 1px solid #d1d5db; }
 	.take-btn { background: #fef3c7; border-color: #f59e0b; }
+	.hw-off-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 8px 0; }
+	.hw-off-unit { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+	.hw-off-title { font-size: 13px; font-weight: 700; text-align: center; white-space: nowrap; }
+	.hw-off-unit .custom-btn { margin-top: 0; font-size: 11px; padding: 6px 2px; white-space: nowrap; }
 	.su-row { display: flex; gap: 6px; margin: 8px 0; }
 	.su-unit { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
 	.su-pick { flex: none; width: 100%; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5px 2px; font-size: 13px; font-weight: 700; cursor: pointer; border-radius: 8px; border: 1px solid #d1d5db; background: #f8fafc; color: #111827; }
@@ -3631,7 +4107,7 @@
 	.su-preset { flex: 1; min-width: 0; padding: 4px 0; font-size: 11px; font-weight: 700; cursor: pointer; border-radius: 6px; border: 1px solid #d1d5db; background: #f8fafc; color: #111827; }
 	.su-preset:hover { background: #dcfce7; }
 	.su-preset.active-opt { background: #166534; color: #fff; border-color: #166534; }
-	.su-section { font-weight: 700; margin-top: 10px; }
+	.su-section { font-weight: 400; margin-top: 10px; }
 	.su-downs { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
 	.su-downs .take-btn { width: auto; flex: 1 1 auto; margin-top: 0; }
 	.su-bet-btn:disabled { opacity: 0.45; cursor: default; }
@@ -3672,6 +4148,9 @@
 	.undo-roll { background: #374151; color: #ffffff; border: none; padding: 10px 14px; font-size: 14px; font-weight: 700; border-radius: 8px; cursor: pointer; margin-left: 8px; }
 	.undo-roll:disabled { opacity: 0.5; cursor: default; }
 	.cs2.dark .test-rolls { background: #0f172a; color: #f1f5f9; border-color: #475569; }
+	.test-legend { margin: 2px 0 10px; }
+	.test-legend p { margin: 2px 0; font-size: 11px; line-height: 1.45; color: #6b7280; }
+	.cs2.dark .test-legend p { color: #94a3b8; }
 	.bet-states { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; border: 1px solid #d1d5db; border-radius: 8px; background: #f9fafb; padding: 6px 10px; margin: 8px 0; }
 	.cs2.dark .bet-states { background: #1e293b; border-color: #334155; }
 	.bs-caption { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.65; }
