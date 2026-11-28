@@ -31,7 +31,7 @@
                 },
                 "image": {
                     "@type": "ImageObject",
-                    "url": "src/images/about/about-header.jpg"
+                    "url": "/images/about/about-header.jpg"
                 },
                 "url": "http://parlaynation.com/about"
             }

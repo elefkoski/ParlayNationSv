@@ -75,7 +75,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -229,9 +229,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/verbal-declaration_640x360.webp"
-				mdImg="src/images/{url}/verbal-declaration_960x540.webp"
-				lgImg="src/images/{url}/verbal-declaration_1280x720.webp"
+				smImg="/images/{url}/verbal-declaration_640x360.webp"
+				mdImg="/images/{url}/verbal-declaration_960x540.webp"
+				lgImg="/images/{url}/verbal-declaration_1280x720.webp"
 				title="Verbal Declaration of a Bet"
 				alt="An outline of a person with a red thought bubble next to another outlined person with a blue talking bubble and a cheque in their hand."
 			/>
@@ -290,9 +290,9 @@
 			<div class="mb-4" />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/my-bets-are-on_640x360.webp"
-				mdImg="src/images/{url}/my-bets-are-on_960x540.webp"
-				lgImg="src/images/{url}/my-bets-are-on_1280x720.webp"
+				smImg="/images/{url}/my-bets-are-on_640x360.webp"
+				mdImg="/images/{url}/my-bets-are-on_960x540.webp"
+				lgImg="/images/{url}/my-bets-are-on_1280x720.webp"
 				title="My Bets are On"
 				alt="The puck is off and in the Don't Come. There is a $10 place bet on the Point Ten with an 'On' button on top."
 			/>
@@ -315,9 +315,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/my-bets-are-off_640x360.webp"
-				mdImg="src/images/{url}/my-bets-are-off_960x540.webp"
-				lgImg="src/images/{url}/my-bets-are-off_1280x720.webp"
+				smImg="/images/{url}/my-bets-are-off_640x360.webp"
+				mdImg="/images/{url}/my-bets-are-off_960x540.webp"
+				lgImg="/images/{url}/my-bets-are-off_1280x720.webp"
 				title="My Bets are Off"
 				alt="The puck is on and sitting in the point six. There is a $50 place bet on the point five with an off button on top."
 			/>

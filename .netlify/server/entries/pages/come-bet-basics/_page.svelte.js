@@ -75,7 +75,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Intermediate Roll", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -239,9 +239,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/come-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/come-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/come-bet_1280x720.webp",
+                smImg: "/images/" + url + "/come-bet_640x360.webp",
+                mdImg: "/images/" + url + "/come-bet_960x540.webp",
+                lgImg: "/images/" + url + "/come-bet_1280x720.webp",
                 title: "Come Bet",
                 alt: "Overhead view of the come bet area."
               },
@@ -265,9 +265,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-a-come-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-a-come-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-a-come-bet_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-a-come-bet_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-a-come-bet_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-a-come-bet_1280x720.webp",
                 title: "How to Bet a Come Bet",
                 alt: "Up close view of multiple bets in the COME area."
               },
@@ -292,9 +292,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/come-bets-always-work_640x360.webp",
-                mdImg: "src/images/" + url + "/come-bets-always-work_960x540.webp",
-                lgImg: "src/images/" + url + "/come-bets-always-work_1280x720.webp",
+                smImg: "/images/" + url + "/come-bets-always-work_640x360.webp",
+                mdImg: "/images/" + url + "/come-bets-always-work_960x540.webp",
+                lgImg: "/images/" + url + "/come-bets-always-work_1280x720.webp",
                 title: "Come Bets Always Work",
                 alt: "A come bet on the point eight and the puck is off."
               },
@@ -318,9 +318,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Stage One - In the COME",
-                smImg: "src/images/" + url + "/stage-one-of-a-come-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/stage-one-of-a-come-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/stage-one-of-a-come-bet_1280x720.webp",
+                smImg: "/images/" + url + "/stage-one-of-a-come-bet_640x360.webp",
+                mdImg: "/images/" + url + "/stage-one-of-a-come-bet_960x540.webp",
+                lgImg: "/images/" + url + "/stage-one-of-a-come-bet_1280x720.webp",
                 title: "Stage One - In the COME",
                 alt: "$10 in the come with the puck on nine."
               },
@@ -335,9 +335,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Stage Two - Inside a Point",
-                smImg: "src/images/" + url + "/stage-two-of-a-come-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/stage-two-of-a-come-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/stage-two-of-a-come-bet_1280x720.webp",
+                smImg: "/images/" + url + "/stage-two-of-a-come-bet_640x360.webp",
+                mdImg: "/images/" + url + "/stage-two-of-a-come-bet_960x540.webp",
+                lgImg: "/images/" + url + "/stage-two-of-a-come-bet_1280x720.webp",
                 title: "Stage Two - Inside a Point",
                 alt: "$10 come bet on the point eight."
               },
@@ -378,9 +378,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-a-come-bet-inside-point_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-a-come-bet-inside-point_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-a-come-bet-inside-point_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-a-come-bet-inside-point_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-a-come-bet-inside-point_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-a-come-bet-inside-point_1280x720.webp",
                 title: "Placement of a Come Bet Inside a Point",
                 alt: "Up close view of two place bets and the Craps rail. There are eight colored spots that correspond with each other."
               },
@@ -403,9 +403,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Even Money in the COME",
-                smImg: "src/images/" + url + "/come-bets-even-money-a_640x360.webp",
-                mdImg: "src/images/" + url + "/come-bets-even-money-a_960x540.webp",
-                lgImg: "src/images/" + url + "/come-bets-even-money-a_1280x720.webp",
+                smImg: "/images/" + url + "/come-bets-even-money-a_640x360.webp",
+                mdImg: "/images/" + url + "/come-bets-even-money-a_960x540.webp",
+                lgImg: "/images/" + url + "/come-bets-even-money-a_1280x720.webp",
                 title: "Come Bets Win Even Money in the COME",
                 alt: "$10 paid $10 in the come bet area. There are two sets of orange dice. One reads 2-5 and the other 6-5."
               },
@@ -415,9 +415,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Even Money When Point Rolls",
-                smImg: "src/images/" + url + "/come-bets-even-money-b_640x360.webp",
-                mdImg: "src/images/" + url + "/come-bets-even-money-b_960x540.webp",
-                lgImg: "src/images/" + url + "/come-bets-even-money-b_1280x720.webp",
+                smImg: "/images/" + url + "/come-bets-even-money-b_640x360.webp",
+                mdImg: "/images/" + url + "/come-bets-even-money-b_960x540.webp",
+                lgImg: "/images/" + url + "/come-bets-even-money-b_1280x720.webp",
                 title: "Come Bets Win Even Money When Point Rolls",
                 alt: "$25 paid $25 in the come area with an arrow coming out of the point nine. Two orange dice read 5-4."
               },
@@ -487,9 +487,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Come Bets - On For...",
-                smImg: "src/images/" + url + "/on-for_640x360.webp",
-                mdImg: "src/images/" + url + "/on-for_960x540.webp",
-                lgImg: "src/images/" + url + "/on-for_1280x720.webp",
+                smImg: "/images/" + url + "/on-for_640x360.webp",
+                mdImg: "/images/" + url + "/on-for_960x540.webp",
+                lgImg: "/images/" + url + "/on-for_1280x720.webp",
                 title: "Come Bets - On For",
                 alt: "$10 moving from the come area into the point six. Two orange dice show 1-5."
               },
@@ -510,9 +510,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Come Bets - Off For...",
-                smImg: "src/images/" + url + "/off-for_640x360.webp",
-                mdImg: "src/images/" + url + "/off-for_960x540.webp",
-                lgImg: "src/images/" + url + "/off-for_1280x720.webp",
+                smImg: "/images/" + url + "/off-for_640x360.webp",
+                mdImg: "/images/" + url + "/off-for_960x540.webp",
+                lgImg: "/images/" + url + "/off-for_1280x720.webp",
                 title: "Come Bets - Off For",
                 alt: "$10 moving off the point eight, moved into the come, and paid $10. Two orange dice show 5-3."
               },
@@ -539,9 +539,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Off and On For...",
-                smImg: "src/images/" + url + "/off-and-on-for_640x360.webp",
-                mdImg: "src/images/" + url + "/off-and-on-for_960x540.webp",
-                lgImg: "src/images/" + url + "/off-and-on-for_1280x720.webp",
+                smImg: "/images/" + url + "/off-and-on-for_640x360.webp",
+                mdImg: "/images/" + url + "/off-and-on-for_960x540.webp",
+                lgImg: "/images/" + url + "/off-and-on-for_1280x720.webp",
                 title: "Off and On For",
                 alt: "$10 in the point five and in the come. $10 payment is also in the come. Two orange dice show 3-2."
               },
@@ -570,9 +570,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Off For... On For...",
-                smImg: "src/images/" + url + "/off-for-on-for_640x360.webp",
-                mdImg: "src/images/" + url + "/off-for-on-for_960x540.webp",
-                lgImg: "src/images/" + url + "/off-for-on-for_1280x720.webp",
+                smImg: "/images/" + url + "/off-for-on-for_640x360.webp",
+                mdImg: "/images/" + url + "/off-for-on-for_960x540.webp",
+                lgImg: "/images/" + url + "/off-for-on-for_1280x720.webp",
                 title: "Off For - On For",
                 alt: "Split image. Left side show $5 on point eight and $15 in come. Right side shows $15 on point eight and $5 paid $5 in the come. Two orange dice show 5-3."
               },
@@ -597,9 +597,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dealer-come-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/dealer-come-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/dealer-come-bet_1280x720.webp",
+                smImg: "/images/" + url + "/dealer-come-bet_640x360.webp",
+                mdImg: "/images/" + url + "/dealer-come-bet_960x540.webp",
+                lgImg: "/images/" + url + "/dealer-come-bet_1280x720.webp",
                 title: "Dealer Come Bet",
                 alt: "$1 in the middle of the point four."
               },

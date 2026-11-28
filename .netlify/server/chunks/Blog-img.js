@@ -49,7 +49,7 @@ const Blog_img = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     $$bindings.title(title);
   if ($$props.alt === void 0 && $$bindings.alt && alt !== void 0)
     $$bindings.alt(alt);
-  return `<figure><figcaption class="pt-2 text-lg">${escape(caption)}</figcaption> <img src="${"src/images/" + escape(url, true) + "/" + escape(img, true) + "_640x360.webp"}"${add_attribute("alt", alt, 0)}${add_attribute("title", title, 0)} class="object-cover w-full block md:hidden lg:hidden"> <img src="${"src/images/" + escape(url, true) + "/" + escape(img, true) + "_960x540.webp"}"${add_attribute("alt", alt, 0)}${add_attribute("title", title, 0)} class="object-cover w-full hidden md:block lg:hidden"> <img src="${"src/images/" + escape(url, true) + "/" + escape(img, true) + "_1280x720.webp"}"${add_attribute("alt", alt, 0)}${add_attribute("title", title, 0)} class="object-cover w-full hidden sm:hidden md:hidden lg:block"></figure>`;
+  return `<figure><figcaption class="pt-2 text-lg">${escape(caption)}</figcaption> <img src="${"/images/" + escape(url, true) + "/" + escape(img, true) + "_640x360.webp"}"${add_attribute("alt", alt, 0)}${add_attribute("title", title, 0)} class="object-cover w-full block md:hidden lg:hidden"> <img src="${"/images/" + escape(url, true) + "/" + escape(img, true) + "_960x540.webp"}"${add_attribute("alt", alt, 0)}${add_attribute("title", title, 0)} class="object-cover w-full hidden md:block lg:hidden"> <img src="${"/images/" + escape(url, true) + "/" + escape(img, true) + "_1280x720.webp"}"${add_attribute("alt", alt, 0)}${add_attribute("title", title, 0)} class="object-cover w-full hidden sm:hidden md:hidden lg:block"></figure>`;
 });
 export {
   BlogH1 as B,

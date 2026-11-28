@@ -4,7 +4,7 @@ let title = "About";
 let description = "About me and why I made a site teaching people how to play the casino game of Craps.";
 let url = "about";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${$$result.head += `<!-- HEAD_svelte-1x6krs9_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-1okfbg2">{
+  return `${$$result.head += `<!-- HEAD_svelte-vg584x_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-143wd2i">{
             "@context": "https://schema.org",
             "@type": "AboutPage",
             "mainEntity": {
@@ -18,11 +18,11 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                 },
                 "image": {
                     "@type": "ImageObject",
-                    "url": "src/images/about/about-header.jpg"
+                    "url": "/images/about/about-header.jpg"
                 },
                 "url": "http://parlaynation.com/about"
             }
-        }<\/script><!-- HEAD_svelte-1x6krs9_END -->`, ""} ${validate_component(MoreCrapsLayout, "MoreLayout").$$render($$result, { showContentMenuBox: false }, {}, {
+        }<\/script><!-- HEAD_svelte-vg584x_END -->`, ""} ${validate_component(MoreCrapsLayout, "MoreLayout").$$render($$result, { showContentMenuBox: false }, {}, {
     default: () => {
       return `<main aria-label="Main content" class="p-6" data-svelte-h="svelte-1mhhk3k"><div class="flex flex-col px-4 sm:px-6 lg:px-8"><h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-10 text-center">About Me</h1> <div class="home-page-body-bg-1 shadow-md rounded-lg overflow-hidden w-full max-w-4xl mb-10"><div class="w-full text-center p-6"><p class="text-lg sm:text-xl">Welcome to Parlay Nation! I&#39;m Elvis, a passionate Craps dealer with over a decade of
 						experience. My mission is to teach people how to play Craps and mentor aspiring dealers.

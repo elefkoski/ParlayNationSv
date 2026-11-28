@@ -14,9 +14,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Pass Line Basics
       aria: "Pass Line Basics",
-      smImg: "src/images/" + url + "/pass-line-basics-header_600x600.webp",
-      mdImg: "src/images/" + url + "/pass-line-basics-header_992x558.webp",
-      lgImg: "src/images/" + url + "/pass-line-basics-wide-header.webp",
+      smImg: "/images/" + url + "/pass-line-basics-header_600x600.webp",
+      mdImg: "/images/" + url + "/pass-line-basics-header_992x558.webp",
+      lgImg: "/images/" + url + "/pass-line-basics-wide-header.webp",
       alt: "Pass Line Basics",
       title: "Pass Line Basics",
       href: "pass-line-basics",
@@ -32,9 +32,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Pass Line Odds
       aria: "Pass Line Odds",
-      smImg: "src/images/" + url + "/pass-line-odds-header_600x600.webp",
-      mdImg: "src/images/" + url + "/pass-line-odds-header_992x558.webp",
-      lgImg: "src/images/" + url + "/pass-line-odds-wide-header.webp",
+      smImg: "/images/" + url + "/pass-line-odds-header_600x600.webp",
+      mdImg: "/images/" + url + "/pass-line-odds-header_992x558.webp",
+      lgImg: "/images/" + url + "/pass-line-odds-wide-header.webp",
       alt: "Pass Line Odds",
       title: "Pass Line Odds",
       href: "pass-line-odds",
@@ -44,9 +44,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Max Odds on the Pass Line
       aria: "Max Odds on the Pass Line",
-      smImg: "src/images/" + url + "/max-odds-header_600x600.webp",
-      mdImg: "src/images/" + url + "/max-odds-header_992x558.webp",
-      lgImg: "src/images/" + url + "/max-odds-wide-header.webp",
+      smImg: "/images/" + url + "/max-odds-header_600x600.webp",
+      mdImg: "/images/" + url + "/max-odds-header_992x558.webp",
+      lgImg: "/images/" + url + "/max-odds-wide-header.webp",
       alt: "Max Odds on the Pass Line",
       title: "Max Odds on the Pass Line",
       href: "max-odds",

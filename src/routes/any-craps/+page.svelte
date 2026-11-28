@@ -50,7 +50,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Any Craps payout table';
@@ -169,9 +169,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/any-craps_640x360.webp"
-				mdImg="src/images/{url}/any-craps_960x540.webp"
-				lgImg="src/images/{url}/any-craps_1280x720.webp"
+				smImg="/images/{url}/any-craps_640x360.webp"
+				mdImg="/images/{url}/any-craps_960x540.webp"
+				lgImg="/images/{url}/any-craps_1280x720.webp"
 				title="The Any Craps"
 				alt="Overhead up close view of the any Craps area on the Craps layout."
 			/>
@@ -192,9 +192,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-the-any-craps_640x360.webp"
-				mdImg="src/images/{url}/placement-of-the-any-craps_960x540.webp"
-				lgImg="src/images/{url}/placement-of-the-any-craps_1280x720.webp"
+				smImg="/images/{url}/placement-of-the-any-craps_640x360.webp"
+				mdImg="/images/{url}/placement-of-the-any-craps_960x540.webp"
+				lgImg="/images/{url}/placement-of-the-any-craps_1280x720.webp"
 				title="Placement of the Any Craps"
 				alt="Up close view of the any Craps bar and the Craps rail. There are eight spots that are color coordinated on the bet and the rail."
 			/>
@@ -204,9 +204,9 @@
 			<p class="pb-4">The Any Craps pays 7:1 or $7 for every $1.</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/what-does-the-any-craps-pay_640x360.webp"
-				mdImg="src/images/{url}/what-does-the-any-craps-pay_960x540.webp"
-				lgImg="src/images/{url}/what-does-the-any-craps-pay_1280x720.webp"
+				smImg="/images/{url}/what-does-the-any-craps-pay_640x360.webp"
+				mdImg="/images/{url}/what-does-the-any-craps-pay_960x540.webp"
+				lgImg="/images/{url}/what-does-the-any-craps-pay_1280x720.webp"
 				title="Any Craps Payment"
 				alt="$3 on the any Craps with two green dice that read 1-3. There is a bubble that reads $21 payment."
 			/>

@@ -19,9 +19,9 @@
 		{
 			// Across
 			aria: 'Across',
-			smImg: 'src/images/' + url + '/across-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/across-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/across-wide-header.webp',
+			smImg: '/images/' + url + '/across-header_600x600.webp',
+			mdImg: '/images/' + url + '/across-header_992x558.webp',
+			lgImg: '/images/' + url + '/across-wide-header.webp',
 			alt: 'Across',
 			title: 'Across',
 			href: 'across',
@@ -31,9 +31,9 @@
 		{
 			// Inside
 			aria: 'Inside',
-			smImg: 'src/images/' + url + '/inside-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/inside-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/inside-wide-header.webp',
+			smImg: '/images/' + url + '/inside-header_600x600.webp',
+			mdImg: '/images/' + url + '/inside-header_992x558.webp',
+			lgImg: '/images/' + url + '/inside-wide-header.webp',
 			alt: 'Inside',
 			title: 'Inside',
 			href: 'inside',
@@ -43,9 +43,9 @@
 		{
 			// Outside
 			aria: 'Outside',
-			smImg: 'src/images/' + url + '/outside-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/outside-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/outside-wide-header.webp',
+			smImg: '/images/' + url + '/outside-header_600x600.webp',
+			mdImg: '/images/' + url + '/outside-header_992x558.webp',
+			lgImg: '/images/' + url + '/outside-wide-header.webp',
 			alt: 'Outside',
 			title: 'Outside',
 			href: 'outside',
@@ -55,9 +55,9 @@
 		{
 			// Uptown/Downtown
 			aria: 'Uptown/Downtown',
-			smImg: 'src/images/' + url + '/uptown-downtown-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/uptown-downtown-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/uptown-downtown-wide-header.webp',
+			smImg: '/images/' + url + '/uptown-downtown-header_600x600.webp',
+			mdImg: '/images/' + url + '/uptown-downtown-header_992x558.webp',
+			lgImg: '/images/' + url + '/uptown-downtown-wide-header.webp',
 			alt: 'Uptown/Downtown',
 			title: 'Uptown/Downtown',
 			href: 'uptown-downtown',
@@ -67,9 +67,9 @@
 		{
 			// Including the Point
 			aria: 'Including the Point',
-			smImg: 'src/images/' + url + '/including-the-point-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/including-the-point-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/including-the-point-wide-header.webp',
+			smImg: '/images/' + url + '/including-the-point-header_600x600.webp',
+			mdImg: '/images/' + url + '/including-the-point-header_992x558.webp',
+			lgImg: '/images/' + url + '/including-the-point-wide-header.webp',
 			alt: 'Including the Point',
 			title: 'Including the Point',
 			href: 'including-the-point',

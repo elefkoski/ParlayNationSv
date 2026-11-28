@@ -19,9 +19,9 @@
 		{
 			// Come Bet Basics
 			aria: 'Come Bet Basics',
-			smImg: 'src/images/' + url + '/come-bet-basics-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/come-bet-basics-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/come-bet-basics-wide-header.webp',
+			smImg: '/images/' + url + '/come-bet-basics-header_600x600.webp',
+			mdImg: '/images/' + url + '/come-bet-basics-header_992x558.webp',
+			lgImg: '/images/' + url + '/come-bet-basics-wide-header.webp',
 			alt: 'Come Bet Basics',
 			title: 'Come Bet Basics',
 			href: 'come-bet-basics',
@@ -39,9 +39,9 @@
 		{
 			// Come Bet Odds
 			aria: 'Come Bet Odds',
-			smImg: 'src/images/' + url + '/come-bet-odds-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/come-bet-odds-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/come-bet-odds-wide-header.webp',
+			smImg: '/images/' + url + '/come-bet-odds-header_600x600.webp',
+			mdImg: '/images/' + url + '/come-bet-odds-header_992x558.webp',
+			lgImg: '/images/' + url + '/come-bet-odds-wide-header.webp',
 			alt: 'Come Bet Odds',
 			title: 'Come Bet Odds',
 			href: 'come-bet-odds',
@@ -58,9 +58,9 @@
 		{
 			// Coming Down w/Odds
 			aria: 'Coming Down w/Odds',
-			smImg: 'src/images/' + url + '/coming-down-with-odds-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/coming-down-with-odds-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/coming-down-with-odds-wide-header.webp',
+			smImg: '/images/' + url + '/coming-down-with-odds-header_600x600.webp',
+			mdImg: '/images/' + url + '/coming-down-with-odds-header_992x558.webp',
+			lgImg: '/images/' + url + '/coming-down-with-odds-wide-header.webp',
 			alt: 'Coming Down w/Odds',
 			title: 'Coming Down w/Odds',
 			href: 'coming-down-with-odds',

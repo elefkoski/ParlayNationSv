@@ -66,7 +66,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-10f694a_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-qbkj0f">{
   "@context": "https://schema.org",
@@ -202,9 +202,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/max-odds-on-the-pass-line_640x360.webp",
-                mdImg: "src/images/" + url + "/max-odds-on-the-pass-line_960x540.webp",
-                lgImg: "src/images/" + url + "/max-odds-on-the-pass-line_1280x720.webp",
+                smImg: "/images/" + url + "/max-odds-on-the-pass-line_640x360.webp",
+                mdImg: "/images/" + url + "/max-odds-on-the-pass-line_960x540.webp",
+                lgImg: "/images/" + url + "/max-odds-on-the-pass-line_1280x720.webp",
                 alt: "$5 on the pass line with $25 odds in the back as odds."
               },
               {},
@@ -227,9 +227,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/single-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/single-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/single-odds_1280x720.webp",
+                smImg: "/images/" + url + "/single-odds_640x360.webp",
+                mdImg: "/images/" + url + "/single-odds_960x540.webp",
+                lgImg: "/images/" + url + "/single-odds_1280x720.webp",
                 alt: "$10 on the Pass Line with $10 Pass Line Odds."
               },
               {},
@@ -252,9 +252,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/double-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/double-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/double-odds_1280x720.webp",
+                smImg: "/images/" + url + "/double-odds_640x360.webp",
+                mdImg: "/images/" + url + "/double-odds_960x540.webp",
+                lgImg: "/images/" + url + "/double-odds_1280x720.webp",
                 alt: "$10 on the Pass Line with $20 as Pass Line Odds."
               },
               {},
@@ -290,9 +290,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "3x Pass Line",
-                    smImg: "src/images/" + url + "/3x-on-4-10_640x360.webp",
-                    mdImg: "src/images/" + url + "/3x-on-4-10_960x540.webp",
-                    lgImg: "src/images/" + url + "/3x-on-4-10_1280x720.webp",
+                    smImg: "/images/" + url + "/3x-on-4-10_640x360.webp",
+                    mdImg: "/images/" + url + "/3x-on-4-10_960x540.webp",
+                    lgImg: "/images/" + url + "/3x-on-4-10_1280x720.webp",
                     alt: "$10 on the pass line with $30 odds. Point is four or ten."
                   },
                   {},
@@ -308,9 +308,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "4x Pass Line",
-                    smImg: "src/images/" + url + "/4x-on-5-9_640x360.webp",
-                    mdImg: "src/images/" + url + "/4x-on-5-9_960x540.webp",
-                    lgImg: "src/images/" + url + "/4x-on-5-9_1280x720.webp",
+                    smImg: "/images/" + url + "/4x-on-5-9_640x360.webp",
+                    mdImg: "/images/" + url + "/4x-on-5-9_960x540.webp",
+                    lgImg: "/images/" + url + "/4x-on-5-9_1280x720.webp",
                     alt: "$15 on the pass line with $60 odds. Point is five or nine."
                   },
                   {},
@@ -325,9 +325,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "5x Pass Line",
-                    smImg: "src/images/" + url + "/5x-on-6-8_640x360.webp",
-                    mdImg: "src/images/" + url + "/5x-on-6-8_960x540.webp",
-                    lgImg: "src/images/" + url + "/5x-on-6-8_1280x720.webp",
+                    smImg: "/images/" + url + "/5x-on-6-8_640x360.webp",
+                    mdImg: "/images/" + url + "/5x-on-6-8_960x540.webp",
+                    lgImg: "/images/" + url + "/5x-on-6-8_1280x720.webp",
                     alt: "$10 on the pass line with $50 odds. Point is six or eight. The $50 odds are paid $60 and the $10 Pass Line is paid even money."
                   },
                   {},
@@ -389,9 +389,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/five-times-max-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/five-times-max-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/five-times-max-odds_1280x720.webp",
+                smImg: "/images/" + url + "/five-times-max-odds_640x360.webp",
+                mdImg: "/images/" + url + "/five-times-max-odds_960x540.webp",
+                lgImg: "/images/" + url + "/five-times-max-odds_1280x720.webp",
                 alt: "$50 on the Pass Line with $250 Pass Line Odds."
               },
               {},
@@ -414,9 +414,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/ten-times-max-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/ten-times-max-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/ten-times-max-odds_1280x720.webp",
+                smImg: "/images/" + url + "/ten-times-max-odds_640x360.webp",
+                mdImg: "/images/" + url + "/ten-times-max-odds_960x540.webp",
+                lgImg: "/images/" + url + "/ten-times-max-odds_1280x720.webp",
                 alt: "$10 on the Pass Line with $100 Pass Line Odds"
               },
               {},
@@ -439,9 +439,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/one-hundred-times-max-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/one-hundred-times-max-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/one-hundred-times-max-odds_1280x720.webp",
+                smImg: "/images/" + url + "/one-hundred-times-max-odds_640x360.webp",
+                mdImg: "/images/" + url + "/one-hundred-times-max-odds_960x540.webp",
+                lgImg: "/images/" + url + "/one-hundred-times-max-odds_1280x720.webp",
                 alt: "$5 on the Pass Line with $500 Pass Line Odds"
               },
               {},

@@ -11,9 +11,9 @@
 	let url: string = 'practice-horn-high-generator';
 
 	let slides: string[] = [
-		'src/images/practice-horn-high-generator/bet-cards_960x1242.webp',
-		'src/images/practice-horn-high-generator/roll-cards_960x1242.webp',
-		'src/images/practice-horn-high-generator/amount-cards_960x1242.webp'
+		'/images/practice-horn-high-generator/bet-cards_960x1242.webp',
+		'/images/practice-horn-high-generator/roll-cards_960x1242.webp',
+		'/images/practice-horn-high-generator/amount-cards_960x1242.webp'
 	];
 </script>
 

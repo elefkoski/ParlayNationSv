@@ -64,7 +64,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Horn High Payment Table';
@@ -243,9 +243,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/horn-high_640x360.webp"
-				mdImg="src/images/{url}/horn-high_960x540.webp"
-				lgImg="src/images/{url}/horn-high_1280x720.webp"
+				smImg="/images/{url}/horn-high_640x360.webp"
+				mdImg="/images/{url}/horn-high_960x540.webp"
+				lgImg="/images/{url}/horn-high_1280x720.webp"
 				title="Horn High"
 				alt="Up close overhead view of the horn highs on the Craps layout."
 			/>
@@ -271,36 +271,36 @@
 			</p>
 			<ContentImg
 				caption="$5 Horn High Yo"
-				smImg="src/images/{url}/5-horn-high-yo-1_640x360.webp"
-				mdImg="src/images/{url}/5-horn-high-yo-1_960x540.webp"
-				lgImg="src/images/{url}/5-horn-high-yo-1_1280x720.webp"
+				smImg="/images/{url}/5-horn-high-yo-1_640x360.webp"
+				mdImg="/images/{url}/5-horn-high-yo-1_960x540.webp"
+				lgImg="/images/{url}/5-horn-high-yo-1_1280x720.webp"
 				title="$5 Horn High Yo"
 				alt="Split image. On top is $5 on the Horn High Yo. On bottom is $1 each on the aces, twelve, and ace deuce. There are two dollars on the yo."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption="$5 Horn High Ace Deuce"
-				smImg="src/images/{url}/5-horn-high-ace-deuce-1_640x360.webp"
-				mdImg="src/images/{url}/5-horn-high-ace-deuce-1_960x540.webp"
-				lgImg="src/images/{url}/5-horn-high-ace-deuce-1_1280x720.webp"
+				smImg="/images/{url}/5-horn-high-ace-deuce-1_640x360.webp"
+				mdImg="/images/{url}/5-horn-high-ace-deuce-1_960x540.webp"
+				lgImg="/images/{url}/5-horn-high-ace-deuce-1_1280x720.webp"
 				title="$5 Horn High Ace Deuce"
 				alt="Split image. On top is $5 on the Horn High Ace Deuce. On bottom is $1 each on the aces, twelve, and yo. There are two dollars on the ace deuce."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption="$5 Horn High Aces"
-				smImg="src/images/{url}/5-horn-high-aces-1_640x360.webp"
-				mdImg="src/images/{url}/5-horn-high-aces-1_960x540.webp"
-				lgImg="src/images/{url}/5-horn-high-aces-1_1280x720.webp"
+				smImg="/images/{url}/5-horn-high-aces-1_640x360.webp"
+				mdImg="/images/{url}/5-horn-high-aces-1_960x540.webp"
+				lgImg="/images/{url}/5-horn-high-aces-1_1280x720.webp"
 				title="$5 Horn High Aces"
 				alt="Split image. On top is $5 on the Horn High Aces. On bottom is $1 each on the ace deuce, twelve, and yo. There are two dollars on the aces."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption="$5 Horn High Twelve"
-				smImg="src/images/{url}/5-horn-high-twelve-1_640x360.webp"
-				mdImg="src/images/{url}/5-horn-high-twelve-1_960x540.webp"
-				lgImg="src/images/{url}/5-horn-high-twelve-1_1280x720.webp"
+				smImg="/images/{url}/5-horn-high-twelve-1_640x360.webp"
+				mdImg="/images/{url}/5-horn-high-twelve-1_960x540.webp"
+				lgImg="/images/{url}/5-horn-high-twelve-1_1280x720.webp"
 				title="$5 Horn High Twelve"
 				alt="Split image. On top is $5 on the Horn High Twelve. On bottom is $1 each on the aces, ace deuce, and yo. There are two dollars on the twelve."
 			/>
@@ -320,9 +320,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-a-horn-high_640x360.webp"
-				mdImg="src/images/{url}/placement-of-a-horn-high_960x540.webp"
-				lgImg="src/images/{url}/placement-of-a-horn-high_1280x720.webp"
+				smImg="/images/{url}/placement-of-a-horn-high_640x360.webp"
+				mdImg="/images/{url}/placement-of-a-horn-high_960x540.webp"
+				lgImg="/images/{url}/placement-of-a-horn-high_1280x720.webp"
 				title="Placement of a Horn High"
 				alt="Overhead up close view of the Horn High bets and the Craps table rail. There are eight color coded spots on the bets referencing eight colored spots on the rail."
 			/>
@@ -351,18 +351,18 @@
 				</p>
 				<ContentImg
 					caption="$5 Horn High Twelve Direct Hit Payment"
-					smImg="src/images/{url}/5-hh-twelve-direct_640x360.webp"
-					mdImg="src/images/{url}/5-hh-twelve-direct_960x540.webp"
-					lgImg="src/images/{url}/5-hh-twelve-direct_1280x720.webp"
+					smImg="/images/{url}/5-hh-twelve-direct_640x360.webp"
+					mdImg="/images/{url}/5-hh-twelve-direct_960x540.webp"
+					lgImg="/images/{url}/5-hh-twelve-direct_1280x720.webp"
 					title="$5 Horn High Twelve Direct Hit Payment"
 					alt="$1 each on the aces, ace deuce, and yo. There are two dollars on the twelve. Two green dice show 6-6. A bubble reads $57 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$5 Horn High Aces Direct Hit Payment"
-					smImg="src/images/{url}/5-hh-aces-direct_640x360.webp"
-					mdImg="src/images/{url}/5-hh-aces-direct_960x540.webp"
-					lgImg="src/images/{url}/5-hh-aces-direct_1280x720.webp"
+					smImg="/images/{url}/5-hh-aces-direct_640x360.webp"
+					mdImg="/images/{url}/5-hh-aces-direct_960x540.webp"
+					lgImg="/images/{url}/5-hh-aces-direct_1280x720.webp"
 					title="$5 Horn High Aces Direct Hit Payment"
 					alt="$1 each on the twelve, ace deuce, and yo. There are two dollars on the aces. Two green dice show 1-1. A bubble reads $57 payment."
 				/>
@@ -374,9 +374,9 @@
 				</p>
 				<ContentImg
 					caption="$5 Horn High Twelve Opposite High Side Payment"
-					smImg="src/images/{url}/5-hh-twelve-opp-high_640x360.webp"
-					mdImg="src/images/{url}/5-hh-twelve-opp-high_960x540.webp"
-					lgImg="src/images/{url}/5-hh-twelve-opp-high_1280x720.webp"
+					smImg="/images/{url}/5-hh-twelve-opp-high_640x360.webp"
+					mdImg="/images/{url}/5-hh-twelve-opp-high_960x540.webp"
+					lgImg="/images/{url}/5-hh-twelve-opp-high_1280x720.webp"
 					title="$5 Horn High Twelve Opposite High Side Payment"
 					alt="A $5 Horn High Twelve has $2 on the Twelve and $1 on the other three numbers. If the opposite high side rolled, the Aces, it would win $30 ($1 x 30) minus $4 (the other losing bets - $2 on the Twelve and $1 on each the Aces Deuce and Yo) for a payment of $26."
 				/>
@@ -389,9 +389,9 @@
 				</p>
 				<ContentImg
 					caption="$5 Horn High Aces Low Side Hits"
-					smImg="src/images/{url}/5-hh-aces-low-side_640x360.webp"
-					mdImg="src/images/{url}/5-hh-aces-low-side_960x540.webp"
-					lgImg="src/images/{url}/5-hh-aces-low-side_1280x720.webp"
+					smImg="/images/{url}/5-hh-aces-low-side_640x360.webp"
+					mdImg="/images/{url}/5-hh-aces-low-side_960x540.webp"
+					lgImg="/images/{url}/5-hh-aces-low-side_1280x720.webp"
 					title="$5 Horn High Aces Low Side Hits"
 					alt="$1 each on the twelve, ace deuce, and the yo, there are two dollars on the Aces. Two green dice show 1-2. A bubble reads $11 payment."
 				/>
@@ -411,18 +411,18 @@
 				</p>
 				<ContentImg
 					caption="$5 Horn High Yo Direct Hit Payment"
-					smImg="src/images/{url}/5-hh-yo-direct_640x360.webp"
-					mdImg="src/images/{url}/5-hh-yo-direct_960x540.webp"
-					lgImg="src/images/{url}/5-hh-yo-direct_1280x720.webp"
+					smImg="/images/{url}/5-hh-yo-direct_640x360.webp"
+					mdImg="/images/{url}/5-hh-yo-direct_960x540.webp"
+					lgImg="/images/{url}/5-hh-yo-direct_1280x720.webp"
 					title="$5 Horn High Yo Direct Hit Payment"
 					alt="$1 each on the aces, ace deuce, and twelve. There are two dollars on the yo. Two green dice show 5-6. A bubble reads $27 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$5 Horn High Ace Deuce Direct Hit Payment"
-					smImg="src/images/{url}/5-hh-ace-deuce-direct_640x360.webp"
-					mdImg="src/images/{url}/5-hh-ace-deuce-direct_960x540.webp"
-					lgImg="src/images/{url}/5-hh-ace-deuce-direct_1280x720.webp"
+					smImg="/images/{url}/5-hh-ace-deuce-direct_640x360.webp"
+					mdImg="/images/{url}/5-hh-ace-deuce-direct_960x540.webp"
+					lgImg="/images/{url}/5-hh-ace-deuce-direct_1280x720.webp"
 					title="$5 Horn High Ace Deuce Direct Hit Payment"
 					alt="$1 each on the aces, yo, and twelve. There are two dollars on the ace deuce. Two green dice show 1-2. A bubble reads $27 payment."
 				/>
@@ -434,9 +434,9 @@
 				</p>
 				<ContentImg
 					caption="$5 Horn High Ace Deuce Opposite Low Side Payment."
-					smImg="src/images/{url}/5-hh-ace-deuce-opp-low_640x360.webp"
-					mdImg="src/images/{url}/5-hh-ace-deuce-opp-low_960x540.webp"
-					lgImg="src/images/{url}/5-hh-ace-deuce-opp-low_1280x720.webp"
+					smImg="/images/{url}/5-hh-ace-deuce-opp-low_640x360.webp"
+					mdImg="/images/{url}/5-hh-ace-deuce-opp-low_960x540.webp"
+					lgImg="/images/{url}/5-hh-ace-deuce-opp-low_1280x720.webp"
 					title="$5 Horn High Ace Deuce Opposite Low Side Payment."
 					alt="$1 each on the aces, twelve, and yo. There are two dollars on the ace deuce. Two green dice show 5-6. A bubble reads $11 payment."
 				/>
@@ -449,9 +449,9 @@
 				</p>
 				<ContentImg
 					caption="$5 Horn High Yo High Side Payment"
-					smImg="src/images/{url}/5-hh-yo-high-side_640x360.webp"
-					mdImg="src/images/{url}/5-hh-yo-high-side_960x540.webp"
-					lgImg="src/images/{url}/5-hh-yo-high-side_1280x720.webp"
+					smImg="/images/{url}/5-hh-yo-high-side_640x360.webp"
+					mdImg="/images/{url}/5-hh-yo-high-side_960x540.webp"
+					lgImg="/images/{url}/5-hh-yo-high-side_1280x720.webp"
 					title="$5 Horn High Yo High Side Payment"
 					alt="$1 each on the aces, twelve, and ace deuce. There are two dollars on the yo. Two green dice show 6-6. A bubble reads $26 payment."
 				/>

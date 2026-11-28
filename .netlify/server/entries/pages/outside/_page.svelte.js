@@ -34,7 +34,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["The Spread", "Total Bet"];
   let tblRows = [
@@ -143,9 +143,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/outside_640x360.webp",
-                mdImg: "src/images/" + url + "/outside_960x540.webp",
-                lgImg: "src/images/" + url + "/outside_1280x720.webp",
+                smImg: "/images/" + url + "/outside_640x360.webp",
+                mdImg: "/images/" + url + "/outside_960x540.webp",
+                lgImg: "/images/" + url + "/outside_1280x720.webp",
                 title: "Outside Place Bets",
                 alt: "Puck is on point eight and points 4, 5, 9, and 10 are highlighted."
               },
@@ -173,9 +173,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/60-outside_640x360.webp",
-                    mdImg: "src/images/" + url + "/60-outside_960x540.webp",
-                    lgImg: "src/images/" + url + "/60-outside_1280x720.webp",
+                    smImg: "/images/" + url + "/60-outside_640x360.webp",
+                    mdImg: "/images/" + url + "/60-outside_960x540.webp",
+                    lgImg: "/images/" + url + "/60-outside_1280x720.webp",
                     title: "Betting $60 Outside",
                     alt: "$60 outside with the point on six or eight."
                   },
@@ -190,9 +190,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/45-outside_640x360.webp",
-                    mdImg: "src/images/" + url + "/45-outside_960x540.webp",
-                    lgImg: "src/images/" + url + "/45-outside_1280x720.webp",
+                    smImg: "/images/" + url + "/45-outside_640x360.webp",
+                    mdImg: "/images/" + url + "/45-outside_960x540.webp",
+                    lgImg: "/images/" + url + "/45-outside_1280x720.webp",
                     title: "Betting $45 Outside",
                     alt: "$45 outside with point on five"
                   },
@@ -220,9 +220,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/102-outside_640x360.webp",
-                    mdImg: "src/images/" + url + "/102-outside_960x540.webp",
-                    lgImg: "src/images/" + url + "/102-outside_1280x720.webp",
+                    smImg: "/images/" + url + "/102-outside_640x360.webp",
+                    mdImg: "/images/" + url + "/102-outside_960x540.webp",
+                    lgImg: "/images/" + url + "/102-outside_1280x720.webp",
                     title: "Betting $102 Outside",
                     alt: "$102 outside with the point on eight."
                   },
@@ -237,9 +237,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/77-outside_640x360.webp",
-                    mdImg: "src/images/" + url + "/77-outside_960x540.webp",
-                    lgImg: "src/images/" + url + "/77-outside_1280x720.webp",
+                    smImg: "/images/" + url + "/77-outside_640x360.webp",
+                    mdImg: "/images/" + url + "/77-outside_960x540.webp",
+                    lgImg: "/images/" + url + "/77-outside_1280x720.webp",
                     title: "Betting $77 Outside",
                     alt: "$77 outside with the point on five."
                   },
@@ -255,9 +255,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/76-outside_640x360.webp",
-                    mdImg: "src/images/" + url + "/76-outside_960x540.webp",
-                    lgImg: "src/images/" + url + "/76-outside_1280x720.webp",
+                    smImg: "/images/" + url + "/76-outside_640x360.webp",
+                    mdImg: "/images/" + url + "/76-outside_960x540.webp",
+                    lgImg: "/images/" + url + "/76-outside_1280x720.webp",
                     title: "Betting $76 Outside",
                     alt: "$76 outside with the point on four"
                   },

@@ -24,7 +24,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 	let pageLinks: PageMenu[] = [
 		{
@@ -211,9 +211,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/self-service_640x360.webp"
-				mdImg="src/images/{url}/self-service_960x540.webp"
-				lgImg="src/images/{url}/self-service_1280x720.webp"
+				smImg="/images/{url}/self-service_640x360.webp"
+				mdImg="/images/{url}/self-service_960x540.webp"
+				lgImg="/images/{url}/self-service_1280x720.webp"
 				title="Self-Service Bets"
 				alt="Arrows pointing to the pass line, pass line odd, field, don't come, don't come odds, come, and don't come areas."
 			/>
@@ -231,9 +231,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/lays-it-plays_640x360.webp"
-				mdImg="src/images/{url}/lays-it-plays_960x540.webp"
-				lgImg="src/images/{url}/lays-it-plays_1280x720.webp"
+				smImg="/images/{url}/lays-it-plays_640x360.webp"
+				mdImg="/images/{url}/lays-it-plays_960x540.webp"
+				lgImg="/images/{url}/lays-it-plays_1280x720.webp"
 				title="If it Lays it Plays"
 				alt="A winning $75 bet sitting in the field."
 			/>
@@ -277,9 +277,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/two-way-bet_640x360.webp"
-				mdImg="src/images/{url}/two-way-bet_960x540.webp"
-				lgImg="src/images/{url}/two-way-bet_1280x720.webp"
+				smImg="/images/{url}/two-way-bet_640x360.webp"
+				mdImg="/images/{url}/two-way-bet_960x540.webp"
+				lgImg="/images/{url}/two-way-bet_1280x720.webp"
 				title="Two-Way Bet"
 				alt="A $5 bet on the hard 10 in spot three with $5 in the middle of the hard 10 for the dealers."
 			/>
@@ -302,9 +302,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/three-way-bet_640x360.webp"
-				mdImg="src/images/{url}/three-way-bet_960x540.webp"
-				lgImg="src/images/{url}/three-way-bet_1280x720.webp"
+				smImg="/images/{url}/three-way-bet_640x360.webp"
+				mdImg="/images/{url}/three-way-bet_960x540.webp"
+				lgImg="/images/{url}/three-way-bet_1280x720.webp"
 				title="Three-Way Bet"
 				alt="Three dollars on the aces. One in spot four, one in spot ten, and one in the middle."
 			/>
@@ -326,9 +326,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/hedging_640x360.webp"
-				mdImg="src/images/{url}/hedging_960x540.webp"
-				lgImg="src/images/{url}/hedging_1280x720.webp"
+				smImg="/images/{url}/hedging_640x360.webp"
+				mdImg="/images/{url}/hedging_960x540.webp"
+				lgImg="/images/{url}/hedging_1280x720.webp"
 				title="Hedging Bets"
 				alt="Ten dollars on the pass line with two dollars on the any craps."
 			/>

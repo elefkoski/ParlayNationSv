@@ -27,57 +27,57 @@
 		{
 			title: 'Learn Craps',
 			href: 'craps',
-			lightSrc: 'src/images/icons/grad-hat-black-icon.png',
-			darkSrc: 'src/images/icons/grad-hat-white-icon.png',
+			lightSrc: '/images/icons/grad-hat-black-icon.png',
+			darkSrc: '/images/icons/grad-hat-white-icon.png',
 			alt: 'Graduation Hat Icon'
 		},
 		{
 			title: 'Practice Craps',
 			href: 'practice-craps',
-			lightSrc: 'src/images/icons/bullseye-black-icon.png',
-			darkSrc: 'src/images/icons/bullseye-white-icon.png',
+			lightSrc: '/images/icons/bullseye-black-icon.png',
+			darkSrc: '/images/icons/bullseye-white-icon.png',
 			alt: 'Bullseye'
 		},
 		{
 			title: 'Craps Blog',
 			href: 'craps-blog',
-			lightSrc: 'src/images/icons/paper-black-icon.png',
-			darkSrc: 'src/images/icons/paper-white-icon.png',
+			lightSrc: '/images/icons/paper-black-icon.png',
+			darkSrc: '/images/icons/paper-white-icon.png',
 			alt: 'Piece of paper'
 		},
 		{
 			title: 'Craps Corner',
 			href: 'craps-corner',
-			lightSrc: 'src/images/icons/more-black-icon.png',
-			darkSrc: 'src/images/icons/more-white-icon.png',
+			lightSrc: '/images/icons/more-black-icon.png',
+			darkSrc: '/images/icons/more-white-icon.png',
 			alt: 'Craps Corner'
 		},
 		{
 			title: 'Craps Calculators',
 			href: 'craps-calculators',
-			lightSrc: 'src/images/icons/calculator-black-icon.png',
-			darkSrc: 'src/images/icons/calculator-white-icon.png',
+			lightSrc: '/images/icons/calculator-black-icon.png',
+			darkSrc: '/images/icons/calculator-white-icon.png',
 			alt: 'Calculator'
 		},
 		{
 			title: 'Craps Simulator',
 			href: 'craps-simulator',
-			lightSrc: 'src/images/icons/controller-black-icon.png',
-			darkSrc: 'src/images/icons/controller-white-icon.png',
+			lightSrc: '/images/icons/controller-black-icon.png',
+			darkSrc: '/images/icons/controller-white-icon.png',
 			alt: 'Controller'
 		},
 		{
 			title: 'Glossary',
 			href: 'glossary',
-			lightSrc: 'src/images/icons/glossary-black-icon.png',
-			darkSrc: 'src/images/icons/glossary-white-icon.png',
+			lightSrc: '/images/icons/glossary-black-icon.png',
+			darkSrc: '/images/icons/glossary-white-icon.png',
 			alt: 'Glossary'
 		},
 		{
 			title: 'FAQ',
 			href: 'faq',
-			lightSrc: 'src/images/icons/question-black-icon.png',
-			darkSrc: 'src/images/icons/question-white-icon.png',
+			lightSrc: '/images/icons/question-black-icon.png',
+			darkSrc: '/images/icons/question-white-icon.png',
 			alt: 'Question Mark'
 		}
 	];
@@ -610,8 +610,8 @@
 				<a class="flex py-2 px-4 items-center" data-track="drawer-craps-blog" href="craps-blog">
 					<img
 						src={$theme === 'dark'
-							? 'src/images/icons/paper-white-icon.png'
-							: 'src/images/icons/paper-black-icon.png'}
+							? '/images/icons/paper-white-icon.png'
+							: '/images/icons/paper-black-icon.png'}
 						alt="Piece of paper"
 						class="w-5 h-5 mr-2 filter"
 					/>
@@ -632,8 +632,8 @@
 				>
 					<img
 						src={$theme === 'dark'
-							? 'src/images/icons/bullseye-white-icon.png'
-							: 'src/images/icons/bullseye-black-icon.png'}
+							? '/images/icons/bullseye-white-icon.png'
+							: '/images/icons/bullseye-black-icon.png'}
 						alt="Bullseye"
 						class="w-5 h-5 mr-2 filter"
 					/>

@@ -14,9 +14,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // The Don\'t Pass
       aria: "The Don't Pass",
-      smImg: "src/images/" + url + "/dont-pass-header_600x600.webp",
-      mdImg: "src/images/" + url + "/dont-pass-header_992x558.webp",
-      lgImg: "src/images/" + url + "/dont-pass-wide-header.webp",
+      smImg: "/images/" + url + "/dont-pass-header_600x600.webp",
+      mdImg: "/images/" + url + "/dont-pass-header_992x558.webp",
+      lgImg: "/images/" + url + "/dont-pass-wide-header.webp",
       alt: "The Don't Pass",
       title: "The Don't Pass",
       href: "dont-pass",
@@ -31,9 +31,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Don\'t Pass Lay Odds
       aria: "Don't Pass Lay Odds",
-      smImg: "src/images/" + url + "/dont-pass-lay-odds-header_600x600.webp",
-      mdImg: "src/images/" + url + "/dont-pass-lay-odds-header_992x558.webp",
-      lgImg: "src/images/" + url + "/dont-pass-lay-odds-wide-header.webp",
+      smImg: "/images/" + url + "/dont-pass-lay-odds-header_600x600.webp",
+      mdImg: "/images/" + url + "/dont-pass-lay-odds-header_992x558.webp",
+      lgImg: "/images/" + url + "/dont-pass-lay-odds-wide-header.webp",
       alt: "Don't Pass Lay Odds",
       title: "Don't Pass Lay Odds",
       href: "dont-pass-lay-odds",
@@ -48,9 +48,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Don\'t Come
       aria: "Don't Come",
-      smImg: "src/images/" + url + "/dont-come-header_600x600.webp",
-      mdImg: "src/images/" + url + "/dont-come-header_992x558.webp",
-      lgImg: "src/images/" + url + "/dont-come-wide-header.webp",
+      smImg: "/images/" + url + "/dont-come-header_600x600.webp",
+      mdImg: "/images/" + url + "/dont-come-header_992x558.webp",
+      lgImg: "/images/" + url + "/dont-come-wide-header.webp",
       alt: "Don't Come",
       title: "Don't Come",
       href: "dont-come",
@@ -68,9 +68,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Don\'t Come Lay Odds
       aria: "Don't Come Lay Odds",
-      smImg: "src/images/" + url + "/dont-come-lay-odds-header_600x600.webp",
-      mdImg: "src/images/" + url + "/dont-come-lay-odds-header_992x558.webp",
-      lgImg: "src/images/" + url + "/dont-come-lay-odds-wide-header.webp",
+      smImg: "/images/" + url + "/dont-come-lay-odds-header_600x600.webp",
+      mdImg: "/images/" + url + "/dont-come-lay-odds-header_992x558.webp",
+      lgImg: "/images/" + url + "/dont-come-lay-odds-wide-header.webp",
       alt: "Don't Come Lay Odds",
       title: "Don't Come Lay Odds",
       href: "dont-come-lay-odds",
@@ -86,9 +86,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Overlays
       aria: "Overlays",
-      smImg: "src/images/" + url + "/overlays-header_600x600.webp",
-      mdImg: "src/images/" + url + "/overlays-header_992x558.webp",
-      lgImg: "src/images/" + url + "/overlays-wide-header.webp",
+      smImg: "/images/" + url + "/overlays-header_600x600.webp",
+      mdImg: "/images/" + url + "/overlays-header_992x558.webp",
+      lgImg: "/images/" + url + "/overlays-wide-header.webp",
       alt: "Overlays",
       title: "Overlays",
       href: "overlays",

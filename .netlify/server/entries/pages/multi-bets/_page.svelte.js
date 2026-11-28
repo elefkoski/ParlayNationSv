@@ -80,7 +80,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-ua57z4_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-ozvbod">{
   "@context": "https://schema.org",
@@ -188,9 +188,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/multi-bets_640x360.webp",
-                mdImg: "src/images/" + url + "/multi-bets_960x540.webp",
-                lgImg: "src/images/" + url + "/multi-bets_1280x720.webp",
+                smImg: "/images/" + url + "/multi-bets_640x360.webp",
+                mdImg: "/images/" + url + "/multi-bets_960x540.webp",
+                lgImg: "/images/" + url + "/multi-bets_1280x720.webp",
                 title: "Multi-Bets",
                 alt: "Multiple bets in the proposition area: $2 split on the eleven twelve, a high low yo, and a $5 c and e split."
               },
@@ -244,9 +244,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/high-low_640x360.webp",
-                    mdImg: "src/images/" + url + "/high-low_960x540.webp",
-                    lgImg: "src/images/" + url + "/high-low_1280x720.webp",
+                    smImg: "/images/" + url + "/high-low_640x360.webp",
+                    mdImg: "/images/" + url + "/high-low_960x540.webp",
+                    lgImg: "/images/" + url + "/high-low_1280x720.webp",
                     title: "High-Low",
                     alt: "$1 each on the two and the twelve."
                   },
@@ -304,9 +304,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/eleven-twelve_640x360.webp",
-                    mdImg: "src/images/" + url + "/eleven-twelve_960x540.webp",
-                    lgImg: "src/images/" + url + "/eleven-twelve_1280x720.webp",
+                    smImg: "/images/" + url + "/eleven-twelve_640x360.webp",
+                    mdImg: "/images/" + url + "/eleven-twelve_960x540.webp",
+                    lgImg: "/images/" + url + "/eleven-twelve_1280x720.webp",
                     title: "Eleven - Twelve",
                     alt: "$1 each on the eleven and the twelve."
                   },
@@ -365,9 +365,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/aces-ace-deuce_640x360.webp",
-                    mdImg: "src/images/" + url + "/aces-ace-deuce_960x540.webp",
-                    lgImg: "src/images/" + url + "/aces-ace-deuce_1280x720.webp",
+                    smImg: "/images/" + url + "/aces-ace-deuce_640x360.webp",
+                    mdImg: "/images/" + url + "/aces-ace-deuce_960x540.webp",
+                    lgImg: "/images/" + url + "/aces-ace-deuce_1280x720.webp",
                     title: "Aces - Ace Deuce",
                     alt: "$1 each on the aces and the ace deuce."
                   },
@@ -428,9 +428,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/seven-eleven_640x360.webp",
-                    mdImg: "src/images/" + url + "/seven-eleven_960x540.webp",
-                    lgImg: "src/images/" + url + "/seven-eleven_1280x720.webp",
+                    smImg: "/images/" + url + "/seven-eleven_640x360.webp",
+                    mdImg: "/images/" + url + "/seven-eleven_960x540.webp",
+                    lgImg: "/images/" + url + "/seven-eleven_1280x720.webp",
                     title: "Seven - Eleven",
                     alt: "$1 each on the seven and the eleven."
                   },
@@ -496,9 +496,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/high-low-yo_640x360.webp",
-                    mdImg: "src/images/" + url + "/high-low-yo_960x540.webp",
-                    lgImg: "src/images/" + url + "/high-low-yo_1280x720.webp",
+                    smImg: "/images/" + url + "/high-low-yo_640x360.webp",
+                    mdImg: "/images/" + url + "/high-low-yo_960x540.webp",
+                    lgImg: "/images/" + url + "/high-low-yo_1280x720.webp",
                     title: "High - Low - Yo",
                     alt: "$1 each on the twelve, the aces, and the yo."
                   },
@@ -557,9 +557,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/three-way-craps_640x360.webp",
-                    mdImg: "src/images/" + url + "/three-way-craps_960x540.webp",
-                    lgImg: "src/images/" + url + "/three-way-craps_1280x720.webp",
+                    smImg: "/images/" + url + "/three-way-craps_640x360.webp",
+                    mdImg: "/images/" + url + "/three-way-craps_960x540.webp",
+                    lgImg: "/images/" + url + "/three-way-craps_1280x720.webp",
                     title: "Three Way Craps",
                     alt: "$1 each on the aces, ace deuce, and the twelve."
                   },

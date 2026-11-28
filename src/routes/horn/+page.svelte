@@ -64,7 +64,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Horn Payment table';
@@ -190,9 +190,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/horn_640x360.webp"
-				mdImg="src/images/{url}/horn_960x540.webp"
-				lgImg="src/images/{url}/horn_1280x720.webp"
+				smImg="/images/{url}/horn_640x360.webp"
+				mdImg="/images/{url}/horn_960x540.webp"
+				lgImg="/images/{url}/horn_1280x720.webp"
 				title="The Horn"
 				alt="Up close overhead view of the horn bet on the Craps layout."
 			/>
@@ -216,9 +216,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/4-horn_640x360.webp"
-				mdImg="src/images/{url}/4-horn_960x540.webp"
-				lgImg="src/images/{url}/4-horn_1280x720.webp"
+				smImg="/images/{url}/4-horn_640x360.webp"
+				mdImg="/images/{url}/4-horn_960x540.webp"
+				lgImg="/images/{url}/4-horn_1280x720.webp"
 				title="$4 Horn"
 				alt="An image split with $4 on the Horn on one side, and $1 each on the aces, ace deuce, yo, twelve on the other."
 			/>
@@ -233,9 +233,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-a-horn_640x360.webp"
-				mdImg="src/images/{url}/placement-of-a-horn_960x540.webp"
-				lgImg="src/images/{url}/placement-of-a-horn_1280x720.webp"
+				smImg="/images/{url}/placement-of-a-horn_640x360.webp"
+				mdImg="/images/{url}/placement-of-a-horn_960x540.webp"
+				lgImg="/images/{url}/placement-of-a-horn_1280x720.webp"
 				title="Placement of a Horn"
 				alt="Up close image of the horn bet and the Craps rail. There are eight colored spots corresponding to the horn and the rail."
 			/>
@@ -259,18 +259,18 @@
 				</p>
 				<ContentImg
 					caption="$4 Horn on the Low Side Pays $12"
-					smImg="src/images/{url}/4-winner-low-side_640x360.webp"
-					mdImg="src/images/{url}/4-winner-low-side_960x540.webp"
-					lgImg="src/images/{url}/4-winner-low-side_1280x720.webp"
+					smImg="/images/{url}/4-winner-low-side_640x360.webp"
+					mdImg="/images/{url}/4-winner-low-side_960x540.webp"
+					lgImg="/images/{url}/4-winner-low-side_1280x720.webp"
 					title="$4 Horn on the Low Side"
 					alt="$1 on each the horn numbers. Two green dice read 1-2. A bubble reads $12 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$4 Horn on the High Side Pays $27"
-					smImg="src/images/{url}/4-winner-high-side_640x360.webp"
-					mdImg="src/images/{url}/4-winner-high-side_960x540.webp"
-					lgImg="src/images/{url}/4-winner-high-side_1280x720.webp"
+					smImg="/images/{url}/4-winner-high-side_640x360.webp"
+					mdImg="/images/{url}/4-winner-high-side_960x540.webp"
+					lgImg="/images/{url}/4-winner-high-side_1280x720.webp"
 					title="$4 Horn on the High Side"
 					alt="$1 on each the horn numbers. Two green dice read 6-6. A bubble reads $27 payment."
 				/>
@@ -283,18 +283,18 @@
 				</p>
 				<ContentImg
 					caption="$8 Horn on Low Side Pays $24"
-					smImg="src/images/{url}/8-horn-low-side_640x360.webp"
-					mdImg="src/images/{url}/8-horn-low-side_960x540.webp"
-					lgImg="src/images/{url}/8-horn-low-side_1280x720.webp"
+					smImg="/images/{url}/8-horn-low-side_640x360.webp"
+					mdImg="/images/{url}/8-horn-low-side_960x540.webp"
+					lgImg="/images/{url}/8-horn-low-side_1280x720.webp"
 					title="$8 Horn Low Side Payment"
 					alt="$8 on the horn with a bubble that reads $24 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$24 Horn on Low Side Pays $72"
-					smImg="src/images/{url}/24-horn-low-side_640x360.webp"
-					mdImg="src/images/{url}/24-horn-low-side_960x540.webp"
-					lgImg="src/images/{url}/24-horn-low-side_1280x720.webp"
+					smImg="/images/{url}/24-horn-low-side_640x360.webp"
+					mdImg="/images/{url}/24-horn-low-side_960x540.webp"
+					lgImg="/images/{url}/24-horn-low-side_1280x720.webp"
 					title="$24 Horn Low Side Payment"
 					alt="$24 on the horn with a bubble that reads $72 payment."
 				/>
@@ -308,18 +308,18 @@
 				</p>
 				<ContentImg
 					caption="$8 Horn on High Side Pays $54"
-					smImg="src/images/{url}/8-horn-high-side-a_640x360.webp"
-					mdImg="src/images/{url}/8-horn-high-side-a_960x540.webp"
-					lgImg="src/images/{url}/8-horn-high-side-a_1280x720.webp"
+					smImg="/images/{url}/8-horn-high-side-a_640x360.webp"
+					mdImg="/images/{url}/8-horn-high-side-a_960x540.webp"
+					lgImg="/images/{url}/8-horn-high-side-a_1280x720.webp"
 					title="$8 Horn High Side Payment"
 					alt="$8 on the Horn. A bubble reads $54 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$24 Horn High Side Pays $162"
-					smImg="src/images/{url}/24-horn-high-side-a_640x360.webp"
-					mdImg="src/images/{url}/24-horn-high-side-a_960x540.webp"
-					lgImg="src/images/{url}/24-horn-high-side-a_1280x720.webp"
+					smImg="/images/{url}/24-horn-high-side-a_640x360.webp"
+					mdImg="/images/{url}/24-horn-high-side-a_960x540.webp"
+					lgImg="/images/{url}/24-horn-high-side-a_1280x720.webp"
 					title="$24 Horn High Side Payment"
 					alt="$24 on the Horn. A bubble reads $162 payment."
 				/>
@@ -357,9 +357,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/betting-a-horn-for-the-dealers_640x360.webp"
-				mdImg="src/images/{url}/betting-a-horn-for-the-dealers_960x540.webp"
-				lgImg="src/images/{url}/betting-a-horn-for-the-dealers_1280x720.webp"
+				smImg="/images/{url}/betting-a-horn-for-the-dealers_640x360.webp"
+				mdImg="/images/{url}/betting-a-horn-for-the-dealers_960x540.webp"
+				lgImg="/images/{url}/betting-a-horn-for-the-dealers_1280x720.webp"
 				title="Betting a Horn for the Dealers"
 				alt="$4 sitting in the middle of the horn."
 			/>

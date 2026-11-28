@@ -45,7 +45,7 @@
 			<img
 				alt="Parlay Nation"
 				class="h-20 mb-8 mx-auto w-auto"
-				src="src/images/assets/parlay-nation-logo_1048x298.webp"
+				src="/images/assets/parlay-nation-logo_1048x298.webp"
 			/>
 			<h2
 				class="dark:text-gray-100 font-bold leading-9 pb-4 text-2xl text-center text-gray-900 tracking-tight"

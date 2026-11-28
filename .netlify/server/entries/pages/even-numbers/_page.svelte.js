@@ -35,7 +35,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.webp"
+    imageUrl: "/images/" + url + "/" + url + "-header.webp"
   };
   let tblHeaders = ["The Spread", "Total Bet"];
   let tblRows = [
@@ -147,9 +147,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/even-numbers_640x360.webp",
-                mdImg: "src/images/" + url + "/even-numbers_960x540.webp",
-                lgImg: "src/images/" + url + "/even-numbers_1280x720.webp",
+                smImg: "/images/" + url + "/even-numbers_640x360.webp",
+                mdImg: "/images/" + url + "/even-numbers_960x540.webp",
+                lgImg: "/images/" + url + "/even-numbers_1280x720.webp",
                 title: "Even Number Place Bets",
                 alt: "Puck is on point 8 and points 4, 6, and 10 are highlighted."
               },
@@ -177,9 +177,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/44-even-numbers_640x360.webp",
-                    mdImg: "src/images/" + url + "/44-even-numbers_960x540.webp",
-                    lgImg: "src/images/" + url + "/44-even-numbers_1280x720.webp",
+                    smImg: "/images/" + url + "/44-even-numbers_640x360.webp",
+                    mdImg: "/images/" + url + "/44-even-numbers_960x540.webp",
+                    lgImg: "/images/" + url + "/44-even-numbers_1280x720.webp",
                     title: "Betting $44 Even Numbers",
                     alt: "$44 even with the point on 5"
                   },
@@ -194,9 +194,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/34-even-numbers_640x360.webp",
-                    mdImg: "src/images/" + url + "/34-even-numbers_960x540.webp",
-                    lgImg: "src/images/" + url + "/34-even-numbers_1280x720.webp",
+                    smImg: "/images/" + url + "/34-even-numbers_640x360.webp",
+                    mdImg: "/images/" + url + "/34-even-numbers_960x540.webp",
+                    lgImg: "/images/" + url + "/34-even-numbers_1280x720.webp",
                     title: "Betting $34 Even Numbers",
                     alt: "$34 even with the point on 10"
                   },
@@ -211,9 +211,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/32-even-numbers_640x360.webp",
-                    mdImg: "src/images/" + url + "/32-even-numbers_960x540.webp",
-                    lgImg: "src/images/" + url + "/32-even-numbers_1280x720.webp",
+                    smImg: "/images/" + url + "/32-even-numbers_640x360.webp",
+                    mdImg: "/images/" + url + "/32-even-numbers_960x540.webp",
+                    lgImg: "/images/" + url + "/32-even-numbers_1280x720.webp",
                     title: "Betting $32 Even",
                     alt: "$32 even with point on 6"
                   },
@@ -248,9 +248,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/112-even-numbers_640x360.webp",
-                    mdImg: "src/images/" + url + "/112-even-numbers_960x540.webp",
-                    lgImg: "src/images/" + url + "/112-even-numbers_1280x720.webp",
+                    smImg: "/images/" + url + "/112-even-numbers_640x360.webp",
+                    mdImg: "/images/" + url + "/112-even-numbers_960x540.webp",
+                    lgImg: "/images/" + url + "/112-even-numbers_1280x720.webp",
                     title: "Betting $112 Even",
                     alt: "$112 Even numbers with the point on 5."
                   },
@@ -265,9 +265,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/86-even-numbers_640x360.webp",
-                    mdImg: "src/images/" + url + "/86-even-numbers_960x540.webp",
-                    lgImg: "src/images/" + url + "/86-even-numbers_1280x720.webp",
+                    smImg: "/images/" + url + "/86-even-numbers_640x360.webp",
+                    mdImg: "/images/" + url + "/86-even-numbers_960x540.webp",
+                    lgImg: "/images/" + url + "/86-even-numbers_1280x720.webp",
                     title: "Betting $86 Even Numbers",
                     alt: "$86 even numbers with the point on 4."
                   },
@@ -282,9 +282,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/82-even-numbers_640x360.webp",
-                    mdImg: "src/images/" + url + "/82-even-numbers_960x540.webp",
-                    lgImg: "src/images/" + url + "/82-even-numbers_1280x720.webp",
+                    smImg: "/images/" + url + "/82-even-numbers_640x360.webp",
+                    mdImg: "/images/" + url + "/82-even-numbers_960x540.webp",
+                    lgImg: "/images/" + url + "/82-even-numbers_1280x720.webp",
                     title: "Betting $82 Even Numbers",
                     alt: "$82 even numbers with the point on 8"
                   },

@@ -62,7 +62,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Stage", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -174,9 +174,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/the-pass-line_640x360.webp",
-                mdImg: "src/images/" + url + "/the-pass-line_960x540.webp",
-                lgImg: "src/images/" + url + "/the-pass-line_1280x720.webp",
+                smImg: "/images/" + url + "/the-pass-line_640x360.webp",
+                mdImg: "/images/" + url + "/the-pass-line_960x540.webp",
+                lgImg: "/images/" + url + "/the-pass-line_1280x720.webp",
                 alt: "Overhead view of the pass line. There are no bets on the table."
               },
               {},
@@ -210,9 +210,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-the-pass-line_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-the-pass-line_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-the-pass-line_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-the-pass-line_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-the-pass-line_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-the-pass-line_1280x720.webp",
                 alt: "Four bets on the pass line. Each bet pointing to a spot in the rail."
               },
               {},
@@ -246,9 +246,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/stage-one-of-pass-line_640x360.webp",
-                    mdImg: "src/images/" + url + "/stage-one-of-pass-line_960x540.webp",
-                    lgImg: "src/images/" + url + "/stage-one-of-pass-line_1280x720.webp",
+                    smImg: "/images/" + url + "/stage-one-of-pass-line_640x360.webp",
+                    mdImg: "/images/" + url + "/stage-one-of-pass-line_960x540.webp",
+                    lgImg: "/images/" + url + "/stage-one-of-pass-line_1280x720.webp",
                     alt: "Stage One of the Pass Line, the Comeout Roll. The puck is OFF and a $5 bet is on the Pass Line."
                   },
                   {},
@@ -266,9 +266,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/stage-two-of-pass-line_640x360.webp",
-                    mdImg: "src/images/" + url + "/stage-two-of-pass-line_960x540.webp",
-                    lgImg: "src/images/" + url + "/stage-two-of-pass-line_1280x720.webp",
+                    smImg: "/images/" + url + "/stage-two-of-pass-line_640x360.webp",
+                    mdImg: "/images/" + url + "/stage-two-of-pass-line_960x540.webp",
+                    lgImg: "/images/" + url + "/stage-two-of-pass-line_1280x720.webp",
                     alt: "Up close image of $10 on the pass line. It's near the puck which is on the four and in the on position."
                   },
                   {},
@@ -292,9 +292,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "During the Comeout Roll",
-                smImg: "src/images/" + url + "/pass-line-pay-a_640x360.webp",
-                mdImg: "src/images/" + url + "/pass-line-pay-a_960x540.webp",
-                lgImg: "src/images/" + url + "/pass-line-pay-a_1280x720.webp",
+                smImg: "/images/" + url + "/pass-line-pay-a_640x360.webp",
+                mdImg: "/images/" + url + "/pass-line-pay-a_960x540.webp",
+                lgImg: "/images/" + url + "/pass-line-pay-a_1280x720.webp",
                 alt: "$10 on the pass line with a $10 payment right next to it. The puck is off and in the don't come. Two pair of dice are in the corner. One is showing a seven and the other an eleven."
               },
               {},
@@ -303,9 +303,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "During the Intermediate Roll",
-                smImg: "src/images/" + url + "/pass-line-pay-b_640x360.webp",
-                mdImg: "src/images/" + url + "/pass-line-pay-b_960x540.webp",
-                lgImg: "src/images/" + url + "/pass-line-pay-b_1280x720.webp",
+                smImg: "/images/" + url + "/pass-line-pay-b_640x360.webp",
+                mdImg: "/images/" + url + "/pass-line-pay-b_960x540.webp",
+                lgImg: "/images/" + url + "/pass-line-pay-b_1280x720.webp",
                 alt: "$10 on the pass line with a $10 payment right next to it. The puck is on and on the point four. A pair of dice are in the corner and are showing the hard four."
               },
               {},
@@ -367,9 +367,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/coming-down-on-pass-line_640x360.webp",
-                mdImg: "src/images/" + url + "/coming-down-on-pass-line_960x540.webp",
-                lgImg: "src/images/" + url + "/coming-down-on-pass-line_1280x720.webp",
+                smImg: "/images/" + url + "/coming-down-on-pass-line_640x360.webp",
+                mdImg: "/images/" + url + "/coming-down-on-pass-line_960x540.webp",
+                lgImg: "/images/" + url + "/coming-down-on-pass-line_1280x720.webp",
                 alt: "A chip is moving from the rail of the Craps table to the pass line bet on the layout. The puck is on and on the point nine."
               },
               {},
@@ -393,9 +393,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/pass-line-for-the-dealers_640x360.webp",
-                mdImg: "src/images/" + url + "/pass-line-for-the-dealers_960x540.webp",
-                lgImg: "src/images/" + url + "/pass-line-for-the-dealers_1280x720.webp",
+                smImg: "/images/" + url + "/pass-line-for-the-dealers_640x360.webp",
+                mdImg: "/images/" + url + "/pass-line-for-the-dealers_960x540.webp",
+                lgImg: "/images/" + url + "/pass-line-for-the-dealers_1280x720.webp",
                 alt: "A $20 bet on the pass line with a dollar sitting next to it."
               },
               {},

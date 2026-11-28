@@ -75,7 +75,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Dont pass lay odds payment table';
@@ -199,9 +199,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/dont-pass-lay-odds_640x360.webp"
-				mdImg="src/images/{url}/dont-pass-lay-odds_960x540.webp"
-				lgImg="src/images/{url}/dont-pass-lay-odds_1280x720.webp"
+				smImg="/images/{url}/dont-pass-lay-odds_640x360.webp"
+				mdImg="/images/{url}/dont-pass-lay-odds_960x540.webp"
+				lgImg="/images/{url}/dont-pass-lay-odds_1280x720.webp"
 				title="Don't Pass Lay Odds"
 				alt="$10 on the Don't Pass with $24 Lay Odds."
 			/>
@@ -223,9 +223,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_640x360.webp"
-				mdImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_960x540.webp"
-				lgImg="src/images/{url}/how-to-bet-dont-pass-lay-odds_1280x720.webp"
+				smImg="/images/{url}/how-to-bet-dont-pass-lay-odds_640x360.webp"
+				mdImg="/images/{url}/how-to-bet-dont-pass-lay-odds_960x540.webp"
+				lgImg="/images/{url}/how-to-bet-dont-pass-lay-odds_1280x720.webp"
 				title="How to Bet Don't Pass Lay Odds"
 				alt="Several Don't Pass Bets with Lay Odds Heeled in the direction of the base dealer."
 			/>
@@ -248,18 +248,18 @@
 				</p>
 				<ContentImg
 					caption="$6 Lay Odds"
-					smImg="src/images/{url}/lay-odds-6-8-a_640x360.webp"
-					mdImg="src/images/{url}/lay-odds-6-8-a_960x540.webp"
-					lgImg="src/images/{url}/lay-odds-6-8-a_1280x720.webp"
+					smImg="/images/{url}/lay-odds-6-8-a_640x360.webp"
+					mdImg="/images/{url}/lay-odds-6-8-a_960x540.webp"
+					lgImg="/images/{url}/lay-odds-6-8-a_1280x720.webp"
 					title="$6 Don't Pass Lay Odds Payment 6 & 8"
 					alt="$5 Don't Pass with a $5 payment. Next to it are $6 Lay Odds with $5 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$18 Lay Odds"
-					smImg="src/images/{url}/lay-odds-6-8-b_640x360.webp"
-					mdImg="src/images/{url}/lay-odds-6-8-b_960x540.webp"
-					lgImg="src/images/{url}/lay-odds-6-8-b_1280x720.webp"
+					smImg="/images/{url}/lay-odds-6-8-b_640x360.webp"
+					mdImg="/images/{url}/lay-odds-6-8-b_960x540.webp"
+					lgImg="/images/{url}/lay-odds-6-8-b_1280x720.webp"
 					title="$18 Don't Pass Lay Odds Payment 6 & 8"
 					alt="$10 Don't Pass with a $10 payment. Next to it are $18 Lay Odds with $15 payment."
 				/>
@@ -274,18 +274,18 @@
 				</p>
 				<ContentImg
 					caption="$3 Lay Odds"
-					smImg="src/images/{url}/lay-odds-5-9-a_640x360.webp"
-					mdImg="src/images/{url}/lay-odds-5-9-a_960x540.webp"
-					lgImg="src/images/{url}/lay-odds-5-9-a_1280x720.webp"
+					smImg="/images/{url}/lay-odds-5-9-a_640x360.webp"
+					mdImg="/images/{url}/lay-odds-5-9-a_960x540.webp"
+					lgImg="/images/{url}/lay-odds-5-9-a_1280x720.webp"
 					title="$3 Don't Pass Lay Odds Payment 5 & 9"
 					alt="$5 on the Don't Pass with a $5 payment. Next to it are $3 Lay Odds with $2 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$90 Lay Odds"
-					smImg="src/images/{url}/lay-odds-5-9-b_640x360.webp"
-					mdImg="src/images/{url}/lay-odds-5-9-b_960x540.webp"
-					lgImg="src/images/{url}/lay-odds-5-9-b_1280x720.webp"
+					smImg="/images/{url}/lay-odds-5-9-b_640x360.webp"
+					mdImg="/images/{url}/lay-odds-5-9-b_960x540.webp"
+					lgImg="/images/{url}/lay-odds-5-9-b_1280x720.webp"
 					title="$90 Don't Pass Lay Odds Payment 5 & 9"
 					alt="$25 on the Don't Pass with a $25 payment. Next to it are $90 Lay Odds with $75 payment."
 				/>
@@ -299,18 +299,18 @@
 				</p>
 				<ContentImg
 					caption="$2 Lay Odds"
-					smImg="src/images/{url}/lay-odds-4-10-a_640x360.webp"
-					mdImg="src/images/{url}/lay-odds-4-10-a_960x540.webp"
-					lgImg="src/images/{url}/lay-odds-4-10-a_1280x720.webp"
+					smImg="/images/{url}/lay-odds-4-10-a_640x360.webp"
+					mdImg="/images/{url}/lay-odds-4-10-a_960x540.webp"
+					lgImg="/images/{url}/lay-odds-4-10-a_1280x720.webp"
 					title="$2 Don't Pass Lay Odds Payment 4 & 10"
 					alt="$5 on the Don't Pass with a $5 payment. Next to it are $2 Lay Odds with $1 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
 					caption="$80 Lay Odds"
-					smImg="src/images/{url}/lay-odds-4-10-b_640x360.webp"
-					mdImg="src/images/{url}/lay-odds-4-10-b_960x540.webp"
-					lgImg="src/images/{url}/lay-odds-4-10-b_1280x720.webp"
+					smImg="/images/{url}/lay-odds-4-10-b_640x360.webp"
+					mdImg="/images/{url}/lay-odds-4-10-b_960x540.webp"
+					lgImg="/images/{url}/lay-odds-4-10-b_1280x720.webp"
 					title="$80 Don't Pass Lay Odds Payment 4 & 10"
 					alt="$20 on the Don't Pass with a $20 payment. Next to it are $80 Lay odds with $40 payment."
 				/>
@@ -357,9 +357,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/max-lay-odds-on-the-dont-pass_640x360.webp"
-				mdImg="src/images/{url}/max-lay-odds-on-the-dont-pass_960x540.webp"
-				lgImg="src/images/{url}/max-lay-odds-on-the-dont-pass_1280x720.webp"
+				smImg="/images/{url}/max-lay-odds-on-the-dont-pass_640x360.webp"
+				mdImg="/images/{url}/max-lay-odds-on-the-dont-pass_960x540.webp"
+				lgImg="/images/{url}/max-lay-odds-on-the-dont-pass_1280x720.webp"
 				title="Max Lay Odds on the Don't Pass"
 				alt="$10 on the Don't Pass with $60 Lay Odds."
 			/>
@@ -391,9 +391,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/lay-odds-for-the-dealers_640x360.webp"
-				mdImg="src/images/{url}/lay-odds-for-the-dealers_960x540.webp"
-				lgImg="src/images/{url}/lay-odds-for-the-dealers_1280x720.webp"
+				smImg="/images/{url}/lay-odds-for-the-dealers_640x360.webp"
+				mdImg="/images/{url}/lay-odds-for-the-dealers_960x540.webp"
+				lgImg="/images/{url}/lay-odds-for-the-dealers_1280x720.webp"
 				title="Dealer Lay Odds"
 				alt="$1 with $6 Lay Odds on the Don't Pass."
 			/>

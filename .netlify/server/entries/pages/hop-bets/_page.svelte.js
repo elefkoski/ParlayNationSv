@@ -82,7 +82,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Roll", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -203,9 +203,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/hop-bets_640x360.webp",
-                mdImg: "src/images/" + url + "/hop-bets_960x540.webp",
-                lgImg: "src/images/" + url + "/hop-bets_1280x720.webp",
+                smImg: "/images/" + url + "/hop-bets_640x360.webp",
+                mdImg: "/images/" + url + "/hop-bets_960x540.webp",
+                lgImg: "/images/" + url + "/hop-bets_1280x720.webp",
                 title: "Hop Bets",
                 alt: "Up close image of the hop bets."
               },
@@ -237,9 +237,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-hops_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-hops_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-hops_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-hops_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-hops_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-hops_1280x720.webp",
                 title: "Placement of Hops",
                 alt: "Up close view of four hop bets and the rail of the Craps table. There are four colored spots that correspond with each other."
               },
@@ -264,9 +264,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Low Side Hop Payment Pays 15:1",
-                smImg: "src/images/" + url + "/low-side-hop-payment_640x360.webp",
-                mdImg: "src/images/" + url + "/low-side-hop-payment_960x540.webp",
-                lgImg: "src/images/" + url + "/low-side-hop-payment_1280x720.webp",
+                smImg: "/images/" + url + "/low-side-hop-payment_640x360.webp",
+                mdImg: "/images/" + url + "/low-side-hop-payment_960x540.webp",
+                lgImg: "/images/" + url + "/low-side-hop-payment_1280x720.webp",
                 title: "Low Side Hop Payment Pays 15:1",
                 alt: "$3 on the hop 4-2. Two green dice show 4-2. Bubble reads $45 payment."
               },
@@ -276,9 +276,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "High Side Hop Payment Pays 30:1",
-                smImg: "src/images/" + url + "/high-side-hop-payment_640x360.webp",
-                mdImg: "src/images/" + url + "/high-side-hop-payment_960x540.webp",
-                lgImg: "src/images/" + url + "/high-side-hop-payment_1280x720.webp",
+                smImg: "/images/" + url + "/high-side-hop-payment_640x360.webp",
+                mdImg: "/images/" + url + "/high-side-hop-payment_960x540.webp",
+                lgImg: "/images/" + url + "/high-side-hop-payment_1280x720.webp",
                 title: "High Side Hop Payment Pays 30:1",
                 alt: "$2 on the hop 4-4. Two green dice show 4-4. Bubble reads $60 payment."
               },
@@ -424,9 +424,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/2-number-hops_640x360.webp",
-                    mdImg: "src/images/" + url + "/2-number-hops_960x540.webp",
-                    lgImg: "src/images/" + url + "/2-number-hops_1280x720.webp",
+                    smImg: "/images/" + url + "/2-number-hops_640x360.webp",
+                    mdImg: "/images/" + url + "/2-number-hops_960x540.webp",
+                    lgImg: "/images/" + url + "/2-number-hops_1280x720.webp",
                     title: "Two Number Hop Bets",
                     alt: "An outlined view of the hopping 4's, hopping 5's, hopping 9's, and hopping 10's."
                   },
@@ -531,9 +531,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/3-number-hops_640x360.webp",
-                    mdImg: "src/images/" + url + "/3-number-hops_960x540.webp",
-                    lgImg: "src/images/" + url + "/3-number-hops_1280x720.webp",
+                    smImg: "/images/" + url + "/3-number-hops_640x360.webp",
+                    mdImg: "/images/" + url + "/3-number-hops_960x540.webp",
+                    lgImg: "/images/" + url + "/3-number-hops_1280x720.webp",
                     title: "Three Number Hop Bets",
                     alt: "An outlined view of the hopping 7's, hopping 6's, and hopping 8's."
                   },
@@ -623,9 +623,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/4-number-hops_640x360.webp",
-                    mdImg: "src/images/" + url + "/4-number-hops_960x540.webp",
-                    lgImg: "src/images/" + url + "/4-number-hops_1280x720.webp",
+                    smImg: "/images/" + url + "/4-number-hops_640x360.webp",
+                    mdImg: "/images/" + url + "/4-number-hops_960x540.webp",
+                    lgImg: "/images/" + url + "/4-number-hops_1280x720.webp",
                     title: "Four Number Hop Bets",
                     alt: "An outlined view of the four hopping hardways."
                   },
@@ -686,9 +686,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dealer-hop-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/dealer-hop-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/dealer-hop-bet_1280x720.webp",
+                smImg: "/images/" + url + "/dealer-hop-bet_640x360.webp",
+                mdImg: "/images/" + url + "/dealer-hop-bet_960x540.webp",
+                lgImg: "/images/" + url + "/dealer-hop-bet_1280x720.webp",
                 title: "Dealer Hop Bet",
                 alt: "$1 in the middle of the hopping 4-2."
               },

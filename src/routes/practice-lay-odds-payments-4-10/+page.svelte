@@ -11,11 +11,11 @@
 	let url: string = 'practice-lay-odds-payments-4-10';
 
 	let slides: string[] = [
-		'src/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-1_960x1242.webp',
-		'src/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-2_960x1242.webp',
-		'src/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-3_960x1242.webp',
-		'src/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-4_960x1242.webp',
-		'src/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-5_960x1242.webp'
+		'/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-1_960x1242.webp',
+		'/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-2_960x1242.webp',
+		'/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-3_960x1242.webp',
+		'/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-4_960x1242.webp',
+		'/images/practice-lay-odds-payments-4-10/lay-odds-payments-4-10-page-5_960x1242.webp'
 	];
 </script>
 

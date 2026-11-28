@@ -11,13 +11,13 @@
 	let url: string = 'practice-lay-odds-payments-5-9';
 
 	let slides: string[] = [
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-1_960x1242.webp',
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-2_960x1242.webp',
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-3_960x1242.webp',
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-4_960x1242.webp',
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-5_960x1242.webp',
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-6_960x1242.webp',
-		'src/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-7_960x1242.webp'
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-1_960x1242.webp',
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-2_960x1242.webp',
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-3_960x1242.webp',
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-4_960x1242.webp',
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-5_960x1242.webp',
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-6_960x1242.webp',
+		'/images/practice-lay-odds-payments-5-9/lay-odds-payments-5-9-page-7_960x1242.webp'
 	];
 </script>
 

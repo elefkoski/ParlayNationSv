@@ -95,7 +95,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -217,9 +217,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/multi-bets_640x360.webp"
-				mdImg="src/images/{url}/multi-bets_960x540.webp"
-				lgImg="src/images/{url}/multi-bets_1280x720.webp"
+				smImg="/images/{url}/multi-bets_640x360.webp"
+				mdImg="/images/{url}/multi-bets_960x540.webp"
+				lgImg="/images/{url}/multi-bets_1280x720.webp"
 				title="Multi-Bets"
 				alt="Multiple bets in the proposition area: $2 split on the eleven twelve, a high low yo, and a $5 c and e split."
 			/>
@@ -258,9 +258,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/high-low_640x360.webp"
-					mdImg="src/images/{url}/high-low_960x540.webp"
-					lgImg="src/images/{url}/high-low_1280x720.webp"
+					smImg="/images/{url}/high-low_640x360.webp"
+					mdImg="/images/{url}/high-low_960x540.webp"
+					lgImg="/images/{url}/high-low_1280x720.webp"
 					title="High-Low"
 					alt="$1 each on the two and the twelve."
 				/>
@@ -294,9 +294,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/eleven-twelve_640x360.webp"
-					mdImg="src/images/{url}/eleven-twelve_960x540.webp"
-					lgImg="src/images/{url}/eleven-twelve_1280x720.webp"
+					smImg="/images/{url}/eleven-twelve_640x360.webp"
+					mdImg="/images/{url}/eleven-twelve_960x540.webp"
+					lgImg="/images/{url}/eleven-twelve_1280x720.webp"
 					title="Eleven - Twelve"
 					alt="$1 each on the eleven and the twelve."
 				/>
@@ -328,9 +328,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/aces-ace-deuce_640x360.webp"
-					mdImg="src/images/{url}/aces-ace-deuce_960x540.webp"
-					lgImg="src/images/{url}/aces-ace-deuce_1280x720.webp"
+					smImg="/images/{url}/aces-ace-deuce_640x360.webp"
+					mdImg="/images/{url}/aces-ace-deuce_960x540.webp"
+					lgImg="/images/{url}/aces-ace-deuce_1280x720.webp"
 					title="Aces - Ace Deuce"
 					alt="$1 each on the aces and the ace deuce."
 				/>
@@ -364,9 +364,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/seven-eleven_640x360.webp"
-					mdImg="src/images/{url}/seven-eleven_960x540.webp"
-					lgImg="src/images/{url}/seven-eleven_1280x720.webp"
+					smImg="/images/{url}/seven-eleven_640x360.webp"
+					mdImg="/images/{url}/seven-eleven_960x540.webp"
+					lgImg="/images/{url}/seven-eleven_1280x720.webp"
 					title="Seven - Eleven"
 					alt="$1 each on the seven and the eleven."
 				/>
@@ -406,9 +406,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/high-low-yo_640x360.webp"
-					mdImg="src/images/{url}/high-low-yo_960x540.webp"
-					lgImg="src/images/{url}/high-low-yo_1280x720.webp"
+					smImg="/images/{url}/high-low-yo_640x360.webp"
+					mdImg="/images/{url}/high-low-yo_960x540.webp"
+					lgImg="/images/{url}/high-low-yo_1280x720.webp"
 					title="High - Low - Yo"
 					alt="$1 each on the twelve, the aces, and the yo."
 				/>
@@ -448,9 +448,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/three-way-craps_640x360.webp"
-					mdImg="src/images/{url}/three-way-craps_960x540.webp"
-					lgImg="src/images/{url}/three-way-craps_1280x720.webp"
+					smImg="/images/{url}/three-way-craps_640x360.webp"
+					mdImg="/images/{url}/three-way-craps_960x540.webp"
+					lgImg="/images/{url}/three-way-craps_1280x720.webp"
 					title="Three Way Craps"
 					alt="$1 each on the aces, ace deuce, and the twelve."
 				/>

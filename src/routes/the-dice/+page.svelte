@@ -87,7 +87,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -197,9 +197,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/the-craps-dice_640x360.webp"
-				mdImg="src/images/{url}/the-craps-dice_960x540.webp"
-				lgImg="src/images/{url}/the-craps-dice_1280x720.webp"
+				smImg="/images/{url}/the-craps-dice_640x360.webp"
+				mdImg="/images/{url}/the-craps-dice_960x540.webp"
+				lgImg="/images/{url}/the-craps-dice_1280x720.webp"
 				title="The Craps Dice"
 				alt="Five maroon colored Craps dice sitting on green felt."
 			/>
@@ -233,9 +233,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/watching-the-dice_640x360.webp"
-				mdImg="src/images/{url}/watching-the-dice_960x540.webp"
-				lgImg="src/images/{url}/watching-the-dice_1280x720.webp"
+				smImg="/images/{url}/watching-the-dice_640x360.webp"
+				mdImg="/images/{url}/watching-the-dice_960x540.webp"
+				lgImg="/images/{url}/watching-the-dice_1280x720.webp"
 				title="Watching the Dice"
 				alt="A player with tunnel vision staring at dice at the opposite end of a Craps table."
 			/>
@@ -269,9 +269,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/getting-hit-with-the-dice_640x360.webp"
-				mdImg="src/images/{url}/getting-hit-with-the-dice_960x540.webp"
-				lgImg="src/images/{url}/getting-hit-with-the-dice_1280x720.webp"
+				smImg="/images/{url}/getting-hit-with-the-dice_640x360.webp"
+				mdImg="/images/{url}/getting-hit-with-the-dice_960x540.webp"
+				lgImg="/images/{url}/getting-hit-with-the-dice_1280x720.webp"
 				title="Getting Hit with the Dice"
 				alt="A statue of Caesar with his hand raised and a pointed finger."
 			/>

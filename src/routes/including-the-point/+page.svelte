@@ -35,7 +35,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Including the point betting options table';
@@ -155,18 +155,18 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/32-across-including-the-point_640x360.webp"
-				mdImg="src/images/{url}/32-across-including-the-point_960x540.webp"
-				lgImg="src/images/{url}/32-across-including-the-point_1280x720.webp"
+				smImg="/images/{url}/32-across-including-the-point_640x360.webp"
+				mdImg="/images/{url}/32-across-including-the-point_960x540.webp"
+				lgImg="/images/{url}/32-across-including-the-point_1280x720.webp"
 				title="Betting $32 Across"
 				alt="Betting $32 Across Including the Point"
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/162-across-including-the-point_640x360.webp"
-				mdImg="src/images/{url}/162-across-including-the-point_960x540.webp"
-				lgImg="src/images/{url}/162-across-including-the-point_1280x720.webp"
+				smImg="/images/{url}/162-across-including-the-point_640x360.webp"
+				mdImg="/images/{url}/162-across-including-the-point_960x540.webp"
+				lgImg="/images/{url}/162-across-including-the-point_1280x720.webp"
 				title="Betting $162 Across Including the Point"
 				alt="Betting $162 Across Including the Point"
 			/>

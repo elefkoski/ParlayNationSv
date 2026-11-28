@@ -18,7 +18,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.webp'
+		imageUrl: '/images/' + url + '/' + url + '-header.webp'
 	};
 
 	let pageLinks: PageMenu[] = [

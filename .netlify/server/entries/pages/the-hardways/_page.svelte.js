@@ -57,7 +57,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Roll", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -187,9 +187,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/hardways_640x360.webp",
-                mdImg: "src/images/" + url + "/hardways_960x540.webp",
-                lgImg: "src/images/" + url + "/hardways_1280x720.webp",
+                smImg: "/images/" + url + "/hardways_640x360.webp",
+                mdImg: "/images/" + url + "/hardways_960x540.webp",
+                lgImg: "/images/" + url + "/hardways_1280x720.webp",
                 title: "The Hardways",
                 alt: "Up close view of the Hardway Section on the Craps table. There are no cheques on the table."
               },
@@ -227,9 +227,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/buffalo_640x360.webp",
-                mdImg: "src/images/" + url + "/buffalo_960x540.webp",
-                lgImg: "src/images/" + url + "/buffalo_1280x720.webp",
+                smImg: "/images/" + url + "/buffalo_640x360.webp",
+                mdImg: "/images/" + url + "/buffalo_960x540.webp",
+                lgImg: "/images/" + url + "/buffalo_1280x720.webp",
                 title: "Buffalo Bet",
                 alt: "Overhead view of $1 each the hardways with a dollar on the any seven. There is an on lammer on top of one of the cheques. The puck reads off in the corner."
               },
@@ -260,9 +260,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-the-hardways_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-the-hardways_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-the-hardways_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-the-hardways_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-the-hardways_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-the-hardways_1280x720.webp",
                 title: "Placement of a Hardway",
                 alt: "Up close view of the Hardways section and the Craps rail with 18 colored spots."
               },
@@ -288,9 +288,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/hardways-pay-6-8_640x360.webp",
-                    mdImg: "src/images/" + url + "/hardways-pay-6-8_960x540.webp",
-                    lgImg: "src/images/" + url + "/hardways-pay-6-8_1280x720.webp",
+                    smImg: "/images/" + url + "/hardways-pay-6-8_640x360.webp",
+                    mdImg: "/images/" + url + "/hardways-pay-6-8_960x540.webp",
+                    lgImg: "/images/" + url + "/hardways-pay-6-8_1280x720.webp",
                     title: "Hard 6 and 8 Pay 9:1",
                     alt: "$3 on the hard six with two green dice that read 3-3. A bubble reads $27 payment."
                   },
@@ -304,9 +304,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/hardways-pay-4-10_640x360.webp",
-                    mdImg: "src/images/" + url + "/hardways-pay-4-10_960x540.webp",
-                    lgImg: "src/images/" + url + "/hardways-pay-4-10_1280x720.webp",
+                    smImg: "/images/" + url + "/hardways-pay-4-10_640x360.webp",
+                    mdImg: "/images/" + url + "/hardways-pay-4-10_960x540.webp",
+                    lgImg: "/images/" + url + "/hardways-pay-4-10_1280x720.webp",
                     title: "Hard 4 and 10 Pay 7:1",
                     alt: "$30 on the hard ten with two green dice that read 5-5. A bubble reads $210 payment."
                   },
@@ -379,9 +379,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dealer-hardways_640x360.webp",
-                mdImg: "src/images/" + url + "/dealer-hardways_960x540.webp",
-                lgImg: "src/images/" + url + "/dealer-hardways_1280x720.webp",
+                smImg: "/images/" + url + "/dealer-hardways_640x360.webp",
+                mdImg: "/images/" + url + "/dealer-hardways_960x540.webp",
+                lgImg: "/images/" + url + "/dealer-hardways_1280x720.webp",
                 title: "Dealer Hardways",
                 alt: "$1 in the middle of the hard six."
               },

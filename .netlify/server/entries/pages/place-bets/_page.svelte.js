@@ -14,9 +14,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Place Bet Basics
       aria: "Place Bet Basics",
-      smImg: "src/images/" + url + "/place-bet-basics-header_600x600.webp",
-      mdImg: "src/images/" + url + "/place-bet-basics-header_992x558.webp",
-      lgImg: "src/images/" + url + "/place-bet-basics-wide-header.webp",
+      smImg: "/images/" + url + "/place-bet-basics-header_600x600.webp",
+      mdImg: "/images/" + url + "/place-bet-basics-header_992x558.webp",
+      lgImg: "/images/" + url + "/place-bet-basics-wide-header.webp",
       alt: "Place Bet Basics",
       title: "Place Bet Basics",
       href: "place-bet-basics",
@@ -33,9 +33,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Buying Place Bets
       aria: "Buying Place Bets",
-      smImg: "src/images/" + url + "/buying-place-bets-header_600x600.webp",
-      mdImg: "src/images/" + url + "/buying-place-bets-header_992x558.webp",
-      lgImg: "src/images/" + url + "/buying-place-bets-wide-header.webp",
+      smImg: "/images/" + url + "/buying-place-bets-header_600x600.webp",
+      mdImg: "/images/" + url + "/buying-place-bets-header_992x558.webp",
+      lgImg: "/images/" + url + "/buying-place-bets-wide-header.webp",
       alt: "Buying Place Bets",
       title: "Buying Place Bets",
       href: "buying-" + url,
@@ -50,9 +50,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Your Money
       aria: "Your Money",
-      smImg: "src/images/" + url + "/your-money-header_600x600.webp",
-      mdImg: "src/images/" + url + "/your-money-header_992x558.webp",
-      lgImg: "src/images/" + url + "/your-money-wide-header.webp",
+      smImg: "/images/" + url + "/your-money-header_600x600.webp",
+      mdImg: "/images/" + url + "/your-money-header_992x558.webp",
+      lgImg: "/images/" + url + "/your-money-wide-header.webp",
       alt: "Your Money",
       title: "Your Money",
       href: "your-money",
@@ -62,9 +62,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Presses
       aria: "Presses",
-      smImg: "src/images/" + url + "/presses-header_600x600.webp",
-      mdImg: "src/images/" + url + "/presses-header_992x558.webp",
-      lgImg: "src/images/" + url + "/presses-wide-header.webp",
+      smImg: "/images/" + url + "/presses-header_600x600.webp",
+      mdImg: "/images/" + url + "/presses-header_992x558.webp",
+      lgImg: "/images/" + url + "/presses-wide-header.webp",
       alt: "Presses",
       title: "Presses",
       href: "presses",
@@ -74,9 +74,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Spread Bets
       aria: "Spread Bets",
-      smImg: "src/images/" + url + "/spread-bets-header_600x600.webp",
-      mdImg: "src/images/" + url + "/spread-bets-header_992x558.webp",
-      lgImg: "src/images/" + url + "/spread-bets-wide-header.webp",
+      smImg: "/images/" + url + "/spread-bets-header_600x600.webp",
+      mdImg: "/images/" + url + "/spread-bets-header_992x558.webp",
+      lgImg: "/images/" + url + "/spread-bets-wide-header.webp",
       alt: "Spread Bets",
       title: "Spread Bets",
       href: "spread-bets",

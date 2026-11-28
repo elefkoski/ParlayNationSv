@@ -32,7 +32,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-gf3jvx_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-1poogr2">{
   "@context": "https://schema.org",
@@ -117,9 +117,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/proposition-bets_640x360.webp",
-                mdImg: "src/images/" + url + "/proposition-bets_960x540.webp",
-                lgImg: "src/images/" + url + "/proposition-bets_1280x720.webp",
+                smImg: "/images/" + url + "/proposition-bets_640x360.webp",
+                mdImg: "/images/" + url + "/proposition-bets_960x540.webp",
+                lgImg: "/images/" + url + "/proposition-bets_1280x720.webp",
                 title: "Proposition Bets",
                 alt: "Overhead view of the proposition area on the Craps table."
               },
@@ -169,9 +169,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-prop-bets_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-prop-bets_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-prop-bets_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-prop-bets_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-prop-bets_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-prop-bets_1280x720.webp",
                 title: "How to Bet Proposition Bets",
                 alt: "First person view of a player throwing a cheque towards the middle of the table."
               },

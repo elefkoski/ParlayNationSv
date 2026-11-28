@@ -10,43 +10,43 @@ const LeftNavMainMenu = create_ssr_component(($$result, $$props, $$bindings, slo
   const pages = [
     {
       href: "craps",
-      lightSrc: "src/images/icons/grad-hat-black-icon.png",
-      darkSrc: "src/images/icons/grad-hat-white-icon.png",
+      lightSrc: "/images/icons/grad-hat-black-icon.png",
+      darkSrc: "/images/icons/grad-hat-white-icon.png",
       alt: "Graduation Hat Icon",
       title: "Learn Craps"
     },
     {
       href: "practice-craps",
-      lightSrc: "src/images/icons/bullseye-black-icon.png",
-      darkSrc: "src/images/icons/bullseye-white-icon.png",
+      lightSrc: "/images/icons/bullseye-black-icon.png",
+      darkSrc: "/images/icons/bullseye-white-icon.png",
       alt: "Bullseye",
       title: "Practice Craps"
     },
     {
       href: "craps-blog",
-      lightSrc: "src/images/icons/paper-black-icon.png",
-      darkSrc: "src/images/icons/paper-white-icon.png",
+      lightSrc: "/images/icons/paper-black-icon.png",
+      darkSrc: "/images/icons/paper-white-icon.png",
       alt: "Piece of paper",
       title: "Craps Blog"
     },
     {
       href: "craps-corner",
-      lightSrc: "src/images/icons/more-black-icon.png",
-      darkSrc: "src/images/icons/more-white-icon.png",
+      lightSrc: "/images/icons/more-black-icon.png",
+      darkSrc: "/images/icons/more-white-icon.png",
       alt: "Icon",
       title: "Craps Corner"
     },
     {
       href: "craps-calculators",
-      lightSrc: "src/images/icons/calculator-black-icon.png",
-      darkSrc: "src/images/icons/calculator-white-icon.png",
+      lightSrc: "/images/icons/calculator-black-icon.png",
+      darkSrc: "/images/icons/calculator-white-icon.png",
       alt: "Calculator",
       title: "Craps Calculators"
     },
     {
       href: "craps-simulator",
-      lightSrc: "src/images/icons/controller-black-icon.png",
-      darkSrc: "src/images/icons/controller-white-icon.png",
+      lightSrc: "/images/icons/controller-black-icon.png",
+      darkSrc: "/images/icons/controller-white-icon.png",
       alt: "Controller",
       title: "Craps Simulator"
     }
@@ -74,7 +74,7 @@ const PageMenuBox = create_ssr_component(($$result, $$props, $$bindings, slots) 
   })}` : ``}</section></div>`;
 });
 const Htpc = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<p data-svelte-h="svelte-1lqkcd9">Get more knowledge sent straight to your inbox. Sign up for new updates, announcements and more.</p> <input type="text" placeholder="Type here" class="input input-bordered sub-input w-full"> <button data-track="subscribe" class="btn btn-neutral subscribe-btn" data-svelte-h="svelte-kn7qwl">Subscribe</button> <section aria-label="How to play craps pdf download" class="flex flex-col items-center text-center space-y-6" data-svelte-h="svelte-12yjfbw"><h2 class="uppercase text-3xl font-bold">Learn how to play craps in 15 minutes</h2> <figure class="max-w-xs md:max-w-lg relative"><img src="src/images/home-page/htpc-cover_612x792.webp" alt="How to Play Craps in 15 Minutes" class=""> <div class="absolute inset-0 image-cover dark:opacity-20"></div></figure> <p>Want something quick? Download the free guide on How to Play Craps in 15 Minutes.</p> <button class="btn" data-track="download-htpc">Download<svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path></svg></button></section>`;
+  return `<p data-svelte-h="svelte-1lqkcd9">Get more knowledge sent straight to your inbox. Sign up for new updates, announcements and more.</p> <input type="text" placeholder="Type here" class="input input-bordered sub-input w-full"> <button data-track="subscribe" class="btn btn-neutral subscribe-btn" data-svelte-h="svelte-kn7qwl">Subscribe</button> <section aria-label="How to play craps pdf download" class="flex flex-col items-center text-center space-y-6" data-svelte-h="svelte-1fx4c58"><h2 class="uppercase text-3xl font-bold">Learn how to play craps in 15 minutes</h2> <figure class="max-w-xs md:max-w-lg relative"><img src="/images/home-page/htpc-cover_612x792.webp" alt="How to Play Craps in 15 Minutes" class=""> <div class="absolute inset-0 image-cover dark:opacity-20"></div></figure> <p>Want something quick? Download the free guide on How to Play Craps in 15 Minutes.</p> <button class="btn" data-track="download-htpc">Download<svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path></svg></button></section>`;
 });
 const Structure_Remaining = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { pageLinks = [] } = $$props;

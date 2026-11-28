@@ -39,7 +39,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -144,9 +144,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/proposition-bets_640x360.webp"
-				mdImg="src/images/{url}/proposition-bets_960x540.webp"
-				lgImg="src/images/{url}/proposition-bets_1280x720.webp"
+				smImg="/images/{url}/proposition-bets_640x360.webp"
+				mdImg="/images/{url}/proposition-bets_960x540.webp"
+				lgImg="/images/{url}/proposition-bets_1280x720.webp"
 				title="Proposition Bets"
 				alt="Overhead view of the proposition area on the Craps table."
 			/>
@@ -187,9 +187,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/how-to-bet-prop-bets_640x360.webp"
-				mdImg="src/images/{url}/how-to-bet-prop-bets_960x540.webp"
-				lgImg="src/images/{url}/how-to-bet-prop-bets_1280x720.webp"
+				smImg="/images/{url}/how-to-bet-prop-bets_640x360.webp"
+				mdImg="/images/{url}/how-to-bet-prop-bets_960x540.webp"
+				lgImg="/images/{url}/how-to-bet-prop-bets_1280x720.webp"
 				title="How to Bet Proposition Bets"
 				alt="First person view of a player throwing a cheque towards the middle of the table."
 			/>

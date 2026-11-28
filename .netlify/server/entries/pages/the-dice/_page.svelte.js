@@ -80,7 +80,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-1tihvkq_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-om2fov">{
   "@context": "https://schema.org",
@@ -177,9 +177,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/the-craps-dice_640x360.webp",
-                mdImg: "src/images/" + url + "/the-craps-dice_960x540.webp",
-                lgImg: "src/images/" + url + "/the-craps-dice_1280x720.webp",
+                smImg: "/images/" + url + "/the-craps-dice_640x360.webp",
+                mdImg: "/images/" + url + "/the-craps-dice_960x540.webp",
+                lgImg: "/images/" + url + "/the-craps-dice_1280x720.webp",
                 title: "The Craps Dice",
                 alt: "Five maroon colored Craps dice sitting on green felt."
               },
@@ -227,9 +227,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/watching-the-dice_640x360.webp",
-                mdImg: "src/images/" + url + "/watching-the-dice_960x540.webp",
-                lgImg: "src/images/" + url + "/watching-the-dice_1280x720.webp",
+                smImg: "/images/" + url + "/watching-the-dice_640x360.webp",
+                mdImg: "/images/" + url + "/watching-the-dice_960x540.webp",
+                lgImg: "/images/" + url + "/watching-the-dice_1280x720.webp",
                 title: "Watching the Dice",
                 alt: "A player with tunnel vision staring at dice at the opposite end of a Craps table."
               },
@@ -272,9 +272,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/getting-hit-with-the-dice_640x360.webp",
-                mdImg: "src/images/" + url + "/getting-hit-with-the-dice_960x540.webp",
-                lgImg: "src/images/" + url + "/getting-hit-with-the-dice_1280x720.webp",
+                smImg: "/images/" + url + "/getting-hit-with-the-dice_640x360.webp",
+                mdImg: "/images/" + url + "/getting-hit-with-the-dice_960x540.webp",
+                lgImg: "/images/" + url + "/getting-hit-with-the-dice_1280x720.webp",
                 title: "Getting Hit with the Dice",
                 alt: "A statue of Caesar with his hand raised and a pointed finger."
               },

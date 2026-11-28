@@ -7,13 +7,13 @@ let description = "Practice Place Bet Payments on the 5 & 9. Downloadable PDF to
 let url = "practice-place-bet-payments-5-9";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let slides = [
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-1_960x1242.webp",
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-2_960x1242.webp",
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-3_960x1242.webp",
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-4_960x1242.webp",
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-5_960x1242.webp",
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-6_960x1242.webp",
-    "src/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-7_960x1242.webp"
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-1_960x1242.webp",
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-2_960x1242.webp",
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-3_960x1242.webp",
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-4_960x1242.webp",
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-5_960x1242.webp",
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-6_960x1242.webp",
+    "/images/practice-place-bet-payments-5-9/place-bet-payments-5-9-page-7_960x1242.webp"
   ];
   return `${$$result.head += `<!-- HEAD_svelte-4oswv2_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-1sowu2j">{
 		  "@context": "http://schema.org/",

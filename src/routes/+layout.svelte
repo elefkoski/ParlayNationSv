@@ -62,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<link rel="shortcut icon" href="src/images/assets/pn-favicon-32x32.png" />
+	<link rel="shortcut icon" href="/images/assets/pn-favicon-32x32.png" />
 	<meta name="author" content="Elvis Lefkoski" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Parlay Nation" />

@@ -9,7 +9,7 @@
 	let description: string = '';
 	let url: string = '';
 
-	let slides: string[] = ['src/images/practice-___/___-page-1_1200x630.webp'];
+	let slides: string[] = ['/images/practice-___/___-page-1_1200x630.webp'];
 </script>
 
 <svelte:head>

@@ -14,8 +14,8 @@
 					title: 'Pass Line Odds - 6 & 8',
 					description:
 						'Practice three levels of difficulty with cut-out Pass Line Odds Payments on the 6 & 8.',
-					imageUrlSm: 'src/images/practice/pdf-cover-pass-line-odds-6-8_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-pass-line-odds-6-8_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-pass-line-odds-6-8_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-pass-line-odds-6-8_960x1242.webp',
 					pageUrl: 'practice-pass-line-odds-payments-6-8',
 					pdfUrl: 'src/pdf/pass-line-odds-6-8.pdf'
 				},
@@ -23,8 +23,8 @@
 					title: 'Pass Line Odds - 5 & 9',
 					description:
 						'Practice three levels of difficulty with cut-out Pass Line Odds Payments on the 5 & 9.',
-					imageUrlSm: 'src/images/practice/pdf-cover-pass-line-odds-5-9_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-pass-line-odds-5-9_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-pass-line-odds-5-9_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-pass-line-odds-5-9_960x1242.webp',
 					pageUrl: 'practice-pass-line-odds-payments-5-9',
 					pdfUrl: 'src/pdf/pass-line-odds-5-9.pdf'
 				},
@@ -32,8 +32,8 @@
 					title: 'Pass Line Odds - 4 & 10',
 					description:
 						'Practice two levels of difficulty with cut-out Pass Line Odds Payments on the 4 & 10.',
-					imageUrlSm: 'src/images/practice/pdf-cover-pass-line-odds-4-10_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-pass-line-odds-4-10_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-pass-line-odds-4-10_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-pass-line-odds-4-10_960x1242.webp',
 					pageUrl: 'practice-pass-line-odds-payments-4-10',
 					pdfUrl: 'src/pdf/pass-line-odds-4-10.pdf'
 				}
@@ -47,8 +47,8 @@
 					title: 'Place Bet Payments - 6 & 8',
 					description:
 						'Practice three levels of difficulty with cut-out Place Bet Payments on the 6 & 8.',
-					imageUrlSm: 'src/images/practice/pdf-cover-place-bets-6-8_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-place-bets-6-8_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-place-bets-6-8_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-place-bets-6-8_960x1242.webp',
 					pageUrl: 'practice-place-bet-payments-6-8',
 					pdfUrl: 'src/pdf/place-bet-payments-6-8.pdf'
 				},
@@ -56,8 +56,8 @@
 					title: 'Place Bet Payments - 5 & 9',
 					description:
 						'Practice three levels of difficulty with cut-out Place Bet Payments on the 5 & 9.',
-					imageUrlSm: 'src/images/practice/pdf-cover-place-bets-5-9_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-place-bets-5-9_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-place-bets-5-9_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-place-bets-5-9_960x1242.webp',
 					pageUrl: 'practice-place-bet-payments-5-9',
 					pdfUrl: 'src/pdf/place-bet-payments-5-9.pdf'
 				},
@@ -65,8 +65,8 @@
 					title: 'Place Bet Payments - 4 & 10',
 					description:
 						'Practice two levels of difficulty with cut-out Place Bet Payments on the 4 & 10.',
-					imageUrlSm: 'src/images/practice/pdf-cover-place-bets-4-10_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-place-bets-4-10_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-place-bets-4-10_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-place-bets-4-10_960x1242.webp',
 					pageUrl: 'practice-place-bet-payments-4-10',
 					pdfUrl: 'src/pdf/place-bet-payments-4-10.pdf'
 				}
@@ -80,8 +80,8 @@
 					title: 'Come Bet w/Odds Payments 6 & 8',
 					description:
 						'Practice three levels of difficulty with cut-out Come Bet w/Odds Payments on the 6 & 8.',
-					imageUrlSm: 'src/images/practice/pdf-cover-come-bet-w-odds-6-8_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-come-bet-w-odds-6-8_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-come-bet-w-odds-6-8_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-come-bet-w-odds-6-8_960x1242.webp',
 					pageUrl: 'practice-come-bet-w-odds-payments-6-8',
 					pdfUrl: 'src/pdf/come-bet-with-odds-6-8.pdf'
 				},
@@ -89,8 +89,8 @@
 					title: 'Come Bet w/Odds Payments 5 & 9',
 					description:
 						'Practice three levels of difficulty with cut-out Come Bet w/Odds Payments on the 5 & 9.',
-					imageUrlSm: 'src/images/practice/pdf-cover-come-bet-w-odds-5-9_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-come-bet-w-odds-5-9_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-come-bet-w-odds-5-9_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-come-bet-w-odds-5-9_960x1242.webp',
 					pageUrl: 'practice-come-bet-w-odds-payments-5-9',
 					pdfUrl: 'src/pdf/come-bet-with-odds-5-9.pdf'
 				},
@@ -98,8 +98,8 @@
 					title: 'Come Bet w/Odds Payments 4 & 10',
 					description:
 						'Practice two levels of difficulty with cut-out Come Bet w/Odds Payments on the 4 & 10.',
-					imageUrlSm: 'src/images/practice/pdf-cover-come-bet-w-odds-4-10_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-come-bet-w-odds-4-10_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-come-bet-w-odds-4-10_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-come-bet-w-odds-4-10_960x1242.webp',
 					pageUrl: 'practice-come-bet-w-odds-payments-4-10',
 					pdfUrl: 'src/pdf/come-bet-with-odds-4-10.pdf'
 				}
@@ -113,8 +113,8 @@
 					title: 'Lay Odds Payments 6 & 8',
 					description:
 						'Practice three levels of difficulty with cut-out Lay Odds Payments on the 6 & 8.',
-					imageUrlSm: 'src/images/practice/pdf-cover-lay-odds-6-8_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-lay-odds-6-8_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-lay-odds-6-8_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-lay-odds-6-8_960x1242.webp',
 					pageUrl: 'practice-lay-odds-payments-6-8',
 					pdfUrl: 'src/pdf/lay-odds-payments-6-8.pdf'
 				},
@@ -122,8 +122,8 @@
 					title: 'Lay Odds Payments 5 & 9',
 					description:
 						'Practice three levels of difficulty with cut-out Lay Odds Payments on the 5 & 9.',
-					imageUrlSm: 'src/images/practice/pdf-cover-lay-odds-5-9_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-lay-odds-5-9_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-lay-odds-5-9_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-lay-odds-5-9_960x1242.webp',
 					pageUrl: 'practice-lay-odds-payments-5-9',
 					pdfUrl: 'src/pdf/lay-odds-payments-5-9.pdf'
 				},
@@ -131,8 +131,8 @@
 					title: 'Lay Odds Payments 4 & 10',
 					description:
 						'Practice two levels of difficulty with cut-out Lay Odds Payments on the 4 & 10.',
-					imageUrlSm: 'src/images/practice/pdf-cover-lay-odds-4-10_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-lay-odds-4-10_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-lay-odds-4-10_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-lay-odds-4-10_960x1242.webp',
 					pageUrl: 'practice-lay-odds-payments-4-10',
 					pdfUrl: 'src/pdf/lay-odds-payments-4-10.pdf'
 				}
@@ -146,8 +146,8 @@
 					title: 'Craps Cards - Black',
 					description:
 						'36 Black Craps Cards show you every combination of the dice so you can play or practice Craps with cards.',
-					imageUrlSm: 'src/images/practice/pdf-cover-black-dice-combinations_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-black-dice-combinations_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-black-dice-combinations_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-black-dice-combinations_960x1242.webp',
 					pageUrl: 'practice-craps-cards-black',
 					pdfUrl: 'src/pdf/black-craps-cards.pdf'
 				},
@@ -155,8 +155,8 @@
 					title: 'Craps Cards - Grey',
 					description:
 						'36 Grey Craps Cards show you every combination of the dice so you can play or practice Craps with cards.',
-					imageUrlSm: 'src/images/practice/pdf-cover-grey-dice-combinations_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-grey-dice-combinations_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-grey-dice-combinations_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-grey-dice-combinations_960x1242.webp',
 					pageUrl: 'practice-craps-cards-grey',
 					pdfUrl: 'src/pdf/grey-craps-cards.pdf'
 				}
@@ -169,24 +169,24 @@
 				{
 					title: '60mm Foldable Craps Dice',
 					description: 'Practice playing Craps by printing a couple 60mm foldable Craps dice.',
-					imageUrlSm: 'src/images/practice/pdf-cover-60mm-foldable-craps-dice_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-60mm-foldable-craps-dice_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-60mm-foldable-craps-dice_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-60mm-foldable-craps-dice_960x1242.webp',
 					pageUrl: 'practice-60mm-craps-dice',
 					pdfUrl: 'src/pdf/60mm-foldable-craps-dice.pdf'
 				},
 				{
 					title: '40mm Foldable Craps Dice',
 					description: 'Practice playing Craps with a pair of 40mm foldable Craps dice.',
-					imageUrlSm: 'src/images/practice/pdf-cover-40mm-foldable-craps-dice_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-40mm-foldable-craps-dice_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-40mm-foldable-craps-dice_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-40mm-foldable-craps-dice_960x1242.webp',
 					pageUrl: 'practice-40mm-craps-dice',
 					pdfUrl: 'src/pdf/40mm-foldable-craps-dice.pdf'
 				},
 				{
 					title: '19mm Foldable Craps Dice',
 					description: 'Practice playing Craps with six 19mm foldable Craps dice.',
-					imageUrlSm: 'src/images/practice/pdf-cover-19mm-foldable-craps-dice_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-19mm-foldable-craps-dice_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-19mm-foldable-craps-dice_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-19mm-foldable-craps-dice_960x1242.webp',
 					pageUrl: 'practice-19mm-craps-dice',
 					pdfUrl: 'src/pdf/19mm-foldable-craps-dice.pdf'
 				}
@@ -199,16 +199,16 @@
 				{
 					title: 'Full Craps Table Layout',
 					description: 'Practice learning Craps by studying the Craps table layout.',
-					imageUrlSm: 'src/images/practice/pdf-cover-craps-table-layout_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-craps-table-layout_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-craps-table-layout_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-craps-table-layout_960x1242.webp',
 					pageUrl: 'practice-full-craps-table-layout',
 					pdfUrl: 'src/pdf/full-craps-table-layout.pdf'
 				},
 				{
 					title: 'Half Craps Table Layout',
 					description: 'Practice learning Craps by studying half of the Craps table layout.',
-					imageUrlSm: 'src/images/practice/pdf-cover-half-craps-table-layout_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-half-craps-table-layout_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-half-craps-table-layout_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-half-craps-table-layout_960x1242.webp',
 					pageUrl: 'practice-half-craps-table-layout',
 					pdfUrl: 'src/pdf/half-craps-table-layout.pdf'
 				}
@@ -221,8 +221,8 @@
 				{
 					title: 'Random Horn High Generator',
 					description: 'Practice Horn High Payments with this Random Horn High Generator.',
-					imageUrlSm: 'src/images/practice/pdf-cover-hh-world-generator_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-hh-world-generator_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-hh-world-generator_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-hh-world-generator_960x1242.webp',
 					pageUrl: 'practice-horn-high-generator',
 					pdfUrl: 'src/pdf/horn-high-generator.pdf'
 				}
@@ -235,8 +235,8 @@
 				{
 					title: 'Craps Roll Cards',
 					description: 'Practice determining what is considered a roll or not a roll in craps.',
-					imageUrlSm: 'src/images/practice/pdf-cover-craps-roll-cards_640x828.webp',
-					imageUrlLg: 'src/images/practice/pdf-cover-craps-roll-cards_960x1242.webp',
+					imageUrlSm: '/images/practice/pdf-cover-craps-roll-cards_640x828.webp',
+					imageUrlLg: '/images/practice/pdf-cover-craps-roll-cards_960x1242.webp',
 					pageUrl: 'practice-craps-roll-cards',
 					pdfUrl: 'src/pdf/craps-roll-cards.pdf'
 				}

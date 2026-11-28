@@ -51,7 +51,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Point", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -151,9 +151,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/pass-line-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/pass-line-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/pass-line-odds_1280x720.webp",
+                smImg: "/images/" + url + "/pass-line-odds_640x360.webp",
+                mdImg: "/images/" + url + "/pass-line-odds_960x540.webp",
+                lgImg: "/images/" + url + "/pass-line-odds_1280x720.webp",
                 alt: "$5 on the pass line with $20 odds."
               },
               {},
@@ -185,9 +185,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-the-pass-line-with-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-the-pass-line-with-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-the-pass-line-with-odds_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-the-pass-line-with-odds_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-the-pass-line-with-odds_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-the-pass-line-with-odds_1280x720.webp",
                 alt: "Four bets on the pass line. Each bet pointing to a spot in the rail."
               },
               {},
@@ -214,9 +214,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Example 1",
-                    smImg: "src/images/" + url + "/pass-line-odds-pay-6-8-a_640x360.webp",
-                    mdImg: "src/images/" + url + "/pass-line-odds-pay-6-8-a_960x540.webp",
-                    lgImg: "src/images/" + url + "/pass-line-odds-pay-6-8-a_1280x720.webp",
+                    smImg: "/images/" + url + "/pass-line-odds-pay-6-8-a_640x360.webp",
+                    mdImg: "/images/" + url + "/pass-line-odds-pay-6-8-a_960x540.webp",
+                    lgImg: "/images/" + url + "/pass-line-odds-pay-6-8-a_1280x720.webp",
                     alt: "$5 on the Pass line with $5 odds. The pass line is paid even money and the $5 odds are paid $6."
                   },
                   {},
@@ -225,9 +225,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Example 2",
-                    smImg: "src/images/" + url + "/pass-line-odds-pay-6-8-b_640x360.webp",
-                    mdImg: "src/images/" + url + "/pass-line-odds-pay-6-8-b_960x540.webp",
-                    lgImg: "src/images/" + url + "/pass-line-odds-pay-6-8-b_1280x720.webp",
+                    smImg: "/images/" + url + "/pass-line-odds-pay-6-8-b_640x360.webp",
+                    mdImg: "/images/" + url + "/pass-line-odds-pay-6-8-b_960x540.webp",
+                    lgImg: "/images/" + url + "/pass-line-odds-pay-6-8-b_1280x720.webp",
                     alt: "$25 on the Pass line with $75 odds. The pass line is paid even money and the $75 odds are paid $90."
                   },
                   {},
@@ -243,9 +243,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Example 1",
-                    smImg: "src/images/" + url + "/pass-line-odds-pay-5-9-a_640x360.webp",
-                    mdImg: "src/images/" + url + "/pass-line-odds-pay-5-9-a_960x540.webp",
-                    lgImg: "src/images/" + url + "/pass-line-odds-pay-5-9-a_1280x720.webp",
+                    smImg: "/images/" + url + "/pass-line-odds-pay-5-9-a_640x360.webp",
+                    mdImg: "/images/" + url + "/pass-line-odds-pay-5-9-a_960x540.webp",
+                    lgImg: "/images/" + url + "/pass-line-odds-pay-5-9-a_1280x720.webp",
                     alt: "$10 on the pass line with $10 odds. The pass line is paid even money and the $10 odds are paid $15."
                   },
                   {},
@@ -254,9 +254,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Example 2",
-                    mdImg: "src/images/" + url + "/pass-line-odds-pay-5-9-b_960x540.webp",
-                    lgImg: "src/images/" + url + "/pass-line-odds-pay-5-9-b_1280x720.webp",
-                    smImg: "src/images/" + url + "/pass-line-odds-pay-5-9-b_640x360.webp",
+                    mdImg: "/images/" + url + "/pass-line-odds-pay-5-9-b_960x540.webp",
+                    lgImg: "/images/" + url + "/pass-line-odds-pay-5-9-b_1280x720.webp",
+                    smImg: "/images/" + url + "/pass-line-odds-pay-5-9-b_640x360.webp",
                     alt: "$15 on the pass line with $40 odds. The pass line is paid even money and the $40 odds are paid $60."
                   },
                   {},
@@ -270,9 +270,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Example 1",
-                    smImg: "src/images/" + url + "/pass-line-odds-pay-4-10-a_640x360.webp",
-                    mdImg: "src/images/" + url + "/pass-line-odds-pay-4-10-a_960x540.webp",
-                    lgImg: "src/images/" + url + "/pass-line-odds-pay-4-10-a_1280x720.webp",
+                    smImg: "/images/" + url + "/pass-line-odds-pay-4-10-a_640x360.webp",
+                    mdImg: "/images/" + url + "/pass-line-odds-pay-4-10-a_960x540.webp",
+                    lgImg: "/images/" + url + "/pass-line-odds-pay-4-10-a_1280x720.webp",
                     alt: "$5 on the pass line with $10 odds. The pass line is paid even money and the $10 odds are paid $20."
                   },
                   {},
@@ -281,9 +281,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Example 2",
-                    smImg: "src/images/" + url + "/pass-line-odds-pay-4-10-b_640x360.webp",
-                    mdImg: "src/images/" + url + "/pass-line-odds-pay-4-10-b_960x540.webp",
-                    lgImg: "src/images/" + url + "/pass-line-odds-pay-4-10-b_1280x720.webp",
+                    smImg: "/images/" + url + "/pass-line-odds-pay-4-10-b_640x360.webp",
+                    mdImg: "/images/" + url + "/pass-line-odds-pay-4-10-b_960x540.webp",
+                    lgImg: "/images/" + url + "/pass-line-odds-pay-4-10-b_1280x720.webp",
                     alt: "$25 on the pass line with $25 odds. The pass line is paid even money and the $25 odds are paid $50."
                   },
                   {},
@@ -368,9 +368,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dealer-pass-line-with-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/dealer-pass-line-with-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/dealer-pass-line-with-odds_1280x720.webp",
+                smImg: "/images/" + url + "/dealer-pass-line-with-odds_640x360.webp",
+                mdImg: "/images/" + url + "/dealer-pass-line-with-odds_960x540.webp",
+                lgImg: "/images/" + url + "/dealer-pass-line-with-odds_1280x720.webp",
                 alt: "$10 on the pass line with $20 odds. Next to it is a $1 pass line bet with $2 odds."
               },
               {},

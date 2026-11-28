@@ -35,7 +35,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["The Spread", "Total Bet"];
   let tblRows = [
@@ -157,9 +157,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/across_640x360.webp",
-                mdImg: "src/images/" + url + "/across_960x540.webp",
-                lgImg: "src/images/" + url + "/across_1280x720.webp",
+                smImg: "/images/" + url + "/across_640x360.webp",
+                mdImg: "/images/" + url + "/across_960x540.webp",
+                lgImg: "/images/" + url + "/across_1280x720.webp",
                 title: "Across at the Craps Table",
                 alt: "Puck is on point six and points 4, 5, 8, 9, and 10 are highlighted."
               },
@@ -187,9 +187,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/52-across_640x360.webp",
-                    mdImg: "src/images/" + url + "/52-across_960x540.webp",
-                    lgImg: "src/images/" + url + "/52-across_1280x720.webp",
+                    smImg: "/images/" + url + "/52-across_640x360.webp",
+                    mdImg: "/images/" + url + "/52-across_960x540.webp",
+                    lgImg: "/images/" + url + "/52-across_1280x720.webp",
                     title: "Betting $52 Across",
                     alt: "$52 across with the point on six."
                   },
@@ -205,9 +205,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/54-across_640x360.webp",
-                    mdImg: "src/images/" + url + "/54-across_960x540.webp",
-                    lgImg: "src/images/" + url + "/54-across_1280x720.webp",
+                    smImg: "/images/" + url + "/54-across_640x360.webp",
+                    mdImg: "/images/" + url + "/54-across_960x540.webp",
+                    lgImg: "/images/" + url + "/54-across_1280x720.webp",
                     title: "Betting $54 Across",
                     alt: "$54 across with the point on five."
                   },
@@ -238,9 +238,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/132-across_640x360.webp",
-                    mdImg: "src/images/" + url + "/132-across_960x540.webp",
-                    lgImg: "src/images/" + url + "/132-across_1280x720.webp",
+                    smImg: "/images/" + url + "/132-across_640x360.webp",
+                    mdImg: "/images/" + url + "/132-across_960x540.webp",
+                    lgImg: "/images/" + url + "/132-across_1280x720.webp",
                     title: "Betting $132 Across",
                     alt: "$132 across with the point on eight."
                   },
@@ -256,9 +256,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/137-across_640x360.webp",
-                    mdImg: "src/images/" + url + "/137-across_960x540.webp",
-                    lgImg: "src/images/" + url + "/137-across_1280x720.webp",
+                    smImg: "/images/" + url + "/137-across_640x360.webp",
+                    mdImg: "/images/" + url + "/137-across_960x540.webp",
+                    lgImg: "/images/" + url + "/137-across_1280x720.webp",
                     title: "Betting $137 Across",
                     alt: "$137 across with the point on nine."
                   },
@@ -276,9 +276,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/136-across_640x360.webp",
-                    mdImg: "src/images/" + url + "/136-across_960x540.webp",
-                    lgImg: "src/images/" + url + "/136-across_1280x720.webp",
+                    smImg: "/images/" + url + "/136-across_640x360.webp",
+                    mdImg: "/images/" + url + "/136-across_960x540.webp",
+                    lgImg: "/images/" + url + "/136-across_1280x720.webp",
                     title: "Betting $136 Across",
                     alt: "$136 across with the point on 10."
                   },

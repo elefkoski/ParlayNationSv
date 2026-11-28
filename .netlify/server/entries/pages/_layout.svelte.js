@@ -30,12 +30,12 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     }
   }
   $$unsubscribe_user();
-  return `${$$result.head += `<!-- HEAD_svelte-4x1hda_START --><link rel="shortcut icon" href="src/images/assets/pn-favicon-32x32.png"><meta name="author" content="Elvis Lefkoski"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Parlay Nation"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-N6DDTMN7FM" data-svelte-h="svelte-esg29s"><\/script><script data-svelte-h="svelte-1i56beg">window.dataLayer = window.dataLayer || [];
+  return `${$$result.head += `<!-- HEAD_svelte-cf2xlq_START --><link rel="shortcut icon" href="/images/assets/pn-favicon-32x32.png"><meta name="author" content="Elvis Lefkoski"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Parlay Nation"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-N6DDTMN7FM" data-svelte-h="svelte-esg29s"><\/script><script data-svelte-h="svelte-1i56beg">window.dataLayer = window.dataLayer || [];
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-		gtag('config', 'G-N6DDTMN7FM');<\/script><!-- HEAD_svelte-4x1hda_END -->`, ""} ${`<div class="loading-page bg-gray-900 text-white min-h-screen flex items-center justify-center" data-svelte-h="svelte-aq5u7n">Loading...</div>`}`;
+		gtag('config', 'G-N6DDTMN7FM');<\/script><!-- HEAD_svelte-cf2xlq_END -->`, ""} ${`<div class="loading-page bg-gray-900 text-white min-h-screen flex items-center justify-center" data-svelte-h="svelte-aq5u7n">Loading...</div>`}`;
 });
 export {
   Layout as default

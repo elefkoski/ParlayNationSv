@@ -9,43 +9,43 @@
 	export const pages = [
 		{
 			href: 'craps',
-			lightSrc: 'src/images/icons/grad-hat-black-icon.png',
-			darkSrc: 'src/images/icons/grad-hat-white-icon.png',
+			lightSrc: '/images/icons/grad-hat-black-icon.png',
+			darkSrc: '/images/icons/grad-hat-white-icon.png',
 			alt: 'Graduation Hat Icon',
 			title: 'Learn Craps'
 		},
 		{
 			href: 'practice-craps',
-			lightSrc: 'src/images/icons/bullseye-black-icon.png',
-			darkSrc: 'src/images/icons/bullseye-white-icon.png',
+			lightSrc: '/images/icons/bullseye-black-icon.png',
+			darkSrc: '/images/icons/bullseye-white-icon.png',
 			alt: 'Bullseye',
 			title: 'Practice Craps'
 		},
 		{
 			href: 'craps-blog',
-			lightSrc: 'src/images/icons/paper-black-icon.png',
-			darkSrc: 'src/images/icons/paper-white-icon.png',
+			lightSrc: '/images/icons/paper-black-icon.png',
+			darkSrc: '/images/icons/paper-white-icon.png',
 			alt: 'Piece of paper',
 			title: 'Craps Blog'
 		},
 		{
 			href: 'craps-corner',
-			lightSrc: 'src/images/icons/more-black-icon.png',
-			darkSrc: 'src/images/icons/more-white-icon.png',
+			lightSrc: '/images/icons/more-black-icon.png',
+			darkSrc: '/images/icons/more-white-icon.png',
 			alt: 'Icon',
 			title: 'Craps Corner'
 		},
 		{
 			href: 'craps-calculators',
-			lightSrc: 'src/images/icons/calculator-black-icon.png',
-			darkSrc: 'src/images/icons/calculator-white-icon.png',
+			lightSrc: '/images/icons/calculator-black-icon.png',
+			darkSrc: '/images/icons/calculator-white-icon.png',
 			alt: 'Calculator',
 			title: 'Craps Calculators'
 		},
 		{
 			href: 'craps-simulator',
-			lightSrc: 'src/images/icons/controller-black-icon.png',
-			darkSrc: 'src/images/icons/controller-white-icon.png',
+			lightSrc: '/images/icons/controller-black-icon.png',
+			darkSrc: '/images/icons/controller-white-icon.png',
 			alt: 'Controller',
 			title: 'Craps Simulator'
 		}

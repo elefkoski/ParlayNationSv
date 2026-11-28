@@ -7,13 +7,13 @@ let description = "Practice Lay Odds Payments on the 6 & 8. Downloadable PDF to 
 let url = "practice-lay-odds-payments-6-8";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let slides = [
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-1_960x1242.webp",
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-2_960x1242.webp",
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-3_960x1242.webp",
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-4_960x1242.webp",
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-5_960x1242.webp",
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-6_960x1242.webp",
-    "src/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-7_960x1242.webp"
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-1_960x1242.webp",
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-2_960x1242.webp",
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-3_960x1242.webp",
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-4_960x1242.webp",
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-5_960x1242.webp",
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-6_960x1242.webp",
+    "/images/practice-lay-odds-payments-6-8/lay-odds-payments-6-8-page-7_960x1242.webp"
   ];
   return `${$$result.head += `<!-- HEAD_svelte-3ew0in_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-h3976w">{
 		  "@context": "http://schema.org/",

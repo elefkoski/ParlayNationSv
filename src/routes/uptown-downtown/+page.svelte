@@ -39,7 +39,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Uptown/Downtown betting options table';
@@ -165,18 +165,18 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/uptown_640x360.webp"
-				mdImg="src/images/{url}/uptown_960x540.webp"
-				lgImg="src/images/{url}/uptown_1280x720.webp"
+				smImg="/images/{url}/uptown_640x360.webp"
+				mdImg="/images/{url}/uptown_960x540.webp"
+				lgImg="/images/{url}/uptown_1280x720.webp"
 				title="Uptown Place Bets"
 				alt="Puck is on point six and points 8, 9, and 10 are highlighted."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/downtown_640x360.webp"
-				mdImg="src/images/{url}/downtown_960x540.webp"
-				lgImg="src/images/{url}/downtown_1280x720.webp"
+				smImg="/images/{url}/downtown_640x360.webp"
+				mdImg="/images/{url}/downtown_960x540.webp"
+				lgImg="/images/{url}/downtown_1280x720.webp"
 				title="Downtown Place Bets"
 				alt="Puck is on point eight and points 4, 5, and 6 are highlighted."
 			/>
@@ -198,18 +198,18 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/16-uptown_640x360.webp"
-				mdImg="src/images/{url}/16-uptown_960x540.webp"
-				lgImg="src/images/{url}/16-uptown_1280x720.webp"
+				smImg="/images/{url}/16-uptown_640x360.webp"
+				mdImg="/images/{url}/16-uptown_960x540.webp"
+				lgImg="/images/{url}/16-uptown_1280x720.webp"
 				title="Betting $16 Uptown"
 				alt="Betting $16 Uptown with the point on five."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/16-downtown_640x360.webp"
-				mdImg="src/images/{url}/16-downtown_960x540.webp"
-				lgImg="src/images/{url}/16-downtown_1280x720.webp"
+				smImg="/images/{url}/16-downtown_640x360.webp"
+				mdImg="/images/{url}/16-downtown_960x540.webp"
+				lgImg="/images/{url}/16-downtown_1280x720.webp"
 				title="Betting $16 Downtown"
 				alt="Betting $16 downtown with the point on nine."
 			/>
@@ -226,18 +226,18 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/65-uptown_640x360.webp"
-				mdImg="src/images/{url}/65-uptown_960x540.webp"
-				lgImg="src/images/{url}/65-uptown_1280x720.webp"
+				smImg="/images/{url}/65-uptown_640x360.webp"
+				mdImg="/images/{url}/65-uptown_960x540.webp"
+				lgImg="/images/{url}/65-uptown_1280x720.webp"
 				title="Betting $65 Uptown"
 				alt="$65 uptown with the point on four."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/65-downtown_640x360.webp"
-				mdImg="src/images/{url}/65-downtown_960x540.webp"
-				lgImg="src/images/{url}/65-downtown_1280x720.webp"
+				smImg="/images/{url}/65-downtown_640x360.webp"
+				mdImg="/images/{url}/65-downtown_960x540.webp"
+				lgImg="/images/{url}/65-downtown_1280x720.webp"
 				title="Betting $65 Downtown"
 				alt="$65 downtown with the point on ten."
 			/>

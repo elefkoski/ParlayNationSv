@@ -48,26 +48,26 @@
 							{#if typeof window !== 'undefined' && window.innerWidth >= 768}
 								<img
 									class="w-auto h-12"
-									src="src/images/assets/parlay-nation-logo-dm_1048x298.webp"
+									src="/images/assets/parlay-nation-logo-dm_1048x298.webp"
 									alt="Parlay Nation Dark Mode Large Screen Logo"
 								/>
 							{:else}
 								<img
 									class="w-auto h-12"
-									src="src/images/assets/parlay-nation-logo-dm_524x149.webp"
+									src="/images/assets/parlay-nation-logo-dm_524x149.webp"
 									alt="Parlay Nation Dark Mode Small Screen Logo"
 								/>
 							{/if}
 						{:else if typeof window !== 'undefined' && window.innerWidth >= 768}
 							<img
 								class="w-auto h-12"
-								src="src/images/assets/parlay-nation-logo_1048x298.webp"
+								src="/images/assets/parlay-nation-logo_1048x298.webp"
 								alt="Parlay Nation Light Mode Large Screen Logo"
 							/>
 						{:else}
 							<img
 								class="w-auto h-12"
-								src="src/images/assets/parlay-nation-logo_524x149.webp"
+								src="/images/assets/parlay-nation-logo_524x149.webp"
 								alt="Parlay Nation Light Mode Small Screen Logo"
 							/>
 						{/if}
@@ -86,13 +86,13 @@
 							>
 								{#if $theme === 'dark'}
 									<img
-										src="src/images/assets/sun-white-icon.png"
+										src="/images/assets/sun-white-icon.png"
 										alt="Sun Icon 1"
 										class="w-6 h-6"
 									/>
 								{:else}
 									<img
-										src="src/images/assets/moon-black-icon.png"
+										src="/images/assets/moon-black-icon.png"
 										alt="Moon Icon 2"
 										class="w-6 h-6"
 									/>

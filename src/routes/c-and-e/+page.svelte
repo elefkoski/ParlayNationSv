@@ -58,7 +58,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'C & E bet separately pay table';
@@ -184,9 +184,9 @@
 			/>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/c-and-e_640x360.webp"
-				mdImg="src/images/{url}/c-and-e_960x540.webp"
-				lgImg="src/images/{url}/c-and-e_1280x720.webp"
+				smImg="/images/{url}/c-and-e_640x360.webp"
+				mdImg="/images/{url}/c-and-e_960x540.webp"
+				lgImg="/images/{url}/c-and-e_1280x720.webp"
 				title="The C & E"
 				alt="Overhead up close view of the c &amp; e betting area."
 			/>
@@ -206,9 +206,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-c-and-e_640x360.webp"
-				mdImg="src/images/{url}/placement-of-c-and-e_960x540.webp"
-				lgImg="src/images/{url}/placement-of-c-and-e_1280x720.webp"
+				smImg="/images/{url}/placement-of-c-and-e_640x360.webp"
+				mdImg="/images/{url}/placement-of-c-and-e_960x540.webp"
+				lgImg="/images/{url}/placement-of-c-and-e_1280x720.webp"
 				title="Placement of the C & E"
 				alt="Overhead view up C &amp; E area with arrows pointing to their respective spots in the rail."
 			/>
@@ -223,9 +223,9 @@
 		<ContentHeaderThree title="Pays 7:1 or 3:1 When it is Split">
 			<ContentImg
 				caption="$5 C & E Split"
-				smImg="src/images/{url}/5-c-and-e-split_640x360.webp"
-				mdImg="src/images/{url}/5-c-and-e-split_960x540.webp"
-				lgImg="src/images/{url}/5-c-and-e-split_1280x720.webp"
+				smImg="/images/{url}/5-c-and-e-split_640x360.webp"
+				mdImg="/images/{url}/5-c-and-e-split_960x540.webp"
+				lgImg="/images/{url}/5-c-and-e-split_1280x720.webp"
 				title="$5 C & E Split"
 				alt="$5 C &amp; E split with two bubbles. One reads $15 payout. The second reads $35 payout."
 			/>
@@ -252,9 +252,9 @@
 		<ContentHeaderThree title="Pays Differently Every Time When You Have Separate Amounts">
 			<ContentImg
 				caption="$4C - $1E"
-				smImg="src/images/{url}/4-c-1-e_640x360.webp"
-				mdImg="src/images/{url}/4-c-1-e_960x540.webp"
-				lgImg="src/images/{url}/4-c-1-e_1280x720.webp"
+				smImg="/images/{url}/4-c-1-e_640x360.webp"
+				mdImg="/images/{url}/4-c-1-e_960x540.webp"
+				lgImg="/images/{url}/4-c-1-e_1280x720.webp"
 				title="$4C and $1E"
 				alt="$4 on the Any Craps and $1 on the yo. Two bubbles: one reads $27 payment and the other $11 payment."
 			/>

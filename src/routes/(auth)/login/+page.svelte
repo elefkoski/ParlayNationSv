@@ -140,7 +140,7 @@
 				<img
 					alt="Parlay Nation"
 					class="h-20 mb-8 mx-auto w-auto"
-					src="src/images/assets/parlay-nation-logo_1048x298.webp"
+					src="/images/assets/parlay-nation-logo_1048x298.webp"
 				/>
 				<h2
 					class="dark:text-gray-100 font-bold leading-9 text-2xl text-center text-gray-900 tracking-tight"
@@ -221,8 +221,8 @@
 								<button on:click={togglePasswordVisibility} type="button" class="...">
 									<img
 										src={showPassword
-											? 'src/images/icons/visibility_off_black.svg'
-											: 'src/images/icons/visibility_black.svg'}
+											? '/images/icons/visibility_off_black.svg'
+											: '/images/icons/visibility_black.svg'}
 										alt="Toggle password visibility"
 										class="h-5 w-5"
 									/>
@@ -283,7 +283,7 @@
 				<img
 					alt="Parlay Nation"
 					class="h-20 mb-8 mx-auto w-auto"
-					src="src/images/assets/parlay-nation-logo_1048x298.webp"
+					src="/images/assets/parlay-nation-logo_1048x298.webp"
 				/>
 				<h2
 					class="dark:text-gray-100 font-bold leading-9 text-2xl text-center text-gray-900 tracking-tight"

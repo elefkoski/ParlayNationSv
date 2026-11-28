@@ -69,7 +69,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Point", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -188,9 +188,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dont-come-lay-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/dont-come-lay-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/dont-come-lay-odds_1280x720.webp",
+                smImg: "/images/" + url + "/dont-come-lay-odds_640x360.webp",
+                mdImg: "/images/" + url + "/dont-come-lay-odds_960x540.webp",
+                lgImg: "/images/" + url + "/dont-come-lay-odds_1280x720.webp",
                 title: "Don't Come Lay Odds",
                 alt: "$10 with $18 Lay odds behind the point eight."
               },
@@ -220,9 +220,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-dont-come-lay-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-dont-come-lay-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-dont-come-lay-odds_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-dont-come-lay-odds_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-dont-come-lay-odds_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-dont-come-lay-odds_1280x720.webp",
                 title: "How to Bet Don't Come Lay Odds",
                 alt: "$10 behind the point five and $15 sitting in the COME."
               },
@@ -245,9 +245,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-dont-come-lay-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-dont-come-lay-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-dont-come-lay-odds_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-dont-come-lay-odds_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-dont-come-lay-odds_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-dont-come-lay-odds_1280x720.webp",
                 title: "Placement of Don't Come Lay Odds",
                 alt: "$50 with $90 Lay Odds behind the point six."
               },
@@ -274,9 +274,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$24 Don't Come Lay Odds",
-                    smImg: "src/images/" + url + "/dont-come-lay-odds-6-8_640x360.webp",
-                    mdImg: "src/images/" + url + "/dont-come-lay-odds-6-8_960x540.webp",
-                    lgImg: "src/images/" + url + "/dont-come-lay-odds-6-8_1280x720.webp",
+                    smImg: "/images/" + url + "/dont-come-lay-odds-6-8_640x360.webp",
+                    mdImg: "/images/" + url + "/dont-come-lay-odds-6-8_960x540.webp",
+                    lgImg: "/images/" + url + "/dont-come-lay-odds-6-8_1280x720.webp",
                     title: "$24 Don't Come Lay Odds Against the Six",
                     alt: "$10 paid even money behind the point six. There are $24 Lay Odds next to it paid $20."
                   },
@@ -290,9 +290,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$6 Don't Come Lay Odds",
-                    smImg: "src/images/" + url + "/dont-come-lay-odds-5-9_640x360.webp",
-                    mdImg: "src/images/" + url + "/dont-come-lay-odds-5-9_960x540.webp",
-                    lgImg: "src/images/" + url + "/dont-come-lay-odds-5-9_1280x720.webp",
+                    smImg: "/images/" + url + "/dont-come-lay-odds-5-9_640x360.webp",
+                    mdImg: "/images/" + url + "/dont-come-lay-odds-5-9_960x540.webp",
+                    lgImg: "/images/" + url + "/dont-come-lay-odds-5-9_1280x720.webp",
                     title: "$6 Don't Come Lay Odds Against the Nine",
                     alt: "$5 paid even money behind the point nine. There are $6 Lay Odds next to it paid $4."
                   },
@@ -312,9 +312,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                     $$result,
                     {
                       caption: "",
-                      smImg: "src/images/" + url + "/dont-come-lay-odds-4-10_640x360.webp",
-                      mdImg: "src/images/" + url + "/dont-come-lay-odds-4-10_960x540.webp",
-                      lgImg: "src/images/" + url + "/dont-come-lay-odds-4-10_1280x720.webp",
+                      smImg: "/images/" + url + "/dont-come-lay-odds-4-10_640x360.webp",
+                      mdImg: "/images/" + url + "/dont-come-lay-odds-4-10_960x540.webp",
+                      lgImg: "/images/" + url + "/dont-come-lay-odds-4-10_1280x720.webp",
                       title: "$60 Don't Come Lay Odds Against the Four",
                       alt: "$15 paid even money behind the point four. There are $60 Lay Odds next to it paid $30."
                     },
@@ -401,9 +401,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/max-lay-odds-for-the-dont-come_640x360.webp",
-                mdImg: "src/images/" + url + "/max-lay-odds-for-the-dont-come_960x540.webp",
-                lgImg: "src/images/" + url + "/max-lay-odds-for-the-dont-come_1280x720.webp",
+                smImg: "/images/" + url + "/max-lay-odds-for-the-dont-come_640x360.webp",
+                mdImg: "/images/" + url + "/max-lay-odds-for-the-dont-come_960x540.webp",
+                lgImg: "/images/" + url + "/max-lay-odds-for-the-dont-come_1280x720.webp",
                 title: "Max Lay Odds for the Don't Come",
                 alt: "$25 with $150 Lay Odds behind the point eight."
               },
@@ -462,9 +462,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dont-come-lay-odds-for-the-dealers_640x360.webp",
-                mdImg: "src/images/" + url + "/dont-come-lay-odds-for-the-dealers_960x540.webp",
-                lgImg: "src/images/" + url + "/dont-come-lay-odds-for-the-dealers_1280x720.webp",
+                smImg: "/images/" + url + "/dont-come-lay-odds-for-the-dealers_640x360.webp",
+                mdImg: "/images/" + url + "/dont-come-lay-odds-for-the-dealers_960x540.webp",
+                lgImg: "/images/" + url + "/dont-come-lay-odds-for-the-dealers_1280x720.webp",
                 title: "Don't Come Lay Odds for the Dealers",
                 alt: "$2 with $12 Lay Odds behind the point ten."
               },

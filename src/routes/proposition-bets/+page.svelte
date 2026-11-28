@@ -19,9 +19,9 @@
 		{
 			// Proposition Basics
 			aria: 'Proposition Basics',
-			smImg: 'src/images/' + url + '/proposition-basics-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/proposition-basics-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/proposition-basics-wide-header.webp',
+			smImg: '/images/' + url + '/proposition-basics-header_600x600.webp',
+			mdImg: '/images/' + url + '/proposition-basics-header_992x558.webp',
+			lgImg: '/images/' + url + '/proposition-basics-wide-header.webp',
 			alt: 'Proposition Basics',
 			title: 'Proposition Basics',
 			href: 'proposition-basics',
@@ -31,9 +31,9 @@
 		{
 			// The Hardways
 			aria: 'The Hardways',
-			smImg: 'src/images/' + url + '/the-hardways-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/the-hardways-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/the-hardways-wide-header.webp',
+			smImg: '/images/' + url + '/the-hardways-header_600x600.webp',
+			mdImg: '/images/' + url + '/the-hardways-header_992x558.webp',
+			lgImg: '/images/' + url + '/the-hardways-wide-header.webp',
 			alt: 'The Hardways',
 			title: 'The Hardways',
 			href: 'the-hardways',
@@ -43,9 +43,9 @@
 		{
 			// Straight Up
 			aria: 'Straight Up',
-			smImg: 'src/images/' + url + '/straight-up-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/straight-up-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/straight-up-wide-header.webp',
+			smImg: '/images/' + url + '/straight-up-header_600x600.webp',
+			mdImg: '/images/' + url + '/straight-up-header_992x558.webp',
+			lgImg: '/images/' + url + '/straight-up-wide-header.webp',
 			alt: 'Straight Up',
 			title: 'Straight Up',
 			href: 'straight-up',
@@ -60,9 +60,9 @@
 		{
 			// C & E
 			aria: 'C & E',
-			smImg: 'src/images/' + url + '/c-and-e-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/c-and-e-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/c-and-e-wide-header.webp',
+			smImg: '/images/' + url + '/c-and-e-header_600x600.webp',
+			mdImg: '/images/' + url + '/c-and-e-header_992x558.webp',
+			lgImg: '/images/' + url + '/c-and-e-wide-header.webp',
 			alt: 'C & E',
 			title: 'C & E',
 			href: 'c-and-e',
@@ -72,9 +72,9 @@
 		{
 			// Any Seven
 			aria: 'Any Seven',
-			smImg: 'src/images/' + url + '/any-seven-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/any-seven-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/any-seven-wide-header.webp',
+			smImg: '/images/' + url + '/any-seven-header_600x600.webp',
+			mdImg: '/images/' + url + '/any-seven-header_992x558.webp',
+			lgImg: '/images/' + url + '/any-seven-wide-header.webp',
 			alt: 'Any Seven',
 			title: 'Any Seven',
 			href: 'any-seven',
@@ -84,9 +84,9 @@
 		{
 			// Any Craps
 			aria: 'Any Craps',
-			smImg: 'src/images/' + url + '/any-craps-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/any-craps-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/any-craps-wide-header.webp',
+			smImg: '/images/' + url + '/any-craps-header_600x600.webp',
+			mdImg: '/images/' + url + '/any-craps-header_992x558.webp',
+			lgImg: '/images/' + url + '/any-craps-wide-header.webp',
 			alt: 'Any Craps',
 			title: 'Any Craps',
 			href: 'any-craps',
@@ -96,9 +96,9 @@
 		{
 			// The Field
 			aria: 'The Field',
-			smImg: 'src/images/' + url + '/the-field-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/the-field-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/the-field-wide-header.webp',
+			smImg: '/images/' + url + '/the-field-header_600x600.webp',
+			mdImg: '/images/' + url + '/the-field-header_992x558.webp',
+			lgImg: '/images/' + url + '/the-field-wide-header.webp',
 			alt: 'The Field',
 			title: 'The Field',
 			href: 'the-field',
@@ -108,9 +108,9 @@
 		{
 			// Multi Bets
 			aria: 'Multi Bets',
-			smImg: 'src/images/' + url + '/multi-bets-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/multi-bets-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/multi-bets-wide-header.webp',
+			smImg: '/images/' + url + '/multi-bets-header_600x600.webp',
+			mdImg: '/images/' + url + '/multi-bets-header_992x558.webp',
+			lgImg: '/images/' + url + '/multi-bets-wide-header.webp',
 			alt: 'Multi Bets',
 			title: 'Multi Bets',
 			href: 'multi-bets',
@@ -120,9 +120,9 @@
 		{
 			// Horn
 			aria: 'Horn',
-			smImg: 'src/images/' + url + '/horn-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/horn-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/horn-wide-header.webp',
+			smImg: '/images/' + url + '/horn-header_600x600.webp',
+			mdImg: '/images/' + url + '/horn-header_992x558.webp',
+			lgImg: '/images/' + url + '/horn-wide-header.webp',
 			alt: 'Horn',
 			title: 'Horn',
 			href: 'horn',
@@ -132,9 +132,9 @@
 		{
 			// Horn High
 			aria: 'Horn High',
-			smImg: 'src/images/' + url + '/horn-high-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/horn-high-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/horn-high-wide-header.webp',
+			smImg: '/images/' + url + '/horn-high-header_600x600.webp',
+			mdImg: '/images/' + url + '/horn-high-header_992x558.webp',
+			lgImg: '/images/' + url + '/horn-high-wide-header.webp',
 			alt: 'Horn High',
 			title: 'Horn High',
 			href: 'horn-high',
@@ -144,9 +144,9 @@
 		{
 			// World
 			aria: 'World',
-			smImg: 'src/images/' + url + '/world-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/world-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/world-wide-header.webp',
+			smImg: '/images/' + url + '/world-header_600x600.webp',
+			mdImg: '/images/' + url + '/world-header_992x558.webp',
+			lgImg: '/images/' + url + '/world-wide-header.webp',
 			alt: 'World',
 			title: 'World',
 			href: 'world',
@@ -156,9 +156,9 @@
 		{
 			// Hop Bets
 			aria: 'Hop Bets',
-			smImg: 'src/images/' + url + '/hop-bets-header_600x600.webp',
-			mdImg: 'src/images/' + url + '/hop-bets-header_992x558.webp',
-			lgImg: 'src/images/' + url + '/hop-bets-wide-header.webp',
+			smImg: '/images/' + url + '/hop-bets-header_600x600.webp',
+			mdImg: '/images/' + url + '/hop-bets-header_992x558.webp',
+			lgImg: '/images/' + url + '/hop-bets-wide-header.webp',
 			alt: 'Hop Bets',
 			title: 'Hop Bets',
 			href: 'hop-bets',

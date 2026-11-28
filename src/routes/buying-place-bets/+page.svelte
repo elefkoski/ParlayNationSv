@@ -64,7 +64,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Buy Place Payment Table';
@@ -203,9 +203,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/buying-place-bets_640x360.webp"
-				mdImg="src/images/{url}/buying-place-bets_960x540.webp"
-				lgImg="src/images/{url}/buying-place-bets_1280x720.webp"
+				smImg="/images/{url}/buying-place-bets_640x360.webp"
+				mdImg="/images/{url}/buying-place-bets_960x540.webp"
+				lgImg="/images/{url}/buying-place-bets_1280x720.webp"
 				title="Buying Place Bets"
 				alt="$20 bet on the inside of the ten with a buy lammer on top."
 			/>
@@ -247,9 +247,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/how-to-bet-a-buy-bet_640x360.webp"
-				mdImg="src/images/{url}/how-to-bet-a-buy-bet_960x540.webp"
-				lgImg="src/images/{url}/how-to-bet-a-buy-bet_1280x720.webp"
+				smImg="/images/{url}/how-to-bet-a-buy-bet_640x360.webp"
+				mdImg="/images/{url}/how-to-bet-a-buy-bet_960x540.webp"
+				lgImg="/images/{url}/how-to-bet-a-buy-bet_1280x720.webp"
 				title="How to Bet a Buy Bet"
 				alt="$21 sitting in the COME area."
 			/>
@@ -264,9 +264,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-a-buy-bet_640x360.webp"
-				mdImg="src/images/{url}/placement-of-a-buy-bet_960x540.webp"
-				lgImg="src/images/{url}/placement-of-a-buy-bet_1280x720.webp"
+				smImg="/images/{url}/placement-of-a-buy-bet_640x360.webp"
+				mdImg="/images/{url}/placement-of-a-buy-bet_960x540.webp"
+				lgImg="/images/{url}/placement-of-a-buy-bet_1280x720.webp"
 				title="Placement of a Buy Bet"
 				alt="A $20 buy bet on the inside of the four. The inside of the four is outlined in orange."
 			/>
@@ -303,9 +303,9 @@
 				</p>
 				<ContentImg
 					caption="Buy 4 or 10 for $35"
-					smImg="src/images/{url}/buy-place-ex-1_640x360.webp"
-					mdImg="src/images/{url}/buy-place-ex-1_960x540.webp"
-					lgImg="src/images/{url}/buy-place-ex-1_1280x720.webp"
+					smImg="/images/{url}/buy-place-ex-1_640x360.webp"
+					mdImg="/images/{url}/buy-place-ex-1_960x540.webp"
+					lgImg="/images/{url}/buy-place-ex-1_1280x720.webp"
 					title="Buy 4 or 10 for $35"
 					alt="$35 buy on the point 10 with a $70 payout in the come and $1 next to it as commission to stay up again."
 				/>
@@ -316,9 +316,9 @@
 				</p>
 				<ContentImg
 					caption="Buy 4 or 10 for $75"
-					smImg="src/images/{url}/buy-place-ex-2_640x360.webp"
-					mdImg="src/images/{url}/buy-place-ex-2_960x540.webp"
-					lgImg="src/images/{url}/buy-place-ex-2_1280x720.webp"
+					smImg="/images/{url}/buy-place-ex-2_640x360.webp"
+					mdImg="/images/{url}/buy-place-ex-2_960x540.webp"
+					lgImg="/images/{url}/buy-place-ex-2_1280x720.webp"
 					title="Buy 4 or 10 for $75"
 					alt="$75 buy on the point 10 with a $150 payout in the come and $3 next to it as commission to stay up again."
 				/>
@@ -331,9 +331,9 @@
 				</p>
 				<ContentImg
 					caption="Buy 4 & 10 for $75 Each"
-					smImg="src/images/{url}/buy-place-ex-3_640x360.webp"
-					mdImg="src/images/{url}/buy-place-ex-3_960x540.webp"
-					lgImg="src/images/{url}/buy-place-ex-3_1280x720.webp"
+					smImg="/images/{url}/buy-place-ex-3_640x360.webp"
+					mdImg="/images/{url}/buy-place-ex-3_960x540.webp"
+					lgImg="/images/{url}/buy-place-ex-3_1280x720.webp"
 					title="Buy 4 & 10 for $75 Each"
 					alt="$75 buy on both the 4 and 10 total $150 for a $7 commission."
 				/>

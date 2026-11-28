@@ -242,7 +242,7 @@
 		>
 			<img
 				class="cheque game-element"
-				src={`src/images/craps-simulator/${type.toLowerCase()}_cheque.webp`}
+				src={`/images/craps-simulator/${type.toLowerCase()}_cheque.webp`}
 				alt={`${type} cheque`}
 				data-x={x}
 				data-y={y}

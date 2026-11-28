@@ -50,7 +50,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'The Any Seven payout table';
@@ -160,9 +160,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/any-seven_640x360.webp"
-				mdImg="src/images/{url}/any-seven_960x540.webp"
-				lgImg="src/images/{url}/any-seven_1280x720.webp"
+				smImg="/images/{url}/any-seven_640x360.webp"
+				mdImg="/images/{url}/any-seven_960x540.webp"
+				lgImg="/images/{url}/any-seven_1280x720.webp"
 				title="The Any Seven"
 				alt="Overhead up close view of the any seven area on the Craps layout."
 			/>
@@ -182,9 +182,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-the-any-seven_640x360.webp"
-				mdImg="src/images/{url}/placement-of-the-any-seven_960x540.webp"
-				lgImg="src/images/{url}/placement-of-the-any-seven_1280x720.webp"
+				smImg="/images/{url}/placement-of-the-any-seven_640x360.webp"
+				mdImg="/images/{url}/placement-of-the-any-seven_960x540.webp"
+				lgImg="/images/{url}/placement-of-the-any-seven_1280x720.webp"
 				title="Placement of the Any Seven"
 				alt="Up close view of the any seven bar and the Craps rail. There are eight spots that are color coordinated on the bet and the rail."
 			/>
@@ -194,9 +194,9 @@
 			<p class="pb-4">The Any Seven pays 4:1 or $4 for every $1.</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/what-does-the-any-seven-pay_640x360.webp"
-				mdImg="src/images/{url}/what-does-the-any-seven-pay_960x540.webp"
-				lgImg="src/images/{url}/what-does-the-any-seven-pay_1280x720.webp"
+				smImg="/images/{url}/what-does-the-any-seven-pay_640x360.webp"
+				mdImg="/images/{url}/what-does-the-any-seven-pay_960x540.webp"
+				lgImg="/images/{url}/what-does-the-any-seven-pay_1280x720.webp"
 				title="What Does the Any Seven Pay"
 				alt="$4 on the any seven with two green dice that read 1-6. There is a bubble that reads $16 payment."
 			/>

@@ -19,7 +19,7 @@
 					sentence:
 						'Uncover the secrets of a smoothly running Craps game by understanding the roles and responsibilities of ',
 					href: 'the-crew',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1'
 				},
 				{
@@ -27,7 +27,7 @@
 					sentence:
 						'Place your bets wisely and enhance your gaming experience by comprehending the four main sections of ',
 					href: 'the-craps-table',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1'
 				},
 				{
@@ -35,7 +35,7 @@
 					sentence:
 						'Experience the thrill of holding the fate of the table at your fingertips, and understand the sacred role of ',
 					href: 'the-dice',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1'
 				},
 				{
@@ -43,7 +43,7 @@
 					sentence:
 						'Overcome the confusion new players often face in Craps by understanding the intricacies of ',
 					href: 'the-stages',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1'
 				},
 				{
@@ -51,7 +51,7 @@
 					sentence:
 						'Stay in sync with the thrilling pace of Craps and comprehend the importance of ',
 					href: 'verbal-betting',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1'
 				},
 				{
@@ -59,7 +59,7 @@
 					sentence:
 						'Sharpening your Craps skills involves keeping in mind elements like the nuances of self-service bets and effective dealer interactions, all crucial aspects ',
 					href: 'to-consider',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1'
 				}
 			]
@@ -77,14 +77,14 @@
 					name: 'Pass Line Basics',
 					sentence: 'Realize the collective joy and pain of Craps betting by mastering the ',
 					href: 'pass-line-basics',
-					src: 'src/images/icons/die-2.svg',
+					src: '/images/icons/die-2.svg',
 					alt: 'Die 2'
 				},
 				{
 					name: 'Pass Line Odds',
 					sentence: 'Add another layer to your Craps betting, understanding the varying limits of ',
 					href: 'pass-line-odds',
-					src: 'src/images/icons/die-2.svg',
+					src: '/images/icons/die-2.svg',
 					alt: 'Die 2'
 				},
 				{
@@ -92,7 +92,7 @@
 					sentence:
 						'Maximize your winnings with the Pass Line bet from different casinos, a journey described as ',
 					href: 'max-odds',
-					src: 'src/images/icons/die-2.svg',
+					src: '/images/icons/die-2.svg',
 					alt: 'Die 2'
 				}
 			]
@@ -111,7 +111,7 @@
 					sentence:
 						'There are six different Place Bets. Learn how they can win or lose based on the roll of the dice, an exciting aspect of the game known as ',
 					href: 'place-bet-basics',
-					src: 'src/images/icons/die-3.svg',
+					src: '/images/icons/die-3.svg',
 					alt: 'Die 3'
 				},
 				{
@@ -119,7 +119,7 @@
 					sentence:
 						'Try the unique strategy of buying in Craps, understanding how paying a commission can lead to True Odds, a concept embodied in ',
 					href: 'buying-place-bets',
-					src: 'src/images/icons/die-3.svg',
+					src: '/images/icons/die-3.svg',
 					alt: 'Die 3'
 				},
 				{
@@ -127,7 +127,7 @@
 					sentence:
 						"Don't forget the importance of keeping track of your bets, understanding the costs, and ensuring they're placed correctly, a crucial aspect of watching ",
 					href: 'your-money',
-					src: 'src/images/icons/die-3.svg',
+					src: '/images/icons/die-3.svg',
 					alt: 'Die 3'
 				},
 				{
@@ -135,7 +135,7 @@
 					sentence:
 						'Navigate through the intricate world of Craps where pressing your bets can lead to significant winnings, an exciting strategy encapsulated in ',
 					href: 'presses',
-					src: 'src/images/icons/die-3.svg',
+					src: '/images/icons/die-3.svg',
 					alt: 'Die 3'
 				}
 			]
@@ -154,7 +154,7 @@
 					sentence:
 						'Try your hand at placing all the Place Bets in the same amount, a technique known as betting ',
 					href: 'across',
-					src: 'src/images/icons/die-4.svg',
+					src: '/images/icons/die-4.svg',
 					alt: 'Die 4'
 				},
 				{
@@ -162,7 +162,7 @@
 					sentence:
 						'Discover this easy-peasy way of betting on the numbers 5, 6, 8, and 9 in Craps, known as ',
 					href: 'inside',
-					src: 'src/images/icons/die-4.svg',
+					src: '/images/icons/die-4.svg',
 					alt: 'Die 4'
 				},
 				{
@@ -170,7 +170,7 @@
 					sentence:
 						'A common way of betting the highest paying Place Bets can be found by betting ',
 					href: 'outside',
-					src: 'src/images/icons/die-4.svg',
+					src: '/images/icons/die-4.svg',
 					alt: 'Die 4'
 				},
 				{
@@ -178,7 +178,7 @@
 					sentence:
 						'The Craps players utilize the opposite side of the board in their betting strategy, a method known as ',
 					href: 'uptown-downtown',
-					src: 'src/images/icons/die-4.svg',
+					src: '/images/icons/die-4.svg',
 					alt: 'Die 4'
 				},
 				{
@@ -186,7 +186,7 @@
 					sentence:
 						'Learn about the unique betting strategy in Craps where players not on the Pass Line bet on all numbers, a method called ',
 					href: 'including-the-point',
-					src: 'src/images/icons/die-4.svg',
+					src: '/images/icons/die-4.svg',
 					alt: 'Die 4'
 				}
 			]
@@ -205,7 +205,7 @@
 					sentence:
 						'From the center of the table to the field, explore the engaging and complex world of ',
 					href: 'proposition-basics',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -213,7 +213,7 @@
 					sentence:
 						"By offering good returns and the ability to win with your Pass Line Bet, the game's charm lies in ",
 					href: 'the-hardways',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -221,7 +221,7 @@
 					sentence:
 						'To rapidly increase your earnings, consider the high payouts and exciting dynamics of ',
 					href: 'straight-up',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -229,7 +229,7 @@
 					sentence:
 						"If you're interested in a cost-effective alternative to the Horn, delve into the world of ",
 					href: 'c-and-e',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -237,14 +237,14 @@
 					sentence:
 						"Venture into the strategic world of Don't players and their unique utilization of ",
 					href: 'any-seven',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
 					name: 'Any Craps',
 					sentence: 'Explore the similarities and differences between Three Way Craps and the ',
 					href: 'any-craps',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -252,7 +252,7 @@
 					sentence:
 						'Discover the excitement of one-roll bets on a broad range of numbers anytime you want in ',
 					href: 'the-field',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -260,7 +260,7 @@
 					sentence:
 						'Enhance your gaming experience by understanding the dynamics and strategies of ',
 					href: 'multi-bets',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -268,7 +268,7 @@
 					sentence:
 						'Experience the convenience of betting all four Straight Up bets simultaneously through the ',
 					href: 'horn',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -276,7 +276,7 @@
 					sentence:
 						'Spread your money around a bunch of prop bets and pick a special number to root for with ',
 					href: 'horn-high',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
@@ -284,14 +284,14 @@
 					sentence:
 						'Mitigate the risk of losing to a roll of the 7 by embracing the unique strategy of the ',
 					href: 'world',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				},
 				{
 					name: 'Hop Bets',
 					sentence: 'Betting strategies become more exciting when you engage with ',
 					href: 'hop-bets',
-					src: 'src/images/icons/die-5.svg',
+					src: '/images/icons/die-5.svg',
 					alt: 'Die 5'
 				}
 			]
@@ -310,7 +310,7 @@
 					sentence:
 						'Discover the intricacies of mini Pass Line bets and the potential of adding Odds in ',
 					href: 'come-bet-basics',
-					src: 'src/images/icons/die-6.svg',
+					src: '/images/icons/die-6.svg',
 					alt: 'Die 6'
 				},
 				{
@@ -318,7 +318,7 @@
 					sentence:
 						'Learn about the flexibility of betting less than the table minimum and non-contract nature of Odds in ',
 					href: 'come-bet-odds',
-					src: 'src/images/icons/die-6.svg',
+					src: '/images/icons/die-6.svg',
 					alt: 'Die 6'
 				},
 				{
@@ -326,7 +326,7 @@
 					sentence:
 						'Learn the setup and nuances of using your Place Bet and its payment as Odds in ',
 					href: 'coming-down-with-odds',
-					src: 'src/images/icons/die-6.svg',
+					src: '/images/icons/die-6.svg',
 					alt: 'Die 6'
 				}
 			]
@@ -344,7 +344,7 @@
 					name: "Don't Pass",
 					sentence: 'To master the art of Craps, familiarize yourself with betting the ',
 					href: 'dont-pass',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
 					transform: 'transform rotate-45'
 				},
@@ -352,7 +352,7 @@
 					name: "Don't Pass Lay Odds",
 					sentence: 'Leverage your Craps game with a deeper understanding of the ',
 					href: 'dont-pass-lay-odds',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
 					transform: 'transform rotate-45'
 				},
@@ -360,7 +360,7 @@
 					name: "Don't Come",
 					sentence: 'Enhance your Craps strategy with a comprehensive understanding of the ',
 					href: 'dont-come',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
 					transform: 'transform rotate-45'
 				},
@@ -368,7 +368,7 @@
 					name: "Don't Come Lay Odds",
 					sentence: 'Make your Craps game more exciting and strategic by understanding ',
 					href: 'dont-come-lay-odds',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
 					transform: 'transform rotate-45'
 				},
@@ -376,7 +376,7 @@
 					name: 'Overlays',
 					sentence: 'Stand a cut above the rest in Craps by mastering the art of betting ',
 					href: 'overlays',
-					src: 'src/images/icons/die-1.svg',
+					src: '/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
 					transform: 'transform rotate-45'
 				}

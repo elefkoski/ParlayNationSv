@@ -7,8 +7,8 @@ let description = "Practice using a printable Craps table layout. First page has
 let url = "practice-full-craps-table-layout";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let slides = [
-    "src/images/practice-full-craps-table-layout/full-craps-table-layout_1200x923.webp",
-    "src/images/practice-full-craps-table-layout/full-craps-table-layout-empty_1200x923.webp"
+    "/images/practice-full-craps-table-layout/full-craps-table-layout_1200x923.webp",
+    "/images/practice-full-craps-table-layout/full-craps-table-layout-empty_1200x923.webp"
   ];
   return `${$$result.head += `<!-- HEAD_svelte-1mgyofz_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-fq79k8">{
 		  "@context": "http://schema.org/",

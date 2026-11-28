@@ -13,7 +13,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.webp"
+    imageUrl: "/images/" + url + "/" + url + "-header.webp"
   };
   let pageLinks = [
     {

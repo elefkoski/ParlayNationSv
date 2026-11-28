@@ -26,7 +26,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.webp'
+		imageUrl: '/images/' + url + '/' + url + '-header.webp'
 	};
 
 	let pageLinks: PageMenu[] = [
@@ -146,9 +146,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/bridging-lay-odds_640x360.webp"
-				mdImg="src/images/{url}/bridging-lay-odds_960x540.webp"
-				lgImg="src/images/{url}/bridging-lay-odds_1280x720.webp"
+				smImg="/images/{url}/bridging-lay-odds_640x360.webp"
+				mdImg="/images/{url}/bridging-lay-odds_960x540.webp"
+				lgImg="/images/{url}/bridging-lay-odds_1280x720.webp"
 				title="Bridging Lay Odds on the Don'ts"
 				alt="Bridging lay odds."
 			/>
@@ -176,18 +176,18 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/50-w-60-bridge-6-and-8_640x360.webp"
-					mdImg="src/images/{url}/50-w-60-bridge-6-and-8_960x540.webp"
-					lgImg="src/images/{url}/50-w-60-bridge-6-and-8_1280x720.webp"
+					smImg="/images/{url}/50-w-60-bridge-6-and-8_640x360.webp"
+					mdImg="/images/{url}/50-w-60-bridge-6-and-8_960x540.webp"
+					lgImg="/images/{url}/50-w-60-bridge-6-and-8_1280x720.webp"
 					title="Bridged Lay Odds 6 & 8"
 					alt="Bridged lay odds on the don't pass on the 6 & 8"
 				/>
 				<p class="pb-4" />
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/50-w-60-bridge-6-and-8-paid_640x360.webp"
-					mdImg="src/images/{url}/50-w-60-bridge-6-and-8-paid_960x540.webp"
-					lgImg="src/images/{url}/50-w-60-bridge-6-and-8-paid_1280x720.webp"
+					smImg="/images/{url}/50-w-60-bridge-6-and-8-paid_640x360.webp"
+					mdImg="/images/{url}/50-w-60-bridge-6-and-8-paid_960x540.webp"
+					lgImg="/images/{url}/50-w-60-bridge-6-and-8-paid_1280x720.webp"
 					title="Bridged Lay Odds 6 & 8 Paid"
 					alt="Bridged lay odds on the don't pass for the 6 & 8 paid."
 				/>
@@ -200,18 +200,18 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/20-w-30-bridge-5-and-9_640x360.webp"
-					mdImg="src/images/{url}/20-w-30-bridge-5-and-9_960x540.webp"
-					lgImg="src/images/{url}/20-w-30-bridge-5-and-9_1280x720.webp"
+					smImg="/images/{url}/20-w-30-bridge-5-and-9_640x360.webp"
+					mdImg="/images/{url}/20-w-30-bridge-5-and-9_960x540.webp"
+					lgImg="/images/{url}/20-w-30-bridge-5-and-9_1280x720.webp"
 					title="Bridged Lay Odds 5 & 9"
 					alt="Bridged lay odds on the don't pass on the 5 & 9"
 				/>
 				<p class="pb-4" />
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/20-w-30-bridge-5-and-9-paid_640x360.webp"
-					mdImg="src/images/{url}/20-w-30-bridge-5-and-9-paid_960x540.webp"
-					lgImg="src/images/{url}/20-w-30-bridge-5-and-9-paid_1280x720.webp"
+					smImg="/images/{url}/20-w-30-bridge-5-and-9-paid_640x360.webp"
+					mdImg="/images/{url}/20-w-30-bridge-5-and-9-paid_960x540.webp"
+					lgImg="/images/{url}/20-w-30-bridge-5-and-9-paid_1280x720.webp"
 					title="Bridged Lay Odds 5 & 9 Paid"
 					alt="Bridged lay odds on the don't pass for the 5 & 9 paid."
 				/>
@@ -224,18 +224,18 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/10-w-20-bridge-4-and-10_640x360.webp"
-					mdImg="src/images/{url}/10-w-20-bridge-4-and-10_960x540.webp"
-					lgImg="src/images/{url}/10-w-20-bridge-4-and-10_1280x720.webp"
+					smImg="/images/{url}/10-w-20-bridge-4-and-10_640x360.webp"
+					mdImg="/images/{url}/10-w-20-bridge-4-and-10_960x540.webp"
+					lgImg="/images/{url}/10-w-20-bridge-4-and-10_1280x720.webp"
 					title="Bridged Lay Odds 4 & 10"
 					alt="Bridged lay odds on the don't pass on the 4 & 10"
 				/>
 				<p class="pb-4" />
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/10-w-20-bridge-4-and-10-paid_640x360.webp"
-					mdImg="src/images/{url}/10-w-20-bridge-4-and-10-paid_960x540.webp"
-					lgImg="src/images/{url}/10-w-20-bridge-4-and-10-paid_1280x720.webp"
+					smImg="/images/{url}/10-w-20-bridge-4-and-10-paid_640x360.webp"
+					mdImg="/images/{url}/10-w-20-bridge-4-and-10-paid_960x540.webp"
+					lgImg="/images/{url}/10-w-20-bridge-4-and-10-paid_1280x720.webp"
 					title="Bridged Lay Odds 4 & 10 Paid"
 					alt="Bridged lay odds on the don't pass for the 4 & 10 paid."
 				/>
@@ -251,18 +251,18 @@
 			<ContentHeaderThree title="Incorrectly Bridged Odds on the 6 & 8">
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/improper-bridge-10-w-60-6-and-8_640x360.webp"
-					mdImg="src/images/{url}/improper-bridge-10-w-60-6-and-8_960x540.webp"
-					lgImg="src/images/{url}/improper-bridge-10-w-60-6-and-8_1280x720.webp"
+					smImg="/images/{url}/improper-bridge-10-w-60-6-and-8_640x360.webp"
+					mdImg="/images/{url}/improper-bridge-10-w-60-6-and-8_960x540.webp"
+					lgImg="/images/{url}/improper-bridge-10-w-60-6-and-8_1280x720.webp"
 					title="Incorrectly Bridged Lay Odds on the 6 & 8 a"
 					alt="Incorrectly bridged lay odds on the 6 & 8 a"
 				/>
 				<p class="pb-4" />
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/improper-bridge-15-w-90-6-and-8_640x360.webp"
-					mdImg="src/images/{url}/improper-bridge-15-w-90-6-and-8_960x540.webp"
-					lgImg="src/images/{url}/improper-bridge-15-w-90-6-and-8_1280x720.webp"
+					smImg="/images/{url}/improper-bridge-15-w-90-6-and-8_640x360.webp"
+					mdImg="/images/{url}/improper-bridge-15-w-90-6-and-8_960x540.webp"
+					lgImg="/images/{url}/improper-bridge-15-w-90-6-and-8_1280x720.webp"
 					title="Incorrectly Bridged Lay Odds on the 6 & 8 b"
 					alt="Incorrectly bridged lay odds on the 6 & 8 b"
 				/>
@@ -271,18 +271,18 @@
 			<ContentHeaderThree title="Incorrectly Bridged Odds on the 5 & 9">
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/improper-bridge-5-w-30-5-and-9_640x360.webp"
-					mdImg="src/images/{url}/improper-bridge-5-w-30-5-and-9_960x540.webp"
-					lgImg="src/images/{url}/improper-bridge-5-w-30-5-and-9_1280x720.webp"
+					smImg="/images/{url}/improper-bridge-5-w-30-5-and-9_640x360.webp"
+					mdImg="/images/{url}/improper-bridge-5-w-30-5-and-9_960x540.webp"
+					lgImg="/images/{url}/improper-bridge-5-w-30-5-and-9_1280x720.webp"
 					title="Incorrectly Bridged Lay Odds on the 5 & 9 a"
 					alt="Incorrectly bridged lay odds on the 5 & 9 a"
 				/>
 				<p class="pb-4" />
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/improper-bridge-15-w-18-5-and-9_640x360.webp"
-					mdImg="src/images/{url}/improper-bridge-15-w-18-5-and-9_960x540.webp"
-					lgImg="src/images/{url}/improper-bridge-15-w-18-5-and-9_1280x720.webp"
+					smImg="/images/{url}/improper-bridge-15-w-18-5-and-9_640x360.webp"
+					mdImg="/images/{url}/improper-bridge-15-w-18-5-and-9_960x540.webp"
+					lgImg="/images/{url}/improper-bridge-15-w-18-5-and-9_1280x720.webp"
 					title="Incorrectly Bridged Lay Odds on the 5 & 9 b"
 					alt="Incorrectly bridged lay odds on the 5 & 9 b"
 				/>
@@ -291,18 +291,18 @@
 			<ContentHeaderThree title="Incorrectly Bridged Odds on the 4 & 10">
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/improper-bridge-10-w-12-4-and-10_640x360.webp"
-					mdImg="src/images/{url}/improper-bridge-10-w-12-4-and-10_960x540.webp"
-					lgImg="src/images/{url}/improper-bridge-10-w-12-4-and-10_1280x720.webp"
+					smImg="/images/{url}/improper-bridge-10-w-12-4-and-10_640x360.webp"
+					mdImg="/images/{url}/improper-bridge-10-w-12-4-and-10_960x540.webp"
+					lgImg="/images/{url}/improper-bridge-10-w-12-4-and-10_1280x720.webp"
 					title="Incorrectly Bridged Lay Odds on the 4 & 10 a"
 					alt="Incorrectly bridged lay odds on the 4 & 10 a"
 				/>
 				<p class="pb-4" />
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/improper-bridge-10-w-60-4-and-10_640x360.webp"
-					mdImg="src/images/{url}/improper-bridge-10-w-60-4-and-10_960x540.webp"
-					lgImg="src/images/{url}/improper-bridge-10-w-60-4-and-10_1280x720.webp"
+					smImg="/images/{url}/improper-bridge-10-w-60-4-and-10_640x360.webp"
+					mdImg="/images/{url}/improper-bridge-10-w-60-4-and-10_960x540.webp"
+					lgImg="/images/{url}/improper-bridge-10-w-60-4-and-10_1280x720.webp"
 					title="Incorrectly Bridged Lay Odds on the 4 & 10 b"
 					alt="Incorrectly bridged lay odds on the 4 & 10 b"
 				/>

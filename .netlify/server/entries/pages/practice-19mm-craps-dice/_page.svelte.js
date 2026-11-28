@@ -16,7 +16,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			"url": "https://parlaynation.com/practice-19mm-craps-dice.html"
 		}<\/script><!-- HEAD_svelte-18kuox5_END -->`, ""} ${validate_component(PracticeCrapsLayout, "PracticeLayout").$$render($$result, { showContentMenuBox: false }, {}, {
     default: () => {
-      return `<main aria-label="Main content" class="flex flex-col my-6">${validate_component(Practice_h1, "PracticeH1").$$render($$result, { title: "Foldable Craps Dice - 19mm" }, {}, {})} <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 pb-8"><div class="w-full" data-svelte-h="svelte-v5ispk"><div class="relative"><img class="w-full h-auto" src="src/images/practice-19mm-craps-dice/19mm-foldable-craps-dice_960x1242.webp" alt="19mm Foldable Craps Dice"> <div class="absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20"></div></div></div> ${validate_component(PracticeDescription, "PracticeDescription").$$render(
+      return `<main aria-label="Main content" class="flex flex-col my-6">${validate_component(Practice_h1, "PracticeH1").$$render($$result, { title: "Foldable Craps Dice - 19mm" }, {}, {})} <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 pb-8"><div class="w-full" data-svelte-h="svelte-1gtm1bi"><div class="relative"><img class="w-full h-auto" src="/images/practice-19mm-craps-dice/19mm-foldable-craps-dice_960x1242.webp" alt="19mm Foldable Craps Dice"> <div class="absolute inset-0 bg-black dark:bg-black opacity-0 dark:opacity-20"></div></div></div> ${validate_component(PracticeDescription, "PracticeDescription").$$render(
         $$result,
         {
           title: "19mm Foldable Craps Dice",

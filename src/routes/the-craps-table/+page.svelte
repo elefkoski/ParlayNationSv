@@ -75,7 +75,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -213,9 +213,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/the-table_640x360.webp"
-				mdImg="src/images/{url}/the-table_960x540.webp"
-				lgImg="src/images/{url}/the-table_1280x720.webp"
+				smImg="/images/{url}/the-table_640x360.webp"
+				mdImg="/images/{url}/the-table_960x540.webp"
+				lgImg="/images/{url}/the-table_1280x720.webp"
 				title="The Craps Table"
 				alt="Overhead view of Craps table with highlighted areas of the bank, betting areas, proposition bets, and the rail."
 			/>
@@ -279,9 +279,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/craps-table-limits_640x360.webp"
-				mdImg="src/images/{url}/craps-table-limits_960x540.webp"
-				lgImg="src/images/{url}/craps-table-limits_1280x720.webp"
+				smImg="/images/{url}/craps-table-limits_640x360.webp"
+				mdImg="/images/{url}/craps-table-limits_960x540.webp"
+				lgImg="/images/{url}/craps-table-limits_1280x720.webp"
 				title="Craps Table Limits"
 				alt="Craps table limit sign with $10 minimum bet and $50 maximum bet."
 			/>
@@ -304,9 +304,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/puck-off_640x360.webp"
-				mdImg="src/images/{url}/puck-off_960x540.webp"
-				lgImg="src/images/{url}/puck-off_1280x720.webp"
+				smImg="/images/{url}/puck-off_640x360.webp"
+				mdImg="/images/{url}/puck-off_960x540.webp"
+				lgImg="/images/{url}/puck-off_1280x720.webp"
 				title="Puck Off"
 				alt="The Puck sitting in the OFF position in the Don't Come."
 			/>
@@ -323,9 +323,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/puck-on_640x360.webp"
-				mdImg="src/images/{url}/puck-on_960x540.webp"
-				lgImg="src/images/{url}/puck-on_1280x720.webp"
+				smImg="/images/{url}/puck-on_640x360.webp"
+				mdImg="/images/{url}/puck-on_960x540.webp"
+				lgImg="/images/{url}/puck-on_1280x720.webp"
 				title="Puck On"
 				alt="The Puck sitting in the ON position and sitting in the Point 6."
 			/>
@@ -347,9 +347,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/the-stick_640x360.webp"
-				mdImg="src/images/{url}/the-stick_960x540.webp"
-				lgImg="src/images/{url}/the-stick_1280x720.webp"
+				smImg="/images/{url}/the-stick_640x360.webp"
+				mdImg="/images/{url}/the-stick_960x540.webp"
+				lgImg="/images/{url}/the-stick_1280x720.webp"
 				title="The Stick"
 				alt="Two dice near spot twelve on the layout. The dice are being pulled back by a black stick and it's being reflected in the mirror."
 			/>
@@ -366,9 +366,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/the-craps-bowl_640x360.webp"
-				mdImg="src/images/{url}/the-craps-bowl_960x540.webp"
-				lgImg="src/images/{url}/the-craps-bowl_1280x720.webp"
+				smImg="/images/{url}/the-craps-bowl_640x360.webp"
+				mdImg="/images/{url}/the-craps-bowl_960x540.webp"
+				lgImg="/images/{url}/the-craps-bowl_1280x720.webp"
 				title="The Craps Bowl"
 				alt="An empty table with the stick laying flat and the bowl resting on top of the stick. Five dice sit in the bowl."
 			/>

@@ -14,9 +14,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // The Crew
       aria: "The crew",
-      smImg: "src/images/" + url + "/the-crew-header_600x600.webp",
-      mdImg: "src/images/" + url + "/the-crew-header_992x558.webp",
-      lgImg: "src/images/" + url + "/the-crew-wide-header.webp",
+      smImg: "/images/" + url + "/the-crew-header_600x600.webp",
+      mdImg: "/images/" + url + "/the-crew-header_992x558.webp",
+      lgImg: "/images/" + url + "/the-crew-wide-header.webp",
       alt: "The Crew",
       title: "The Crew",
       href: "the-crew",
@@ -26,9 +26,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // The Craps Table
       aria: "The Craps table",
-      smImg: "src/images/" + url + "/the-craps-table-header_600x600.webp",
-      mdImg: "src/images/" + url + "/the-craps-table-header_992x558.webp",
-      lgImg: "src/images/" + url + "/the-craps-table-wide-header.webp",
+      smImg: "/images/" + url + "/the-craps-table-header_600x600.webp",
+      mdImg: "/images/" + url + "/the-craps-table-header_992x558.webp",
+      lgImg: "/images/" + url + "/the-craps-table-wide-header.webp",
       alt: "The Craps Table",
       title: "The Craps Table",
       href: "the-craps-table",
@@ -47,9 +47,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // The Dice
       aria: "The dice",
-      smImg: "src/images/" + url + "/the-dice-header_600x600.webp",
-      mdImg: "src/images/" + url + "/the-dice-header_992x558.webp",
-      lgImg: "src/images/" + url + "/the-dice-wide-header.webp",
+      smImg: "/images/" + url + "/the-dice-header_600x600.webp",
+      mdImg: "/images/" + url + "/the-dice-header_992x558.webp",
+      lgImg: "/images/" + url + "/the-dice-wide-header.webp",
       alt: "The Dice",
       title: "The Dice",
       href: "the-dice",
@@ -59,9 +59,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // The Stages
       aria: "The stages",
-      smImg: "src/images/" + url + "/the-stages-header_600x600.webp",
-      mdImg: "src/images/" + url + "/the-stages-header_992x558.webp",
-      lgImg: "src/images/" + url + "/the-stages-wide-header.webp",
+      smImg: "/images/" + url + "/the-stages-header_600x600.webp",
+      mdImg: "/images/" + url + "/the-stages-header_992x558.webp",
+      lgImg: "/images/" + url + "/the-stages-wide-header.webp",
       alt: "The Stages",
       title: "The Stages",
       href: "the-stages",
@@ -77,9 +77,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // Verbal Betting
       aria: "Verbal betting",
-      smImg: "src/images/" + url + "/verbal-betting-header_600x600.webp",
-      mdImg: "src/images/" + url + "/verbal-betting-header_992x558.webp",
-      lgImg: "src/images/" + url + "/verbal-betting-wide-header.webp",
+      smImg: "/images/" + url + "/verbal-betting-header_600x600.webp",
+      mdImg: "/images/" + url + "/verbal-betting-header_992x558.webp",
+      lgImg: "/images/" + url + "/verbal-betting-wide-header.webp",
       alt: "Verbal Betting",
       title: "Verbal Betting",
       href: "verbal-betting",
@@ -96,9 +96,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       // To Consider
       aria: "To consider",
-      smImg: "src/images/" + url + "/to-consider-header_600x600.webp",
-      mdImg: "src/images/" + url + "/to-consider-header_992x558.webp",
-      lgImg: "src/images/" + url + "/to-consider-wide-header.webp",
+      smImg: "/images/" + url + "/to-consider-header_600x600.webp",
+      mdImg: "/images/" + url + "/to-consider-header_992x558.webp",
+      lgImg: "/images/" + url + "/to-consider-wide-header.webp",
       alt: "To Consider",
       title: "To Consider",
       href: "to-consider",

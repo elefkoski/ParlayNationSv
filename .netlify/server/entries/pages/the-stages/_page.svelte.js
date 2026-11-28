@@ -51,7 +51,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-5anlkw_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-10vywal">{
   "@context": "https://schema.org",
@@ -163,9 +163,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/" + url + "_640x360.webp",
-                mdImg: "src/images/" + url + "/" + url + "_960x540.webp",
-                lgImg: "src/images/" + url + "/" + url + "_1280x720.webp",
+                smImg: "/images/" + url + "/" + url + "_640x360.webp",
+                mdImg: "/images/" + url + "/" + url + "_960x540.webp",
+                lgImg: "/images/" + url + "/" + url + "_1280x720.webp",
                 title: "The Stages of a Craps Game",
                 alt: "Overhead view of the Craps table with one Puck ON and another Puck OFF representing the two stages of a Craps game."
               },
@@ -265,9 +265,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/the-comeout-roll_640x360.webp",
-                mdImg: "src/images/" + url + "/the-comeout-roll_960x540.webp",
-                lgImg: "src/images/" + url + "/the-comeout-roll_1280x720.webp",
+                smImg: "/images/" + url + "/the-comeout-roll_640x360.webp",
+                mdImg: "/images/" + url + "/the-comeout-roll_960x540.webp",
+                lgImg: "/images/" + url + "/the-comeout-roll_1280x720.webp",
                 title: "The Comeout Roll",
                 alt: "The Puck in the Don't Come in the Off position with bets on the Pass Line and the Don't Pass."
               },
@@ -301,9 +301,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/the-intermediate-roll_640x360.webp",
-                mdImg: "src/images/" + url + "/the-intermediate-roll_960x540.webp",
-                lgImg: "src/images/" + url + "/the-intermediate-roll_1280x720.webp",
+                smImg: "/images/" + url + "/the-intermediate-roll_640x360.webp",
+                mdImg: "/images/" + url + "/the-intermediate-roll_960x540.webp",
+                lgImg: "/images/" + url + "/the-intermediate-roll_1280x720.webp",
                 title: "The Intermediate Roll",
                 alt: "A Craps table with the Puck in the ON position sitting on the Six. There are a lot of bets on the layout."
               },
@@ -337,9 +337,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/buying-in_640x360.webp",
-                mdImg: "src/images/" + url + "/buying-in_960x540.webp",
-                lgImg: "src/images/" + url + "/buying-in_1280x720.webp",
+                smImg: "/images/" + url + "/buying-in_640x360.webp",
+                mdImg: "/images/" + url + "/buying-in_960x540.webp",
+                lgImg: "/images/" + url + "/buying-in_1280x720.webp",
                 title: "Buying In",
                 alt: "Three one-hundred dollar bills laid out on the Craps table in front of the Box."
               },
@@ -369,9 +369,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/cashing-out-a_640x360.webp",
-                mdImg: "src/images/" + url + "/cashing-out-a_960x540.webp",
-                lgImg: "src/images/" + url + "/cashing-out-a_1280x720.webp",
+                smImg: "/images/" + url + "/cashing-out-a_640x360.webp",
+                mdImg: "/images/" + url + "/cashing-out-a_960x540.webp",
+                lgImg: "/images/" + url + "/cashing-out-a_1280x720.webp",
                 title: "Cashing Out - Putting Money Down",
                 alt: "Four stacks of cheques on the layout next to the mirror representing a player coloring up."
               },
@@ -385,9 +385,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/cashing-out-b_640x360.webp",
-                mdImg: "src/images/" + url + "/cashing-out-b_960x540.webp",
-                lgImg: "src/images/" + url + "/cashing-out-b_1280x720.webp",
+                smImg: "/images/" + url + "/cashing-out-b_640x360.webp",
+                mdImg: "/images/" + url + "/cashing-out-b_960x540.webp",
+                lgImg: "/images/" + url + "/cashing-out-b_1280x720.webp",
                 title: "Cashing Out - Money Counted Out",
                 alt: "Your cheques counted out in front of the Box and your colored money sitting in the come waiting to be handed off."
               },
@@ -413,9 +413,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/the-number-7_640x360.webp",
-                mdImg: "src/images/" + url + "/the-number-7_960x540.webp",
-                lgImg: "src/images/" + url + "/the-number-7_1280x720.webp",
+                smImg: "/images/" + url + "/the-number-7_640x360.webp",
+                mdImg: "/images/" + url + "/the-number-7_960x540.webp",
+                lgImg: "/images/" + url + "/the-number-7_1280x720.webp",
                 title: "The Number Seven",
                 alt: "Two blue dice on green felt. First has the six up and the second a one."
               },

@@ -63,7 +63,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = "Don't pass payment table";
@@ -198,9 +198,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/dont-pass_640x360.webp"
-				mdImg="src/images/{url}/dont-pass_960x540.webp"
-				lgImg="src/images/{url}/dont-pass_1280x720.webp"
+				smImg="/images/{url}/dont-pass_640x360.webp"
+				mdImg="/images/{url}/dont-pass_960x540.webp"
+				lgImg="/images/{url}/dont-pass_1280x720.webp"
 				title="The Don't Pass Bar"
 				alt="The Don't Pass Bar outlined on the Craps table."
 			/>
@@ -219,9 +219,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/how-to-bet-the-dont-pass_640x360.webp"
-				mdImg="src/images/{url}/how-to-bet-the-dont-pass_960x540.webp"
-				lgImg="src/images/{url}/how-to-bet-the-dont-pass_1280x720.webp"
+				smImg="/images/{url}/how-to-bet-the-dont-pass_640x360.webp"
+				mdImg="/images/{url}/how-to-bet-the-dont-pass_960x540.webp"
+				lgImg="/images/{url}/how-to-bet-the-dont-pass_1280x720.webp"
 				title="How to Bet the Don't Pass"
 				alt="Up close view of the Don't Pass bar with bets and the Craps table rail. The Don't Pass Bets have lines pointing to spots in the rail."
 			/>
@@ -241,9 +241,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/dont-pass-stage-one_640x360.webp"
-					mdImg="src/images/{url}/dont-pass-stage-one_960x540.webp"
-					lgImg="src/images/{url}/dont-pass-stage-one_1280x720.webp"
+					smImg="/images/{url}/dont-pass-stage-one_640x360.webp"
+					mdImg="/images/{url}/dont-pass-stage-one_960x540.webp"
+					lgImg="/images/{url}/dont-pass-stage-one_1280x720.webp"
 					title="Don't Pass - Stage One"
 					alt="$25 on the Don't Pass. The Puck is OFF."
 				/>
@@ -258,9 +258,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/dont-pass-stage-two_640x360.webp"
-					mdImg="src/images/{url}/dont-pass-stage-two_960x540.webp"
-					lgImg="src/images/{url}/dont-pass-stage-two_1280x720.webp"
+					smImg="/images/{url}/dont-pass-stage-two_640x360.webp"
+					mdImg="/images/{url}/dont-pass-stage-two_960x540.webp"
+					lgImg="/images/{url}/dont-pass-stage-two_1280x720.webp"
 					title="Don't Pass - Stage Two"
 					alt="$25 on the Don't Pass. The Puck is On the ten."
 				/>
@@ -273,18 +273,18 @@
 			</p>
 			<ContentImg
 				caption="Comeout Roll"
-				smImg="src/images/{url}/dont-pass-wins-even-money-b_640x360.webp"
-				mdImg="src/images/{url}/dont-pass-wins-even-money-b_960x540.webp"
-				lgImg="src/images/{url}/dont-pass-wins-even-money-b_1280x720.webp"
+				smImg="/images/{url}/dont-pass-wins-even-money-b_640x360.webp"
+				mdImg="/images/{url}/dont-pass-wins-even-money-b_960x540.webp"
+				lgImg="/images/{url}/dont-pass-wins-even-money-b_1280x720.webp"
 				title="Don't Pass Wins Even Money During Comeout Roll"
 				alt="$20 with $20 payment on the Don't Pass. The Puck is Off. Two purple dice show 1-1 and another pair show 1-2."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption="Seven Out"
-				smImg="src/images/{url}/dont-pass-wins-even-money-a_640x360.webp"
-				mdImg="src/images/{url}/dont-pass-wins-even-money-a_960x540.webp"
-				lgImg="src/images/{url}/dont-pass-wins-even-money-a_1280x720.webp"
+				smImg="/images/{url}/dont-pass-wins-even-money-a_640x360.webp"
+				mdImg="/images/{url}/dont-pass-wins-even-money-a_960x540.webp"
+				lgImg="/images/{url}/dont-pass-wins-even-money-a_1280x720.webp"
 				title="Don't Pass Wins Even Money on Seven Out"
 				alt="$25 with $25 payment on the Don't Pass. The Puck is on point ten. Two purple dice show 2-5."
 			/>
@@ -313,9 +313,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/dealer-dont-pass_640x360.webp"
-				mdImg="src/images/{url}/dealer-dont-pass_960x540.webp"
-				lgImg="src/images/{url}/dealer-dont-pass_1280x720.webp"
+				smImg="/images/{url}/dealer-dont-pass_640x360.webp"
+				mdImg="/images/{url}/dealer-dont-pass_960x540.webp"
+				lgImg="/images/{url}/dealer-dont-pass_1280x720.webp"
 				title="Dealer Don't Pass"
 				alt="$1 next to $5 on the Don't Pass."
 			/>

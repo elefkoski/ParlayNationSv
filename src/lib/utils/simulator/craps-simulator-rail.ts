@@ -494,7 +494,7 @@ function denomToKey(denom: number): keyof OptimumTakeRange {
 // Generate a random chip image path based on denomination
 function getRandomChip(denomination: number): string {
 	const randomNumber: number = Math.floor(Math.random() * 12) + 1;
-	return `src/images/craps-simulator/chips/${denomination}_chip_${randomNumber}.jpg`;
+	return `/images/craps-simulator/chips/${denomination}_chip_${randomNumber}.jpg`;
 }
 // Add chips to the appropriate stack -- from placeChipsInRail
 function addChips(denomination: number, count: number): void {

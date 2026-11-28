@@ -82,7 +82,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = "Don't come intermediate roll payment table";
@@ -237,9 +237,9 @@
 			/>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/dont-come_640x360.webp"
-				mdImg="src/images/{url}/dont-come_960x540.webp"
-				lgImg="src/images/{url}/dont-come_1280x720.webp"
+				smImg="/images/{url}/dont-come_640x360.webp"
+				mdImg="/images/{url}/dont-come_960x540.webp"
+				lgImg="/images/{url}/dont-come_1280x720.webp"
 				title="Don't Come"
 				alt="Up close overhead view of the Don't Come betting area."
 			/>
@@ -259,9 +259,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/how-to-bet-a-dont-come_640x360.webp"
-				mdImg="src/images/{url}/how-to-bet-a-dont-come_960x540.webp"
-				lgImg="src/images/{url}/how-to-bet-a-dont-come_1280x720.webp"
+				smImg="/images/{url}/how-to-bet-a-dont-come_640x360.webp"
+				mdImg="/images/{url}/how-to-bet-a-dont-come_960x540.webp"
+				lgImg="/images/{url}/how-to-bet-a-dont-come_1280x720.webp"
 				title="How to Bet a Don't Come"
 				alt="Multiple bets sitting in the Don't Come area."
 			/>
@@ -281,9 +281,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/stage-one-of-a-dont-come_640x360.webp"
-					mdImg="src/images/{url}/stage-one-of-a-dont-come_960x540.webp"
-					lgImg="src/images/{url}/stage-one-of-a-dont-come_1280x720.webp"
+					smImg="/images/{url}/stage-one-of-a-dont-come_640x360.webp"
+					mdImg="/images/{url}/stage-one-of-a-dont-come_960x540.webp"
+					lgImg="/images/{url}/stage-one-of-a-dont-come_1280x720.webp"
 					title="Stages of a Don't Come Bet - In the Don't Come"
 					alt="$10 sitting in the Don't Come. The puck is on a point you cannot see."
 				/>
@@ -301,9 +301,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/stage-two-of-a-dont-come_640x360.webp"
-					mdImg="src/images/{url}/stage-two-of-a-dont-come_960x540.webp"
-					lgImg="src/images/{url}/stage-two-of-a-dont-come_1280x720.webp"
+					smImg="/images/{url}/stage-two-of-a-dont-come_640x360.webp"
+					mdImg="/images/{url}/stage-two-of-a-dont-come_960x540.webp"
+					lgImg="/images/{url}/stage-two-of-a-dont-come_1280x720.webp"
 					title="Stages of a Don't Come Bet - Behind a Point"
 					alt="$10 sitting behind the point five. The puck is on a point you cannot see."
 				/>
@@ -339,9 +339,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-a-dont-come-behind-a-point_640x360.webp"
-				mdImg="src/images/{url}/placement-of-a-dont-come-behind-a-point_960x540.webp"
-				lgImg="src/images/{url}/placement-of-a-dont-come-behind-a-point_1280x720.webp"
+				smImg="/images/{url}/placement-of-a-dont-come-behind-a-point_640x360.webp"
+				mdImg="/images/{url}/placement-of-a-dont-come-behind-a-point_960x540.webp"
+				lgImg="/images/{url}/placement-of-a-dont-come-behind-a-point_1280x720.webp"
 				title="Placement of a Don't Come Behind a Point"
 				alt="Up close view of the boxes behind the points and of the Craps table rail. There are 16 bubbles corresponding with each other on betting area and the Craps table rail."
 			/>
@@ -354,18 +354,18 @@
 			</p>
 			<ContentImg
 				caption="In the Don't Come"
-				smImg="src/images/{url}/dont-come-bets-get-even-money-a_640x360.webp"
-				mdImg="src/images/{url}/dont-come-bets-get-even-money-a_960x540.webp"
-				lgImg="src/images/{url}/dont-come-bets-get-even-money-a_1280x720.webp"
+				smImg="/images/{url}/dont-come-bets-get-even-money-a_640x360.webp"
+				mdImg="/images/{url}/dont-come-bets-get-even-money-a_960x540.webp"
+				lgImg="/images/{url}/dont-come-bets-get-even-money-a_1280x720.webp"
 				title="Don't Come Bets Win Even Money - In the Don't Come"
 				alt="$10 paid $10 in the Don't Come. Two purple dice 1-1 and another set show 1-2."
 			/>
 			<div class="pb-4" />
 			<ContentImg
 				caption="Behind a Point"
-				smImg="src/images/{url}/dont-come-bets-get-even-money-b_640x360.webp"
-				mdImg="src/images/{url}/dont-come-bets-get-even-money-b_960x540.webp"
-				lgImg="src/images/{url}/dont-come-bets-get-even-money-b_1280x720.webp"
+				smImg="/images/{url}/dont-come-bets-get-even-money-b_640x360.webp"
+				mdImg="/images/{url}/dont-come-bets-get-even-money-b_960x540.webp"
+				lgImg="/images/{url}/dont-come-bets-get-even-money-b_1280x720.webp"
 				title="Don't Come Bets Win Even Money - Behind a Point"
 				alt="$10 paid $10 behind the point ten. Two purple dice show 2-5."
 			/>
@@ -396,9 +396,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/dont-come-bets-are-always-working_640x360.webp"
-				mdImg="src/images/{url}/dont-come-bets-are-always-working_960x540.webp"
-				lgImg="src/images/{url}/dont-come-bets-are-always-working_1280x720.webp"
+				smImg="/images/{url}/dont-come-bets-are-always-working_640x360.webp"
+				mdImg="/images/{url}/dont-come-bets-are-always-working_960x540.webp"
+				lgImg="/images/{url}/dont-come-bets-are-always-working_1280x720.webp"
 				title="Don't Come Bets Are Always Working"
 				alt="$25 sitting behind the point four. The puck is off and in the Don't Come."
 			/>
@@ -413,9 +413,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/betting-a-dont-come-for-the-dealers_640x360.webp"
-				mdImg="src/images/{url}/betting-a-dont-come-for-the-dealers_960x540.webp"
-				lgImg="src/images/{url}/betting-a-dont-come-for-the-dealers_1280x720.webp"
+				smImg="/images/{url}/betting-a-dont-come-for-the-dealers_640x360.webp"
+				mdImg="/images/{url}/betting-a-dont-come-for-the-dealers_960x540.webp"
+				lgImg="/images/{url}/betting-a-dont-come-for-the-dealers_1280x720.webp"
 				title="Betting a Don't Come for the Dealers"
 				alt="$1 sitting in the middle of the Don't Come"
 			/>

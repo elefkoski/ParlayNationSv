@@ -46,7 +46,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-p2wokn_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-ssvgow">{
   "@context": "https://schema.org",
@@ -160,9 +160,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/presses_640x360.webp",
-                mdImg: "src/images/" + url + "/presses_960x540.webp",
-                lgImg: "src/images/" + url + "/presses_1280x720.webp",
+                smImg: "/images/" + url + "/presses_640x360.webp",
+                mdImg: "/images/" + url + "/presses_960x540.webp",
+                lgImg: "/images/" + url + "/presses_1280x720.webp",
                 title: "Craps Presses",
                 alt: "$12 place bet on the eight."
               },
@@ -186,9 +186,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/what-is-a-unit_640x360.webp",
-                mdImg: "src/images/" + url + "/what-is-a-unit_960x540.webp",
-                lgImg: "src/images/" + url + "/what-is-a-unit_1280x720.webp",
+                smImg: "/images/" + url + "/what-is-a-unit_640x360.webp",
+                mdImg: "/images/" + url + "/what-is-a-unit_960x540.webp",
+                lgImg: "/images/" + url + "/what-is-a-unit_1280x720.webp",
                 title: "What Is a Unit in Craps?",
                 alt: "A $6, $12, $18, and $24 place bet on the eight."
               },
@@ -223,9 +223,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/one-unit-press_640x360.webp",
-                    mdImg: "src/images/" + url + "/one-unit-press_960x540.webp",
-                    lgImg: "src/images/" + url + "/one-unit-press_1280x720.webp",
+                    smImg: "/images/" + url + "/one-unit-press_640x360.webp",
+                    mdImg: "/images/" + url + "/one-unit-press_960x540.webp",
+                    lgImg: "/images/" + url + "/one-unit-press_1280x720.webp",
                     title: "One Unit Press",
                     alt: "$12 eight pressed one unit to an $18 eight"
                   },
@@ -240,9 +240,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/press-it_640x360.webp",
-                    mdImg: "src/images/" + url + "/press-it_960x540.webp",
-                    lgImg: "src/images/" + url + "/press-it_1280x720.webp",
+                    smImg: "/images/" + url + "/press-it_640x360.webp",
+                    mdImg: "/images/" + url + "/press-it_960x540.webp",
+                    lgImg: "/images/" + url + "/press-it_1280x720.webp",
                     title: "",
                     alt: "$15 nine pressed to $30 nine."
                   },
@@ -263,9 +263,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/full-press_640x360.webp",
-                    mdImg: "src/images/" + url + "/full-press_960x540.webp",
-                    lgImg: "src/images/" + url + "/full-press_1280x720.webp",
+                    smImg: "/images/" + url + "/full-press_640x360.webp",
+                    mdImg: "/images/" + url + "/full-press_960x540.webp",
+                    lgImg: "/images/" + url + "/full-press_1280x720.webp",
                     title: "Full Press",
                     alt: "$36 eight full pressed to $78 eight."
                   },
@@ -298,9 +298,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/odd-press_640x360.webp",
-                    mdImg: "src/images/" + url + "/odd-press_960x540.webp",
-                    lgImg: "src/images/" + url + "/odd-press_1280x720.webp",
+                    smImg: "/images/" + url + "/odd-press_640x360.webp",
+                    mdImg: "/images/" + url + "/odd-press_960x540.webp",
+                    lgImg: "/images/" + url + "/odd-press_1280x720.webp",
                     title: "Odd Press",
                     alt: "$42 six pressed to $60 six."
                   },
@@ -318,9 +318,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/power-press_640x360.webp",
-                    mdImg: "src/images/" + url + "/power-press_960x540.webp",
-                    lgImg: "src/images/" + url + "/power-press_1280x720.webp",
+                    smImg: "/images/" + url + "/power-press_640x360.webp",
+                    mdImg: "/images/" + url + "/power-press_960x540.webp",
+                    lgImg: "/images/" + url + "/power-press_1280x720.webp",
                     title: "Power Press",
                     alt: "$10 five pressed with $1 to $25 five."
                   },
@@ -361,9 +361,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Double Unit Press: $12 each 6 and 8 to $18 each",
-                    smImg: "src/images/" + url + "/double-unit-press_640x360.webp",
-                    mdImg: "src/images/" + url + "/double-unit-press_960x540.webp",
-                    lgImg: "src/images/" + url + "/double-unit-press_1280x720.webp",
+                    smImg: "/images/" + url + "/double-unit-press_640x360.webp",
+                    mdImg: "/images/" + url + "/double-unit-press_960x540.webp",
+                    lgImg: "/images/" + url + "/double-unit-press_1280x720.webp",
                     title: "Double Unit Press",
                     alt: "$12 each six and eight pressed one unit each to $18 each six and eight."
                   },
@@ -373,9 +373,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Double Unit Press: $15 each 5 and 9 to $25 each",
-                    smImg: "src/images/" + url + "/double-unit-odd-press_640x360.webp",
-                    mdImg: "src/images/" + url + "/double-unit-odd-press_960x540.webp",
-                    lgImg: "src/images/" + url + "/double-unit-odd-press_1280x720.webp",
+                    smImg: "/images/" + url + "/double-unit-odd-press_640x360.webp",
+                    mdImg: "/images/" + url + "/double-unit-odd-press_960x540.webp",
+                    lgImg: "/images/" + url + "/double-unit-odd-press_1280x720.webp",
                     title: "Double Unit Odds Press",
                     alt: "$15 each five and nine pressed one unit to $25 each five and nine."
                   },
@@ -392,9 +392,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/across-pressure_640x360.webp",
-                    mdImg: "src/images/" + url + "/across-pressure_960x540.webp",
-                    lgImg: "src/images/" + url + "/across-pressure_1280x720.webp",
+                    smImg: "/images/" + url + "/across-pressure_640x360.webp",
+                    mdImg: "/images/" + url + "/across-pressure_960x540.webp",
+                    lgImg: "/images/" + url + "/across-pressure_1280x720.webp",
                     title: "Across Pressure",
                     alt: "$26 across pressure to $52 across."
                   },

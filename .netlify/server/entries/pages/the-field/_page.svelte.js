@@ -56,7 +56,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Roll", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -192,9 +192,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/the-field_640x360.webp",
-                mdImg: "src/images/" + url + "/the-field_960x540.webp",
-                lgImg: "src/images/" + url + "/the-field_1280x720.webp",
+                smImg: "/images/" + url + "/the-field_640x360.webp",
+                mdImg: "/images/" + url + "/the-field_960x540.webp",
+                lgImg: "/images/" + url + "/the-field_1280x720.webp",
                 title: "The Field",
                 alt: "Overhead up close view of the field area on the Craps layout."
               },
@@ -241,9 +241,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-the-field_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-the-field_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-the-field_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-the-field_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-the-field_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-the-field_1280x720.webp",
                 title: "Placement of the Field",
                 alt: "Up close view of multiple bets in the field."
               },
@@ -266,9 +266,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "3, 4, 9, 10, 11 Pay Even Money",
-                smImg: "src/images/" + url + "/what-does-the-field-pay-a_640x360.webp",
-                mdImg: "src/images/" + url + "/what-does-the-field-pay-a_960x540.webp",
-                lgImg: "src/images/" + url + "/what-does-the-field-pay-a_1280x720.webp",
+                smImg: "/images/" + url + "/what-does-the-field-pay-a_640x360.webp",
+                mdImg: "/images/" + url + "/what-does-the-field-pay-a_960x540.webp",
+                lgImg: "/images/" + url + "/what-does-the-field-pay-a_1280x720.webp",
                 title: "3, 4, 9, 10, 11 Pay Even Money",
                 alt: "Two bets in the field paid even money. Two green dice read 5-5. Two bubbles read wins even money."
               },
@@ -278,9 +278,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "2 or 12 Pay Double",
-                smImg: "src/images/" + url + "/what-does-the-field-pay-b_640x360.webp",
-                mdImg: "src/images/" + url + "/what-does-the-field-pay-b_960x540.webp",
-                lgImg: "src/images/" + url + "/what-does-the-field-pay-b_1280x720.webp",
+                smImg: "/images/" + url + "/what-does-the-field-pay-b_640x360.webp",
+                mdImg: "/images/" + url + "/what-does-the-field-pay-b_960x540.webp",
+                lgImg: "/images/" + url + "/what-does-the-field-pay-b_1280x720.webp",
                 title: "2 or 12 Pay Double",
                 alt: "Two bets in the field paid double. Two green dice read 1-1. Two bubbles read wins double."
               },
@@ -352,9 +352,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/field-bet-for-the-dealers_640x360.webp",
-                mdImg: "src/images/" + url + "/field-bet-for-the-dealers_960x540.webp",
-                lgImg: "src/images/" + url + "/field-bet-for-the-dealers_1280x720.webp",
+                smImg: "/images/" + url + "/field-bet-for-the-dealers_640x360.webp",
+                mdImg: "/images/" + url + "/field-bet-for-the-dealers_960x540.webp",
+                lgImg: "/images/" + url + "/field-bet-for-the-dealers_1280x720.webp",
                 title: "Field Bet for the Dealers",
                 alt: "$3 in the field for the dealers."
               },

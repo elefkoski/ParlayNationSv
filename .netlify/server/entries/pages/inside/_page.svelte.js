@@ -28,7 +28,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Spread", "Total Bet"];
   let tblRows = [
@@ -132,9 +132,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/inside_640x360.webp",
-                mdImg: "src/images/" + url + "/inside_960x540.webp",
-                lgImg: "src/images/" + url + "/inside_1280x720.webp",
+                smImg: "/images/" + url + "/inside_640x360.webp",
+                mdImg: "/images/" + url + "/inside_960x540.webp",
+                lgImg: "/images/" + url + "/inside_1280x720.webp",
                 title: "Inside Place Bets",
                 alt: "Puck is on point four and points 5, 6, 8, and 9 are highlighted."
               },
@@ -162,9 +162,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/32-inside_640x360.webp",
-                    mdImg: "src/images/" + url + "/32-inside_960x540.webp",
-                    lgImg: "src/images/" + url + "/32-inside_1280x720.webp",
+                    smImg: "/images/" + url + "/32-inside_640x360.webp",
+                    mdImg: "/images/" + url + "/32-inside_960x540.webp",
+                    lgImg: "/images/" + url + "/32-inside_1280x720.webp",
                     title: "Betting $32 Inside",
                     alt: "$32 inside with the point on eight."
                   },
@@ -180,9 +180,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/34-inside_640x360.webp",
-                    mdImg: "src/images/" + url + "/34-inside_960x540.webp",
-                    lgImg: "src/images/" + url + "/34-inside_1280x720.webp",
+                    smImg: "/images/" + url + "/34-inside_640x360.webp",
+                    mdImg: "/images/" + url + "/34-inside_960x540.webp",
+                    lgImg: "/images/" + url + "/34-inside_1280x720.webp",
                     title: "Betting $34 Inside",
                     alt: "$34 inside with the point on five"
                   },
@@ -197,9 +197,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/44-inside_640x360.webp",
-                    mdImg: "src/images/" + url + "/44-inside_960x540.webp",
-                    lgImg: "src/images/" + url + "/44-inside_1280x720.webp",
+                    smImg: "/images/" + url + "/44-inside_640x360.webp",
+                    mdImg: "/images/" + url + "/44-inside_960x540.webp",
+                    lgImg: "/images/" + url + "/44-inside_1280x720.webp",
                     title: "Betting $44 Inside",
                     alt: "$44 inside with the point on ten."
                   },

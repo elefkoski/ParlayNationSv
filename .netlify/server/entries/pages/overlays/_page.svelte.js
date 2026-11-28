@@ -57,7 +57,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Overlay", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -164,9 +164,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/overlays_640x360.webp",
-                mdImg: "src/images/" + url + "/overlays_960x540.webp",
-                lgImg: "src/images/" + url + "/overlays_1280x720.webp",
+                smImg: "/images/" + url + "/overlays_640x360.webp",
+                mdImg: "/images/" + url + "/overlays_960x540.webp",
+                lgImg: "/images/" + url + "/overlays_1280x720.webp",
                 title: "Overlays",
                 alt: "$60 Overlay behind the point nine."
               },
@@ -207,9 +207,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-an-overlay_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-an-overlay_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-an-overlay_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-an-overlay_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-an-overlay_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-an-overlay_1280x720.webp",
                 title: "How to Bet an Overlay",
                 alt: "Overlay bets are set up behind each of the six points."
               },
@@ -234,9 +234,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-an-overlay_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-an-overlay_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-an-overlay_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-an-overlay_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-an-overlay_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-an-overlay_1280x720.webp",
                 title: "Placement of an Overlay",
                 alt: "Up close overhead view of the boxes behind the place bets and the Craps table rail. There are 16 colored spots that correspond with each other."
               },
@@ -298,9 +298,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$25 No Six",
-                    smImg: "src/images/" + url + "/25-no-six_640x360.webp",
-                    mdImg: "src/images/" + url + "/25-no-six_960x540.webp",
-                    lgImg: "src/images/" + url + "/25-no-six_1280x720.webp",
+                    smImg: "/images/" + url + "/25-no-six_640x360.webp",
+                    mdImg: "/images/" + url + "/25-no-six_960x540.webp",
+                    lgImg: "/images/" + url + "/25-no-six_1280x720.webp",
                     title: "$25 No Six",
                     alt: "$24 behind the point six with a lay button on top. Bubble reads $25 total bet cost."
                   },
@@ -310,9 +310,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$25 No Six - Paid",
-                    smImg: "src/images/" + url + "/25-no-six-paid_640x360.webp",
-                    mdImg: "src/images/" + url + "/25-no-six-paid_960x540.webp",
-                    lgImg: "src/images/" + url + "/25-no-six-paid_1280x720.webp",
+                    smImg: "/images/" + url + "/25-no-six-paid_640x360.webp",
+                    mdImg: "/images/" + url + "/25-no-six-paid_960x540.webp",
+                    lgImg: "/images/" + url + "/25-no-six-paid_1280x720.webp",
                     title: "$25 No Six - Paid",
                     alt: "$24 behind the point six paid $20. Two purple dice show 2-5."
                   },
@@ -329,9 +329,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$31 No Five",
-                    smImg: "src/images/" + url + "/31-no-five_640x360.webp",
-                    mdImg: "src/images/" + url + "/31-no-five_960x540.webp",
-                    lgImg: "src/images/" + url + "/31-no-five_1280x720.webp",
+                    smImg: "/images/" + url + "/31-no-five_640x360.webp",
+                    mdImg: "/images/" + url + "/31-no-five_960x540.webp",
+                    lgImg: "/images/" + url + "/31-no-five_1280x720.webp",
                     title: "$31 No Five",
                     alt: "$31 behind the point five with a lay button on top. Bubble reads $31 total bet cost."
                   },
@@ -341,9 +341,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$31 No Five - Paid",
-                    smImg: "src/images/" + url + "/31-no-five-paid_640x360.webp",
-                    mdImg: "src/images/" + url + "/31-no-five-paid_960x540.webp",
-                    lgImg: "src/images/" + url + "/31-no-five-paid_1280x720.webp",
+                    smImg: "/images/" + url + "/31-no-five-paid_640x360.webp",
+                    mdImg: "/images/" + url + "/31-no-five-paid_960x540.webp",
+                    lgImg: "/images/" + url + "/31-no-five-paid_1280x720.webp",
                     title: "$31 No Five - Paid",
                     alt: "$31 behind the point five paid $20. Two purple dice show 2-5."
                   },
@@ -367,9 +367,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$41 No Four",
-                    smImg: "src/images/" + url + "/41-no-four_640x360.webp",
-                    mdImg: "src/images/" + url + "/41-no-four_960x540.webp",
-                    lgImg: "src/images/" + url + "/41-no-four_1280x720.webp",
+                    smImg: "/images/" + url + "/41-no-four_640x360.webp",
+                    mdImg: "/images/" + url + "/41-no-four_960x540.webp",
+                    lgImg: "/images/" + url + "/41-no-four_1280x720.webp",
                     title: "$41 No Four",
                     alt: "$41 behind the point four with a lay button on top. Bubble reads $41 total bet cost."
                   },
@@ -379,9 +379,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$41 No Four - Paid",
-                    smImg: "src/images/" + url + "/41-no-four-paid_640x360.webp",
-                    mdImg: "src/images/" + url + "/41-no-four-paid_960x540.webp",
-                    lgImg: "src/images/" + url + "/41-no-four-paid_1280x720.webp",
+                    smImg: "/images/" + url + "/41-no-four-paid_640x360.webp",
+                    mdImg: "/images/" + url + "/41-no-four-paid_960x540.webp",
+                    lgImg: "/images/" + url + "/41-no-four-paid_1280x720.webp",
                     title: "$41 No Four - Paid",
                     alt: "$41 behind the point four paid $20. Two purple dice show 2-5."
                   },

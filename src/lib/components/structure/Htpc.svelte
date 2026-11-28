@@ -10,7 +10,7 @@
 	<h2 class="uppercase text-3xl font-bold">Learn how to play craps in 15 minutes</h2>
 	<figure class="max-w-xs md:max-w-lg relative">
 		<img
-			src="src/images/home-page/htpc-cover_612x792.webp"
+			src="/images/home-page/htpc-cover_612x792.webp"
 			alt="How to Play Craps in 15 Minutes"
 			class=""
 		/>

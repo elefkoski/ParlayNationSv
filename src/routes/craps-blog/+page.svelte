@@ -13,9 +13,9 @@
 			description:
 				'Ranked for your advantage: Explore every Craps bet from Odds to Propositions, mastering the game by understanding their house edges.',
 			href: 'rank-of-craps-bets',
-			imageUrlSmall: 'src/images/rank-of-craps-bets/up-close-place-bets-third-base_640x360.webp',
-			imageUrlMedium: 'src/images/rank-of-craps-bets/up-close-place-bets-third-base_960x540.webp',
-			imageUrlLarge: 'src/images/rank-of-craps-bets/up-close-place-bets-third-base_1280x720.webp',
+			imageUrlSmall: '/images/rank-of-craps-bets/up-close-place-bets-third-base_640x360.webp',
+			imageUrlMedium: '/images/rank-of-craps-bets/up-close-place-bets-third-base_960x540.webp',
+			imageUrlLarge: '/images/rank-of-craps-bets/up-close-place-bets-third-base_1280x720.webp',
 			imageAlt: 'Up close images of the Place and Come bets on the Craps table.'
 		},
 		{
@@ -23,9 +23,9 @@
 			description:
 				'Discover the psychology of Craps superstitions: what to do when the dice get cold or why a lucky charm can make all the difference. Perfect your play with practical advice.',
 			href: 'craps-superstitions',
-			imageUrlSmall: 'src/images/craps-superstitions/any-seven_640x360.webp',
-			imageUrlMedium: 'src/images/craps-superstitions/any-seven_960x540.webp',
-			imageUrlLarge: 'src/images/craps-superstitions/any-seven_1280x720.webp',
+			imageUrlSmall: '/images/craps-superstitions/any-seven_640x360.webp',
+			imageUrlMedium: '/images/craps-superstitions/any-seven_960x540.webp',
+			imageUrlLarge: '/images/craps-superstitions/any-seven_1280x720.webp',
 			imageAlt: 'Any seven bet on the Craps table.'
 		},
 		{
@@ -33,9 +33,9 @@
 			description:
 				'Explore the truth behind Craps myths and enhance your game strategy with our article, breaking down common misconceptions for a more knowledgeable and confident approach to the game.',
 			href: 'craps-myths',
-			imageUrlSmall: 'src/images/craps-myths/craps-dice-on-puck_640x360.webp',
-			imageUrlMedium: 'src/images/craps-myths/craps-dice-on-puck_960x540.webp',
-			imageUrlLarge: 'src/images/craps-myths/craps-dice-on-puck_1280x720.webp',
+			imageUrlSmall: '/images/craps-myths/craps-dice-on-puck_640x360.webp',
+			imageUrlMedium: '/images/craps-myths/craps-dice-on-puck_960x540.webp',
+			imageUrlLarge: '/images/craps-myths/craps-dice-on-puck_1280x720.webp',
 			imageAlt: 'One die on top of the puck on the Craps table.'
 		},
 		{
@@ -43,9 +43,9 @@
 			description:
 				'New to Craps? Learn the essentials with our guide, featuring strategies to block out the noise, utilize dealer advice, and gradually expand your gameplay knowledge.',
 			href: 'first-time-craps-player',
-			imageUrlMedium: 'src/images/first-time-craps-player/empty-come-bet-area_960x540.webp',
-			imageUrlSmall: 'src/images/first-time-craps-player/empty-come-bet-area_640x360.webp',
-			imageUrlLarge: 'src/images/first-time-craps-player/empty-come-bet-area_1280x720.webp',
+			imageUrlMedium: '/images/first-time-craps-player/empty-come-bet-area_960x540.webp',
+			imageUrlSmall: '/images/first-time-craps-player/empty-come-bet-area_640x360.webp',
+			imageUrlLarge: '/images/first-time-craps-player/empty-come-bet-area_1280x720.webp',
 			imageAlt: 'Empty come bet area on the Craps table.'
 		},
 		{
@@ -53,9 +53,9 @@
 			description:
 				'Step up your Craps game with our detailed guide. Learn how to be a better shooter and keep the table on your side.',
 			href: 'better-craps-shooter',
-			imageUrlSmall: 'src/images/better-craps-shooter/five-purple-dice_640x360.webp',
-			imageUrlMedium: 'src/images/better-craps-shooter/five-purple-dice_960x540.webp',
-			imageUrlLarge: 'src/images/better-craps-shooter/five-purple-dice_1280x720.webp',
+			imageUrlSmall: '/images/better-craps-shooter/five-purple-dice_640x360.webp',
+			imageUrlMedium: '/images/better-craps-shooter/five-purple-dice_960x540.webp',
+			imageUrlLarge: '/images/better-craps-shooter/five-purple-dice_1280x720.webp',
 			imageAlt: 'Five purple dice.'
 		},
 		{
@@ -63,9 +63,9 @@
 			description:
 				'Capitalize on great Craps rolls: Expert advice on bet pressing, parlays, and optimizing your winnings.',
 			href: 'a-great-craps-roll',
-			imageUrlSmall: 'src/images/a-great-craps-roll/up-close-craps-layout_640x360.webp',
-			imageUrlMedium: 'src/images/a-great-craps-roll/up-close-craps-layout_960x540.webp',
-			imageUrlLarge: 'src/images/a-great-craps-roll/up-close-craps-layout_1280x720.webp',
+			imageUrlSmall: '/images/a-great-craps-roll/up-close-craps-layout_640x360.webp',
+			imageUrlMedium: '/images/a-great-craps-roll/up-close-craps-layout_960x540.webp',
+			imageUrlLarge: '/images/a-great-craps-roll/up-close-craps-layout_1280x720.webp',
 			imageAlt: 'Up close image of many bets on the Craps table.'
 		},
 		{
@@ -73,11 +73,11 @@
 			description:
 				'Explore how new players influence the game of Craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.',
 			href: 'dealing-with-new-craps-players',
-			imageUrlSmall: 'src/images/dealing-with-new-craps-players/puck-off-in-dont-come_640x360.webp',
+			imageUrlSmall: '/images/dealing-with-new-craps-players/puck-off-in-dont-come_640x360.webp',
 			imageUrlMedium:
-				'src/images/dealing-with-new-craps-players/puck-off-in-dont-come_960x540.webp',
+				'/images/dealing-with-new-craps-players/puck-off-in-dont-come_960x540.webp',
 			imageUrlLarge:
-				'src/images/dealing-with-new-craps-players/puck-off-in-dont-come_1280x720.webp',
+				'/images/dealing-with-new-craps-players/puck-off-in-dont-come_1280x720.webp',
 			imageAlt: "Puck off in the Don't Come area on the Craps table."
 		},
 		{
@@ -86,11 +86,11 @@
 				'Avoid common Craps pitfalls with our essential etiquette tips. From shooting rules to betting practices and player interaction, we cover everything you need to play confidently and respectfully.',
 			href: 'not-to-do-at-craps-table',
 			imageUrlSmall:
-				'src/images/not-to-do-at-craps-table/third-base-next-to-base-looking-at-craps-layout_640x360.webp',
+				'/images/not-to-do-at-craps-table/third-base-next-to-base-looking-at-craps-layout_640x360.webp',
 			imageUrlMedium:
-				'src/images/not-to-do-at-craps-table/third-base-next-to-base-looking-at-craps-layout_960x540.webp',
+				'/images/not-to-do-at-craps-table/third-base-next-to-base-looking-at-craps-layout_960x540.webp',
 			imageUrlLarge:
-				'src/images/not-to-do-at-craps-table/third-base-next-to-base-looking-at-craps-layout_1280x720.webp',
+				'/images/not-to-do-at-craps-table/third-base-next-to-base-looking-at-craps-layout_1280x720.webp',
 			imageAlt: 'Third base player looking at the Craps layout.'
 		},
 		{
@@ -99,11 +99,11 @@
 				'Bet smarter, play better: Uncover efficient Craps betting strategies that save time and improve gameplay, from preparation to execution.',
 			href: 'be-an-efficient-craps-player',
 			imageUrlSmall:
-				'src/images/be-an-efficient-craps-player/up-close-place-bets-on-9_640x360.webp',
+				'/images/be-an-efficient-craps-player/up-close-place-bets-on-9_640x360.webp',
 			imageUrlMedium:
-				'src/images/be-an-efficient-craps-player/up-close-place-bets-on-9_960x540.webp',
+				'/images/be-an-efficient-craps-player/up-close-place-bets-on-9_960x540.webp',
 			imageUrlLarge:
-				'src/images/be-an-efficient-craps-player/up-close-place-bets-on-9_1280x720.webp',
+				'/images/be-an-efficient-craps-player/up-close-place-bets-on-9_1280x720.webp',
 			imageAlt: 'Up close image of the Place bets on the Craps table.'
 		},
 		{
@@ -111,9 +111,9 @@
 			description:
 				'Verbal betting in Craps made easy: Learn to make your bets verbally with precision, avoiding common mistakes for a smoother, more enjoyable game.',
 			href: 'art-of-verbal-betting',
-			imageUrlSmall: 'src/images/art-of-verbal-betting/outside-place-bets_640x360.webp',
-			imageUrlMedium: 'src/images/art-of-verbal-betting/outside-place-bets_960x540.webp',
-			imageUrlLarge: 'src/images/art-of-verbal-betting/outside-place-bets_1280x720.webp',
+			imageUrlSmall: '/images/art-of-verbal-betting/outside-place-bets_640x360.webp',
+			imageUrlMedium: '/images/art-of-verbal-betting/outside-place-bets_960x540.webp',
+			imageUrlLarge: '/images/art-of-verbal-betting/outside-place-bets_1280x720.webp',
 			imageAlt: 'Outside Place bets on the Craps table.'
 		},
 		{
@@ -121,9 +121,9 @@
 			description:
 				'From novice to Craps betting pro: A comprehensive guide to making the perfect bet, understanding when and how to bet for strategic gameplay.',
 			href: 'a-perfect-craps-bet',
-			imageUrlSmall: 'src/images/a-perfect-craps-bet/straight-up-twelve_640x360.webp',
-			imageUrlMedium: 'src/images/a-perfect-craps-bet/straight-up-twelve_960x540.webp',
-			imageUrlLarge: 'src/images/a-perfect-craps-bet/straight-up-twelve_1280x720.webp',
+			imageUrlSmall: '/images/a-perfect-craps-bet/straight-up-twelve_640x360.webp',
+			imageUrlMedium: '/images/a-perfect-craps-bet/straight-up-twelve_960x540.webp',
+			imageUrlLarge: '/images/a-perfect-craps-bet/straight-up-twelve_1280x720.webp',
 			imageAlt: 'A dollar bet on the twelve.'
 		},
 		{
@@ -131,9 +131,9 @@
 			description:
 				"Discover the heart of Craps through a dealer's eyes: Learn the essentials of customer service, handling diverse personalities, and the art of tipping.",
 			href: 'tipping-the-dealers',
-			imageUrlSmall: 'src/images/tipping-the-dealers/three-way-bet_640x360.webp',
-			imageUrlMedium: 'src/images/tipping-the-dealers/three-way-bet_960x540.webp',
-			imageUrlLarge: 'src/images/tipping-the-dealers/three-way-bet_1280x720.webp',
+			imageUrlSmall: '/images/tipping-the-dealers/three-way-bet_640x360.webp',
+			imageUrlMedium: '/images/tipping-the-dealers/three-way-bet_960x540.webp',
+			imageUrlLarge: '/images/tipping-the-dealers/three-way-bet_1280x720.webp',
 			imageAlt: 'Three way bet on the Aces.'
 		},
 		{
@@ -141,9 +141,9 @@
 			description:
 				'Master the art of resolving Craps disputes: Gain insights on dealer dynamics, track your bets accurately, and advocate effectively to protect your interests.',
 			href: 'win-a-craps-dispute',
-			imageUrlSmall: 'src/images/win-a-craps-dispute/place-bets-off_640x360.webp',
-			imageUrlMedium: 'src/images/win-a-craps-dispute/place-bets-off_960x540.webp',
-			imageUrlLarge: 'src/images/win-a-craps-dispute/place-bets-off_1280x720.webp',
+			imageUrlSmall: '/images/win-a-craps-dispute/place-bets-off_640x360.webp',
+			imageUrlMedium: '/images/win-a-craps-dispute/place-bets-off_960x540.webp',
+			imageUrlLarge: '/images/win-a-craps-dispute/place-bets-off_1280x720.webp',
 			imageAlt: 'Off button on a Place bet.'
 		},
 		{
@@ -151,9 +151,9 @@
 			description:
 				'Navigate the Craps table like a pro: Avoid dealer pet peeves with these insider tips on betting etiquette, chip handling, and respectful gameplay.',
 			href: 'craps-dealer-pet-peeves',
-			imageUrlSmall: 'src/images/craps-dealer-pet-peeves/craps-stick-with-dice_640x360.webp',
-			imageUrlMedium: 'src/images/craps-dealer-pet-peeves/craps-stick-with-dice_960x540.webp',
-			imageUrlLarge: 'src/images/craps-dealer-pet-peeves/craps-stick-with-dice_1280x720.webp',
+			imageUrlSmall: '/images/craps-dealer-pet-peeves/craps-stick-with-dice_640x360.webp',
+			imageUrlMedium: '/images/craps-dealer-pet-peeves/craps-stick-with-dice_960x540.webp',
+			imageUrlLarge: '/images/craps-dealer-pet-peeves/craps-stick-with-dice_1280x720.webp',
 			imageAlt: 'Craps stick with two purple dice.'
 		},
 		{
@@ -161,9 +161,9 @@
 			description:
 				'Mastering Craps table transactions: From overpayments to actively converting money, enhance your gameplay with insider knowledge on dealer strategies.',
 			href: 'craps-money-techniques',
-			imageUrlSmall: 'src/images/craps-money-techniques/place-bets-inside_640x360.webp',
-			imageUrlMedium: 'src/images/craps-money-techniques/place-bets-inside_960x540.webp',
-			imageUrlLarge: 'src/images/craps-money-techniques/place-bets-inside_1280x720.webp',
+			imageUrlSmall: '/images/craps-money-techniques/place-bets-inside_640x360.webp',
+			imageUrlMedium: '/images/craps-money-techniques/place-bets-inside_960x540.webp',
+			imageUrlLarge: '/images/craps-money-techniques/place-bets-inside_1280x720.webp',
 			imageAlt: 'Inside Place bets on the Craps table.'
 		},
 		{
@@ -171,9 +171,9 @@
 			description:
 				'Bankroll strategies for Craps success: Discover how to play within your budget, optimize your bets, and enjoy the thrill of Craps without breaking the bank.',
 			href: 'managing-your-craps-bankroll',
-			imageUrlSmall: 'src/images/managing-craps-bankroll/pass-line-paid-quarters_640x360.webp',
-			imageUrlMedium: 'src/images/managing-craps-bankroll/pass-line-paid-quarters_960x540.webp',
-			imageUrlLarge: 'src/images/managing-craps-bankroll/pass-line-paid-quarters_1280x720.webp',
+			imageUrlSmall: '/images/managing-craps-bankroll/pass-line-paid-quarters_640x360.webp',
+			imageUrlMedium: '/images/managing-craps-bankroll/pass-line-paid-quarters_960x540.webp',
+			imageUrlLarge: '/images/managing-craps-bankroll/pass-line-paid-quarters_1280x720.webp',
 			imageAlt: 'Multiple Pass Line bets with Odds on the Craps table.'
 		},
 		{
@@ -181,9 +181,9 @@
 			description:
 				"A player's guide to Craps awareness: Equip yourself with strategies to avoid distractions, understand dealer payouts, and correct mistakes swiftly for a smooth betting experience.",
 			href: 'protecting-your-money',
-			imageUrlSmall: 'src/images/protecting-your-money/field_640x360.webp',
-			imageUrlMedium: 'src/images/protecting-your-money/field_960x540.webp',
-			imageUrlLarge: 'src/images/protecting-your-money/field_1280x720.webp',
+			imageUrlSmall: '/images/protecting-your-money/field_640x360.webp',
+			imageUrlMedium: '/images/protecting-your-money/field_960x540.webp',
+			imageUrlLarge: '/images/protecting-your-money/field_1280x720.webp',
 			imageAlt: 'Multiple bets in the Field.'
 		},
 		{
@@ -191,9 +191,9 @@
 			description:
 				'Selecting the best Craps table: A comprehensive guide on evaluating table limits, crowd vibes, and dealer expertise for an optimal gaming experience.',
 			href: 'right-craps-table',
-			imageUrlSmall: 'src/images/right-craps-table/puck-point-six_640x360.webp',
-			imageUrlMedium: 'src/images/right-craps-table/puck-point-six_960x540.webp',
-			imageUrlLarge: 'src/images/right-craps-table/puck-point-six_1280x720.webp',
+			imageUrlSmall: '/images/right-craps-table/puck-point-six_640x360.webp',
+			imageUrlMedium: '/images/right-craps-table/puck-point-six_960x540.webp',
+			imageUrlLarge: '/images/right-craps-table/puck-point-six_1280x720.webp',
 			imageAlt: 'The puck on point six on the Craps table.'
 		},
 		{
@@ -202,11 +202,11 @@
 				'Leaving the Craps table wisely: A comprehensive guide to recognizing the right moment to step away, ensuring a positive and profitable gaming experience.',
 			href: 'leaving-the-craps-table',
 			imageUrlSmall:
-				'src/images/leaving-the-craps-table/third-base-next-to-stick-looking-at-craps-layout_640x360.webp',
+				'/images/leaving-the-craps-table/third-base-next-to-stick-looking-at-craps-layout_640x360.webp',
 			imageUrlMedium:
-				'src/images/leaving-the-craps-table/third-base-next-to-stick-looking-at-craps-layout_960x540.webp',
+				'/images/leaving-the-craps-table/third-base-next-to-stick-looking-at-craps-layout_960x540.webp',
 			imageUrlLarge:
-				'src/images/leaving-the-craps-table/third-base-next-to-stick-looking-at-craps-layout_1280x720.webp',
+				'/images/leaving-the-craps-table/third-base-next-to-stick-looking-at-craps-layout_1280x720.webp',
 			imageAlt: 'Third base player looking at the Craps layout.'
 		},
 		{
@@ -214,9 +214,9 @@
 			description:
 				"Winning quietly on the Craps table's Dark Side: Strategies for Don't bettors on making smart bets, maintaining good relations, and enjoying victories subtly.",
 			href: 'playing-the-donts',
-			imageUrlSmall: 'src/images/playing-the-donts/dont-come-bar_640x360.webp',
-			imageUrlMedium: 'src/images/playing-the-donts/dont-come-bar_960x540.webp',
-			imageUrlLarge: 'src/images/playing-the-donts/dont-come-bar_1280x720.webp',
+			imageUrlSmall: '/images/playing-the-donts/dont-come-bar_640x360.webp',
+			imageUrlMedium: '/images/playing-the-donts/dont-come-bar_960x540.webp',
+			imageUrlLarge: '/images/playing-the-donts/dont-come-bar_1280x720.webp',
 			imageAlt: "A bet in the Don't Come bar on the Craps table."
 		},
 		{
@@ -224,9 +224,9 @@
 			description:
 				'Explore the strategic nuances of Come and Place bets in Craps with our guide. Learn how to leverage their advantages for your gameplay style, ensuring you make informed decisions at the table.',
 			href: 'come-vs-place-bets',
-			imageUrlSmall: 'src/images/come-vs-place-bets/come-bets-on-point-five_640x360.webp',
-			imageUrlMedium: 'src/images/come-vs-place-bets/come-bets-on-point-five_960x540.webp',
-			imageUrlLarge: 'src/images/come-vs-place-bets/come-bets-on-point-five_1280x720.webp',
+			imageUrlSmall: '/images/come-vs-place-bets/come-bets-on-point-five_640x360.webp',
+			imageUrlMedium: '/images/come-vs-place-bets/come-bets-on-point-five_960x540.webp',
+			imageUrlLarge: '/images/come-vs-place-bets/come-bets-on-point-five_1280x720.webp',
 			imageAlt: 'Come bets on point five on the Craps table.'
 		},
 		{
@@ -235,11 +235,11 @@
 				'Experience the excitement of Craps prop bets. Our guide reveals how to harness the power of these bets for quick wins, without losing sight of your long-term strategy.',
 			href: 'lure-of-craps-proposition-bets',
 			imageUrlSmall:
-				'src/images/lure-of-craps-proposition-bets/center-proposition-bet-area_640x360.webp',
+				'/images/lure-of-craps-proposition-bets/center-proposition-bet-area_640x360.webp',
 			imageUrlMedium:
-				'src/images/lure-of-craps-proposition-bets/center-proposition-bet-area_960x540.webp',
+				'/images/lure-of-craps-proposition-bets/center-proposition-bet-area_960x540.webp',
 			imageUrlLarge:
-				'src/images/lure-of-craps-proposition-bets/center-proposition-bet-area_1280x720.webp',
+				'/images/lure-of-craps-proposition-bets/center-proposition-bet-area_1280x720.webp',
 			imageAlt: 'Center proposition bet area on the Craps table.'
 		},
 		{
@@ -248,11 +248,11 @@
 				'Discover the critical order of operations at the Craps table with our detailed guide. Learn stick calls and betting sequences to anticipate dealer actions and optimize your strategy.',
 			href: 'craps-order-of-operation',
 			imageUrlSmall:
-				'src/images/craps-order-of-operation/second-base-up-close-pass-and-dont-pass-bets_640x360.webp',
+				'/images/craps-order-of-operation/second-base-up-close-pass-and-dont-pass-bets_640x360.webp',
 			imageUrlMedium:
-				'src/images/craps-order-of-operation/second-base-up-close-pass-and-dont-pass-bets_960x540.webp',
+				'/images/craps-order-of-operation/second-base-up-close-pass-and-dont-pass-bets_960x540.webp',
 			imageUrlLarge:
-				'src/images/craps-order-of-operation/second-base-up-close-pass-and-dont-pass-bets_1280x720.webp',
+				'/images/craps-order-of-operation/second-base-up-close-pass-and-dont-pass-bets_1280x720.webp',
 			imageAlt: "Second base player looking at the Pass and Don't Pass bets."
 		}
 	];

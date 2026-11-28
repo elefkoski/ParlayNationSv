@@ -39,7 +39,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-133ot4_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-15altqd">{
   "@context": "https://schema.org",
@@ -149,9 +149,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/bet-cost-and-change_640x360.webp",
-                mdImg: "src/images/" + url + "/bet-cost-and-change_960x540.webp",
-                lgImg: "src/images/" + url + "/bet-cost-and-change_1280x720.webp",
+                smImg: "/images/" + url + "/bet-cost-and-change_640x360.webp",
+                mdImg: "/images/" + url + "/bet-cost-and-change_960x540.webp",
+                lgImg: "/images/" + url + "/bet-cost-and-change_1280x720.webp",
                 title: "Bet Cost and Change",
                 alt: "$52 across with $55 dollars in the COME and $3 change near the apron."
               },
@@ -183,9 +183,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/correct-spot_640x360.webp",
-                mdImg: "src/images/" + url + "/correct-spot_960x540.webp",
-                lgImg: "src/images/" + url + "/correct-spot_1280x720.webp",
+                smImg: "/images/" + url + "/correct-spot_640x360.webp",
+                mdImg: "/images/" + url + "/correct-spot_960x540.webp",
+                lgImg: "/images/" + url + "/correct-spot_1280x720.webp",
                 title: "Are Your Bets in the Right Spot",
                 alt: "A $15 place bet with a transparent $15 place bet next to it signifying the wrong spot."
               },
@@ -210,9 +210,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/correct-number_640x360.webp",
-                mdImg: "src/images/" + url + "/correct-number_960x540.webp",
-                lgImg: "src/images/" + url + "/correct-number_1280x720.webp",
+                smImg: "/images/" + url + "/correct-number_640x360.webp",
+                mdImg: "/images/" + url + "/correct-number_960x540.webp",
+                lgImg: "/images/" + url + "/correct-number_1280x720.webp",
                 title: "Are Your Bets on the Right Number",
                 alt: "$12 place bet on the eight with a transparent $12 place bet on the six signifying the wrong number."
               },

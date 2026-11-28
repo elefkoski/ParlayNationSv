@@ -64,7 +64,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 
 	let tblAria: string = 'Straight Up payment table';
@@ -200,9 +200,9 @@
 			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/straight-up-bets_640x360.webp"
-				mdImg="src/images/{url}/straight-up-bets_960x540.webp"
-				lgImg="src/images/{url}/straight-up-bets_1280x720.webp"
+				smImg="/images/{url}/straight-up-bets_640x360.webp"
+				mdImg="/images/{url}/straight-up-bets_960x540.webp"
+				lgImg="/images/{url}/straight-up-bets_1280x720.webp"
 				title="Straight Up Bets"
 				alt="Up close overhead view of the Straight Up area on the Craps table. The aces, ace deuce, yo, and twelve are highlighted."
 			/>
@@ -258,9 +258,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/placement-of-straight-up_640x360.webp"
-				mdImg="src/images/{url}/placement-of-straight-up_960x540.webp"
-				lgImg="src/images/{url}/placement-of-straight-up_1280x720.webp"
+				smImg="/images/{url}/placement-of-straight-up_640x360.webp"
+				mdImg="/images/{url}/placement-of-straight-up_960x540.webp"
+				lgImg="/images/{url}/placement-of-straight-up_1280x720.webp"
 				title="Placement of Straight Up"
 				alt="Up close overhead view of the Straight Up bets and the Craps table rail. There are eight on the layout that correspond with the rail."
 			/>
@@ -282,9 +282,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/high-side-straight-up-payment_640x360.webp"
-					mdImg="src/images/{url}/high-side-straight-up-payment_960x540.webp"
-					lgImg="src/images/{url}/high-side-straight-up-payment_1280x720.webp"
+					smImg="/images/{url}/high-side-straight-up-payment_640x360.webp"
+					mdImg="/images/{url}/high-side-straight-up-payment_960x540.webp"
+					lgImg="/images/{url}/high-side-straight-up-payment_1280x720.webp"
 					title="High Side Straight Up Payment"
 					alt="Up close view of $3 on the aces. Two green dice read 1-1 in the corner. A bubble reads $90 payment."
 				/>
@@ -296,9 +296,9 @@
 				</p>
 				<ContentImg
 					caption=""
-					smImg="src/images/{url}/low-side-straight-up-payment_640x360.webp"
-					mdImg="src/images/{url}/low-side-straight-up-payment_960x540.webp"
-					lgImg="src/images/{url}/low-side-straight-up-payment_1280x720.webp"
+					smImg="/images/{url}/low-side-straight-up-payment_640x360.webp"
+					mdImg="/images/{url}/low-side-straight-up-payment_960x540.webp"
+					lgImg="/images/{url}/low-side-straight-up-payment_1280x720.webp"
 					title="Low Side Straight Up Payment"
 					alt="Up close view of $4 on the yo. Two green dice read 6-5 in the corner. A bubble reads $60 payment."
 				/>
@@ -339,9 +339,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/dealer-straight-up_640x360.webp"
-				mdImg="src/images/{url}/dealer-straight-up_960x540.webp"
-				lgImg="src/images/{url}/dealer-straight-up_1280x720.webp"
+				smImg="/images/{url}/dealer-straight-up_640x360.webp"
+				mdImg="/images/{url}/dealer-straight-up_960x540.webp"
+				lgImg="/images/{url}/dealer-straight-up_1280x720.webp"
 				title="Dealer Straight Up"
 				alt="Up close overhead view of $1 in the middle of the yo."
 			/>

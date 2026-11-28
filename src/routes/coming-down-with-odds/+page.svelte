@@ -45,7 +45,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -162,9 +162,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/the-setup_640x360.webp"
-				mdImg="src/images/{url}/the-setup_960x540.webp"
-				lgImg="src/images/{url}/the-setup_1280x720.webp"
+				smImg="/images/{url}/the-setup_640x360.webp"
+				mdImg="/images/{url}/the-setup_960x540.webp"
+				lgImg="/images/{url}/the-setup_1280x720.webp"
 				title="Coming Down w/Odds - The Setup"
 				alt="$10 in the come and a $12 place bet on the point eight."
 			/>
@@ -178,9 +178,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/point-rolled-place-paid_640x360.webp"
-				mdImg="src/images/{url}/point-rolled-place-paid_960x540.webp"
-				lgImg="src/images/{url}/point-rolled-place-paid_1280x720.webp"
+				smImg="/images/{url}/point-rolled-place-paid_640x360.webp"
+				mdImg="/images/{url}/point-rolled-place-paid_960x540.webp"
+				lgImg="/images/{url}/point-rolled-place-paid_1280x720.webp"
 				title="Coming Down w/Odds - Point Rolled and Place Paid"
 				alt="$14 cut out in come. $10 moved behind the $12 place bet. Two orange dice show 5-3."
 			/>
@@ -198,9 +198,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/odds-added-rest-handed-off_640x360.webp"
-				mdImg="src/images/{url}/odds-added-rest-handed-off_960x540.webp"
-				lgImg="src/images/{url}/odds-added-rest-handed-off_1280x720.webp"
+				smImg="/images/{url}/odds-added-rest-handed-off_640x360.webp"
+				mdImg="/images/{url}/odds-added-rest-handed-off_960x540.webp"
+				lgImg="/images/{url}/odds-added-rest-handed-off_1280x720.webp"
 				title="Coming Down w/Odds - Odds Added and Rest Handed Off"
 				alt="Three way split image. Left shows $12 place bet and $14 payment. Top shows $10 come bet with $20 odds. Bottom shows $6 handed off to player."
 			/>

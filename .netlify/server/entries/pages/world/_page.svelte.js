@@ -56,7 +56,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Roll", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -191,9 +191,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/world_640x360.webp",
-                mdImg: "src/images/" + url + "/world_960x540.webp",
-                lgImg: "src/images/" + url + "/world_1280x720.webp",
+                smImg: "/images/" + url + "/world_640x360.webp",
+                mdImg: "/images/" + url + "/world_960x540.webp",
+                lgImg: "/images/" + url + "/world_1280x720.webp",
                 title: "The World",
                 alt: "Up close overhead view of the world on the Craps layout."
               },
@@ -218,9 +218,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/5-world_640x360.webp",
-                mdImg: "src/images/" + url + "/5-world_960x540.webp",
-                lgImg: "src/images/" + url + "/5-world_1280x720.webp",
+                smImg: "/images/" + url + "/5-world_640x360.webp",
+                mdImg: "/images/" + url + "/5-world_960x540.webp",
+                lgImg: "/images/" + url + "/5-world_1280x720.webp",
                 title: "$5 World",
                 alt: "Split image. On top is $5 on the world. On bottom is $1 each on the aces, ace deuce, yo, twelve, and the Any Seven."
               },
@@ -244,9 +244,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Placement of World Around Globe",
-                smImg: "src/images/" + url + "/placement-of-world-a_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-world-a_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-world-a_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-world-a_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-world-a_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-world-a_1280x720.webp",
                 title: "Placement of World on Globe",
                 alt: "Overhead view of a blown up picture of a world and the Craps table rail. There are eight colored spots on each the world and the rail that correspond with each other."
               },
@@ -256,9 +256,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "Placement of World on Bar",
-                smImg: "src/images/" + url + "/placement-of-a-world-b_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-a-world-b_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-a-world-b_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-a-world-b_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-a-world-b_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-a-world-b_1280x720.webp",
                 title: "Placement of World on Bar",
                 alt: "Overhead view of the center bar above the any seven on the Craps table and the Craps table rail. There are eight colored spots on each the bar and the rail that correspond with each other."
               },
@@ -286,9 +286,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/5-world-7-rolls_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-world-7-rolls_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-world-7-rolls_1280x720.webp",
+                    smImg: "/images/" + url + "/5-world-7-rolls_640x360.webp",
+                    mdImg: "/images/" + url + "/5-world-7-rolls_960x540.webp",
+                    lgImg: "/images/" + url + "/5-world-7-rolls_1280x720.webp",
                     title: "$5 World Payment - Seven Rolls",
                     alt: "$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-6. A bubble reads push."
                   },
@@ -303,9 +303,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$5 World - Ace Deuce Rolls",
-                    smImg: "src/images/" + url + "/5-world-ace-deuce-hits_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-world-ace-deuce-hits_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-world-ace-deuce-hits_1280x720.webp",
+                    smImg: "/images/" + url + "/5-world-ace-deuce-hits_640x360.webp",
+                    mdImg: "/images/" + url + "/5-world-ace-deuce-hits_960x540.webp",
+                    lgImg: "/images/" + url + "/5-world-ace-deuce-hits_1280x720.webp",
                     title: "$5 World - Ace Deuce Rolls",
                     alt: "$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-2. A bubble reads $11 payment."
                   },
@@ -315,9 +315,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$5 World - Yo Rolls",
-                    smImg: "src/images/" + url + "/5-world-yo-hits_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-world-yo-hits_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-world-yo-hits_1280x720.webp",
+                    smImg: "/images/" + url + "/5-world-yo-hits_640x360.webp",
+                    mdImg: "/images/" + url + "/5-world-yo-hits_960x540.webp",
+                    lgImg: "/images/" + url + "/5-world-yo-hits_1280x720.webp",
                     title: "$5 World - Yo Rolls",
                     alt: "$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 5-6. A bubble reads $11 payment."
                   },
@@ -332,9 +332,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$5 World - Aces Roll",
-                    smImg: "src/images/" + url + "/5-world-aces-hit_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-world-aces-hit_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-world-aces-hit_1280x720.webp",
+                    smImg: "/images/" + url + "/5-world-aces-hit_640x360.webp",
+                    mdImg: "/images/" + url + "/5-world-aces-hit_960x540.webp",
+                    lgImg: "/images/" + url + "/5-world-aces-hit_1280x720.webp",
                     title: "$5 World - Aces Roll",
                     alt: "$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 1-1. A bubble reads $26 payment."
                   },
@@ -344,9 +344,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "$5 World - Twelve Rolls",
-                    smImg: "src/images/" + url + "/5-world-twelve-hits_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-world-twelve-hits_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-world-twelve-hits_1280x720.webp",
+                    smImg: "/images/" + url + "/5-world-twelve-hits_640x360.webp",
+                    mdImg: "/images/" + url + "/5-world-twelve-hits_960x540.webp",
+                    lgImg: "/images/" + url + "/5-world-twelve-hits_1280x720.webp",
                     title: "$5 World - Twelve Rolls",
                     alt: "$1 on each the aces, ace deuce, yo, twelve, and the any seven. Two green dice show 6-6. A bubble reads $26 payment."
                   },
@@ -409,9 +409,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dealer-world_640x360.webp",
-                mdImg: "src/images/" + url + "/dealer-world_960x540.webp",
-                lgImg: "src/images/" + url + "/dealer-world_1280x720.webp",
+                smImg: "/images/" + url + "/dealer-world_640x360.webp",
+                mdImg: "/images/" + url + "/dealer-world_960x540.webp",
+                lgImg: "/images/" + url + "/dealer-world_1280x720.webp",
                 title: "Dealer World",
                 alt: "Split image. On left is $1 in the middle of the proposition bar. On bottom is $1 in the middle of the world."
               },

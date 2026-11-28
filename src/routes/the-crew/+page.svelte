@@ -114,7 +114,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -208,9 +208,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/{url}_640x360.webp"
-				mdImg="src/images/{url}/{url}_960x540.webp"
-				lgImg="src/images/{url}/{url}_1280x720.webp"
+				smImg="/images/{url}/{url}_640x360.webp"
+				mdImg="/images/{url}/{url}_960x540.webp"
+				lgImg="/images/{url}/{url}_1280x720.webp"
 				title="The Craps Crew"
 				alt="Overhead view of Craps table with the base dealers, the Box, the stickperson, the Boxperson, and the floor."
 			/>

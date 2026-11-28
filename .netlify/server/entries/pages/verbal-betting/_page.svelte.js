@@ -68,7 +68,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   return `${$$result.head += `<!-- HEAD_svelte-9y1tzr_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.jpg", 0)}><script type="application/ld+json" data-svelte-h="svelte-1r88zjk">{
   "@context": "https://schema.org",
@@ -200,9 +200,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/verbal-declaration_640x360.webp",
-                mdImg: "src/images/" + url + "/verbal-declaration_960x540.webp",
-                lgImg: "src/images/" + url + "/verbal-declaration_1280x720.webp",
+                smImg: "/images/" + url + "/verbal-declaration_640x360.webp",
+                mdImg: "/images/" + url + "/verbal-declaration_960x540.webp",
+                lgImg: "/images/" + url + "/verbal-declaration_1280x720.webp",
                 title: "Verbal Declaration of a Bet",
                 alt: "An outline of a person with a red thought bubble next to another outlined person with a blue talking bubble and a cheque in their hand."
               },
@@ -273,9 +273,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/my-bets-are-on_640x360.webp",
-                mdImg: "src/images/" + url + "/my-bets-are-on_960x540.webp",
-                lgImg: "src/images/" + url + "/my-bets-are-on_1280x720.webp",
+                smImg: "/images/" + url + "/my-bets-are-on_640x360.webp",
+                mdImg: "/images/" + url + "/my-bets-are-on_960x540.webp",
+                lgImg: "/images/" + url + "/my-bets-are-on_1280x720.webp",
                 title: "My Bets are On",
                 alt: "The puck is off and in the Don't Come. There is a $10 place bet on the Point Ten with an 'On' button on top."
               },
@@ -325,9 +325,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/my-bets-are-off_640x360.webp",
-                mdImg: "src/images/" + url + "/my-bets-are-off_960x540.webp",
-                lgImg: "src/images/" + url + "/my-bets-are-off_1280x720.webp",
+                smImg: "/images/" + url + "/my-bets-are-off_640x360.webp",
+                mdImg: "/images/" + url + "/my-bets-are-off_960x540.webp",
+                lgImg: "/images/" + url + "/my-bets-are-off_1280x720.webp",
                 title: "My Bets are Off",
                 alt: "The puck is on and sitting in the point six. There is a $50 place bet on the point five with an off button on top."
               },

@@ -64,7 +64,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Point", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -207,9 +207,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/place-bets_640x360.webp",
-                mdImg: "src/images/" + url + "/place-bets_960x540.webp",
-                lgImg: "src/images/" + url + "/place-bets_1280x720.webp",
+                smImg: "/images/" + url + "/place-bets_640x360.webp",
+                mdImg: "/images/" + url + "/place-bets_960x540.webp",
+                lgImg: "/images/" + url + "/place-bets_1280x720.webp",
                 title: "Place Bets",
                 alt: "Overhead view of the right side of the Craps table layout. There are no cheques on the table. You can see all six place bets boxes."
               },
@@ -242,9 +242,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-place-bets_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-place-bets_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-place-bets_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-place-bets_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-place-bets_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-place-bets_1280x720.webp",
                 title: "How to Bet Place Bets",
                 alt: "Multiple sets of bets sitting in the come. The puck is on the point nine."
               },
@@ -266,9 +266,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/not-behind-boxes_640x360.webp",
-                mdImg: "src/images/" + url + "/not-behind-boxes_960x540.webp",
-                lgImg: "src/images/" + url + "/not-behind-boxes_1280x720.webp",
+                smImg: "/images/" + url + "/not-behind-boxes_640x360.webp",
+                mdImg: "/images/" + url + "/not-behind-boxes_960x540.webp",
+                lgImg: "/images/" + url + "/not-behind-boxes_1280x720.webp",
                 title: "Where Not to Bet",
                 alt: "A bunch of splashed cheques behind the boxes with a red 'do not' circle around them and a red x. There is another pile of cheques in the COME with a green circle around them and a green checkmark."
               },
@@ -294,9 +294,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-a-place-bet_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-a-place-bet_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-a-place-bet_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-a-place-bet_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-a-place-bet_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-a-place-bet_1280x720.webp",
                 title: "Placement of a Place Bet",
                 alt: "Overhead view of Craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
               },
@@ -328,9 +328,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                     $$result,
                     {
                       caption: "",
-                      smImg: "src/images/" + url + "/place-pay-6-8_640x360.webp",
-                      mdImg: "src/images/" + url + "/place-pay-6-8_960x540.webp",
-                      lgImg: "src/images/" + url + "/place-pay-6-8_1280x720.webp",
+                      smImg: "/images/" + url + "/place-pay-6-8_640x360.webp",
+                      mdImg: "/images/" + url + "/place-pay-6-8_960x540.webp",
+                      lgImg: "/images/" + url + "/place-pay-6-8_1280x720.webp",
                       title: "Place Payment on the 6 or 8",
                       alt: "$6 place bet on the six with a $7 payment sitting in the COME."
                     },
@@ -351,9 +351,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                     $$result,
                     {
                       caption: "",
-                      smImg: "src/images/" + url + "/place-pay-5-9_640x360.webp",
-                      mdImg: "src/images/" + url + "/place-pay-5-9_960x540.webp",
-                      lgImg: "src/images/" + url + "/place-pay-5-9_1280x720.webp",
+                      smImg: "/images/" + url + "/place-pay-5-9_640x360.webp",
+                      mdImg: "/images/" + url + "/place-pay-5-9_960x540.webp",
+                      lgImg: "/images/" + url + "/place-pay-5-9_1280x720.webp",
                       title: "Place Payment on the 5 or 9",
                       alt: "$5 place bet on the five with a $7 payment sitting in the COME."
                     },
@@ -374,9 +374,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                     $$result,
                     {
                       caption: "",
-                      smImg: "src/images/" + url + "/place-pay-4-10_640x360.webp",
-                      mdImg: "src/images/" + url + "/place-pay-4-10_960x540.webp",
-                      lgImg: "src/images/" + url + "/place-pay-4-10_1280x720.webp",
+                      smImg: "/images/" + url + "/place-pay-4-10_640x360.webp",
+                      mdImg: "/images/" + url + "/place-pay-4-10_960x540.webp",
+                      lgImg: "/images/" + url + "/place-pay-4-10_1280x720.webp",
                       title: "Place Payment on the 4 or 10",
                       alt: "$5 place bet on the four with a $9 payment sitting in the COME."
                     },
@@ -504,9 +504,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/dealer-place-bet-6-8_640x360.webp",
-                    mdImg: "src/images/" + url + "/dealer-place-bet-6-8_960x540.webp",
-                    lgImg: "src/images/" + url + "/dealer-place-bet-6-8_1280x720.webp",
+                    smImg: "/images/" + url + "/dealer-place-bet-6-8_640x360.webp",
+                    mdImg: "/images/" + url + "/dealer-place-bet-6-8_960x540.webp",
+                    lgImg: "/images/" + url + "/dealer-place-bet-6-8_1280x720.webp",
                     title: "Dealer Place Bet on the 8",
                     alt: "$6 sitting in the middle of the point eight."
                   },
@@ -522,9 +522,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/dealer-place-bet-5-9_640x360.webp",
-                    mdImg: "src/images/" + url + "/dealer-place-bet-5-9_960x540.webp",
-                    lgImg: "src/images/" + url + "/dealer-place-bet-5-9_1280x720.webp",
+                    smImg: "/images/" + url + "/dealer-place-bet-5-9_640x360.webp",
+                    mdImg: "/images/" + url + "/dealer-place-bet-5-9_960x540.webp",
+                    lgImg: "/images/" + url + "/dealer-place-bet-5-9_1280x720.webp",
                     title: "Dealer Place Bet on the 9",
                     alt: "$2 in the middle of the point nine."
                   },
@@ -540,9 +540,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/dealer-place-bet-4-10_640x360.webp",
-                    mdImg: "src/images/" + url + "/dealer-place-bet-4-10_960x540.webp",
-                    lgImg: "src/images/" + url + "/dealer-place-bet-4-10_1280x720.webp",
+                    smImg: "/images/" + url + "/dealer-place-bet-4-10_640x360.webp",
+                    mdImg: "/images/" + url + "/dealer-place-bet-4-10_960x540.webp",
+                    lgImg: "/images/" + url + "/dealer-place-bet-4-10_1280x720.webp",
                     title: "Dealer Place Bet on the 10",
                     alt: "$4 in the middle of the point ten."
                   },

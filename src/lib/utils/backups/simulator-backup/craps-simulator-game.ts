@@ -1,8 +1,8 @@
 console.log('Entering craps-simulator-game.ts');
 import { writable, derived } from 'svelte/store';
 
-export const firstDieImage = writable('src/images/craps-simulator/dice/die_ne.png');
-export const secondDieImage = writable('src/images/craps-simulator/dice/die_sw.png');
+export const firstDieImage = writable('/images/craps-simulator/dice/die_ne.png');
+export const secondDieImage = writable('/images/craps-simulator/dice/die_sw.png');
 
 export const comeoutRoll = writable(true);
 export const thePoint = writable(0);
@@ -59,8 +59,8 @@ function createDiceObject(): {
 	const total = firstDie + secondDie;
 	rollTotal = total;
 	const cameHard = firstDie === secondDie;
-	const firstDieImage = `src/images/craps-simulator/dice/die_${firstDie}.jpg`;
-	const secondDieImage = `src/images/craps-simulator/dice/die_${secondDie}.jpg`;
+	const firstDieImage = `/images/craps-simulator/dice/die_${firstDie}.jpg`;
+	const secondDieImage = `/images/craps-simulator/dice/die_${secondDie}.jpg`;
 	console.log(`Rolled dice: ${firstDie}, ${secondDie}, total: ${total}, cameHard: ${cameHard}`);
 	return { firstDie, secondDie, total, cameHard, firstDieImage, secondDieImage };
 }

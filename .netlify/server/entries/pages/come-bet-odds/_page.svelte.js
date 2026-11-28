@@ -69,7 +69,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["Point", "Pays", "Wins", "Loses"];
   let tblRows = [
@@ -198,9 +198,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/come-bet-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/come-bet-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/come-bet-odds_1280x720.webp",
+                smImg: "/images/" + url + "/come-bet-odds_640x360.webp",
+                mdImg: "/images/" + url + "/come-bet-odds_960x540.webp",
+                lgImg: "/images/" + url + "/come-bet-odds_1280x720.webp",
                 title: "Come Bet Odds",
                 alt: "$10 with $10 odds on the point eight."
               },
@@ -231,9 +231,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/how-to-bet-come-bet-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/how-to-bet-come-bet-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/how-to-bet-come-bet-odds_1280x720.webp",
+                smImg: "/images/" + url + "/how-to-bet-come-bet-odds_640x360.webp",
+                mdImg: "/images/" + url + "/how-to-bet-come-bet-odds_960x540.webp",
+                lgImg: "/images/" + url + "/how-to-bet-come-bet-odds_1280x720.webp",
                 title: "How to Bet Come Bet odds",
                 alt: "$10 in the Come and $10 on the point six."
               },
@@ -256,9 +256,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/placement-of-come-bet-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/placement-of-come-bet-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/placement-of-come-bet-odds_1280x720.webp",
+                smImg: "/images/" + url + "/placement-of-come-bet-odds_640x360.webp",
+                mdImg: "/images/" + url + "/placement-of-come-bet-odds_960x540.webp",
+                lgImg: "/images/" + url + "/placement-of-come-bet-odds_1280x720.webp",
                 title: "Placement of Come Bet Odds",
                 alt: "Up close view of $15 offset and sitting on top of another $10 sitting inside the point eight."
               },
@@ -286,9 +286,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/odds-are-off-during-the-comeout-roll_640x360.webp",
-                mdImg: "src/images/" + url + "/odds-are-off-during-the-comeout-roll_960x540.webp",
-                lgImg: "src/images/" + url + "/odds-are-off-during-the-comeout-roll_1280x720.webp",
+                smImg: "/images/" + url + "/odds-are-off-during-the-comeout-roll_640x360.webp",
+                mdImg: "/images/" + url + "/odds-are-off-during-the-comeout-roll_960x540.webp",
+                lgImg: "/images/" + url + "/odds-are-off-during-the-comeout-roll_1280x720.webp",
                 title: "Odds Are Off During the Comeout Roll",
                 alt: "Puck is off and in the don't come. There are two come bets with highlighted odds on the points four and five."
               },
@@ -325,9 +325,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Come Bet Odds - 6 & 8",
-                    smImg: "src/images/" + url + "/6-8-come-bet-odds_640x360.webp",
-                    mdImg: "src/images/" + url + "/6-8-come-bet-odds_960x540.webp",
-                    lgImg: "src/images/" + url + "/6-8-come-bet-odds_1280x720.webp",
+                    smImg: "/images/" + url + "/6-8-come-bet-odds_640x360.webp",
+                    mdImg: "/images/" + url + "/6-8-come-bet-odds_960x540.webp",
+                    lgImg: "/images/" + url + "/6-8-come-bet-odds_1280x720.webp",
                     title: "Come Bet Odds - 6 & 8",
                     alt: "Four different come bets with odds on the point eight."
                   },
@@ -337,9 +337,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Come Bet Payments - 6 & 8",
-                    smImg: "src/images/" + url + "/6-8-come-bet-payment_640x360.webp",
-                    mdImg: "src/images/" + url + "/6-8-come-bet-payment_960x540.webp",
-                    lgImg: "src/images/" + url + "/6-8-come-bet-payment_1280x720.webp",
+                    smImg: "/images/" + url + "/6-8-come-bet-payment_640x360.webp",
+                    mdImg: "/images/" + url + "/6-8-come-bet-payment_960x540.webp",
+                    lgImg: "/images/" + url + "/6-8-come-bet-payment_1280x720.webp",
                     title: "Come Bet Payment - 6 & 8",
                     alt: "Split image. Left has $10 come with $10 odds on point six. Right has $10 w/$10 odds in the come and a $22 payment. Two orange dice show 1-5."
                   },
@@ -359,9 +359,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Come Bet Odds - 5 & 9",
-                    smImg: "src/images/" + url + "/5-9-come-bet-odds_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-9-come-bet-odds_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-9-come-bet-odds_1280x720.webp",
+                    smImg: "/images/" + url + "/5-9-come-bet-odds_640x360.webp",
+                    mdImg: "/images/" + url + "/5-9-come-bet-odds_960x540.webp",
+                    lgImg: "/images/" + url + "/5-9-come-bet-odds_1280x720.webp",
                     title: "Come Bet Odds - 5 & 9",
                     alt: "Four different come bets with odds on the point nine."
                   },
@@ -371,9 +371,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Come Bet Payment - 5 & 9",
-                    smImg: "src/images/" + url + "/5-9-come-bet-payment_640x360.webp",
-                    mdImg: "src/images/" + url + "/5-9-come-bet-payment_960x540.webp",
-                    lgImg: "src/images/" + url + "/5-9-come-bet-payment_1280x720.webp",
+                    smImg: "/images/" + url + "/5-9-come-bet-payment_640x360.webp",
+                    mdImg: "/images/" + url + "/5-9-come-bet-payment_960x540.webp",
+                    lgImg: "/images/" + url + "/5-9-come-bet-payment_1280x720.webp",
                     title: "Come Bet Payment - 5 & 9",
                     alt: "Split image. Left has $10 come w/$16 odds. Right has $10 w/$16 odds in the come and a $34 payment. Two orange dice show 3-2."
                   },
@@ -389,9 +389,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Come Bet Odds - 4 & 10",
-                    smImg: "src/images/" + url + "/4-10-come-bet-odds_640x360.webp",
-                    mdImg: "src/images/" + url + "/4-10-come-bet-odds_960x540.webp",
-                    lgImg: "src/images/" + url + "/4-10-come-bet-odds_1280x720.webp",
+                    smImg: "/images/" + url + "/4-10-come-bet-odds_640x360.webp",
+                    mdImg: "/images/" + url + "/4-10-come-bet-odds_960x540.webp",
+                    lgImg: "/images/" + url + "/4-10-come-bet-odds_1280x720.webp",
                     title: "Come Bet Odds - 4 & 10",
                     alt: "Four different come bets with odds on the point 10."
                   },
@@ -401,9 +401,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "Come Bet Payment - 4 & 10",
-                    smImg: "src/images/" + url + "/4-10-come-bet-payment_640x360.webp",
-                    mdImg: "src/images/" + url + "/4-10-come-bet-payment_960x540.webp",
-                    lgImg: "src/images/" + url + "/4-10-come-bet-payment_1280x720.webp",
+                    smImg: "/images/" + url + "/4-10-come-bet-payment_640x360.webp",
+                    mdImg: "/images/" + url + "/4-10-come-bet-payment_960x540.webp",
+                    lgImg: "/images/" + url + "/4-10-come-bet-payment_1280x720.webp",
                     title: "Come Bet Payment - 4 & 10",
                     alt: "Split image. Left $10 with $15 odds. Right has $10 w/$15 odds in the come and a $40 payment. Two orange dice show 2-2."
                   },
@@ -494,9 +494,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/max-come-bet-odds-4-10_640x360.webp",
-                    mdImg: "src/images/" + url + "/max-come-bet-odds-4-10_960x540.webp",
-                    lgImg: "src/images/" + url + "/max-come-bet-odds-4-10_1280x720.webp",
+                    smImg: "/images/" + url + "/max-come-bet-odds-4-10_640x360.webp",
+                    mdImg: "/images/" + url + "/max-come-bet-odds-4-10_960x540.webp",
+                    lgImg: "/images/" + url + "/max-come-bet-odds-4-10_1280x720.webp",
                     title: "Max Come Bet Odds 4 & 10",
                     alt: "$25 Come bet with $75 odds on the point four."
                   },
@@ -512,9 +512,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/max-come-bet-odds-5-9_640x360.webp",
-                    mdImg: "src/images/" + url + "/max-come-bet-odds-5-9_960x540.webp",
-                    lgImg: "src/images/" + url + "/max-come-bet-odds-5-9_1280x720.webp",
+                    smImg: "/images/" + url + "/max-come-bet-odds-5-9_640x360.webp",
+                    mdImg: "/images/" + url + "/max-come-bet-odds-5-9_960x540.webp",
+                    lgImg: "/images/" + url + "/max-come-bet-odds-5-9_1280x720.webp",
                     title: "Max Come Bet Odds 5 & 9",
                     alt: "$15 come bet with $60 odds on point nine."
                   },
@@ -531,9 +531,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                   $$result,
                   {
                     caption: "",
-                    smImg: "src/images/" + url + "/max-come-bet-odds-6-and-8_640x360.webp",
-                    mdImg: "src/images/" + url + "/max-come-bet-odds-6-and-8_960x540.webp",
-                    lgImg: "src/images/" + url + "/max-come-bet-odds-6-and-8_1280x720.webp",
+                    smImg: "/images/" + url + "/max-come-bet-odds-6-and-8_640x360.webp",
+                    mdImg: "/images/" + url + "/max-come-bet-odds-6-and-8_960x540.webp",
+                    lgImg: "/images/" + url + "/max-come-bet-odds-6-and-8_1280x720.webp",
                     title: "Max Come Bet Odds 6 & 8",
                     alt: "$10 come bet with $50 odds on the point 8."
                   },
@@ -559,9 +559,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/dealer-come-bet-with-odds_640x360.webp",
-                mdImg: "src/images/" + url + "/dealer-come-bet-with-odds_960x540.webp",
-                lgImg: "src/images/" + url + "/dealer-come-bet-with-odds_1280x720.webp",
+                smImg: "/images/" + url + "/dealer-come-bet-with-odds_640x360.webp",
+                mdImg: "/images/" + url + "/dealer-come-bet-with-odds_960x540.webp",
+                lgImg: "/images/" + url + "/dealer-come-bet-with-odds_1280x720.webp",
                 title: "Dealer Come Bet with Odds",
                 alt: "$1 with $3 in the middle of the point 10."
               },

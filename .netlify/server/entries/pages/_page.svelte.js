@@ -147,34 +147,34 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 		"@type": "Person",
 		"name": "Elvis Lefkoski"
 	}
-	}<\/script><!-- HEAD_svelte-1s500z_END -->`, ""} <main id="parentElement" class="home-page-text" data-svelte-h="svelte-5i1xcn"><section aria-label="Main Hero" class="container mx-auto px-4 py-12 mt-20 bg-cover bg-center" style="background-image: url(src/images/home-page/craps-table-layout.jpg)"><div class="max-w-6xl mx-auto py-8 relative"><section class="hero w-full max-w-4xl mx-auto relative z-10"><div class="hero-content text-center"><div class="max-w-2xl mx-auto"><h1 class="text-3xl font-bold mb-4 uppercase">Learn How to Play Craps</h1> <p class="text-lg">If you want to know how Craps is played at a casino, you&#39;re in the right place. As a
+	}<\/script><!-- HEAD_svelte-1s500z_END -->`, ""} <main id="parentElement" class="home-page-text" data-svelte-h="svelte-kzz0zj"><section aria-label="Main Hero" class="container mx-auto px-4 py-12 mt-20 bg-cover bg-center" style="background-image: url(/images/home-page/craps-table-layout.jpg)"><div class="max-w-6xl mx-auto py-8 relative"><section class="hero w-full max-w-4xl mx-auto relative z-10"><div class="hero-content text-center"><div class="max-w-2xl mx-auto"><h1 class="text-3xl font-bold mb-4 uppercase">Learn How to Play Craps</h1> <p class="text-lg">If you want to know how Craps is played at a casino, you&#39;re in the right place. As a
 							casino dealer, I&#39;ve been teaching curious patrons the rules to Craps for over a
 							decade. Not only do I love dealing Craps and shooting Craps, but this website was
 							created because I love teaching Craps as well.</p></div></div></section> <div class="absolute inset-0 hero-bg opacity-80 rounded-lg max-w-4xl mx-auto"></div></div></section> <div class="container mx-auto px-4"><div class="max-w-7xl lg:max-w-[90rem] mx-auto"><section aria-label="Learn Craps" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-8"><h1 class="text-2xl font-bold">LEARN CRAPS</h1> <p class="p-6 max-w-xs m-auto">New to the game? Looking for a refresher? A journey into the world of Craps begins
-							right here.</p> <a data-track="home-learn-craps" href="craps" class="btn home-section-btn w-1/2 m-auto">LEARN NOW</a></div> <div class="col-span-8"><img srcset="src/images/home-page/learn-craps_640x360.webp 640w,
-									src/images/home-page/learn-craps_960x540.webp 768w,
-									src/images/home-page/learn-craps_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
+							right here.</p> <a data-track="home-learn-craps" href="craps" class="btn home-section-btn w-1/2 m-auto">LEARN NOW</a></div> <div class="col-span-8"><img srcset="/images/home-page/learn-craps_640x360.webp 640w,
+									/images/home-page/learn-craps_960x540.webp 768w,
+									/images/home-page/learn-craps_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
-								   900px" src="src/images/home-page/learn-craps_1280x720.webp" alt="Learn Craps" class="w-full shadow-2xl"></div></div></section> <section aria-label="Practice Craps" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="col-span-8 order-2 lg:order-1"><img srcset="src/images/home-page/practice-craps_640x360.webp 640w,
-								src/images/home-page/practice-craps_960x540.webp 768w,
-								src/images/home-page/practice-craps_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
+								   900px" src="/images/home-page/learn-craps_1280x720.webp" alt="Learn Craps" class="w-full shadow-2xl"></div></div></section> <section aria-label="Practice Craps" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="col-span-8 order-2 lg:order-1"><img srcset="/images/home-page/practice-craps_640x360.webp 640w,
+								/images/home-page/practice-craps_960x540.webp 768w,
+								/images/home-page/practice-craps_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
-								   900px" src="src/images/home-page/practice-craps_1280x720.webp" alt="Practice Craps" class="w-full shadow-2xl"></div> <div class="text-center py-16 lg:py-8 home-section-bg grid content-center col-span-4 order-1 lg:order-2"><h1 class="text-2xl font-bold">PRACTICE CRAPS</h1> <p class="p-6 max-w-xs m-auto">Practice Craps payouts with downloadable PDFs. Print the Craps Table layout, dice and
-							more.</p> <a data-track="home-practice-craps" href="practice-craps" class="btn home-section-btn capitalize w-1/2 m-auto">PRACTICE NOW</a></div></div></section> <section aria-label="Play Craps" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-8"><h1 class="text-2xl font-bold">PLAY CRAPS</h1> <p class="p-6 max-w-xs m-auto">Play Craps using the Craps Simulator. Bet the Pass Line, Place Bets, and more.</p> <a data-track="home-craps-simulator" href="craps-simulator" class="btn home-section-btn capitalize w-1/2 m-auto">PLAY NOW</a></div> <div class="col-span-8"><img srcset="src/images/home-page/play-craps_640x360.webp 640w,
-								src/images/home-page/play-craps_960x540.webp 768w,
-								src/images/home-page/play-craps_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
+								   900px" src="/images/home-page/practice-craps_1280x720.webp" alt="Practice Craps" class="w-full shadow-2xl"></div> <div class="text-center py-16 lg:py-8 home-section-bg grid content-center col-span-4 order-1 lg:order-2"><h1 class="text-2xl font-bold">PRACTICE CRAPS</h1> <p class="p-6 max-w-xs m-auto">Practice Craps payouts with downloadable PDFs. Print the Craps Table layout, dice and
+							more.</p> <a data-track="home-practice-craps" href="practice-craps" class="btn home-section-btn capitalize w-1/2 m-auto">PRACTICE NOW</a></div></div></section> <section aria-label="Play Craps" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-8"><h1 class="text-2xl font-bold">PLAY CRAPS</h1> <p class="p-6 max-w-xs m-auto">Play Craps using the Craps Simulator. Bet the Pass Line, Place Bets, and more.</p> <a data-track="home-craps-simulator" href="craps-simulator" class="btn home-section-btn capitalize w-1/2 m-auto">PLAY NOW</a></div> <div class="col-span-8"><img srcset="/images/home-page/play-craps_640x360.webp 640w,
+								/images/home-page/play-craps_960x540.webp 768w,
+								/images/home-page/play-craps_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
-								   900px" src="src/images/home-page/play-craps_1280x720.webp" alt="Play Craps" class="w-full shadow-2xl"></div></div></section> <section aria-label="Craps Calculators" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="col-span-8 order-2 lg:order-1"><img srcset="src/images/home-page/craps-calculators_640x360.webp 640w,
-								src/images/home-page/craps-calculators_960x540.webp 768w,
-								src/images/home-page/craps-calculators_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
+								   900px" src="/images/home-page/play-craps_1280x720.webp" alt="Play Craps" class="w-full shadow-2xl"></div></div></section> <section aria-label="Craps Calculators" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="col-span-8 order-2 lg:order-1"><img srcset="/images/home-page/craps-calculators_640x360.webp 640w,
+								/images/home-page/craps-calculators_960x540.webp 768w,
+								/images/home-page/craps-calculators_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
-								   900px" src="src/images/home-page/craps-calculators_1280x720.webp" alt="Craps Calculators" class="w-full shadow-2xl"></div> <div class="text-center py-16 lg:py-8 home-section-bg grid content-center col-span-4 order-1 lg:order-2"><h1 class="text-2xl font-bold">CRAPS CALCULATORS</h1> <p class="p-6 max-w-xs m-auto">Calculate bets, odds, and payouts with our powerful Craps calculators. Perfect for
+								   900px" src="/images/home-page/craps-calculators_1280x720.webp" alt="Craps Calculators" class="w-full shadow-2xl"></div> <div class="text-center py-16 lg:py-8 home-section-bg grid content-center col-span-4 order-1 lg:order-2"><h1 class="text-2xl font-bold">CRAPS CALCULATORS</h1> <p class="p-6 max-w-xs m-auto">Calculate bets, odds, and payouts with our powerful Craps calculators. Perfect for
 							beginners and experts alike.</p> <a data-track="home-craps-calculators" href="craps-calculators" class="btn home-section-btn capitalize w-1/2 m-auto">CHECK NOW</a></div></div></section> <section aria-label="Craps Blog" class="py-12"><div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0"><div class="text-center home-section-bg grid content-center col-span-4 py-16 lg:py-8"><h1 class="text-2xl font-bold">CRAPS BLOG</h1> <p class="p-6 max-w-xs m-auto">Discover tips, strategies, and insights on playing Craps in our blog, curated by a
-							seasoned Craps dealer.</p> <a data-track="home-craps-blog" href="craps-blog" class="btn home-section-btn capitalize w-1/2 m-auto">READ MORE</a></div> <div class="col-span-8"><img srcset="src/images/home-page/craps-blog_640x360.webp 640w,
-									src/images/home-page/craps-blog_960x540.webp 768w,
-									src/images/home-page/craps-blog_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
+							seasoned Craps dealer.</p> <a data-track="home-craps-blog" href="craps-blog" class="btn home-section-btn capitalize w-1/2 m-auto">READ MORE</a></div> <div class="col-span-8"><img srcset="/images/home-page/craps-blog_640x360.webp 640w,
+									/images/home-page/craps-blog_960x540.webp 768w,
+									/images/home-page/craps-blog_1280x720.webp 1024w" sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
-								   900px" src="src/images/home-page/craps-blog_1280x720.webp" alt="Craps stick with two purple dice" class="w-full shadow-2xl"></div></div></section></div></div></main> <div class="container mx-auto">${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}</div>`;
+								   900px" src="/images/home-page/craps-blog_1280x720.webp" alt="Craps stick with two purple dice" class="w-full shadow-2xl"></div></div></section></div></div></main> <div class="container mx-auto">${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}</div>`;
 });
 export {
   Page as default

@@ -13,13 +13,13 @@
 			<a data-track="footer-logo" href="/">
 				{#if $theme === 'dark'}
 					<img
-						src="src/images/assets/white-logo_950x257.webp"
+						src="/images/assets/white-logo_950x257.webp"
 						alt="white parlay nation logo"
 						class="w-48"
 					/>
 				{:else}
 					<img
-						src="src/images/assets/parlay-nation-logo_524x149.webp"
+						src="/images/assets/parlay-nation-logo_524x149.webp"
 						alt="parlay nation logo"
 						class="w-48"
 					/>

@@ -46,7 +46,7 @@
 		title: title,
 		description: description,
 		pageUrl: url,
-		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
+		imageUrl: '/images/' + url + '/' + url + '-header.jpg'
 	};
 </script>
 
@@ -173,9 +173,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/bet-cost-and-change_640x360.webp"
-				mdImg="src/images/{url}/bet-cost-and-change_960x540.webp"
-				lgImg="src/images/{url}/bet-cost-and-change_1280x720.webp"
+				smImg="/images/{url}/bet-cost-and-change_640x360.webp"
+				mdImg="/images/{url}/bet-cost-and-change_960x540.webp"
+				lgImg="/images/{url}/bet-cost-and-change_1280x720.webp"
 				title="Bet Cost and Change"
 				alt="$52 across with $55 dollars in the COME and $3 change near the apron."
 			/>
@@ -192,9 +192,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/correct-spot_640x360.webp"
-				mdImg="src/images/{url}/correct-spot_960x540.webp"
-				lgImg="src/images/{url}/correct-spot_1280x720.webp"
+				smImg="/images/{url}/correct-spot_640x360.webp"
+				mdImg="/images/{url}/correct-spot_960x540.webp"
+				lgImg="/images/{url}/correct-spot_1280x720.webp"
 				title="Are Your Bets in the Right Spot"
 				alt="A $15 place bet with a transparent $15 place bet next to it signifying the wrong spot."
 			/>
@@ -209,9 +209,9 @@
 			</p>
 			<ContentImg
 				caption=""
-				smImg="src/images/{url}/correct-number_640x360.webp"
-				mdImg="src/images/{url}/correct-number_960x540.webp"
-				lgImg="src/images/{url}/correct-number_1280x720.webp"
+				smImg="/images/{url}/correct-number_640x360.webp"
+				mdImg="/images/{url}/correct-number_960x540.webp"
+				lgImg="/images/{url}/correct-number_1280x720.webp"
 				title="Are Your Bets on the Right Number"
 				alt="$12 place bet on the eight with a transparent $12 place bet on the six signifying the wrong number."
 			/>

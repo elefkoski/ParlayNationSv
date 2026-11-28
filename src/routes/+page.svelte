@@ -176,7 +176,7 @@
 	<section
 		aria-label="Main Hero"
 		class="container mx-auto px-4 py-12 mt-20 bg-cover bg-center"
-		style="background-image: url(src/images/home-page/craps-table-layout.jpg)"
+		style="background-image: url(/images/home-page/craps-table-layout.jpg)"
 	>
 		<div class="max-w-6xl mx-auto py-8 relative">
 			<section class="hero w-full max-w-4xl mx-auto relative z-10">
@@ -212,13 +212,13 @@
 					</div>
 					<div class="col-span-8">
 						<img
-							srcset="src/images/home-page/learn-craps_640x360.webp 640w,
-									src/images/home-page/learn-craps_960x540.webp 768w,
-									src/images/home-page/learn-craps_1280x720.webp 1024w"
+							srcset="/images/home-page/learn-craps_640x360.webp 640w,
+									/images/home-page/learn-craps_960x540.webp 768w,
+									/images/home-page/learn-craps_1280x720.webp 1024w"
 							sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
 								   900px"
-							src="src/images/home-page/learn-craps_1280x720.webp"
+							src="/images/home-page/learn-craps_1280x720.webp"
 							alt="Learn Craps"
 							class="w-full shadow-2xl"
 						/>
@@ -230,13 +230,13 @@
 				<div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0">
 					<div class="col-span-8 order-2 lg:order-1">
 						<img
-							srcset="src/images/home-page/practice-craps_640x360.webp 640w,
-								src/images/home-page/practice-craps_960x540.webp 768w,
-								src/images/home-page/practice-craps_1280x720.webp 1024w"
+							srcset="/images/home-page/practice-craps_640x360.webp 640w,
+								/images/home-page/practice-craps_960x540.webp 768w,
+								/images/home-page/practice-craps_1280x720.webp 1024w"
 							sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
 								   900px"
-							src="src/images/home-page/practice-craps_1280x720.webp"
+							src="/images/home-page/practice-craps_1280x720.webp"
 							alt="Practice Craps"
 							class="w-full shadow-2xl"
 						/>
@@ -273,13 +273,13 @@
 					</div>
 					<div class="col-span-8">
 						<img
-							srcset="src/images/home-page/play-craps_640x360.webp 640w,
-								src/images/home-page/play-craps_960x540.webp 768w,
-								src/images/home-page/play-craps_1280x720.webp 1024w"
+							srcset="/images/home-page/play-craps_640x360.webp 640w,
+								/images/home-page/play-craps_960x540.webp 768w,
+								/images/home-page/play-craps_1280x720.webp 1024w"
 							sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
 								   900px"
-							src="src/images/home-page/play-craps_1280x720.webp"
+							src="/images/home-page/play-craps_1280x720.webp"
 							alt="Play Craps"
 							class="w-full shadow-2xl"
 						/>
@@ -291,13 +291,13 @@
 				<div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-0">
 					<div class="col-span-8 order-2 lg:order-1">
 						<img
-							srcset="src/images/home-page/craps-calculators_640x360.webp 640w,
-								src/images/home-page/craps-calculators_960x540.webp 768w,
-								src/images/home-page/craps-calculators_1280x720.webp 1024w"
+							srcset="/images/home-page/craps-calculators_640x360.webp 640w,
+								/images/home-page/craps-calculators_960x540.webp 768w,
+								/images/home-page/craps-calculators_1280x720.webp 1024w"
 							sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
 								   900px"
-							src="src/images/home-page/craps-calculators_1280x720.webp"
+							src="/images/home-page/craps-calculators_1280x720.webp"
 							alt="Craps Calculators"
 							class="w-full shadow-2xl"
 						/>
@@ -335,13 +335,13 @@
 					</div>
 					<div class="col-span-8">
 						<img
-							srcset="src/images/home-page/craps-blog_640x360.webp 640w,
-									src/images/home-page/craps-blog_960x540.webp 768w,
-									src/images/home-page/craps-blog_1280x720.webp 1024w"
+							srcset="/images/home-page/craps-blog_640x360.webp 640w,
+									/images/home-page/craps-blog_960x540.webp 768w,
+									/images/home-page/craps-blog_1280x720.webp 1024w"
 							sizes="(max-width: 640px) 300px,
 								   (max-width: 768px) 600px,
 								   900px"
-							src="src/images/home-page/craps-blog_1280x720.webp"
+							src="/images/home-page/craps-blog_1280x720.webp"
 							alt="Craps stick with two purple dice"
 							class="w-full shadow-2xl"
 						/>

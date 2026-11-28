@@ -11,12 +11,12 @@
 	let url: string = 'practice-craps-cards-grey';
 
 	let slides: string[] = [
-		'src/images/practice-craps-cards-grey/grey-craps-cards-page-1_960x1242.webp',
-		'src/images/practice-craps-cards-grey/grey-craps-cards-page-2_960x1242.webp',
-		'src/images/practice-craps-cards-grey/grey-craps-cards-page-3_960x1242.webp',
-		'src/images/practice-craps-cards-grey/grey-craps-cards-page-4_960x1242.webp',
-		'src/images/practice-craps-cards-grey/grey-craps-cards-page-5_960x1242.webp',
-		'src/images/practice-craps-cards-grey/grey-craps-cards-page-6_960x1242.webp'
+		'/images/practice-craps-cards-grey/grey-craps-cards-page-1_960x1242.webp',
+		'/images/practice-craps-cards-grey/grey-craps-cards-page-2_960x1242.webp',
+		'/images/practice-craps-cards-grey/grey-craps-cards-page-3_960x1242.webp',
+		'/images/practice-craps-cards-grey/grey-craps-cards-page-4_960x1242.webp',
+		'/images/practice-craps-cards-grey/grey-craps-cards-page-5_960x1242.webp',
+		'/images/practice-craps-cards-grey/grey-craps-cards-page-6_960x1242.webp'
 	];
 </script>
 

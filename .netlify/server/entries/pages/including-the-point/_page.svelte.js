@@ -29,7 +29,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     title,
     description,
     pageUrl: url,
-    imageUrl: "src/images/" + url + "/" + url + "-header.jpg"
+    imageUrl: "/images/" + url + "/" + url + "-header.jpg"
   };
   let tblHeaders = ["The Spread", "Total Bet"];
   let tblRows = [
@@ -131,9 +131,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/32-across-including-the-point_640x360.webp",
-                mdImg: "src/images/" + url + "/32-across-including-the-point_960x540.webp",
-                lgImg: "src/images/" + url + "/32-across-including-the-point_1280x720.webp",
+                smImg: "/images/" + url + "/32-across-including-the-point_640x360.webp",
+                mdImg: "/images/" + url + "/32-across-including-the-point_960x540.webp",
+                lgImg: "/images/" + url + "/32-across-including-the-point_1280x720.webp",
                 title: "Betting $32 Across",
                 alt: "Betting $32 Across Including the Point"
               },
@@ -143,9 +143,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               $$result,
               {
                 caption: "",
-                smImg: "src/images/" + url + "/162-across-including-the-point_640x360.webp",
-                mdImg: "src/images/" + url + "/162-across-including-the-point_960x540.webp",
-                lgImg: "src/images/" + url + "/162-across-including-the-point_1280x720.webp",
+                smImg: "/images/" + url + "/162-across-including-the-point_640x360.webp",
+                mdImg: "/images/" + url + "/162-across-including-the-point_960x540.webp",
+                lgImg: "/images/" + url + "/162-across-including-the-point_1280x720.webp",
                 title: "Betting $162 Across Including the Point",
                 alt: "Betting $162 Across Including the Point"
               },

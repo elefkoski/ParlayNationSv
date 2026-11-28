@@ -231,7 +231,7 @@ function displayChipCounts() {
 }
 function getRandomChip(denomination) {
   const randomNumber = Math.floor(Math.random() * 12) + 1;
-  return `src/images/craps-simulator/chips/${denomination}_chip_${randomNumber}.jpg`;
+  return `/images/craps-simulator/chips/${denomination}_chip_${randomNumber}.jpg`;
 }
 function addChips(denomination, count) {
   chips[denomination].update((current) => {
