@@ -11,7 +11,7 @@
 
 	let title: string = 'Art of Verbal Betting';
 	let description: string =
-		'Verbal betting in Craps made easy: Learn to make your bets verbally with precision, avoiding common mistakes for a smoother, more enjoyable game';
+		'Verbal betting in Craps made easy: Learn to make your bets verbally with precision, avoiding common mistakes for a smoother, more enjoyable game.';
 	let url: string = 'art-of-verbal-betting';
 
 	let pageData: any = {
@@ -218,7 +218,7 @@
 			</p>
 			<p class="pb-4">
 				Verbal bets are used to maintain the game's rhythm and make sure the shooter isn't
-				disturbed. Any action that messes with the shooter's tempo, especially as their ready to
+				disturbed. Any action that messes with the shooter's tempo, especially as they’re ready to
 				throw, is looked down on. Having the shooter hesitate is bad, but a toss that hits a player
 				is gonna cause some eyes to roll.
 			</p>
@@ -226,8 +226,8 @@
 				Do you want a last-second Field bet? Say, “$10 plays the Field”. Don’t <Link
 					text="reach across"
 					href="not-to-do-at-craps-table"
-				/> the table at the last moment. Forgot to add Odds to your Pass Line? Say, “$20 Odds play” Don’t
-				try to to slyly creep your hand over the edge of the rail and drop cheques as your Odds bet.
+				/> the table at the last moment. Forgot to add Odds to your Pass Line? Say, “$20 Odds play.” Don’t
+				try to slyly creep your hand over the edge of the rail and drop cheques as your Odds bet.
 				You need to hold the money in your hand and place it down after the roll. Think a Yo is going
 				to roll next? No need to throw a cheque to the stickperson. Just say, “Dollar Yo!” and throw
 				it in afterward.
@@ -311,7 +311,6 @@
 		/>
 		<Divider />
 		<BlogH2 id="correctWay" title="The Correct Way to Make Verbal Bets">
-			<p class="pb-4">para1</p>
 			<BlogH3 title="Know What Your Bets Are Called">
 				<p class="pb-4">
 					There are going to be some ways to mitigate the above circumstances, the first of which is
@@ -376,7 +375,7 @@
 						<span>$2 Minimum - </span>The High-Low, Eleven-Twelve, and C & E have a $2 min. With the
 						<Link text="C & E" href="c-and-e" />, you can separate the bet - “$2C & $1E” or split
 						any amount above $2 such as a “$3 C & E split”. You normally wouldn’t split two <Link
-							text="straight up"
+							text="Straight Up"
 							href="straight-up"
 						/> numbers because any odd amount on the split, such as a $3 Eleven-Twelve split, pays $43.50
 						when the 12 rolls, and the payment will be rounded down to $43 resulting in a loss of $0.50.
@@ -431,7 +430,7 @@
 			<p class="pb-4">
 				Using verbal bets is key to mastering Craps. No matter how comfortable you feel, the game's
 				relentless speed will eventually throw you off. Remember that verbalizing a bet is lightning
-				fast and won't hinder the shooter. And if you don’t get your be off in time, you can rest
+				fast and won't hinder the shooter. And if you don’t get your bet off in time, you can rest
 				easy knowing you didn't break the shooter's concentration.
 			</p>
 			<p>

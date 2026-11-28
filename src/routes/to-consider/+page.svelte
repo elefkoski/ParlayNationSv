@@ -28,7 +28,7 @@
 	};
 	let pageLinks: PageMenu[] = [
 		{
-			title: 'Self Service Bets',
+			title: 'Self-Service Bets',
 			href: '#selfService',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -46,13 +46,13 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Two Way Bets',
+			title: 'Two-Way Bets',
 			href: '#twoWay',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Three Way Bets',
+			title: 'Three-Way Bets',
 			href: '#threeWay',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -80,7 +80,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "To Consider at the Craps Table",
-  "description": "Insights into various betting strategies and etiquettes at the craps table, including self-service bets, string betting, two-way and three-way bets, and hedging bets.",
+  "description": "Insights into various betting strategies and etiquettes at the Craps table, including self-service bets, string betting, two-way and three-way bets, and hedging bets.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -104,12 +104,12 @@
     {
       "@type": "ItemList",
       "name": "Craps Basics",
-      "description": "Exploring various nuances and strategies to consider at the craps table.",
+      "description": "Exploring various nuances and strategies to consider at the Craps table.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "What Craps Bets Are Self Service?",
+          "name": "What Craps Bets Are Self-Service?",
           "description": "Discusses bets that players manage themselves, including the Pass Line and Odds, Don't Pass and Lay Odds, Come Bet, Don't Come, and the Field."
         },
         {
@@ -127,13 +127,13 @@
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "What Is a Two Way Bet in Craps?",
+          "name": "What Is a Two-Way Bet in Craps?",
           "description": "Defines a two-way bet as one made for both the player and the dealers, often used for Proposition Bets."
         },
         {
           "@type": "ListItem",
           "position": 5,
-          "name": "What Is a Three Way Bet in Craps?",
+          "name": "What Is a Three-Way Bet in Craps?",
           "description": "Describes a three-way bet made for the player, the dealers, and the shooter, typically to show appreciation."
         },
         {
@@ -194,7 +194,7 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="selfService" title="What Craps Bets Are Self Service?">
+		<ContentHeaderTwo id="selfService" title="What Craps Bets Are Self-Service?">
 			<p class="pb-4">
 				A self-service bet is a bet that is taken care of by the player, not the dealers. You gotta
 				keep an eye on your own bets and not forget to pick up your winnings. If you forget whether
@@ -214,7 +214,7 @@
 				smImg="src/images/{url}/self-service_640x360.webp"
 				mdImg="src/images/{url}/self-service_960x540.webp"
 				lgImg="src/images/{url}/self-service_1280x720.webp"
-				title="Self Service Bets"
+				title="Self-Service Bets"
 				alt="Arrows pointing to the pass line, pass line odd, field, don't come, don't come odds, come, and don't come areas."
 			/>
 		</ContentHeaderTwo>
@@ -253,11 +253,11 @@
 			</p>
 		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="twoWay" title="What Is a Two Way Bet in Craps?">
+		<ContentHeaderTwo id="twoWay" title="What Is a Two-Way Bet in Craps?">
 			<p class="pb-4">
 				Since most players don't bet for the dealers without making a bet themselves, we have a
 				phrase
-				<Quote text="Two way." /> When you make a Two Way bet, you are: betting for yourself and the
+				<Quote text="Two way." /> When you make a Two-Way bet, you are: betting for yourself and the
 				dealer simultaneously, on the same bet, and is generally used for <Link
 					text="Proposition Bets"
 					href="proposition-basics"
@@ -267,7 +267,7 @@
 				You could throw in a couple of dollars and say, <Quote text="Two-way Hard 10" />, and the
 				dealer would know you are betting one of those cheques for you and the other for the
 				dealers. If you throw in two cheques that are a different amount, let's say a nickel and a
-				dollar, the dealer will know the larger amount is for you, and the lessor is for the
+				dollar, the dealer will know the larger amount is for you, and the lesser is for the
 				dealers. You could also say
 				<Quote text="Five and one on the Hard 10" />, five for you and one for them on the Hard 10.
 			</p>
@@ -280,12 +280,12 @@
 				smImg="src/images/{url}/two-way-bet_640x360.webp"
 				mdImg="src/images/{url}/two-way-bet_960x540.webp"
 				lgImg="src/images/{url}/two-way-bet_1280x720.webp"
-				title="Two Way Bet"
+				title="Two-Way Bet"
 				alt="A $5 bet on the hard 10 in spot three with $5 in the middle of the hard 10 for the dealers."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="threeWay" title="What Is a Three Way Bet in Craps?">
+		<ContentHeaderTwo id="threeWay" title="What Is a Three-Way Bet in Craps?">
 			<p class="pb-4">
 				Sometimes a player would like to thank the shooter for having a good roll or possibly
 				invoking them to roll a certain number. This is where the Three-Way bet comes into play. It
@@ -305,7 +305,7 @@
 				smImg="src/images/{url}/three-way-bet_640x360.webp"
 				mdImg="src/images/{url}/three-way-bet_960x540.webp"
 				lgImg="src/images/{url}/three-way-bet_1280x720.webp"
-				title="Three Way Bet"
+				title="Three-Way Bet"
 				alt="Three dollars on the aces. One in spot four, one in spot ten, and one in the middle."
 			/>
 		</ContentHeaderTwo>
@@ -330,7 +330,7 @@
 				mdImg="src/images/{url}/hedging_960x540.webp"
 				lgImg="src/images/{url}/hedging_1280x720.webp"
 				title="Hedging Bets"
-				alt="Ten dollars on the pass line with two dollars on the any crap."
+				alt="Ten dollars on the pass line with two dollars on the any craps."
 			/>
 		</ContentHeaderTwo>
 	</main>

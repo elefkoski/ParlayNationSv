@@ -365,7 +365,7 @@
 				},
 				{
 					title: 'Managing Your Bankroll',
-					href: 'managing-craps-bankroll'
+					href: 'managing-your-craps-bankroll'
 				},
 				{
 					title: 'Protecting Your Money',

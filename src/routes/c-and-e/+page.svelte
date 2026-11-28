@@ -10,16 +10,16 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import PrevNext from '$lib/components/PrevNext.svelte';
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 
-	let title: string = 'Betting the C & E';
+	let title: string = 'Betting the C & E in Craps';
 	let description: string =
-		'The C &amp; E is a combination of two bets. The “C” stands for the Any Crap, which is the Aces, Ace Deuce, and the 12. The “E” stands for the Eleven, or “Yo”. The C &amp; E has a two-dollar minimum';
+		'The C &amp; E is a combination of two bets. The “C” stands for the Any Craps, which is the Aces, Ace Deuce, and the 12. The “E” stands for the Eleven, or “Yo”. The C &amp; E has a two-dollar minimum.';
 	let url: string = 'c-and-e';
 
 	let phref: string = 'straight-up';
@@ -61,8 +61,8 @@
 		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
 	};
 
-	let tblAria: string = 'C & E bet seperately pay table';
-	let tblHeaders: string[] = ['Seperately', 'Pays', 'Wins', 'Loses'];
+	let tblAria: string = 'C & E bet separately pay table';
+	let tblHeaders: string[] = ['Separately', 'Pays', 'Wins', 'Loses'];
 	let tblRows: (string | number)[][] = [
 		['C - Any Craps', '7:1', '2, 3, 12', 'Any other number'],
 		['E - Eleven', '15:1', '11', 'Any other number']
@@ -74,7 +74,7 @@
 		['Craps Roll', '3:1', '2, 3, 12', 'Any other number'],
 		['Eleven Rolls', '7:1', '11', 'Any other number']
 	];
-	let tblPnts2: string[] = ["C & E's are one roll bets"];
+	let tblPnts2: string[] = ["C & Es are one-roll bets"];
 </script>
 
 <svelte:head>
@@ -91,7 +91,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the C & E in Craps",
-  "description": "A guide to understanding and placing the C & E bets in craps, covering the basics, payment structures, and strategic considerations.",
+  "description": "A guide to understanding and placing the C & E bets in Craps, covering the basics, payment structures, and strategic considerations.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -121,7 +121,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Where Is Your C & E on the Craps Table?",
-          "description": "Describes the placement of the C & E bets on the craps table, emphasizing their relative positions to the player's spot."
+          "description": "Describes the placement of the C & E bets on the Craps table, emphasizing their relative positions to the player's spot."
         },
         {
           "@type": "ListItem",
@@ -168,15 +168,15 @@
 					text="Any Craps"
 					href="any-craps"
 				/>: Aces, Ace Deuce, and 12. The 'E' stands for Eleven or the Yo. You can bet the C & E as a
-				split (both simultaneously) or individually ( a different amount on each the C and the E).
+				split (both simultaneously) or individually (a different amount on each the C and the E).
 			</p>
 			<p class="pb-4">
 				The C & E is sort of the poor man's Horn. It bets all the same numbers but has a different
 				pay structure and a $2 minimum; you need at least $1 on the 'C' and $1 on the 'E'. On the
 				Horn, you need to bet $4.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
-			<ContentTble
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable
 				tblAria={tblAria2}
 				tblHeaders={tblHeaders2}
 				tblRows={tblRows2}
@@ -201,7 +201,7 @@
 		<ContentHeaderTwo id="cAndEPlacement" title="Where Is Your C & E on the Craps Table?">
 			<p class="pb-4">
 				There are usually enough spots of the C & E for every player on the table. They are also not
-				confined to a box so there's plenty of space to place the bets. Placements of the C & E's
+				confined to a box so there's plenty of space to place the bets. Placements of the C & Es
 				are relative to your spot on the table.
 			</p>
 			<ContentImg
@@ -249,14 +249,14 @@
 			>
 		</ContentHeaderThree>
 		<Divider />
-		<ContentHeaderThree title="Pays Differently Every Time When You Have Seperate Amounts">
+		<ContentHeaderThree title="Pays Differently Every Time When You Have Separate Amounts">
 			<ContentImg
 				caption="$4C - $1E"
 				smImg="src/images/{url}/4-c-1-e_640x360.webp"
 				mdImg="src/images/{url}/4-c-1-e_960x540.webp"
 				lgImg="src/images/{url}/4-c-1-e_1280x720.webp"
 				title="$4C and $1E"
-				alt="$4 on the any crap and $1 on the yo. Two bubbles: one read $27 payment and the other $11 payment."
+				alt="$4 on the Any Craps and $1 on the yo. Two bubbles: one reads $27 payment and the other $11 payment."
 			/>
 			<Divider />
 			<CalcContainer aria="C & E separated calculators" id="cAndECalc"

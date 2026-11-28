@@ -7,11 +7,11 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 
-	let title: string = 'Betting Inside at The Craps Table';
+	let title: string = 'Betting Inside at the Craps Table';
 	let description: string =
 		'Betting Inside is a Spread Bet on either 3 or 4 of the Inside Points: Five, Six, Eight, and Nine. When betting Inside, you are betting all the Inside Points in the same unit amount, not including the Point.';
 	let url: string = 'inside';
@@ -152,7 +152,7 @@
 				Points, in the same unit amount, not including the Point. For example, if the Point was 6,
 				32 inside would be: $10 on 5, $12 on the 8, and $10 on the 9 — $10 + $12 + $10 = $32 Inside.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/inside_640x360.webp"
@@ -177,7 +177,7 @@
 			</p>
 			<ContentHeaderThree title="Point 6 or 8">
 				<p class="pb-4">
-					When the Point is 6 or 8 the amount of your bet across is going to be less. This is
+					When the Point is 6 or 8 the amount of your bet is going to be less. This is
 					because it costs more to bet on the 6 or 8 and the fact that it is the Point and you are
 					not betting it, the total cost of the bet is going to be less.
 				</p>

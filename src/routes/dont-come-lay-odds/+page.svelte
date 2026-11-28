@@ -16,7 +16,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -65,7 +65,7 @@
 		},
 		{
 			title: "Check Max Don't Come Lay Odds",
-			href: '#maxDCLayOdds',
+			href: '#maxDCLayOddsCalc',
 			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
 			iconFills: ['none', '#38BDF8']
 		},
@@ -112,7 +112,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Don't Come Lay Odds in Craps",
-  "description": "A guide on Don't Come Lay Odds in craps, including how to place them, their placement on the table, payout rates, and how to bet for the dealers.",
+  "description": "A guide on Don't Come Lay Odds in Craps, including how to place them, their placement on the table, payout rates, and how to bet for the dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -136,19 +136,19 @@
     {
       "@type": "ItemList",
       "name": "Don't Come Lay Odds Insights",
-      "description": "Insights into Don't Come Lay Odds in craps, including bet placement, table placement, payouts, and dealer bets.",
+      "description": "Insights into Don't Come Lay Odds in Craps, including bet placement, table placement, payouts, and dealer bets.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Placing Don't Come Lay Odds",
-          "description": "How to place Don't Come Lay Odds on a craps table."
+          "description": "How to place Don't Come Lay Odds on a Craps table."
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Don't Come Lay Odds Placement",
-          "description": "Where to place Don't Come Lay Odds on the craps table."
+          "description": "Where to place Don't Come Lay Odds on the Craps table."
         },
         {
           "@type": "ListItem",
@@ -169,7 +169,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-come-lay-odds/dont-come-lay-odds_640x360.webp",
-      "caption": "Don't Come Lay Odds on a craps table."
+      "caption": "Don't Come Lay Odds on a Craps table."
     },
     {
       "@type": "ImageObject",
@@ -209,7 +209,7 @@
 				Point. If the 7 rolls your Don't Come Bet and its Lay Odds win. If the Point is rolled the
 				Don't Come Bet and its Lay Odds lose.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/dont-come-lay-odds_640x360.webp"
@@ -250,7 +250,7 @@
 		>
 			<p class="pb-4">
 				Place your money in the COME and tell the dealer you want to <Quote text="Lay Odds" /> on whichever
-				Point you're behind. The dealer will take the money and heel it next to your Don't Come bet.
+				Point you're behind. The dealer will take the money and heel it next to your Don't Come Bet.
 			</p>
 			<ContentImg
 				caption=""
@@ -258,7 +258,7 @@
 				mdImg="src/images/{url}/placement-of-dont-come-lay-odds_960x540.webp"
 				lgImg="src/images/{url}/placement-of-dont-come-lay-odds_1280x720.webp"
 				title="Placement of Don't Come Lay Odds"
-				alt="$50 with $90 Lay Odds behind the point six"
+				alt="$50 with $90 Lay Odds behind the point six."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -290,7 +290,7 @@
 			<div class="pb-4" />
 			<ContentHeaderThree title="Lay Odds Pay 2:3 on the 5 and 9">
 				<p class="pb-4">
-					When you're Laying Odds for a Don't Come on the 5 and 9 you get paid 2:3 , said as <Quote
+					When you're Laying Odds for a Don't Come on the 5 and 9 you get paid 2:3, said as <Quote
 						text="2 to 3"
 					/> so you must bet the Lay Odds in increments of $3 and get paid $2 for every $3.
 				</p>
@@ -306,7 +306,7 @@
 			<div class="pb-4" />
 			<ContentHeaderThree title="Lay Odds Pay 1:2 on the 4 and 10">
 				<p class="pb-4">
-					When you're Laying Odds for a Don't Come on the 4 and 10 you get paid 1:2 , said as <Quote
+					When you're Laying Odds for a Don't Come on the 4 and 10 you get paid 1:2, said as <Quote
 						text="1 to 2"
 					/> so you must bet the Lay Odds in increments of $2 and you get paid $1 for every $2.
 				</p>
@@ -356,8 +356,8 @@
 		<ContentHeaderTwo id="maxDCLayOdds" title="What Are the Max Lay Odds for a Don't Come Bet?">
 			<p class="pb-4">
 				Since the casino has no advantage on this bet they put a limit on it. The maximum Lay Odds
-				you can add to a Don't Come bet are the same as for the Don't Pass. No matter the number,
-				the maximum Lay Odds you can add are six times the Don't Come bet.
+				you can add to a Don't Come Bet are the same as for the Don't Pass. No matter the number,
+				the maximum Lay Odds you can add are six times the Don't Come Bet.
 			</p>
 			<ContentImg
 				caption=""
@@ -365,10 +365,10 @@
 				mdImg="src/images/{url}/max-lay-odds-for-the-dont-come_960x540.webp"
 				lgImg="src/images/{url}/max-lay-odds-for-the-dont-come_1280x720.webp"
 				title="Max Lay Odds for the Don't Come"
-				alt="$25 with $125 Lay Odds behind the point eight."
+				alt="$25 with $150 Lay Odds behind the point eight."
 			/>
 			<Divider />
-			<CalcContainer aria="Check max don't come lay odds" id="maxDCLayOdds"
+			<CalcContainer aria="Check max don't come lay odds" id="maxDCLayOddsCalc"
 				><CalcBox
 					description="Check the Max Lay Odds for your bet on the Don't Come."
 					title="Check Max Don't Come Lay Odds"
@@ -390,7 +390,7 @@
 			title="How Do You Bet Don't Come Lay Odds for the Dealers?"
 		>
 			<p class="pb-4">
-				If you make a Don't Come bet for the dealers and their bet gets put behind a Point, you can
+				If you make a Don't Come Bet for the dealers and their bet gets put behind a Point, you can
 				add Lay Odds to it. Max for the dealers is still six times.
 			</p>
 			<ContentImg

@@ -8,16 +8,16 @@
 
 	let sets = [
 		{
-			question: 'Whare are the most common bets on the Craps table?',
+			question: 'What are the most common bets on the Craps table?',
 			answer:
-				"The most common bets on the Craps table are the Pass Line with Odds, Place bets on the 6 and 8, and possibly some Hardways. If you learn these few bets then you'll be able to play with everyone else while having a decent understanding of the game.",
+				"The most common bets on the Craps table are the Pass Line with Odds, Place Bets on the 6 and 8, and possibly some Hardways. If you learn these few bets then you'll be able to play with everyone else while having a decent understanding of the game.",
 			hashTags: ['passLineBets', 'passLineOdds', 'placeBets', 'theHardways']
 		},
 		{
 			question: 'What is the Pass Line?',
 			answer:
-				"The Pass Line bets that the shooter is going to establish a Point and will roll it again on before they roll a 7. Most players at the table bet the Pass Line so everyone wins and loses together. It's the same fate that bonds all the players at the table.",
-			hashTags: ['learnCraps', 'trueOdds', 'firstCrapsBet', 'comradery']
+				"The Pass Line bets that the shooter is going to establish a Point and will roll it again before they roll a 7. Most players at the table bet the Pass Line so everyone wins and loses together. It's the same fate that bonds all the players at the table.",
+			hashTags: ['learnCraps', 'trueOdds', 'firstCrapsBet', 'camaraderie']
 		},
 		{
 			question: 'What is a Come Bet?',
@@ -29,7 +29,7 @@
 			question: 'What are the Hardways?',
 			answer:
 				"The Hardways bet that the points 4, 6, 8, or 10 will roll as a pair (Hard). If any of those numbers roll as anything other than a pair then they are considered to have been rolled 'Easy'.",
-			hashTags: ['itCameHard', 'brooklynForrest', 'squarePair', 'fourHardFour']
+			hashTags: ['itCameHard', 'brooklynForest', 'squarePair', 'fourHardFour']
 		},
 		{
 			question: 'Why is Eleven Called Yo?',
@@ -64,7 +64,7 @@
 		{
 			question: 'Which bets have the best house edge?',
 			answer:
-				"The Pass Line with Odds and the Don't Pass with Lay Odds are the best bets on the Craps table. Place bets on the 6 and 8 are the best followed by the 5 and 9 then the 4 and 10. The Field is surprisingly not a bad bet. If it pays triple on the 12 then it turns into a really good bet.",
+				"The Pass Line with Odds and the Don't Pass with Lay Odds are the best bets on the Craps table. Place Bets on the 6 and 8 are the best followed by the 5 and 9 then the 4 and 10. The Field is surprisingly not a bad bet. If it pays triple on the 12 then it turns into a really good bet.",
 			hashTags: ['passLineOdds', 'comeBetOdds', 'placeSixEight', "don'tPassLayOdds"]
 		}
 	];
@@ -88,14 +88,14 @@
 			"name": "What are the most common bets on the Craps table?",
 			"acceptedAnswer": {
 			  "@type": "Answer",
-			  "text": "<p>The most common bets on the Craps table are the Pass Line with Odds, Place bets on the 6 and 8, and possibly some Hardways. If you learn these few bets then you'll be able to play with everyone else while having a decent understanding of the game.</p>"
+			  "text": "<p>The most common bets on the Craps table are the Pass Line with Odds, Place Bets on the 6 and 8, and possibly some Hardways. If you learn these few bets then you'll be able to play with everyone else while having a decent understanding of the game.</p>"
 			}
 		  },{
 			"@type": "Question",
 			"name": "What is the Pass Line?",
 			"acceptedAnswer": {
 			  "@type": "Answer",
-			  "text": "<p>The Pass Line bets that the shooter is going to establish a Point and will roll it again on before they roll a 7. Most players at the table bet the Pass Line so everyone wins and loses together. It's the same fate that bonds all the players at the table.</p>"
+			  "text": "<p>The Pass Line bets that the shooter is going to establish a Point and will roll it again before they roll a 7. Most players at the table bet the Pass Line so everyone wins and loses together. It's the same fate that bonds all the players at the table.</p>"
 			}
 		  },{
 			"@type": "Question",
@@ -151,7 +151,7 @@
 			"name": "Which bets have the best house edge?",
 			"acceptedAnswer": {
 			  "@type": "Answer",
-			  "text": "<p>The Pass Line with Odds and the Don't Pass with Lay Odds are the best bets on the Craps table. Place bets on the 6 and 8 are the best followed by the 5 and 9 then the 4 and 10. The Field is surprisingly not a bad bet. If it pays triple on the 12 then it turns into a really good bet.</p>"
+			  "text": "<p>The Pass Line with Odds and the Don't Pass with Lay Odds are the best bets on the Craps table. Place Bets on the 6 and 8 are the best followed by the 5 and 9 then the 4 and 10. The Field is surprisingly not a bad bet. If it pays triple on the 12 then it turns into a really good bet.</p>"
 			}
 		  } ]
 		}

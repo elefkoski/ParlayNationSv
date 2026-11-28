@@ -128,7 +128,7 @@ export async function syncLocalToFirebase(): Promise<void> {
 		if (bookmarks) {
 			await Promise.all(
 				bookmarks.map((bookmark) =>
-					setDoc(doc(db, `users/${userId}/savedBookmarks/${bookmark.id}`), bookmark)
+					setDoc(doc(db, `users/${userId}/savedBookmarks/${bookmark.bookmarkId}`), bookmark)
 				)
 			);
 		}
@@ -242,14 +242,17 @@ export async function deleteProfilePageBookmark(bookmarkId: string): Promise<voi
 		savedBookmarks.set(updatedBookmarks);
 		localStorage.setItem('savedBookmarks', JSON.stringify(updatedBookmarks));
 
-		// Update the queue
-		savedBookmarkQueue.update((queue) => {
-			const updatedQueue = new Map(queue); // Clone the existing queue
-			updatedQueue.set(bookmarkId, { action: 'remove', data: { bookmarkId } });
-			return updatedQueue;
-		});
+		// Remove the bookmark from Firebase too, so it does not come back on the next fetch
+		const currentUser = get(user);
+		if (currentUser && currentUser.id !== 'guest') {
+			const removedBookmark = cachedBookmarks.find(
+				(savedBookmark: any) => savedBookmark.bookmarkId === bookmarkId
+			);
+			const docId = removedBookmark?.id ?? bookmarkId;
+			await deleteDoc(doc(db, `users/${currentUser.id}/savedBookmarks/${docId}`));
+		}
 
-		console.log(`Bookmark with ID ${bookmarkId} deleted locally and queued for sync.`);
+		console.log(`Bookmark with ID ${bookmarkId} deleted locally and from Firebase.`);
 	} catch (error) {
 		console.error('Error deleting bookmark:', error);
 		throw error;

@@ -160,7 +160,7 @@
 			"@type": "ListItem",
 			"position": 4,
 			"name": "Use Spread Bets",
-			"description": "Employ Spread bets when betting on more than two Place bets for the same unit amount."
+			"description": "Employ Spread bets when betting on more than two Place Bets for the same unit amount."
 			},
 			{
 			"@type": "ListItem",
@@ -226,7 +226,7 @@
 					repeatedly losing bets, such as Hardways, Come & Don't Come, and potentially <Link
 						text="the Field"
 						href="the-field"
-					/>. Determine the appropriate amount for Odds and Lay Odds for Come and Don't Come bets
+					/>. Determine the appropriate amount for Odds and Lay Odds for Come and Don't Come Bets
 					before the dice reach their respective numbers.
 				</li>
 			</ol>
@@ -321,7 +321,7 @@
 					</ul>
 				</li>
 				<li>
-					<span>Use Spread Bets - </span>When betting on more than two Place bets for the same unit
+					<span>Use Spread Bets - </span>When betting on more than two Place Bets for the same unit
 					amount, employ Spread bets. Options include <Link text="Across" href="across" />, <Link
 						text="Inside"
 						href="inside"

@@ -62,14 +62,14 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "What Not to Do at the Craps Table",
-  "description": "A comprehensive guide on craps table etiquette, highlighting common mistakes in shooting, betting, and interacting with others to ensure a respectful and enjoyable game experience.",
+  "description": "A comprehensive guide on Craps table etiquette, highlighting common mistakes in shooting, betting, and interacting with others to ensure a respectful and enjoyable game experience.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
   },
   "datePublished": "2024-03-06",
-  "url": "http://parlaynation.com/what-not-to-do",
-  "image": "http://parlaynation.com/images/what-not-to-do/what-not-to-do-header.webp",
+  "url": "http://parlaynation.com/not-to-do-at-craps-table",
+  "image": "http://parlaynation.com/images/not-to-do-at-craps-table/not-to-do-at-craps-table-header.webp",
   "publisher": {
     "@type": "Organization",
     "name": "Parlay Nation",
@@ -80,7 +80,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://parlaynation.com/what-not-to-do"
+    "@id": "http://parlaynation.com/not-to-do-at-craps-table"
   },
   "articleSection": [
     {
@@ -115,7 +115,7 @@
         {
           "@type": "ListItem",
           "position": 5,
-          "name": "Do not throw the dice in the base dealer's working area",
+          "name": "Do not throw the dice in the Base Dealer's working area",
           "description": "Avoid disrupting the placement of bets and the dealer's work."
         },
         {
@@ -166,7 +166,7 @@
     {
       "@type": "ItemList",
       "name": "What You Shouldn\'t Do With the Other Players",
-      "description": "Guidelines for respectful interaction with fellow craps players.",
+      "description": "Guidelines for respectful interaction with fellow Craps players.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -209,7 +209,7 @@
     {
       "@type": "ItemList",
       "name": "What Else You Shouldn\'t Do",
-      "description": "Additional tips to enhance your craps table etiquette.",
+      "description": "Additional tips to enhance your Craps table etiquette.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -227,7 +227,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "Do not put items in the rail",
-          "description": "Keep personal items off the craps table to maintain a clean and organized space."
+          "description": "Keep personal items off the Craps table to maintain a clean and organized space."
         },
         {
           "@type": "ListItem",
@@ -259,10 +259,10 @@
 			<p class="pb-4">
 				Let’s face it: Craps is a fast-paced game, where not just luck, but also etiquette plays a
 				significant role. This comprehensive guide aims to educate you on the do's and don'ts at the
-				craps table, covering everything from shooting rules to dealing with other players.
+				Craps table, covering everything from shooting rules to dealing with other players.
 			</p>
 			<p class="pb-4">
-				We examine the cardinal sins of craps: from <Link
+				We examine the cardinal sins of Craps: from <Link
 					text="switching hands"
 					href="better-craps-shooter"
 				/> while shooting to disrupting the game with late betting. You'll also find tips on how to interact
@@ -275,7 +275,7 @@
 			{url}
 			img="third-base-next-to-base-looking-at-craps-layout"
 			title="Third Base Looking At Layout"
-			alt="Third base looking at craps layout"
+			alt="Third base looking at Craps layout"
 		/>
 		<div class="lg:hidden">
 			<Divider />
@@ -294,12 +294,12 @@
 					<span>Do not go hand to hand with the dice - </span>Passing the dice from your left hand
 					to your right and vice versa is one of the most common mistakes while shooting. If you
 					want to change hands, put the dice down on the layout and pick them up with the other
-					hand. Picking up the dice with the hand you’re going to shoot with help from unconsciously
-					making a mistake.
+					hand. Picking up the dice with the hand you’re going to shoot with helps keep you from
+					unconsciously making a mistake.
 				</li>
 				<li>
 					<span>Do not take the dice past the edge of the table - </span>Keep the dice over the
-					layout when you’re shooting. Were talking about the inside edge of the table. If the dice
+					layout when you’re shooting. We’re talking about the inside edge of the table. If the dice
 					are over your chips, you’ve gone past the edge.
 				</li>
 				<li>
@@ -314,11 +314,11 @@
 					will still call it.
 				</li>
 				<li>
-					<span>Do not throw the dice in the working area of the base dealer - </span>This is where
+					<span>Do not throw the dice in the working area of the Base Dealer - </span>This is where
 					all the <Link text="Place" href="place-bet-basics" /> and <Link
 						text="Come bets"
 						href="come-bet-basics"
-					/> are set up, as well as the dealers working stacks. The dice will send chips flying everywhere
+					/> are set up, as well as the dealers' working stacks. The dice will send chips flying everywhere
 					if they collide with a group of bets, halting the game so they can fix everything.
 				</li>
 				<li>
@@ -327,9 +327,9 @@
 				</li>
 				<li>
 					<span>Do not practice rolling in a forward manner - </span>Everyone likes to play with the
-					dice before they shoot ‘em. This included tiny practice rolls where they let the dice roll
+					dice before they shoot ‘em. This includes tiny practice rolls where they let the dice roll
 					off their hands onto the layout. You’re allowed to do this, but not toward the wall you’ll
-					be shooting to. We don’t want any confusion between what was your practice roll and you’re
+					be shooting to. We don’t want any confusion between what was your practice roll and your
 					real roll. So, practice rolling toward the opposite wall and the dealers will never bother
 					you.
 				</li>
@@ -359,7 +359,7 @@
 					you can ask the dealer.
 				</li>
 				<li>
-					<span>Don’t splash the chips - </span>When making Place bets, set them in a single pile in
+					<span>Don’t splash the chips - </span>When making Place Bets, set them in a single pile in
 					the COME instead of throwing them where they can end up rolling all over. If you can
 					splash with style, then you’re allowed. Splashing two or three chips when throwing them to
 					the stickperson is forgivable. Four or more and you’ll probably get a look. Try to catch
@@ -367,8 +367,8 @@
 				</li>
 				<li>
 					<span>Do not reach into the boxes to make or take your bet - </span>This is a huge no-no.
-					That is the dealer's working area, and you are not allowed in it. These hold Place bets,
-					Come bets, Buy’s, and dealer bets. Want a bet? Please place it in the COME. Want your bet
+					That is the dealer's working area, and you are not allowed in it. These hold Place Bets,
+					Come bets, Buys, and dealer bets. Want a bet? Please place it in the COME. Want your bet
 					back? Ask, and the dealer will give it to you.
 				</li>
 				<li>
@@ -376,7 +376,7 @@
 						>Refrain from reaching in or throwing chips while the shooter has the dice -
 					</span>Late betting is the leading cause of trouble on the Craps table. Everyone needs to
 					learn how to make a verbal bet. Want $10 in the Field? Say “Ten Field.” Say “Dollar yo.”
-					Say “Five Odds” It takes half a second. Faster than you reaching across, throwing a
+					Say “Five Odds.” It takes half a second. Faster than you reaching across, throwing a
 					cheque, or sneaking them over the edge, I promise.
 				</li>
 			</ol>
@@ -444,7 +444,7 @@
 			<ol>
 				<li>
 					<span>Don’t place your chips next to working stacks - </span>This is mainly for the
-					players closest to the base dealer because it’s convenient for them. This can cause your
+					players closest to the Base Dealer because it’s convenient for them. This can cause your
 					money to get mixed up with those stacks and accidentally be locked up.
 				</li>
 				<li>

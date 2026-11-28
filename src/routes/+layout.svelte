@@ -9,6 +9,7 @@
 	import { get } from 'svelte/store';
 	import { enableEventTracking, enableScrollTracking } from '$lib/utils/tracking';
 	import { handleAuthStateChange } from '$lib/utils/auth';
+	import { syncLocalToFirebase } from '$lib/utils/userDataOperations';
 
 	$: {
 		console.log('User in +layout:', $user);
@@ -53,7 +54,7 @@
 		const current_user = get(user);
 		if (current_user?.id) {
 			console.log('Syncing user data before unload...');
-			await syncUserData(current_user.id);
+			await syncLocalToFirebase();
 		}
 	}
 

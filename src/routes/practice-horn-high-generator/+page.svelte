@@ -3,11 +3,11 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Practice Horn High Generator';
 	let description: string =
-		'Practice Horn High payments with this random High High Generator. Pull one of each type of card and figure out the payment.';
+		'Practice Horn High payments with this random Horn High Generator. Pull one of each type of card and figure out the payment.';
 	let url: string = 'practice-horn-high-generator';
 
 	let slides: string[] = [
@@ -34,7 +34,7 @@
 			  "@type": "Person",
 			  "name": "Elvis Lefkoski"
 			  },
-			"description": "Practice Horn High payments with this random High High Generator. Pull one of each type of card and figure out the payment.",
+			"description": "Practice Horn High payments with this random Horn High Generator. Pull one of each type of card and figure out the payment.",
 			"url": "https://parlaynation.com/practice-horn-high-generator.html"
 		}
 	</script>
@@ -53,6 +53,6 @@
 				downloadUrl="src/pdf/horn-high-generator.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

@@ -3,11 +3,11 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
-	let title: string = 'Practice Place Bet Payments Payments 4 & 10';
+	let title: string = 'Practice Place Bet Payments 4 & 10';
 	let description: string =
-		'Practice Place Bet Payments Payments on the 4 & 10. Downloadable PDF to practice Craps.';
+		'Practice Place Bet Payments on the 4 & 10. Downloadable PDF to practice Craps.';
 	let url: string = 'practice-place-bet-payments-4-10';
 
 	let slides: string[] = [
@@ -49,12 +49,12 @@
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="4 & 10 Place Bet Payments"
-				description="40 cutout cards meant to practice payments for Place Bets when the Point is 4 or 10. Bets range from $5 up to $4,925. You can cover the answer with your thumb, fold it over, or cut it off."
+				description="40 cut-out cards meant to practice payments for Place Bets when the Point is 4 or 10. Bets range from $5 up to $4,925. You can cover the answer with your thumb, fold it over, or cut it off."
 				listPara="The cards are broken into two difficulties:"
 				listItems={['20 Easy', '20 Medium']}
 				downloadUrl="src/pdf/place-bet-payments-4-10.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

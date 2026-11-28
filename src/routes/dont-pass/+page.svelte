@@ -11,7 +11,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -74,7 +74,7 @@
 	];
 	let tblPnts: string[] = [
 		"You can take the Don't Pass back at any time",
-		"You cannot turn Off a Don't Pass bet, you must take them down"
+		"You cannot turn Off a Don't Pass Bet, you must take them down"
 	];
 </script>
 
@@ -92,7 +92,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Don't Pass in Craps",
-  "description": "Exploration of the Don't Pass bet in craps, detailing its comparison to the Pass Line, the process of placing a bet, the two stages of betting, payout information, and dealer bets.",
+  "description": "Exploration of the Don't Pass Bet in Craps, detailing its comparison to the Pass Line, the process of placing a bet, the two stages of betting, payout information, and dealer bets.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -116,31 +116,31 @@
     {
       "@type": "ItemList",
       "name": "Don't Pass Bet Insights",
-      "description": "Comprehensive guidance on the Don't Pass bet, including how to place the bet, the stages of betting, the payouts, and tips for betting on behalf of the dealers.",
+      "description": "Comprehensive guidance on the Don't Pass Bet, including how to place the bet, the stages of betting, the payouts, and tips for betting on behalf of the dealers.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Placing the Don't Pass Bet",
-          "description": "Instructions on how to place a Don't Pass bet on the craps table."
+          "description": "Instructions on how to place a Don't Pass Bet on the Craps table."
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Stages of the Don't Pass Bet",
-          "description": "Explanation of the Comeout Roll and Intermediate Roll stages of the Don't Pass bet."
+          "description": "Explanation of the Comeout Roll and Intermediate Roll stages of the Don't Pass Bet."
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Don't Pass Bet Payouts",
-          "description": "Information on the payout structure of the Don't Pass bet."
+          "description": "Information on the payout structure of the Don't Pass Bet."
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Betting the Don't Pass for Dealers",
-          "description": "How to place a Don't Pass bet for the table's dealers."
+          "description": "How to place a Don't Pass Bet for the table's dealers."
         }
       ]
     }
@@ -149,27 +149,27 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-pass/dont-pass_640x360.webp",
-      "caption": "Overview of the Don't Pass betting area on a craps table."
+      "caption": "Overview of the Don't Pass betting area on a Craps table."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-pass/how-to-bet-the-dont-pass_640x360.webp",
-      "caption": "Guide on placing Don't Pass bets."
+      "caption": "Guide on placing Don't Pass Bets."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-pass/dont-pass-stage-one_640x360.webp",
-      "caption": "Don't Pass bet during the Comeout Roll stage."
+      "caption": "Don't Pass Bet during the Comeout Roll stage."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-pass/dont-pass-stage-two_640x360.webp",
-      "caption": "Don't Pass bet during the Intermediate Roll stage."
+      "caption": "Don't Pass Bet during the Intermediate Roll stage."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-pass/dealer-dont-pass_640x360.webp",
-      "caption": "Don't Pass bet placed for the dealers."
+      "caption": "Don't Pass Bet placed for the dealers."
     }
   ]
 }
@@ -195,14 +195,14 @@
 					href="the-stages"
 				/> the Don't Pass is most likely to win and the casinos would never give you that advantage.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/dont-pass_640x360.webp"
 				mdImg="src/images/{url}/dont-pass_960x540.webp"
 				lgImg="src/images/{url}/dont-pass_1280x720.webp"
-				title=""
-				alt=""
+				title="The Don't Pass Bar"
+				alt="The Don't Pass Bar outlined on the Craps table."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -223,7 +223,7 @@
 				mdImg="src/images/{url}/how-to-bet-the-dont-pass_960x540.webp"
 				lgImg="src/images/{url}/how-to-bet-the-dont-pass_1280x720.webp"
 				title="How to Bet the Don't Pass"
-				alt="Up close view of the Don't Pass bar with bets and the craps table rail. The Don't Pass bets have lines pointing to spots in the rail."
+				alt="Up close view of the Don't Pass bar with bets and the Craps table rail. The Don't Pass Bets have lines pointing to spots in the rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -234,7 +234,7 @@
 			<ContentHeaderThree title="Stage 1 - The Comeout Roll">
 				<p class="pb-4">
 					Stage one is the Comeout Roll, before the Point is established. During the Comeout Roll
-					the Don't Pass Line wins when 2 or 3 are rolled. It loses if a 7 or Eleven are rolled, and
+					the Don't Pass wins when 2 or 3 are rolled. It loses if a 7 or 11 is rolled, and
 					if the 12 rolls it's a push, it doesn't win or lose. The Comeout Roll is where the casino
 					makes its money on the Don't Pass because once a Point is established the Don't Pass has
 					advantage over the house.
@@ -262,7 +262,7 @@
 					mdImg="src/images/{url}/dont-pass-stage-two_960x540.webp"
 					lgImg="src/images/{url}/dont-pass-stage-two_1280x720.webp"
 					title="Don't Pass - Stage Two"
-					alt="$25 on the Don't Pass. The Puck in On the ten."
+					alt="$25 on the Don't Pass. The Puck is On the ten."
 				/>
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
@@ -285,14 +285,14 @@
 				smImg="src/images/{url}/dont-pass-wins-even-money-a_640x360.webp"
 				mdImg="src/images/{url}/dont-pass-wins-even-money-a_960x540.webp"
 				lgImg="src/images/{url}/dont-pass-wins-even-money-a_1280x720.webp"
-				title="Dont' Pass Wins Even Money On Seven Out"
+				title="Don't Pass Wins Even Money on Seven Out"
 				alt="$25 with $25 payment on the Don't Pass. The Puck is on point ten. Two purple dice show 2-5."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Don't pass payment calculator" id="dontPassCalc"
 			><CalcBox
-				description="Check the payment for a Don't Pass bet."
+				description="Check the payment for a Don't Pass Bet."
 				title="Don't Pass Payment Calculator"
 			>
 				<CalcInput
@@ -308,7 +308,7 @@
 		<Divider />
 		<ContentHeaderTwo id="dealerDontPass" title="How Do You Bet the Don't Pass for the Dealers?">
 			<p class="pb-4">
-				You can make a Don't Pass bet for the dealers in any amount. Like players, it must be done
+				You can make a Don't Pass Bet for the dealers in any amount. Like players, it must be done
 				during the Comeout Roll and you can put it right next to your bet.
 			</p>
 			<ContentImg

@@ -3,24 +3,40 @@
 
 	let title: string = 'Privacy Policy';
 	let description: string =
-		"Read Parlay Nation's Terms and Conditions to understand user responsibilities, content policies, age requirements, and more. Stay informed while using our services.";
+		'How Parlay Nation handles your information: what we collect when you read, sign in, and save bookmarks, how we use it, and the choices you have.';
 	let url: string = 'privacy-policy';
 	let sections: any[] = [
 		{
-			title: 'Content and Intellectual Property',
-			para: 'All text, images, videos, and other content ("Content") on Parlay Nation are protected by intellectual property laws and are the property of Parlay Nation or its licensors. Distribution, modification, or commercial use of Content is prohibited without explicit written consent from Parlay Nation.'
+			title: 'Information We Collect',
+			para: "When you create an account or sign in, we receive the basics your sign-in method provides, such as your name and email address, whether you sign in with an email and password, Google, or Facebook. When you use the site, we store the things you save: your bookmarks, favorite bets, and simulator preferences. If you browse as a guest instead, those saves are stored in your own browser rather than in an account. Like most websites, we also receive basic technical information through analytics, such as which pages are visited and the type of device and browser used."
 		},
 		{
-			title: 'User-Generated Content',
-			para: 'Users may post, upload, or contribute content ("User Content"). By doing so, you confirm that your User Content is legal and that you hold the rights to it. Parlay Nation is not responsible for, nor does it endorse, User Content. If a claim is made against Parlay Nation due to your User Content, you agree to indemnify Parlay Nation for any arising damages.'
+			title: 'How We Use Your Information',
+			para: 'We use your information to run your account and keep you signed in, to save and sync your bookmarks and preferences across your visits, to understand which lessons and tools people find useful so we can improve them, and to keep the site secure. We do not sell your personal information.'
 		},
 		{
-			title: 'Account and Data Security',
-			para: 'You are responsible for maintaining the confidentiality of your account information. Notify Parlay Nation immediately if you suspect unauthorized use. By using the services, you agree to the collection and use of your data as outlined in our Privacy Policy.'
+			title: 'Cookies and Local Storage',
+			para: 'Parlay Nation uses cookies and browser storage to keep you signed in, remember settings such as your theme, store guest bookmarks and preferences on your device, and measure site usage through Google Analytics. You can clear or block cookies in your browser settings, but some features, such as staying signed in, may stop working.'
 		},
 		{
-			title: 'User Obligations and Limitations',
-			para: "You're expected to adhere to these terms. Users must be at least 18 years old to use the services. Violations may lead to suspension or banning from the platform. Parlay Nation is not liable for any damages—direct or indirect—that arise from your use or inability to use the service."
+			title: 'Who We Share Information With',
+			para: 'Your information is handled by the service providers that run the site: Google Firebase stores accounts and saved data, and Google Analytics processes usage data. We may disclose information if required by law. We do not sell or rent your personal information to anyone.'
+		},
+		{
+			title: 'Your Choices',
+			para: 'You can delete your bookmarks at any time from your profile page, sign out on any device, and erase guest data by clearing your browser storage. If you would like your account and the data saved to it deleted, contact us through the Contact page and we will take care of it.'
+		},
+		{
+			title: 'Data Security',
+			para: "Accounts and saved data are handled through Firebase's secure sign-in and storage systems. No system is completely secure, so please use a strong password, and let us know if you suspect unauthorized use of your account."
+		},
+		{
+			title: "Children's Privacy",
+			para: 'Parlay Nation teaches a casino game and is intended for adults. The site is not directed at children under 13, and we do not knowingly collect information from them.'
+		},
+		{
+			title: 'Changes to This Policy',
+			para: 'If we change how we handle information, we will post the updated policy on this page so you can always see the current version here.'
 		}
 	];
 </script>
@@ -39,41 +55,41 @@
 			"@context": "https://schema.org",
 			"@type": "WebPage",
 			"name": "Privacy Policy",
-			"description": "Read Parlay Nation's Terms and Conditions to understand user responsibilities, content policies, age requirements, and more. Stay informed while using our services.",
+			"description": "How Parlay Nation handles your information: what we collect when you read, sign in, and save bookmarks, how we use it, and the choices you have.",
 			"url": "http://parlaynation.com/privacy-policy",
 			"mainEntity": {
 				"@type": "FAQPage",
 				"mainEntity": [
 					{
 						"@type": "Question",
-						"name": "Content and Intellectual Property",
+						"name": "Information We Collect",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "All text, images, videos, and other content ('Content') on Parlay Nation are protected by intellectual property laws and are the property of Parlay Nation or its licensors. Distribution, modification, or commercial use of Content is prohibited without explicit written consent from Parlay Nation."
+							"text": "When you create an account or sign in, we receive the basics your sign-in method provides, such as your name and email address, whether you sign in with an email and password, Google, or Facebook. When you use the site, we store the things you save: your bookmarks, favorite bets, and simulator preferences. If you browse as a guest instead, those saves are stored in your own browser rather than in an account. Like most websites, we also receive basic technical information through analytics, such as which pages are visited and the type of device and browser used."
 						}
 					},
 					{
 						"@type": "Question",
-						"name": "User-Generated Content",
+						"name": "How We Use Your Information",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "Users may post, upload, or contribute content ('User Content'). By doing so, you confirm that your User Content is legal and that you hold the rights to it. Parlay Nation is not responsible for, nor does it endorse, User Content. If a claim is made against Parlay Nation due to your User Content, you agree to indemnify Parlay Nation for any arising damages."
+							"text": "We use your information to run your account and keep you signed in, to save and sync your bookmarks and preferences across your visits, to understand which lessons and tools people find useful so we can improve them, and to keep the site secure. We do not sell your personal information."
 						}
 					},
 					{
 						"@type": "Question",
-						"name": "Account and Data Security",
+						"name": "Cookies and Local Storage",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "You are responsible for maintaining the confidentiality of your account information. Notify Parlay Nation immediately if you suspect unauthorized use. By using the services, you agree to the collection and use of your data as outlined in our Privacy Policy."
+							"text": "Parlay Nation uses cookies and browser storage to keep you signed in, remember settings such as your theme, store guest bookmarks and preferences on your device, and measure site usage through Google Analytics. You can clear or block cookies in your browser settings, but some features, such as staying signed in, may stop working."
 						}
 					},
 					{
 						"@type": "Question",
-						"name": "User Obligations and Limitations",
+						"name": "Who We Share Information With",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "You're expected to adhere to these terms. Users must be at least 18 years old to use the services. Violations may lead to suspension or banning from the platform. Parlay Nation is not liable for any damages—direct or indirect—that arise from your use or inability to use the service."
+							"text": "Your information is handled by the service providers that run the site: Google Firebase stores accounts and saved data, and Google Analytics processes usage data. We may disclose information if required by law. We do not sell or rent your personal information to anyone."
 						}
 					}
 				]

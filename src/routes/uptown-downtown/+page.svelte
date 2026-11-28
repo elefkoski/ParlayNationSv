@@ -6,7 +6,7 @@
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 
@@ -43,13 +43,13 @@
 	};
 
 	let tblAria: string = 'Uptown/Downtown betting options table';
-	let tblHeaders: string[] = ['The Spread', 'Total bet'];
+	let tblHeaders: string[] = ['The Spread', 'Total Bet'];
 	let tblRows: (string | number)[][] = [
 		['*One Unit: $5/number', '$16 Up/Downtown'],
 		['Two Units: $10/number', '$32 Up/Downtown'],
 		['Three Units: $15/number', '$48 Up/Downtown'],
 		['*One Unit: $25/number', '$76 Up/Downtown'],
-		['Two Units: $50/number', '$162 up/Downtown']
+		['Two Units: $50/number', '$162 Up/Downtown']
 	];
 	let tblPnts: string[] = [
 		'One Unit can be $5 or $25 on the 4, 5, 9, and 10. One Unit can be $6 or $30 on the 6 or 8.'
@@ -70,7 +70,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Uptown and Downtown in Craps",
-  "description": "A guide to understanding and placing Uptown and Downtown bets in craps, covering how to bet with and without commission.",
+  "description": "A guide to understanding and placing Uptown and Downtown bets in Craps, covering how to bet with and without commission.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -157,12 +157,12 @@
 			{pageData}
 		>
 			<p class="pb-4">
-				After the Point has been established players like to bet the opposite side of the board and
-				it's called bettin Uptown or Downtown. When the Point is 4, 5, or 6 the players will bet the
+				After the Point has been established, players like to bet the opposite side of the board and
+				it's called betting Uptown or Downtown. When the Point is 4, 5, or 6 the players will bet the
 				8, 9, and 10, or Uptown. When the Point is 8, 9, or 10 the players will bet the 4, 5, and 6,
 				or Downtown. They are always betting three numbers.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/uptown_640x360.webp"

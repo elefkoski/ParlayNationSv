@@ -124,20 +124,20 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Self-service Bet Types",
-          "description": "Includes Pass Line, Don't Pass, Pass Line Odds, Don't Pass Lay Odds, Come bets, Don't Come bets, and the Field."
+          "description": "Includes Pass Line, Don't Pass, Pass Line Odds, Don't Pass Lay Odds, Come bets, Don't Come Bets, and the Field."
         }
       ]
     },
     {
       "@type": "ItemList",
       "name": "How to Make Bets With the Dealers",
-      "description": "Guidance on interacting with base dealers and the Stickperson for non-self-service bets.",
+      "description": "Guidance on interacting with Base Dealers and the Stickperson for non-self-service bets.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Bets With the Base Dealer",
-          "description": "Details on making Place Bets, Buys, and other bets with the base dealer."
+          "description": "Details on making Place Bets, Buys, and other bets with the Base Dealer."
         },
         {
           "@type": "ListItem",
@@ -251,7 +251,7 @@
 				</li>
 				<li>
 					<span>Bet Type - </span>Be sure about what it is you want. You see other people betting on
-					things and want to join, but don’t guess. If you throw the Stickperson money and say, “ $8
+					things and want to join, but don’t guess. If you throw the Stickperson money and say, “$8
 					on the Hard 4’s”, they’re going to look at you clueless. Did you mean the Hard 4, or the
 					Hard 8, which is a picture of two 4’s? You can listen to or ask the other players if
 					you're unsure what it is called. The dealers will answer your questions as well.
@@ -261,7 +261,7 @@
 					the dealer. They will repeat back to you how much you want and where, so we’re all on the
 					same page. They may also use the phrase “Bet” in a pinch to signify they heard what you
 					wanted and will take your action. If the dealer does not repeat your bet, keep saying it
-					until they do. Tell the box, Stickperson, or base dealer, whoever will listen.
+					until they do. Tell the Box, Stickperson, or Base Dealer, whoever will listen.
 				</li>
 			</ol>
 		</BlogH2>
@@ -271,7 +271,7 @@
 			{url}
 			img="place-bet-on-point-six"
 			title="Place Bet on Point Six"
-			alt="Place bet on point six"
+			alt="Place bet on point six."
 		/>
 		<Divider />
 		<BlogH2 id="selfService" title="Placing Self-Service Bets">
@@ -288,7 +288,7 @@
 				<li>
 					<span>Pass Line - </span>You must place your bet on the Pass Line in front of where you’re
 					standing. Some casinos may let you come down on the Pass Line during the Intermediate
-					Roll, after the point is established, but it’s not in your best interest, Your’e more
+					Roll, after the point is established, but it’s not in your best interest. You’re more
 					likely to win on the Pass Line during the <Link text="Comeout Roll" href="the-stages" /> than
 					the Intermediate Roll. You should always wait until the next Comeout Roll to make your bet
 					on the Pass Line.
@@ -312,7 +312,7 @@
 				</li>
 				<li>
 					<span>Don't Pass Lay Odds - </span>Lay Odds are a two-finger width distance away from your
-					Don’t Pass bet. They are placed on the side closest to the base dealer and heeled off.
+					Don’t Pass bet. They are placed on the side closest to the Base Dealer and heeled off.
 				</li>
 				<li>
 					<span>Come Bets - </span>Come bets are placed in the COME right in front of yourself. Try
@@ -321,7 +321,7 @@
 				</li>
 				<li>
 					<span>Don't Come Bets - </span>The Don’t Come is near the corner of the table next to the
-					base dealer. Not too many players bet the <Link text="Don’t Come" href="dont-come" /> so you
+					Base Dealer. Not too many players bet the <Link text="Don’t Come" href="dont-come" /> so you
 					shouldn’t have a problem getting your bet mixed with anyone else.
 				</li>
 			</ol>
@@ -337,17 +337,17 @@
 		<Divider />
 		<BlogH2 id="betsWithDealers" title="How to Make Bets With the Dealers">
 			<p class="pb-4">
-				Both the base dealer and Stickperson receive non-self-service bets, but have different
+				Both the Base Dealer and Stickperson receive non-self-service bets, but have different
 				methods of accepting them.
 			</p>
-			<BlogH3 title="Bets With the Base Dealer"
-				><p class="pb-4">
-					The base dealer will take bets that go in the large numbered boxes. Each Point number has
+			<BlogH3 title="Bets With the Base Dealer">
+				<p class="pb-4">
+					The Base Dealer will take bets that go in the large numbered boxes. Each Point number has
 					two boxes. The big one holds: Place, Buys, Come, Come Odds, and dealer bets. The small box
 					behind it holds Don’t Come, Lay Odds, and Overlays.
 				</p>
 				<p class="pb-4">
-					During the Intermediate Roll, the base dealers receive most of the bets from the players.
+					During the Intermediate Roll, the Base Dealers receive most of the bets from the players.
 					Once the Puck turns to ON, the dealers attend to the players on a first-come, first-served
 					basis. If you manage to get the attention of the dealer quickly, you can place your bets
 					first and then relax. However, if you are not quick enough, you will have to wait until
@@ -358,8 +358,8 @@
 						<span>Place Bets and Buys - </span>You make Place Bets and Buys during the Intermediate
 						Roll by putting your money in the COME and informing the dealer which bets you want. If
 						you want to bet on multiple numbers simultaneously, you can use Spread bets. It's
-						important to note that the Place bets made during the Comeout Roll remain off unless
-						called on.<br />Presses are another form of Place bet betting. Instead of getting paid
+						important to note that the Place Bets made during the Comeout Roll remain off unless
+						called on.<br />Presses are another form of Place Bet betting. Instead of getting paid
 						for a winning bet and then handing some back when you want to bet more, you tell the
 						dealer before they pay you how much more you want to add to your existing bet.
 						<ul>
@@ -383,13 +383,13 @@
 						put on a Come bet. They are off during the Comeout Roll unless you ask them to work.
 					</li>
 					<li>
-						<span>Don't Come Lay Odds - </span>Lay Odds for a Don’t come bet are also placed in the
+						<span>Don't Come Lay Odds - </span>Lay Odds for a Don’t Come Bet are also placed in the
 						COME. <Link text="Lay Odds" href="dont-come-lay-odds" /> are always working unless you ask
-						them to be taken down. You can not turn them off.
+						them to be taken down. You cannot turn them off.
 					</li>
 					<li>
 						<span>Overlays - </span>An Overlay is when you bet directly against a number. They are
-						always working as well and can not be turned off; you must take them back. You also put
+						always working as well and cannot be turned off; you must take them back. You also put
 						these bets in the COME while telling the dealer which bet you want.
 					</li>
 				</ol>
@@ -406,7 +406,7 @@
 					the game and ask both sides of the table which <Link
 						text="Proposition bets"
 						href="proposition-basics"
-					/> they want. This is handled on a first-come, first-serve basis, and the Stickperson has to
+					/> they want. This is handled on a first-come, first-served basis, and the Stickperson has to
 					manage both sides of the table, so be quick to make your bet when you see them collecting Propositions
 					on your side.
 				</p>
@@ -420,15 +420,15 @@
 				<ol>
 					<li>
 						<span>Throwing 1 chip - </span>Hold a chip between your thumb and ring finger while only
-						touching the the thin border (3mm wide), not the broad side (39mm wide). The chip should
+						touching the thin border (3mm wide), not the broad side (39mm wide). The chip should
 						be perpendicular to your fingers, not parallel. Now spin the chip counterclockwise while
 						dropping it into your other hand from above. This is how you release the chip, but
 						instead of dropping it into your hand, use your arm to aim it toward the Stickperson.
 					</li>
 					<li>
-						<span>Throwing 2+ chips - </span>when you toss three or more chips, make eye contact
+						<span>Throwing 2+ chips - </span>When you toss three or more chips, make eye contact
 						with the Stickperson then toss them as a block. If they land on the table; they will end
-						up splashing and rolling all over the layout, holding up the game. Some base dealers may
+						up splashing and rolling all over the layout, holding up the game. Some Base Dealers may
 						accept larger quantities of chips meant for the Stickperson in that instance. This block
 						is held and tossed in the exact same manner as 1 chip but without the counterclockwise
 						spin.
@@ -441,7 +441,7 @@
 			{url}
 			img="straight-up-twelve"
 			title="Straight Up Bet on the Twelve"
-			alt="Straight up bet on the twelve."
+			alt="Straight Up bet on the twelve."
 		/>
 		<Divider />
 		<BlogH2 id="betsBack" title="Taking Your Bets Back">
@@ -452,7 +452,7 @@
 			<p>Can Not Be Taken Back</p>
 			<ol class="pb-4">
 				<li>
-					<span>Pass Line - </span>The Pass Line can not be taken back during the intermediate Roll.
+					<span>Pass Line - </span>The Pass Line cannot be taken back during the Intermediate Roll.
 					During the Comeout Roll, you can take back, add to, or subtract from your <Link
 						text="Pass Line bet"
 						href="pass-line-basics"
@@ -474,7 +474,7 @@
 			</ol>
 			<ol>
 				<li>
-					<span>Don't Come - </span>While you can take the Don’t Come bet back at any time, you
+					<span>Don't Come - </span>While you can take the Don’t Come Bet back at any time, you
 					can’t put it back behind a Point once returned to you. You must make another Don’t Come
 					bet.
 				</li>

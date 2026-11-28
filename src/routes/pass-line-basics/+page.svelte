@@ -9,7 +9,7 @@
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import LearnLayout from '$lib/components/layouts/LearnCrapsLayout.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -201,7 +201,7 @@
 				The best part of the Pass Line is that everyone on the Pass Line wins and loses together,
 				and it's the joy and pain felt together that builds camaraderie among the players.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/the-pass-line_640x360.webp"
@@ -263,7 +263,7 @@
 					smImg="src/images/{url}/stage-one-of-pass-line_640x360.webp"
 					mdImg="src/images/{url}/stage-one-of-pass-line_960x540.webp"
 					lgImg="src/images/{url}/stage-one-of-pass-line_1280x720.webp"
-					alt=""
+					alt="Stage One of the Pass Line, the Comeout Roll. The puck is OFF and a $5 bet is on the Pass Line."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
@@ -279,7 +279,7 @@
 					/> will be passed to the next shooter.
 				</p>
 				<p class="pb-4">
-					During the Comeout roll, you can add and subtract from the Pass Line but keep in mind that
+					During the Comeout Roll, you can add and subtract from the Pass Line but keep in mind that
 					the Pass Line is a contract bet during the Intermediate Roll.
 				</p>
 				<ContentImg
@@ -333,7 +333,7 @@
 			<p class="pb-4">
 				No. In some casinos, you can only bet the Pass Line during the Comeout Roll. In others, you
 				can make or add to it at any time. The only reason you'd want to add to the Pass Line during
-				the Intermediate Roll is to increase the amount of you have behind it. In almost all cases,
+				the Intermediate Roll is to increase the amount you have behind it. In almost all cases,
 				it will be better for you to use the money you wanted to put down on the Pass Line after the
 				Comeout Roll and use it as a Place Bet on that number. In most cases, you'll get paid more
 				money for the same risk.
@@ -343,7 +343,7 @@
 				smImg="src/images/{url}/coming-down-on-pass-line_640x360.webp"
 				mdImg="src/images/{url}/coming-down-on-pass-line_960x540.webp"
 				lgImg="src/images/{url}/coming-down-on-pass-line_1280x720.webp"
-				alt="A chip is moving from the rail of the craps table to the pass line bet on the layout. The puck is on and on the point nine."
+				alt="A chip is moving from the rail of the Craps table to the pass line bet on the layout. The puck is on and on the point nine."
 			/>
 		</ContentHeaderTwo>
 		<Divider />

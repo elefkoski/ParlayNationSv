@@ -30,6 +30,23 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Profile | Parlay Nation - How to Play Craps</title>
+	<link rel="canonical" href="http://parlaynation.com/profile" />
+	<meta
+		name="description"
+		content="Your Parlay Nation profile: your account details and the craps pages you have bookmarked, all in one place."
+	/>
+	<meta property="og:url" content="http://parlaynation.com/profile" />
+	<meta property="og:title" content="Profile | Parlay Nation - How to Play Craps" />
+	<meta
+		property="og:description"
+		content="Your Parlay Nation profile: your account details and the craps pages you have bookmarked, all in one place."
+	/>
+	<meta property="og:image" content={'images/profile/profile-header.jpg'} />
+	<meta name="twitter:image" content={'images/profile/profile-header.jpg'} />
+</svelte:head>
+
 <SingleColumnLayout>
 	<body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
 		<main class="bg-gray-100 dark:bg-gray-800">
@@ -40,7 +57,7 @@
 							<div class="flex flex-col items-center">
 								{#if current_user && current_user.photoURL}
 									<img
-										alt=""
+										alt="Your profile photo"
 										src={current_user.photoURL}
 										class="w-32 h-32 bg-gray-300 dark:bg-gray-500 rounded-full mb-4 shrink-0"
 									/>
@@ -49,15 +66,15 @@
 								<h1 class="text-xl font-bold text-gray-900 dark:text-gray-200">
 									{current_user?.displayName}
 								</h1>
-								<p class="text-gray-600 dark:text-gray-400">Software Developer</p>
+								<p class="text-gray-600 dark:text-gray-400">{current_user?.email ?? 'Parlay Nation Member'}</p>
 								<div class="mt-6 flex flex-wrap gap-4 justify-center">
-									<a href="/" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+									<a href="/contact" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
 										>Contact</a
 									>
 									<a
-										href="/"
+										href="/craps-simulator"
 										class="bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 py-2 px-4 rounded"
-										>Resume</a
+										>Play the Simulator</a
 									>
 								</div>
 							</div>
@@ -65,14 +82,13 @@
 							<div class="flex flex-col">
 								<span
 									class="text-gray-600 dark:text-gray-400 uppercase font-bold tracking-wider mb-2"
-									>Skills</span
+									>Keep Learning</span
 								>
 								<ul>
-									<li class="mb-2 text-gray-900 dark:text-gray-200">JavaScript</li>
-									<li class="mb-2 text-gray-900 dark:text-gray-200">Svelte</li>
-									<li class="mb-2 text-gray-900 dark:text-gray-200">Node.js</li>
-									<li class="mb-2 text-gray-900 dark:text-gray-200">HTML/CSS</li>
-									<li class="mb-2 text-gray-900 dark:text-gray-200">Tailwind Css</li>
+									<li class="mb-2 text-gray-900 dark:text-gray-200"><a href="/craps" class="underline">Learn Craps</a></li>
+									<li class="mb-2 text-gray-900 dark:text-gray-200"><a href="/practice-craps" class="underline">Practice Craps</a></li>
+									<li class="mb-2 text-gray-900 dark:text-gray-200"><a href="/craps-calculators" class="underline">Craps Calculators</a></li>
+									<li class="mb-2 text-gray-900 dark:text-gray-200"><a href="/craps-simulator" class="underline">Craps Simulator</a></li>
 								</ul>
 							</div>
 						</div>
@@ -138,19 +154,34 @@
 							aria-label="Craps articles"
 							class="bg-white dark:bg-gray-700 shadow rounded-lg p-6"
 						>
-							<h2 class="text-xl font-bold mt-6 mb-4">Craps Articles</h2>
+							<h2 class="text-xl font-bold mt-6 mb-4">From the Craps Blog</h2>
 							<div class="mb-6">
-								<div class="flex dark:text-gray-400 text-gray-600 justify-between">
-									<span class="font-bold">Web Developer</span>
-									<p>
-										<span class="mr-2">at ABC Company</span>
-										<span>2017 - 2019</span>
-									</p>
-								</div>
+								<p class="font-bold">
+									<a href="/rank-of-craps-bets" class="underline">Rank of Craps Bets</a>
+								</p>
 								<p class="mt-2">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus est vitae
-									tortor ullamcorper, ut vestibulum velit convallis. Aenean posuere risus non velit
-									egestas suscipit.
+									Ranked for your advantage: Explore every Craps bet from Odds to Propositions,
+									mastering the game by understanding their house edges.
+								</p>
+							</div>
+							<div class="mb-6">
+								<p class="font-bold">
+									<a href="/first-time-craps-player" class="underline">First Time at the Craps Table</a>
+								</p>
+								<p class="mt-2">
+									New to Craps? Learn the essentials with our guide, featuring strategies to block
+									out the noise, utilize dealer advice, and gradually expand your gameplay
+									knowledge.
+								</p>
+							</div>
+							<div class="mb-6">
+								<p class="font-bold">
+									<a href="/craps-superstitions" class="underline">Craps Superstitions</a>
+								</p>
+								<p class="mt-2">
+									Discover the psychology of Craps superstitions: what to do when the dice get cold
+									or why a lucky charm can make all the difference. Perfect your play with practical
+									advice.
 								</p>
 							</div>
 						</section>

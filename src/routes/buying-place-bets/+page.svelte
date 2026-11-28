@@ -11,7 +11,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTbl from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -96,7 +96,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Buying Place Bets in Craps",
-  "description": "An informative guide on how Buy Bets work in craps, including details on commission, betting strategies, and payouts.",
+  "description": "An informative guide on how Buy Bets work in Craps, including details on commission, betting strategies, and payouts.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -138,7 +138,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "Where is Your Buy Bet on the Craps Table?",
-          "description": "Details the placement of Buy Bets on the craps table and how they are marked to distinguish them from Place Bets."
+          "description": "Details the placement of Buy Bets on the Craps table and how they are marked to distinguish them from Place Bets."
         },
         {
           "@type": "ListItem",
@@ -158,12 +158,12 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/buying-place-bets/how-to-bet-a-buy-bet_640x360.webp",
-      "caption": "Visual guide on how to place a Buy Bet in craps."
+      "caption": "Visual guide on how to place a Buy Bet in Craps."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/buying-place-bets/placement-of-a-buy-bet_640x360.webp",
-      "caption": "Detailing the positioning of a Buy Bet on the craps table."
+      "caption": "Detailing the positioning of a Buy Bet on the Craps table."
     },
     {
       "@type": "ImageObject",
@@ -200,7 +200,7 @@
 				BUY must be rolled before a 7 to win. If a 7 is rolled before the Place Bet you bought, then
 				it loses.
 			</p>
-			<ContentTbl {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/buying-place-bets_640x360.webp"
@@ -251,14 +251,14 @@
 				mdImg="src/images/{url}/how-to-bet-a-buy-bet_960x540.webp"
 				lgImg="src/images/{url}/how-to-bet-a-buy-bet_1280x720.webp"
 				title="How to Bet a Buy Bet"
-				alt="$21 sitting in the COME area"
+				alt="$21 sitting in the COME area."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo id="buyPlacement" title="Where is Your Buy Bet on the Craps Table?">
 			<p class="pb-4">
 				Buy Bets are relative to your spot in the rail and get put on the inside of the box to
-				differentiate it from a Place bet. The Basedealer will also put a BUY lammer on it to
+				differentiate it from a Place Bet. The Base Dealer will also put a BUY lammer on it to
 				signify it has been bought. Check out <Link text="Place Bets" href="place-bet-basics" /> to see
 				how your money in the rail is relative to your bets on the layout.
 			</p>
@@ -268,7 +268,7 @@
 				mdImg="src/images/{url}/placement-of-a-buy-bet_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-buy-bet_1280x720.webp"
 				title="Placement of a Buy Bet"
-				alt="A $20 buy bet on the inside of the four. The inside of the four is outlined in orange"
+				alt="A $20 buy bet on the inside of the four. The inside of the four is outlined in orange."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -281,7 +281,7 @@
 			</p>
 			<ContentHeaderThree title="Buying the 5, 6, 8, and 9">
 				<p class="pb-4">
-					The difference from Place bet odds to true odds when buying the 5, 6, 8, or 9 are so small
+					The difference from Place Bet odds to true odds when buying the 5, 6, 8, or 9 are so small
 					that the 5% commission you are paying could lose you money. Seasoned players will only buy
 					the 4 or 10.
 				</p>
@@ -342,7 +342,7 @@
 		<Divider />
 		<CalcContainer aria="Buy 4 or 10 payment calculator" id="buyFourTenCalc"
 			><CalcBox
-				description="Check the payment for a Buying a 4 or 10."
+				description="Check the payment for Buying a 4 or 10."
 				title="Buy 4 or 10 Payment Calculator"
 			>
 				<CalcInput

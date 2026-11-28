@@ -23,7 +23,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -31,7 +31,7 @@
 
 	let title: string = 'Betting Hop Bets in Craps';
 	let description: string =
-		'Hop bets are are all the possible combinations of the six Points and the combinations of the 7. They are one roll bet and pay either 15:1 or 30:1.';
+		'Hop bets are all the possible combinations of the six Points and the combinations of the 7. They are one-roll bets and pay either 15:1 or 30:1.';
 	let url: string = 'hop-bets';
 
 	let phref: string = 'world';
@@ -109,7 +109,7 @@
 		['Hopping Hardways', '30:1', '2-2, 3-3, 4-4, 5-5', 'Any other number'],
 		['All Other Hops', '15:1', "Easy 4's, 6's, 8's, 10's, 5's, 9's, and 7's", 'Any other number']
 	];
-	let tblPnts: string[] = ['All the Hops are one roll bets'];
+	let tblPnts: string[] = ['All the Hops are one-roll bets'];
 </script>
 
 <svelte:head>
@@ -126,7 +126,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Hop Bets in Craps",
-  "description": "Learn about Hop bets in craps, including how to place these bets, their payouts, betting terminology, and tips for making multi-bets and betting for the dealers.",
+  "description": "Learn about Hop bets in Craps, including how to place these bets, their payouts, betting terminology, and tips for making multi-bets and betting for the dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -150,13 +150,13 @@
     {
       "@type": "ItemList",
       "name": "Exploring Hop Bets",
-      "description": "An exploration of Hop bets in craps, covering bet placement, payout details, terminology, common multi-bets, and how to place bets for the dealers.",
+      "description": "An exploration of Hop bets in Craps, covering bet placement, payout details, terminology, common multi-bets, and how to place bets for the dealers.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Hop Bet Placement",
-          "description": "Guidance on how to place Hop bets on the craps table."
+          "description": "Guidance on how to place Hop bets on the Craps table."
         },
         {
           "@type": "ListItem",
@@ -174,7 +174,7 @@
           "@type": "ListItem",
           "position": 4,
           "name": "Common Multi-Bets for Hops",
-          "description": "Examples of common multi-bets for Hop bets in craps."
+          "description": "Examples of common multi-bets for Hop bets in Craps."
         },
         {
           "@type": "ListItem",
@@ -194,7 +194,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/hop-bets/placement-of-hops_640x360.webp",
-      "caption": "Up close view of four hop bets and the rail of the craps table."
+      "caption": "Up close view of four hop bets and the rail of the Craps table."
     },
     {
       "@type": "ImageObject",
@@ -223,10 +223,10 @@
 		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting Hop Bets in Craps" {pageData}>
 			<p class="pb-4">
 				Hop Bets have every combination of the dice not including the Aces, Ace Deuce, Yo, and the
-				Twelve. There are 1navifferent possible Hop bets as shown which are the possible
+				Twelve. There are 17 different possible Hop bets as shown which are the possible
 				combinations of the 4, 5, 6, 7, 8, 9, and 10.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/hop-bets_640x360.webp"
@@ -252,7 +252,7 @@
 				and say <Quote text="I'd like $1 each 6's hopping" /> or <Quote
 					text="I want a $5 easy four hopping"
 				/>. The Hop bet boxes are pretty small so the dealers try to use the corners of the boxes
-				but really they do what they can and try to remember who's bets belong to whom.
+				but really they do what they can and try to remember whose bets belong to whom.
 			</p>
 			<ContentImg
 				caption=""
@@ -260,7 +260,7 @@
 				mdImg="src/images/{url}/placement-of-hops_960x540.webp"
 				lgImg="src/images/{url}/placement-of-hops_1280x720.webp"
 				title="Placement of Hops"
-				alt="Up close view of four hop bets and the rail of the craps table. There are four colored spots that correspend with each other."
+				alt="Up close view of four hop bets and the rail of the Craps table. There are four colored spots that correspond with each other."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -291,7 +291,7 @@
 			<Divider />
 			<CalcContainer aria="Hop payment calculators" id="hopBetPymntCalc"
 				><CalcBox
-					description="Check the payment for a bet made straight up on any of the Hop bets."
+					description="Check the payment for a bet made Straight Up on any of the Hop bets."
 					title="Hop Bet Payment Calculator"
 				>
 					<CalcInput
@@ -339,7 +339,7 @@
 				combination, you could tell the dealer <Quote
 					text="I would like thirty-two on the hop for $1."
 				/> When making a bet using a two-digit number you should make the bet using the larger number
-				first: 6-4 would be said as <Quote text="Sixty-four” as oppose to “Forty-six." />
+				first: 6-4 would be said as <Quote text="Sixty-four” as opposed to “Forty-six." />
 			</p>
 			<p class="pb-4">
 				<strong>Hopping Hard - </strong>Since there are only 4 possible Hop bets that can come the

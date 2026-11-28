@@ -3,11 +3,11 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Craps Cards - Grey';
 	let description: string =
-		'Practice playing craps with Craps Cards. Play craps with cards using 36 grey cut-out cards.';
+		'Practice playing Craps with Craps Cards. Play Craps with cards using 36 grey cut-out cards.';
 	let url: string = 'practice-craps-cards-grey';
 
 	let slides: string[] = [
@@ -37,7 +37,7 @@
 			  "@type": "Person",
 			  "name": "Elvis Lefkoski"
 			  },
-			"description": "Practice playing craps with Craps Cards. Play craps with cards using 36 Grey cut-out cards.",
+			"description": "Practice playing Craps with Craps Cards. Play Craps with cards using 36 grey cut-out cards.",
 			"url": "https://parlaynation.com/practice-craps-cards-grey.html"
 		}
 	</script>
@@ -50,12 +50,12 @@
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="Grey Craps Cards"
-				description="Practice playing Craps with 26 grey cut-out Craps cards. 36 Craps cards show you every combination of the dice so you can play or practice Craps with cards. This grey set was created so the color wouldn't show through the back after printing on light-weight paper stock but heavy stock paper is recommended."
+				description="Practice playing Craps with 36 grey cut-out Craps cards. 36 Craps cards show you every combination of the dice so you can play or practice Craps with cards. This grey set was created so the color wouldn't show through the back after printing on light-weight paper stock but heavy stock paper is recommended."
 				listPara=""
 				listItems={[]}
 				downloadUrl="src/pdf/grey-craps-cards.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

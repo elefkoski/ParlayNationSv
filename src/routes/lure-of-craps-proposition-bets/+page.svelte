@@ -10,7 +10,7 @@
 
 	let title: string = 'Lure of Proposition Bets';
 	let description: string =
-		'Experience the excitement of Craps prop bets. Our guide reveals how to harness the power of these bets for quick wins, without losing sight of your long-term strategy. ';
+		'Experience the excitement of Craps prop bets. Our guide reveals how to harness the power of these bets for quick wins, without losing sight of your long-term strategy.';
 	let url: string = 'lure-of-craps-proposition-bets';
 
 	let pageData: any = {
@@ -249,7 +249,7 @@
 					text="World
 				"
 					href="world"
-				/>which has a $5 min.
+				/> which has a $5 min.
 			</p>
 		</BlogH2>
 		<Divider />
@@ -273,7 +273,7 @@
 		<Divider />
 		<BlogH2 id="multiWins" title="Double, Triple, and Quadruple Wins">
 			<p class="pb-4">
-				When you’re making bets all over the table you’re chances of getting paid on any given roll
+				When you’re making bets all over the table your chances of getting paid on any given roll
 				are increased. Will it be enough to cover the losses of the other bets? Let’s hope so.
 				Sometimes though, you won’t have other losses. Sometimes you’ll have other wins and now
 				you’re getting paid two, three, four, maybe even five times in a single roll.
@@ -285,7 +285,7 @@
 				/> with Max Odds. You want to bet more on the 10 but you’re at <Link
 					text="Max Odds"
 					href="max-odds"
-				/> so you double dip by making a Place bet on the 10. At the same time you want a Hard 10 and
+				/> so you double dip by making a Place Bet on the 10. At the same time you want a Hard 10 and
 				for some reason, you have a feeling the Field is going to come in so, you bet that as well.
 			</p>
 			<p>

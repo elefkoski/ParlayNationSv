@@ -28,7 +28,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Follow the Dealers Advice',
+			title: 'Follow the Dealers’ Advice',
 			href: '#dealerAdvice',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -115,7 +115,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Place bets on the 6 or 8",
+          "name": "Place Bets on the 6 or 8",
           "description": "Consider betting on the 6 or 8, as they are common and have good odds."
         }
       ]
@@ -238,7 +238,7 @@
 					<span>Odds on the Pass Line – </span>Anything more you want to bet should be used as Odds
 					(an extra bet added behind your Pass Line).
 				</li>
-				<li><span>Place bets on the 6 or 8 – </span>Two very common and good bets on the table.</li>
+				<li><span>Place Bets on the 6 or 8 – </span>Two very common and good bets on the table.</li>
 			</ol>
 			<p>
 				That’s it; you can play all night with a handful of bets. After that, expand your knowledge
@@ -249,7 +249,7 @@
 			</p>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="dealerAdvice" title="Follow the Advice of the Dealers">
+		<BlogH2 id="dealerAdvice" title="Follow the Dealers’ Advice">
 			<p class="pb-4">
 				The dealers have a vested interest in you winning money. If you’re making bad bets and
 				losing lots of money, it’s hard for the dealers to earn tips. We want you to win, so when we
@@ -270,9 +270,9 @@
 					quickly turn your day around.
 				</li>
 				<li>
-					<span>Buy the 4 & 10 - </span>When you get to a $20 Place bet on the 4 or 10, it’s highly
+					<span>Buy the 4 & 10 - </span>When you get to a $20 Place Bet on the 4 or 10, it’s highly
 					recommended that you BUY it. That means paying a commission to get paid 2:1 instead of
-					9:5. Place bets on the 4 and 10 are much worse than <Link
+					9:5. Place Bets on the 4 and 10 are much worse than <Link
 						text="BUYs on the 4 and 10"
 						href="buying-place-bets"
 					/>.
@@ -291,7 +291,7 @@
 			{url}
 			img="empty-come-bet-area"
 			title="Up Close Empty Craps Layout"
-			alt="An uplose image of an empty craps layout."
+			alt="An up close image of an empty craps layout."
 		/>
 		<Divider />
 		<BlogH2 id="notJustOk" title="Don't Just Say OK">
@@ -316,8 +316,8 @@
 		<BlogH2 id="lotsOfQuestions" title="Ask Lots of Questions">
 			<p class="pb-4">
 				This is imperative. There is too much going on for you to know it all, and the dealers are
-				there to help, so take advantage of them. If you see the base dealer is busy helping other
-				players, ask the stickperson. If they are busy, you can always resort to the boxperson or
+				there to help, so take advantage of them. If you see the Base Dealer is busy helping other
+				players, ask the stickperson. If they are busy, you can always resort to the Boxperson or
 				the floor supervisor whose job is also to help everyone. If you know you will be asking lots
 				of questions, you may want to pick a spot at the table next to the dealer so you can have
 				conversations without having to talk past other players.

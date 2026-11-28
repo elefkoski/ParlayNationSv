@@ -227,7 +227,7 @@
 			caption=""
 			{url}
 			img="buy-ten"
-			title="A Buy On the Point Ten"
+			title="A Buy on the Point Ten"
 			alt="A buy on the point ten."
 		/>
 		<Divider />
@@ -290,7 +290,7 @@
 				as <Link text="stick change" href="the-crew" />, the dice bouncing off the table, or someone
 				mentioning 'seven.' This happens simply because both these instances happen all the time so
 				they end up happening at the same time. As they say, ‘correlation does not imply
-				causation.’; superstitions themselves have no bearing on the outcome of the dice.
+				causation.’ Superstitions themselves have no bearing on the outcome of the dice.
 			</p>
 		</BlogH2>
 		<Divider />

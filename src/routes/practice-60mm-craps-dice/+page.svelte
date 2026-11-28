@@ -3,11 +3,11 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = '60mm Foldable Craps Dice';
 	let description: string =
-		'Practice playing craps with dice by making your own craps dice. Print out a couple of these huge 60mm craps dice. These dice are more than triple the size of real craps dice.';
+		'Practice playing Craps with dice by making your own Craps dice. Print out a couple of these huge 60mm Craps dice. These dice are more than triple the size of real Craps dice.';
 	let url: string = 'practice-60mm-craps-dice';
 
 	let slides: string[] = [
@@ -32,7 +32,7 @@
 			  "@type": "Person",
 			  "name": "Elvis Lefkoski"
 			  },
-			"description": "Practice playing craps with dice by making your own craps dice. Print out a couple of these huge 60mm craps dice. These dice are more than triple the size of real craps dice.",
+			"description": "Practice playing Craps with dice by making your own Craps dice. Print out a couple of these huge 60mm Craps dice. These dice are more than triple the size of real Craps dice.",
 			"url": "https://parlaynation.com/practice-60mm-craps-dice.html"
 		}
 	</script>
@@ -54,12 +54,12 @@
 			</div>
 			<PracticeDescription
 				title="60mm Foldable Craps Dice"
-				description="Practice playing Craps by printing two 60mm foldable Craps dice. These dice are a little more than double the size of a real die (19mm). Use heavy stock paper to make even sturdier folded craps dice."
+				description="Practice playing Craps by printing two 60mm foldable Craps dice. These dice are more than triple the size of a real die (19mm). Use heavy stock paper to make even sturdier folded Craps dice."
 				listPara=""
 				listItems={[]}
 				downloadUrl="src/pdf/60mm-foldable-craps-dice.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

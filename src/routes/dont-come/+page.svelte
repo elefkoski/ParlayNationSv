@@ -11,7 +11,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -19,7 +19,7 @@
 
 	let title: string = "Betting Don't Come Bets in Craps";
 	let description: string =
-		"The Don't Come bet is like a mini Don't Pass bet. They both win and lose the same way and there are two stages to a Don't Come bet.";
+		"The Don't Come Bet is like a mini Don't Pass Bet. They both win and lose the same way and there are two stages to a Don't Come Bet.";
 	let url: string = 'dont-come';
 
 	let phref: string = 'dont-pass-lay-odds';
@@ -91,12 +91,12 @@
 		["In the Don't Come", 'Even money', '2 or 3', '7 or 11'],
 		['Behind a point', 'Even money', '7', 'When point rolls']
 	];
-	let tblPnts: string[] = ["You can only make a Don't Come bet during the Intermediate Roll"];
+	let tblPnts: string[] = ["You can only make a Don't Come Bet during the Intermediate Roll"];
 
-	let tblAria2: string = "Don't come comeout roll payment table";
-	let tblHeaders2: string[] = ['Intermediate Roll', 'Pays', 'Wins', 'Loses'];
+	let tblAria2: string = "Don't Come Comeout Roll payment table";
+	let tblHeaders2: string[] = ['Comeout Roll', 'Pays', 'Wins', 'Loses'];
 	let tblRows2: (string | number)[][] = [['Behind a point', 'Even money', '7', 'When point rolls']];
-	let tblPnts2: string[] = ["Don't Come bets are not contract bets"];
+	let tblPnts2: string[] = ["Don't Come Bets are not contract bets"];
 </script>
 
 <svelte:head>
@@ -113,7 +113,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting a Don't Come Bet in Craps",
-  "description": "An exhaustive guide on Don't Come bets in craps, detailing how they parallel Don't Pass bets, bet placement, the significance of the bet's stages, and how to bet for the dealers.",
+  "description": "An exhaustive guide on Don't Come Bets in Craps, detailing how they parallel Don't Pass Bets, bet placement, the significance of the bet's stages, and how to bet for the dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -137,43 +137,43 @@
     {
       "@type": "ItemList",
       "name": "Understanding Don't Come Bets",
-      "description": "Deep dive into the mechanics of Don't Come bets in craps, including how to place the bet, its stages, and dealer betting.",
+      "description": "Deep dive into the mechanics of Don't Come Bets in Craps, including how to place the bet, its stages, and dealer betting.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Placing a Don't Come Bet",
-          "description": "Instructions on making Don't Come bets in craps."
+          "description": "Instructions on making Don't Come Bets in Craps."
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Stages of a Don't Come Bet",
-          "description": "Explanation of the two main stages of Don't Come bets and their implications."
+          "description": "Explanation of the two main stages of Don't Come Bets and their implications."
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "'No Action' in Don't Come Bets",
-          "description": "Clarification on the 'No Action' call for Don't Come bets."
+          "description": "Clarification on the 'No Action' call for Don't Come Bets."
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Don't Come Bet Placement",
-          "description": "Details on where Don't Come bets are placed on the craps table."
+          "description": "Details on where Don't Come Bets are placed on the Craps table."
         },
         {
           "@type": "ListItem",
           "position": 5,
           "name": "Don't Come Bet Payouts",
-          "description": "Information on the payouts for Don't Come bets."
+          "description": "Information on the payouts for Don't Come Bets."
         },
         {
           "@type": "ListItem",
           "position": 6,
           "name": "Don't Come Bets for Dealers",
-          "description": "How to place Don't Come bets for the game's dealers."
+          "description": "How to place Don't Come Bets for the game's dealers."
         }
       ]
     }
@@ -187,17 +187,17 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-come/how-to-bet-a-dont-come_640x360.webp",
-      "caption": "Guidance on placing a Don't Come bet."
+      "caption": "Guidance on placing a Don't Come Bet."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-come/stage-one-of-a-dont-come_640x360.webp",
-      "caption": "Stage one of a Don't Come bet."
+      "caption": "Stage one of a Don't Come Bet."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/dont-come/stage-two-of-a-dont-come_640x360.webp",
-      "caption": "Stage two of a Don't Come bet."
+      "caption": "Stage two of a Don't Come Bet."
     },
     {
       "@type": "ImageObject",
@@ -227,9 +227,9 @@
 				the <Link text="Comeout Roll" href="the-stages" />.
 			</p>
 			<span class="text-center pb-1">Don't Come - Intermediate Roll</span>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<span class="text-center pb-1">Don't Come - Comeout Roll</span>
-			<ContentTble
+			<ContentTable
 				tblAria={tblAria2}
 				tblHeaders={tblHeaders2}
 				tblRows={tblRows2}
@@ -253,7 +253,7 @@
 		<Divider />
 		<ContentHeaderTwo id="bettingDontCome" title="How Do You Bet a Don't Come Bet in Craps?">
 			<p class="pb-4">
-				Don't Come bets are self-service so if the bet wins while in the DC, it is your
+				Don't Come Bets are self-service so if the bet wins while in the DC, it is your
 				responsibility to pick up your winnings. You do not need to tell the Dealer you are making
 				the bet but would be a courtesy to let them know that it belongs to you.
 			</p>
@@ -273,10 +273,10 @@
 		>
 			<ContentHeaderThree title="Stage One - In the Don't Come (DC)">
 				<p class="pb-4">
-					The first stage of a Don't Come bet is the initial bet. This is when you place your bet in
+					The first stage of a Don't Come Bet is the initial bet. This is when you place your bet in
 					the DC and wait for a Point to be rolled. While in the DC the bet wins when the 2 or 3 are
 					rolled and loses when the 7 or 11 are rolled. If the 12 rolls the Don't Come is a push, it
-					doesn’t win or lose. Any other number that rolls must be a Point and the Don't Come bet
+					doesn’t win or lose. Any other number that rolls must be a Point and the Don't Come Bet
 					moves behind that Point.
 				</p>
 				<ContentImg
@@ -295,7 +295,7 @@
 					before the Point it is behind. If the Point rolls, your Don't Come Bet loses.
 				</p>
 				<p class="pb-4">
-					Once behind a Point, the Don't Come bet has the advantage because it wins on a 7 which is
+					Once behind a Point, the Don't Come Bet has the advantage because it wins on a 7 which is
 					the most commonly rolled number. Regardless of which Point you move behind, you shouldn't
 					take it back.
 				</p>
@@ -312,9 +312,9 @@
 		<Divider />
 		<ContentHeaderTwo id="noAction" title="What Does 'No Action' Mean at the Craps Table?">
 			<p class="pb-4">
-				Some players don't like their Don't Come bets to move behind certain Points, like the 6 or
+				Some players don't like their Don't Come Bets to move behind certain Points, like the 6 or
 				the 8, because they are the most commonly rolled Points and players think they're likely to
-				lose their bet. If a player doesn't want a Don't Come bet to move behind a Point they can
+				lose their bet. If a player doesn't want a Don't Come Bet to move behind a Point they can
 				say <Quote
 					text="No
 			Action"
@@ -322,7 +322,7 @@
 				they could instead leave it in the DC. They are allowed to do this because none of the Don't
 				bets are contract bets. If that bet moved behind a Point they could take it down and put it
 				back in the DC. Saying <Quote text="No Action" /> is used to save the time of the dealer moving
-				the Don't Come bet behind the Point and then moving it back to the DC when a player doesn't want
+				the Don't Come Bet behind the Point and then moving it back to the DC when a player doesn't want
 				it there.
 			</p>
 		</ContentHeaderTwo>
@@ -334,7 +334,7 @@
 			<p class="pb-4">
 				The boxes behind Points aren't big enough to hold bets for eight players. Most of the time
 				you wouldn't have more than three or four Don't players at any given time so it's usually
-				not a problem but there is still a general rule for where players bets are supposed to be
+				not a problem but there is still a general rule for where players' bets are supposed to be
 				placed.
 			</p>
 			<ContentImg
@@ -343,13 +343,13 @@
 				mdImg="src/images/{url}/placement-of-a-dont-come-behind-a-point_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-dont-come-behind-a-point_1280x720.webp"
 				title="Placement of a Don't Come Behind a Point"
-				alt="Up close view of the boxes behind the points and of the craps table rail. There are 16 bubbles corresponding with each other on betting area and the craps table rail."
+				alt="Up close view of the boxes behind the points and of the Craps table rail. There are 16 bubbles corresponding with each other on betting area and the Craps table rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo id="dontComePayment" title="What Does the Don't Come Bet Pay in Craps?">
 			<p class="pb-4">
-				Regardless of weather or not a Don't Come bet is in the DC or behind a Point, it's going to
+				Regardless of whether or not a Don't Come Bet is in the DC or behind a Point, it's going to
 				win even money.
 			</p>
 			<ContentImg
@@ -373,7 +373,7 @@
 		<Divider />
 		<CalcContainer aria="Don't come payment calculator" id="dontComeCalc"
 			><CalcBox
-				description="Check the payment for a Don't Come bet."
+				description="Check the payment for a Don't Come Bet."
 				title="Don't Come Payment Calculator"
 			>
 				<CalcInput
@@ -391,7 +391,7 @@
 			<p class="pb-4">
 				Once behind a Point, the Don't Come is always betting against that Point. You cannot turn it
 				“Off”. Even if a new Comeout Roll begins the Don't Come still wants a 7 to roll before the
-				Point that it is behind. If you don't want you Don't Come Bet behind a certain Point because
+				Point that it is behind. If you don't want your Don't Come Bet behind a certain Point because
 				you think it may roll, your only option is to take it back.
 			</p>
 			<ContentImg
@@ -406,8 +406,8 @@
 		<Divider />
 		<ContentHeaderTwo id="dealerDontCome" title="How Can You Bet a Don't Come Bet for the Dealers?">
 			<p class="pb-4">
-				You can make a Don't Come bet for the dealers just like the any of the other bets. You only
-				need to place it in the DC and let the dealer know you are making a Don't Come bet for them.
+				You can make a Don't Come Bet for the dealers just like any of the other bets. You only
+				need to place it in the DC and let the dealer know you are making a Don't Come Bet for them.
 				If a dealer sees random dollars sitting in the DC, they're usually not going to assume it's
 				a bet for them.
 			</p>

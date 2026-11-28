@@ -71,7 +71,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Pressing Place Bets in Craps",
-  "description": "Explore the strategy of pressing place bets in craps to maximize potential winnings, including unit understanding, standard, odd, power, and multiple number presses.",
+  "description": "Explore the strategy of pressing place bets in Craps to maximize potential winnings, including unit understanding, standard, odd, power, and multiple number presses.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -95,30 +95,30 @@
     {
       "@type": "ItemList",
       "name": "Place Bets",
-      "description": "A guide on the various pressing strategies for Place Bets in craps, including how to effectively increase your bets for bigger wins.",
+      "description": "A guide on the various pressing strategies for Place Bets in Craps, including how to effectively increase your bets for bigger wins.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "What Is a Unit in Craps",
-          "description": "Defines a 'unit' in craps betting and its significance in pressing bets."
+          "name": "What Is a Unit in Craps?",
+          "description": "Defines a 'unit' in Craps betting and its significance in pressing bets."
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "What Are Some Standard Presses on the Craps Table",
+          "name": "What Are Some Standard Presses on the Craps Table?",
           "description": "Explains the most common pressing phrases and their meanings, such as 'Go Up One Unit,' 'Press it,' and 'Full Press.'"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "What is an Odd Press or Power Press in Craps",
+          "name": "What is an Odd Press or Power Press in Craps?",
           "description": "Delves into more advanced pressing techniques, including Odd Presses and Power Pressing, for experienced players."
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "What Are Multiple Number Presses in Craps",
+          "name": "What Are Multiple Number Presses in Craps?",
           "description": "Expands on strategies for pressing across multiple numbers simultaneously for spread betting and maximizing returns."
         }
       ]
@@ -171,7 +171,7 @@
 			<p class="pb-4">
 				You can press one Place Bet or multiple Place Bets with a few of your winnings or all of
 				them. The best time to press a bet is right before the dealer pays you for that winning bet,
-				but learning presses is key in becoming a skilled craps player no matter how you do it.
+				but learning presses is key in becoming a skilled Craps player no matter how you do it.
 			</p>
 			<ContentImg
 				caption=""
@@ -189,7 +189,7 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="unitBetting" title="What Is a Unit in Craps">
+		<ContentHeaderTwo id="unitBetting" title="What Is a Unit in Craps?">
 			<p class="pb-4">
 				In Craps, a unit is a certain amount of money. Generally speaking, a unit is $5 or $6. On
 				the 6 and 8 a unit is $6. On the 4, 5, 9 and 10 a unit is $5. For higher limit players, one
@@ -200,14 +200,14 @@
 				smImg="src/images/{url}/what-is-a-unit_640x360.webp"
 				mdImg="src/images/{url}/what-is-a-unit_960x540.webp"
 				lgImg="src/images/{url}/what-is-a-unit_1280x720.webp"
-				title="What Is a Unit in Craps"
+				title="What Is a Unit in Craps?"
 				alt="A $6, $12, $18, and $24 place bet on the eight."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo
 			id="standardPresses"
-			title="What Are Some Standard Presses on the Craps Table"
+			title="What Are Some Standard Presses on the Craps Table?"
 		>
 			<p class="pb-4">
 				Standard Presses are the ones you see most often. When you make a standard press, you tell
@@ -261,7 +261,7 @@
 				</p>
 				<p class="pb-4">
 					When Full Presses get above $100, you should make them normal increments and not full
-					press anymore. On the 6 and 8, it would be something like $120 or $150. On the 5 and 8, it
+					press anymore. On the 6 and 8, it would be something like $120 or $150. On the 5 and 9, it
 					would be something like $125 or $150. The dealer should tell you what a normal increment
 					is and give you normal presses at that point.
 				</p>
@@ -276,7 +276,7 @@
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="oddPowerPresses" title="What is an Odd Press or Power Press in Craps">
+		<ContentHeaderTwo id="oddPowerPresses" title="What is an Odd Press or Power Press in Craps?">
 			<p class="pb-4">
 				Presses other than standard presses require you know more about what you're doing. These are
 				more like systems. People know how much they're starting with and know how much they are
@@ -320,7 +320,7 @@
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
 		<Divider />
-		<ContentHeaderTwo id="multipleUnitPresses" title="What Are Multiple Number Presses in Craps">
+		<ContentHeaderTwo id="multipleUnitPresses" title="What Are Multiple Number Presses in Craps?">
 			<p class="pb-4">
 				When you start to press multiple numbers, you have a pretty good idea of what you're doing.
 				you're tracking your bets, knowing what they pay, how much you're going to add to each

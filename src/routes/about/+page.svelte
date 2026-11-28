@@ -46,20 +46,13 @@
 
 			<div class="home-page-body-bg-1 shadow-md rounded-lg overflow-hidden w-full max-w-4xl mb-10">
 				<div class="w-full text-center p-6">
-					<div class="flex justify-center items-center mb-4">
-						<img
-							class="object-cover rounded-full w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 mx-auto"
-							src="https://picsum.photos/200/300"
-							alt="Your Name"
-						/>
-					</div>
 					<p class="text-lg sm:text-xl">
-						Welcome to Parlay Nation! I'm Elvis, a passionate craps dealer with over a decade of
-						experience. My mission is to teach people how to play craps and mentor aspiring dealers.
+						Welcome to Parlay Nation! I'm Elvis, a passionate Craps dealer with over a decade of
+						experience. My mission is to teach people how to play Craps and mentor aspiring dealers.
 						Whether you're a beginner or a seasoned player, I'll guide you towards confident and
-						successful craps expertise while leveraging my love for coding and technology to enhance
+						successful Craps expertise while leveraging my love for coding and technology to enhance
 						the learning experience. Join me on this thrilling journey as we uncover the secrets of
-						craps excellence together!
+						Craps excellence together!
 					</p>
 				</div>
 			</div>
@@ -70,9 +63,9 @@
 						<h2 class="text-xl sm:text-2xl font-bold mb-4">The Mission</h2>
 						<p class="text-base sm:text-lg">
 							At Parlay Nation, my mission is to empower individuals to become confident and
-							successful craps players by providing accessible resources, step-by-step guides, and
-							expert advice. Join me on this exciting journey to unlock the secrets of craps and
-							elevate your game to new heights of success
+							successful Craps players by providing accessible resources, step-by-step guides, and
+							expert advice. Join me on this exciting journey to unlock the secrets of Craps and
+							elevate your game to new heights of success.
 						</p>
 					</div>
 
@@ -80,9 +73,9 @@
 						<h2 class="text-xl sm:text-2xl font-bold mb-4">The Vision</h2>
 						<p class="text-base sm:text-lg">
 							My vision is to create a supportive platform where individuals can discover the joy of
-							playing craps and develop their skills, while fostering a community of confident and
+							playing Craps and develop their skills, while fostering a community of confident and
 							strategic players. Together, let's unlock the potential within each player and fully
-							appreciate.
+							appreciate the game of Craps.
 						</p>
 					</div>
 				</div>

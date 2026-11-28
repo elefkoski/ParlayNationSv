@@ -170,7 +170,7 @@
 		<section aria-label="Opening paragraphs">
 			<p class="pb-4">
 				Not all Craps tables are created equal. Each is its own staging ground where every person at
-				the table plays a role in your experience . From the dealer who keeps the game flowing to
+				the table plays a role in your experience. From the dealer who keeps the game flowing to
 				the crowd that adds excitement, your choice of table sets the scene for your entire
 				experience.
 			</p>
@@ -204,7 +204,7 @@
 				able to play a variety of bets at once. If you increase that minimum to $15, a $200 buy-in
 				severely limits how many bets you can play together without <Link
 					text="killing your bankroll"
-					href="managing-craps-bankroll"
+					href="managing-your-craps-bankroll"
 				/>.
 			</p>
 			<p class="pb-4">
@@ -213,8 +213,8 @@
 					href="proposition-bets"
 				/>
 				change from $1 to $5, making a bet like the Horn a $20 minimum instead of $4. If you’re playing
-				a quarter game, a buy-in of at least $500, but closer to $800 or $1,000, is my recommendation.
-				If you buy in for $300, you’ll want to limit yourself to one or two bets, otherwise, betting
+				a quarter game, a buy-in of at least $300, but closer to $500, is my recommendation.
+				If you buy in for $1-200, you’ll want to limit yourself to one or two bets, otherwise, betting
 				a multitude of bets will result in a five minute visit to the Craps table if things go South.
 			</p>
 			<p>
@@ -226,7 +226,7 @@
 		<Divider />
 		<BlogH2 id="theRail" title="Studying the Rail">
 			<p class="pb-4">
-				Scan the rails to assess the situation.The quickest way to assess the situation is to scan
+				Scan the rails to assess the situation. The quickest way to assess the situation is to scan
 				the rails. Do you see nice and healthy rows of chips in front of the players? It looks like
 				they’re doing well. If there’s no money in the rails, it’s safe to assume the table was less
 				than par.
@@ -338,11 +338,11 @@
 					inexperienced dealer wondering what’s going on. Not able to handle everything
 					instinctively, they must prepare for what’s about to happen. And the only time they have
 					to figure it out is in-between each roll, when they stare at the layout performing
-					mental-gymnastics until they which way is up.
+					mental-gymnastics until they figure out which way is up.
 				</p>
 				<p class="pb-4">
 					Also, claiming they’re capable of top-notch customer service might be a stretch. Offering
-					friendly chatter or giving lessons to players is hard when you’re stuck in you’re head
+					friendly chatter or giving lessons to players is hard when you’re stuck in your head
 					trying to figure out what something pays, the order it’s paid in, the procedure to follow,
 					or a myriad of other thoughts required to get through the next roll.
 				</p>
@@ -356,11 +356,11 @@
 				</p>
 				<p class="pb-4">
 					It’ll take a couple of years for a new Craps dealer to nail everything down. Some dealers
-					will struggle for many more years dreading every time they get put not the game. Even now,
-					I work with at 10+yr veteran Craps dealers who still doesn’t get it.
+					will struggle for many more years dreading every time they get put on the game. Even now,
+					I work with 10+yr veteran Craps dealers who still don’t get it.
 				</p>
 				<p>
-					You’re fortunate the Craps table comes with a crew. You can have the boxperson helping the
+					You’re fortunate the Craps table comes with a crew. You can have the Boxperson helping the
 					dealer get through the process while the stickperson helps the players. You also have the
 					option to move to the other side of the table where, hopefully, an experienced dealer
 					resides.

@@ -7,7 +7,7 @@
 
 	let title: string = 'Learn the Craps Basics';
 	let description: string =
-		"Before you make your first bet you should have an understanding of what you're walking up to. Take the time to learn some of the in's and out's of craps now.";
+		"Before you make your first bet you should have an understanding of what you're walking up to. Take the time to learn some of the ins and outs of Craps now.";
 	let url: string = 'craps-basics';
 
 	let phref: string = 'craps';
@@ -25,12 +25,12 @@
 			alt: 'The Crew',
 			title: 'The Crew',
 			href: 'the-crew',
-			body: 'What are the jobs of the dealer, the box, and the floor? Each play a different role on the Craps table.',
+			body: 'What are the jobs of the dealer, the box, and the floor? Each plays a different role on the Craps table.',
 			badges: ['The Box', 'The Base Dealers', 'The Stickperson', 'The Supervisor']
 		},
 		{
 			// The Craps Table
-			aria: 'The craps table',
+			aria: 'The Craps table',
 			smImg: 'src/images/' + url + '/the-craps-table-header_600x600.webp',
 			mdImg: 'src/images/' + url + '/the-craps-table-header_992x558.webp',
 			lgImg: 'src/images/' + url + '/the-craps-table-wide-header.webp',
@@ -130,7 +130,7 @@
 				"url": "https://parlaynation.com/the-crew.html",
 				"name": "The Crew",
 				"image": "/website/img/the-crew/the-crew-header.jpg",
-				"description": "Before you make your first bet you should have an understanding of what you're walking up to. Take the time to learn some of the in's and out's of craps now."
+				"description": "Before you make your first bet you should have an understanding of what you're walking up to. Take the time to learn some of the ins and outs of Craps now."
 			  }
 			},
 			{
@@ -204,7 +204,7 @@
 		<HomeHeader
 			aria="Craps basics header"
 			title="Craps Basics"
-			pOne="Gain a comprehensive understanding of the craps table layout, the roles of the dealers, and the process of shooting the dice."
+			pOne="Gain a comprehensive understanding of the Craps table layout, the roles of the dealers, and the process of shooting the dice."
 			pTwo="Dive deep into the phases of a craps game: the Comeout Roll and the Intermediate Roll, and how they shape the dynamics of the game."
 			pThree="Delve into the nuances of craps etiquette and betting strategies, including self-service bets, two-way bets, and hedging your bets."
 			button="Learn the crew"

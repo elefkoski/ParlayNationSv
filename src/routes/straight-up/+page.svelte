@@ -11,7 +11,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -67,7 +67,7 @@
 		imageUrl: 'src/images/' + url + '/' + url + '-header.jpg'
 	};
 
-	let tblAria: string = 'Straight up payment table';
+	let tblAria: string = 'Straight Up payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
 	let tblRows: (string | number)[][] = [
 		['Aces - 2', '30:1', '2', 'Any other number'],
@@ -75,7 +75,7 @@
 		['Yo - 11', '15:1', '11', 'Any other number'],
 		['Twelve - 12', '30:1', '12', 'Any other number']
 	];
-	let tblPnts: string[] = ['All Straight Up bets are one roll bets'];
+	let tblPnts: string[] = ['All Straight Up bets are one-roll bets'];
 </script>
 
 <svelte:head>
@@ -92,7 +92,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Straight Up in Craps",
-  "description": "Dive into the world of Straight Up bets in craps, from how to place them, to their placement on the table, their lucrative payouts, and how to include the dealers in your betting strategy.",
+  "description": "Dive into the world of Straight Up bets in Craps, from how to place them, to their placement on the table, their lucrative payouts, and how to include the dealers in your betting strategy.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -116,7 +116,7 @@
     {
       "@type": "ItemList",
       "name": "Proposition Bets",
-      "description": "Exploring the high stakes of Straight Up betting in craps, including strategic betting for dealers and payout calculations.",
+      "description": "Exploring the high stakes of Straight Up betting in Craps, including strategic betting for dealers and payout calculations.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -128,7 +128,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Where Are Your Straight Up Bets on the Craps Table?",
-          "description": "Insight into the placement of Straight Up bets on the craps layout to ensure proper tracking during the game."
+          "description": "Insight into the placement of Straight Up bets on the Craps layout to ensure proper tracking during the game."
         },
         {
           "@type": "ListItem",
@@ -155,12 +155,12 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/straight-up/straight-up-bets_640x360.webp",
-      "caption": "Up close overhead view of the straight up area on the craps table. The aces, ace deuce, yo, and twelve are highlighted."
+      "caption": "Up close overhead view of the Straight Up area on the Craps table. The aces, ace deuce, yo, and twelve are highlighted."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/straight-up/placement-of-straight-up_640x360.webp",
-      "caption": "Up close overhead view of the straight up bets and the craps table rail. There are eight on the layout that correspond with the rail."
+      "caption": "Up close overhead view of the Straight Up bets and the Craps table rail. There are eight on the layout that correspond with the rail."
     },
     {
       "@type": "ImageObject",
@@ -197,14 +197,14 @@
 				and Twelves roll back to back more often than you may think, and if you're willing to take a
 				chance, you might just hit a jackpot.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/straight-up-bets_640x360.webp"
 				mdImg="src/images/{url}/straight-up-bets_960x540.webp"
 				lgImg="src/images/{url}/straight-up-bets_1280x720.webp"
 				title="Straight Up Bets"
-				alt="Up close overhead view of the straight up area on the craps table. The aces, ace deuce, yo, and twelve are highlighted."
+				alt="Up close overhead view of the Straight Up area on the Craps table. The aces, ace deuce, yo, and twelve are highlighted."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -262,7 +262,7 @@
 				mdImg="src/images/{url}/placement-of-straight-up_960x540.webp"
 				lgImg="src/images/{url}/placement-of-straight-up_1280x720.webp"
 				title="Placement of Straight Up"
-				alt="Up close overhead view of the stright up bets and the craps table rail. There are eight on the layout that correspond with the rail"
+				alt="Up close overhead view of the Straight Up bets and the Craps table rail. There are eight on the layout that correspond with the rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -285,7 +285,7 @@
 					smImg="src/images/{url}/high-side-straight-up-payment_640x360.webp"
 					mdImg="src/images/{url}/high-side-straight-up-payment_960x540.webp"
 					lgImg="src/images/{url}/high-side-straight-up-payment_1280x720.webp"
-					title="High Side Striaght Up Payment"
+					title="High Side Straight Up Payment"
 					alt="Up close view of $3 on the aces. Two green dice read 1-1 in the corner. A bubble reads $90 payment."
 				/>
 			</ContentHeaderThree>
@@ -305,9 +305,9 @@
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
 		<Divider />
-		<CalcContainer aria="Straight up payment calculators" id="straightUpCalcs"
+		<CalcContainer aria="Straight Up payment calculators" id="straightUpCalcs"
 			><CalcBox
-				description="Check the payment for a bet made straight up on the Aces, Ace Deuce, Yo or Twelve."
+				description="Check the payment for a bet made Straight Up on the Aces, Ace Deuce, Yo or Twelve."
 				title="Straight Up Payment Calculators"
 			>
 				<CalcInput
@@ -343,7 +343,7 @@
 				mdImg="src/images/{url}/dealer-straight-up_960x540.webp"
 				lgImg="src/images/{url}/dealer-straight-up_1280x720.webp"
 				title="Dealer Straight Up"
-				alt="Up close overhead view of $1 in the middle of the yo"
+				alt="Up close overhead view of $1 in the middle of the yo."
 			/>
 		</ContentHeaderTwo>
 	</main>

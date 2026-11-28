@@ -8,9 +8,9 @@
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
 
-	let title: string = 'Come VS Place Bets';
+	let title: string = 'Come vs Place Bets';
 	let description: string =
-		'Explore the strategic nuances of Come and Place bets in Craps with our guide. Learn how to leverage their advantages for your gameplay style, ensuring you make informed decisions at the table.';
+		'Explore the strategic nuances of Come and Place Bets in Craps with our guide. Learn how to leverage their advantages for your gameplay style, ensuring you make informed decisions at the table.';
 	let url: string = 'come-vs-place-bets';
 
 	let pageData: any = {
@@ -62,7 +62,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "The Rivalry of Come and Place Bets",
-  "description": "A comprehensive exploration of Come and Place bets in Craps, highlighting the strategic considerations, advantages, and disadvantages of each bet type.",
+  "description": "A comprehensive exploration of Come and Place Bets in Craps, highlighting the strategic considerations, advantages, and disadvantages of each bet type.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -112,26 +112,26 @@
     {
       "@type": "ItemList",
       "name": "Advantages of a Place Bet",
-      "description": "Outlining the advantages of Place bets, such as their flexibility in betting, the ability to press or take down bets, and their straightforward approach.",
+      "description": "Outlining the advantages of Place Bets, such as their flexibility in betting, the ability to press or take down bets, and their straightforward approach.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Flexibility and Control",
-          "description": "Exploring how Place bets offer players control over their bets with the option to adjust betting strategies on the fly."
+          "description": "Exploring how Place Bets offer players control over their bets with the option to adjust betting strategies on the fly."
         }
       ]
     },
     {
       "@type": "ItemList",
       "name": "Disadvantages of a Place Bet",
-      "description": "Examining the disadvantages of Place bets, including their higher house edge on certain numbers and the potential for players to chase losses.",
+      "description": "Examining the disadvantages of Place Bets, including their higher house edge on certain numbers and the potential for players to chase losses.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Risks and Limitations",
-          "description": "Analysis of the cons associated with Place bets, such as the increased house edge and the behavioral pitfalls they may encourage."
+          "description": "Analysis of the cons associated with Place Bets, such as the increased house edge and the behavioral pitfalls they may encourage."
         }
       ]
     }
@@ -227,7 +227,7 @@
 				</li>
 				<li>
 					<span>Come Bets are Contract - </span>Once a Come bet moves into a Point, you cannot take
-					it back or turn it off. Like the Pass Line, it must be resolved by rolling its’ Point or a
+					it back or turn it off. Like the Pass Line, it must be resolved by rolling its Point or a
 					7.
 				</li>
 				<li>
@@ -239,7 +239,7 @@
 					Odds bet. This turns a cheap bet into an expensive one.
 				</li>
 				<li>
-					<span>Must Hit Twice - </span>First, a number rolls and the Come bet moves to its’ Point,
+					<span>Must Hit Twice - </span>First, a number rolls and the Come bet moves to its Point,
 					then that number must roll again for you to get paid. It’s hard enough to have the number
 					once, right?
 				</li>
@@ -248,7 +248,7 @@
 					Craps. The Come bet's full value lies in getting paid for Odds.
 				</li>
 				<li>
-					<span>You Don’t Pick the Number - </span>It’s not up to you where you’re Come bet travels
+					<span>You Don’t Pick the Number - </span>It’s not up to you where your Come bet travels
 					to. It could be fours and tens all night, causing you to shake your head every time.
 				</li>
 			</ol>
@@ -256,12 +256,12 @@
 		<Divider />
 		<BlogH2 id="placeBetAdvantages" title="Advantages of a Place Bet">
 			<p class="pb-4">
-				Place bets are the preferred bet by players because of their flexibility and minimal cost.
+				Place Bets are the preferred bet by players because of their flexibility and minimal cost.
 				The fact that they are not contracted leaves the possibilities endless.
 			</p>
 			<ol>
 				<li>
-					<span>Low Cost - </span>You don’t have to add anything extra to a Place bet, making your
+					<span>Low Cost - </span>You don’t have to add anything extra to a Place Bet, making your
 					investment much smaller than a Come bet with Odds.
 				</li>
 				<li>
@@ -290,7 +290,7 @@
 		<Divider />
 		<BlogH2 id="placeBetDisadvantages" title="Disadvantages of a Place Bet">
 			<p class="pb-4">
-				The disadvantages are there, so don’t think Place bets are all upside. The problem is
+				The disadvantages are there, so don’t think Place Bets are all upside. The problem is
 				getting your money back. You can quickly spread yourself thin and get into some trouble.
 			</p>
 			<ol>
@@ -300,13 +300,13 @@
 				</li>
 				<li>
 					<span>Understanding the Nuances - </span>You must understand commission when dealing with
-					<Link text="buys on the 4 & 10" href="buying-place-bets" /> and know the proper Place bet amounts
+					<Link text="buys on the 4 & 10" href="buying-place-bets" /> and know the proper Place Bet amounts
 					for the 6 & 8. When you get into Spread Bets, variations involved with different Points and
 					different units, you can get overwhelmed.
 				</li>
 				<li>
 					<span>Point 7 Max Loss - </span>When you’re making a Pass Line with Odds, a couple of
-					Place bets, and the shooter immediately throws a 7, you’re in for a considerable loss. A
+					Place Bets, and the shooter immediately throws a 7, you’re in for a considerable loss. A
 					few times of that, and you can be broke.
 				</li>
 				<li>
@@ -328,11 +328,11 @@
 				Whether you’re in the camp of Place or Come bets, players will not bother each other over
 				the choice. Many people will use the math argument to say that Come bets are better, and
 				from a long-term <Link text="expected return" href="rank-of-craps-bets" />, they may be
-				correct, but in a game where players’ emotions come into play, Place bets are too flexible
+				correct, but in a game where players’ emotions come into play, Place Bets are too flexible
 				to let go of.
 			</p>
 			<p>
-				So, you've learned the advantages and disadvantages of Come and Place bets in Craps. But
+				So, you've learned the advantages and disadvantages of Come and Place Bets in Craps. But
 				have you considered how these bets fit into your overall Craps strategy? Each bet type has
 				its own set of opportunities and limitations, so choose the one that aligns with your game
 				plan.

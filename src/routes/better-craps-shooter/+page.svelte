@@ -282,7 +282,7 @@
 			{url}
 			img="five-purple-dice"
 			title="Up Close View of Five Purple Dice on a Craps Layout"
-			alt="Up close view of five purple dice on a craps layout"
+			alt="Up close view of five purple dice on a Craps layout"
 		/>
 		<div class="lg:hidden">
 			<Divider />
@@ -348,7 +348,7 @@
 			{url}
 			img="come-bet-in-the-come"
 			title="Third Base Viewing the Craps Layout"
-			alt="Third base viewing the craps layout"
+			alt="Third base viewing the Craps layout"
 		/>
 		<Divider />
 		<BlogH2 id="needToFollow" title="Rules That Must Be Followed">
@@ -402,7 +402,7 @@
 			<ol>
 				<li>
 					<span>Avoid throwing the dice into the boxes - </span>The boxes on the table where the
-					Point is marked and where Place bets are placed should not be the target for your dice.
+					Point is marked and where Place Bets are placed should not be the target for your dice.
 					Throwing the dice into these boxes can lead to confusion and disrupt the flow of the game,
 					frustrating the dealer.
 				</li>
@@ -430,7 +430,7 @@
 				<li>
 					<span>Don't rush the dealer - </span>The stickperson, who handles the dice, has multiple
 					responsibilities and needs to oversee the entire table. Avoid pressuring them to hand you
-					the dice immediately. If you notice a delay, politely inform the base dealer or the box
+					the dice immediately. If you notice a delay, politely inform the Base Dealer or the box
 					for assistance. Maintain patience to ensure a fair and organized game.
 				</li>
 				<li>

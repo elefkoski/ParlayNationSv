@@ -61,7 +61,7 @@
 		{
 			title: 'Take Advantage of a Great Craps Roll',
 			description:
-				'Capitalize on great craps rolls: Expert advice on bet pressing, parlays, and optimizing your winnings',
+				'Capitalize on great Craps rolls: Expert advice on bet pressing, parlays, and optimizing your winnings.',
 			href: 'a-great-craps-roll',
 			imageUrlSmall: 'src/images/a-great-craps-roll/up-close-craps-layout_640x360.webp',
 			imageUrlMedium: 'src/images/a-great-craps-roll/up-close-craps-layout_960x540.webp',
@@ -71,7 +71,7 @@
 		{
 			title: 'Dealing with New Players',
 			description:
-				'Explore how new players influence the game of craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.',
+				'Explore how new players influence the game of Craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.',
 			href: 'dealing-with-new-craps-players',
 			imageUrlSmall: 'src/images/dealing-with-new-craps-players/puck-off-in-dont-come_640x360.webp',
 			imageUrlMedium:
@@ -109,7 +109,7 @@
 		{
 			title: 'Art of Verbal Betting',
 			description:
-				'Verbal betting in Craps made easy: Learn to make your bets verbally with precision, avoiding common mistakes for a smoother, more enjoyable game',
+				'Verbal betting in Craps made easy: Learn to make your bets verbally with precision, avoiding common mistakes for a smoother, more enjoyable game.',
 			href: 'art-of-verbal-betting',
 			imageUrlSmall: 'src/images/art-of-verbal-betting/outside-place-bets_640x360.webp',
 			imageUrlMedium: 'src/images/art-of-verbal-betting/outside-place-bets_960x540.webp',
@@ -170,7 +170,7 @@
 			title: 'Managing Your Craps Bankroll',
 			description:
 				'Bankroll strategies for Craps success: Discover how to play within your budget, optimize your bets, and enjoy the thrill of Craps without breaking the bank.',
-			href: 'managing-craps-bankroll',
+			href: 'managing-your-craps-bankroll',
 			imageUrlSmall: 'src/images/managing-craps-bankroll/pass-line-paid-quarters_640x360.webp',
 			imageUrlMedium: 'src/images/managing-craps-bankroll/pass-line-paid-quarters_960x540.webp',
 			imageUrlLarge: 'src/images/managing-craps-bankroll/pass-line-paid-quarters_1280x720.webp',
@@ -386,7 +386,7 @@
 	{
 	"@type": "BlogPosting",
 	"headline": "Take Advantage of a Great Craps Roll",
-	"description": "Capitalize on great craps rolls: Expert advice on bet pressing, parlays, and optimizing your winnings",
+	"description": "Capitalize on great Craps rolls: Expert advice on bet pressing, parlays, and optimizing your winnings.",
 	"url": "http://parlaynation.com/a-great-craps-roll",
 	"image": {
 		"@type": "ImageObject",
@@ -404,7 +404,7 @@
 	{
 	"@type": "BlogPosting",
 	"headline": "Dealing with New Players",
-	"description": "Explore how new players influence the game of craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.",
+	"description": "Explore how new players influence the game of Craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.",
 	"url": "http://parlaynation.com/dealing-with-new-craps-players",
 	"image": {
 		"@type": "ImageObject",
@@ -567,7 +567,7 @@
 	"@type": "BlogPosting",
 	"headline": "Managing Your Craps Bankroll",
 	"description": "Bankroll strategies for Craps success: Discover how to play within your budget, optimize your bets, and enjoy the thrill of Craps without breaking the bank.",
-	"url": "http://parlaynation.com/managing-craps-bankroll",
+	"url": "http://parlaynation.com/managing-your-craps-bankroll",
 	"image": {
 		"@type": "ImageObject",
 		"url": "http://parlaynation.com/src/images/managing-craps-bankroll/pass-line-paid-quarters_1280x720.webp",

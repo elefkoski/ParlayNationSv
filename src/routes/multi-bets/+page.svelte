@@ -84,7 +84,7 @@
 			iconFills: ['none', '#38BDF8']
 		},
 		{
-			title: 'Three Way Crap Calculator',
+			title: 'Three Way Craps Calculator',
 			href: '#threeWayCalc',
 			iconD: ['M0 0h24v24H0V0z', 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'],
 			iconFills: ['none', '#38BDF8']
@@ -137,7 +137,7 @@
     {
       "@type": "ItemList",
       "name": "Multi-Bet Strategies",
-      "description": "Strategies and terminology for placing Multi-Bets in Craps, focusing on combinations of two and three straight up bets.",
+      "description": "Strategies and terminology for placing Multi-Bets in Craps, focusing on combinations of two and three Straight Up bets.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -189,7 +189,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/multi-bets/high-low-yo_640x360.webp",
-      "caption": "$1 each on the aces, ace deuce, and the yo."
+      "caption": "$1 each on the twelve, the aces, and the yo."
     },
     {
       "@type": "ImageObject",
@@ -211,7 +211,7 @@
 			{pageData}
 		>
 			<p class="pb-4">
-				Multi-Bets are betting the same amount on 2 or 3 different straight up bets. This page goes
+				Multi-Bets are betting the same amount on 2 or 3 different Straight Up bets. This page goes
 				over the most common two and three Multi-Bet combinations that you'll see other players
 				betting and the proper way to say them.
 			</p>
@@ -240,7 +240,7 @@
 			</ContentHeaderThree>
 			<ContentHeaderThree title="Betting Split">
 				<p class="pb-4">
-					You can split two different two numbers with an odd amount (like $5) with the phrase <Quote
+					You can split two different numbers with an odd amount (like $5) with the phrase <Quote
 						text="Split"
 					/>. E.g. <Quote text="Can I have a nickel split on the Aces-Ace Deuce?" /> Some casinos won't
 					allow odd amounted splits ($5) because they're improper ($2.50 on each).
@@ -282,7 +282,7 @@
 				>
 			</ContentHeaderThree>
 			<Divider />
-			<ContentHeaderThree title="Eleven - Twelve(ET)">
+			<ContentHeaderThree title="Eleven - Twelve (ET)">
 				<p class="pb-4">
 					While you normally would use the word <Quote text="Yo" /> when betting an eleven, when you
 					bet it with the twelve, you would use the word <Quote text="Eleven" />. Example: <Quote
@@ -332,7 +332,7 @@
 					mdImg="src/images/{url}/aces-ace-deuce_960x540.webp"
 					lgImg="src/images/{url}/aces-ace-deuce_1280x720.webp"
 					title="Aces - Ace Deuce"
-					alt="$1 each on the aces and the ace deuce"
+					alt="$1 each on the aces and the ace deuce."
 				/>
 				<Divider />
 				<CalcContainer aria="Aces ace deuce payment calculator" id="acesAceDeuceCalc"
@@ -368,7 +368,7 @@
 					mdImg="src/images/{url}/seven-eleven_960x540.webp"
 					lgImg="src/images/{url}/seven-eleven_1280x720.webp"
 					title="Seven - Eleven"
-					alt="$1 each on the seven and the eleven"
+					alt="$1 each on the seven and the eleven."
 				/>
 				<Divider />
 				<CalcContainer aria="Seven eleven payment calculator" id="sevenElevenCalc"
@@ -410,7 +410,7 @@
 					mdImg="src/images/{url}/high-low-yo_960x540.webp"
 					lgImg="src/images/{url}/high-low-yo_1280x720.webp"
 					title="High - Low - Yo"
-					alt="$1 each on the aces, ace deuce, and the yo."
+					alt="$1 each on the twelve, the aces, and the yo."
 				/>
 				<Divider />
 				<CalcContainer aria="High low yo payment calculator" id="highLowYoCalc"
@@ -441,9 +441,9 @@
 				</p>
 				<p class="pb-4">
 					The Three Way Craps and Any Craps are similar because they both bet the same numbers but
-					different in how the money is distributed. A Three way is betting each of the numbers
+					different in how the money is distributed. A Three Way is betting each of the numbers
 					individually so depending on which one rolls, the payment is different. The Any Craps is
-					betting whether or not any of the three of will come and it pays the same regardless of
+					betting whether or not any of the three will come and it pays the same regardless of
 					which rolls.
 				</p>
 				<ContentImg
@@ -457,8 +457,8 @@
 				<Divider />
 				<CalcContainer aria="Three way craps payment calculator" id="threeWayCalc"
 					><CalcBox
-						description="Check the payment for for when you bet the same amount on each the Three Way Crap."
-						title="Three Way Crap Payment Calculator"
+						description="Check the payment for when you bet the same amount on each the Three Way Craps."
+						title="Three Way Craps Payment Calculator"
 					>
 						<CalcInput2
 							calculate={calculateThreeWay}
@@ -468,7 +468,7 @@
 							rollValues={[2, 3, 12]}
 							valueTitles={['Aces', 'Ace Deuce', 'Twelve']}
 							step={1}
-							title="Enter amount on EACH the Three Way Crap:"
+							title="Enter amount on EACH the Three Way Craps:"
 						/>
 					</CalcBox></CalcContainer
 				>

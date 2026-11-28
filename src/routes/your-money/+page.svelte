@@ -11,7 +11,7 @@
 	import Link from '$lib/components/Link.svelte';
 	import Quote from '$lib/components/Quote.svelte';
 
-	let title: string = 'Using Presses at the Craps Table';
+	let title: string = 'Watching Your Money at the Craps Table';
 	let description: string =
 		'You must pay attention to your money at the Craps Table. Know how much your bets cost, placement of those bets, your presses, and your payments.';
 	let url: string = 'your-money';
@@ -64,7 +64,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Watching Your Money at the Craps Table",
-  "description": "A guide to vigilance with your money at the craps table, including ensuring correct change, bet placement, and bet numbers.",
+  "description": "A guide to vigilance with your money at the Craps table, including ensuring correct change, bet placement, and bet numbers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -88,7 +88,7 @@
     {
       "@type": "ItemList",
       "name": "Place Bets",
-      "description": "Key considerations for players at the craps table to ensure they are vigilant about their money, including tips on making sure you're getting the right change, your bets are in the correct spot, and on the right number.",
+      "description": "Key considerations for players at the Craps table to ensure they are vigilant about their money, including tips on making sure you're getting the right change, your bets are in the correct spot, and on the right number.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -143,7 +143,7 @@
 		>
 			<p class="pb-4">
 				Pay attention to your money! Craps seems to be the only game where even seasoned players
-				don't know where their money is. When a craps game is blowing up, it's moving fast, and many
+				don't know where their money is. When a Craps game is blowing up, it's moving fast, and many
 				players are making multiple bets, it's easy to understand that a dealer might make a
 				mistake. At the same time, when a table only has two or three players on it, some dealers
 				will become so nonchalant about it that they don't pay attention at all. Learn what to watch
@@ -168,7 +168,7 @@
 				much… it could be not enough… You should give back money if you know they gave you extra.
 				It's technically stealing. If they didn't give you enough back, then you're being robbed.
 				The best way to win an argument with a dealer and/or
-				<Link text="boxperson" href="the-crew" /> is to know how much the bet cost, how much money you
+				<Link text="Boxperson" href="the-crew" /> is to know how much the bet cost, how much money you
 				gave the dealer, and how much change you received.
 			</p>
 			<ContentImg
@@ -204,7 +204,7 @@
 			<p class="pb-4">
 				You should make sure the dealer is putting your bets on the correct number. Even if the
 				dealer heard what your bet was and repeated it back to you, they could very easily put that
-				bet on a wrong Place bet number. Watch the dealer as they set up your bets to ensure there
+				bet on a wrong Place Bet number. Watch the dealer as they set up your bets to ensure there
 				aren’t problems in the future.
 			</p>
 			<ContentImg

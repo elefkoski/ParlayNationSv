@@ -7,7 +7,7 @@
 
 	let title: string = "The Don'ts";
 	let description: string =
-		"You don't have to bet that the shooter is going to make their Point. If fact after the Point is established, players on the Don't side are more likely to win.";
+		"You don't have to bet that the shooter is going to make their Point. In fact after the Point is established, players on the Don't side are more likely to win.";
 	let url: string = 'the-donts';
 
 	let phref: string = 'coming-down-with-odds';
@@ -49,7 +49,7 @@
 			alt: "Don't Come",
 			title: "Don't Come",
 			href: 'dont-come',
-			body: "Don't Comes are just like mini Don't Pass bets. It's always betting against the next Point number to roll.",
+			body: "Don't Comes are just like mini Don't Pass Bets. It's always betting against the next Point number to roll.",
 			badges: [
 				"Betting Don't Come",
 				"Don't Come Stages",
@@ -69,7 +69,7 @@
 			alt: "Don't Come Lay Odds",
 			title: "Don't Come Lay Odds",
 			href: 'dont-come-lay-odds',
-			body: "Just like the Don't Pass, you can add Lay Odds to your Don't Come bet which gets paid True Odds.",
+			body: "Just like the Don't Pass, you can add Lay Odds to your Don't Come Bet which gets paid True Odds.",
 			badges: [
 				'Betting DC Lay Odds',
 				'DC Lay Odds Placement',
@@ -140,7 +140,7 @@
 				"url": "https://parlaynation.com/dont-come.html",
 				"name": "Don't Come",
 				"image": "https://parlaynation.com/src/images/dont-come/dont-come-header.jpg",
-				"description": "The Don't Come bet is like a mini Don't Pass bet. They both win and lose the same way and there are two stages to a Don't Come bet."
+				"description": "The Don't Come Bet is like a mini Don't Pass Bet. They both win and lose the same way and there are two stages to a Don't Come Bet."
 			  }
 			},
 			{
@@ -176,11 +176,10 @@
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col space-y-8 my-6">
 		<HomeHeadings
-			aria="The Dont's header"
-			title="The Dont's"
-			pOne="Gain a comprehensive understanding of 'Don't' bets in craps, including 'Don't Pass', 'Don't Come', and the associated 'Lay Odds'."
-			pTwo="Analyze the payout structure and betting procedures for each type of 'Don't' bet, enhancing your strategic gameplay.
-			."
+			aria="The Don'ts header"
+			title="The Don'ts"
+			pOne="Gain a comprehensive understanding of 'Don't' bets in Craps, including 'Don't Pass', 'Don't Come', and the associated 'Lay Odds'."
+			pTwo="Analyze the payout structure and betting procedures for each type of 'Don't' bet, enhancing your strategic gameplay."
 			pThree="Delve into the strategy of 'Overlay' betting, a nuanced technique that involves betting directly against a chosen Point."
 			button="Learn the don't pass"
 			href="dont-pass"

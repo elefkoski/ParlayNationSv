@@ -172,7 +172,7 @@
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for the six different Place bets."
+			description="Check the payment for the six different Place Bets."
 			title="Place Bet Payment Calculators"
 		>
 			<CalcInput
@@ -201,7 +201,7 @@
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for a Buying a 4 or 10."
+			description="Check the payment for Buying a 4 or 10."
 			title="Buy 4 or 10 Payment Calculator"
 		>
 			<CalcInput
@@ -226,13 +226,13 @@
 				calculate={calculateHardFourTen}
 				id="hard_four_ten_pymnt_calc"
 				pId="hard_four_ten_calc_result"
-				placeholder="$1 minumum"
+				placeholder="$1 minimum"
 				step={1}
 				title="Enter Hard 4 or 10 amount:"
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for a bet made straight up on the Aces, Ace Deuce, Yo or Twelve."
+			description="Check the payment for a bet made Straight Up on the Aces, Ace Deuce, Yo or Twelve."
 			title="Straight Up Payment Calculators"
 		>
 			<CalcInput
@@ -403,8 +403,8 @@
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for for when you bet the same amount on each the Three Way Crap."
-			title="Three Way Crap Payment Calculator"
+			description="Check the payment for when you bet the same amount on each the Three Way Craps."
+			title="Three Way Craps Payment Calculator"
 		>
 			<CalcInput2
 				calculate={calculateThreeWay}
@@ -414,7 +414,7 @@
 				rollValues={[2, 3, 12]}
 				valueTitles={['Aces', 'Ace Deuce', 'Twelve']}
 				step={1}
-				title="Enter amount on EACH the Three Way Crap:"
+				title="Enter amount on EACH the Three Way Craps:"
 			/>
 		</CalcBox>
 		<CalcBox
@@ -497,7 +497,7 @@
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for a bet made straight up on any of the Hop bets."
+			description="Check the payment for a bet made Straight Up on any of the Hop bets."
 			title="Hop Bet Payment Calculator"
 		>
 			<CalcInput
@@ -624,11 +624,11 @@
 				pId="come_bet_calc_result"
 				placeholder="$5 minimum"
 				step={5}
-				title="Enter Come bet amount:"
+				title="Enter Come Bet amount:"
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for Odds on a Come bet."
+			description="Check the payment for Odds on a Come Bet."
 			title="Come Bet Odds Payment Calculators"
 		>
 			<CalcInput
@@ -657,7 +657,7 @@
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for a Don't Pass bet."
+			description="Check the payment for a Don't Pass Bet."
 			title="Don't Pass Payment Calculator"
 		>
 			<CalcInput
@@ -712,7 +712,7 @@
 			/>
 		</CalcBox>
 		<CalcBox
-			description="Check the payment for a Don't Come bet."
+			description="Check the payment for a Don't Come Bet."
 			title="Don't Come Payment Calculator"
 		>
 			<CalcInput

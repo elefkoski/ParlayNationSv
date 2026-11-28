@@ -34,7 +34,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: "It's the Shooters Fault",
+			title: "It's the Shooter's Fault",
 			href: '#shootersFault',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -53,7 +53,7 @@
 			title: 'The Good Superstitions',
 			para: [
 				{
-					text: 'You can not forget about the lucky charms and rituals that players swear by at the craps table, from cherished trinkets to favorite outfits, all embodying symbols of hope and good luck.'
+					text: 'You cannot forget about the lucky charms and rituals that players swear by at the Craps table, from cherished trinkets to favorite outfits, all embodying symbols of hope and good luck.'
 				}
 			],
 			subTitles: [
@@ -66,7 +66,7 @@
 			subParas: [
 				[
 					{
-						text: "Many players believe in the power of a lucky charm or a ritual performed before a roll in craps. These can range from small trinkets to specific actions believed to bring good luck. While there's no harm in such practices, it's important to remember to avoid placing their lucky charms in "
+						text: "Many players believe in the power of a lucky charm or a ritual performed before a roll in Craps. These can range from small trinkets to specific actions believed to bring good luck. While there's no harm in such practices, it's important to remember to avoid placing their lucky charms in "
 					},
 					{
 						text: 'the rail',
@@ -253,7 +253,7 @@
 						text: 'The naturals are a roll of 2, 3, 7, 11, and 12 although, the seven is up for debate. When the Point is marked and you need to be hitting some '
 					},
 					{
-						text: 'Place bets ',
+						text: 'Place Bets ',
 						url: 'place-bet-basics'
 					},
 					{
@@ -267,7 +267,7 @@
 	let sectionHandle = [
 		{
 			id: 'handlingSuperstition',
-			title: 'How to Handle Witnissing a Superstition',
+			title: 'How to Handle Witnessing a Superstition',
 			paras: [
 				[
 					{
@@ -276,7 +276,7 @@
 				],
 				[
 					{
-						text: 'You can always perform a ritual to try and offset the superstition. I’ve seen people stand up and do a 360º spin. They’ll set the dice on certain combinations. They’ll bounce them against their wall until they get a seven so they get it out of the way. They’ll change one die or both die or dump the bowl and get all five dice – whatever might help get the job done.'
+						text: 'You can always perform a ritual to try and offset the superstition. I’ve seen people stand up and do a 360º spin. They’ll set the dice on certain combinations. They’ll bounce them against their wall until they get a seven so they get it out of the way. They’ll change one die or both dice or dump the bowl and get all five dice – whatever might help get the job done.'
 					}
 				],
 				[
@@ -543,14 +543,14 @@
 		<Divider />
 		<BlogH2 id="goodSuperstitions" title="The Good Superstitions">
 			<p class="pb-4">
-				You can not forget about the lucky charms and rituals that players swear by at the craps
+				You cannot forget about the lucky charms and rituals that players swear by at the Craps
 				table, from cherished trinkets to favorite outfits, all embodying symbols of hope and good
 				luck.
 			</p>
 			<ol>
 				<li>
 					<span>Bringing your lucky charm - </span>Many players believe in the power of a lucky
-					charm or a ritual performed before a roll in craps. These can range from small trinkets to
+					charm or a ritual performed before a roll in Craps. These can range from small trinkets to
 					specific actions believed to bring good luck. While there's no harm in such practices,
 					it's important to remember to avoid placing their lucky charms in the rail, as this space
 					is designated solely for chips.
@@ -659,7 +659,7 @@
 			</ol>
 		</BlogH2>
 		<Divider />
-		<BlogH2 id="shootersFault" title="Blame It on the Shooter">
+		<BlogH2 id="shootersFault" title="It's the Shooter's Fault">
 			<p class="pb-4">
 				Since the shooter is the one in control, they are easily blamed for doing something another
 				player considered wrong.
@@ -705,7 +705,7 @@
 				<li>
 					<span>Throwing too many naturals - </span>The naturals are a roll of 2, 3, 7, 11, and 12
 					although, the seven is up for debate. When the Point is marked and you need to be hitting
-					some Place bets to pay for the money you have on the table you cannot be wasting rolls on
+					some Place Bets to pay for the money you have on the table you cannot be wasting rolls on
 					naturals. Knowing the seven is likely coming soon, every natural rolled is like a
 					countdown to the seven without getting paid.
 				</li>
@@ -717,7 +717,7 @@
 			{url}
 			img="third-base-overhead"
 			title="Overhead View of Craps Layout Third Base"
-			alt="Third base overhead view of the craps layout."
+			alt="Third base overhead view of the Craps layout."
 		/>
 		<Divider />
 		<BlogH2 id="handlingSuperstition" title="How to Handle Witnessing a Superstition">
@@ -731,7 +731,7 @@
 				You can always perform a ritual to try and offset the superstition. I’ve seen people stand
 				up and do a 360º spin. They’ll set the dice on certain combinations. They’ll bounce them
 				against their wall until they get a seven so they get it out of the way. They’ll change one
-				die or both die or dump <Link text="the bowl" href="the-craps-table" /> and get all five dice
+				die or both dice or dump <Link text="the bowl" href="the-craps-table" /> and get all five dice
 				– whatever might help get the job done.
 			</p>
 			<p class="pb-4">

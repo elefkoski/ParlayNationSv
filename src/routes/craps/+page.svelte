@@ -11,13 +11,13 @@
 			title: 'CRAPS BASICS',
 			subtitle: 'Your Craps Adventure Starts Here',
 			description:
-				'Hey there, eager to crack the code of Craps? Get the lowdown on the table crew, the table setup, and the rules rules that govern the game.',
+				'Hey there, eager to crack the code of Craps? Get the lowdown on the table crew, the table setup, and the rules that govern the game.',
 			href: 'craps-basics',
 			pages: [
 				{
 					name: 'The Crew',
 					sentence:
-						'Uncover the secrets of a smoothly running craps game by understanding the roles and responsibilities of ',
+						'Uncover the secrets of a smoothly running Craps game by understanding the roles and responsibilities of ',
 					href: 'the-crew',
 					src: 'src/images/icons/die-1.svg',
 					alt: 'Die 1'
@@ -82,7 +82,7 @@
 				},
 				{
 					name: 'Pass Line Odds',
-					sentence: 'Add another layer to your craps betting, understanding the varying limits of ',
+					sentence: 'Add another layer to your Craps betting, understanding the varying limits of ',
 					href: 'pass-line-odds',
 					src: 'src/images/icons/die-2.svg',
 					alt: 'Die 2'
@@ -117,7 +117,7 @@
 				{
 					name: 'Buying Place Bets',
 					sentence:
-						'Try the unique strategy of buying in craps, understanding how paying a commission can lead to True Odds, a concept embodied in ',
+						'Try the unique strategy of buying in Craps, understanding how paying a commission can lead to True Odds, a concept embodied in ',
 					href: 'buying-place-bets',
 					src: 'src/images/icons/die-3.svg',
 					alt: 'Die 3'
@@ -133,7 +133,7 @@
 				{
 					name: 'Presses',
 					sentence:
-						'Navigate through the intricate world of craps where pressing your bets can lead to significant winnings, an exciting strategy encapsulated in  ',
+						'Navigate through the intricate world of Craps where pressing your bets can lead to significant winnings, an exciting strategy encapsulated in ',
 					href: 'presses',
 					src: 'src/images/icons/die-3.svg',
 					alt: 'Die 3'
@@ -242,7 +242,7 @@
 				},
 				{
 					name: 'Any Craps',
-					sentence: 'Explore the similarities and differences between Three Way Crap and the ',
+					sentence: 'Explore the similarities and differences between Three Way Craps and the ',
 					href: 'any-craps',
 					src: 'src/images/icons/die-5.svg',
 					alt: 'Die 5'
@@ -250,7 +250,7 @@
 				{
 					name: 'The Field',
 					sentence:
-						'Discover the excitement of one-roll bets on a broad range of numbers anytime you want in  ',
+						'Discover the excitement of one-roll bets on a broad range of numbers anytime you want in ',
 					href: 'the-field',
 					src: 'src/images/icons/die-5.svg',
 					alt: 'Die 5'
@@ -258,7 +258,7 @@
 				{
 					name: 'Multi-Bets',
 					sentence:
-						'Enhance your gaming experience by understanding the dynamics and strategies of  ',
+						'Enhance your gaming experience by understanding the dynamics and strategies of ',
 					href: 'multi-bets',
 					src: 'src/images/icons/die-5.svg',
 					alt: 'Die 5'
@@ -274,7 +274,7 @@
 				{
 					name: 'Horn High',
 					sentence:
-						'Spread your money around a bunch of prop bets and pick a special number to root for with  ',
+						'Spread your money around a bunch of prop bets and pick a special number to root for with ',
 					href: 'horn-high',
 					src: 'src/images/icons/die-5.svg',
 					alt: 'Die 5'
@@ -324,7 +324,7 @@
 				{
 					name: 'Coming Down w/Odds',
 					sentence:
-						'Learn the setup and nuances of using your Place bet and its payment as Odds in ',
+						'Learn the setup and nuances of using your Place Bet and its payment as Odds in ',
 					href: 'coming-down-with-odds',
 					src: 'src/images/icons/die-6.svg',
 					alt: 'Die 6'
@@ -337,12 +337,12 @@
 			title: "THE DON'TS",
 			subtitle: 'The Dark Side of Craps Can Be Very Profitable',
 			description:
-				"Understand the pivotal role of Don't Pass bets in the game of Craps and how they affect the gaming experience.",
+				"Understand the pivotal role of Don't Pass Bets in the game of Craps and how they affect the gaming experience.",
 			href: 'the-donts',
 			pages: [
 				{
 					name: "Don't Pass",
-					sentence: 'To master the art of craps, familiarize yourself with the betting the ',
+					sentence: 'To master the art of Craps, familiarize yourself with betting the ',
 					href: 'dont-pass',
 					src: 'src/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
@@ -350,7 +350,7 @@
 				},
 				{
 					name: "Don't Pass Lay Odds",
-					sentence: 'Leverage your craps game with a deeper understanding of the ',
+					sentence: 'Leverage your Craps game with a deeper understanding of the ',
 					href: 'dont-pass-lay-odds',
 					src: 'src/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
@@ -358,7 +358,7 @@
 				},
 				{
 					name: "Don't Come",
-					sentence: 'Enhance your craps strategy with a comprehensive understanding of the ',
+					sentence: 'Enhance your Craps strategy with a comprehensive understanding of the ',
 					href: 'dont-come',
 					src: 'src/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
@@ -366,7 +366,7 @@
 				},
 				{
 					name: "Don't Come Lay Odds",
-					sentence: 'Make your craps game more exciting and strategic by understanding ',
+					sentence: 'Make your Craps game more exciting and strategic by understanding ',
 					href: 'dont-come-lay-odds',
 					src: 'src/images/icons/die-1.svg',
 					alt: 'Die 1 turned',
@@ -374,7 +374,7 @@
 				},
 				{
 					name: 'Overlays',
-					sentence: 'Stand a cut above the rest in craps by mastering the art of betting ',
+					sentence: 'Stand a cut above the rest in Craps by mastering the art of betting ',
 					href: 'overlays',
 					src: 'src/images/icons/die-1.svg',
 					alt: 'Die 1 turned',

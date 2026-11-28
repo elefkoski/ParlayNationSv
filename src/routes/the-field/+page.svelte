@@ -10,7 +10,7 @@
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -18,7 +18,7 @@
 
 	let title: string = 'Betting the Field in Craps';
 	let description: string =
-		"One of the most popular bets in the game is the Field. It's popular because it has one of the largest betting areas in the game. You can't miss is and there are a lot of numbers written in there that you can win with.";
+		"One of the most popular bets in the game is the Field. It's popular because it has one of the largest betting areas in the game. You can't miss it and there are a lot of numbers written in there that you can win with.";
 	let url: string = 'the-field';
 
 	let phref: string = 'any-craps';
@@ -72,7 +72,7 @@
 		['3, 4, 9, 10, 11', '1:1', '3, 4, 9, 10, or 11', 'Any other number'],
 		['2, 12', '2:1', '2 or 12', 'Any other number']
 	];
-	let tblPnts: string[] = ['The field is a one roll bet'];
+	let tblPnts: string[] = ['The field is a one-roll bet'];
 </script>
 
 <svelte:head>
@@ -89,7 +89,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Field in Craps",
-  "description": "An overview of Field bets in craps, including how to place these bets, understanding their payouts, and the strategy behind betting for the dealers.",
+  "description": "An overview of Field bets in Craps, including how to place these bets, understanding their payouts, and the strategy behind betting for the dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -113,7 +113,7 @@
     {
       "@type": "ItemList",
       "name": "Proposition Bets",
-      "description": "Guidance on Field bets in craps, from placing the bet to understanding its payouts and how to bet for the dealers.",
+      "description": "Guidance on Field bets in Craps, from placing the bet to understanding its payouts and how to bet for the dealers.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -152,7 +152,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/the-field/the-field_640x360.webp",
-      "caption": "Overhead up close view of the field area on the craps layout."
+      "caption": "Overhead up close view of the field area on the Craps layout."
     },
     {
       "@type": "ImageObject",
@@ -186,8 +186,8 @@
 		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the Field in Craps" {pageData}>
 			<p class="pb-4">
 				The Field is a one-roll bet on 2, 3, 4, 9, 10, 11, or 12. It has such an allure to it. It's
-				big. It has a ton onavumbers, you can play it any time you want, and sometimes it will win
-				over and over and over again. I can't tell you how many times I've seen sectioneone drop a
+				big. It has a ton of numbers, you can play it any time you want, and sometimes it will win
+				over and over and over again. I can't tell you how many times I've seen someone drop a
 				$20 to bet the Field and 15 minutes later have a rail full of quarters and nickels.
 			</p>
 			<p class="pb-4">
@@ -199,14 +199,14 @@
 					href="pass-line-basics"
 				/> or <Link text="Place Bets" href="place-bet-basics" />.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/the-field_640x360.webp"
 				mdImg="src/images/{url}/the-field_960x540.webp"
 				lgImg="src/images/{url}/the-field_1280x720.webp"
 				title="The Field"
-				alt="Overhead up close view of the field area on the craps layout."
+				alt="Overhead up close view of the field area on the Craps layout."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">

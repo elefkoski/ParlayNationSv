@@ -3,7 +3,7 @@
 
 	let title: string = 'Site Map';
 	let description: string =
-		"There are four proposition bets you can bet Straight Up. Aces, Ace Deuce, Twelve, and Yo. They are one-roll bets but pay the most because they're hard to hit.";
+		"The sitemap for Parlay Nation website.";
 	let url: string = 'site-map';
 
 	let sections = [
@@ -35,7 +35,7 @@
 		},
 		{
 			title: 'The Pass Line',
-			links: ['Pass Line Home', 'Pass line Basics', 'Pass Line Odds', 'Max Odds on the Pass Line'],
+			links: ['Pass Line Home', 'Pass Line Basics', 'Pass Line Odds', 'Max Odds on the Pass Line'],
 			href: ['the-pass-line', 'pass-line-basics', 'pass-line-odds', 'max-odds']
 		},
 		{
@@ -120,7 +120,7 @@
 				'dont-come',
 				'dont-come-lay-odds',
 				'overlays',
-				'bridging=lay-odds'
+				'bridging-lay-odds'
 			]
 		}
 	];
@@ -205,7 +205,7 @@
 			href: [
 				'craps-corner',
 				'craps-simulator',
-				'craps-calculator',
+				'craps-calculators',
 				'glossary',
 				'faq',
 				'contact',

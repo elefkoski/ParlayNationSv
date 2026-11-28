@@ -93,7 +93,7 @@
 			items: [
 				'Sending the dice to the players',
 				'Taking and setting up bets in the center of the table',
-				'Telling the base dealers who and how much to pay players when their center bets win',
+				'Telling the Base Dealers who and how much to pay players when their center bets win',
 				'Calling the number the dice land on'
 			]
 		}
@@ -132,7 +132,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "The Craps Crew",
-  "description": "An overview of the roles and responsibilities of the craps table crew, including the Boxperson, Base Dealers, Stickperson, and the Floor Supervisor.",
+  "description": "An overview of the roles and responsibilities of the Craps table crew, including the Boxperson, Base Dealers, Stickperson, and the Floor Supervisor.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -156,7 +156,7 @@
     {
       "@type": "ItemList",
       "name": "Craps Basics",
-      "description": "Detailing the essential roles within the craps crew that facilitate the game, ensuring smooth operations and assisting players.",
+      "description": "Detailing the essential roles within the Craps crew that facilitate the game, ensuring smooth operations and assisting players.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -189,7 +189,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/the-crew/the-craps-dice_640x360.webp",
-      "caption": "Five maroon colored craps dice sitting on green felt."
+      "caption": "Five maroon colored Craps dice sitting on green felt."
     }
   ]
 }
@@ -212,7 +212,7 @@
 				mdImg="src/images/{url}/{url}_960x540.webp"
 				lgImg="src/images/{url}/{url}_1280x720.webp"
 				title="The Craps Crew"
-				alt="Overhead view of Craps table with the base dealers, the box, the stickperson, the box person, and the floor."
+				alt="Overhead view of Craps table with the base dealers, the Box, the stickperson, the Boxperson, and the floor."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -232,7 +232,7 @@
 		<Divider />
 		<ContentHeaderTwo id="theBaseDealers" title="What Do the Base Dealers Do in Craps?">
 			<p class="pb-4">
-				The Base Dealers job is to take care of the players on their side of the table.
+				The Base Dealers' job is to take care of the players on their side of the table.
 			</p>
 			<ContentUl liAs={liAs2} />
 		</ContentHeaderTwo>

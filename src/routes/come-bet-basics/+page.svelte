@@ -10,13 +10,13 @@
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import Quote from '$lib/components/Quote.svelte';
 
-	let title: string = 'Betting Come Bet in';
+	let title: string = 'Betting a Come Bet in Craps';
 	let description: string =
 		'Come Bets are mini Pass Line Bets except you play them during the Intermediate Roll. After moving into a Point you can add Odds to the Come bet.';
 	let url: string = 'come-bet-basics';
@@ -115,7 +115,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting a Come Bet in Craps",
-  "description": "An in-depth look at how to place and win with Come Bets in craps, including the stages of a Come Bet and how it compares to Place Bets and Odds.",
+  "description": "An in-depth look at how to place and win with Come Bets in Craps, including the stages of a Come Bet and how it compares to Place Bets and Odds.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -139,7 +139,7 @@
     {
       "@type": "ItemList",
       "name": "Come Bets in Craps",
-      "description": "Explains the concept of Come Bets in craps, how they function similarly to Pass Line bets, and the strategy behind placing them.",
+      "description": "Explains the concept of Come Bets in Craps, how they function similarly to Pass Line bets, and the strategy behind placing them.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -190,7 +190,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/come-bet-basics/come-bet_640x360.webp",
-      "caption": "Visual guide to Come Bets in craps."
+      "caption": "Visual guide to Come Bets in Craps."
     },
     {
       "@type": "ImageObject",
@@ -244,9 +244,9 @@
 				play Come Bets.
 			</p>
 			<span class="text-center pb-1">Come Bets - Intermediate Roll</span>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<span class="text-center pb-1">Come Bets - Comeout Roll</span>
-			<ContentTble
+			<ContentTable
 				tblAria={tblAria2}
 				tblHeaders={tblHeaders2}
 				tblRows={tblRows2}
@@ -271,9 +271,9 @@
 		<Divider />
 		<ContentHeaderTwo id="bettingComeBets" title="How Do You Bet a Come Bet in Craps?">
 			<p class="pb-4">
-				Come bets are self service so if you want to make a Come bet then you must place it in the
+				Come bets are self-service so if you want to make a Come bet then you must place it in the
 				COME yourself. Watch your bet. If other players are making Come bets then you need to be
-				able know which is yours and make sure the dealer is placing that bet in your spot.
+				able to know which is yours and make sure the dealer is placing that bet in your spot.
 			</p>
 			<ContentImg
 				caption=""
@@ -358,7 +358,7 @@
 				mdImg="src/images/{url}/placement-of-a-come-bet-inside-point_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-come-bet-inside-point_1280x720.webp"
 				title="Placement of a Come Bet Inside a Point"
-				alt="Up close view of two place bets and the craps rail. There are eight colored spots that correspond with each other."
+				alt="Up close view of two place bets and the Craps rail. There are eight colored spots that correspond with each other."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -431,9 +431,9 @@
 				move the winning Come bet off of the Point, back into the COME, pay it, and say <Quote
 					text="you're off the
 		__point__for __total payout__."
-				/> This lets you know that you Come bet won and it's no longer on that Point. you're winnings
+				/> This lets you know that your Come bet won and it's no longer on that Point. Your winnings
 				will sit in the COME and then it's your responsibility to pick them up. E.g. if you had a $15
-				Come bet on the 8 and the 8 rolled the dealer would take your Come bet and it's payment, move
+				Come bet on the 8 and the 8 rolled the dealer would take your Come bet and its payment, move
 				it into the COME and say <Quote text="you're off the eight for $15." />
 			</p>
 			<ContentImg
@@ -467,7 +467,7 @@
 				mdImg="src/images/{url}/off-and-on-for_960x540.webp"
 				lgImg="src/images/{url}/off-and-on-for_1280x720.webp"
 				title="Off and On For"
-				alt="$10 in the point five and and in the come. $10 payment is also in the come. Two orange dice show 3-2."
+				alt="$10 in the point five and in the come. $10 payment is also in the come. Two orange dice show 3-2."
 			/>
 			<div class="pb-4" />
 			<p class="pb-4">
@@ -481,7 +481,7 @@
 					text="you're on for __the new Come bet
 		amount__."
 				/> E.g. you have a $5 Come Bet on the 8 and $15 in the COME. When the 8 rolls the dealer will
-				take your $5 off the 8 with it's payment and say <Quote text="you're off the 8 for $5…" /> and
+				take your $5 off the 8 with its payment and say <Quote text="you're off the 8 for $5…" /> and
 				bring your new $15 Come bet on and say <Quote text="… and on for $15." />
 			</p>
 			<ContentImg
@@ -497,8 +497,8 @@
 		<ContentHeaderTwo id="dealerComeBets" title="How Can You Bet a Come Bet for the Dealers?">
 			<p class="pb-4">
 				Come bets for dealers don't have to be in any specific denomination because you can't bet an
-				improper amount in the Come. Just like a players' bet, a Come bet for the dealers goes right
-				into the next Point that rolls. The dealers bet is placed in the middle of the Point to
+				improper amount in the Come. Just like a player's bet, a Come bet for the dealers goes right
+				into the next Point that rolls. The dealer's bet is placed in the middle of the Point to
 				signify it belongs to the dealers and gets paid even money if the Point is rolled again.
 			</p>
 			<ContentImg

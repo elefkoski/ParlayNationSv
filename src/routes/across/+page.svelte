@@ -6,7 +6,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -45,7 +45,7 @@
 	};
 
 	let tblAria: string = 'Across betting options table';
-	let tblHeaders: string[] = ['The Spread', 'Total bet'];
+	let tblHeaders: string[] = ['The Spread', 'Total Bet'];
 	let tblRows: (string | number)[][] = [
 		['*One Unit: $5/number', '$26/27 Across'],
 		['Two Units: $10/number', '$52/54 Across'],
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Across at the Craps Table",
-  "description": "A detailed guide on how to bet Across at the craps table, including strategies for betting with and without commission based on the point.",
+  "description": "A detailed guide on how to bet Across at the Craps table, including strategies for betting with and without commission based on the point.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -96,13 +96,13 @@
     {
       "@type": "ItemList",
       "name": "Spread Bets",
-      "description": "Explaining how to bet Across on the craps table, including the calculation and examples of $54 and $52 Across bets.",
+      "description": "Explaining how to bet Across on the Craps table, including the calculation and examples of $54 and $52 Across bets.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Betting Across",
-          "description": "An overview of Across betting at the craps table, specifying the amounts placed on different numbers excluding the Point."
+          "description": "An overview of Across betting at the Craps table, specifying the amounts placed on different numbers excluding the Point."
         },
         {
           "@type": "ListItem",
@@ -169,11 +169,11 @@
 					href="place-bet-basics"
 				/>, in the same amount, not including the Point. E.g. Suppose the Point was 4 and you wanted
 				$54 Across. It would be $10 on the 5, $12 on 6, $12 on the 8, $10 on the 9, and $10 on the
-				10. $10 + 12 + $12 + $10 + $10 = $54. After the Point has been established, tell the dealer, <Quote
+				10. $10 + $12 + $12 + $10 + $10 = $54. After the Point has been established, tell the dealer, <Quote
 					text="I would like 54 across."
 				/> and they'll repeat <Quote text="54 across." />
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/across_640x360.webp"
@@ -230,12 +230,12 @@
 			<p class="pb-4">
 				Whenever you bet Across large enough that you are going to have to buy the 4 and/or 10, the
 				cost of the bet goes up again because you need to include the commission needed to be paid
-				on those numbers
+				on those numbers.
 			</p>
 			<ContentHeaderThree title="Point 6 or 8">
 				<p class="pb-4">
 					When the Point is 6 or 8 the cost of your bet will be the smallest because you're saving
-					money on the fact the 6 and 8 cost more and you wont have to pay for one of them. You will
+					money on the fact the 6 and 8 cost more and you won't have to pay for one of them. You will
 					also be buying the 4 and 10, which means you have to pay commission for both of those
 					numbers and you need to add those costs in.
 				</p>

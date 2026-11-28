@@ -22,6 +22,23 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Forgot Password | Parlay Nation - How to Play Craps</title>
+	<link rel="canonical" href="http://parlaynation.com/forgot-password" />
+	<meta
+		name="description"
+		content="Forgot your password? Enter your email and Parlay Nation will send you a link to reset your password and get back to learning craps."
+	/>
+	<meta property="og:url" content="http://parlaynation.com/forgot-password" />
+	<meta property="og:title" content="Forgot Password | Parlay Nation - How to Play Craps" />
+	<meta
+		property="og:description"
+		content="Forgot your password? Enter your email and Parlay Nation will send you a link to reset your password and get back to learning craps."
+	/>
+	<meta property="og:image" content={'images/forgot-password/forgot-password-header.jpg'} />
+	<meta name="twitter:image" content={'images/forgot-password/forgot-password-header.jpg'} />
+</svelte:head>
+
 <EmptyLayout>
 	<div class="flex flex-col justify-center lg:px-8 min-h-full px-6 py-12">
 		<div class="sm:max-w-sm sm:mx-auto sm:w-full">

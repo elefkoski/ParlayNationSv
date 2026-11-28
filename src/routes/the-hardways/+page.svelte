@@ -11,7 +11,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -70,13 +70,13 @@
 	let tblAria: string = 'The hardways payment table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
 	let tblRows: (string | number)[][] = [
-		['Hard 6', '9:1', '3-3', 'Any 7, 5-1, 4-2'],
-		['Hard 8', '9:1', '4-4', 'Any 7, 6-2, 5-3'],
-		['Hard 4', '7:1', '2-2', 'Any 7, 3-1'],
-		['Hard 10', '7:1', '5-5', 'Any 7, 6-4']
+		['Hard 6', '9:1', '3-3', 'Any Seven, 5-1, 4-2'],
+		['Hard 8', '9:1', '4-4', 'Any Seven, 6-2, 5-3'],
+		['Hard 4', '7:1', '2-2', 'Any Seven, 3-1'],
+		['Hard 10', '7:1', '5-5', 'Any Seven, 6-4']
 	];
 	let tblPnts: string[] = [
-		'The Hardways are not one roll bets',
+		'The Hardways are not one-roll bets',
 		'Hardways are not contract bets',
 		'Hardways are off during the Comeout Roll'
 	];
@@ -96,7 +96,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Hardways in Craps",
-  "description": "Explore the dynamics of betting the Hardways in craps, including strategy, placement, and payout details, as well as unique bets like the Buffalo.",
+  "description": "Explore the dynamics of betting the Hardways in Craps, including strategy, placement, and payout details, as well as unique bets like the Buffalo.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -120,7 +120,7 @@
     {
       "@type": "ItemList",
       "name": "Proposition Bets",
-      "description": "An in-depth guide on making Hardway bets in craps, understanding Buffalo bets, the precise placement of Hardways, their payouts, and how to bet for the dealers.",
+      "description": "An in-depth guide on making Hardway bets in Craps, understanding Buffalo bets, the precise placement of Hardways, their payouts, and how to bet for the dealers.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -132,7 +132,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Where Are Your Hardways on the Craps Table?",
-          "description": "Details on the specific locations for Hardway bets on the craps table and tips for tracking your bets."
+          "description": "Details on the specific locations for Hardway bets on the Craps table and tips for tracking your bets."
         },
         {
           "@type": "ListItem",
@@ -159,7 +159,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/the-hardways/hardways_640x360.webp",
-      "caption": "Up close view of the Hardway Section on the craps table. There are no cheques on the table."
+      "caption": "Up close view of the Hardway Section on the Craps table. There are no cheques on the table."
     },
     {
       "@type": "ImageObject",
@@ -169,7 +169,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/the-hardways/placement-of-the-hardways_640x360.webp",
-      "caption": "Up close view of the Hardways section and the craps rail with 18 colored spots."
+      "caption": "Up close view of the Hardways section and the Craps rail with 18 colored spots."
     },
     {
       "@type": "ImageObject",
@@ -179,7 +179,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/the-hardways/hardways-pay-4-10_640x360.webp",
-      "caption": "$30 on the hard ten with two green dice that read 5-5. A bubble reads $270 payment."
+      "caption": "$30 on the hard ten with two green dice that read 5-5. A bubble reads $210 payment."
     },
     {
       "@type": "ImageObject",
@@ -213,14 +213,14 @@
 					text="hard"
 				/> before they land <Quote text="easy" /> or before a 7 is rolled.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/hardways_640x360.webp"
 				mdImg="src/images/{url}/hardways_960x540.webp"
 				lgImg="src/images/{url}/hardways_1280x720.webp"
 				title="The Hardways"
-				alt="Up close view of the Hardway Section on the craps table. There are no cheques on the table."
+				alt="Up close view of the Hardway Section on the Craps table. There are no cheques on the table."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -234,14 +234,14 @@
 			<p class="pb-4">
 				The Buffalo is for the players that love their Hardways. A player will bet an equal amount
 				on each Hardway, working on the <Link text="Comeout Roll" href="the-stages" />, and hedges
-				them by betting the same amount on the <Link text="Any 7" href="any-seven" />. These players
+				them by betting the same amount on the <Link text="Any Seven" href="any-seven" />. These players
 				don't want to wait for a Point to be established to bet the Hardways, and they also don't
-				want to lose those bets if 7 rolls. If the 7 rolls, the Any 7 will pay four times and cover
+				want to lose those bets if 7 rolls. If the 7 rolls, the Any Seven will pay four times and cover
 				the four Hardways that just lost. It's a push. They are all up to win again.
 			</p>
 			<p class="pb-4">
 				One thing to remember is if any other natural is rolled during the Comeout Roll, the player
-				must bet the Any 7 again to continue hedging their Hardways. If either the 4, 6, 8, or 10
+				must bet the Any Seven again to continue hedging their Hardways. If either the 4, 6, 8, or 10
 				are rolled “easy,” then that Hardway will lose, and you have to bet it again if you still
 				want it.
 			</p>
@@ -284,7 +284,7 @@
 				mdImg="src/images/{url}/placement-of-the-hardways_960x540.webp"
 				lgImg="src/images/{url}/placement-of-the-hardways_1280x720.webp"
 				title="Placement of a Hardway"
-				alt="Up close view of the Hardways section and the craps rail with 18 colored spots."
+				alt="Up close view of the Hardways section and the Craps rail with 18 colored spots."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -314,7 +314,7 @@
 					mdImg="src/images/{url}/hardways-pay-4-10_960x540.webp"
 					lgImg="src/images/{url}/hardways-pay-4-10_1280x720.webp"
 					title="Hard 4 and 10 Pay 7:1"
-					alt="$30 on the hard ten with two green dice that read 5-5. A bubble reads $270 payment."
+					alt="$30 on the hard ten with two green dice that read 5-5. A bubble reads $210 payment."
 				/>
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
@@ -336,7 +336,7 @@
 					calculate={calculateHardFourTen}
 					id="hard_four_ten_pymnt_calc"
 					pId="hard_four_ten_calc_result"
-					placeholder="$1 minumum"
+					placeholder="$1 minimum"
 					step={1}
 					title="Enter Hard 4 or 10 amount:"
 				/>

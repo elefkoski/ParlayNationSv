@@ -68,7 +68,7 @@
 	async function registerUser(event: SubmitEvent) {
 		event.preventDefault();
 		if (!agreeToTerms) {
-			errorMessage.set('You must agree to the Terms and Conditions.');
+			errorMessage.set('You must agree to the Terms of Service.');
 			return;
 		}
 		errorMessage.set('');
@@ -115,6 +115,23 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>Login | Parlay Nation - How to Play Craps</title>
+	<link rel="canonical" href="http://parlaynation.com/login" />
+	<meta
+		name="description"
+		content="Sign in to Parlay Nation to save your favorite craps pages, pick up where you left off, and keep learning how to play craps like a pro."
+	/>
+	<meta property="og:url" content="http://parlaynation.com/login" />
+	<meta property="og:title" content="Login | Parlay Nation - How to Play Craps" />
+	<meta
+		property="og:description"
+		content="Sign in to Parlay Nation to save your favorite craps pages, pick up where you left off, and keep learning how to play craps like a pro."
+	/>
+	<meta property="og:image" content={'images/login/login-header.jpg'} />
+	<meta name="twitter:image" content={'images/login/login-header.jpg'} />
+</svelte:head>
 
 <EmptyLayout>
 	{#if isLoginMode}
@@ -295,7 +312,7 @@
 									role="button"
 									tabindex="0"
 								>
-									Sign In
+									Sign in
 								</span>
 							</p>
 						</div>
@@ -323,9 +340,9 @@
 							<div class="text-sm">
 								<a
 									class="dark:hover:text-indigo-300 dark:text-indigo-400 font-semibold hover:text-indigo-500 text-indigo-600"
-									href="/"
+									href="forgot-password"
 								>
-									Forgot password?
+									Forgot Password?
 								</a>
 							</div>
 						</div>
@@ -345,8 +362,8 @@
 						<label class="inline-flex items-center">
 							<input bind:checked={agreeToTerms} class="form-checkbox" type="checkbox" />
 							<span class="ml-2 text-xs"
-								>I agree to the <a href="privacy">Privacy Policy</a> and
-								<a href="terms">Terms of Service</a>. &lpar;required&rpar;</span
+								>I agree to the <a href="privacy-policy">Privacy Policy</a> and
+								<a href="terms-of-service">Terms of Service</a>. &lpar;required&rpar;</span
 							>
 						</label>
 					</div>

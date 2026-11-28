@@ -15,7 +15,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -24,7 +24,7 @@
 
 	let title: string = 'Betting Place Bets in Craps';
 	let description: string =
-		'Place Bets are bet during the Intermediate Roll. They get paid differently depending on which Point you Place. There are certain terms used when betting Place bets.';
+		'Place Bets are bet during the Intermediate Roll. They get paid differently depending on which Point you Place. There are certain terms used when betting Place Bets.';
 	let url: string = 'place-bet-basics';
 
 	let phref: string = 'place-bets';
@@ -87,7 +87,7 @@
 	];
 	let tblPnts: string[] = [
 		'Place Bets are not contract bets',
-		'Place Bets do not work during the Comeout roll',
+		'Place Bets do not work during the Comeout Roll',
 		'You can ask to have your Place Bets turned ON during the Comeout Roll'
 	];
 
@@ -103,7 +103,7 @@
 			items: [
 				'This is no good because money falls off the working stacks and could accidentally be picked up by the dealer and put away.',
 				"Other people's money is in these boxes, so if you throw money in there, you will only mix that money with yours, causing some issues.",
-				"Players bet many different amounts in the Field so it wouldn't be hard for the dealer to mistaken it as a normal Field Bet.",
+				"Players bet many different amounts in the Field so it wouldn't be hard for the dealer to mistake it as a normal Field Bet.",
 				'This spot is reserved for DC Bets and the Puck, so use the COME.'
 			]
 		}
@@ -124,7 +124,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Place Bets in Craps",
-  "description": "A comprehensive guide on Place Bets in craps, detailing the process of placing bets, identifying common mistakes, understanding payout ratios, using proper betting terms, and including dealers in the game.",
+  "description": "A comprehensive guide on Place Bets in Craps, detailing the process of placing bets, identifying common mistakes, understanding payout ratios, using proper betting terms, and including dealers in the game.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -148,7 +148,7 @@
     {
       "@type": "ItemList",
       "name": "Place Bets",
-      "description": "Deep dive into Place Bets in craps, from betting strategies and pitfalls to payout nuances and etiquette for betting on behalf of the dealers.",
+      "description": "Deep dive into Place Bets in Craps, from betting strategies and pitfalls to payout nuances and etiquette for betting on behalf of the dealers.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -166,7 +166,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "Where Are Your Place Bets on the Craps Table?",
-          "description": "Clarification on the specific locations for Place Bets on the craps table to ensure clarity and ownership of each bet."
+          "description": "Clarification on the specific locations for Place Bets on the Craps table to ensure clarity and ownership of each bet."
         },
         {
           "@type": "ListItem",
@@ -193,7 +193,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/place-bet-basics/place-bets_640x360.webp",
-      "caption": "Overhead view of the right side of the craps table layout. You can see all six place bets boxes."
+      "caption": "Overhead view of the right side of the Craps table layout. You can see all six place bets boxes."
     },
     {
       "@type": "ImageObject",
@@ -208,7 +208,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/place-bet-basics/placement-of-a-place-bet_640x360.webp",
-      "caption": "Overhead view of craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
+      "caption": "Overhead view of Craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
     }
   ]
 }
@@ -235,14 +235,14 @@
 				before the 7 and loses if the 7 rolls first. So you know, you're allowed to add and remove
 				from your Place Bets as much money as you want at any time.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/place-bets_640x360.webp"
 				mdImg="src/images/{url}/place-bets_960x540.webp"
 				lgImg="src/images/{url}/place-bets_1280x720.webp"
 				title="Place Bets"
-				alt="Overhead view of the right side of the craps table layout. There are no cheques on the table. You can see all six place bets boxes."
+				alt="Overhead view of the right side of the Craps table layout. There are no cheques on the table. You can see all six place bets boxes."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -254,7 +254,7 @@
 		<Divider />
 		<ContentHeaderTwo id="bettingPlaceBets" title="How Do You Bet Place Bets in a Craps Game?">
 			<p class="pb-4">
-				After the Point is established, it's time to make some Place bets. Put your money in the
+				After the Point is established, it's time to make some Place Bets. Put your money in the
 				COME, then tell the dealers which bets you'd like to make. Make sure the dealer repeats your
 				bet. If they don't, repeat it until they do because if you place a bet in the COME without
 				saying anything to the dealers, it's considered a <Link
@@ -283,7 +283,7 @@
 				mdImg="src/images/{url}/not-behind-boxes_960x540.webp"
 				lgImg="src/images/{url}/not-behind-boxes_1280x720.webp"
 				title="Where Not to Bet"
-				alt="A bunch of splashed cheques behind the boxes with a red 'do not' circle around them and a red x. There is another pile of cheques in the COME with a green cirlce around them and a green checkmark."
+				alt="A bunch of splashed cheques behind the boxes with a red 'do not' circle around them and a red x. There is another pile of cheques in the COME with a green circle around them and a green checkmark."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -291,7 +291,7 @@
 			<p class="pb-4">
 				Understanding where your Bets are on the table will help you enjoy Craps a lot more. It's
 				like a large horseshoe on each side of the table. A spot in the rail corresponds with a spot
-				on the layout. Each player has a spot for their Place bets, so every dealer knows which bets
+				on the layout. Each player has a spot for their Place Bets, so every dealer knows which bets
 				belong to whom. There are four spots in front and four spots behind it to represent eight
 				possible players on each side.
 			</p>
@@ -301,13 +301,13 @@
 				mdImg="src/images/{url}/placement-of-a-place-bet_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-place-bet_1280x720.webp"
 				title="Placement of a Place Bet"
-				alt="Overhead view of craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
+				alt="Overhead view of Craps table with the numbers one through eighteen evenly distributed on the rail. The six and eight on the layout are zoomed in on and the numbers one through eighteen are evenly distributed on the six and eight."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo id="placePayment" title="What Does a Place Bet Pay in Craps?">
 			<p class="pb-4">
-				Like many other bets on the table, you must bet Place bets in certain increments, and they
+				Like many other bets on the table, you must bet Place Bets in certain increments, and they
 				pay differently depending on which number you're betting.
 			</p>
 			<ContentHeaderThree title="Place Bets Pay 7:6 on the 6 and 8">
@@ -333,7 +333,7 @@
 					mdImg="src/images/{url}/place-pay-5-9_960x540.webp"
 					lgImg="src/images/{url}/place-pay-5-9_1280x720.webp"
 					title="Place Payment on the 5 or 9"
-					alt=""
+					alt="$5 place bet on the five with a $7 payment sitting in the COME."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
@@ -345,14 +345,14 @@
 					mdImg="src/images/{url}/place-pay-4-10_960x540.webp"
 					lgImg="src/images/{url}/place-pay-4-10_1280x720.webp"
 					title="Place Payment on the 4 or 10"
-					alt="$5 place bet on the five with a $7 payment sitting in the COME."
+					alt="$5 place bet on the four with a $9 payment sitting in the COME."
 				/>
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
 		<Divider />
 		<CalcContainer aria="Place bet payment calculators" id="placePaymentCalcs"
 			><CalcBox
-				description="Check the payment for the six different Place bets."
+				description="Check the payment for the six different Place Bets."
 				title="Place Bet Payment Calculators"
 			>
 				<CalcInput
@@ -384,7 +384,7 @@
 		<Divider />
 		<ContentHeaderTwo id="placeBetTerms" title="What Are Proper Terms for Betting Place Bets?">
 			<p class="pb-4">
-				<Quote text="Place" /> - When you bet a Place Bet, you tell the base dealer to <Quote
+				<Quote text="Place" /> - When you bet a Place Bet, you tell the Base Dealer to <Quote
 					text="place"
 				/> that number. For example, if you want to bet $10 on the 5, you drop $10 on the table and say,
 				<Quote
@@ -394,7 +394,7 @@
 			</p>
 			<p class="pb-4">
 				<Quote text="Each" /> - The term <Quote text="each" /> is used when you bet the same amount on
-				two numbers. Only use it when you're betting two Place bets that could be the same amount. 6
+				two numbers. Only use it when you're betting two Place Bets that could be the same amount. 6
 				and 8 are bet in $6 increments. If you wanted $6 on both the 6 and 8, you would say, <Quote
 					text="Six each six and eight.
 			"
@@ -412,11 +412,11 @@
 				do not include the point. These are known as <Link text="Spread Bets" href="spread-bets" />.
 			</p>
 			<p class="pb-4">
-				<Quote text="... Including the Point" /> - This is used when you are betting a Place bet that
+				<Quote text="... Including the Point" /> - This is used when you are betting a Place Bet that
 				is also the Point. People who use this usually won't be betting the <Link
 					text="Pass Line"
 					href="pass-line-basics"
-				/>, which is why they are Including the Point as part of their Place bets. These are also
+				/>, which is why they are Including the Point as part of their Place Bets. These are also
 				Spread Bets.
 			</p>
 		</ContentHeaderTwo>
@@ -426,14 +426,15 @@
 			title="How Do You Bet a Place Bet for the Dealers in a Craps Game?"
 		>
 			<p class="pb-4">
-				Dealer Place Bets encouraged! The dealer will put that bet in the middle of the number
+				Dealer Place Bets are encouraged! The dealer will put that bet in the middle of the number
 				representing that it is a bet for the dealer. The amount that gets paid differs from point
-				to point and from casino to casino but I move the decimal over and pay it as a place bet.
+				to point and from casino to casino but I move the decimal over and pay it as a Place Bet.
 			</p>
 			<ContentHeaderThree title="Dealer Place Bets on 6 & 8">
 				<p class="pb-4">
-					Let's say you have $3 on the 6 for the dealers, I would pay it like a $30 Place Bet which
-					gets $36 or $3.60 for the dealers. I round up and drop $4 plus the $3 bet for $7 and down.
+					Let's say you have $3 on the 6 for the dealers. The $3 dealer bet pays $3.60, which gets
+					rounded up to $4. The $4 is added to the original $3 bet for one total of $7 to drop for
+					the dealers, and the bet comes down.
 				</p>
 				<ContentImg
 					caption=""
@@ -447,9 +448,9 @@
 			<div class="pb-4" />
 			<ContentHeaderThree title="Dealer Place Bets on 5 & 9">
 				<p class="pb-4">
-					If you bet $4 for the dealers on the 5 or 9 then I would consider that a $40 Place Bet
-					which pays $56 or $6 for the dealers. I round up and drop $6 plus $4 for $10 and down.
-					Thank you!
+					If you bet $4 for the dealers on the 5 or 9, the $4 dealer bet pays $5.60, which gets
+					rounded up to $6. The $6 is added to the original $4 bet for one total of $10 to drop
+					for the dealers, and the bet comes down. Thank you!
 				</p>
 				<ContentImg
 					caption=""
@@ -463,8 +464,9 @@
 			<div class="pb-4" />
 			<ContentHeaderThree title="Dealer Place Bets on 4 & 10">
 				<p class="pb-4">
-					$1 bet on a 4 or 10 for the dealers would be paid like a $10 Place Bet which gets $18 or
-					$1.80 for the dealers. Round that up to $2 plus the $1 and the dealers drop $3 and down!
+					A $1 bet on a 4 or 10 for the dealers pays $1.80, which gets rounded up to $2. The $2 is
+					added to the original $1 bet for one total of $3 to drop for the dealers, and the bet
+					comes down!
 				</p>
 				<ContentImg
 					caption=""

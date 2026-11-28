@@ -93,7 +93,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "The Craps Table",
-  "description": "An overview of the craps table layout, including the Rail, Betting Areas, Proposition Betting Area, Bank, and the essential tools like the Puck, Stick, and the Bowl.",
+  "description": "An overview of the Craps table layout, including the Rail, Betting Areas, Proposition Betting Area, Bank, and the essential tools like the Puck, Stick, and the Bowl.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -117,7 +117,7 @@
     {
       "@type": "ItemList",
       "name": "Craps Basics",
-      "description": "Detailed explanation of the craps table layout and components, including the Rail, Betting Areas, Bank, and the roles of the Puck, Stick, and the Bowl in the game.",
+      "description": "Detailed explanation of the Craps table layout and components, including the Rail, Betting Areas, Bank, and the roles of the Puck, Stick, and the Bowl in the game.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -262,11 +262,11 @@
 		</ContentHeaderTwo>
 		<ContentHeaderTwo id="bankArea" title="The Craps Table Bank">
 			<p class="pb-4">
-				The money the casino uses to run the game is called The Bank. players' <Link
+				The money the casino uses to run the game is called The Bank. Players' <Link
 					text="buy-ins"
 					href="the-stages"
 				/> and <Link text="color-ups " href="the-stages" />come from there and are where dealers get
-				their money to deal the game. The Craps Bank in this picture has a total of $260,800.
+				their money to deal the game.
 			</p>
 		</ContentHeaderTwo>
 		<Divider />
@@ -342,7 +342,7 @@
 				tables can be as long as 16ft. It is usually made of rattan, the material used in wicker,
 				and is incredibly flexible, helping to navigate the dice around the layout. The stick is
 				used by a dealer called <Link text="the Stickperson" href="the-crew" />, who uses it to run
-				the game's pace, point at people who need to get paid or push cheuques all over the place.
+				the game's pace, point at people who need to get paid or push cheques all over the place.
 				It's pretty fun to play with the stick.
 			</p>
 			<ContentImg

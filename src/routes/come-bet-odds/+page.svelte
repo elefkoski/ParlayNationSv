@@ -15,7 +15,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -111,7 +111,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Odds for a Come Bet",
-  "description": "A detailed guide on how to bet odds for a Come Bet in craps, including the similarities to Pass Line odds, the placement of odds, and potential payouts.",
+  "description": "A detailed guide on how to bet odds for a Come Bet in Craps, including the similarities to Pass Line odds, the placement of odds, and potential payouts.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -174,7 +174,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/come-bet-odds/come-bet-odds_640x360.webp",
-      "caption": "Illustration of a Come Bet with odds placed on the craps table."
+      "caption": "Illustration of a Come Bet with odds placed on the Craps table."
     },
     {
       "@type": "ImageObject",
@@ -211,10 +211,10 @@
 					text="Odds for a Pass Line"
 					href="pass-line-odds"
 				/> bet. Just like the Come bet, Odds are also betting the Point will be rolled before a 7. If
-				the Point is rolled, the Come bet and its' Odds win. If 7 rolls, your Come bet and its Odds lose.
+				the Point is rolled, the Come bet and its Odds win. If 7 rolls, your Come bet and its Odds lose.
 				Odds can be less than table minimum.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/come-bet-odds_640x360.webp"
@@ -233,7 +233,7 @@
 		<Divider />
 		<ContentHeaderTwo id="bettingComeBetOdds" title="How Do You Bet Odds for a Come Bet in Craps?">
 			<p class="pb-4">
-				When you want to to add Odds to your <Link text="Come Bet" href="come-bet-basics" /> put your
+				When you want to add Odds to your <Link text="Come Bet" href="come-bet-basics" /> put your
 				money in the COME and tell the dealer those are Odds for your Come bet.
 			</p>
 			<ContentImg
@@ -272,7 +272,7 @@
 			<p class="pb-4">
 				You can turn your Odds ON during the Comeout Roll and if the seven rolled you would lose
 				both the Come Bet and its Odds. If that Point rolled during the Comeout Roll then you would
-				get paid for both the Come Bet and its' Odds.
+				get paid for both the Come Bet and its Odds.
 			</p>
 			<ContentImg
 				caption=""
@@ -280,7 +280,7 @@
 				mdImg="src/images/{url}/odds-are-off-during-the-comeout-roll_960x540.webp"
 				lgImg="src/images/{url}/odds-are-off-during-the-comeout-roll_1280x720.webp"
 				title="Odds Are Off During the Comeout Roll"
-				alt="Puck is off and in the don't come. There are two come bets with highlighted odds on the the points four and five."
+				alt="Puck is off and in the don't come. There are two come bets with highlighted odds on the points four and five."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -299,7 +299,7 @@
 					Bet on the 6 or 8 gets paid $6. Otherwise known as 6:5 which is read <Quote
 						text="6 to 5"
 					/> or you can think of it as you win <Quote text="$6 for every $5" />. When the Point is
-					rolled, the dealer will add together the payment of the Come Bet and it's Odds and pay you
+					rolled, the dealer will add together the payment of the Come Bet and its Odds and pay you
 					the total.
 				</p>
 				<ContentImg
@@ -327,7 +327,7 @@
 					This is known as 3:2 which is read <Quote text="3 to 2" /> or you win <Quote
 						text="$3 for every $2"
 					/>. You could also think of this as 1 and ½ times your bet or a Blackjack. When the Point
-					is rolled, the dealer will add together the payment of the Come Bet and it's Odds and pay
+					is rolled, the dealer will add together the payment of the Come Bet and its Odds and pay
 					you the total.
 				</p>
 				<p class="pb-4">
@@ -361,7 +361,7 @@
 					double or 2:1 which is read <Quote text="2 to 1" /> or you can think of it as <Quote
 						text="$2 for every $1"
 					/>. When the Point is rolled, the dealer will add together the payment of the Come Bet and
-					it's Odds and pay you the total.
+					its Odds and pay you the total.
 				</p>
 				<ContentImg
 					caption="Come Bet Odds - 4 & 10"
@@ -418,7 +418,7 @@
 		<ContentHeaderTwo id="maxComeBetOdds" title="What Are 3x 4x 5x Odds on a Come Bet in Craps?">
 			<p class="pb-4">
 				Odds on a Come bet have no house advantage so there is a limit on the amount you can add. 3x
-				4x 5x Odds means the maximm Odds you can add to a Come bet is 3x the Come bet on the 4 or
+				4x 5x Odds means the maximum Odds you can add to a Come bet is 3x the Come bet on the 4 or
 				10, 4x the Come bet on the 5 or 9, and 5x the Come bet on the 6 and 8.
 			</p>
 			<ContentHeaderThree title="3x on the 4 and 10">
@@ -434,13 +434,13 @@
 					mdImg="src/images/{url}/max-come-bet-odds-4-10_960x540.webp"
 					lgImg="src/images/{url}/max-come-bet-odds-4-10_1280x720.webp"
 					title="Max Come Bet Odds 4 & 10"
-					alt=""
+					alt="$25 Come bet with $75 odds on the point four."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
 			<ContentHeaderThree title="4x on the 5 & 9">
 				<p class="pb-4">
-					You can bet up to 4 times you Come bet when the Point is 5 or 9. A $15 Come bet would be
+					You can bet up to 4 times your Come bet when the Point is 5 or 9. A $15 Come bet would be
 					able to add up to $60 as Odds and the payment would be 7x the Come bet ($15) or $105. The
 					$60 Odds would pay $90 and the come bet would win even money, $15, for a payment of $105.
 				</p>
@@ -467,7 +467,7 @@
 					mdImg="src/images/{url}/max-come-bet-odds-6-and-8_960x540.webp"
 					lgImg="src/images/{url}/max-come-bet-odds-6-and-8_1280x720.webp"
 					title="Max Come Bet Odds 6 & 8"
-					alt="$10 come bet with $50 odds on the point 8"
+					alt="$10 come bet with $50 odds on the point 8."
 				/>
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
@@ -477,8 +477,8 @@
 			title="How Can You Bet a Come Bet with Odds for the Dealers?"
 		>
 			<p class="pb-4">
-				If you make a Come bet for the dealers you can also add Odds to it. Just like a players Come
-				bet, there is a maximum amount of Odds you can add to a dealers Come bet that is determined
+				If you make a Come bet for the dealers you can also add Odds to it. Just like a player's Come
+				bet, there is a maximum amount of Odds you can add to a dealer's Come bet that is determined
 				by the casino.
 			</p>
 			<ContentImg

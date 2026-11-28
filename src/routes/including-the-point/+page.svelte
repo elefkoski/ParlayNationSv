@@ -6,7 +6,7 @@
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '../../lib/components/Link.svelte';
@@ -14,7 +14,7 @@
 
 	let title: string = 'Betting Including the Point at the Craps Table';
 	let description: string =
-		'When you bet Including the Point you are betting a spread bet that included the point. You can bet Across, Inside, Outside, Uptown, or Downtown Including the Point.';
+		'When you bet Including the Point you are betting a spread bet that includes the point. You can bet Across, Inside, Outside, Uptown, or Downtown Including the Point.';
 	let url: string = 'including-the-point';
 
 	let phref: string = 'even-numbers';
@@ -39,7 +39,7 @@
 	};
 
 	let tblAria: string = 'Including the point betting options table';
-	let tblHeaders: string[] = ['The Spread', 'Total bet'];
+	let tblHeaders: string[] = ['The Spread', 'Total Bet'];
 	let tblRows: (string | number)[][] = [
 		['*One Unit: $5/number', '$32 Across Including'],
 		['Two Units: $10/number', '$44 Inside Including'],
@@ -66,7 +66,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Including the Point at the Craps Table",
-  "description": "Learn how to include the point in your spread bets at the craps table, enhancing your betting strategy and understanding of how to bet across including the point.",
+  "description": "Learn how to include the point in your spread bets at the Craps table, enhancing your betting strategy and understanding of how to bet across including the point.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -90,13 +90,13 @@
     {
       "@type": "ItemList",
       "name": "Betting Strategies Including the Point",
-      "description": "An in-depth look at how betting including the point can impact your craps strategy, with examples of betting across including the point.",
+      "description": "An in-depth look at how betting including the point can impact your Craps strategy, with examples of betting across including the point.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Betting Across Including the Point",
-          "description": "Detailed explanation on how to bet across including the point in craps, with examples for different betting amounts."
+          "description": "Detailed explanation on how to bet across including the point in Craps, with examples for different betting amounts."
         }
       ]
     }
@@ -135,7 +135,7 @@
 					href="spread-bets"
 				/> but add <Quote text="… including the point." /> to the end of their Spread Bet.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 		</ContentHeaderOne>
 		<div class="lg:hidden">
 			<Divider />
@@ -149,7 +149,7 @@
 			title="How Do You Bet Across Including the Point in Craps?"
 		>
 			<p class="pb-4">
-				Across Including the Point is betting all the Place bet numbers including the Point. E.g.
+				Across Including the Point is betting all the Place Bet numbers including the Point. E.g.
 				$64 Across would be $10 on the 4, $10 on the 5, $12 on the 6, $12 on the 8, $10 on the 9,
 				and $10 on the 10 — $10 + $10 + $12 + $12 + $10 + $10 = $64.
 			</p>
@@ -167,7 +167,7 @@
 				smImg="src/images/{url}/162-across-including-the-point_640x360.webp"
 				mdImg="src/images/{url}/162-across-including-the-point_960x540.webp"
 				lgImg="src/images/{url}/162-across-including-the-point_1280x720.webp"
-				title="Betting 162 Across Including the Point"
+				title="Betting $162 Across Including the Point"
 				alt="Betting $162 Across Including the Point"
 			/>
 		</ContentHeaderTwo>

@@ -1,0 +1,386 @@
+import { c as create_ssr_component, e as escape, d as add_attribute, v as validate_component } from "../../../chunks/ssr.js";
+import { B as BlogLayout } from "../../../chunks/BlogLayout.js";
+import { P as PageMenuBox } from "../../../chunks/Structure-Remaining.js";
+import { B as BlogH1, a as Blog_img, b as BlogH2 } from "../../../chunks/Blog-img.js";
+import { D as Divider } from "../../../chunks/Divider.js";
+import { L as Link } from "../../../chunks/Link.js";
+let title = "First Time Craps Player";
+let description = "New to Craps? Learn the essentials with our guide, featuring strategies to block out the noise, utilize dealer advice, and gradually expand your gameplay knowledge.";
+let url = "first-time-craps-player";
+const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let pageData = {
+    title,
+    description,
+    pageUrl: url,
+    imageUrl: "src/images/" + url + "/" + url + "-header.webp"
+  };
+  let pageLinks = [
+    {
+      title: "Don't Get Intimidated",
+      href: "#noIntimidation",
+      iconD: ["M0 0h24v24H0V0z", "M10 17l5-5-5-5v10z"],
+      iconFills: ["none", "orange"]
+    },
+    {
+      title: "Follow the Dealers’ Advice",
+      href: "#dealerAdvice",
+      iconD: ["M0 0h24v24H0V0z", "M10 17l5-5-5-5v10z"],
+      iconFills: ["none", "orange"]
+    },
+    {
+      title: `Don't Just Say "OK"`,
+      href: "#notJustOk",
+      iconD: ["M0 0h24v24H0V0z", "M10 17l5-5-5-5v10z"],
+      iconFills: ["none", "orange"]
+    },
+    {
+      title: "Ask Lots of Questions",
+      href: "#lotsOfQuestions",
+      iconD: ["M0 0h24v24H0V0z", "M10 17l5-5-5-5v10z"],
+      iconFills: ["none", "orange"]
+    },
+    {
+      title: "Don't Learn Too Much",
+      href: "#dontLearnTooMuch",
+      iconD: ["M0 0h24v24H0V0z", "M10 17l5-5-5-5v10z"],
+      iconFills: ["none", "orange"]
+    },
+    {
+      title: "Study Beforehand",
+      href: "#studyBeforehand",
+      iconD: ["M0 0h24v24H0V0z", "M10 17l5-5-5-5v10z"],
+      iconFills: ["none", "orange"]
+    }
+  ];
+  return `${$$result.head += `<!-- HEAD_svelte-1kdmywt_START -->${$$result.title = `<title>${escape(title)} | Parlay Nation - How to Play Craps</title>`, ""}<link rel="canonical"${add_attribute("href", "http://parlaynation.com/" + url, 0)}><meta name="description"${add_attribute("content", description, 0)}><meta property="og:url"${add_attribute("content", "http://parlaynation.com/" + url, 0)}><meta property="og:title"${add_attribute("content", title + " | Parlay Nation - How to Play Craps", 0)}><meta property="og:description"${add_attribute("content", description, 0)}><meta property="og:image"${add_attribute("content", "images/" + url + "/" + url + "-header.webp", 0)}><meta name="twitter:image"${add_attribute("content", "images/" + url + "/" + url + "-header.webp", 0)}><script type="application/ld+json" data-svelte-h="svelte-16547km">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Learning Craps for the First Time",
+  "description": "A beginner's guide to the game of Craps, offering simple strategies and advice to help newcomers approach the table with confidence.",
+  "author": {
+    "@type": "Person",
+    "name": "Elvis Lefkoski"
+  },
+  "datePublished": "2024-03-06",
+  "url": "http://parlaynation.com/first-time-craps-player",
+  "image": "http://parlaynation.com/images/first-time-craps-player/first-time-craps-player-header.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parlay Nation",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://parlaynation.com/images/assets/parlay-nation-stacked-logo_275x218.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://parlaynation.com/first-time-craps-player"
+  },
+  "articleSection": [
+    {
+      "@type": "ItemList",
+      "name": "Starting Simple",
+      "description": "Focus on a few basic bets to start playing Craps without feeling overwhelmed.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "The Pass Line",
+          "description": "Bet the table minimum on the Pass Line as a starting point."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Odds on the Pass Line",
+          "description": "Place additional bets as Odds behind your Pass Line bet for better payouts."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Place Bets on the 6 or 8",
+          "description": "Consider betting on the 6 or 8, as they are common and have good odds."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Dealer Advice",
+      "description": "Utilize dealer advice to make informed betting decisions and improve your chances of winning.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Bet more on the Odds",
+          "description": "Dealers recommend betting more on the Odds than the Pass Line for better long-term gains."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Proper Odds",
+          "description": "Ensure you have proper Odds to avoid minor losses that add up over time."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Buy the 4 & 10",
+          "description": "When betting $20 on the 4 or 10, BUY the bet for a better payout."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Press some bets",
+          "description": "Consider increasing your bets progressively, as recommended by dealers, for potential large gains."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Learning and Understanding",
+      "description": "Strategies to aid with learning and understanding the game, including engaging with dealers and studying beforehand.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Don\\'t Just Say 'Ok'",
+          "description": "Engage actively with dealer advice, asking for repetitions or clarifications to better understand game strategies."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ask Lots of Questions",
+          "description": "Use dealer expertise to your advantage by asking questions, especially if you're positioned near them."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Don\\'t Learn Too Much at Once",
+          "description": "Focus on learning the game bit by bit, rather than trying to understand everything at once."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Study Beforehand",
+          "description": "Prepare by studying the basics of Craps before playing to make the game easier and more enjoyable."
+        }
+      ]
+    }
+  ]
+}<\/script><!-- HEAD_svelte-1kdmywt_END -->`, ""} ${validate_component(BlogLayout, "BlogLayout").$$render($$result, { pageLinks }, {}, {
+    default: () => {
+      return `<main aria-label="Main content" class="flex flex-col my-6">${validate_component(BlogH1, "BlogHeaderOne").$$render(
+        $$result,
+        {
+          sectionTitle: "Craps Info",
+          title: "Learning Craps for the First Time",
+          pageData
+        },
+        {},
+        {}
+      )} <section aria-label="Opening paragraphs"><p class="pb-4">Craps can be an overwhelming game for newcomers, but here&#39;s a secret—you don’t need to learn
+				a lot. Don&#39;t get bogged down with all the options on ${validate_component(Link, "Link").$$render(
+        $$result,
+        {
+          text: "the table",
+          href: "the-craps-table"
+        },
+        {},
+        {}
+      )}. The key to enjoying Craps is to start simple.</p> <p class="pb-4" data-svelte-h="svelte-1y1870w">This guide will help you learn how to learn at the Craps table. From learning how to block
+				out the noise to understanding how to use the dealers effectively, you’ll be walking up to
+				the table with confidence – so equip yourself with these tips and make the most of your
+				Craps adventure.</p></section> ${validate_component(Blog_img, "BlogImg").$$render(
+        $$result,
+        {
+          caption: "",
+          url,
+          img: "pass-line-w-dice",
+          title: "Pass Line Winner",
+          alt: "Pass line paid with the dice reading seven."
+        },
+        {},
+        {}
+      )} <div class="lg:hidden">${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} <div class="m-auto md:max-w-md">${validate_component(PageMenuBox, "ContentMenuBox").$$render($$result, { pageLinks }, {}, {})}</div></div> ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(BlogH2, "BlogH2").$$render(
+        $$result,
+        {
+          id: "noIntimidation",
+          title: "Don't Let it Intimidate You"
+        },
+        {},
+        {
+          default: () => {
+            return `<p class="pb-4" data-svelte-h="svelte-4atu4">“I’ve always wanted to learn how to play Craps.” is a phrase I’ve heard 10,000 times. You’ve
+				watched the crowd explode with excitement, and you want to be a part of it; you want to have
+				fun too! Then you look at the layout and think, “Maybe next time.” While a lot is going on,
+				you don’t need to be concerned with the majority of it. If you stay focused on a select few
+				bets, you can have loads of fun, never knowing the rest.</p> <ol><li><span data-svelte-h="svelte-ttukgr">The Pass Line – </span>Bet the table minimum on ${validate_component(Link, "Link").$$render(
+              $$result,
+              {
+                text: "the Pass Line",
+                href: "pass-line-basics"
+              },
+              {},
+              {}
+            )}.</li> <li data-svelte-h="svelte-ypt77z"><span>Odds on the Pass Line – </span>Anything more you want to bet should be used as Odds
+					(an extra bet added behind your Pass Line).</li> <li data-svelte-h="svelte-6m6szr"><span>Place Bets on the 6 or 8 – </span>Two very common and good bets on the table.</li></ol> <p data-svelte-h="svelte-b94kk9">That’s it; you can play all night with a handful of bets. After that, expand your knowledge
+				one bet at a time as you get comfortable. One of the best parts about Craps is how much the
+				dealers help. Just ask, &#39;Could you recommend some bets?&#39; and the dealers will guide you
+				through. There&#39;s no need to stress over the details like payouts or chip placement. Simply
+				listen to their instructions, and when you hear “That’s your money!”, scoop it up quickly!</p>`;
+          }
+        }
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(BlogH2, "BlogH2").$$render(
+        $$result,
+        {
+          id: "dealerAdvice",
+          title: "Follow the Dealers’ Advice"
+        },
+        {},
+        {
+          default: () => {
+            return `<p class="pb-4" data-svelte-h="svelte-19rqoqg">The dealers have a vested interest in you winning money. If you’re making bad bets and
+				losing lots of money, it’s hard for the dealers to earn tips. We want you to win, so when we
+				offer a suggestion, it’s for all of our benefits.</p> <p data-svelte-h="svelte-3xid9s">Here are some of the most common tips from dealers.</p> <ol><li><span data-svelte-h="svelte-a4atby">Bet more on the Odds, not the Pass Line - </span>I know you’re trying to win more by
+					betting more but we’re in this for the long haul. Betting big on the Pass Line could make
+					some quick dough when winners roll on ${validate_component(Link, "Link").$$render($$result, { text: "the Comeout", href: "the-stages" }, {}, {})}, but
+					even money is for the birds. You will make more money waiting for a Point and betting more
+					as Odds.</li> <li data-svelte-h="svelte-1nhkdbm"><span>Make sure you have proper Odds - </span>You may only lose 40 or 50 cents when you
+					bet improper Odds, but it all adds up. Pennies turn into dollars, and a single dollar can
+					quickly turn your day around.</li> <li><span data-svelte-h="svelte-1nqlwob">Buy the 4 &amp; 10 - </span>When you get to a $20 Place Bet on the 4 or 10, it’s highly
+					recommended that you BUY it. That means paying a commission to get paid 2:1 instead of
+					9:5. Place Bets on the 4 and 10 are much worse than ${validate_component(Link, "Link").$$render(
+              $$result,
+              {
+                text: "BUYs on the 4 and 10",
+                href: "buying-place-bets"
+              },
+              {},
+              {}
+            )}.</li> <li data-svelte-h="svelte-11i95u8"><span>Press some bets - </span>The dealers have seen enough bad rolls to be able to
+					appreciate a good one when we see it. That’s why it pains us when a player stays at the
+					table minimum the whole time. Even slowly pressing can result in huge gains. If the dealer
+					says something like, “You may want to bump your bet up a little.” Maybe you should listen.</li></ol>`;
+          }
+        }
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(Blog_img, "BlogImg").$$render(
+        $$result,
+        {
+          caption: "",
+          url,
+          img: "empty-come-bet-area",
+          title: "Up Close Empty Craps Layout",
+          alt: "An up close image of an empty craps layout."
+        },
+        {},
+        {}
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(BlogH2, "BlogH2").$$render(
+        $$result,
+        {
+          id: "notJustOk",
+          title: "Don't Just Say OK"
+        },
+        {},
+        {
+          default: () => {
+            return `<p class="pb-4" data-svelte-h="svelte-txmzch">A common experience for many players is this: they listen carefully to the dealers, and
+				respond with an &#39;Ok,&#39; but still find themselves confused about what&#39;s happening. This is a
+				normal part of the learning process and nothing to worry about. You may not be able to
+				retain everything they told you in that moment but you can use strategies to help you
+				process the information; one being to repeat the dealer&#39;s instructions back to them after
+				you say ‘Ok’ which can significantly help in remembering the rules.</p> <p>Now, you may be reluctant to ask the dealer to repeat themselves but remember, that&#39;s part
+				of our job. Feel free to ask for clarifications. Craps is much more fun when you understand
+				what is going on so don’t pretend to know; it only leads to confusion. Dealers are good at
+				recognizing when a player understands the game – if you&#39;re not celebrating when the Point
+				rolls, or if ${validate_component(Link, "Link").$$render(
+              $$result,
+              {
+                text: "your Odds",
+                href: "pass-line-odds"
+              },
+              {},
+              {}
+            )} are incorrect, we know you didn’t
+				get it yet.</p>`;
+          }
+        }
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(BlogH2, "BlogH2").$$render(
+        $$result,
+        {
+          id: "lotsOfQuestions",
+          title: "Ask Lots of Questions"
+        },
+        {},
+        {
+          default: () => {
+            return `<p class="pb-4" data-svelte-h="svelte-19855d">This is imperative. There is too much going on for you to know it all, and the dealers are
+				there to help, so take advantage of them. If you see the Base Dealer is busy helping other
+				players, ask the stickperson. If they are busy, you can always resort to the Boxperson or
+				the floor supervisor whose job is also to help everyone. If you know you will be asking lots
+				of questions, you may want to pick a spot at the table next to the dealer so you can have
+				conversations without having to talk past other players.</p> <p data-svelte-h="svelte-vcw67f">You can also ask the players next to you. Most players are willing to help but, be careful,
+				some players only pretend to know what they’re talking about. If you’re unsure whether the
+				information is correct, take a glance at the dealers while they are explaining the game to
+				you; they are always listening and will be able to respond to your glance with nods of
+				approval or some side-eye glances of disapproval.</p>`;
+          }
+        }
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(Blog_img, "BlogImg").$$render(
+        $$result,
+        {
+          caption: "",
+          url,
+          img: "world-proposition-bet",
+          title: "Five Dollar World Bet",
+          alt: "Up close five dollar world bet."
+        },
+        {},
+        {}
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(BlogH2, "BlogH2").$$render(
+        $$result,
+        {
+          id: "dontLearnTooMuch",
+          title: "Don't Learn Too Much at Once"
+        },
+        {},
+        {
+          default: () => {
+            return `<p data-svelte-h="svelte-1rxw6ii">In Craps, knowing the rules is just the start. You&#39;re facing dozens of bets, each paying
+				something different and having its own order of operation. You don’t want to learn it all.
+				It’s overwhelming if you let it be, and honestly, even a genius would struggle to grasp it
+				all in one go. The key? Focus on learning bit by bit. Tackle one bet at a time, one payout
+				at a time, and don’t worry about the order; that’s the dealers’ job.</p>`;
+          }
+        }
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} ${validate_component(BlogH2, "BlogH2").$$render(
+        $$result,
+        {
+          id: "studyBeforehand",
+          title: "Study Beforehand"
+        },
+        {},
+        {
+          default: () => {
+            return `<p data-svelte-h="svelte-1231x2h">It&#39;s a simple piece of advice that many players miss: get familiar with Craps before you
+				start playing. Learning as you go can be fun, but knowing the basics in advance makes
+				everything easier. Have time to spare? My website is filled with information. Need a quick
+				fix? Check out the guide I’ve created. If you&#39;re already at the casino, find a calm spot, do
+				some quick reading, and then approach the table.</p>`;
+          }
+        }
+      )} ${validate_component(Divider, "Divider").$$render($$result, {}, {}, {})} <section aria-label="Closing paragraphs"><p class="pb-4" data-svelte-h="svelte-jin7hn">As you wrap up this beginner&#39;s guide, keep in mind that Craps is a game of patience,
+				practice, and participation. Don’t rush your learning curve. Start with the basics, lean on
+				the knowledge of dealers, and slowly expand your skillset.</p> <p>Above all, remember that Craps is meant to be fun. Whether you&#39;re ${validate_component(Link, "Link").$$render(
+        $$result,
+        {
+          text: "rolling the dice",
+          href: "better-craps-shooter"
+        },
+        {},
+        {}
+      )} or placing bets, each moment at the table is a chance to learn, interact, and maybe even win.
+				So take a deep breath, join the table, and let the good times roll!</p></section></main>`;
+    }
+  })}`;
+});
+export {
+  Page as default
+};

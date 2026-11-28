@@ -7,7 +7,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 
@@ -44,7 +44,7 @@
 	};
 
 	let tblAria: string = 'Outside betting options table';
-	let tblHeaders: string[] = ['The Spread', 'Total bet'];
+	let tblHeaders: string[] = ['The Spread', 'Total Bet'];
 	let tblRows: (string | number)[][] = [
 		['*One Unit: $5/number', '$15/20 Outside'],
 		['Two Units: $10/number', '$30/40 Outside'],
@@ -163,7 +163,7 @@
 				you would have to bet the following: $10 on the 4, $10 on the 5, $10 on the 9, and $10 on
 				the 10 — $10 + $10 + $10 + $10 = $40. This bet would be 40 Outside.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/outside_640x360.webp"
@@ -201,15 +201,14 @@
 					mdImg="src/images/{url}/60-outside_960x540.webp"
 					lgImg="src/images/{url}/60-outside_1280x720.webp"
 					title="Betting $60 Outside"
-					alt="When the Point is 6 or 8 you are betting all four Outside numbers. This is when the cost is going to be the most.		"
+					alt="$60 outside with the point on six or eight."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
 			<ContentHeaderThree title="Point 4, 5, 9, 10">
 				<p class="pb-4">
-					When the Point is anything other than the 6 or 8, the cost of the bet will be larger. 6s
-					and 8's cost more and because they are not the Point and you will be including them in
-					your bet, the total cost of the bet will be larger.
+					When the Point is 4, 5, 9, or 10, the cost of the bet will be smaller. No 6s or 8's and
+					you only need to bet three of the four outside bets.
 				</p>
 				<ContentImg
 					caption=""

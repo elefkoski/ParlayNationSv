@@ -3,7 +3,7 @@
 
 	let title: string = 'Contact';
 	let description: string =
-		'If you have any questions, comments, or concers, contact Parlay Nation so we can hear what you have to say and do what we can do to help.';
+		'If you have any questions, comments, or concerns, contact Parlay Nation so we can hear what you have to say and do what we can do to help.';
 	let url: string = 'contact';
 
 	let name = '';
@@ -28,7 +28,7 @@
 			"@context": "http://schema.org",
 			"@type": "WebPage",
 			"name": "Contact",
-			"description": "If you have any questions, comments, or concers, contact Parlay Nation so we can hear what you have to say and do what we can do to help.",
+			"description": "If you have any questions, comments, or concerns, contact Parlay Nation so we can hear what you have to say and do what we can do to help.",
 			"url": "http://parlaynation.com/contact",
 			"image": "http://parlaynation.com/images/contact/contact-header.jpg"
 		}

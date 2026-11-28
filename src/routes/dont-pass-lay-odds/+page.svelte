@@ -16,7 +16,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -106,7 +106,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting Don't Pass Lay Odds in Craps",
-  "description": "A detailed guide on betting Don't Pass Lay Odds in craps, including placement, payouts, maximum Lay Odds, and how to bet Lay Odds for the dealers.",
+  "description": "A detailed guide on betting Don't Pass Lay Odds in Craps, including placement, payouts, maximum Lay Odds, and how to bet Lay Odds for the dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -130,13 +130,13 @@
     {
       "@type": "ItemList",
       "name": "Understanding Don't Pass Lay Odds",
-      "description": "Insights on Don't Pass Lay Odds bets in craps, covering how to place these bets, their payouts based on the point, and how to maximize Lay Odds.",
+      "description": "Insights on Don't Pass Lay Odds bets in Craps, covering how to place these bets, their payouts based on the point, and how to maximize Lay Odds.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Placing Don't Pass Lay Odds",
-          "description": "Instructions on how to place Lay Odds bets next to the Don't Pass bet on the craps table."
+          "description": "Instructions on how to place Lay Odds bets next to the Don't Pass Bet on the Craps table."
         },
         {
           "@type": "ListItem",
@@ -148,7 +148,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "Maximum Lay Odds",
-          "description": "Explanation of the maximum Lay Odds allowed for Don't Pass bets."
+          "description": "Explanation of the maximum Lay Odds allowed for Don't Pass Bets."
         },
         {
           "@type": "ListItem",
@@ -196,7 +196,7 @@
 				/>, where they win more. On the Don't Pass you <Quote text="Lay Odds" /> and bet more to win
 				less because you're more likely to win.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/dont-pass-lay-odds_640x360.webp"
@@ -216,10 +216,10 @@
 		<ContentHeaderTwo id="bettingLayOdds" title="How Do You Bet Don't Pass Lay Odds in Craps?">
 			<p class="pb-4">
 				Lay Odds on the Don't Pass go right next to your <Link text="Don't Pass" href="dont-pass" />
-				bet on the side that's closest to the <Link text="base dealer" href="the-crew" />. They
+				bet on the side that's closest to the <Link text="Base Dealer" href="the-crew" />. They
 				aren't stacked straight up like <Link text="Odds on the Pass line" href="pass-line-odds" />.
 				They are heeled off which make it look like they are at an angle and you should heel them
-				off in the direction towards the base dealer.
+				off in the direction towards the Base Dealer.
 			</p>
 			<ContentImg
 				caption=""
@@ -237,7 +237,7 @@
 				determines the dollar amount you should be Laying for that Point. You Lay the 6 and 8 in
 				multiples of 6, the 5 and 9 in multiples of 3, and the 4 and 10 in multiples of 2. These
 				multiples were created based on the number of ways the bet can lose compared to the number
-				of way they can win.
+				of ways they can win.
 			</p>
 			<ContentHeaderThree title="Pays 5:6 on the 6 and 8">
 				<p class="pb-4">
@@ -295,7 +295,7 @@
 				<p class="pb-4">
 					There are 3 ways to lose and 6 ways to win on the 4 and 10 which is written 3:6 then
 					reduced to 1:2. It's spoken as <Quote text="1 to 2" /> and when you think about getting paid
-					for your Lay Odds, its <Quote text="$1 for every $2" />.
+					for your Lay Odds, it's <Quote text="$1 for every $2" />.
 				</p>
 				<ContentImg
 					caption="$2 Lay Odds"
@@ -352,7 +352,7 @@
 		<ContentHeaderTwo id="maxLayOdds" title="What Are Max Lay Odds on the Don't Pass?">
 			<p class="pb-4">
 				No matter what Point you are Laying Odds on, the maximum allowed is always going to be 6
-				times the Don't Pass bet. The casino has no advantage with this bet so there must be a limit
+				times the Don't Pass Bet. The casino has no advantage with this bet so there must be a limit
 				and it's a flat rate across all the numbers.
 			</p>
 			<ContentImg
@@ -360,7 +360,7 @@
 				smImg="src/images/{url}/max-lay-odds-on-the-dont-pass_640x360.webp"
 				mdImg="src/images/{url}/max-lay-odds-on-the-dont-pass_960x540.webp"
 				lgImg="src/images/{url}/max-lay-odds-on-the-dont-pass_1280x720.webp"
-				title="Max Lay odds on the Don't Pass"
+				title="Max Lay Odds on the Don't Pass"
 				alt="$10 on the Don't Pass with $60 Lay Odds."
 			/>
 		</ContentHeaderTwo>
@@ -386,8 +386,8 @@
 			title="How Do You Bet Don't Pass Lay Odds for the Dealers?"
 		>
 			<p class="pb-4">
-				You can add Lay Odds to a dealers Don't Pass bet in the same way you add Lay Odds to your
-				own Don't Pass bet.
+				You can add Lay Odds to a dealer's Don't Pass Bet in the same way you add Lay Odds to your
+				own Don't Pass Bet.
 			</p>
 			<ContentImg
 				caption=""
@@ -395,7 +395,7 @@
 				mdImg="src/images/{url}/lay-odds-for-the-dealers_960x540.webp"
 				lgImg="src/images/{url}/lay-odds-for-the-dealers_1280x720.webp"
 				title="Dealer Lay Odds"
-				alt="$1 with $6 Lay Odds on the Don't Pass"
+				alt="$1 with $6 Lay Odds on the Don't Pass."
 			/>
 		</ContentHeaderTwo>
 	</main>

@@ -5,7 +5,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentUl from '$lib/components/contentPages/Content-ul-a.svelte';
 	import ContentUl2 from '../../lib/components/contentPages/Content-ul-b.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';

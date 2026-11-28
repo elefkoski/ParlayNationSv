@@ -3,7 +3,7 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Practice Craps Roll Cards';
 	let description: string =
@@ -47,12 +47,12 @@
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="Practice Craps Roll Cards"
-				description="Practice determining what is a roll and what is not a roll using these Craps Cards. There are 14 images of dice landing in different positions. Some are considered a roll and some are considered a no roll. What is considered a roll differs between each casino, boxperson, and dealer. What one person or casino may call a roll may not be what another casino or person calls a roll."
+				description="Practice determining what is a roll and what is not a roll using the Roll Cards. There are 14 images of dice landing in different positions. Some are considered a roll and some are considered a no roll. What is considered a roll differs between each casino, boxperson, and dealer. What one person or casino may call a roll may not be what another casino or person calls a roll."
 				listPara=""
 				listItems={[]}
 				downloadUrl="src/pdf/craps-roll-cards.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

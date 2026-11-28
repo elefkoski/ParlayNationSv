@@ -200,7 +200,7 @@
 			{url}
 			img="craps-dice-in-place-bets"
 			title="Craps Dice Resting in Place Bet Boxes"
-			alt="Two purple craps dice sitting in the place bet boxes"
+			alt="Two purple Craps dice sitting in the place bet boxes"
 		/>
 		<div class="lg:hidden">
 			<Divider />
@@ -248,11 +248,11 @@
 					change, making the whole process one step.
 				</li>
 				<li>
-					<span>Bet Place bets or Hardways during the Comeout Roll and stay off - </span>Avoid
+					<span>Bet Place Bets or Hardways during the Comeout Roll and stay off - </span>Avoid
 					making Place or Hardway bets during the Comeout Roll, particularly if you're betting on
-					the Pass Line. If the Place bet becomes the Point, it must be moved, creating extra work.
+					the Pass Line. If the Place Bet becomes the Point, it must be moved, creating extra work.
 					Players often bet more on the Hardway that becomes the Point, causing even more work for
-					the dealer. To streamline the game, make Place bets and Hardways during the Intermediate
+					the dealer. To streamline the game, make Place Bets and Hardways during the Intermediate
 					Roll unless you want to turn them ON during the Comeout Roll.
 				</li>
 				<li>
@@ -270,19 +270,19 @@
 			caption=""
 			{url}
 			img="craps-table-layout-third-base"
-			title="Third Base Craps Table Layou"
-			alt="Third base overhead view of the craps layout with many chips."
+			title="Third Base Craps Table Layout"
+			alt="Third base overhead view of the Craps layout with many chips."
 		/>
 		<Divider />
 		<BlogH2 id="watchOut" title="Things You Should Watch Out For">
 			<p class="pb-4">
 				These are things that are simple and common. Mistakes that happen when the player isn’t
-				paying – simple mistake that can easily be fixed.
+				paying – simple mistakes that can easily be fixed.
 			</p>
 			<ol>
 				<li>
 					<span>Odds being too close to your Pass Line - </span>You need to have enough space for
-					the dice to land between your <Link text="Pass Line" href="the-pass-line" /> and its’ Odds.
+					the dice to land between your <Link text="Pass Line" href="the-pass-line" /> and its Odds.
 					The width of two fingers is a good gauge to use. If the dice get caught between two bets, the
 					dealer will have to make a call. Many times the call will be one that the table does not agree
 					with causing some resentment and killing the vibe. We try to avoid this by making sure enough
@@ -345,15 +345,15 @@
 						text="say something"
 						href="win-a-craps-dispute"
 					/>, “You gave me $12; is this correct? I thought a $4 Horn paid $27 when the 12 rolled.” I
-					would say, “Yea, it does. Oops, here you go.” but none of this..’Are you sure?”, “Is this
+					would say, “Yea, it does. Oops, here you go.” But none of this. “Are you sure?”, “Is this
 					right?”, “This doesn’t look like enough” over and over again.
 				</li>
 				<li>
-					<span>Tipping other players w/o tipping the dealer - </span>Sometimes our feeling get a
+					<span>Tipping other players w/o tipping the dealer - </span>Sometimes our feelings get a
 					little hurt when you take care of the other players, like the shooter, without
 					acknowledging our efforts. While the shooter's role in rolling the dice is important, it
-					doesn't involve the same level of work and skill as the our responsibilities. We manages
-					every of the game, ensuring a smooth and fun experience for everyone. So, it's important
+					doesn't involve the same level of work and skill as our responsibilities. We manage
+					every aspect of the game, ensuring a smooth and fun experience for everyone. So, it's important
 					to appreciate our hard work with appropriate tipping.
 				</li>
 				<li>
@@ -375,14 +375,14 @@
 		<Divider />
 		<section aria-label="Closing paragraphs">
 			<p class="pb-4">
-				Knowing the do's and don'ts at the craps table can make your experience smoother and more
+				Knowing the do's and don'ts at the Craps table can make your experience smoother and more
 				enjoyable. From avoiding unnecessary <Link text="color-ups" href="the-stages" /> in the middle
 				of a roll to being mindful of leaving money on the table, these tips are designed to help you
 				navigate the game efficiently. It's not just about understanding the game's mechanics, but also
 				about respecting the flow and the other players.
 			</p>
 			<p>
-				Your next step is to apply these guidelines the next time you find yourself at a craps
+				Your next step is to apply these guidelines the next time you find yourself at a Craps
 				table. Whether it's watching your Odds or avoiding unnecessary actions, you'll not only
 				enjoy the game more but also earn the respect of dealers and other players.
 			</p>

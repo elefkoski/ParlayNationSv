@@ -211,7 +211,7 @@
 				You've mastered the game rules, you know how to bet, but do you know when to walk away? The
 				question isn't as simple as it seems. Whether it's <Link
 					text="hitting your goal"
-					href="managing-craps-bankroll"
+					href="managing-your-craps-bankroll"
 				/> or sensing a cold table, exiting at the right moment is a skill as important as any.
 			</p>
 			<p class="pb-4">
@@ -226,7 +226,7 @@
 			{url}
 			img="third-base-next-to-stick-looking-at-craps-layout"
 			title="Third Base Looking at Craps Layout"
-			alt="Third base looking at craps layout./"
+			alt="Third base looking at craps layout."
 		/>
 
 		<div class="lg:hidden">
@@ -282,9 +282,9 @@
 		<Divider />
 		<BlogH2 id="greatRoll" title="Right After a Great Roll">
 			<p class="pb-4">
-				I consider <Link text="a great roll" href="a-great-craps-roll" /> to be around 30 min? Give or
-				take. It’s not a monster roll of like 45min-1hr+ but a long period of time where everyone is
-				perpetually being paid. Lots of Place bets and Pass Line’s being paid repeatedly. A great roll
+				I consider <Link text="a great roll" href="a-great-craps-roll" /> to be around 30 min, give or take.
+				It’s not a monster roll of like 45min-1hr+ but a long period of time where everyone is
+				perpetually being paid. Lots of Place Bets and Pass Lines being paid repeatedly. A great roll
 				can be 10 min if there are only a handful of players and the dice move fast the whole time. It
 				can be less time if the stickperson doesn’t ever stop moving the dice.
 			</p>
@@ -330,7 +330,7 @@
 			</p>
 			<p>
 				Given Craps has <Link text="a crew" href="the-crew" />, you can feel a little comforted
-				knowing this sub-par dealer is being watched by another dealer, the box, and sometimes the
+				knowing this sub-par dealer is being watched by another dealer, the Box, and sometimes the
 				floor supervisor. If they are left to fend for themselves, you’re in trouble. This is your
 				cue to find another dealer. It could be another table, the opposite end of your current
 				table, or, if things are really bad, you can wait for the next shift to arrive.
@@ -343,8 +343,8 @@
 				before you drop your money on the table, it's worth taking a moment to read the room.
 			</p>
 			<p class="pb-4">
-				You’re going to want to scan the rails. Are they they filled with cheques? The players are
-				doing well. Are the rails empty? It means players players are losing. You’ll wan’t to listen
+				You’re going to want to scan the rails. Are they filled with cheques? The players are
+				doing well. Are the rails empty? It means players are losing. You’ll want to listen
 				for subtle hints in their tones or comments like, “The table's turned” or “Might be time for
 				a break.”
 			</p>

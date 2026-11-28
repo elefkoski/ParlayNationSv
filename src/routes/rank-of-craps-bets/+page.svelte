@@ -10,7 +10,7 @@
 
 	let title: string = 'Rank of Craps Bets';
 	let description: string =
-		'Ranked for your advantage: Explore every Craps bet from Odds to Propositions, mastering the game by understanding their house edges';
+		'Ranked for your advantage: Explore every Craps bet from Odds to Propositions, mastering the game by understanding their house edges.';
 	let url: string = 'rank-of-craps-bets';
 
 	let pageData: any = {
@@ -181,7 +181,7 @@
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<BlogHeaderOne
 			sectionTitle="Craps Info"
-			title="Ranking All Bets On the Craps Table"
+			title="Ranking All Bets on the Craps Table"
 			{pageData}
 		/>
 		<section aria-label="Opening paragraphs">
@@ -257,7 +257,7 @@
 		<Divider />
 		<BlogH2 id="betterBets" title="The Better Bets on the Craps Table">
 			<p class="pb-4">
-				Outside of the Odds bets, these are the best ones on the table offering extremely low how
+				Outside of the Odds bets, these are the best ones on the table offering extremely low house
 				edges.
 			</p>
 			<ol>
@@ -274,7 +274,7 @@
 					both pay even money (1:1).
 				</li>
 				<li>
-					<span>1.52% - Place 6 or 8 - </span>Place bets on the 6 & 8 are top-notch bets. They are
+					<span>1.52% - Place 6 or 8 - </span>Place Bets on the 6 & 8 are top-notch bets. They are
 					very popular with a low house edge and are fun to press. They pay 7:6
 				</li>
 			</ol>
@@ -294,7 +294,7 @@
 					text="Commission"
 					href="buying-place-bets"
 				/>
-				based bets but good none the less.
+				based bets but good nonetheless.
 			</p>
 			<ol>
 				<li>
@@ -367,7 +367,7 @@
 					bet, but players still bet randomly all the time. It pays 7:1.
 				</li>
 				<li>
-					<span>11.11% - C & E - </span>The Any Crap and Eleven combo. Very popular bet because you
+					<span>11.11% - C & E - </span>The Any Craps and Eleven combo. Very popular bet because you
 					can bet different amounts on each the <Link text="C and the E" href="c-and-e" /> as well as
 					split it for one amount. It pays 3:1 if any of the Craps roll and 7:1 if the Yo rolls.
 				</li>
@@ -402,11 +402,11 @@
 				<li>
 					<span>12.78% - Horn High Aces/Twelve - </span>These two Horn Highs have more money on bets
 					with a lower house edge which is why it doesn’t pay as well as the other two. They pay
-					57:5 for a direct hit, 26:5 is the opposite high side hits, and 11:5 if the low side
+					57:5 for a direct hit, 26:5 if the opposite high side hits, and 11:5 if the low side
 					rolls.
 				</li>
 				<li>
-					<span>13.33% - World - </span>Add an Any 7 to a Horn and you now have <Link
+					<span>13.33% - World - </span>Add an Any Seven to a Horn and you now have <Link
 						text="a World"
 						href="world"
 					/>. It remains a classic bet during the Comeout Roll and is adored by both dealers and
@@ -415,7 +415,7 @@
 				</li>
 				<li>
 					<span>13.89% - Straight Aces/Twelve - </span>The High and the Low. They have a horrible
-					house edge but pay more than anything else on the table, so players go crazy for them..
+					house edge but pay more than anything else on the table, so players go crazy for them.
 					They pay 30:1.
 				</li>
 				<li>

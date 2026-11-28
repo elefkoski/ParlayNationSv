@@ -110,7 +110,7 @@
 		"url": "http://parlaynation.com/src/images/home-page/craps-table-layout.jpg",
 		"width": 1920,
 		"height": 1080,
-		"caption": "Main Hero background showing a craps table layout."
+		"caption": "Main Hero background showing a Craps table layout."
 	},
 	"breadcrumb": {
 		"@type": "BreadcrumbList",
@@ -237,7 +237,7 @@
 								   (max-width: 768px) 600px,
 								   900px"
 							src="src/images/home-page/practice-craps_1280x720.webp"
-							alt="Learn Craps"
+							alt="Practice Craps"
 							class="w-full shadow-2xl"
 						/>
 					</div>
@@ -246,7 +246,7 @@
 					>
 						<h1 class="text-2xl font-bold">PRACTICE CRAPS</h1>
 						<p class="p-6 max-w-xs m-auto">
-							Practice craps payouts with downloadable PDF's. Print the Craps Table layout, dice and
+							Practice Craps payouts with downloadable PDFs. Print the Craps Table layout, dice and
 							more.
 						</p>
 						<a
@@ -307,11 +307,11 @@
 					>
 						<h1 class="text-2xl font-bold">CRAPS CALCULATORS</h1>
 						<p class="p-6 max-w-xs m-auto">
-							New to the game? Looking for a refresher? A journey into the world of Craps begins
-							right here.
+							Calculate bets, odds, and payouts with our powerful Craps calculators. Perfect for
+							beginners and experts alike.
 						</p>
 						<a
-							data-track="home-craps-caclulators"
+							data-track="home-craps-calculators"
 							href="craps-calculators"
 							class="btn home-section-btn capitalize w-1/2 m-auto">CHECK NOW</a
 						>

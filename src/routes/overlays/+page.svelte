@@ -15,7 +15,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -166,7 +166,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/overlays/placement-of-an-overlay_640x360.webp",
-      "caption": "Up close overhead view of the boxes behind the place bets and the craps table rail. There are 16 colored spots that correspond with each other."
+      "caption": "Up close overhead view of the boxes behind the place bets and the Craps table rail. There are 16 colored spots that correspond with each other."
     }
   ]
 }
@@ -188,7 +188,7 @@
 				Overlay but must pay a commission. Once you have decided to Overlay a Point, you win when
 				the 7 is rolled and lose if that Point is rolled.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/overlays_640x360.webp"
@@ -221,7 +221,7 @@
 			<p class="pb-4">
 				When you want to make an Overlay you say it using the term <Quote text="No ___(Point)___" />
 				and you add the cost of commission in with the bet. E.g. If you want to Overlay the 10 for $40
-				+ $1 commission, you'd say <Quote text="Can I have a $41 No 10?" />, If you wanted to
+				+ $1 commission, you'd say <Quote text="Can I have a $41 No 10?" />. If you wanted to
 				Overlay the 5, you could say <Quote text="$31 No 5" />. You should know how much you want to
 				bet including the Vig.
 			</p>
@@ -237,13 +237,13 @@
 		<Divider />
 		<ContentHeaderTwo id="overlayPlacement" title="Where Are Your Overlays on the Craps Table?">
 			<p class="pb-4">
-				Like most other bets on <Link text="the Dont's" href="the-donts" />, Overlays are put behind
-				the Point they are betting against. To distinguish an Overlay from a Don't Come bet, the
+				Like most other bets on <Link text="the Don'ts" href="the-donts" />, Overlays are put behind
+				the Point they are betting against. To distinguish an Overlay from a Don't Come Bet, the
 				dealers put a lammer on top of the bet that says 'Lay'. This tells you, <Link
 					text="the Boxperson"
 					href="the-crew"
 				/>, and any other dealer that the bet is not a Don't Come Bet but an Overlay. Overlays are
-				placed in a general area behind each Point relative to the players place on the table.
+				placed in a general area behind each Point relative to the player's place on the table.
 			</p>
 			<ContentImg
 				caption=""
@@ -251,7 +251,7 @@
 				mdImg="src/images/{url}/placement-of-an-overlay_960x540.webp"
 				lgImg="src/images/{url}/placement-of-an-overlay_1280x720.webp"
 				title="Placement of an Overlay"
-				alt="Up close overhead view of the boxes behind the place bets and the craps table rail. There are 16 colored spots that correspond with each other."
+				alt="Up close overhead view of the boxes behind the place bets and the Craps table rail. There are 16 colored spots that correspond with each other."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -261,7 +261,7 @@
 				they are True Odds you need to bet them in correct increments and while making the bet
 				include the commission that you'll be paying.
 			</p>
-			<ContentHeaderThree title="You Must Pay a 5% Commission on it's Winnings">
+			<ContentHeaderThree title="You Must Pay a 5% Commission on its Winnings">
 				<p class="pb-4">
 					Overlays are essentially the opposite of <Link text="a Buy" href="buying-place-bets" /> on
 					a
@@ -298,7 +298,7 @@
 					mdImg="src/images/{url}/25-no-six_960x540.webp"
 					lgImg="src/images/{url}/25-no-six_1280x720.webp"
 					title="$25 No Six"
-					alt="$24 behind the point six with a lay button on top. Bubble reads $25 total bet cost"
+					alt="$24 behind the point six with a lay button on top. Bubble reads $25 total bet cost."
 				/>
 				<div class="pb-4" />
 				<ContentImg

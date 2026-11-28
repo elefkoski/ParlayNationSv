@@ -31,9 +31,30 @@
 <MoreLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class="p-6">
 		<h1 class="text-4xl font-bold mb-10 text-center">Craps Corner</h1>
-		<h2 class="mb-4 text-2xl">Craps Calculators</h2>
-		<h2 class="mb-4 text-2xl">Craps Simulator</h2>
-		<h2 class="mb-4 text-2xl">Craps FAQ</h2>
-		<h2 class="mb-4 text-2xl">Craps Glossary</h2>
+		<p class="text-lg mb-10">
+			Craps Corner is where the rest of Parlay Nation lives: the tools and references that do not
+			fit inside a lesson. Run the numbers, practice on the simulator, get a quick answer, or
+			brush up on the lingo.
+		</p>
+		<h2 class="mb-4 text-2xl"><a href="craps-calculators" class="underline">Craps Calculators</a></h2>
+		<p class="text-lg mb-8">
+			Craps bet calculators for all the bets on the Craps table. Look up exactly what a bet pays
+			before you put your money down.
+		</p>
+		<h2 class="mb-4 text-2xl"><a href="craps-simulator" class="underline">Craps Simulator</a></h2>
+		<p class="text-lg mb-8">
+			Practice on a full Craps table without risking a dollar. Roll the dice, place your bets,
+			and learn how the game flows at your own pace.
+		</p>
+		<h2 class="mb-4 text-2xl"><a href="faq" class="underline">Craps FAQ</a></h2>
+		<p class="text-lg mb-8">
+			The questions every new player asks, answered straight: the most common bets, what the Pass
+			Line is, why eleven is called Yo, and more.
+		</p>
+		<h2 class="mb-4 text-2xl"><a href="glossary" class="underline">Craps Glossary</a></h2>
+		<p class="text-lg mb-8">
+			Talking like a Craps player starts with the words. Look up the terms you hear at the table,
+			from the Pass Line to the Hardways.
+		</p>
 	</main>
 </MoreLayout>

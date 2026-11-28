@@ -130,7 +130,7 @@
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<BlogHeaderOne
 			sectionTitle="Dealing with Dealers"
-			title="Mastering the Table: A Dealer’s Perspective's"
+			title="Mastering the Table: A Dealer’s Perspective"
 			{pageData}
 		/>
 		<section aria-label="Opening paragraphs">
@@ -186,7 +186,7 @@
 					<span>They remind you - </span>Since Craps moves so fast, it can be difficult to stay on
 					top of <Link text="every bet" href="rank-of-craps-bets" /> at the table. With so much going
 					on, even an experienced player will forget to put down their Odds or notice they need to move
-					a Place bet. A good dealer will ensure you are set up on all your normally placed bets, and
+					a Place Bet. A good dealer will ensure you are set up on all your normally placed bets, and
 					make sure you return on bets that fall on a regular basis.
 				</li>
 				<li>
@@ -228,8 +228,8 @@
 				Unfortunately, angry gamblers don’t scratch the surface. Like many in customer service, we
 				have to manage a wide assortment of personalities: from the greedy and dishonest to the
 				egocentric and passive-aggressive. There are also those who are pessimistic, needy, or exude
-				a sense of entitlement. And let’s not get into the hygiene, oh my goodness the hygiene..
-				it’s not always fun, but we persevere.
+				a sense of entitlement. And let’s not get into the hygiene, oh my goodness the hygiene.
+				It’s not always fun, but we persevere.
 			</p>
 		</BlogH2>
 		<Divider />
@@ -237,7 +237,7 @@
 			caption=""
 			{url}
 			img="three-way-bet"
-			title="Three Way Aces Bet"
+			title="Three-Way Aces Bet"
 			alt="Three way bet with the dealers on the aces."
 		/>
 		<Divider />
@@ -278,7 +278,7 @@
 							witnesses a <Link text="30 minute roll" href="a-great-craps-roll" /> where all the players
 							do nothing but win money. But when it happens, I love to look around and see everyone smiling,
 							cheering, and rails full of money. I know that you all killed it and I would love to be
-							feeling that same sense excitement! A few cheques is all I need to make me happy, and now
+							feeling that same sense of excitement! A few cheques is all I need to make me happy, and now
 							we’re all ready to do it again.
 						</li>
 					</ul>
@@ -301,7 +301,7 @@
 									is established
 								</li>
 								<li>Two-way Proposition bets like the Hardways or High-Lo’s</li>
-								<li>Betting the same Place bet by putting the dealers on the number</li>
+								<li>Betting the same Place Bet by putting the dealers on the number</li>
 							</ol>
 						</li>
 						<li>

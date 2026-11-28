@@ -3,11 +3,11 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Craps Cards - Black';
 	let description: string =
-		'Practice playing craps with Craps Cards. Play craps with cards using 36 black cut-out cards.';
+		'Practice playing Craps with Craps Cards. Play Craps with cards using 36 black cut-out cards.';
 	let url: string = 'practice-craps-cards-black';
 
 	let slides: string[] = [
@@ -37,7 +37,7 @@
 			  "@type": "Person",
 			  "name": "Elvis Lefkoski"
 			  },
-			"description": "Practice playing craps with Craps Cards. Play craps with cards using 36 Black cut-out cards.",
+			"description": "Practice playing Craps with Craps Cards. Play Craps with cards using 36 black cut-out cards.",
 			"url": "https://parlaynation.com/practice-craps-cards-black.html"
 		}
 	</script>
@@ -50,12 +50,12 @@
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="Black Craps Cards"
-				description="Practice playing Craps with 26 cut-out Craps cards. 36 Craps cards show you every combination of the dice so you can play or practice Craps with cards. Heavy stock paper is recommended in order for the ink not to show through the back. Or you can print the Grey Craps Cards so the ink will not show through the back."
+				description="Practice playing Craps with 36 cut-out Craps cards. 36 Craps cards show you every combination of the dice so you can play or practice Craps with cards. Heavy stock paper is recommended in order for the ink not to show through the back. Or you can print the Grey Craps Cards so the ink will not show through the back."
 				listPara=""
 				listItems={[]}
 				downloadUrl="src/pdf/black-craps-cards.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

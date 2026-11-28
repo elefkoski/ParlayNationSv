@@ -93,7 +93,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Making Verbal Bets at the Craps Table",
-  "description": "Learn about making verbal bets at the craps table, including how and when to do it, the importance of dealer confirmation, and the meanings behind 'no call' and 'no bet' statuses.",
+  "description": "Learn about making verbal bets at the Craps table, including how and when to do it, the importance of dealer confirmation, and the meanings behind 'no call' and 'no bet' statuses.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -117,13 +117,13 @@
     {
       "@type": "ItemList",
       "name": "Craps Basics",
-      "description": "Understanding the basics of making verbal bets at the craps table, including dealer interactions and bet status.",
+      "description": "Understanding the basics of making verbal bets at the Craps table, including dealer interactions and bet status.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "What Is Verbal Declaration of a Bet in Craps?",
-          "description": "Explains the process of making a verbal bet at the craps table and the dealer's role in confirming these bets."
+          "description": "Explains the process of making a verbal bet at the Craps table and the dealer's role in confirming these bets."
         },
         {
           "@type": "ListItem",
@@ -135,7 +135,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "What Is a No Call Bet in Craps?",
-          "description": "Defines what 'no call bets' are and how they affect the gameplay at the craps table."
+          "description": "Defines what 'no call bets' are and how they affect the gameplay at the Craps table."
         },
         {
           "@type": "ListItem",
@@ -233,7 +233,7 @@
 				mdImg="src/images/{url}/verbal-declaration_960x540.webp"
 				lgImg="src/images/{url}/verbal-declaration_1280x720.webp"
 				title="Verbal Declaration of a Bet"
-				alt="An outline of a person with a red though bubble next to another outlined person with a blue talking bubble and a cheque in their hand."
+				alt="An outline of a person with a red thought bubble next to another outlined person with a blue talking bubble and a cheque in their hand."
 			/>
 		</ContentHeaderTwo>
 		<Divider />

@@ -10,14 +10,14 @@
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
 
 	let title: string = 'Betting the Any Craps in Craps';
 	let description: string =
-		"The Any Craps is also more of a hedge bet also. You can use it to hedge the Pass Line during the Comeout Roll or while making a Come bet. It's similar to a Three Way Crap because they both bet the Aces, Ace Deuce, and Twelve.";
+		"The Any Craps is also more of a hedge bet. You can use it to hedge the Pass Line during the Comeout Roll or while making a Come bet. It's similar to a Three Way Craps because they both bet the Aces, Ace Deuce, and Twelve.";
 	let url: string = 'any-craps';
 
 	let phref: string = 'any-seven';
@@ -56,7 +56,7 @@
 	let tblAria: string = 'Any Craps payout table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
 	let tblRows: (string | number)[][] = [['Any Craps', '7:1', '2, 3, 12', 'Any other number']];
-	let tblPnts: string[] = ['The Any Craps is a one roll bet'];
+	let tblPnts: string[] = ['The Any Craps is a one-roll bet'];
 </script>
 
 <svelte:head>
@@ -73,7 +73,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Any Craps in Craps",
-  "description": "A comprehensive guide on betting the Any Craps in a craps game, explaining its usage, differences from Three Way Crap, and its placement and payment on the craps table.",
+  "description": "A comprehensive guide on betting the Any Craps in a Craps game, explaining its usage, differences from Three Way Craps, and its placement and payment on the Craps table.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -97,19 +97,19 @@
     {
       "@type": "ItemList",
       "name": "Proposition Bets",
-      "description": "Information on the Any Craps bet in craps games, including how it's used to hedge bets, its similarities and differences from Three Way Crap, and its payout structure.",
+      "description": "Information on the Any Craps bet in Craps games, including how it's used to hedge bets, its similarities and differences from Three Way Craps, and its payout structure.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Betting the Any Craps",
-          "description": "An overview of the Any Craps bet, a one-roll bet used to hedge other bets in craps games."
+          "description": "An overview of the Any Craps bet, a one-roll bet used to hedge other bets in Craps games."
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Where Is Your Any Craps on the Craps Table?",
-          "description": "Details the placement of the Any Craps bet on the craps table, highlighting its location in the middle of the table."
+          "description": "Details the placement of the Any Craps bet on the Craps table, highlighting its location in the middle of the table."
         },
         {
           "@type": "ListItem",
@@ -124,17 +124,17 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/any-craps/any-craps_640x360.webp",
-      "caption": "Overhead up close view of the any craps area on the craps layout."
+      "caption": "Overhead up close view of the any Craps area on the Craps layout."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/any-craps/placement-of-the-any-craps_640x360.webp",
-      "caption": "Up close view of the any craps bar and the craps rail, showing color-coordinated spots on the bet and rail."
+      "caption": "Up close view of the any Craps bar and the Craps rail, showing color-coordinated spots on the bet and rail."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/any-craps/what-does-the-any-craps-pay_640x360.webp",
-      "caption": "$3 on the any craps with two green dice reading 1-3 and a bubble indicating a $21 payment."
+      "caption": "$3 on the any Craps with two green dice reading 1-3 and a bubble indicating a $21 payment."
     }
   ]
 }
@@ -158,22 +158,22 @@
 				/> during the <Link text="Comeout Roll" href="the-stages" /> or while making a <Link
 					text="Come Bet"
 					href="come-bet-basics"
-				/>. It's similar to a <Link text="Three Way Crap" href="multi-bets" /> because they both bet
+				/>. It's similar to a <Link text="Three Way Craps" href="multi-bets" /> because they both bet
 				the Aces, Ace Deuce, and Twelve.
 			</p>
 			<p class="pb-4">
-				The difference in the Any Craps and Three Way Crap is they pay differently based on what
-				rolls. The Three Way pays different based on which number rolls.The Any Craps pays the same
+				The difference in the Any Craps and Three Way Craps is they pay differently based on what
+				rolls. The Three Way pays different based on which number rolls. The Any Craps pays the same
 				regardless of which rolls.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/any-craps_640x360.webp"
 				mdImg="src/images/{url}/any-craps_960x540.webp"
 				lgImg="src/images/{url}/any-craps_1280x720.webp"
 				title="The Any Craps"
-				alt="Overhead up close view of the any craps area on the craps layout."
+				alt="Overhead up close view of the any Craps area on the Craps layout."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -185,7 +185,7 @@
 		<Divider />
 		<ContentHeaderTwo id="anyCrapsPlacement" title="Where Is Your Any Craps on the Craps Table?">
 			<p class="pb-4">
-				Just like the placement of the <Link text="Any 7" href="any-seven" />, The Any Craps is a
+				Just like the placement of the <Link text="Any Seven" href="any-seven" />, The Any Craps is a
 				bar in the middle of the table. The center of the bar is the middle of the table and the
 				edges of the bar are the two bases. Everything in between the center and the edge is a
 				different spot on the table.
@@ -196,23 +196,23 @@
 				mdImg="src/images/{url}/placement-of-the-any-craps_960x540.webp"
 				lgImg="src/images/{url}/placement-of-the-any-craps_1280x720.webp"
 				title="Placement of the Any Craps"
-				alt="Up close view of the any craps bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
+				alt="Up close view of the any Craps bar and the Craps rail. There are eight spots that are color coordinated on the bet and the rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo id="anyCrapsPayment" title="What Does the Any Craps Pay in a Craps Game?">
-			<p class="pb-4">The Any Craps pay 7:1 or $7 for every $1.</p>
+			<p class="pb-4">The Any Craps pays 7:1 or $7 for every $1.</p>
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/what-does-the-any-craps-pay_640x360.webp"
 				mdImg="src/images/{url}/what-does-the-any-craps-pay_960x540.webp"
 				lgImg="src/images/{url}/what-does-the-any-craps-pay_1280x720.webp"
 				title="Any Craps Payment"
-				alt="$3 on the any craps with two green dice that read 1-3. There is a bubble that reads $21 payment."
+				alt="$3 on the any Craps with two green dice that read 1-3. There is a bubble that reads $21 payment."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
-		<CalcContainer aria="Any craps payment calculator" id="anyCrapsCalc"
+		<CalcContainer aria="Any Craps payment calculator" id="anyCrapsCalc"
 			><CalcBox
 				description="Check the payment for an Any Craps bet."
 				title="Any Craps Payment Calculator"

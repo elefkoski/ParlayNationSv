@@ -129,7 +129,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "Don’t Come and Overlays",
-          "description": "Detailing the order for paying Don’t Come bets and Overlays."
+          "description": "Detailing the order for paying Don’t Come Bets and Overlays."
         },
         {
           "@type": "ListItem",
@@ -166,7 +166,7 @@
 		/>
 		<section aria-label="Opening paragraphs">
 			<p class="pb-4">
-				We all know craps can be overwhelming. Between the rapid stick calls and the flurry of
+				We all know Craps can be overwhelming. Between the rapid stick calls and the flurry of
 				betting actions, it's easy to lose track. This guide aims to be your anchor, offering a
 				comprehensive understanding of how a stick call guides the dealers and the order in which
 				bets are paid. If you can figure out the Order of Operation you’ll be able to anticipate
@@ -185,8 +185,8 @@
 			caption=""
 			{url}
 			img="third-base-hook-looking-at-craps-layout"
-			title="Third Base Hook Looking At Craps Layou"
-			alt="Third base hook looking at craps layout."
+			title="Third Base Hook Looking At Craps Layout"
+			alt="Third base hook looking at Craps layout."
 		/>
 		<div class="lg:hidden">
 			<Divider />
@@ -197,8 +197,8 @@
 		<Divider />
 		<BlogH2 id="stickCalls" title="What Are the Stick Calls">
 			<p class="pb-4">
-				After the dice land in a game of craps, the stickperson makes a call that is known as a
-				"stick call”. They call out the number that was rolled and then instruct the base dealer on
+				After the dice land in a game of Craps, the Stickperson makes a call that is known as a
+				"stick call”. They call out the number that was rolled and then instruct the Base Dealer on
 				what action to take in a specific order. For novice dealers, stick calls are essential,
 				reminding them of their actions whenever they tend to freeze up.
 			</p>
@@ -240,7 +240,7 @@
 						text="Don’t Come"
 						href="dont-come"
 					/> and <Link text="Overlay" href="overlays" /> bets that are located in the boxes ‘behind’
-					the Place bet boxes. These bets win when the 7 rolls, so they get paid.
+					the Place Bet boxes. These bets win when the 7 rolls, so they get paid.
 				</li>
 			</ol>
 			<p class="pb-4">
@@ -286,10 +286,10 @@
 			{url}
 			img="second-base-up-close-pass-and-dont-pass-bets"
 			title="Second Base Up Close Looking At Pass & Don't Pass Bets"
-			alt="Second base up close looking at pass and don't pass bets"
+			alt="Second base up close looking at pass and don't pass bets."
 		/>
 		<Divider />
-		<BlogH2 id="oOoDcOverlays" title="Order of Operation for Place & Come Bets">
+		<BlogH2 id="oOoPlaceCome" title="Order of Operation for Place & Come Bets">
 			<p class="pb-4">
 				Place and Come bets are normally paid during the Intermediate Roll but during the Comeout
 				Roll you can have a “working” Place Bet or an established Come Bet.
@@ -299,7 +299,7 @@
 					<span>Order of Operation For Paying Come Bets</span>
 					<ul>
 						<li>
-							<span>Stick to Base - </span>Just like Place bets, Come bets are paid starting with
+							<span>Stick to Base - </span>Just like Place Bets, Come bets are paid starting with
 							the player next to the Stickperson and working down toward base.
 						</li>
 					</ul>
@@ -321,7 +321,7 @@
 						<li>
 							<span>Come then Place - </span>It’s a little tricky, but you take care of all the
 							players who have Come Bets, stick to base, then return to the player next to stick and
-							pay all the Place bets, stick to base.
+							pay all the Place Bets, stick to base.
 						</li>
 					</ul>
 				</li>
@@ -335,17 +335,17 @@
 			</p>
 			<ol>
 				<li>
-					<span>Order of Operation For Paying Don’t Come bets</span>
+					<span>Order of Operation For Paying Don’t Come Bets</span>
 					<ul>
 						<li>
-							<span>Base to Stick - </span>the player closest to the base dealer gets paid first
+							<span>Base to Stick - </span>The player closest to the Base Dealer gets paid first
 							moving toward the Stickperson.
 						</li>
 					</ul>
 				</li>
 				<li>
 					<span>Order of Operation For Paying Overlays</span>
-					<ul><span>Base to Stick - </span>Lay Odds are paid in order with Don’t Come bets.</ul>
+					<ul><span>Base to Stick - </span>Lay Odds are paid in order with Don’t Come Bets.</ul>
 				</li>
 			</ol>
 		</BlogH2>
@@ -362,8 +362,8 @@
 				</li>
 				<li>
 					<span>Base to Stick - </span>Like winning Pass and Don’t Pass bets, Proposition bets get
-					paid starting with the player closest to the base dealer and then working their way toward
-					the player next to the stickperson.
+					paid starting with the player closest to the Base Dealer and then working their way toward
+					the player next to the Stickperson.
 				</li>
 			</ol>
 		</BlogH2>
@@ -379,9 +379,9 @@
 		<BlogH2 id="oOoBetting" title="Order of Operation for Betting Importance">
 			<p class="pb-4">
 				Players get so caught up thinking about betting one thing that they’ll forget to bet
-				another. Such as players waiting in line to get their Place bets set up, and as soon as they
+				another. Such as players waiting in line to get their Place Bets set up, and as soon as they
 				get through the line, they sit back and relax, therefore missing their Odds bet. Or they are
-				thinking so much about the Hardways that they forget to make a Place bet.
+				thinking so much about the Hardways that they forget to make a Place Bet.
 			</p>
 			<p>
 				If you’re going to be paid on a bet, you want to ensure the best bets are set up first, then
@@ -397,12 +397,12 @@
 					building. They have no advantage for the casino.
 				</li>
 				<li>
-					<span>Bet Come or Don’t Come bets - </span>Just as good at the Pass and Don’t Pass because
+					<span>Bet Come or Don’t Come Bets - </span>Just as good as the Pass and Don’t Pass because
 					they win and lose the same way.
 				</li>
 				<li>
 					<span>Make your Place Bets - </span>The best ones are the 6 & 8. So you know, placing the
-					4 & 10 isn’t really that great; the Field is a better bet. But buying the 4 &10 is a
+					4 & 10 isn’t really that great; the Field is a better bet. But buying the 4 & 10 is a
 					different story – those are great bets.
 				</li>
 				<li>
@@ -438,7 +438,7 @@
 				When you finally understand the dealer's workflow, you can watch the game on a completely
 				different level. You can notice when you’re about to be paid, how much time you have left to
 				make a bet, and when the game is slowing down. Additionally, you can notice when the
-				Stickperson sends the dice, and balances that timing with the payments of the base dealer.
+				Stickperson sends the dice, and balances that timing with the payments of the Base Dealer.
 				This deeper understanding of the game adds another level of flow and appreciation to playing
 				Craps.
 			</p>

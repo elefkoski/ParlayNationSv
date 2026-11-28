@@ -35,7 +35,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Keeping An Eye on the Dealer',
+			title: 'Keeping an Eye on the Dealer',
 			href: '#keepAnEye',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -132,7 +132,7 @@
     },
     {
       "@type": "ItemList",
-      "name": "Keeping An Eye On the Dealer",
+      "name": "Keeping an Eye on the Dealer",
       "description": "The importance of monitoring dealer actions to ensure bets are placed correctly and payouts are accurate.",
       "itemListElement": [
         {
@@ -205,15 +205,15 @@
 			{url}
 			img="second-base-overhead-looking-at-craps-layout"
 			title="Second Base Looking At Craps Layout"
-			alt="Second base looking at craps layout."
+			alt="Second base looking at Craps layout."
 		/>
 		<Divider />
 		<BlogH2 id="otherPlayers" title="Worrying About Other Players">
 			<p class="pb-4">
 				You’ll find a fair share of confused players at the Craps table, resulting in your money
 				accidentally being picked up by them. Sometimes they are under the impression they made a
-				bet that they didn’t. Other times the dealer could them money that wasn’t supposed to go to
-				you, and you were distracted, so it slipped by. These players may not be sure of what they
+				bet that they didn’t. Other times the dealer could give them money that was supposed to go to
+				you but since you were distracted, it slipped by. These players may not be sure of what they
 				bet, what they should be getting paid, or what even rolled, so they pick up any money placed
 				in front of them.
 			</p>
@@ -223,7 +223,7 @@
 					table. <Link text="The Field" href="the-field" /> and <Link
 						text="Come bets"
 						href="come-bet-basics"
-					/> are the two most notorious bets for players getting confused about who’s bet is who’s. When
+					/> are the two most notorious bets for players getting confused about whose bet is whose. When
 					making these bets, try to place the bet in the same spot every time so you don’t need to question
 					whether it may be yours or not.
 				</p>
@@ -239,7 +239,7 @@
 						the wrong spot or the players may have moved to a different spot at the table.
 					</li>
 					<li>
-						<span>The stickperson could tell the base dealer to pay the wrong person - </span>The
+						<span>The stickperson could tell the Base Dealer to pay the wrong person - </span>The
 						placement of certain bets on the layout is subjective, and paying the wrong player does
 						happen when <Link text="two dealers" href="the-crew" /> are not in sync with their bet placements.
 					</li>
@@ -249,7 +249,7 @@
 						make your payment.
 					</li>
 					<li>
-						<span>The base dealer may have heard the wrong number - </span>If spotted fast enough,
+						<span>The Base Dealer may have heard the wrong number - </span>If spotted fast enough,
 						it’s no problem to undo. If the dealer finishes a lot of action, the game is coming to a
 						stop and we have to reverse-engineer everything that happened. No fun at all. If you
 						notice a dealer paying the wrong number, please don’t be afraid to say something.
@@ -263,10 +263,10 @@
 			{url}
 			img="second-base-up-close-with-place-and-come-bets"
 			title="Up Close Craps Layout Looking at Come and Place Bets"
-			alt="Up close craps layout looking at come and place bets."
+			alt="Up close Craps layout looking at come and place bets."
 		/>
 		<Divider />
-		<BlogH2 id="keepAnEye" title="Keeping An Eye on the Dealer">
+		<BlogH2 id="keepAnEye" title="Keeping an Eye on the Dealer">
 			<p class="pb-4">
 				Many mistakes can be mitigated before they ever happen by keeping an eye on the dealer.
 				Chips get shuffled around all the time and it isn’t hard to move the wrong person’s bet, put
@@ -276,7 +276,7 @@
 			<BlogH3 title="Dealer Placements">
 				<p class="pb-4">
 					First, you need to know where your spot is on the table. You can’t follow your money if
-					you don’t know where your spot is. Watch the base dealer set up your Place bets, and that
+					you don’t know where your spot is. Watch the Base Dealer set up your Place Bets, and that
 					will be your spot for each number across the board. <Link
 						text="Proposition bets"
 						href="proposition-bets"
@@ -313,9 +313,9 @@
 						They will pay you while thinking the bet is something it is not.
 					</li>
 					<li>
-						<span>Heard the wrong amount - </span>The base dealers misinterpret the stickperson all
-						the time. They can be telling the base dealer to pay a player $925 and they could have
-						heard $525. Mixing nines and fives in craps is pretty common.
+						<span>Heard the wrong amount - </span>The Base Dealers misinterpret the stickperson all
+						the time. They can be telling the Base Dealer to pay a player $925 and they could have
+						heard $525. Mixing nines and fives in Craps is pretty common.
 					</li>
 				</ol>
 				<p />
@@ -330,7 +330,7 @@
 			<p class="pb-4">
 				The moral of the story is there will always be mistakes. You’re not going to catch them all
 				but you should at least be able to fend off the vast majority. I’d say the Craps crew does a
-				well enough job protecting you’re money because they work as a team, and in the end,
+				well enough job protecting your money because they work as a team, and in the end,
 				mistakes balance themselves out – sometimes you’ll get overpaid and sometimes underpaid.
 			</p>
 			<p>

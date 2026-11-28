@@ -7,7 +7,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -45,7 +45,7 @@
 	};
 
 	let tblAria: string = 'Even betting options table';
-	let tblHeaders: string[] = ['The Spread', 'Total bet'];
+	let tblHeaders: string[] = ['The Spread', 'Total Bet'];
 	let tblRows: (string | number)[][] = [
 		['*One Unit: $5/number', '$16/17/22 Even'],
 		['Two Units: $10/number', '$32/34/44 Even'],
@@ -54,7 +54,7 @@
 		['Two Units: $50/number', '$165/172/225 Even']
 	];
 	let tblPnts: string[] = [
-		'One Unit can be $5 or $25 on the 4, 5, 9, and 10. One Unit can be $6 or $30 on the 6 or 8.'
+		'One Unit can be $5 or $25 on the 4 and 10. One Unit can be $6 or $30 on the 6 or 8.'
 	];
 </script>
 
@@ -72,7 +72,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "headline": "Betting Even Numbers at the Craps Table",
-  "description": "A comprehensive guide on betting even numbers at the craps table, including methods without commission for lower limits and with commission for larger bets.",
+  "description": "A comprehensive guide on betting even numbers at the Craps table, including methods without commission for lower limits and with commission for larger bets.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -99,7 +99,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Betting Even Numbers Without Commission",
-        "description": "Learn how to bet on even numbers at the craps table without commission, adjusting your bets based on the Point.",
+        "description": "Learn how to bet on even numbers at the Craps table without commission, adjusting your bets based on the Point.",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -168,9 +168,9 @@
 					href="presses"
 				/>, not including the Point. i.e. Suppose the Point was 6 and you wanted to bet $10 on each
 				of the numbers, you would have to bet the following: $10 on the 4, $12 on the 8, and $10 the
-				10 — $10 + $10 + $12 + $10 = $32. This bet would be 32 Even.
+				10 — $10 + $12 + $10 = $32. This bet would be 32 Even.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/even-numbers_640x360.webp"
@@ -270,8 +270,8 @@
 			<div class="pb-4" />
 			<ContentHeaderThree title="Point 4 or 10">
 				<p class="pb-4">
-					When the Point is 4 or 10 you only need to bet three out of the four Inside bets. These
-					are your second most expensive Outside bets.
+					When the Point is 4 or 10 you only need to bet three out of the four Even bets. These
+					are your second most expensive Even bets.
 				</p>
 				<ContentImg
 					caption=""

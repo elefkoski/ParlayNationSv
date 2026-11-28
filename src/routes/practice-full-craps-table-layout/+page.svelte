@@ -3,11 +3,11 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Printable Full Craps Table Layout';
 	let description: string =
-		'Practice using a printable craps table layout. First page has the craps table layout filled out for studying while page two has an empty craps table layout for testing.';
+		'Practice using a printable Craps table layout. First page has the Craps table layout filled out for studying while page two has an empty Craps table layout for testing.';
 	let url: string = 'practice-full-craps-table-layout';
 
 	let slides: string[] = [
@@ -33,7 +33,7 @@
 			  "@type": "Person",
 			  "name": "Elvis Lefkoski"
 			  },
-			"description": "Practice using a printable craps table layout. First page has the craps table layout filled out for studying while page two has an empty craps table layout for testing.",
+			"description": "Practice using a printable Craps table layout. First page has the Craps table layout filled out for studying while page two has an empty Craps table layout for testing.",
 			"url": "https://parlaynation.com/practice-full-craps-table-layout.html"
 		}
 	</script>
@@ -46,12 +46,12 @@
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="Full Craps Table Layout"
-				description="Practice learning Craps by studying the Craps table layout. Test yourself using the empty craps table layout. This is the whole version of the Craps table layout. If you would like to use a larger layout which may be easier to read by visiting the Half Craps Table Layout."
+				description="Practice learning Craps by studying the Craps table layout. Test yourself using the empty Craps table layout. This is the whole version of the Craps table layout. If you would like to use a larger layout which may be easier to read, visit the Half Craps Table Layout."
 				listPara=""
 				listItems={[]}
 				downloadUrl="src/pdf/full-craps-table-layout.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

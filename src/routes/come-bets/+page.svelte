@@ -117,7 +117,7 @@
 				"url": "https://parlaynation.com/coming-down-with-odds.html",
 				"name": "Coming Down w/Odds",
 				"image": "https://parlaynation.com/src/images/coming-down-with-odds/coming-down-with-odds-header.jpg",
-				"description": "When you are playing Place bets and Come bets at the same time you don’t need both on a Point. Coming Down w/Odds uses the Place bet for Odds on the Come bet."
+				"description": "When you are playing Place Bets and Come bets at the same time you don’t need both on a Point. Coming Down w/Odds uses the Place Bet for Odds on the Come bet."
 			  }
 			}
 		  ]
@@ -129,9 +129,9 @@
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col space-y-8 my-6">
 		<HomeHeader
-			aria="Com bet header"
+			aria="Come bet header"
 			title="Come Bet in Craps"
-			pOne="Gain an in-depth understanding of Come Bets in craps, exploring their mechanics during different stages of the game."
+			pOne="Gain an in-depth understanding of Come Bets in Craps, exploring their mechanics during different stages of the game."
 			pTwo="Analyze the payout structure and betting odds associated with Come Bets, a crucial aspect of strategic gameplay."
 			pThree="Explore the strategy of 'Coming Down with Odds', a nuanced technique that involves leveraging Place Bets as odds for the Come Bet."
 			button="Learn come bets"

@@ -17,7 +17,7 @@
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import Quote from '$lib/components/Quote.svelte';
 
@@ -74,8 +74,8 @@
 	];
 	let tblPnts: string[] = [
 		'Odds are not contract bets',
-		'You can only make the odds bet during the Comeout roll',
-		"If you don't plan on adding Odds then you you probably shouldn't bet the Pass Line"
+		'You can only make the odds bet during the Intermediate Roll',
+		"If you don't plan on adding Odds then you probably shouldn't bet the Pass Line"
 	];
 </script>
 
@@ -92,7 +92,7 @@
 		{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Odds on the Pass Line",
+  "headline": "Pass Line Odds",
   "description": "An in-depth exploration of betting Odds on the Pass Line in Craps, illustrating how to place these bets, their payout structure based on the point, and how to extend these bets to the dealers.",
   "author": {
     "@type": "Person",
@@ -165,14 +165,14 @@
 <LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="The pass line" title="Odds on the Pass Line" {pageData}>
+		<ContentHeaderOne sectionTitle="The pass line" title="Pass Line Odds" {pageData}>
 			<p class="pb-4">
 				During the Intermediate Roll, you can add an extra bet called Odds directly behind your Pass
 				Line bet. They are paid True Odds and are also betting that the Point will be rolled before
 				the 7. The wonderful thing about the Odds bet is THE CASINO HAS ZERO ADVANTAGE, so you
 				should always want to make this bet.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/pass-line-odds_640x360.webp"
@@ -223,14 +223,14 @@
 					smImg="src/images/{url}/pass-line-odds-pay-6-8-a_640x360.webp"
 					mdImg="src/images/{url}/pass-line-odds-pay-6-8-a_960x540.webp"
 					lgImg="src/images/{url}/pass-line-odds-pay-6-8-a_1280x720.webp"
-					alt="$5 on the Pass line with $5 odds. The pass line is payed even money and the $5 odds are paid $6."
+					alt="$5 on the Pass line with $5 odds. The pass line is paid even money and the $5 odds are paid $6."
 				/>
 				<ContentImg
 					caption="Example 2"
 					smImg="src/images/{url}/pass-line-odds-pay-6-8-b_640x360.webp"
 					mdImg="src/images/{url}/pass-line-odds-pay-6-8-b_960x540.webp"
 					lgImg="src/images/{url}/pass-line-odds-pay-6-8-b_1280x720.webp"
-					alt="$25 on the Pass line with $75 odds. The pass line is payed even money and the $75 odds are paid $90"
+					alt="$25 on the Pass line with $75 odds. The pass line is paid even money and the $75 odds are paid $90."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
@@ -246,21 +246,21 @@
 					smImg="src/images/{url}/pass-line-odds-pay-5-9-a_640x360.webp"
 					mdImg="src/images/{url}/pass-line-odds-pay-5-9-a_960x540.webp"
 					lgImg="src/images/{url}/pass-line-odds-pay-5-9-a_1280x720.webp"
-					alt="$10 on the pass line with $10 odds. The pass line is payed even money and the $10 odds are paid $15."
+					alt="$10 on the pass line with $10 odds. The pass line is paid even money and the $10 odds are paid $15."
 				/>
 				<ContentImg
 					caption="Example 2"
 					mdImg="src/images/{url}/pass-line-odds-pay-5-9-b_960x540.webp"
 					lgImg="src/images/{url}/pass-line-odds-pay-5-9-b_1280x720.webp"
 					smImg="src/images/{url}/pass-line-odds-pay-5-9-b_640x360.webp"
-					alt="$15 on the pass line with $50 odds. The pass line is payed even money and the $40 odds are paid $60."
+					alt="$15 on the pass line with $40 odds. The pass line is paid even money and the $40 odds are paid $60."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
 			<ContentHeaderThree title="Odds Pay 2:1 on Point 4 and 10">
 				<p class="pb-4">
 					Odds on the 4 and 10 can be any amount. Regardless of what you bet, the amount you will
-					win be double or 2:1, which reads <Quote text="2 to 1" />, or you can think of it as <Quote
+					win will be double or 2:1, which reads <Quote text="2 to 1" />, or you can think of it as <Quote
 						text="$2 for every $1"
 					/>. $3 Odds will win $6. $20 odds will win $40.
 				</p>
@@ -269,14 +269,14 @@
 					smImg="src/images/{url}/pass-line-odds-pay-4-10-a_640x360.webp"
 					mdImg="src/images/{url}/pass-line-odds-pay-4-10-a_960x540.webp"
 					lgImg="src/images/{url}/pass-line-odds-pay-4-10-a_1280x720.webp"
-					alt=""
+					alt="$5 on the pass line with $10 odds. The pass line is paid even money and the $10 odds are paid $20."
 				/>
 				<ContentImg
 					caption="Example 2"
 					smImg="src/images/{url}/pass-line-odds-pay-4-10-b_640x360.webp"
 					mdImg="src/images/{url}/pass-line-odds-pay-4-10-b_960x540.webp"
 					lgImg="src/images/{url}/pass-line-odds-pay-4-10-b_1280x720.webp"
-					alt=""
+					alt="$25 on the pass line with $25 odds. The pass line is paid even money and the $25 odds are paid $50."
 				/>
 			</ContentHeaderThree>
 		</ContentHeaderTwo>

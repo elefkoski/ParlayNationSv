@@ -74,8 +74,8 @@
     "name": "Elvis Lefkoski"
   },
   "datePublished": "2024-03-08",
-  "url": "http://parlaynation.com/_____",
-  "image": "http://parlaynation.com/images/_____/_____-header.webp",
+  "url": "http://parlaynation.com/craps-money-techniques",
+  "image": "http://parlaynation.com/images/craps-money-techniques/craps-money-techniques-header.webp",
   "publisher": {
     "@type": "Organization",
     "name": "Parlay Nation",
@@ -86,7 +86,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://parlaynation.com/_____"
+    "@id": "http://parlaynation.com/craps-money-techniques"
   },
   "articleSection": [
     {
@@ -174,8 +174,8 @@
 			caption=""
 			{url}
 			img="third-base-up-close-craps-table-layout"
-			title="Craps Table Layou"
-			alt="Up close of craps table layout with many bets."
+			title="Craps Table Layout"
+			alt="Up close of Craps table layout with many bets."
 		/>
 
 		<div class="lg:hidden">
@@ -224,13 +224,12 @@
 					<ol>
 						<li>
 							<span>10 for 3 -</span>This is for $7 payments such as $6 on the 6 & 8, $5 on the 5 or
-							9, or $1 Any Crap. The dealer gives you $10 and asks you to drop $3.
+							9, or $1 Any Craps. The dealer gives you $10 and asks you to drop $3.
 						</li>
 						<li>
 							<span>15 for 1 - </span>When a bet pays $14, the dealer will overpay you $15 for $1.
-							This is usually a $12 <Link text="Place bet" href="place-bet-basics" /> on the 6 or 8,
-							$10 on the 5 or 9, $2 Hard 4 or 10, or $1 on each C & E when the Yo rolls. This you will
-							be asked of you all the time.
+							This is usually a $12 <Link text="Place Bet" href="place-bet-basics" /> on the 6 or 8,
+							$10 on the 5 or 9, $2 Hard 4 or 10, or $1 on each C & E when the Yo rolls. These all pay $14.
 						</li>
 						<li>
 							<span>25 for 11 - </span>We use this for payments of $14 when we want to take back
@@ -290,7 +289,7 @@
 			<p class="pb-4">
 				When paying a Pass Line bet with Odds a dealer would normally pay them as two different bets
 				resulting in two piles of money. But, you may look down and see one pile of chips instead of
-				two – the total of your <Link text="Pass Line" href="the-pass-line" /> and its’ Odds.
+				two – the total of your <Link text="Pass Line" href="the-pass-line" /> and its Odds.
 			</p>
 		</BlogH2>
 		<Divider />
@@ -331,8 +330,8 @@
 				</li>
 				<li>
 					<span>The Floor </span>wisely tells them they should have replaced the 10 nickels with 2
-					quarters, paid it 4 quarters, then converted all the white leaving only 12 checks on the
-					table
+					quarters, paid it 4 quarters, then converted all the white leaving only 12 cheques on the
+					table.
 				</li>
 				<li>
 					<span>The Pit </span> is watching all this, shakes his head and says, “That’s $204 total. Take
@@ -386,7 +385,7 @@
 				Fully understanding what happens at the Craps table will never be easy for the faint of
 				heart. Some people would rather shut down when it comes to figuring out payments,
 				conversions, totals, and nearly anything to do with math. They are there to have fun, not
-				rack their brain; that is what the dealer is for.
+				rack their brains; that is what the dealer is for.
 			</p>
 			<p>
 				If you're a regular player, consider actively converting money to higher denominations to

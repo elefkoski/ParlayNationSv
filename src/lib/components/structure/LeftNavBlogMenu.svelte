@@ -48,7 +48,7 @@
 			],
 			href: [
 				'craps-money-techniques',
-				'managing-craps-bankroll',
+				'managing-your-craps-bankroll',
 				'protecting-your-money',
 				'right-craps-table',
 				'leaving-the-craps-table'

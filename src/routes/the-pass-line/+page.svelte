@@ -55,7 +55,7 @@
 			alt: 'Max Odds on the Pass Line',
 			title: 'Max Odds on the Pass Line',
 			href: 'max-odds',
-			body: 'The Odds bet is so good that the casinos put a maximum amount allowed based on thow much money you put on the Pass Line.',
+			body: 'The Odds bet is so good that the casinos put a maximum amount allowed based on how much money you put on the Pass Line.',
 			badges: ['Single Odds', 'Double Odds', '3x 4x 5x Odds', '5x Odds', '10x Odds', '100x Odds']
 		}
 	];

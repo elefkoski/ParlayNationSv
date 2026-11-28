@@ -92,13 +92,13 @@
     {
       "@type": "ItemList",
       "name": "Stand Next to the Base Dealer",
-      "description": "Benefits of positioning yourself next to the base dealer for a smoother and less conspicuous Dark Side betting experience.",
+      "description": "Benefits of positioning yourself next to the Base Dealer for a smoother and less conspicuous Dark Side betting experience.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Optimal Positioning",
-          "description": "Advantages of standing by the base dealer for strategic betting and reduced visibility among other players."
+          "description": "Advantages of standing by the Base Dealer for strategic betting and reduced visibility among other players."
         }
       ]
     },
@@ -118,7 +118,7 @@
     {
       "@type": "ItemList",
       "name": "Use “Big Red” if Allowed",
-      "description": "The etiquette of using the term 'Big Red' for Any 7 bets as a respectful way to play without verbalizing the number seven at the table.",
+      "description": "The etiquette of using the term 'Big Red' for Any Seven bets as a respectful way to play without verbalizing the number seven at the table.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -181,7 +181,7 @@
 					text="Don't
 				betting"
 					href="the-donts"
-				/> — from choosing your spot next to the base dealer to utilizing Don't Come and Overlay bets.
+				/> — from choosing your spot next to the Base Dealer to utilizing Don't Come and Overlay bets.
 				We'll even guide you through the etiquette of being a Don't bettor without antagonizing the crowd.
 			</p>
 		</section>
@@ -201,7 +201,7 @@
 		<Divider />
 		<BlogH2 id="baseDealer" title="Stand Next to the Base Dealer">
 			<p class="pb-4">
-				The base dealer is going to be your best friend at the table. Understanding what you’re
+				The Base Dealer is going to be your best friend at the table. Understanding what you’re
 				doing, they should be able to have conversations that don’t require talking across other
 				players, and be able to help with any convoluted math. Here are some advantages to the spot.
 			</p>
@@ -214,7 +214,7 @@
 				</li>
 				<li>
 					<span>The Don’t Come is there - </span>Not too many players make <Link
-						text="Don’t Come bets"
+						text="Don’t Come Bets"
 						href="dont-come"
 					/>, but it’s conveniently placed where most Don’t players stand so it works well.
 				</li>
@@ -226,7 +226,7 @@
 				</li>
 				<li>
 					<span>You can get more personal help from the dealer - </span>Too many Don’t players don’t
-					know how to play the Don ’ts correctly. They don’t understand how to heel a bet, what side
+					know how to play the Don’ts correctly. They don’t understand how to heel a bet, what side
 					to put their Odds on, whether it’s bridgeable or not, what proper Lay Odds are, what their
 					bets are supposed to win, or how to use commission on Overlays properly. You’re going to
 					need the dealer at some point and standing right next to them makes life that much easier.
@@ -247,7 +247,7 @@
 					move into the next Point number that rolls and need the 7 to come before that Point. Since
 					they are always betting against their Point, they can win during the Comeout Roll. When 7 rolls
 					during <Link text="the Comeout Roll" href="the-stages" />, the Pass Line Wins, and the
-					Don’t Come bets win. Wins all around!
+					Don’t Come Bets win. Wins all around!
 				</li>
 				<li>
 					<span>Overlay Bets - </span>You can bet and take down <Link
@@ -269,7 +269,7 @@
 		<Divider />
 		<BlogH2 id="bigRed" title="Use 'Big Red' If Allowed">
 			<p class="pb-4">
-				“Big Red” is a nickname for the <Link text="Any 7" href="any-seven" /> since it’s written in
+				“Big Red” is a nickname for the <Link text="Any Seven" href="any-seven" /> since it’s written in
 				red on the layout. It is used as a courtesy to the rest of the table by avoiding saying “Seven”
 				out loud. It can also be a disguise for other players not to know what you’re betting if they
 				don’t know what “Big Red” means.

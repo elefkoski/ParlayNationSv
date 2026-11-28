@@ -202,7 +202,7 @@
 			{url}
 			img="up-close-craps-layout"
 			title="Up Close View of Craps Layout"
-			alt="Up close view of craps table with many chips set up as bets."
+			alt="Up close view of Craps table with many chips set up as bets."
 		/>
 		<div class="lg:hidden">
 			<Divider />
@@ -249,21 +249,21 @@
 					<li>
 						<span>Make a Point or two - </span>If you make one Point, I consider that as doing your
 						job. For those only on the Pass Line, making one Point brings them ahead. For those who
-						include a couple of Place bets, making two Points is usually enough to cover a couple
-						Place bets and Pass Line bets. You can make two Points in four rolls but it usually
+						include a couple of Place Bets, making two Points is usually enough to cover a couple
+						Place Bets and Pass Line bets. You can make two Points in four rolls but it usually
 						takes a lot more.
 					</li>
 					<li>
 						<span>Make a bunch of boxes - </span>You don’t need to <Link
 							text="make a Point"
 							href="pass-line-basics"
-						/> to win your money back. If you roll enough boxes, you can use Place bet payments to cover
+						/> to win your money back. If you roll enough boxes, you can use Place Bet payments to cover
 						your Pass Line bet and more.
 					</li>
 					<li>
 						<span>Comeout Roll winners - </span>Enough winners during the Comeout Roll can pay for
 						all losses. Three or four winners can be enough to cover your Pass Line and some Odds,
-						maybe a Place bet or two.
+						maybe a Place Bet or two.
 					</li>
 				</ol>
 			</BlogH3>
@@ -281,7 +281,7 @@
 					<li>
 						<span>Many Intermediate Rolls - </span>You might never hit a Point but make a lot of
 						money. Many throws during <Link text="the Intermediate Roll" href="the-stages" /> mean you’re
-						not rolling a 7. Players are winning on boxes and the naturals. Place bets, Come bets, Field
+						not rolling a 7. Players are winning on boxes and the naturals. Place Bets, Come bets, Field
 						bets, and all sorts of Props are getting paid. That’s still a good roll.
 					</li>
 					<li>
@@ -293,7 +293,7 @@
 			</BlogH3>
 			<BlogH3 title="A Great Craps Roll">
 				<p class="pb-4">
-					The coveted great role is hard to pull off. You’re talking about everyone at the table
+					The coveted great roll is hard to pull off. You’re talking about everyone at the table
 					winning. It didn’t matter if you bet the <Link
 						text="Pass Line"
 						href="pass-line-basics"
@@ -303,8 +303,8 @@
 				<p>
 					So how do you know when a great roll has arrived so you can take advantage? You have to
 					make it there. You have to swiftly get past the bad rolls, and ascend your way to a good
-					role. Once you get to a good role, you know the only thing left after that is an excellent
-					roll. This is your queue.
+					roll. Once you get to a good roll, you know the only thing left after that is an excellent
+					roll. This is your cue.
 				</p>
 			</BlogH3>
 		</BlogH2>
@@ -313,8 +313,8 @@
 			caption=""
 			{url}
 			img="craps-bets-turned-on"
-			title="Two Dice Stacked On Top of Each Other"
-			alt=""
+			title="Craps Bets Turned On"
+			alt="Craps bets with BUY buttons and an ON lammer on the layout, with the puck showing OFF."
 		/>
 		<Divider />
 		<BlogH2 id="takeAdvantage" title="Taking Advantage of the Roll">
@@ -334,7 +334,7 @@
 					Odds, you need to increase your Pass Line or Come bet so you can increase the Odds.
 				</li>
 				<li>
-					<span>Use Presses - </span>Repeatedly hearing “Same bet” during a great role is painful.
+					<span>Use Presses - </span>Repeatedly hearing “Same bet” during a great roll is painful.
 					You need to press your bets:
 					<ul>
 						<li>
@@ -359,7 +359,7 @@
 				<li>
 					<span>Double Dip - </span>If you maxed your Odds, think the shooter will roll the Point,
 					and want to bet more on it, you can always make a <Link
-						text="Place bet"
+						text="Place Bet"
 						href="place-bet-basics"
 					/> on the Point in addition to your Pass Line bet.
 				</li>
@@ -370,7 +370,7 @@
 			caption=""
 			{url}
 			img="two-craps-dice"
-			title="Two Dice Stacked On Top of Each Other"
+			title="Two Dice Stacked on Top of Each Other"
 			alt="Two purple dice stacked on top of each other in the corner of the Craps Table."
 		/>
 		<Divider />
@@ -389,7 +389,7 @@
 				</li>
 				<li>
 					<span>Turn your bets off - </span>When you say, “Turn my bets off.” they turn off your
-					Place bets. Hardways still work, so you need to add “Hardways off.” You are also
+					Place Bets. Hardways still work, so you need to add “Hardways off.” You are also
 					responsible for self-service bets; those still on the layout after the roll, are working.
 					In a time pinch, say, “No action on my _______.” Fill in whichever bet you don’t want
 					working.
@@ -401,7 +401,7 @@
 					/>
 					bets, you can reduce the amount you have on the table. You may still want to be invested, but
 					not so heavily. Try replacing parlays with their original bets, cutting Odds in half, or taking
-					<Link text="Place bets" href="place-bet-basics" /> down to table min.
+					<Link text="Place Bets" href="place-bet-basics" /> down to table min.
 				</li>
 			</ol>
 			<p>

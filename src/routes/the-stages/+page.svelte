@@ -41,7 +41,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Coring Up',
+			title: 'Coloring Up',
 			href: '#colorUp',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -76,7 +76,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "The Stages of a Craps Game",
-  "description": "An in-depth look at the two main stages of a craps game, strategies for buying in and cashing out, and the significance of the number 7.",
+  "description": "An in-depth look at the two main stages of a Craps game, strategies for buying in and cashing out, and the significance of the number 7.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -100,13 +100,13 @@
     {
       "@type": "ItemList",
       "name": "Craps Basics",
-      "description": "Exploring the fundamental stages and procedures of playing craps, including the unique aspects of the number 7.",
+      "description": "Exploring the fundamental stages and procedures of playing Craps, including the unique aspects of the number 7.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "The Comeout Roll Is the First Stage of a Craps Game",
-          "description": "Introduces the Comeout Roll as the initial phase of craps, outlining the bets placed during this stage and their working status."
+          "description": "Introduces the Comeout Roll as the initial phase of Craps, outlining the bets placed during this stage and their working status."
         },
         {
           "@type": "ListItem",
@@ -149,7 +149,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/the-stages/buying-in_640x360.webp",
-      "caption": "Three one-hundred dollar bills laid out on the Craps table in front of the box."
+      "caption": "Three one-hundred dollar bills laid out on the Craps table in front of the Box."
     },
     {
       "@type": "ImageObject",
@@ -172,9 +172,9 @@
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="Craps Basics" title="The Stages of a Craps Game" {pageData}>
 			<p class="pb-4">
-				One of the biggest problems new Craps players understand is that the game is played in two
-				stages. Sometimes a seven will cause you to win while other times you'll lose. Sometimes
-				they take your money when 2 rolls. Sometimes they don't. Other times you may think you won a
+				One of the biggest problems new Craps players have is understanding that the game is played in
+				two stages. Sometimes a seven will cause you to win while other times you'll lose. Sometimes
+				they take your money when a 2 rolls. Sometimes they don't. Other times you may think you won a
 				bet... but you didn't. It was the wrong stage of the game. Understanding the two stages of
 				the game is key to understanding Craps.
 			</p>
@@ -296,8 +296,8 @@
 				It's suggested to wait until the Comeout Roll to buy cheques because some players feel that
 				if you buy cheques in the middle of a roll it messes with the flow of the game, although it
 				is your right to make a bet any time. You can walk up, put money on the table and tell them
-				what bet you want. After <Link text="the boxperson" href="the-crew" /> has counted out your money,
-				one of the base dealers will hand you your cheques. You can then pick them up, put them in <Link
+				what bet you want. After <Link text="the Boxperson" href="the-crew" /> has counted out your money,
+				one of the Base Dealers will hand you your cheques. You can then pick them up, put them in <Link
 					text="the rail"
 					href="the-craps-table"
 				/>, and be ready to play.
@@ -308,7 +308,7 @@
 				mdImg="src/images/{url}/buying-in_960x540.webp"
 				lgImg="src/images/{url}/buying-in_1280x720.webp"
 				title="Buying In"
-				alt="Three one-hundred dollar bills layed out on the Craps table in front of the box."
+				alt="Three one-hundred dollar bills laid out on the Craps table in front of the Box."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -319,7 +319,7 @@
 				If you color up in the middle of a roll, you are saying the shooter isn't going to win, and
 				you want to get out before they cost you any money. When the roll is over, tell the base
 				dealer that you would like to <Quote text="color up" /> and place your cheques on the table.
-				you're doing this so you can convert your smaller cheques into larger ones to take to the cashiers'
+				You're doing this so you can convert your smaller cheques into larger ones to take to the cashiers'
 				window.
 			</p>
 			<p class="pb-4">
@@ -333,11 +333,11 @@
 				mdImg="src/images/{url}/cashing-out-a_960x540.webp"
 				lgImg="src/images/{url}/cashing-out-a_1280x720.webp"
 				title="Cashing Out - Putting Money Down"
-				alt="Four stacks of cheuqes on the layout next to the mirror represending a player coloring up."
+				alt="Four stacks of cheques on the layout next to the mirror representing a player coloring up."
 			/>
 			<p class="py-4">
 				After the Box has counted your money, they will give the total amount to the Base Dealer who
-				will cut out your money in the COME. Color Up's need to be approved by the supervisor so do
+				will cut out your money in the COME. Color ups need to be approved by the supervisor so do
 				not try to grab your money. Only after the supervisor has agreed with the total will the
 				Base Dealer hand your money to you and you are good to pick it up. You'll then have to take
 				those cheques to the cashier to turn into cash.
@@ -348,7 +348,7 @@
 				mdImg="src/images/{url}/cashing-out-b_960x540.webp"
 				lgImg="src/images/{url}/cashing-out-b_1280x720.webp"
 				title="Cashing Out - Money Counted Out"
-				alt="Your cheques counted out in front of the box and your colored money sitting in the come waiting to be handed off."
+				alt="Your cheques counted out in front of the Box and your colored money sitting in the come waiting to be handed off."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -359,7 +359,7 @@
 				hear anyone say <Quote text="seven" />.
 			</p>
 			<p class="pb-4">
-				When betting an <Link text="Any 7" href="any-seven" />, many players will use the phrase <Quote
+				When betting an <Link text="Any Seven" href="any-seven" />, many players will use the phrase <Quote
 					text="big red"
 				/> in place of <Quote
 					text="any

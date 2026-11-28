@@ -10,7 +10,7 @@
 
 	let title: string = 'Dealing with New Craps Players';
 	let description: string =
-		'Explore how new players influence the game of craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.';
+		'Explore how new players influence the game of Craps, from adding excitement to breaking rules. Learn tips on welcoming and guiding rookies for a better game experience for all.';
 	let url: string = 'dealing-with-new-craps-players';
 
 	let pageLinks: PageMenu[] = [
@@ -226,18 +226,18 @@
 		/>
 		<section aria-label="Opening paragraphs">
 			<p class="pb-4">
-				They say everyone was a beginner once, but in the world of craps, a newcomer's impact can
+				They say everyone was a beginner once, but in the world of Craps, a newcomer's impact can
 				range from a breath of fresh air to a full-blown tornado. Do you think a new player can't
 				influence the game? Think again. Most of them are there for a good time, and that’s what we
 				should strive to give them. Some of them are there for the money, so we wish them luck. Some
-				could care less about the rest of us, so we don’t show mercy when the time comes.
+				couldn’t care less about the rest of us, so we don’t show mercy when the time comes.
 			</p>
 			<p class="pb-4">
 				This guide is your comprehensive look at the different ways new players can <Link
 					text="influence a game"
 					href="protecting-your-money"
 				/>
-				of craps. We'll dissect the most common mistakes they make, the unwritten rules they often break,
+				of Craps. We'll dissect the most common mistakes they make, the unwritten rules they often break,
 				and how they can either add excitement or become a point of contention among seasoned players.
 			</p>
 		</section>
@@ -336,7 +336,7 @@
 		<Divider />
 		<BlogH2 id="playerDamages" title="The Damage a New Player Is Capable Of">
 			<p class="pb-4">
-				You can not put a limit on how many of the rules a new player will break and, one at a time,
+				You cannot put a limit on how many of the rules a new player will break and, one at a time,
 				the other players and the dealers will tell the person what they’re doing wrong. Many things
 				won’t affect the roll, but the following are some of the worst.
 			</p>
@@ -348,7 +348,7 @@
 				<li>
 					<span>Saying 7 repeatedly - </span>Many players know the number 7 has something to do with
 					the game but don’t know when it’s good or bad, so they will repeatedly mention it during
-					the intermediate roll. For those superstitious, this can evoke the 7.
+					the Intermediate Roll. For those superstitious, this can evoke the 7.
 				</li>
 				<li>
 					<span>Reaching into the table - </span>New players don’t know they are allowed verbal bets
@@ -377,7 +377,7 @@
 			{url}
 			img="two-green-craps-dice"
 			title="Two Dice on Craps Layout"
-			alt="Two dice sitting on a craps layout"
+			alt="Two dice sitting on a Craps layout"
 		/>
 		<Divider />
 		<BlogH2 id="worstPlayers" title="The Worst Types of New Players">
@@ -390,7 +390,7 @@
 				<li>
 					<span>Players that refuse to listen - </span>There are a lot of people who don’t like
 					being told what to do. Some will do things on purpose to get under our skin. Others will
-					say things they know they know they shouldn’t. It’s best to ask the dealers to try and do
+					say things they know they shouldn’t. It’s best to ask the dealers to try and do
 					something about it.
 				</li>
 				<li>

@@ -2,11 +2,11 @@
 	import PracticeLayout from '$lib/components/layouts/PracticeCrapsLayout.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = '19mm Foldable Craps Dice';
 	let description: string =
-		'Practice playing craps by making your own officially sized craps dice. Print out five 19mm craps dice that can be cut out and folded into 3D craps dice.';
+		'Practice playing Craps by making your own officially sized Craps dice. Print out six 19mm Craps dice that can be cut-out and folded into 3D Craps dice.';
 	let url: string = 'practice-19mm-craps-dice';
 </script>
 
@@ -27,7 +27,7 @@
 			  "@type": "Person",
 			  "name": "Elvis Lefkoski"
 			  },
-			"description": "Practice playing craps by making your own officially sized craps dice. Print out five 19mm craps dice that can be cut out and folded into 3D craps dice.",
+			"description": "Practice playing Craps by making your own officially sized Craps dice. Print out six 19mm Craps dice that can be cut-out and folded into 3D Craps dice.",
 			"url": "https://parlaynation.com/practice-19mm-craps-dice.html"
 		}
 	</script>
@@ -49,12 +49,12 @@
 			</div>
 			<PracticeDescription
 				title="19mm Foldable Craps Dice"
-				description="Practice playing Craps with 19mm foldable Craps dice. These dice are the same size as real casino dice - 19mm. Use heavy stock paper to make even sturdier folded craps dice."
+				description="Practice playing Craps with 19mm foldable Craps dice. These dice are the same size as real casino dice - 19mm. Use heavy stock paper to make even sturdier folded Craps dice."
 				listPara=""
 				listItems={[]}
 				downloadUrl="src/pdf/19mm-foldable-craps-dice.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

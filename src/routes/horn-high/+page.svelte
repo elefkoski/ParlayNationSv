@@ -16,7 +16,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentUl2 from '../../lib/components/contentPages/Content-ul-b.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
@@ -35,7 +35,7 @@
 
 	let pageLinks: PageMenu[] = [
 		{
-			title: "The Four Horn High's",
+			title: "The Four Horn Highs",
 			href: '#fourHornHighs',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -76,7 +76,7 @@
 		['High Side Hits Directly', '57:5', '2 or 12', 'Any other number']
 	];
 	let tblPnts: string[] = [
-		'All the Horn Highs are one roll bets',
+		'All the Horn Highs are one-roll bets',
 		'All the Horn Highs must be bet in increments of $5.'
 	];
 	let liBs = [
@@ -139,7 +139,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Horn High in Craps",
-  "description": "Explore the Horn High bets in craps, including Horn High Yo, Horn High Ace Deuce, Horn High Aces, and Horn High Twelve, and learn how these bets are placed and paid.",
+  "description": "Explore the Horn High bets in Craps, including Horn High Yo, Horn High Ace Deuce, Horn High Aces, and Horn High Twelve, and learn how these bets are placed and paid.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -163,19 +163,19 @@
     {
       "@type": "ItemList",
       "name": "Understanding Horn High Bets",
-      "description": "A detailed guide to understanding Horn High bets in craps, including the strategies behind Horn High Yo, Horn High Ace Deuce, Horn High Aces, and Horn High Twelve, as well as instructions on how these bets are placed and their payouts.",
+      "description": "A detailed guide to understanding Horn High bets in Craps, including the strategies behind Horn High Yo, Horn High Ace Deuce, Horn High Aces, and Horn High Twelve, as well as instructions on how these bets are placed and their payouts.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Four Different Horn High's",
+          "name": "Four Different Horn Highs",
           "description": "Explains the difference between the four types of Horn High bets and how to bet them."
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Horn High Placement",
-          "description": "Describes where to place Horn High bets on the craps table."
+          "description": "Describes where to place Horn High bets on the Craps table."
         },
         {
           "@type": "ListItem",
@@ -190,7 +190,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/horn-high/horn-high_640x360.webp",
-      "caption": "Up close overhead view of the horn highs on the craps layout."
+      "caption": "Up close overhead view of the horn highs on the Craps layout."
     },
     {
       "@type": "ImageObject",
@@ -227,27 +227,27 @@
 			{pageData}
 		>
 			<p class="pb-4">
-				There are four different Horn High's that all bet the same numbers as the Horn. They are the
+				There are four different Horn Highs that all bet the same numbers as the Horn. They are the
 				Horn High Yo, Horn High Ace Deuce, Horn High Aces, and the Horn High Twelve.
 			</p>
 			<p class="pb-4">
-				The difference in each is you are adding an extra unit to one of those bets; the Aces, Aces
+				The difference in each is you are adding an extra unit to one of those bets; the Aces, Ace
 				Deuce, Twelve, or the Yo in order to determine which Horn High you're betting.
 			</p>
 			<p class="pb-4">
-				Horn High's are great if you want to throw a nickel in, spread your money around a bunch of
-				prop bets, and pick a special number you want to roll, like.. the Yo. <Quote
+				Horn Highs are great if you want to throw a nickel in, spread your money around a bunch of
+				prop bets, and pick a special number you want to roll, like... the Yo. <Quote
 					text="Nickel Horn High Yo!"
 				/>
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/horn-high_640x360.webp"
 				mdImg="src/images/{url}/horn-high_960x540.webp"
 				lgImg="src/images/{url}/horn-high_1280x720.webp"
 				title="Horn High"
-				alt="Up close overhead view of the horn highs on the craps layout."
+				alt="Up close overhead view of the horn highs on the Craps layout."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -257,7 +257,7 @@
 			</div>
 		</div>
 		<Divider />
-		<ContentHeaderTwo id="fourHornHighs" title="What Are the Four Different Horn High's in Craps?">
+		<ContentHeaderTwo id="fourHornHighs" title="What Are the Four Different Horn Highs in Craps?">
 			<p class="pb-4">
 				If you bet a four-dollar <Link text="Horn" href="horn" /> then took another dollar and added
 				it to the Yo then you would be betting a Horn High Yo. If instead you took that extra dollar
@@ -266,7 +266,7 @@
 				(4) dollar cheques or betting a five-dollar cheque then having <Link
 					text="the Stickperson"
 					href="the-crew"
-				/> tell the base dealer to give a dollar change. Either way, it's easier to make a five-dollar
+				/> tell the Base Dealer to give a dollar change. Either way, it's easier to make a five-dollar
 				bet.
 			</p>
 			<ContentImg
@@ -324,13 +324,13 @@
 				mdImg="src/images/{url}/placement-of-a-horn-high_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-horn-high_1280x720.webp"
 				title="Placement of a Horn High"
-				alt="Overhead up close view of the Horn High bets and the craps table rail. There are eight color coded spots on the bets referencing eight colored spots on the rail."
+				alt="Overhead up close view of the Horn High bets and the Craps table rail. There are eight color coded spots on the bets referencing eight colored spots on the rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo id="hornHighPayment" title="What Does the Horn High Pay on a Craps Game?">
 			<p class="pb-4">
-				The Horn High's are some of the most confusing bets to pay on a Craps table. There are only
+				The Horn Highs are some of the most confusing bets to pay on a Craps table. There are only
 				four payments you need to know in order to pay all the bets but it's knowing when to apply
 				each of those four numbers that makes paying them so difficult. You need to understand a few
 				things before you'll be able to figure out the payments of the Horn Highs right off the bat.
@@ -393,7 +393,7 @@
 					mdImg="src/images/{url}/5-hh-aces-low-side_960x540.webp"
 					lgImg="src/images/{url}/5-hh-aces-low-side_1280x720.webp"
 					title="$5 Horn High Aces Low Side Hits"
-					alt="$1 each on the twelve, ace deuce, and the yo, There are two dollars on the Aces. Two green dice show 1-2. A bubble reads $11 payment."
+					alt="$1 each on the twelve, ace deuce, and the yo, there are two dollars on the Aces. Two green dice show 1-2. A bubble reads $11 payment."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
@@ -424,7 +424,7 @@
 					mdImg="src/images/{url}/5-hh-ace-deuce-direct_960x540.webp"
 					lgImg="src/images/{url}/5-hh-ace-deuce-direct_1280x720.webp"
 					title="$5 Horn High Ace Deuce Direct Hit Payment"
-					alt="$1 each on the aces, yo, and twelve. There are two dollars on the ace deuce. Two green dice show 1-3. A bubble reads $27 payment."
+					alt="$1 each on the aces, yo, and twelve. There are two dollars on the ace deuce. Two green dice show 1-2. A bubble reads $27 payment."
 				/>
 				<div class="pb-4" />
 				<p class="pb-4">

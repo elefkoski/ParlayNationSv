@@ -69,7 +69,7 @@
 			title: 'Presses',
 			href: 'presses',
 			body: 'There are systems designed to add money to one or multiple Place Bets at the same time. Using presses makes the game run smoother for everyone involved.',
-			badges: ['A Unit', 'Standard Presses', 'Odd/PowerPresses', 'Multiple Unit Presses']
+			badges: ['A Unit', 'Standard Presses', 'Odd/Power Presses', 'Multiple Unit Presses']
 		},
 		{
 			// Spread Bets
@@ -109,7 +109,7 @@
 				"url": "https://parlaynation.com/place-bet-basics.html",
 				"name": "Place Bet Basics",
 				"image": "https://parlaynation.com/src/images/place-bet-basics/place-bet-basics-header.jpg",
-				"description": "Place Bets are bet during the Intermediate Roll. They get paid differently depending on which Point you Place. There are certain terms used when betting Place bets."
+				"description": "Place Bets are bet during the Intermediate Roll. They get paid differently depending on which Point you Place. There are certain terms used when betting Place Bets."
 			  }
 			},
 			{
@@ -159,9 +159,9 @@
 		<HomeHeadings
 			aria="Place Bets header"
 			title="Place Bets"
-			pOne="Understand the rules and dynamics of Place Bets in craps and how they can win multiple times in a short span."
-			pTwo="Learn how to bet correctly in a craps game, including where to place your money and how to ensure your bets are in the correct spot."
-			pThree="Master the art of pressing your bets, a key strategy to increase winnings in the game of craps."
+			pOne="Understand the rules and dynamics of Place Bets in Craps and how they can win multiple times in a short span."
+			pTwo="Learn how to bet correctly in a Craps game, including where to place your money and how to ensure your bets are in the correct spot."
+			pThree="Master the art of pressing your bets, a key strategy to increase winnings in the game of Craps."
 			button="Learn Place Bet Basics"
 			href="place-bet-basics"
 		/>

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import PracticeLayout from '$lib/components/layouts/PracticeCrapsLayout.svelte';
-	import DownloadabeSection from '$lib/components/practicePages/DownloadabeSection.svelte';
+	import DownloadableSection from '$lib/components/practicePages/DownloadableSection.svelte';
 
 	let title: string = 'Practice Craps';
 	let description: string =
-		"Downloadable PDF's for Craps. Practice Math Printouts, Dice and Table Printouts, and more.";
+		"Downloadable PDFs for Craps. Practice Math Printouts, Dice and Table Printouts, and more.";
 	let url: string = 'practice';
 
 	let sections = [
@@ -220,7 +220,7 @@
 			items: [
 				{
 					title: 'Random Horn High Generator',
-					description: 'Practice Horn High Payents with this Random Horn High Generator.',
+					description: 'Practice Horn High Payments with this Random Horn High Generator.',
 					imageUrlSm: 'src/images/practice/pdf-cover-hh-world-generator_640x828.webp',
 					imageUrlLg: 'src/images/practice/pdf-cover-hh-world-generator_960x1242.webp',
 					pageUrl: 'practice-horn-high-generator',
@@ -395,7 +395,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice playing craps with Craps Cards. Play craps with cards using 36 black cut-out cards.",
+				"about": "Practice playing Craps with Craps Cards. Play Craps with cards using 36 black cut-out cards.",
 				"url": "https://parlaynation.com/practice-craps-cards-black.html"
 			  }
 			},
@@ -409,7 +409,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice playing craps with Craps Cards. Play craps with cards using 36 grey cut-out cards.",
+				"about": "Practice playing Craps with Craps Cards. Play Craps with cards using 36 grey cut-out cards.",
 				"url": "https://parlaynation.com/practice-craps-cards-grey.html"
 			  }
 			},
@@ -423,7 +423,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice playing craps with dice by making your own craps dice. Print out a couple of these huge 60mm craps dice. These dice are more than triple the size of real craps dice.",
+				"about": "Practice playing Craps with dice by making your own Craps dice. Print out a couple of these huge 60mm Craps dice. These dice are more than triple the size of real Craps dice.",
 				"url": "https://parlaynation.com/practice-60mm-craps-dice.html"
 			  }
 			},
@@ -437,7 +437,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice playing craps with dice by making your own craps dice. Print out a pair of 40mm craps dice that can be cut out and folded into 3D craps dice.",
+				"about": "Practice playing Craps with dice by making your own Craps dice. Print out a pair of 40mm Craps dice that can be cut-out and folded into 3D Craps dice.",
 				"url": "https://parlaynation.com/practice-40mm-craps-dice.html"
 			  }
 			},
@@ -451,7 +451,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice playing craps by making your own craps dice. Print out five 19mm craps dice that can be cut out and folded into 3D craps dice.",
+				"about": "Practice playing Craps by making your own Craps dice. Print out six 19mm Craps dice that can be cut-out and folded into 3D Craps dice.",
 				"url": "https://parlaynation.com/practice-19mm-craps-dice.html"
 			  }
 			},
@@ -465,7 +465,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice using a printable craps table layout. First page has the craps table layout filled out for studying while page two has an empty craps table layout for testing.",
+				"about": "Practice using a printable Craps table layout. First page has the Craps table layout filled out for studying while page two has an empty Craps table layout for testing.",
 				"url": "https://parlaynation.com/practice-full-craps-table-layout.html"
 			  }
 			},
@@ -479,7 +479,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice using a printable craps table layout. First page has the craps table layout filled out for studying while page two has an empty craps table layout for testing.",
+				"about": "Practice using a printable Craps table layout. First page has the Craps table layout filled out for studying while page two has an empty Craps table layout for testing.",
 				"url": "https://parlaynation.com/practice-half-craps-table-layout.html"
 			  }
 			},
@@ -493,7 +493,7 @@
 				  "@type": "Person",
 				  "name": "Elvis Lefkoski"
 				},
-				"about": "Practice Horn High payments with this random High High Generator. Pull one of each type of card and figure out the payment.",
+				"about": "Practice Horn High payments with this random Horn High Generator. Pull one of each type of card and figure out the payment.",
 				"url": "https://parlaynation.com/practice-horn-high-generator.html"
 			  }
 			},
@@ -539,22 +539,22 @@
 			</p>
 			<h3 class="text-2xl text-center font-semibold mb-2">Pass Line Odds</h3>
 			{#each sections as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
 			<h3 class="text-2xl text-center font-semibold mb-2">Place Bet Payments</h3>
 			{#each sections2 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
 			<h3 class="text-2xl text-center font-semibold mb-2">Come Bet w/Odds Payments</h3>
 			{#each sections3 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
 			<h3 class="text-2xl text-center font-semibold mb-2">Lay Odds Payments</h3>
 			{#each sections31 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 		</section>
 		<section
@@ -569,20 +569,20 @@
 			</p>
 			<h3 class="text-2xl text-center font-semibold mb-2">Craps Cards</h3>
 			{#each sections4 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 		</section>
 		<section
-			aria-label="Craps Cards Printouts"
+			aria-label="Dice Printouts"
 			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg mt-8"
 		>
 			<h2 class="text-2xl font-bold mb-2">Craps Dice</h2>
 			<p class="mb-4 leading-7">
-				Print then cut out and fold these dice to practice playing Craps.
+				Print then cut-out and fold these dice to practice playing Craps.
 			</p>
 			<h3 class="text-2xl text-center font-semibold mb-2">Foldable Craps Dice</h3>
 			{#each sections5 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 		</section>
 		<section
@@ -590,10 +590,10 @@
 			class="home-page-body-bg-2 p-6 rounded-lg shadow-lg mt-8"
 		>
 			<h2 class="text-2xl font-bold mb-2">Table Layout Printouts</h2>
-			<p class="mb-4 leading-7">Both craps table printouts have pages with and without text.</p>
+			<p class="mb-4 leading-7">Both Craps table printouts have pages with and without text.</p>
 			<h3 class="text-2xl text-center font-semibold mb-2">Craps Table Layouts</h3>
 			{#each sections6 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 		</section>
 		<section
@@ -603,11 +603,11 @@
 			<h2 class="text-2xl font-bold mb-2">Other Craps Practice Printouts</h2>
 			<h3 class="text-2xl text-center font-semibold mb-2">Random Horn High Generator</h3>
 			<p class="mb-4 leading-7">
-				Random horn high generator has includes instructions with payout table, a bet page, an
+				Random Horn High Generator includes instructions with payout table, a bet page, an
 				amount page, and a roll page.
 			</p>
 			{#each sections7 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 			<div class="pb-6" />
 			<h3 class="text-2xl text-center font-semibold mb-2">Craps Roll Cards</h3>
@@ -615,7 +615,7 @@
 				Craps Roll Cards are meant to practice what may or may not be a roll.
 			</p>
 			{#each sections8 as section, i (i)}
-				<DownloadabeSection items={section.items} />
+				<DownloadableSection items={section.items} />
 			{/each}
 		</section>
 	</main>

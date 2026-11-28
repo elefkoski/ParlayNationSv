@@ -7,7 +7,7 @@
 
 	let title: string = 'Proposition Bets';
 	let description: string =
-		"Proposition bets can turn a little into a lot and quick but are much harder to hit . Most prop bets usually only last one roll then they're done.";
+		"Proposition bets can turn a little into a lot and quick but are much harder to hit. Most prop bets usually only last one roll then they're done.";
 	let url: string = 'proposition-bets';
 
 	let phref: string = 'including-the-point';
@@ -126,7 +126,7 @@
 			alt: 'Horn',
 			title: 'Horn',
 			href: 'horn',
-			body: 'Instead of betting all four straight up individually, you can bet them as a group called a Horn.',
+			body: 'Instead of betting all four Straight Up individually, you can bet them as a group called a Horn.',
 			badges: ['$4 Horn', 'Horn Placement', 'Horn Payment', 'Dealer Horn']
 		},
 		{
@@ -197,7 +197,7 @@
 				"url": "https://parlaynation.com/proposition-basics.html",
 				"name": "Proposition Basics",
 				"image": "https://parlaynation.com/src/images/proposition-basics/proposition-basics-header.jpg",
-				"description": "Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the craps table and some are combinations of multiple bets at once."
+				"description": "Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the Craps table and some are combinations of multiple bets at once."
 			  }
 			},
 			{
@@ -233,7 +233,7 @@
 				"url": "https://parlaynation.com/c-and-e.html",
 				"name": "C &amp; E",
 				"image": "https://parlaynation.com/src/images/c-and-e/c-and-e-header.jpg",
-				"description": "The C &amp; E is a combination of two bets. The “C” stands for the Any Crap, which is the Aces, Ace Deuce, and the 12. The “E” stands for the Eleven, or “Yo”. The C &amp; E has a two-dollar minimum."
+				"description": "The C &amp; E is a combination of two bets. The “C” stands for the Any Craps, which is the Aces, Ace Deuce, and the 12. The “E” stands for the Eleven, or “Yo”. The C &amp; E has a two-dollar minimum."
 			  }
 			},
 			{
@@ -257,7 +257,7 @@
 				"url": "https://parlaynation.com/any-craps.html",
 				"name": "Any Craps",
 				"image": "https://parlaynation.com/src/images/any-craps/any-craps-header.jpg",
-				"description": "The Any Craps is also more of a hedge bet also. You can use it to hedge the Pass Line during the Comeout Roll or while making a Come bet. It's similar to a Three Way Crap because they both bet the Aces, Ace Deuce, and Twelve."
+				"description": "The Any Craps is also more of a hedge bet. You can use it to hedge the Pass Line during the Comeout Roll or while making a Come bet. It's similar to a Three Way Craps because they both bet the Aces, Ace Deuce, and Twelve."
 			  }
 			},
 			{
@@ -269,7 +269,7 @@
 				"url": "https://parlaynation.com/the-field.html",
 				"name": "The Field",
 				"image": "https://parlaynation.com/src/images/the-field/the-field-header.jpg",
-				"description": "One of the most popular bets in the game is the Field. It's popular because it has one of the largest betting areas in the game. You can't miss is and there are a lot of numbers written in there that you can win with."
+				"description": "One of the most popular bets in the game is the Field. It's popular because it has one of the largest betting areas in the game. You can't miss it and there are a lot of numbers written in there that you can win with."
 			  }
 			},
 			{
@@ -317,7 +317,7 @@
 				"url": "https://parlaynation.com/world.html",
 				"name": "World",
 				"image": "https://parlaynation.com/src/images/world/world-header.jpg",
-				"description": "The World is a Horn with extra on the Any 7. You must make this bet in increments of five and is a one-roll bet. When 7 rolls the bet is a push."
+				"description": "The World is a Horn with extra on the Any Seven. You must make this bet in increments of five and is a one-roll bet. When 7 rolls the bet is a push."
 			  }
 			},
 			{
@@ -329,7 +329,7 @@
 				"url": "https://parlaynation.com/hop-bets.html",
 				"name": "Hop Bets",
 				"image": "https://parlaynation.com/src/images/hop-bets/hop-bets-header.jpg",
-				"description": "Hop bets are are all the possible combinations of the six Points and the combinations of the 7. They are one roll bet and pay either 15:1 or 30:1."
+				"description": "Hop bets are all the possible combinations of the six Points and the combinations of the 7. They are one-roll bets and pay either 15:1 or 30:1."
 			  }
 			}
 		  ]
@@ -343,7 +343,7 @@
 		<HomeHeadings
 			aria="Proposition Bets header"
 			title="Proposition Bets"
-			pOne="Gain an in-depth understanding of various types of Proposition Bets in craps, including Field Bets, Multi-Bets, and Horn Bets among others."
+			pOne="Gain an in-depth understanding of various types of Proposition Bets in Craps, including Field Bets, Multi-Bets, and Horn Bets among others."
 			pTwo="Learn about the payout structure and betting procedures for each type of Proposition Bet, enhancing your game strategy."
 			pThree="Gain insight into the risk-reward balance of Proposition Bets, understanding how high payouts often come with a higher house edge."
 			button="Learn proposition bets"

@@ -10,14 +10,14 @@
 	import PrevNext2 from '$lib/components/PrevNext2.svelte';
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
 
 	let title: string = 'Betting the Any Seven in Craps';
 	let description: string =
-		"The Any 7 is a one-roll bet and could be used any number of ways. Many of the Don't players use it to hedge or tnavnvoke the seven. You can add it to the Horn to make a World or many players bet it during the Comeout Roll so they could win twice if they are on the Pass Line.";
+		"The Any Seven is a one-roll bet Don't players use to hedge or invoke the seven. Add it to the Horn to make a World, or bet it during the Comeout Roll and win twice on the Pass Line.";
 	let url: string = 'any-seven';
 
 	let phref: string = 'c-and-e';
@@ -55,8 +55,8 @@
 
 	let tblAria: string = 'The Any Seven payout table';
 	let tblHeaders: string[] = ['Roll', 'Pays', 'Wins', 'Loses'];
-	let tblRows: (string | number)[][] = [['Any 7', '4:1', '7', 'Any other number']];
-	let tblPnts: string[] = ['The Any Seven is a one roll bet'];
+	let tblRows: (string | number)[][] = [['Any Seven', '4:1', '7', 'Any other number']];
+	let tblPnts: string[] = ['The Any Seven is a one-roll bet'];
 </script>
 
 <svelte:head>
@@ -73,7 +73,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Any Seven in Craps",
-  "description": "An overview of the Any Seven bet in craps, including strategies for hedging, incorporation into other bets, and its placement and payout on the craps table.",
+  "description": "An overview of the Any Seven bet in Craps, including strategies for hedging, incorporation into other bets, and its placement and payout on the Craps table.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -97,13 +97,13 @@
     {
       "@type": "ItemList",
       "name": "Understanding the Any Seven Bet",
-      "description": "Details the Any Seven bet in craps, its strategic uses, and how it's integrated with other bets like the Horn and the World.",
+      "description": "Details the Any Seven bet in Craps, its strategic uses, and how it's integrated with other bets like the Horn and the World.",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Where Is Your Any Seven on the Craps Table?",
-          "description": "Explains the placement of the Any Seven bet on the craps table."
+          "description": "Explains the placement of the Any Seven bet on the Craps table."
         },
         {
           "@type": "ListItem",
@@ -118,7 +118,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/any-seven/any-seven_640x360.webp",
-      "caption": "Visual representation of the Any Seven bet area on the craps table."
+      "caption": "Visual representation of the Any Seven bet area on the Craps table."
     },
     {
       "@type": "ImageObject",
@@ -144,8 +144,8 @@
 			{pageData}
 		>
 			<p class="pb-4">
-				The Any 7 is a one-roll bet and could be used any number of ways. Many of the Don't players
-				use it to hedge or tnavnvoke the seven. You can add it to the <Link
+				The Any Seven is a one-roll bet and could be used any number of ways. Many of the Don't players
+				use it to hedge or invoke the seven. You can add it to the <Link
 					text="Horn"
 					href="horn"
 				/>
@@ -157,14 +157,14 @@
 					href="pass-line-basics"
 				/>.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/any-seven_640x360.webp"
 				mdImg="src/images/{url}/any-seven_960x540.webp"
 				lgImg="src/images/{url}/any-seven_1280x720.webp"
 				title="The Any Seven"
-				alt="Overhead up close view of the any seven area on the craps layout."
+				alt="Overhead up close view of the any seven area on the Craps layout."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -176,7 +176,7 @@
 		<Divider />
 		<ContentHeaderTwo id="anySevenPlacement" title="Where Is Your Any Seven on the Craps Table?">
 			<p class="pb-4">
-				The Any 7 is a bar across the middle of the table. The bar is split into a left and right
+				The Any Seven is a bar across the middle of the table. The bar is split into a left and right
 				side of the table with the center of the bar is the middle of the table and the edges of the
 				bar are the two bases.
 			</p>
@@ -186,12 +186,12 @@
 				mdImg="src/images/{url}/placement-of-the-any-seven_960x540.webp"
 				lgImg="src/images/{url}/placement-of-the-any-seven_1280x720.webp"
 				title="Placement of the Any Seven"
-				alt="Up close view of the any seven bar and the craps rail. There are eight spots that are color coordinated on the bet and the rail."
+				alt="Up close view of the any seven bar and the Craps rail. There are eight spots that are color coordinated on the bet and the rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
 		<ContentHeaderTwo id="anySevenPayment" title="What Does the Any Seven Pay in a Craps Game?">
-			<p class="pb-4">The Any 7 pays 4:1 or $4 for every $1.</p>
+			<p class="pb-4">The Any Seven pays 4:1 or $4 for every $1.</p>
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/what-does-the-any-seven-pay_640x360.webp"

@@ -25,7 +25,7 @@
 			alt: 'Across',
 			title: 'Across',
 			href: 'across',
-			body: 'When your betting the Pass Line and you still want to bet all the numbers.',
+			body: 'When you’re betting the Pass Line and you still want to bet all the numbers.',
 			badges: ['Across w/o Commission', 'Across w/Commission']
 		},
 		{
@@ -128,7 +128,7 @@
 				"@type": "Course",
 				"provider": "Parlay Nation",
 				"url": "https://parlaynation.com/uptown-downtown.html",
-				"name": "Uptown-Downtown",
+				"name": "Uptown/Downtown",
 				"image": "https://parlaynation.com/src/images/uptown-downtown/uptown-downtown-header.jpg",
 				"description": "Betting Uptown or Downtown is a Spread Bet on the three points on either side of the 7. The Uptown Points are the Eight, Nine, and 10. The Downtown Points are Four, Five, and Six. You bet Uptown and Downtown in the same unit amount."
 			  }
@@ -164,7 +164,7 @@
 		<HomeHeadings
 			aria="Spread Bets header"
 			title="Spread Bets"
-			pOne="Learn how to bet multiple Place bets at once, including Betting Across, Inside, Outside, Uptown/Downtown, and Including the Point."
+			pOne="Learn how to bet multiple Place Bets at once, including Betting Across, Inside, Outside, Uptown/Downtown, and Including the Point."
 			pTwo="Examine the cost implications of different types of Spread Bets and the factors that influence these costs."
 			pThree="Explore the strategy of Including the Point in your Spread Bet, a tactic often employed by players not on the Pass Line."
 			button="Learn across"

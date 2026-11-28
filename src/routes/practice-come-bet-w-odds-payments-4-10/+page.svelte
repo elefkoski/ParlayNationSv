@@ -3,7 +3,7 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Practice Come Bet with Odds Payments 4 & 10';
 	let description: string =
@@ -49,12 +49,12 @@
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="Practice Come Bet with Odds Payments 4 & 10"
-				description="40 cutout cards meant to practice payments for Come Bet with Odds when the Point is 4 or 10. Bets range from $5 up to $3,000 with Odds. You can cover the answer with your thumb, fold it over, or cut it off."
+				description="40 cut-out cards meant to practice payments for Come Bet with Odds when the Point is 4 or 10. Bets range from $5 up to $3,000 with Odds. You can cover the answer with your thumb, fold it over, or cut it off."
 				listPara="The cards are broken into two difficulties:"
 				listItems={['20 Easy', '20 Medium']}
 				downloadUrl="src/pdf/come-bet-with-odds-4-10.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

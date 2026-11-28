@@ -318,7 +318,7 @@
 					smImg="src/images/{url}/5x-on-6-8_640x360.webp"
 					mdImg="src/images/{url}/5x-on-6-8_960x540.webp"
 					lgImg="src/images/{url}/5x-on-6-8_1280x720.webp"
-					alt=""
+					alt="$10 on the pass line with $50 odds. Point is six or eight. The $50 odds are paid $60 and the $10 Pass Line is paid even money."
 				/>
 			</ContentHeaderThree>
 		</ContentHeaderTwo>
@@ -343,7 +343,7 @@
 			<p class="pb-4">
 				5x Odds are when you can bet five times your Pass Line bet as Odds. This is also another
 				common maximum amount for Odds at casinos. Maxing 5x Odds is still expensive so don't be
-				deterred if you see it. If you wan't to bet more, you can always add more to your Pass Line
+				deterred if you see it. If you want to bet more, you can always add more to your Pass Line
 				bet.
 			</p>
 			<ContentImg

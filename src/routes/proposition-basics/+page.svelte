@@ -12,7 +12,7 @@
 
 	let title: string = 'Betting Proposition Bets in Craps';
 	let description: string =
-		'Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the craps table and some are combinations of multiple bets at once.';
+		'Most Proposition Bets at the Craps table are one-roll bets while a handful is not. These bets pay the highest amounts on the Craps table and some are combinations of multiple bets at once.';
 	let url: string = 'proposition-basics';
 
 	let phref: string = 'proposition-bets';
@@ -57,7 +57,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Proposition Bets on the Craps Table",
-  "description": "An in-depth look at Proposition Bets in craps, covering one-roll bets, how to place these bets, and the thrilling potential payouts.",
+  "description": "An in-depth look at Proposition Bets in Craps, covering one-roll bets, how to place these bets, and the thrilling potential payouts.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -81,7 +81,7 @@
     {
       "@type": "ItemList",
       "name": "Proposition Bets",
-      "description": "Exploration of Proposition Bets on the craps table, including insights into one-roll bets and strategies for placing these high-stake bets.",
+      "description": "Exploration of Proposition Bets on the Craps table, including insights into one-roll bets and strategies for placing these high-stake bets.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -102,7 +102,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/proposition-basics/proposition-bets_640x360.webp",
-      "caption": "Overhead view of the proposition area on the craps table."
+      "caption": "Overhead view of the proposition area on the Craps table."
     },
     {
       "@type": "ImageObject",
@@ -148,7 +148,7 @@
 				mdImg="src/images/{url}/proposition-bets_960x540.webp"
 				lgImg="src/images/{url}/proposition-bets_1280x720.webp"
 				title="Proposition Bets"
-				alt="Overhead view of the proposition area on the craps table."
+				alt="Overhead view of the proposition area on the Craps table."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -161,8 +161,8 @@
 		<ContentHeaderTwo id="oneRoll" title="What Is a One-Roll Bet in Craps?">
 			<p class="pb-4">
 				A One-Roll bet is a bet that must win the next roll, or it loses. Most one-roll bets are
-				found in middle of the table, and have minimums ranging from $1 to $5. The Hardways are an
-				exception because, while they have $1 minimumum, and are in the middle of the table, they
+				found in the middle of the table, and have minimums ranging from $1 to $5. The Hardways are an
+				exception because, while they have $1 minimum, and are in the middle of the table, they
 				can last longer than one roll. The Field is a one-roll bet but has the table min. and is on
 				each side of the table.
 			</p>

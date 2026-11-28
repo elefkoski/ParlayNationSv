@@ -3,7 +3,7 @@
 	import PracticeCarousel from '$lib/components/practicePages/PracticeCarousel.svelte';
 	import PracticeH1 from '$lib/components/practicePages/Practice-h1.svelte';
 	import PracticeDescription from '$lib/components/practicePages/PracticeDescription.svelte';
-	import PracticeThumnailCarousel from '$lib/components/practicePages/PracticeThumnailCarousel.svelte';
+	import PracticeThumbnailCarousel from '$lib/components/practicePages/PracticeThumbnailCarousel.svelte';
 
 	let title: string = 'Practice Pass Line Odds Payments 6 & 8';
 	let description: string =
@@ -46,17 +46,17 @@
 
 <PracticeLayout showContentMenuBox={false}>
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<PracticeH1 title="Odds Payments On the Pass Line for the 6 & 8" />
+		<PracticeH1 title="Odds Payments on the Pass Line for the 6 & 8" />
 		<div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 pb-8">
 			<PracticeCarousel {slides} />
 			<PracticeDescription
 				title="6 & 8 Odds Payments"
-				description="60 cutout cards meant to practice payments for Odds on the Pass Line when the Point is 6 or 8. Bets range from $5 up to $5,000. You can cover the answer with your thumb, fold it over, or cut it off."
+				description="60 cut-out cards meant to practice payments for Odds on the Pass Line when the Point is 6 or 8. Bets range from $5 up to $5,000. You can cover the answer with your thumb, fold it over, or cut it off."
 				listPara="The cards are broken into three difficulties:"
 				listItems={['20 Easy', '20 Medium', '20 Hard']}
 				downloadUrl="src/pdf/pass-line-odds-6-8.pdf"
 			/>
 		</div>
-		<PracticeThumnailCarousel />
+		<PracticeThumbnailCarousel />
 	</main>
 </PracticeLayout>

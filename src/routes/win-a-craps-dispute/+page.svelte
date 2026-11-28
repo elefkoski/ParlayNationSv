@@ -53,7 +53,7 @@
 			iconFills: ['none', 'orange']
 		},
 		{
-			title: 'Get the Dealers On Your Side',
+			title: 'Get the Dealers on Your Side',
 			href: '#dealersSide',
 			iconD: ['M0 0h24v24H0V0z', 'M10 17l5-5-5-5v10z'],
 			iconFills: ['none', 'orange']
@@ -215,7 +215,7 @@
 				and you can keep an eagle eye on the dealer's moves.
 			</p>
 			<p class="pb-4">
-				In this guide, you’ll find methods to help understand your what is happening, identify
+				In this guide, you’ll find methods to help understand what is happening, identify
 				common mistakes dealers make, and learn tricks to have the dealer lean to your side.
 				Consider this page an insider’s playbook to keeping things straight at the Craps tables.
 				First up is trying to avoid confrontation by learning to look inward.
@@ -261,8 +261,8 @@
 					dealer never set up or took down your money.
 				</li>
 				<li>
-					<span>You moved or took back your bet - </span>Usually you would bet a Place bet on a
-					number, then that number eventually becomes the Point. You take your bet back Place Bet
+					<span>You moved or took back your bet - </span>Usually you would bet a Place Bet on a
+					number, then that number eventually becomes the Point. You take your Place Bet back
 					because you have a <Link text="Pass Line Bet" href="pass-line-basics" />, then when the
 					next Point is established you ask where your original Place Bet was. You forgot it became
 					the Point and you removed it previously.
@@ -281,7 +281,7 @@
 		<BlogH2 id="howDealersPay" title="Understand How the Dealers Pay">
 			<p class="pb-4">
 				When the table is busy, it’s near impossible for a dealer to remember all the bets given to
-				them, so they read the the bets on the layout like a book. We listen for the number that
+				them, so they read the bets on the layout like a book. We listen for the number that
 				rolled, look at the number on the layout, we see a bet, we pay the player that corresponds
 				to that bet, and then we’re done. To us, if a bet is not on the layout, it doesn’t exist.
 			</p>
@@ -296,7 +296,7 @@
 				The way out of this situation is to be able to explain it all. You have to say, “Remember
 				when my $15 Hard 8 rolled and I told you to parlay it and move it to the 5? You parlayed it
 				but never moved it.” As I look at $150 on the Hard 8, I’ll say, “Oh yea, I remember. Many
-				people parlay, but they never move it to a Place bet. I’m sorry. My mistake.” And you won.
+				people parlay, but they never move it to a Place Bet. I’m sorry. My mistake.” And you won.
 			</p>
 		</BlogH2>
 		<Divider />
@@ -304,7 +304,7 @@
 			caption=""
 			{url}
 			img="three-way-crap"
-			title="Three Way Crap Proposition Bet"
+			title="Three Way Craps Proposition Bet"
 			alt="Three way crap set up."
 		/>
 		<Divider />
@@ -319,8 +319,8 @@
 				<p class="pb-4">
 					The Pass Line will always get paid even money. $10 wins $10. $20 wins $20. The Odds pay
 					differently depending on what the Point is but you don’t need to know that. You need to
-					know that if your standard Odds bet is $10 then you should be getting $12 is the Point is
-					6/8, $15 if the Point is 5/9, and $20 is the Point is 4/10. Remember $12, $15, and $20
+					know that if your standard Odds bet is $10 then you should be getting $12 if the Point is
+					6/8, $15 if the Point is 5/9, and $20 if the Point is 4/10. Remember $12, $15, and $20
 					while keeping an eye on the Point and you’ll always know what you’re supposed to get paid.
 				</p>
 				<p class="pb-4">
@@ -336,7 +336,7 @@
 					scale up and down.
 				</p>
 				<p class="pb-4">
-					<Link text="Place bets" href="pass-line-basics" /> are also where you should pay attention
+					<Link text="Place Bets" href="pass-line-basics" /> are also where you should pay attention
 					to change. When you press the same way, you get the same change. Going from $12 to $18 on the
 					6 or 8? $1 change. Going from $18 to $24? $15 change. Now you can tell something went wrong
 					when you got change you weren’t expecting.
@@ -390,9 +390,9 @@
 				where your cheques are in the rail.
 			</p>
 			<p class="pb-4">
-				Place bets are placed in a horseshoe pattern for each side of the table. The four spots next
+				Place Bets are placed in a horseshoe pattern for each side of the table. The four spots next
 				to the stickperson are the front four spots of the boxes, and the four spots next to the
-				base dealer are the four rear spots.
+				Base Dealer are the four rear spots.
 			</p>
 			<p class="pb-4">
 				As long as you’re not moving your cheques to different spots in the rail, your bets should
@@ -492,7 +492,7 @@
 				I know you’re not here to work, and that’s what this all is—lots of work. Mastering the
 				Craps table is no small feat; being vigilant and informed are your best assets in this game.
 				If you put in the time to learn, the work will turn into skill, and the next time an issue
-				arrises at the table, you will be armed with the knowledge necessary to win any argument.
+				arises at the table, you will be armed with the knowledge necessary to win any argument.
 			</p>
 		</section>
 	</main>

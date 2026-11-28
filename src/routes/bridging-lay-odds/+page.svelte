@@ -48,8 +48,8 @@
 		{
 			subTitle: ['The Amount - ', 'The Types of Chips'],
 			items: [
-				'The amount the Lay Odds win must be the same amount as the Don’t Pass or Don’t Come. Given the Point is 6 or 8: You make a Don’t Pass bet of $10 and Lay $12 Odds that win $10. You’re halfway to being able to bridge a bet.',
-				'The types of chips you are using as Lay Odds must be the same as the Don’t Pass or Don’t Come bet. If that same $10 Don’t Pass Bet is made with two nickels and you’re $12 Lay Odds are made with two dollars and two nickels then you have completed the 2nd half of being able to properly bridge a bet.'
+				'The amount the Lay Odds win must be the same amount as the Don’t Pass or Don’t Come. Given the Point is 6 or 8: You make a Don’t Pass Bet of $10 and Lay $12 Odds that win $10. You’re halfway to being able to bridge a bet.',
+				'The types of chips you are using as Lay Odds must be the same as the Don’t Pass or Don’t Come Bet. If that same $10 Don’t Pass Bet is made with two nickels and your $12 Lay Odds are made with two dollars and two nickels then you have completed the 2nd half of being able to properly bridge a bet.'
 			]
 		}
 	];
@@ -69,7 +69,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "headline": "Bridging Lay Odds",
-  "description": "Explore how Lay Odds work for the Don't Come and Don't Pass bets in craps, including strategies for bridging lay odds across different points.",
+  "description": "Explore how Lay Odds work for the Don't Come and Don't Pass Bets in Craps, including strategies for bridging lay odds across different points.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -96,7 +96,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Rules to Bridging Lay Odds",
-        "description": "Understand the essential rules for effectively bridging lay odds on the Don't Pass or Don't Come bets."
+        "description": "Understand the essential rules for effectively bridging lay odds on the Don't Pass or Don't Come Bets."
       },
       {
         "@type": "ListItem",
@@ -134,15 +134,15 @@
 	<main aria-label="Main content" class=" flex flex-col my-6">
 		<ContentHeaderOne sectionTitle="The Don't Side" title="Bridging Lay Odds" {pageData}>
 			<p class="pb-4">
-				Lay Odds for the Don’t Come work the same way as Lay Odds on the Don’t Pass. You add them to
-				your Don’t Come and just like the Don’t Come, the Lay Odds are betting that a 7 will be
-				rolled before the Point. If the 7 rolls your Don’t Come bet and its Lay Odds will win. If
-				the Point is rolled the Don’t Come bet and its <Link
+				Lay Odds for the Don't Come work the same way as Lay Odds on the Don't Pass. You add them to
+				your Don't Come and just like the Don't Come, the Lay Odds are betting that a 7 will be
+				rolled before the Point. If the 7 rolls your Don't Come Bet and its Lay Odds will win. If
+				the Point is rolled the Don't Come Bet and its <Link
 					text="Lay Odds"
 					href="dont-come-lay-odds"
-				/> lose. You can add Lay Odds at any time a Don’t Come bet as long as it is behind a Point and
+				/> lose. You can add Lay Odds at any time to a Don't Come Bet as long as it is behind a Point and
 				they are not Contract bets so you can take them back at any time. Lay Odds are always working
-				and you cannot turn them “Off”. They must be returned to you.
+				and you cannot turn them 'Off'. They must be taken down.
 			</p>
 			<ContentImg
 				caption=""
@@ -163,9 +163,9 @@
 		<ContentHeaderTwo id="layRules" title="Rules to Bridging Lay Odds">
 			<p class="pb-4">
 				There are two rules you must follow in order to be able to Bridge the <Link
-					text="Don’t Pass"
+					text="Don't Pass"
 					href="dont-pass"
-				/> or <Link text="Don’t Come" href="dont-come" /> and its Lay Odds.
+				/> or <Link text="Don't Come" href="dont-come" /> and its Lay Odds.
 			</p>
 			<ContentUl2 {liBs} />
 			<p class="pb-4" />
@@ -244,9 +244,9 @@
 		<Divider />
 		<ContentHeaderTwo id="badBridges" title="Incorrectly Bridged Bets">
 			<p class="pb-4">
-				There will be times when the amount of Lay Odds you add win the same amount as the Don’t
-				Pass or Don’t Come bet but you will not be able to Bridge the bet. You will have this when
-				the chips used as Lay Odds are not the same type as the Don’t Pass or Don’t Come bet.
+				There will be times when the amount of Lay Odds you add win the same amount as the Don't
+				Pass or Don't Come Bet but you will not be able to Bridge the bet. You will have this when
+				the chips used as Lay Odds are not the same type as the Don't Pass or Don't Come Bet.
 			</p>
 			<ContentHeaderThree title="Incorrectly Bridged Odds on the 6 & 8">
 				<ContentImg

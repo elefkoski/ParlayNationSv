@@ -11,14 +11,14 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
 
 	let title: string = 'Betting the World in Craps';
 	let description: string =
-		'The World is a Horn with extra on the Any 7. You must make this bet in increments of five and is a one-roll bet. When 7 rolls the bet is a push.';
+		'The World is a Horn with extra on the Any Seven. You must make this bet in increments of five and is a one-roll bet. When 7 rolls the bet is a push.';
 	let url: string = 'world';
 
 	let phref: string = 'horn-high';
@@ -72,7 +72,7 @@
 		['High Side', '26:5', '2 or 12', 'Any other number'],
 		['Low Side', '11:5', '3 or 11', 'Any other number']
 	];
-	let tblPnts: string[] = ['The World is a one roll bet'];
+	let tblPnts: string[] = ['The World is a one-roll bet'];
 </script>
 
 <svelte:head>
@@ -88,8 +88,8 @@
 		{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Betting The World in Craps",
-  "description": "An exploration of the World bet in craps, including how to make the bet, its placement on the table, payout details, and tips for betting the World for dealers.",
+  "headline": "Betting the World in Craps",
+  "description": "An exploration of the World bet in Craps, including how to make the bet, its placement on the table, payout details, and tips for betting the World for dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -113,7 +113,7 @@
     {
       "@type": "ItemList",
       "name": "Proposition Bets",
-      "description": "Details on the World bet in craps, a combination of a Horn and Any 7 bet, its strategic placement, and its unique payout structure.",
+      "description": "Details on the World bet in Craps, a combination of a Horn and Any Seven bet, its strategic placement, and its unique payout structure.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -125,7 +125,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Where Is Your World on the Craps Table?",
-          "description": "Explains the typical absence of a World image on craps tables and how the bet is recognized by dealers and players."
+          "description": "Explains the typical absence of a World image on Craps tables and how the bet is recognized by dealers and players."
         },
         {
           "@type": "ListItem",
@@ -146,7 +146,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/world/world_640x360.webp",
-      "caption": "Up close overhead view of the world on the craps layout."
+      "caption": "Up close overhead view of the world on the Craps layout."
     },
     {
       "@type": "ImageObject",
@@ -156,12 +156,12 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/world/placement-of-world-a_640x360.webp",
-      "caption": "Overhead view of a blown up picture of a world and the craps table rail with eight colored spots on each that correspond with each other."
+      "caption": "Overhead view of a blown up picture of a world and the Craps table rail with eight colored spots on each that correspond with each other."
     },
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/world/placement-of-a-world-b_640x360.webp",
-      "caption": "Overhead view of the center bar above the any seven on the craps table and the craps table rail with eight colored spots on each that correspond."
+      "caption": "Overhead view of the center bar above the any seven on the Craps table and the Craps table rail with eight colored spots on each that correspond."
     },
     {
       "@type": "ImageObject",
@@ -202,7 +202,7 @@
 <LearnLayout {pageLinks}>
 	<PrevNext {phref} {prev} {nhref} {next} />
 	<main aria-label="Main content" class=" flex flex-col my-6">
-		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting The World in Craps" {pageData}>
+		<ContentHeaderOne sectionTitle="Proposition Bets" title="Betting the World in Craps" {pageData}>
 			<p class="pb-4">
 				People love to bet the <Link text="Horn" href="horn" /> and the <Link
 					text="Horn Highs"
@@ -210,18 +210,18 @@
 				/> during the <Link text="Comeout Roll" href="the-stages" />. It's a one-roll bet and the
 				payoffs can be pretty good but, like most other bets, it falls prey to a roll of the 7. This
 				is where the World, aka Whirl, comes into play. The World is a combination of a Horn and an <Link
-					text="Any 7"
+					text="Any Seven"
 					href="any-seven"
 				/>.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/world_640x360.webp"
 				mdImg="src/images/{url}/world_960x540.webp"
 				lgImg="src/images/{url}/world_1280x720.webp"
 				title="The World"
-				alt="Up close overhead view of the world on the craps layout."
+				alt="Up close overhead view of the world on the Craps layout."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -233,10 +233,10 @@
 		<Divider />
 		<ContentHeaderTwo id="fiveWorld" title="What Is a $5 World in Craps?">
 			<p class="pb-4">
-				A $5 World is a $1 on each the Aces, Ace Deuce, Yo, Twelve, and the Any 7. The minimum is
-				five-dollars because you must put at least $1 on those five bets so the World needs to be
+				A $5 World is a $1 on each the Aces, Ace Deuce, Yo, Twelve, and the Any Seven. The minimum is
+				five dollars because you must put at least $1 on those five bets so the World needs to be
 				bet in increments of five. You can also consider a $5 World to be a $4 Horn with $1 on the
-				Any 7.
+				Any Seven.
 			</p>
 			<ContentImg
 				caption=""
@@ -244,7 +244,7 @@
 				mdImg="src/images/{url}/5-world_960x540.webp"
 				lgImg="src/images/{url}/5-world_1280x720.webp"
 				title="$5 World"
-				alt="Split image. On top is $5 on the world. On bottom is $1 each on the aces, ace deuce, yo, twelve, and the any seven"
+				alt="Split image. On top is $5 on the world. On bottom is $1 each on the aces, ace deuce, yo, twelve, and the Any Seven."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -260,7 +260,7 @@
 				mdImg="src/images/{url}/placement-of-world-a_960x540.webp"
 				lgImg="src/images/{url}/placement-of-world-a_1280x720.webp"
 				title="Placement of World on Globe"
-				alt="Overhead view of a blown up picture of a world and the craps table rail. There are eight colored spots on each the world and the rail that correspond with each other."
+				alt="Overhead view of a blown up picture of a world and the Craps table rail. There are eight colored spots on each the world and the rail that correspond with each other."
 			/>
 			<div class="pb-4" />
 			<ContentImg
@@ -269,7 +269,7 @@
 				mdImg="src/images/{url}/placement-of-a-world-b_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-world-b_1280x720.webp"
 				title="Placement of World on Bar"
-				alt="Overhead view of the center bar above the any seven on the craps table and the craps table rail. There are eight colored spots on each the bar and the rail that correspond with each other."
+				alt="Overhead view of the center bar above the any seven on the Craps table and the Craps table rail. There are eight colored spots on each the bar and the rail that correspond with each other."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -365,7 +365,7 @@
 		<ContentHeaderTwo id="dealerWorld" title="How Do You Bet the World for the Dealers?">
 			<p class="pb-4">
 				Ideally, multiples of $5 would be best for the dealers. Anything less would be an improper
-				bet than requires some odd math for the dealers and usually ends up getting rounded down.
+				bet that requires some odd math for the dealers and usually ends up getting rounded down.
 			</p>
 			<ContentImg
 				caption=""

@@ -11,7 +11,7 @@
 	import ContentHeaderOne from '$lib/components/contentPages/Content-h1.svelte';
 	import ContentHeaderTwo from '$lib/components/contentPages/Content-h2.svelte';
 	import ContentHeaderThree from '$lib/components/contentPages/Content-h3.svelte';
-	import ContentTble from '$lib/components/contentPages/ContentTable.svelte';
+	import ContentTable from '$lib/components/contentPages/ContentTable.svelte';
 	import ContentImg from '$lib/components/contentPages/Content-img.svelte';
 	import Divider from '$lib/components/Divider.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -73,7 +73,7 @@
 		['High Side', '27:4', '2 or 12', 'Any other number'],
 		['Low Side', '3x the bet', '3 or 11', 'Any other number']
 	];
-	let tblPnts: string[] = ['The Horn is a one roll bet', 'Horns must be bet in multiples of $4.'];
+	let tblPnts: string[] = ['The Horn is a one-roll bet', 'Horns must be bet in multiples of $4.'];
 </script>
 
 <svelte:head>
@@ -90,7 +90,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Betting the Horn in Craps",
-  "description": "An in-depth guide to understanding the Horn bet in craps, a convenient proposition bet that covers four specific numbers. Learn how to place this bet, its payout structure, and tips for betting the Horn for the dealers.",
+  "description": "An in-depth guide to understanding the Horn bet in Craps, a convenient proposition bet that covers four specific numbers. Learn how to place this bet, its payout structure, and tips for betting the Horn for the dealers.",
   "author": {
     "@type": "Person",
     "name": "Elvis Lefkoski"
@@ -114,7 +114,7 @@
     {
       "@type": "ItemList",
       "name": "Understanding the Horn Bet",
-      "description": "A comprehensive guide to the Horn bet in craps, including the basics of placing the bet, payout details, and how to bet the Horn for the dealers.",
+      "description": "A comprehensive guide to the Horn bet in Craps, including the basics of placing the bet, payout details, and how to bet the Horn for the dealers.",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -126,7 +126,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Horn Bet Placement",
-          "description": "Information on where Horn bets are placed on the craps table."
+          "description": "Information on where Horn bets are placed on the Craps table."
         },
         {
           "@type": "ListItem",
@@ -147,7 +147,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/horn/horn_640x360.webp",
-      "caption": "Up close overhead view of the horn bet on the craps layout."
+      "caption": "Up close overhead view of the horn bet on the Craps layout."
     },
     {
       "@type": "ImageObject",
@@ -157,7 +157,7 @@
     {
       "@type": "ImageObject",
       "url": "http://parlaynation.com/images/horn/placement-of-a-horn_640x360.webp",
-      "caption": "Up close image of the horn bet and the craps rail. There are eight colored spots corresponding the horn and the rail."
+      "caption": "Up close image of the horn bet and the Craps rail. There are eight colored spots corresponding to the horn and the rail."
     },
     {
       "@type": "ImageObject",
@@ -184,17 +184,17 @@
 			</p>
 			<p class="pb-4">
 				The Horn makes betting Proposition Bets easier. Not only does it wrap up four bets in one,
-				but it's also the basis to the <Link text="Horn High's" href="horn-high" />, which
+				but it's also the basis to the <Link text="Horn Highs" href="horn-high" />, which
 				conveniently let you bet in five-dollar increments.
 			</p>
-			<ContentTble {tblAria} {tblHeaders} {tblRows} {tblPnts} />
+			<ContentTable {tblAria} {tblHeaders} {tblRows} {tblPnts} />
 			<ContentImg
 				caption=""
 				smImg="src/images/{url}/horn_640x360.webp"
 				mdImg="src/images/{url}/horn_960x540.webp"
 				lgImg="src/images/{url}/horn_1280x720.webp"
 				title="The Horn"
-				alt="Up close overhead view of the horn bet on the craps layout."
+				alt="Up close overhead view of the horn bet on the Craps layout."
 			/>
 		</ContentHeaderOne>
 		<div class="lg:hidden">
@@ -237,7 +237,7 @@
 				mdImg="src/images/{url}/placement-of-a-horn_960x540.webp"
 				lgImg="src/images/{url}/placement-of-a-horn_1280x720.webp"
 				title="Placement of a Horn"
-				alt="Up close image of the horn bet and the craps rail. There are eight colored spots corresponding the horn and the rail."
+				alt="Up close image of the horn bet and the Craps rail. There are eight colored spots corresponding to the horn and the rail."
 			/>
 		</ContentHeaderTwo>
 		<Divider />
@@ -287,7 +287,7 @@
 					mdImg="src/images/{url}/8-horn-low-side_960x540.webp"
 					lgImg="src/images/{url}/8-horn-low-side_1280x720.webp"
 					title="$8 Horn Low Side Payment"
-					alt="$8 on the horn with a bubble that reads $24 payment"
+					alt="$8 on the horn with a bubble that reads $24 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
@@ -296,7 +296,7 @@
 					mdImg="src/images/{url}/24-horn-low-side_960x540.webp"
 					lgImg="src/images/{url}/24-horn-low-side_1280x720.webp"
 					title="$24 Horn Low Side Payment"
-					alt="$24 on the horn with a bubble that reads $72 payment"
+					alt="$24 on the horn with a bubble that reads $72 payment."
 				/>
 			</ContentHeaderThree>
 			<div class="pb-4" />
@@ -312,7 +312,7 @@
 					mdImg="src/images/{url}/8-horn-high-side-a_960x540.webp"
 					lgImg="src/images/{url}/8-horn-high-side-a_1280x720.webp"
 					title="$8 Horn High Side Payment"
-					alt="$8 on the Horn. A bubble reads $54 payment"
+					alt="$8 on the Horn. A bubble reads $54 payment."
 				/>
 				<div class="pb-4" />
 				<ContentImg
